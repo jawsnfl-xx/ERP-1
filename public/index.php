@@ -1,4 +1,8 @@
 <?php
 
+	/**
+	 * 
+	 * Opis projektu
+	 */
 	phpinfo();
 	
