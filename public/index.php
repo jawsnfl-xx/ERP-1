@@ -4,5 +4,6 @@
 	 * 
 	 * Opis projektu
 	 */
-	phpinfo();
+	print 'test';
+	
 	
