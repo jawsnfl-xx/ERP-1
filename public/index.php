@@ -8,4 +8,4 @@ require_once ('actionsbase.class.php');
 
 $controller = new Controller ();
 $controller->dispatch ();
-Echo "NO JESTEM JESTEM :D";
+
