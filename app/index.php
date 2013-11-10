@@ -5,6 +5,12 @@
  */
 error_reporting ( 1 );
 ini_set ( 'display_errors', 1 );
+
+/**
+ *
+ * @param unknown $class        	
+ * @throws Exception
+ */
 function autoload($class) {
 	$paths = explode ( PATH_SEPARATOR, get_include_path () );
 	$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
@@ -18,7 +24,18 @@ function autoload($class) {
 	}
 	throw new Exception ( "{$class} not found" );
 }
+
+/**
+ *
+ * @author Jet
+ *        
+ */
 class Autoloader {
+	
+	/**
+	 *
+	 * @param unknown $class        	
+	 */
 	public static function autoload($class) {
 		autoload ( $class );
 	}
@@ -29,26 +46,24 @@ spl_autoload_register ( array (
 		'autoload' 
 ) );
 
-/**
- * 
- * @author Jet
- * @example
- *
- */
-class Hello extends Framework\Base {
-	/*
-	 * @readwrite
-	 */
-	protected $_world;
-	public function setWorld($value) {
-		echo "your setter is being called!";
-		$this->_world = $value;
-	}
-	public function getWorld() {
-		echo "your getter is being called!";
-		return $this->_world;
+class Home extends Framework\Controller {
+	public function index() {
+		echo "here";
 	}
 }
-$hello = new Hello ();
-$hello->world = "foo!";
-echo $hello->world;
+
+
+class Kontroler extends Framework\Controller {
+	public function Stronka() {
+		echo "To jest treść stronki";
+	}
+}
+
+$router = new Framework\Router ();
+$router->addRoute ( new Framework\Router\Route\Simple ( array (
+		"pattern" => ":name/profile",
+		"controller" => "Kontroler",
+		"action" => "Stronka" 
+) ) );
+$router->url = "chris/profile";
+$router->dispatch ();
