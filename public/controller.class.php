@@ -12,6 +12,12 @@ class Controller {
 	 * @var unknown
 	 */
 	private $actions;
+
+	/**
+	 *
+	 * @var unknown
+	 */
+	private $core_name;
 	
 	/**
 	 *
@@ -24,6 +30,13 @@ class Controller {
 	 * @var unknown
 	 */
 	private $action_name;
+
+
+	/**
+	 *
+	 * @var unknown
+	 */
+	private $core_names;
 	
 	/**
 	 *
@@ -112,6 +125,8 @@ class Controller {
 	/**
 	 */
 	public function dispatch() {
+		$this->actions->setCore ( $this->core_name );
+		
 		$this->actions->setModule ( $this->module_name );
 		
 		$this->actions->setAction ( $this->action_name );
