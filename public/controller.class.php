@@ -1,17 +1,58 @@
 <?php
+
+/**
+ * 
+ * @author Jet
+ *
+ */
 class Controller {
+	
+	/**
+	 *
+	 * @var unknown
+	 */
 	private $actions;
+	
+	/**
+	 *
+	 * @var unknown
+	 */
 	private $module_name;
+	
+	/**
+	 *
+	 * @var unknown
+	 */
 	private $action_name;
+	
+	/**
+	 *
+	 * @var unknown
+	 */
 	private $module_names;
+	
+	/**
+	 *
+	 * @var unknown
+	 */
 	private $action_names;
-	function setDefaultUrl($vars) {
+	
+	/**
+	 *
+	 * @param unknown $vars        	
+	 */
+	public function setDefaultUrl($vars) {
 		if (empty ( $_GET )) {
 			foreach ( $vars as $k => $v ) {
 				$_GET [$k] = $v;
 			}
 		}
 	}
+	
+	/**
+	 *
+	 * @param unknown $vars        	
+	 */
 	public function __construct($vars = array()) {
 		$this->setDefaultUrl ( $vars );
 		$this->module_names = glob ( 'modules/*' );
@@ -67,9 +108,10 @@ class Controller {
 		
 		$this->actions = new Actions ();
 	}
-	public function dispatch() 
-
-	{
+	
+	/**
+	 */
+	public function dispatch() {
 		$this->actions->setModule ( $this->module_name );
 		
 		$this->actions->setAction ( $this->action_name );
