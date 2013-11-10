@@ -17,13 +17,19 @@ class ActionsBase {
 	 *
 	 * @var unknown
 	 */
-	protected $action;
+	protected $core;
 	
 	/**
 	 *
 	 * @var unknown
 	 */
 	protected $module;
+	
+	/**
+	 *
+	 * @var unknown
+	 */
+	protected $action;
 	
 	/**
 	 */
@@ -34,11 +40,19 @@ class ActionsBase {
 	/**
 	 */
 	public function display() {
+		$this->set ( 'core', $this->core );
 		$this->set ( 'module', $this->module );
 		$this->set ( 'action', $this->action );
 		$this->s->display ( 'index.tpl' );
 	}
 	
+	/**
+	 *
+	 * @param unknown $m        	
+	 */
+	public function setCore($c) {
+		$this->core = $c;
+	}
 	/**
 	 *
 	 * @param unknown $m        	
