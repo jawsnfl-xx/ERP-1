@@ -46,19 +46,36 @@ spl_autoload_register ( array (
 		'autoload' 
 ) );
 
+/**
+ *
+ * @author Jet
+ *         Przykłady działania:
+ *        
+ */
 class Home extends Framework\Controller {
 	public function index() {
 		echo "here";
 	}
 }
 
-
+/**
+ *
+ * @author Jet
+ *         Przykłady działania:
+ *        
+ */
 class Kontroler extends Framework\Controller {
 	public function Stronka() {
 		echo "To jest treść stronki";
 	}
 }
 
+/**
+ *
+ * @author Jet
+ *         Przykłady działania:
+ *        
+ */
 $router = new Framework\Router ();
 $router->addRoute ( new Framework\Router\Route\Simple ( array (
 		"pattern" => ":name/profile",
