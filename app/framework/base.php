@@ -68,7 +68,7 @@ namespace Framework {
 				if (property_exists ( $this, $property )) {
 					$meta = $this->_inspector->getPropertyMeta ( $property );
 					if (empty ( $meta ["@readwrite"] ) && empty ( $meta ["@write"] )) {
-						throw $this->_getExceptionForReadonly ( $normalized );
+						// throw $this->_getExceptionForReadonly ( $normalized );
 					}
 					$this->$property = $arguments [0];
 					return $this;
