@@ -6,8 +6,10 @@ namespace Framework\Configuration\Driver {
 	use Framework\Configuration as Configuration;
 	use Framework\Configuration\Exception as Exception;
 
-	
 	/**
+	 *
+	 * @author Jet
+	 *        
 	 */
 	class Ini extends Configuration\Driver {
 		
@@ -15,11 +17,30 @@ namespace Framework\Configuration\Driver {
 		 * (non-PHPdoc) @see \Framework\Base::__construct()
 		 */
 		protected $_options;
+		
+		/**
+		 *
+		 * @var unknown
+		 */
 		public $_data;
+		
+		/**
+		 *
+		 * @param unknown $_options        	
+		 * @return \Framework\Configuration\Driver\unknown
+		 */
 		public function __construct($_options) {
 			$this->_data = $this->parse ( $_options ['path'] );
 			return $this->_data;
 		}
+		
+		/**
+		 *
+		 * @param unknown $config        	
+		 * @param unknown $key        	
+		 * @param unknown $value        	
+		 * @return unknown
+		 */
 		protected function _pair($config, $key, $value) {
 			if (strstr ( $key, "." )) {
 				$parts = explode ( ".", $key, 2 );
@@ -32,6 +53,13 @@ namespace Framework\Configuration\Driver {
 			}
 			return $config;
 		}
+		
+		/**
+		 *
+		 * @param unknown $path        	
+		 * @throws Exception\Argument
+		 * @throws Exception\Syntax
+		 */
 		public function parse($path) {
 			if (empty ( $path )) {
 				throw new Exception\Argument ( "\$path argument is not valid" );
@@ -51,6 +79,9 @@ namespace Framework\Configuration\Driver {
 				}
 				$this->_parsed [$path] = ArrayMethods::toObject ( $config );
 			}
+			
+			/**
+			 */
 			return $this->_parsed [$path];
 		}
 	}

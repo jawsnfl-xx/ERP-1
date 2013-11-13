@@ -94,7 +94,7 @@ $configuration = $configuration->initialize ();
  */
 class Kontroler extends Framework\Controller {
 	public function Stronka() {
-		echo "To jest treść stronki";
+		// nic nie robi
 	}
 }
 
@@ -113,3 +113,4 @@ $router->addRoute ( new Framework\Router\Route\Simple ( array (
 $router->url = "chris/profile";
 $router->dispatch ();
 
+var_dump ( $router );
