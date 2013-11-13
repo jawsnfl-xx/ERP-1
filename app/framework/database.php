@@ -14,18 +14,18 @@ namespace Framework {
 		/**
 		 * @readwrite
 		 */
-		protected $_options;
+		public $_options;
 		protected function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
-		public function initialize() {
+		public function initialize($_options) {
 			if (! $this->type) {
 				throw new Exception\Argument ( "Invalid type" );
 			}
 			switch ($this->type) {
 				case "mysql" :
 					{
-						return new Database\Connector\Mysql ( $this->options );
+						return new Database\Connector\Mysql ( $this->_options );
 						break;
 					}
 				default :

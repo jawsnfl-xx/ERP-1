@@ -115,25 +115,24 @@ $router->dispatch ();
 
 var_dump ( $router );
 
+
+/*********************************************/
+
 $database = new Framework\Database ( array (
 		"type" => "mysql",
 		"options" => array (
 				"host" => "localhost",
 				"username" => "root",
-				"password" => "",
+				"password" => "haslotest",
 				"schema" => "erp",
 				"port" => "3306" 
-		) 
+		)
 ) );
-$database = $database->initialize ();
-$all = $database->query ()->from ( "sample", array (
-		"text1",
-		"text2" 
-) )->limit ( 100 )->all ();
 
-//$print = print_r($all, true);
-//echo "all = >{$print}";
+// $database = $database->initialize ();
+// $all = $database->query ()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
+
+// $print = print_r($all, true);
+// echo "all = >{$print}";
 
 var_dump( $database );
-
-var_dump( $all );

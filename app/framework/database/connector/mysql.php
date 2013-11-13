@@ -38,20 +38,43 @@ namespace Framework\Database\Connector {
 		/**
 		 * @readwrite
 		 */
+
+
+		public function __construct($_options) {
+			print 'fips';
+			var_dump($_options);
+			$this->_data = $this->connect( $_options );
+			print 'fips2';
+			return $this->_data;
+		}
+		
+
 		protected $_isConnected = false;
 		// checks if connected to the database
 		protected function _isValidService() {
+			print '_isValidService1';
 			$isEmpty = empty ( $this->_service );
+
 			$isInstance = $this->_service instanceof \MySQLi;
 			
+			var_dump( $this->_service );
+			var_dump( $isInstance );
+			
+			print '_isValidService4';
 			if ($this->isConnected && $isInstance && ! $isEmpty) {
 				return true;
 			}
+			else {
+			print '_isValidService7';
 			return false;
+			}
 		}
 		// connects to the database
 		public function connect() {
+
+			print 'connect1';
 			if (! $this->_isValidService ()) {
+			print 'connect2';
 				$this->_service = new \MySQLi ( $this->_host, $this->_username, $this->_password, $this->_schema, $this->_port );
 				if ($this->_service->connect_error) 
 
