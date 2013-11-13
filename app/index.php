@@ -1,7 +1,5 @@
 <?php
-
 /**
- * 
  */
 error_reporting ( 1 );
 ini_set ( 'display_errors', 1 );
@@ -46,17 +44,47 @@ spl_autoload_register ( array (
 		'autoload' 
 ) );
 
+Framework\Core::initialize ();
+
+$configuration = new Framework\Configuration ( array (
+		"type" => "ini",
+		"options" => array (
+				"path" => "/configuration/sample_config.ini",
+				"path2" => "test2" 
+		) 
+) );
+
+Framework\Registry::get ( "configuration" );
+$configuration = $configuration->initialize ();
+
 /**
- *
- * @author Jet
- *         Przykłady działania:
- *        
+ * Przykład użycia plików konfiguracji
  */
-class Home extends Framework\Controller {
-	public function index() {
-		echo "here";
-	}
-}
+// var_dump ( $configuration );
+// var_dump ( $configuration->_data->database );
+
+// /**
+// * Przykład wczytywania konfiguracji:
+// */
+
+// $configuration = new Framework\Configuration ( array (
+// "type" => "ini"
+// ) );
+// $configuration = $configuration->initialize ( "/configuration.ini" );
+
+// var_dump ( $configuration );
+
+// /**
+// *
+// * @author Jet
+// * Przykłady działania:
+// *
+// */
+// class Home extends Framework\Controller {
+// public function index() {
+// echo "here";
+// }
+// }
 
 /**
  *
@@ -66,7 +94,7 @@ class Home extends Framework\Controller {
  */
 class Kontroler extends Framework\Controller {
 	public function Stronka() {
-		echo "To jest treść stronki";
+		// nic nie robi
 	}
 }
 
@@ -84,3 +112,5 @@ $router->addRoute ( new Framework\Router\Route\Simple ( array (
 ) ) );
 $router->url = "chris/profile";
 $router->dispatch ();
+
+var_dump ( $router );
