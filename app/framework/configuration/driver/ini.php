@@ -6,6 +6,9 @@ namespace Framework\Configuration\Driver {
 	use Framework\Configuration as Configuration;
 	use Framework\Configuration\Exception as Exception;
 
+	
+	/**
+	 */
 	class Ini extends Configuration\Driver {
 		
 		/*
