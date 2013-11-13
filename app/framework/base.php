@@ -7,23 +7,22 @@ namespace Framework {
 	use Framework\StringMethods as StringMethods;
 	use Framework\Core\Exception as Exception;
 
-	
 	/**
-	 * 
-	 * @author Jet
 	 *
+	 * @author Jet
+	 *        
 	 */
 	class Base {
 		
 		/**
-		 * 
+		 *
 		 * @var unknown
 		 */
 		private $_inspector;
 		
 		/**
-		 * 
-		 * @param unknown $options
+		 *
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			$this->_inspector = new Inspector ( $this );
@@ -37,11 +36,11 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $name
-		 * @param unknown $arguments
+		 *
+		 * @param unknown $name        	
+		 * @param unknown $arguments        	
 		 * @throws Exception
-		 * @return NULL|\Framework\Base
+		 * @return NULL \Framework\Base
 		 */
 		public function __call($name, $arguments) {
 			if (empty ( $this->_inspector )) {
@@ -79,8 +78,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $name
+		 *
+		 * @param unknown $name        	
 		 */
 		public function __get($name) {
 			$function = "get" . ucfirst ( $name );
@@ -88,9 +87,9 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $name
-		 * @param unknown $value
+		 *
+		 * @param unknown $name        	
+		 * @param unknown $value        	
 		 */
 		public function __set($name, $value) {
 			$function = "set" . ucfirst ( $name );
@@ -98,8 +97,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $property
+		 *
+		 * @param unknown $property        	
 		 * @return \Framework\Core\Exception\ReadOnly
 		 */
 		protected function _getExceptionForReadonly($property) {
@@ -107,8 +106,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $property
+		 *
+		 * @param unknown $property        	
 		 * @return \Framework\Core\Exception\WriteOnly
 		 */
 		protected function _getExceptionForWriteonly($property) {
@@ -116,7 +115,7 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return \Framework\Core\Exception\Property
 		 */
 		protected function _getExceptionForProperty() {
@@ -124,8 +123,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $method
+		 *
+		 * @param unknown $method        	
 		 * @return \Framework\Core\Exception\Argument
 		 */
 		protected function _getExceptionForImplementation($method) {

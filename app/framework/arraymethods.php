@@ -44,9 +44,9 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $array
-		 * @param unknown $return
+		 *
+		 * @param unknown $array        	
+		 * @param unknown $return        	
 		 * @return unknown
 		 */
 		public function flatten($array, $return = array()) {
@@ -58,6 +58,17 @@ namespace Framework {
 				}
 			}
 			return $return;
+		}
+		public static function toObject($array) {
+			$result = new \stdClass ();
+			foreach ( $array as $key => $value ) {
+				if (is_array ( $value )) {
+					$result->{$key} = self::toObject ( $value );
+				} else {
+					$result->{$key} = $value;
+				}
+			}
+			return $result;
 		}
 	}
 }
