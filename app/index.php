@@ -60,8 +60,8 @@ $configuration = $configuration->initialize ();
 /**
  * Przykład użycia plików konfiguracji
  */
-// var_dump ( $configuration );
-// var_dump ( $configuration->_data->database );
+var_dump ( $configuration );
+var_dump ( $configuration->_data->database );
 
 // /**
 // * Przykład wczytywania konfiguracji:
@@ -129,10 +129,10 @@ $database = new Framework\Database ( array (
 		)
 ) );
 
-// $database = $database->initialize ();
-// $all = $database->query ()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
+$database = $database->initialize ();
+$all = $database->query ()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
 
-// $print = print_r($all, true);
-// echo "all = >{$print}";
+$print = print_r($all, true);
+echo "all = >{$print}";
 
 var_dump( $database );
