@@ -60,8 +60,8 @@ $configuration = $configuration->initialize ();
 /**
  * Przykład użycia plików konfiguracji
  */
-var_dump ( $configuration );
-var_dump ( $configuration->_data->database );
+// var_dump ( $configuration );
+// var_dump ( $configuration->_data->database );
 
 // /**
 // * Przykład wczytywania konfiguracji:
@@ -113,7 +113,7 @@ $router->addRoute ( new Framework\Router\Route\Simple ( array (
 $router->url = "chris/profile";
 $router->dispatch ();
 
-var_dump ( $router );
+// var_dump ( $router );
 
 
 /*********************************************/
@@ -130,9 +130,9 @@ $database = new Framework\Database ( array (
 ) );
 
 $database = $database->initialize ();
+var_dump( $database );
 $all = $database->query ()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
 
 $print = print_r($all, true);
 echo "all = >{$print}";
 
-var_dump( $database );
