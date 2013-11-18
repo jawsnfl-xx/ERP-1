@@ -122,9 +122,9 @@ $database = new Framework\Database ( array (
 		"type" => "mysql",
 		"options" => array (
 				"host" => "localhost",
-				"username" => "root",
-				"password" => "haslotest",
-				"schema" => "erp",
+				"username" => "erpsystem",
+				"password" => "erpsystem",
+				"schema" => "erpsystem",
 				"port" => "3306" 
 		)
 ) );
@@ -134,5 +134,3 @@ var_dump( $database );
 $all = $database->query ()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
 
 $print = print_r($all, true);
-echo "all = >{$print}";
-
