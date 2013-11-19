@@ -20,7 +20,7 @@ function autoload($class) {
 			return;
 		}
 	}
-	throw new Exception ( "{$class} not found" );
+	//throw new Exception ( "{$class} not found" );
 }
 
 /**
@@ -86,24 +86,13 @@ $configuration = $configuration->initialize ();
 // }
 // }
 
-/**
- *
- * @author Jet
- *         Przykłady działania:
- *        
- */
+/** 
+ 
 class Kontroler extends Framework\Controller {
 	public function Stronka() {
-		// nic nie robi
 	}
 }
 
-/**
- *
- * @author Jet
- *         Przykłady działania:
- *        
- */
 $router = new Framework\Router ();
 $router->addRoute ( new Framework\Router\Route\Simple ( array (
 		"pattern" => ":name/profile",
@@ -114,9 +103,6 @@ $router->url = "chris/profile";
 $router->dispatch ();
 
 // var_dump ( $router );
-
-
-/*********************************************/
 
 $database = new Framework\Database ( array (
 		"type" => "mysql",
@@ -129,8 +115,11 @@ $database = new Framework\Database ( array (
 		)
 ) );
 
-$database = $database->initialize ();
-var_dump( $database );
-$all = $database->query ()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
 
-$print = print_r($all, true);
+print '1asd';
+// $database = $database->initialize ();
+// var_dump( $database );
+// $all = $database->query()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
+
+// $print = print_r($all, true);
+*/
