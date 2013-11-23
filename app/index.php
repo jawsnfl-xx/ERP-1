@@ -4,7 +4,7 @@
 	ini_set("display_errors", 1);
 
 	if (version_compare(PHP_VERSION, '5.3.7', '<')) {
-		exit("Sorry, Simple PHP Login does not run on a PHP version smaller than 5.3.7 !");
+		exit("PHP version smaller than 5.3.7 !");
 	}
 
 	function autoload($class) {
