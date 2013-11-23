@@ -1,14 +1,5 @@
 <?php
-/**
- */
-error_reporting ( 1 );
-ini_set ( 'display_errors', 1 );
 
-/**
- *
- * @param unknown $class        	
- * @throws Exception
- */
 function autoload($class) {
 	$paths = explode ( PATH_SEPARATOR, get_include_path () );
 	$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
@@ -20,106 +11,64 @@ function autoload($class) {
 			return;
 		}
 	}
-	//throw new Exception ( "{$class} not found" );
+	throw new Exception ( "{$class} not found" );
 }
-
-/**
- *
- * @author Jet
- *        
- */
 class Autoloader {
-	
-	/**
-	 *
-	 * @param unknown $class        	
-	 */
 	public static function autoload($class) {
 		autoload ( $class );
 	}
 }
+
 spl_autoload_register ( 'autoload' );
 spl_autoload_register ( array (
 		'autoloader',
 		'autoload' 
 ) );
 
-Framework\Core::initialize ();
+print 'a taki sobie prosty gmp_testbit(a, index)<br />';
 
 $configuration = new Framework\Configuration ( array (
-		"type" => "ini",
-		"options" => array (
-				"path" => "/configuration/sample_config.ini",
-				"path2" => "test2" 
-		) 
+		"type" => "ini" 
 ) );
-
-Framework\Registry::get ( "configuration" );
 $configuration = $configuration->initialize ();
+$parsed = $configuration->parse ( 'configuration/default_config' );
 
-/**
- * Przykład użycia plików konfiguracji
- */
-// var_dump ( $configuration );
-// var_dump ( $configuration->_data->database );
-
-// /**
-// * Przykład wczytywania konfiguracji:
-// */
-
-// $configuration = new Framework\Configuration ( array (
-// "type" => "ini"
-// ) );
-// $configuration = $configuration->initialize ( "/configuration.ini" );
-
-// var_dump ( $configuration );
-
-// /**
-// *
-// * @author Jet
-// * Przykłady działania:
-// *
-// */
-// class Home extends Framework\Controller {
-// public function index() {
-// echo "here";
-// }
-// }
-
-/** 
- 
-class Kontroler extends Framework\Controller {
-	public function Stronka() {
+class Hello extends Framework\Base {
+	/*
+	 * @readwrite
+	 */
+	protected $_world;
+	public function setWorld($value) {
+		echo "your setter is being called!<br />";
+		$this->_world = $value;
+	}
+	public function getWorld() {
+		echo "your getter is being called!<br />";
+		return $this->_world;
 	}
 }
+$hello = new Hello ();
+$hello->world = "foo!<br />";
+echo $hello->world;
 
+
+class Home extends Framework\Controller {
+	public function index() {
+		echo "here<br />";
+	}
+}
 $router = new Framework\Router ();
 $router->addRoute ( new Framework\Router\Route\Simple ( array (
 		"pattern" => ":name/profile",
-		"controller" => "Kontroler",
-		"action" => "Stronka" 
+		"controller" => "home",
+		"action" => "index" 
 ) ) );
 $router->url = "chris/profile";
 $router->dispatch ();
 
-// var_dump ( $router );
 
-$database = new Framework\Database ( array (
-		"type" => "mysql",
-		"options" => array (
-				"host" => "localhost",
-				"username" => "erpsystem",
-				"password" => "erpsystem",
-				"schema" => "erpsystem",
-				"port" => "3306" 
-		)
-) );
+$database = new Framework\MySQL( );
+$database->initialize( 'localhost', 'root', '', 'mysql');
+$data = $database->fetch_array( 'SELECT * FROM  `help_topic` LIMIT 0 , 3' );
 
-
-print '1asd';
-// $database = $database->initialize ();
-// var_dump( $database );
-// $all = $database->query()->from ( "sample", array ( "text1","text2" ) )->limit ( 100 )->all ();
-
-// $print = print_r($all, true);
-*/
+var_dump( $data );

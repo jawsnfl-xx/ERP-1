@@ -8,10 +8,12 @@ namespace Framework {
 	use Framework\Template\Exception as Exception;
 
 	class Template extends Base {
+
 		/**
 		 * @readwrite
 		 */
 		protected $_implementation;
+
 		/**
 		 * @readwrite
 		 */
@@ -21,17 +23,21 @@ namespace Framework {
 		 * @readwrite
 		 */
 		protected $_footer = "return implode(\$_text);";
+
 		/**
 		 * @read
 		 */
 		protected $_code;
+
 		/**
 		 * @read
 		 */
 		protected $_function;
+
 		public function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
+
 		protected function _arguments($source, $expression) {
 			$args = $this->_array ( $expression, array (
 					$expression => array (
@@ -56,6 +62,7 @@ namespace Framework {
 			}
 			return $arguments;
 		}
+
 		protected function _tag($source) {
 			$tag = null;
 			$arguments = array ();
@@ -103,6 +110,7 @@ namespace Framework {
 					"isolated" => (! empty ( $type ["tags"] ) ? $type ["tags"] [$tag] ["isolated"] : false) 
 			);
 		}
+
 		protected function _array($source) {
 			$parts = array ();
 			$tags = array ();
@@ -138,6 +146,7 @@ namespace Framework {
 					"all" => ArrayMethods::clean ( $all ) 
 			);
 		}
+
 		protected function _tree($array) {
 			$root = array (
 					"children" => array () 
@@ -190,6 +199,7 @@ namespace Framework {
 			}
 			return $root;
 		}
+
 		protected function _script($tree) {
 			$content = array ();
 			if (is_string ( $tree )) {
@@ -206,6 +216,7 @@ namespace Framework {
 			}
 			return implode ( $content );
 		}
+
 		public function parse($template) {
 			if (! is_a ( $this->_implementation, "Framework\Template\Implementation" )) {
 				throw new Exception\Implementation ();
@@ -216,6 +227,7 @@ namespace Framework {
 			$this->_function = create_function ( "\$_data", $this->code );
 			return $this;
 		}
+		
 		public function process($data = array()) {
 			if ($this->_function == null) {
 				throw new Exception\Parser ();
