@@ -66,6 +66,6 @@
 	// $database->_mysql->connect(  );
 
 
-	// var_dump( $database );
+	var_dump( $database );
 	
 	$all = $database->_mysql->query();

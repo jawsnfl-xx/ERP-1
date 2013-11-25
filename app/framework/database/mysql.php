@@ -9,11 +9,13 @@ namespace Framework\Database {
 	class MySQL extends Database {
 
 		protected $_service;
+/*		
 		protected $_host;
 		protected $_username;
 		protected $_password;
 		protected $_schema;
 		protected $_port;
+*/
 		protected $_isConnected = false;
 
 		// public $_options;
