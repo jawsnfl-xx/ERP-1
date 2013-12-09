@@ -56,7 +56,7 @@ $database->_options = array (
 				"host" => "localhost",
 				"username" => "root",
 				"password" => "",
-				"schema" => "mysql",
+				"schema" => "test",
 				"port" => "3306" 
 		) 
 );
@@ -67,4 +67,4 @@ $database->_mysql->connect ( $database->_options );
 
 var_dump ( $database );
 
-$all = $database->_mysql->query ();
+# $all = $database->_mysql->query ();
