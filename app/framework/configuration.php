@@ -7,9 +7,9 @@ namespace Framework {
 	use Framework\Configuration\Exception as Exception;
 
 	/**
-	 * 
-	 * @author Marcin Pyrka
 	 *
+	 * @author Marcin Pyrka
+	 *        
 	 */
 	class Configuration extends Base {
 		
@@ -25,6 +25,7 @@ namespace Framework {
 		
 		/**
 		 * (non-PHPdoc)
+		 * 
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
@@ -32,7 +33,7 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @throws Exception\Argument
 		 * @return \Framework\Configuration\Driver\Ini
 		 */

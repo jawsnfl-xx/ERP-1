@@ -82,10 +82,10 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $string
-		 * @param unknown $mask
-		 * @return unknown|mixed
+		 *
+		 * @param unknown $string        	
+		 * @param unknown $mask        	
+		 * @return unknown mixed
 		 */
 		public static function sanitize($string, $mask) {
 			if (is_array ( $mask )) {
@@ -105,8 +105,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $string
+		 *
+		 * @param unknown $string        	
 		 * @return Ambigous <string, unknown>
 		 */
 		public static function unique($string) {
@@ -121,10 +121,10 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $string
-		 * @param unknown $substring
-		 * @param string $offset
+		 *
+		 * @param unknown $string        	
+		 * @param unknown $substring        	
+		 * @param string $offset        	
 		 * @return number
 		 */
 		public function indexOf($string, $substring, $offset = null) {

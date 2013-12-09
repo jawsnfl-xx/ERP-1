@@ -8,9 +8,9 @@ namespace Framework {
 	use Framework\Router\Exception as Exception;
 
 	/**
-	 * 
-	 * @author Marcin Pyrka
 	 *
+	 * @author Marcin Pyrka
+	 *        
 	 */
 	class Router extends Base {
 		
@@ -35,13 +35,14 @@ namespace Framework {
 		protected $_action;
 		
 		/**
-		 * 
+		 *
 		 * @var unknown
 		 */
 		protected $_routes = array ();
 		
 		/**
 		 * (non-PHPdoc)
+		 * 
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		public function _getExceptionForImplementation($method) {
@@ -49,8 +50,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $route
+		 *
+		 * @param unknown $route        	
 		 * @return \Framework\Router
 		 */
 		public function addRoute($route) {
@@ -59,7 +60,6 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
 		 */
 		public function removeRoute($route) {
 			foreach ( $this->_routes as $i => $stored ) 
@@ -73,7 +73,7 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return multitype:string
 		 */
 		public function getRoutes() {
@@ -87,10 +87,10 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $controller
-		 * @param unknown $action
-		 * @param unknown $parameters
+		 *
+		 * @param unknown $controller        	
+		 * @param unknown $action        	
+		 * @param unknown $parameters        	
 		 * @throws Exception\Controller
 		 * @throws Exception\Action
 		 */
@@ -141,7 +141,6 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
 		 */
 		public function dispatch() {
 			$url = $this->url;

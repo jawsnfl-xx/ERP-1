@@ -25,6 +25,7 @@ namespace Framework\Router {
 		
 		/**
 		 * (non-PHPdoc)
+		 * 
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		public function _getExceptionForImplementation($method) {

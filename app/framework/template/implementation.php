@@ -7,15 +7,15 @@ namespace Framework\Template {
 	use Framework\Template\Exception as Exception;
 
 	/**
-	 * 
-	 * @author Marcin Pyrka
 	 *
+	 * @author Marcin Pyrka
+	 *        
 	 */
 	class Implementation extends Base {
 		
 		/**
-		 * 
-		 * @param unknown $node
+		 *
+		 * @param unknown $node        	
 		 * @return NULL
 		 */
 		protected function _handler($node) {
@@ -29,9 +29,9 @@ namespace Framework\Template {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $node
-		 * @param unknown $content
+		 *
+		 * @param unknown $node        	
+		 * @param unknown $content        	
 		 * @throws Exception\Implementation
 		 * @return mixed
 		 */
@@ -51,9 +51,9 @@ namespace Framework\Template {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $source
-		 * @return NULL|multitype:Ambigous <NULL, unknown>
+		 *
+		 * @param unknown $source        	
+		 * @return NULL multitype:Ambigous unknown>
 		 */
 		public function match($source) {
 			$type = null;

@@ -47,6 +47,7 @@ namespace Framework\MySQL {
 		
 		/**
 		 * (non-PHPdoc)
+		 * 
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
@@ -54,9 +55,9 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $value
-		 * @return string|number
+		 *
+		 * @param unknown $value        	
+		 * @return string number
 		 */
 		protected function _quote($value) {
 			if (is_string ( $value )) {
@@ -81,9 +82,9 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $from
-		 * @param unknown $fields
+		 *
+		 * @param unknown $from        	
+		 * @param unknown $fields        	
 		 * @throws Exception\Argument
 		 * @return \Framework\MySQL\Query
 		 */
@@ -102,10 +103,10 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $join
-		 * @param unknown $on
-		 * @param unknown $fields
+		 *
+		 * @param unknown $join        	
+		 * @param unknown $on        	
+		 * @param unknown $fields        	
 		 * @throws Exception\Argument
 		 * @return \Framework\MySQL\Query
 		 */
@@ -126,9 +127,9 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $limit
-		 * @param number $page
+		 *
+		 * @param unknown $limit        	
+		 * @param number $page        	
 		 * @throws Exception\Argument
 		 * @return \Framework\MySQL\Query
 		 */
@@ -142,9 +143,9 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $order
-		 * @param string $direction
+		 *
+		 * @param unknown $order        	
+		 * @param string $direction        	
 		 * @throws Exception\Argument
 		 * @return \Framework\MySQL\Query
 		 */
@@ -158,7 +159,7 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @throws Exception\Argument
 		 * @return \Framework\MySQL\Query
 		 */
@@ -176,7 +177,7 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return string
 		 */
 		protected function _buildSelect() {
@@ -220,8 +221,8 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $data
+		 *
+		 * @param unknown $data        	
 		 * @return string
 		 */
 		protected function _buildInsert($data) {
@@ -238,8 +239,8 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $data
+		 *
+		 * @param unknown $data        	
 		 * @return string
 		 */
 		protected function _buildUpdate($data) {
@@ -264,7 +265,7 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return string
 		 */
 		protected function _buildDelete() {
@@ -284,8 +285,8 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $data
+		 *
+		 * @param unknown $data        	
 		 * @throws Exception\Sql
 		 * @return number
 		 */
@@ -307,7 +308,7 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @throws Exception\Sql
 		 */
 		public function delete() {
@@ -320,7 +321,7 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return unknown
 		 */
 		public function first() {
@@ -339,7 +340,7 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return \Framework\MySQL\unknown
 		 */
 		public function count() {
@@ -367,7 +368,7 @@ namespace Framework\MySQL {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @throws Exception\Sql
 		 * @return multitype:NULL
 		 */

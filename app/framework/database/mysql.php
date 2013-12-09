@@ -7,14 +7,14 @@ namespace Framework\Database {
 	use Framework\ArrayMethods as ArrayMethods;
 
 	/**
-	 * 
-	 * @author Marcin Pyrka
 	 *
+	 * @author Marcin Pyrka
+	 *        
 	 */
 	class MySQL extends Database {
 		
 		/**
-		 * 
+		 *
 		 * @var unknown
 		 */
 		protected $_service;
@@ -28,15 +28,14 @@ namespace Framework\Database {
 		public $_query;
 		
 		/**
-		 * 
 		 */
 		public function query() {
 			// $this->_query = new Database\Query();
 		}
 		
 		/**
-		 * 
-		 * @param unknown $_options
+		 *
+		 * @param unknown $_options        	
 		 * @throws Exception\Service
 		 * @return \Framework\Database\MySQL
 		 */
@@ -50,45 +49,42 @@ namespace Framework\Database {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $sql
+		 *
+		 * @param unknown $sql        	
 		 */
 		public function execute($sql) {
 			return $this->_service->query ( $sql );
 		}
 		
 		/**
-		 * 
-		 * @param unknown $value
+		 *
+		 * @param unknown $value        	
 		 */
 		public function escape($value) {
 			return $this->_service->real_escape_string ( $value );
 		}
 		
 		/**
-		 * 
 		 */
 		public function getLastInsertId() {
 			return $this->_service->insert_id;
 		}
 		
 		/**
-		 * 
 		 */
 		public function getAffectedRows() {
 			return $this->_service->affected_rows;
 		}
 		
 		/**
-		 * 
 		 */
 		public function getLastError() {
 			return $this->_service->error;
 		}
 		
 		/**
-		 * 
-		 * @param unknown $sql
+		 *
+		 * @param unknown $sql        	
 		 * @return multitype:NULL
 		 */
 		public function fetch_array($sql) {

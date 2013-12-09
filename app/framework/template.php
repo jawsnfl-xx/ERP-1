@@ -36,6 +36,7 @@ namespace Framework {
 		
 		/**
 		 * (non-PHPdoc)
+		 * 
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		public function _getExceptionForImplementation($method) {
@@ -43,9 +44,9 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $source
-		 * @param unknown $expression
+		 *
+		 * @param unknown $source        	
+		 * @param unknown $expression        	
 		 * @return multitype:unknown
 		 */
 		protected function _arguments($source, $expression) {
@@ -74,9 +75,9 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $source
-		 * @return boolean|multitype:boolean NULL unknown |multitype:boolean Ambigous <NULL, unknown> Ambigous <unknown, string> unknown Ambigous <multitype:, \Framework\multitype:unknown, multitype:unknown >
+		 *
+		 * @param unknown $source        	
+		 * @return boolean multitype:boolean unknown |multitype:boolean Ambigous <NULL, unknown> Ambigous <unknown, string> unknown Ambigous <multitype:, \Framework\multitype:unknown, multitype:unknown >
 		 */
 		protected function _tag($source) {
 			$tag = null;
@@ -127,8 +128,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $source
+		 *
+		 * @param unknown $source        	
 		 * @return multitype:Ambigous <\Framework\multitype:, boolean> Ambigous <\Framework\multitype:, boolean, multitype:>
 		 */
 		protected function _array($source) {
@@ -168,8 +169,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $array
+		 *
+		 * @param unknown $array        	
 		 * @return multitype:multitype:
 		 */
 		protected function _tree($array) {
@@ -226,8 +227,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $tree
+		 *
+		 * @param unknown $tree        	
 		 * @return string
 		 */
 		protected function _script($tree) {
@@ -248,8 +249,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $template
+		 *
+		 * @param unknown $template        	
 		 * @throws Exception\Implementation
 		 * @return \Framework\Template
 		 */
@@ -265,8 +266,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $data
+		 *
+		 * @param unknown $data        	
 		 * @throws Exception\Parser
 		 */
 		public function process($data = array()) {

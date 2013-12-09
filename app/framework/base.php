@@ -49,8 +49,8 @@ namespace Framework {
 			
 			/**
 			 * @TODO:
-			 * 		- opisać działanie $getMatches
-			 * 		- ------||------   $setMatches
+			 * - opisać działanie $getMatches
+			 * - ------||------ $setMatches
 			 */
 			$getMatches = StringMethods::match ( $name, "^get([a-zA-Z0-9]+)$" );
 			if (sizeof ( $getMatches ) > 0) {
