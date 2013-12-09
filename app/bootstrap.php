@@ -1,7 +1,8 @@
 <?php
 
 /**
- * 
+ * Inicjalizacja koncuguracji.
+ * @TODO przenieść wszystkie stałe i zmienne do plików *.ini.
  */
 $configuration = new Framework\Configuration ( array (
 		"type" => "ini" 
