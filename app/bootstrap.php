@@ -42,13 +42,6 @@ $parsed = $configuration->parse ( 'configuration/default_config' );
  * $router->dispatch ();
  */
 
-/**
- * $database = new Framework\MySQL( );
- * $database->initialize( 'localhost', 'root', '', 'mysql');
- * $data = $database->fetch_array( 'SELECT * FROM `help_topic` LIMIT 0 , 3' );
- * var_dump( $data );
- */
-
 $database = new Framework\Database ();
 
 $database->_options = array (
@@ -56,15 +49,37 @@ $database->_options = array (
 				"host" => "localhost",
 				"username" => "root",
 				"password" => "",
-				"schema" => "test",
+				"schema" => "mysql",
 				"port" => "3306" 
 		) 
 );
-
 $database->initialize ();
-$database->_mysql->connect ( $database->_options );
-// $database->_mysql->connect( );
+// $data = $database->_mysql->fetch_array ( 'SHOW TABLES' );
+// var_dump ( $data);
 
-var_dump ( $database );
 
-# $all = $database->_mysql->query ();
+
+// Połączenie z bazą z którego rozwoju tymczasowo rezygnuję.
+// Wrócę do tematu w przyszłości.
+
+// $database = new Framework\Database ();
+
+// $database->_options = array (
+// 		"options" => array (
+// 				"host" => "localhost",
+// 				"username" => "root",
+// 				"password" => "",
+// 				"schema" => "test",
+// 				"port" => "3306" 
+// 		) 
+// );
+
+// $database->initialize ();
+// $database->_mysql->connect ( $database->_options );
+// // $database->_mysql->connect( );
+
+// $all = $database->_mysql->query ( 'SHOW TABLES' );
+
+// var_dump( $all );
+
+// // var_dump ( $database );

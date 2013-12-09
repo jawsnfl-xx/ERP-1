@@ -29,8 +29,12 @@ namespace Framework\Database {
 		
 		/**
 		 */
-		public function query() {
+		public function query($_query) {
 			// $this->_query = new Database\Query();
+			print 'asdasdasdasd';
+			// $this->_query->query();
+			// var_dump( $this->_query );
+			// var_dump( $_query );
 		}
 		
 		/**
@@ -40,6 +44,7 @@ namespace Framework\Database {
 		 * @return \Framework\Database\MySQL
 		 */
 		public function connect($_options) {
+			print 'asdasd';
 			$this->_service = new \MySQLi ( $_options ['options'] ['host'], $_options ['options'] ['username'], $_options ['options'] ['password'], $$_options ['options'] ['schema'], $_options ['options'] ['port'] );
 			if ($this->_service->connect_error) {
 				throw new Exception\Service ( "Unable to connect to service" );
@@ -88,13 +93,14 @@ namespace Framework\Database {
 		 * @return multitype:NULL
 		 */
 		public function fetch_array($sql) {
-			$result = $this->_service->query ( $sql );
-			$rows = array ();
+			var_dump ( $this->_service );
+			// $result = $this->_service->query ( $sql );
+			// $rows = array ();
 			
-			for($i = 0; $i < $result->num_rows; $i ++) {
-				$rows [] = $result->fetch_array ( MYSQLI_ASSOC );
-			}
-			return $rows;
+			// for($i = 0; $i < $result->num_rows; $i ++) {
+			// $rows [] = $result->fetch_array ( MYSQLI_ASSOC );
+			// }
+			// return $rows;
 		}
 	}
 }

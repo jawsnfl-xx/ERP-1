@@ -5,7 +5,7 @@
  * @TODO podpięcie tych informacji pod konfigurację
  * @TODO dodanie defaultowych wartości oraz narzędzia kontrolnego
  */
-error_reporting ( E_ALL );
+error_reporting ( E_ALL ^ E_NOTICE );
 ini_set ( "display_errors", 1 );
 
 /**

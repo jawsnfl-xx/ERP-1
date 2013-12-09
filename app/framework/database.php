@@ -38,6 +38,8 @@ namespace Framework {
 		 */
 		public function initialize() {
 			$this->_mysql = new Database\Mysql ();
+			$this->_mysql->query();
+			// return $dupa;
 		}
 	}
 }

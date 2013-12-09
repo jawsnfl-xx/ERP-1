@@ -1,6 +1,6 @@
 <?php
 
-namespace Framework\MySQL {
+namespace Framework\Database {
 
 	use Framework\Base as Base;
 	use Framework\ArrayMethods as ArrayMethods;
@@ -47,7 +47,7 @@ namespace Framework\MySQL {
 		
 		/**
 		 * (non-PHPdoc)
-		 * 
+		 *
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
@@ -372,8 +372,9 @@ namespace Framework\MySQL {
 		 * @throws Exception\Sql
 		 * @return multitype:NULL
 		 */
-		public function all() {
-			$sql = $this->_buildSelect ();
+		public function all($sql) {
+			// $sql = $this->_buildSelect ();
+			// print 'asd';
 			$result = $this->_service->execute ( $sql );
 			if ($result === false) {
 				$error = $this->_service->lastError;
@@ -384,6 +385,19 @@ namespace Framework\MySQL {
 				$rows [] = $result->fetch_array ( MYSQLI_ASSOC );
 			}
 			return $rows;
+		}
+		
+		/**
+		 * Test
+		 */
+		public function query($sql) {
+			// var_dump( $this );
+			print 'siusiek';
+			return $this->all ( $sql );
+		}
+		public function initialize() {
+			// return $this;
+			print 'kupa';
 		}
 	}
 }
