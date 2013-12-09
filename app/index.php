@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Włączenie raportowania błędów na ekran.
  * @TODO podpięcie tych informacji pod konfigurację
