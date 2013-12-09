@@ -70,7 +70,7 @@ namespace Framework\MySQL {
 		}
 		public function from($from, $fields = array("*")) {
 			print 'help_topic3 from';
-
+			
 			if (empty ( $from )) {
 				throw new Exception\Argument ( "Invalid argument" );
 			}
@@ -271,7 +271,6 @@ namespace Framework\MySQL {
 			}
 			return $row ["rows"];
 		}
-		
 		public function all() {
 			$sql = $this->_buildSelect ();
 			$result = $this->_service->execute ( $sql );
@@ -284,6 +283,6 @@ namespace Framework\MySQL {
 				$rows [] = $result->fetch_array ( MYSQLI_ASSOC );
 			}
 			return $rows;
-		}		
+		}
 	}
 }

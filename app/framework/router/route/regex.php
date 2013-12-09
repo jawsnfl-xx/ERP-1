@@ -15,10 +15,8 @@ namespace Framework\Router\Route {
 			preg_match_all ( "#^{$pattern}$#", $url, $values );
 			if (sizeof ( $values ) && sizeof ( $values [0] ) && sizeof ( $values [1] )) {
 				// values found, modify parameters and return
-				$derived = array_combine($this->keys, $values[1])
-				;
-				$this->parameters = array_merge($this->parameters, $derived)
-				;
+				$derived = array_combine ( $this->keys, $values [1] );
+				$this->parameters = array_merge ( $this->parameters, $derived );
 				return true;
 			}
 			return false;

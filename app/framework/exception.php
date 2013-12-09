@@ -11,6 +11,5 @@ namespace Framework {
 	 *        
 	 */
 	class Exception {
-
 	}
 }

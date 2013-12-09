@@ -7,26 +7,19 @@ namespace Framework\Database {
 	use Framework\ArrayMethods as ArrayMethods;
 
 	class MySQL extends Database {
-
 		protected $_service;
-/*		
-		protected $_host;
-		protected $_username;
-		protected $_password;
-		protected $_schema;
-		protected $_port;
-*/
+		/*
+		 * protected $_host; protected $_username; protected $_password; protected $_schema; protected $_port;
+		 */
 		protected $_isConnected = false;
-
+		
 		// public $_options;
 		public $_query;
-
 		public function query() {
-			//$this->_query =  new Database\Query();
+			// $this->_query = new Database\Query();
 		}
-
-		public function connect( $_options ) {
-			$this->_service = new \MySQLi ( $_options['options']['host'], $_options['options']['username'], $_options['options']['password'], $$_options['options']['schema'], $_options['options']['port'] );
+		public function connect($_options) {
+			$this->_service = new \MySQLi ( $_options ['options'] ['host'], $_options ['options'] ['username'], $_options ['options'] ['password'], $$_options ['options'] ['schema'], $_options ['options'] ['port'] );
 			if ($this->_service->connect_error) {
 				throw new Exception\Service ( "Unable to connect to service" );
 			}

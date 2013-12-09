@@ -6,11 +6,10 @@ namespace Framework {
 
 	class Core extends Base {
 		public function initialize() {
-			
-			/**
-			 * DO NOTHING !
-			 */
-			
+		
+		/**
+		 * DO NOTHING !
+		 */
 		}
 	}
 }
