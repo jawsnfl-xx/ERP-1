@@ -80,6 +80,13 @@ namespace Framework {
 			$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
 			return preg_split ( self::_normalize ( $pattern ), $string, $limit, $flags );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $string
+		 * @param unknown $mask
+		 * @return unknown|mixed
+		 */
 		public static function sanitize($string, $mask) {
 			if (is_array ( $mask )) {
 				$parts = $mask;
@@ -96,6 +103,12 @@ namespace Framework {
 			}
 			return $string;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $string
+		 * @return Ambigous <string, unknown>
+		 */
 		public static function unique($string) {
 			$unique = "";
 			$parts = str_split ( $string );
@@ -106,6 +119,14 @@ namespace Framework {
 			}
 			return $unique;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $string
+		 * @param unknown $substring
+		 * @param string $offset
+		 * @return number
+		 */
 		public function indexOf($string, $substring, $offset = null) {
 			$position = strpos ( $string, $substring, $offset );
 			if (! is_int ( $position )) {

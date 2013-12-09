@@ -6,7 +6,18 @@ namespace Framework\Template {
 	use Framework\StringMethods as StringMethods;
 	use Framework\Template\Exception as Exception;
 
+	/**
+	 * 
+	 * @author Marcin Pyrka
+	 *
+	 */
 	class Implementation extends Base {
+		
+		/**
+		 * 
+		 * @param unknown $node
+		 * @return NULL
+		 */
 		protected function _handler($node) {
 			if (empty ( $node ["delimiter"] )) {
 				return null;
@@ -16,6 +27,14 @@ namespace Framework\Template {
 			}
 			return $this->_map [$node ["delimiter"]] ["handler"];
 		}
+		
+		/**
+		 * 
+		 * @param unknown $node
+		 * @param unknown $content
+		 * @throws Exception\Implementation
+		 * @return mixed
+		 */
 		public function handle($node, $content) {
 			try {
 				$handler = $this->_handler ( $node );
@@ -30,6 +49,12 @@ namespace Framework\Template {
 				throw new Exception\Implementation ();
 			}
 		}
+		
+		/**
+		 * 
+		 * @param unknown $source
+		 * @return NULL|multitype:Ambigous <NULL, unknown>
+		 */
 		public function match($source) {
 			$type = null;
 			$delimiter = null;

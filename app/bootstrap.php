@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * 
+ */
 $configuration = new Framework\Configuration ( array (
 		"type" => "ini" 
 ) );

@@ -22,6 +22,11 @@ namespace Framework\Router {
 		 * @readwrite
 		 */
 		protected $_parameters = array ();
+		
+		/**
+		 * (non-PHPdoc)
+		 * @see \Framework\Base::_getExceptionForImplementation()
+		 */
 		public function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}

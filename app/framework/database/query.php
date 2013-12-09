@@ -44,9 +44,20 @@ namespace Framework\MySQL {
 		 * @read
 		 */
 		protected $_where = array ();
+		
+		/**
+		 * (non-PHPdoc)
+		 * @see \Framework\Base::_getExceptionForImplementation()
+		 */
 		protected function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $value
+		 * @return string|number
+		 */
 		protected function _quote($value) {
 			if (is_string ( $value )) {
 				$escaped = $this->connector->escape ( $value );
@@ -68,6 +79,14 @@ namespace Framework\MySQL {
 			}
 			return $this->connector->escape ( $value );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $from
+		 * @param unknown $fields
+		 * @throws Exception\Argument
+		 * @return \Framework\MySQL\Query
+		 */
 		public function from($from, $fields = array("*")) {
 			print 'help_topic3 from';
 			
@@ -81,6 +100,15 @@ namespace Framework\MySQL {
 			print 'help_topic4 from';
 			return $this;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $join
+		 * @param unknown $on
+		 * @param unknown $fields
+		 * @throws Exception\Argument
+		 * @return \Framework\MySQL\Query
+		 */
 		public function join($join, $on, $fields = array()) {
 			print 'help_topic4 join';
 			if (empty ( $join )) {
@@ -96,6 +124,14 @@ namespace Framework\MySQL {
 			print 'help_topic4 join';
 			return $this;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $limit
+		 * @param number $page
+		 * @throws Exception\Argument
+		 * @return \Framework\MySQL\Query
+		 */
 		public function limit($limit, $page = 1) {
 			if (empty ( $limit )) {
 				throw new Exception\Argument ( "Invalid argument" );
@@ -104,6 +140,14 @@ namespace Framework\MySQL {
 			$this->_offset = $limit * ($page - 1);
 			return $this;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $order
+		 * @param string $direction
+		 * @throws Exception\Argument
+		 * @return \Framework\MySQL\Query
+		 */
 		public function order($order, $direction = "asc") {
 			if (empty ( $order )) {
 				throw new Exception\Argument ( "Invalid argument" );
@@ -112,6 +156,12 @@ namespace Framework\MySQL {
 			$this->_direction = $direction;
 			return $this;
 		}
+		
+		/**
+		 * 
+		 * @throws Exception\Argument
+		 * @return \Framework\MySQL\Query
+		 */
 		public function where() {
 			$arguments = func_get_args ();
 			if (sizeof ( $arguments ) < 1) {
@@ -124,6 +174,11 @@ namespace Framework\MySQL {
 			$this->_where [] = call_user_func_array ( "sprintf", $arguments );
 			return $this;
 		}
+		
+		/**
+		 * 
+		 * @return string
+		 */
 		protected function _buildSelect() {
 			$fields = array ();
 			$where = $order = $limit = $join = "";
@@ -163,6 +218,12 @@ namespace Framework\MySQL {
 			}
 			return sprintf ( $template, $fields, $this->from, $join, $where, $order, $limit );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $data
+		 * @return string
+		 */
 		protected function _buildInsert($data) {
 			$fields = array ();
 			$values = array ();
@@ -175,6 +236,12 @@ namespace Framework\MySQL {
 			$values = join ( ", ", $values );
 			return sprintf ( $template, $this->from, $fields, $values );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $data
+		 * @return string
+		 */
 		protected function _buildUpdate($data) {
 			$parts = array ();
 			$where = $limit = "";
@@ -195,6 +262,11 @@ namespace Framework\MySQL {
 			}
 			return sprintf ( $template, $this->from, $parts, $where, $limit );
 		}
+		
+		/**
+		 * 
+		 * @return string
+		 */
 		protected function _buildDelete() {
 			$where = $limit = "";
 			$template = "DELETE FROM %s %s %s";
@@ -210,6 +282,13 @@ namespace Framework\MySQL {
 			}
 			return sprintf ( $template, $this->from, $where, $limit );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $data
+		 * @throws Exception\Sql
+		 * @return number
+		 */
 		public function save($data) {
 			$isInsert = sizeof ( $this->_where ) == 0;
 			if ($isInsert) {
@@ -226,6 +305,11 @@ namespace Framework\MySQL {
 			}
 			return 0;
 		}
+		
+		/**
+		 * 
+		 * @throws Exception\Sql
+		 */
 		public function delete() {
 			$sql = $this->_buildDelete ();
 			$result = $this->_connector->execute ( $sql );
@@ -234,6 +318,11 @@ namespace Framework\MySQL {
 			}
 			return $this->_connector->affectedRows;
 		}
+		
+		/**
+		 * 
+		 * @return unknown
+		 */
 		public function first() {
 			$limit = $this->_limit;
 			$offset = $this->_offset;
@@ -248,6 +337,11 @@ namespace Framework\MySQL {
 			}
 			return $first;
 		}
+		
+		/**
+		 * 
+		 * @return \Framework\MySQL\unknown
+		 */
 		public function count() {
 			$limit = $this->limit;
 			$offset = $this->offset;
@@ -271,6 +365,12 @@ namespace Framework\MySQL {
 			}
 			return $row ["rows"];
 		}
+		
+		/**
+		 * 
+		 * @throws Exception\Sql
+		 * @return multitype:NULL
+		 */
 		public function all() {
 			$sql = $this->_buildSelect ();
 			$result = $this->_service->execute ( $sql );

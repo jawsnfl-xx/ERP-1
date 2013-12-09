@@ -46,6 +46,12 @@ namespace Framework {
 			if (empty ( $this->_inspector )) {
 				throw new Exception ( "Call parent::__construct!" );
 			}
+			
+			/**
+			 * @TODO:
+			 * 		- opisać działanie $getMatches
+			 * 		- ------||------   $setMatches
+			 */
 			$getMatches = StringMethods::match ( $name, "^get([a-zA-Z0-9]+)$" );
 			if (sizeof ( $getMatches ) > 0) {
 				$normalized = lcfirst ( $getMatches [0] );

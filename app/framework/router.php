@@ -7,31 +7,60 @@ namespace Framework {
 	use Framework\Inspector as Inspector;
 	use Framework\Router\Exception as Exception;
 
+	/**
+	 * 
+	 * @author Marcin Pyrka
+	 *
+	 */
 	class Router extends Base {
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_url;
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_extension;
+		
 		/**
 		 * @read
 		 */
 		protected $_controller;
+		
 		/**
 		 * @read
 		 */
 		protected $_action;
+		
+		/**
+		 * 
+		 * @var unknown
+		 */
 		protected $_routes = array ();
+		
+		/**
+		 * (non-PHPdoc)
+		 * @see \Framework\Base::_getExceptionForImplementation()
+		 */
 		public function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $route
+		 * @return \Framework\Router
+		 */
 		public function addRoute($route) {
 			$this->_routes [] = $route;
 			return $this;
 		}
+		
+		/**
+		 * 
+		 */
 		public function removeRoute($route) {
 			foreach ( $this->_routes as $i => $stored ) 
 
@@ -42,6 +71,11 @@ namespace Framework {
 			}
 			return $this;
 		}
+		
+		/**
+		 * 
+		 * @return multitype:string
+		 */
 		public function getRoutes() {
 			$list = array ();
 			foreach ( $this->_routes as $route ) 
@@ -51,6 +85,15 @@ namespace Framework {
 			}
 			return $list;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $controller
+		 * @param unknown $action
+		 * @param unknown $parameters
+		 * @throws Exception\Controller
+		 * @throws Exception\Action
+		 */
 		protected function _pass($controller, $action, $parameters = array()) {
 			$name = ucfirst ( $controller );
 			$this->_controller = $controller;
@@ -96,6 +139,10 @@ namespace Framework {
 			// unset controller
 			Registry::erase ( "controller" );
 		}
+		
+		/**
+		 * 
+		 */
 		public function dispatch() {
 			$url = $this->url;
 			$parameters = array ();

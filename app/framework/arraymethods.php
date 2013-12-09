@@ -59,6 +59,12 @@ namespace Framework {
 			}
 			return $return;
 		}
+		
+		/**
+		 *
+		 * @param unknown $array        	
+		 * @return \stdClass
+		 */
 		public static function toObject($array) {
 			$result = new \stdClass ();
 			foreach ( $array as $key => $value ) {

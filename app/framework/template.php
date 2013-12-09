@@ -33,9 +33,21 @@ namespace Framework {
 		 * @read
 		 */
 		protected $_function;
+		
+		/**
+		 * (non-PHPdoc)
+		 * @see \Framework\Base::_getExceptionForImplementation()
+		 */
 		public function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $source
+		 * @param unknown $expression
+		 * @return multitype:unknown
+		 */
 		protected function _arguments($source, $expression) {
 			$args = $this->_array ( $expression, array (
 					$expression => array (
@@ -60,6 +72,12 @@ namespace Framework {
 			}
 			return $arguments;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $source
+		 * @return boolean|multitype:boolean NULL unknown |multitype:boolean Ambigous <NULL, unknown> Ambigous <unknown, string> unknown Ambigous <multitype:, \Framework\multitype:unknown, multitype:unknown >
+		 */
 		protected function _tag($source) {
 			$tag = null;
 			$arguments = array ();
@@ -107,6 +125,12 @@ namespace Framework {
 					"isolated" => (! empty ( $type ["tags"] ) ? $type ["tags"] [$tag] ["isolated"] : false) 
 			);
 		}
+		
+		/**
+		 * 
+		 * @param unknown $source
+		 * @return multitype:Ambigous <\Framework\multitype:, boolean> Ambigous <\Framework\multitype:, boolean, multitype:>
+		 */
 		protected function _array($source) {
 			$parts = array ();
 			$tags = array ();
@@ -142,6 +166,12 @@ namespace Framework {
 					"all" => ArrayMethods::clean ( $all ) 
 			);
 		}
+		
+		/**
+		 * 
+		 * @param unknown $array
+		 * @return multitype:multitype:
+		 */
 		protected function _tree($array) {
 			$root = array (
 					"children" => array () 
@@ -194,6 +224,12 @@ namespace Framework {
 			}
 			return $root;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @return string
+		 */
 		protected function _script($tree) {
 			$content = array ();
 			if (is_string ( $tree )) {
@@ -210,6 +246,13 @@ namespace Framework {
 			}
 			return implode ( $content );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $template
+		 * @throws Exception\Implementation
+		 * @return \Framework\Template
+		 */
 		public function parse($template) {
 			if (! is_a ( $this->_implementation, "Framework\Template\Implementation" )) {
 				throw new Exception\Implementation ();
@@ -220,6 +263,12 @@ namespace Framework {
 			$this->_function = create_function ( "\$_data", $this->code );
 			return $this;
 		}
+		
+		/**
+		 * 
+		 * @param unknown $data
+		 * @throws Exception\Parser
+		 */
 		public function process($data = array()) {
 			if ($this->_function == null) {
 				throw new Exception\Parser ();

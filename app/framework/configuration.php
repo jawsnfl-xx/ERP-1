@@ -6,6 +6,11 @@ namespace Framework {
 	use Framework\Configuration as Configuration;
 	use Framework\Configuration\Exception as Exception;
 
+	/**
+	 * 
+	 * @author Marcin Pyrka
+	 *
+	 */
 	class Configuration extends Base {
 		
 		/**
@@ -17,9 +22,20 @@ namespace Framework {
 		 * @readwrite
 		 */
 		protected $_options;
+		
+		/**
+		 * (non-PHPdoc)
+		 * @see \Framework\Base::_getExceptionForImplementation()
+		 */
 		protected function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
+		
+		/**
+		 * 
+		 * @throws Exception\Argument
+		 * @return \Framework\Configuration\Driver\Ini
+		 */
 		public function initialize() {
 			if (! $this->type) {
 				throw new Exception\Argument ( "Invalid type" );
