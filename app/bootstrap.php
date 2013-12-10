@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Inicjalizacja koncuguracji.
+ * Inicjalizacja konfiguracji.
  * @TODO przenieść wszystkie stałe i zmienne do plików *.ini.
  */
 $configuration = new Framework\Configuration ( array (
@@ -61,40 +61,43 @@ $parsed = $configuration->parse ( 'configuration/default_config' );
  * @author Marcin Pyrka
  * @name class Home extends Framework\Controller
  *      
+ *      
+ *       class Home extends Framework\Controller {
+ *      
+ *       /**
+ *       @once
+ *       @protected
+ *      
+ *       public function init() {
+ *       echo "init<br />";
+ *       }
+ *      
+ *       /**
+ *       @protected
+ *      
+ *       public function authenticate() {
+ *       echo "authenticate<br />";
+ *       }
+ *      
+ *       /**
+ *       @before init, authenticate,
+ *       @after notify
+ *      
+ *       public function index() {
+ *       echo "hello world!<br />";
+ *       }
+ *      
+ *       /**
+ *       @protected
+ *      
+ *       public function notify() {
+ *       echo "notify!<br />";
+ *       }
+ *       }
+ *      
+ *      
+ *      
  */
-class Home extends Framework\Controller {
-	
-	/**
-	 * @once
-	 * @protected
-	 */
-	public function init() {
-		echo "init<br />";
-	}
-	
-	/**
-	 * @protected
-	 */
-	public function authenticate() {
-		echo "authenticate<br />";
-	}
-	
-	/**
-	 * @before init, authenticate,
-	 * @after notify
-	 */
-	public function index() {
-		echo "hello world!<br />";
-	}
-	
-	/**
-	 * @protected
-	 */
-	public function notify() {
-		echo "notify!<br />";
-		var_dump( $this );
-	}
-}
 
 $session = new Framework\Session ();
 // Framework\Registry::set ( "session", $session->initialize () );
@@ -136,15 +139,16 @@ $database->_options = array (
 );
 
 $database->initialize ();
-// Pryzkad stosowania połączenia z bazą danych MySQL
-// $data = $database->_mysql->fetch_array ( 'DESCRIBE test1' );
-// var_dump ( $data );
+// Przykład stosowania połączenia z bazą danych MySQL
+$data = $database->_mysql->fetch_array ( 'SHOW TABLES' );
+// 	var_dump ( $data );
 
 // $user = new Test(array( "connector" => $database->_mysql ));
 
-$test = new Framework\Model\Test ( array (
-		"connector" => $database->_mysql 
-) );
+// print 'as';
+// $test = new Framework\Model\Test ( array (
+// 		"connector" => $database->_mysql 
+// ) );
 
 /*****************************************************************************/
 /**

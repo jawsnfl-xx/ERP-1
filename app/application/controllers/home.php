@@ -1,27 +1,43 @@
 <?php
+
 use Shared\Controller as Controller;
 use Framework\Registry as Registry;
 use Framework\RequestMethods as RequestMethods;
 
 /**
+ * 
+ * @author Marcin
  *
- * @author Marcin Pyrka
- *        
  */
-class Home extends Controller {
+class Home extends Framework\Controller {
 	
 	/**
+	 * @once
+	 * @protected
+	 */
+	public function init() {
+		echo "init<br />";
+	}
+	
+	/**
+	 * @protected
+	 */
+	public function authenticate() {
+		echo "authenticate<br />";
+	}
+	
+	/**
+	 * @before init, authenticate,
+	 * @after notify
 	 */
 	public function index() {
-		// $session = Registry::get ( "session" );
-		// $user = unserialize ( $session->get ( "user", null ) );
-		// if (empty ( $user )) {
-		// $user = new StdClass ();
-		// $user->first = "Mr.";
-		// $user->last = "Smith";
-		// }
-		// $this->getActionView ()->set ( "user", $user );
-		print 'Czesław... :D';
+		echo "hello world!<br />";
 	}
-}				
-					
+	
+	/**
+	 * @protected
+	 */
+	public function notify() {
+		echo "notify!<br />";
+	}
+}

@@ -60,6 +60,9 @@ namespace Framework {
 		}
 		
 		/**
+		 *
+		 * @param unknown $route        	
+		 * @return \Framework\Router
 		 */
 		public function removeRoute($route) {
 			foreach ( $this->_routes as $i => $stored ) 
@@ -99,7 +102,7 @@ namespace Framework {
 			$this->_controller = $controller;
 			$this->_action = $action;
 			
-			// var_dump ( $this );
+			var_dump ( $name );
 			try {
 				// $instance = new $name ( array ( "parameters" => $parameters ) );
 				// print $name;

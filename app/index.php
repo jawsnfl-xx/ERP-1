@@ -1,10 +1,8 @@
 ﻿<?php
+define ( "APP_PATH", dirname ( dirname ( __FILE__ ) ) );
 
 /**
  *
- *
- *
- */
 try {
 	/**
 	 * Pędzimy dalej z rozwojem develop
@@ -68,9 +66,12 @@ try {
 	/**
 	 */
 	require_once ('bootstrap.php');
-} catch ( Exception $e ) {
-	// list exceptions
 	
+	/**
+} catch ( Exception $e ) {
+	
+	/**
+	 
 	$exceptions = array (
 			"500" => array (
 					"Framework\Cache\Exception",
@@ -128,8 +129,13 @@ try {
 					"Framework\Router\Exception\Controller" 
 			) 
 	);
+	
+	/**
+	 
 	$exception = get_class ( $e );
-	// attempt to find the approapriate template, and render
+	
+	/**
+	 
 	foreach ( $exceptions as $template => $classes ) {
 		foreach ( $classes as $class ) {
 			if ($class == $exception) {
@@ -139,8 +145,13 @@ try {
 			}
 		}
 	}
-	// render fallback template
+	
+	/**
+	 
 	header ( "Content-type: text/html" );
 	echo "An error occurred.";
 	exit ();
 }
+
+
+*/
