@@ -22,6 +22,7 @@ namespace Framework\Router\Route {
 		 * @return boolean
 		 */
 		public function matches($url) {
+			print 'dydki';
 			$pattern = $this->pattern;
 			// check values
 			preg_match_all ( "#^{$pattern}$#", $url, $values );

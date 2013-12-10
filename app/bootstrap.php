@@ -99,23 +99,46 @@ $parsed = $configuration->parse ( 'configuration/default_config' );
  *      
  */
 
-$session = new Framework\Session ();
+// $session = new Framework\Session ();
 // Framework\Registry::set ( "session", $session->initialize () );
 
-$router = new Framework\Router ();
-$router->addRoute ( new Framework\Router\Route\Simple ( array (
-		"pattern" => ":name/profile",
-		"controller" => "home",
-		"action" => "index" 
-) ) );
+// $router = new Framework\Router ();
+// $router->addRoute ( new Framework\Router\Route\Simple ( array (
+// "pattern" => ":name/profile",
+// "controller" => "home",
+// "action" => "index"
+// ) ) );
 
-include ("routes.php");
+// include ("routes.php");
+// $router = new Framework\Router ();
 
+$router = new Framework\Router ( array (
+		
+// 		"url" => "home/index",
+		"url" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "home/index",
+		"extension" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "html" 
+) );
 // $router->addRoute = new Framework\Router ( array (
 // "url" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "home/index",
 // "extension" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "html"
 // ) );
-$router->url = "chris/profile";
+
+// $router->addRoute ( new Framework\Router\Route\Simple ( array (
+// "pattern" => ":name/profile",
+// "controller" => "home",
+// "action" => "index"
+// ) ) );
+// $router->addRoute ( new Framework\Router\Route\Simple ( array (
+// "pattern" => ":name/profile",
+// "controller" => "home",
+// "action" => "index"
+// ) ) );
+
+
+// var_dump ( $router );
+
+
+// $router->url = "chris/profile";
 $router->dispatch ();
 
 /**
@@ -126,21 +149,21 @@ $router->dispatch ();
  * @author Marcin Pyrka
  * @name $database
  */
-$database = new Framework\Database ();
+// $database = new Framework\Database ();
 
-$database->_options = array (
-		"options" => array (
-				"host" => "localhost",
-				"username" => "root",
-				"password" => "",
-				"schema" => "test",
-				"port" => "3306" 
-		) 
-);
+// $database->_options = array (
+// 		"options" => array (
+// 				"host" => "localhost",
+// 				"username" => "root",
+// 				"password" => "",
+// 				"schema" => "test",
+// 				"port" => "3306" 
+// 		) 
+// );
 
-$database->initialize ();
-// Przykład stosowania połączenia z bazą danych MySQL
-$data = $database->_mysql->fetch_array ( 'SHOW TABLES' );
+// $database->initialize ();
+// // Przykład stosowania połączenia z bazą danych MySQL
+// $data = $database->_mysql->fetch_array ( 'SHOW TABLES' );
 // 	var_dump ( $data );
 
 // $user = new Test(array( "connector" => $database->_mysql ));

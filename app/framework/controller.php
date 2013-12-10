@@ -47,12 +47,28 @@ namespace Framework {
 		 * * @readwrite
 		 */
 		protected $_defaultContentType = "text/html";
+		
+		/**
+		 * (non-PHPdoc)
+		 * 
+		 * @see \Framework\Base::_getExceptionForImplementation()
+		 */
 		protected function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
+		
+		/**
+		 *
+		 * @return \Framework\Controller\Exception\Argument
+		 */
 		protected function _getExceptionForArgument() {
 			return new Exception\Argument ( "Invalid argument" );
 		}
+		
+		/**
+		 *
+		 * @throws View\Exception\Renderer
+		 */
 		public function render() {
 			$defaultContentType = $this->getDefaultContentType ();
 			$results = null;
@@ -79,7 +95,14 @@ namespace Framework {
 				throw new View\Exception\Renderer ( "Invalid layout/template syntax" );
 			}
 		}
+		
+		/**
+		 *
+		 * @param unknown $options        	
+		 */
 		public function __construct($options = array()) {
+			print 'asd';
+			// print 'dasdasd';
 			parent::__construct ( $options );
 			if ($this->getWillRenderLayoutView ()) {
 				$defaultPath = $this->getDefaultPath ();
@@ -100,6 +123,9 @@ namespace Framework {
 				$this->setActionView ( $view );
 			}
 		}
+		
+		/**
+		 */
 		public function __destruct() {
 			$this->render ();
 		}

@@ -2,7 +2,7 @@
 
 /**
  *
- */
+ *
 $routes = array (
 		array (
 				"pattern" => "register",
@@ -53,11 +53,14 @@ $routes = array (
 );
 
 /**
- */
+ *
 foreach ( $routes as $route ) {
 	$router->addRoute ( new Framework\Router\Route\Simple ( $route ) );
 }
 
 /**
- */
+ *
 unset ( $routes );
+
+
+*/

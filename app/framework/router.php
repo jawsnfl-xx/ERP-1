@@ -102,6 +102,7 @@ namespace Framework {
 			$this->_controller = $controller;
 			$this->_action = $action;
 			
+			// var_dump ( $this );
 			var_dump ( $name );
 			try {
 				// $instance = new $name ( array ( "parameters" => $parameters ) );
@@ -151,18 +152,26 @@ namespace Framework {
 		public function dispatch() {
 			$url = $this->url;
 			$parameters = array ();
-			$controller = "index";
+			$controller = "home";
 			$action = "index";
-			foreach ( $this->_routes as $route ) {
-				$matches = $route->matches ( $url );
-				if ($matches) {
-					$controller = $route->controller;
-					$action = $route->action;
-					$parameters = $route->parameters;
-					$this->_pass ( $controller, $action, $parameters );
-					return;
-				}
-			}
+			
+			// var_dump( $url );
+			// foreach ( $this->_routes as $route ) {
+			
+			// var_dump ( $route );
+			// $matches = $route->matches ( $url );
+			
+			// print 'kupa';
+			
+			// if ($matches) {
+			// $controller = $route->controller;
+			// $action = $route->action;
+			// $parameters = $route->parameters;
+			// $this->_pass ( $controller, $action, $parameters );
+			// return;
+			// }
+			// }
+			
 			$parts = explode ( "/", trim ( $url, "/" ) );
 			if (sizeof ( $parts ) > 0) {
 				$controller = $parts [0];
