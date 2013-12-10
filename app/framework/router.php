@@ -42,7 +42,7 @@ namespace Framework {
 		
 		/**
 		 * (non-PHPdoc)
-		 * 
+		 *
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		public function _getExceptionForImplementation($method) {
@@ -98,11 +98,14 @@ namespace Framework {
 			$name = ucfirst ( $controller );
 			$this->_controller = $controller;
 			$this->_action = $action;
+			
+			// var_dump ( $this );
 			try {
-				$instance = new $name ( array (
-						"parameters" => $parameters 
-				) );
-				Registry::set ( "controller", $instance );
+				// $instance = new $name ( array ( "parameters" => $parameters ) );
+				// print $name;
+				$instance = new $name ();
+				// Registry::set ( "controller", $instance );
+				// $controller = $instance;
 			} catch ( \Exception $e ) {
 				throw new Exception\Controller ( "Controller {$name} not found" );
 			}
@@ -147,9 +150,7 @@ namespace Framework {
 			$parameters = array ();
 			$controller = "index";
 			$action = "index";
-			foreach ( $this->_routes as $route ) 
-
-			{
+			foreach ( $this->_routes as $route ) {
 				$matches = $route->matches ( $url );
 				if ($matches) {
 					$controller = $route->controller;
@@ -169,6 +170,7 @@ namespace Framework {
 					$parameters = array_slice ( $parts, 2 );
 				}
 			}
+			// var_dump ( $controller );
 			$this->_pass ( $controller, $action, $parameters );
 		}
 	}

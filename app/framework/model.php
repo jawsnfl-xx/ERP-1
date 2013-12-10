@@ -78,12 +78,12 @@ namespace Framework {
 			
 			if (! empty ( $raw )) {
 				$sql = "SELECT {$name} FROM {$this->table} LIMIT 1";
-				var_dump( $sql );
+				// var_dump( $sql );
 				
 				$previous = $this->connector->fetch_array ( $sql );
 				// $previous = $this->connector->query ()->from ( $this->table )->where ( "{$name} = ?", $this->$raw )->first ();
 				
-				var_dump( $previous );
+				// var_dump( $previous );
 				if ($previous == null) {
 					throw new Exception\Primary ( "Primary key value invalid" );
 				}
