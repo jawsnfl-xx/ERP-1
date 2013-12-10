@@ -70,6 +70,7 @@ namespace Framework {
 		 * @throws View\Exception\Renderer
 		 */
 		public function render() {
+			print 'public function render() <br />';
 			$defaultContentType = $this->getDefaultContentType ();
 			$results = null;
 			$doAction = $this->getWillRenderActionView () && $this->getActionView ();
@@ -101,7 +102,8 @@ namespace Framework {
 		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
-			print 'asd';
+			
+			print 'public function __construct($options = array()) <br />';
 			// print 'dasdasd';
 			parent::__construct ( $options );
 			if ($this->getWillRenderLayoutView ()) {
@@ -127,6 +129,8 @@ namespace Framework {
 		/**
 		 */
 		public function __destruct() {
+			
+			print 'public function __destruct() <br />';
 			$this->render ();
 		}
 	}

@@ -1,13 +1,12 @@
 <?php
-
 use Shared\Controller as Controller;
 use Framework\Registry as Registry;
 use Framework\RequestMethods as RequestMethods;
 
 /**
- * 
- * @author Marcin
  *
+ * @author Marcin
+ *        
  */
 class Home extends Framework\Controller {
 	

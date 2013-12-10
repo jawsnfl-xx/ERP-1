@@ -107,7 +107,10 @@ namespace Framework {
 			try {
 				// $instance = new $name ( array ( "parameters" => $parameters ) );
 				// print $name;
+				// $name = '\Framework\Controller\\' . $name;
 				$instance = new $name ();
+				var_dump ( $instance );
+				print 'asd';
 				// Registry::set ( "controller", $instance );
 				// $controller = $instance;
 			} catch ( \Exception $e ) {
@@ -155,7 +158,7 @@ namespace Framework {
 			$controller = "home";
 			$action = "index";
 			
-			// var_dump( $url );
+			var_dump ( $url );
 			// foreach ( $this->_routes as $route ) {
 			
 			// var_dump ( $route );

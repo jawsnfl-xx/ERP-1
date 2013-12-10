@@ -1,18 +1,16 @@
 <?php
-
 use Shared\Controller as Controller;
 use Framework\Registry as Registry;
 use Framework\RequestMethods as RequestMethods;
 
 /**
- * 
- * @author Marcin Pyrka
  *
+ * @author Marcin Pyrka
+ *        
  */
 class Users extends Controller {
 	
 	/**
-	 * 
 	 */
 	public function register() {
 		if (RequestMethods::post ( "register" )) {
@@ -53,7 +51,6 @@ class Users extends Controller {
 	}
 	
 	/**
-	 * 
 	 */
 	public function login() {
 		if (RequestMethods::post ( "login" )) {
@@ -89,7 +86,6 @@ class Users extends Controller {
 	}
 	
 	/**
-	 * 
 	 */
 	public function profile() {
 		$session = Registry::get ( "session" );

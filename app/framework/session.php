@@ -7,11 +7,10 @@ namespace Framework {
 	use Framework\Session as Session;
 	use Framework\Session\Exception as Exception;
 
-	
 	/**
-	 * 
-	 * @author Marcin Pyrka
 	 *
+	 * @author Marcin Pyrka
+	 *        
 	 */
 	class Session extends Base {
 		
@@ -27,6 +26,7 @@ namespace Framework {
 		
 		/**
 		 * (non-PHPdoc)
+		 * 
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
@@ -34,7 +34,7 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return \Framework\Session\Exception\Argument
 		 */
 		protected function _getExceptionForArgument() {
@@ -42,7 +42,7 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @throws Exception\Argument
 		 * @return \Framework\Session\Driver\Server
 		 */
