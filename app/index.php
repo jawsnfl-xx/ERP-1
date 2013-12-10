@@ -1,4 +1,10 @@
-<?php
+﻿<?php
+
+/**
+ *
+ *
+ *
+ */
 try {
 	/**
 	 * Pędzimy dalej z rozwojem develop
