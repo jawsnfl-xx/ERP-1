@@ -91,7 +91,7 @@ class Home extends Framework\Controller {
 	 * @protected
 	 */
 	public function notify() {
-		echo "notify<br />";
+		echo "notify!<br />";
 	}
 }
 
