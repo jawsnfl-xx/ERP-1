@@ -76,18 +76,23 @@ namespace Framework {
 			$name = $primary ["name"];
 			$table = $this->getTable ();
 			
-			if (! empty ( $this->$raw )) {
-				print 'as';
+			if (! empty ( $raw )) {
+				$sql = "SELECT {$name} FROM {$this->table} LIMIT 1";
+				var_dump( $sql );
+				
+				$previous = $this->connector->fetch_array ( $sql );
 				// $previous = $this->connector->query ()->from ( $this->table )->where ( "{$name} = ?", $this->$raw )->first ();
-				// if ($previous == null) {
-				// throw new Exception\Primary ( "Primary key value invalid" );
-				// }
-				// foreach ( $previous as $key => $value ) {
-				// $prop = "_{$key}";
-				// if (! empty ( $previous->$key ) && ! isset ( $this->$prop )) {
-				// $this->$key = $previous->$key;
-				// }
-				// }
+				
+				var_dump( $previous );
+				if ($previous == null) {
+					throw new Exception\Primary ( "Primary key value invalid" );
+				}
+				foreach ( $previous as $key => $value ) {
+					$prop = "_{$key}";
+					if (! empty ( $previous->$key ) && ! isset ( $this->$prop )) {
+						$this->$key = $previous->$key;
+					}
+				}
 			}
 			
 			// var_dump( $this );

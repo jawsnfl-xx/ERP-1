@@ -59,7 +59,7 @@ $database->initialize ();
 // $user = new Test(array( "connector" => $database->_mysql ));
 
 $test = new Framework\Model\Test ( array (
-		"connector" => $database->_mysql
+		"connector" => $database->_mysql 
 ) );
 
 /*****************************************************************************/

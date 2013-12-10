@@ -31,7 +31,6 @@ namespace Framework\Database {
 		 */
 		public function query($_query) {
 			// $this->_query = new Database\Query();
-			print 'asdasdasdasd';
 			// $this->_query->query();
 			// var_dump( $this->_query );
 			// var_dump( $_query );
