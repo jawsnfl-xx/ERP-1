@@ -69,7 +69,6 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
 		 */
 		public function load() {
 			$primary = $this->primaryColumn;
@@ -95,22 +94,19 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
 		 */
 		public function delete() {
 			$primary = $this->primaryColumn;
 			$raw = $primary ["raw"];
 			$name = $primary ["name"];
 			if (! empty ( $this->$raw )) {
-				return $this->connector->
-
-				query ()->from ( $this->table )->where ( "{$name} = ?", $this->$raw )->delete ();
+				return $this->connector->query ()->from ( $this->table )->where ( "{$name} = ?", $this->$raw )->delete ();
 			}
 		}
 		
 		/**
-		 * 
-		 * @param unknown $where
+		 *
+		 * @param unknown $where        	
 		 */
 		public static function deleteAll($where = array()) {
 			$instance = new static ();
@@ -122,7 +118,7 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @return unknown
 		 */
 		public function save() {
@@ -155,7 +151,6 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
 		 */
 		public function getTable() {
 			if (empty ( $this->_table )) {
@@ -166,7 +161,7 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @throws Exception\Connector
 		 */
 		public function getConnector() {
@@ -181,10 +176,10 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
+		 *
 		 * @throws Exception\Type
 		 * @throws Exception\Primary
-		 * @return NULL|\Framework\unknown
+		 * @return NULL \Framework\unknown
 		 */
 		public function getColumns() {
 			if (empty ( $_columns )) {
@@ -244,9 +239,9 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $name
-		 * @return \Framework\unknown|NULL
+		 *
+		 * @param unknown $name        	
+		 * @return \Framework\unknown NULL
 		 */
 		public function getColumn($name) {
 			if (! empty ( $this->_columns [$name] )) {
@@ -256,7 +251,6 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
 		 */
 		public function getPrimaryColumn() {
 			if (! isset ( $this->_primary )) {
@@ -273,11 +267,11 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $where
-		 * @param unknown $fields
-		 * @param É $order
-		 * @param string $direction
+		 *
+		 * @param unknown $where        	
+		 * @param unknown $fields        	
+		 * @param É $order        	
+		 * @param string $direction        	
 		 * @return Ambigous <unknown, NULL>
 		 */
 		public static function first($where = array(), $fields = array("*"), É $order = null, $direction = null) {
@@ -286,12 +280,12 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $where
-		 * @param unknown $fields
-		 * @param É $order
-		 * @param string $direction
-		 * @return unknown|NULL
+		 *
+		 * @param unknown $where        	
+		 * @param unknown $fields        	
+		 * @param É $order        	
+		 * @param string $direction        	
+		 * @return unknown NULL
 		 */
 		protected function _first($where = array(), $fields = array("*"), É $order = null, $direction = null) {
 			$query = $this->connector->query ()->from ( $this->table, $fields );
@@ -311,13 +305,13 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $where
-		 * @param unknown $fields
-		 * @param É $order
-		 * @param string $direction
-		 * @param string $limit
-		 * @param string $page
+		 *
+		 * @param unknown $where        	
+		 * @param unknown $fields        	
+		 * @param É $order        	
+		 * @param string $direction        	
+		 * @param string $limit        	
+		 * @param string $page        	
 		 * @return multitype:unknown
 		 */
 		public static function all($where = array(), $fields = array("*"), É $order = null, $direction = null, $limit = null, $page = null) {
@@ -326,13 +320,13 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $where
-		 * @param unknown $fields
-		 * @param É $order
-		 * @param string $direction
-		 * @param string $limit
-		 * @param string $page
+		 *
+		 * @param unknown $where        	
+		 * @param unknown $fields        	
+		 * @param É $order        	
+		 * @param string $direction        	
+		 * @param string $limit        	
+		 * @param string $page        	
 		 * @return multitype:unknown
 		 */
 		protected function _all($where = array(), $fields = array("*"), É $order = null, $direction = null, $limit = null, $page = null) {
@@ -355,8 +349,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $where
+		 *
+		 * @param unknown $where        	
 		 * @return number
 		 */
 		public static function count($where = array()) {
@@ -365,8 +359,8 @@ namespace Framework {
 		}
 		
 		/**
-		 * 
-		 * @param unknown $where
+		 *
+		 * @param unknown $where        	
 		 * @return number
 		 */
 		protected function _count($where = array()) {
