@@ -5,8 +5,20 @@ namespace Framework\Router\Route {
 	use Framework\Router as Router;
 	use Framework\ArrayMethods as ArrayMethods;
 
+	/**
+	 * 
+	 * @author Marcin Pyrka
+	 *
+	 */
 	class Simple extends Router\Route {
+		
+		/**
+		 * 
+		 * @param unknown $url
+		 * @return number|boolean
+		 */
 		public function matches($url) {
+			
 			$pattern = $this->pattern;
 			// get keys
 			preg_match_all ( "#:([a-zA-Z0-9]+)#", $pattern, $keys );

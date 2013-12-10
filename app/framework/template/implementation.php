@@ -74,6 +74,9 @@ namespace Framework\Template {
 			if ($type == null) {
 				return null;
 			}
+			/**
+			 * 
+			 */
 			return array (
 					"type" => $type,
 					"delimiter" => $delimiter 

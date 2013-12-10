@@ -12,42 +12,55 @@ namespace Framework\Database {
 		 * @readwrite
 		 */
 		protected $_connector;
+		
 		/**
 		 * @read
 		 */
 		protected $_from;
+		
 		/**
 		 * @read
 		 */
 		protected $_fields;
+		
 		/**
 		 * @read
 		 */
 		protected $_limit;
+		
 		/**
 		 * @read
 		 */
 		protected $_offset;
+		
 		/**
 		 * @read
 		 */
 		protected $_order;
+		
 		/**
 		 * @read
 		 */
 		protected $_direction;
+		
 		/**
 		 * @read
 		 */
 		protected $_join = array ();
+		
 		/**
 		 * @read
 		 */
 		protected $_where = array ();
 		
+		
 		/**
 		 * (non-PHPdoc)
 		 *
+		 * @see \Framework\Base::_getExceptionForImplementation()
+		 */
+		/**
+		 * (non-PHPdoc)
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {

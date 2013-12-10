@@ -10,37 +10,34 @@ $configuration = new Framework\Configuration ( array (
 $configuration = $configuration->initialize ();
 $parsed = $configuration->parse ( 'configuration/default_config' );
 
-/**
- * class Hello extends Framework\Base {
- * protected $_world;
- * public function setWorld($value) {
- * echo "your setter is being called!<br />";
- * $this->_world = $value;
- * }
- * public function getWorld() {
- * echo "your getter is being called!<br />";
- * return $this->_world;
- * }
- * }
- * $hello = new Hello ();
- * $hello->world = "foo!<br />";
- * echo $hello->world;
- *
- * class Home extends Framework\Controller {
- * public function index() {
- * echo "here<br />";
- * }
- * }
- *
- * $router = new Framework\Router ();
- * $router->addRoute ( new Framework\Router\Route\Simple ( array (
- * "pattern" => ":name/profile",
- * "controller" => "home",
- * "action" => "index"
- * ) ) );
- * $router->url = "chris/profile";
- * $router->dispatch ();
- */
+// class Hello extends Framework\Base {
+// protected $_world;
+// public function setWorld($value) {
+// echo "your setter is being called!<br />";
+// $this->_world = $value;
+// }
+// public function getWorld() {
+// echo "your getter is being called!<br />";
+// return $this->_world;
+// }
+// }
+// $hello = new Hello ();
+// $hello->world = "foo!<br />";
+// echo $hello->world;
+// class Home extends Framework\Controller {
+// public function index() {
+// echo "here<br />";
+// }
+// }
+
+// $router = new Framework\Router ();
+// $router->addRoute ( new Framework\Router\Route\Simple ( array (
+// "pattern" => ":name/profile",
+// "controller" => "home",
+// "action" => "index"
+// ) ) );
+// $router->url = "chris/profile";
+// $router->dispatch ();
 
 $database = new Framework\Database ();
 
@@ -49,15 +46,20 @@ $database->_options = array (
 				"host" => "localhost",
 				"username" => "root",
 				"password" => "",
-				"schema" => "mysql",
+				"schema" => "test",
 				"port" => "3306" 
 		) 
 );
+
 $database->initialize ();
-// $data = $database->_mysql->fetch_array ( 'SHOW TABLES' );
-// var_dump ( $data);
+// Pryzkad stosowania połączenia z bazą danych MySQL
+// $data = $database->_mysql->fetch_array ( 'DESCRIBE test1' );
+// var_dump ( $data );
 
-
+// $user = new Test(array( "connector" => $database->_mysql ));
+$test = new Framework\Model\Test ( array (
+		"connector" => $database->_mysql 
+) );
 
 // Połączenie z bazą z którego rozwoju tymczasowo rezygnuję.
 // Wrócę do tematu w przyszłości.

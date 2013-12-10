@@ -4,11 +4,23 @@ namespace Framework\Router\Route {
 
 	use Framework\Router as Router;
 
+	/**
+	 * 
+	 * @author Marcin Pyrka
+	 *
+	 */
 	class Regex extends Router\Route {
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_keys;
+		
+		/**
+		 * 
+		 * @param unknown $url
+		 * @return boolean
+		 */
 		public function matches($url) {
 			$pattern = $this->pattern;
 			// check values

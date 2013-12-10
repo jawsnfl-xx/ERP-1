@@ -5,7 +5,17 @@ namespace Framework\Template\Implementation {
 	use Framework\Template as Template;
 	use Framework\StringMethods as StringMethods;
 
+	/**
+	 * 
+	 * @author Marcin Pyrka
+	 *
+	 */
 	class Standard extends Template\Implementation {
+		
+		/**
+		 * 
+		 * @var unknown
+		 */
 		protected $_map = array (
 				"echo" => array (
 						"opener" => "{echo",
@@ -59,14 +69,35 @@ namespace Framework\Template\Implementation {
 						) 
 				) 
 		);
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return string
+		 */
 		protected function _echo($tree, $content) {
 			$raw = $this->_script ( $tree, $content );
 			return "\$_text[] = {$raw}";
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return string
+		 */
 		protected function _script($tree, $content) {
 			$raw = ! empty ( $tree ["raw"] ) ? $tree ["raw"] : "";
 			return "{$raw};";
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return Ambigous <string, unknown>
+		 */
 		protected function _each($tree, $content) {
 			$object = $tree ["arguments"] ["object"];
 			$element = $tree ["arguments"] ["element"];
@@ -74,6 +105,13 @@ namespace Framework\Template\Implementation {
 			{$content}
 		}" );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return Ambigous <string, unknown>
+		 */
 		protected function _for($tree, $content) {
 			$object = $tree ["arguments"] ["object"];
 			$element = $tree ["arguments"] ["element"];
@@ -82,17 +120,45 @@ namespace Framework\Template\Implementation {
 		{$content}
 		}" );
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return string
+		 */
 		protected function _if($tree, $content) {
 			$raw = $tree ["raw"];
 			return "if ({$raw}) {{$content}}";
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return string
+		 */
 		protected function _elif($tree, $content) {
 			$raw = $tree ["raw"];
 			return "elseif ({$raw}) {{$content}}";
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return string
+		 */
 		protected function _else($tree, $content) {
 			return "else {{$content}}";
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return string
+		 */
 		protected function _macro($tree, $content) {
 			$arguments = $tree ["arguments"];
 			$name = $arguments ["name"];
@@ -103,10 +169,24 @@ namespace Framework\Template\Implementation {
 			return implode(\$_text);
 		}";
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $content
+		 * @return string
+		 */
 		protected function _literal($tree, $content) {
 			$source = addslashes ( $tree ["source"] );
 			return "\$_text[] = \"{$source}\";";
 		}
+		
+		/**
+		 * 
+		 * @param unknown $tree
+		 * @param unknown $inner
+		 * @return string|unknown
+		 */
 		protected function _loop($tree, $inner) {
 			$number = $tree ["number"];
 			$object = $tree ["arguments"] ["object"];
