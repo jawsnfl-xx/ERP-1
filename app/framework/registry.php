@@ -37,7 +37,7 @@ namespace Framework {
 			if (isset ( self::$_instances [$key] )) {
 				return self::$_instances [$key];
 			}
-			return $default;
+			return $default; 
 		}
 		
 		/**

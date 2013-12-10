@@ -57,9 +57,17 @@ $database->initialize ();
 // var_dump ( $data );
 
 // $user = new Test(array( "connector" => $database->_mysql ));
+
 $test = new Framework\Model\Test ( array (
-		"connector" => $database->_mysql 
+		"connector" => $database->_mysql
 ) );
+
+/*****************************************************************************/
+/**
+ * @TODO naprawić rejestrowanie zmiennych
+ */
+// Registry::set("database", $database->initialize()->connect());
+// Registry::set ( "database", $database->_mysql );
 
 // Połączenie z bazą z którego rozwoju tymczasowo rezygnuję.
 // Wrócę do tematu w przyszłości.
@@ -83,5 +91,4 @@ $test = new Framework\Model\Test ( array (
 // $all = $database->_mysql->query ( 'SHOW TABLES' );
 
 // var_dump( $all );
-
 // // var_dump ( $database );

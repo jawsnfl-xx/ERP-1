@@ -140,6 +140,7 @@ namespace Framework {
 		 * @var unknown
 		 */
 		private static $_singular = array (
+				"(te)st$" => "\\1stes",
 				"(matr)ices$" => "\\1ix",
 				"(vert|ind)ices$" => "\\1ex",
 				"^(ox)en" => "\\1",
