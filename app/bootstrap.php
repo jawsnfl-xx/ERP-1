@@ -92,8 +92,12 @@ class Home extends Framework\Controller {
 	 */
 	public function notify() {
 		echo "notify!<br />";
+		var_dump( $this );
 	}
 }
+
+$session = new Framework\Session ();
+// Framework\Registry::set ( "session", $session->initialize () );
 
 $router = new Framework\Router ();
 $router->addRoute ( new Framework\Router\Route\Simple ( array (
@@ -101,6 +105,13 @@ $router->addRoute ( new Framework\Router\Route\Simple ( array (
 		"controller" => "home",
 		"action" => "index" 
 ) ) );
+
+include ("routes.php");
+
+// $router->addRoute = new Framework\Router ( array (
+// "url" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "home/index",
+// "extension" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "html"
+// ) );
 $router->url = "chris/profile";
 $router->dispatch ();
 
