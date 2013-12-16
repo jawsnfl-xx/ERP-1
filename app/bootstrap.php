@@ -7,6 +7,7 @@
 $configuration = new Framework\Configuration(array(
         "type" => "ini"
 ));
+
 $configuration = $configuration->initialize();
 $parsed = $configuration->parse('configuration/default_config');
 

@@ -108,20 +108,36 @@ namespace Framework
             $this->_controller = $controller;
             $this->_action = $action;
             
-            // var_dump ( $this );
-            var_dump($name);
+            // var_dump($this);
+            // var_dump($name);
+            
             try {
-                // $instance = new $name ( array ( "parameters" => $parameters )
-                // );
+                
+                print 'borowiki<br />';
+                $name = '\Framework\Controller\\' . $name;
+                
+                var_dump( $name );
+                
+                $instance = new $name(
+                        array(
+                                "parameters" => $parameters
+                        ));
                 // print $name;
-                // $name = '\Framework\Controller\\' . $name;
+                
                 $instance = new $name();
                 var_dump($instance);
                 print 'asd';
                 // Registry::set ( "controller", $instance );
                 // $controller = $instance;
             } catch (\Exception $e) {
-                throw new Exception\Controller("Controller {$name} not found");
+                
+                /**
+                 * UWAGA !!!
+                 * WYŁĄCZONY WYJĄTEK
+                 */
+                // throw new Exception\Controller("Controller {$name} not
+                // found");
+                print 'zupa z żółwia<br />';
             }
             if (! method_exists($instance, $action)) {
                 $instance->willRenderLayoutView = false;
@@ -151,10 +167,11 @@ namespace Framework
             };
             $hooks($methodMeta, "@before");
             
-            call_user_func_array(array(
-                    $instance,
-                    $action
-            ), is_array($parameters) ? $parameters : array());
+            call_user_func_array(
+                    array(
+                            $instance,
+                            $action
+                    ), is_array($parameters) ? $parameters : array());
             $hooks($methodMeta, "@after");
             // unset controller
             Registry::erase("controller");
@@ -169,7 +186,7 @@ namespace Framework
             $controller = "home";
             $action = "index";
             
-            var_dump($url);
+            // var_dump($url);
             // foreach ( $this->_routes as $route ) {
             
             // var_dump ( $route );

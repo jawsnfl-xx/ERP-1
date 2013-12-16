@@ -56,16 +56,17 @@ try {
     /**
      */
     spl_autoload_register('autoload');
-    spl_autoload_register(array(
-            'autoloader',
-            'autoload'
-    ));
+    spl_autoload_register(
+            array(
+                    'autoloader',
+                    'autoload'
+            ));
     
     /**
      * Wczytanie bootstrapu z katalogu aplikacji
      * a nie z bierzacego dla index.php
      */
-    require_once ('app/bootstrap.php');
+    require_once ('bootstrap.php');
 } catch (Exception $e) {
     
     /**
@@ -75,10 +76,10 @@ try {
     
     $exceptions = array(
             "500" => array(
-                    "Framework\Cache\Exception",
-                    "Framework\Cache\Exception\Argument",
-                    "Framework\Cache\Exception\Implementation",
-                    "Framework\Cache\Exception\Service",
+                    // "Framework\Cache\Exception",
+                    // "Framework\Cache\Exception\Argument",
+                    // "Framework\Cache\Exception\Implementation",
+                    // "Framework\Cache\Exception\Service",
                     "Framework\Configuration\Exception",
                     "Framework\Configuration\Exception\Argument",
                     "Framework\Configuration\Exception\Implementation",
@@ -130,6 +131,7 @@ try {
                     "Framework\Router\Exception\Controller"
             )
     );
+    
     $exception = get_class($e);
     
     /**
