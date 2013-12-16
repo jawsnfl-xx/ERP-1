@@ -7,7 +7,7 @@ namespace Application
      * @author Marcin
      *        
      */
-    class Controller extends Framework\Controller
+    class Controller extends \Framework\Controller
     {
 
         /**
@@ -19,8 +19,8 @@ namespace Application
             // parent::__construct($options);
             // $database = \Framework\Registry::get("database");
             // $database->connect();
-            print 
-                    'namespace Shared -> class Controller -> public function __construct<br />';
+            // print 'namespace Shared -> class Controller -> public function
+            // __construct<br />';
         }
     }
 }

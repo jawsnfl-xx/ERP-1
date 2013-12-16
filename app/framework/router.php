@@ -119,10 +119,10 @@ namespace Framework
                 
                 var_dump($name);
                 
-                $instance = new \Application\Controller\Home(
-                        array(
-                                "parameters" => $parameters
-                        ));
+                // $instance = new \Application\Controller\Home(
+                // array(
+                // "parameters" => $parameters
+                // ));
                 // print $name;
                 
                 $instance = new $name();
@@ -215,7 +215,7 @@ namespace Framework
                 }
             }
             // var_dump ( $controller );
-            $this->_pass($controller, $action, $parameters);
+            // $this->_pass($controller, $action, $parameters);
         }
     }
 }

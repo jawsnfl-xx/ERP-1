@@ -4,12 +4,12 @@
  * Inicjalizacja konfiguracji.
  * @TODO przenieść wszystkie stałe i zmienne do plików *.ini.
  */
-$configuration = new Framework\Configuration(array(
-        "type" => "ini"
-));
+// $configuration = new Framework\Configuration(array(
+// "type" => "ini"
+// ));
 
-$configuration = $configuration->initialize();
-$parsed = $configuration->parse('configuration/default_config');
+// $configuration = $configuration->initialize();
+// $parsed = $configuration->parse('configuration/default_config');
 
 /**
  * ****************************************************************************
@@ -113,13 +113,13 @@ $parsed = $configuration->parse('configuration/default_config');
 // include ("routes.php");
 // $router = new Framework\Router ();
 
-$router = new Framework\Router(
-        array(
-                
-                // "url" => "home/index",
-                "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
-                "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
-        ));
+// $router = new Framework\Router(
+// array(
+
+// // "url" => "home/index",
+// "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
+// "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
+// ));
 // $router->addRoute = new Framework\Router ( array (
 // "url" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "home/index",
 // "extension" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "html"
@@ -139,7 +139,7 @@ $router = new Framework\Router(
 // var_dump ( $router );
 
 // $router->url = "chris/profile";
-$router->dispatch();
+// $router->dispatch();
 
 /**
  * ****************************************************************************
@@ -152,28 +152,30 @@ $router->dispatch();
 // $database = new Framework\Database ();
 
 // $database->_options = array (
-// 		"options" => array (
-// 				"host" => "localhost",
-// 				"username" => "root",
-// 				"password" => "",
-// 				"schema" => "test",
-// 				"port" => "3306" 
-// 		) 
+// "options" => array (
+// "host" => "localhost",
+// "username" => "root",
+// "password" => "",
+// "schema" => "test",
+// "port" => "3306"
+// )
 // );
 
 // $database->initialize ();
 // // Przykład stosowania połączenia z bazą danych MySQL
 // $data = $database->_mysql->fetch_array ( 'SHOW TABLES' );
-// 	var_dump ( $data );
+// var_dump ( $data );
 
 // $user = new Test(array( "connector" => $database->_mysql ));
 
 // print 'as';
 // $test = new Framework\Model\Test ( array (
-// 		"connector" => $database->_mysql 
+// "connector" => $database->_mysql
 // ) );
 
-/*****************************************************************************/
+/**
+ * **************************************************************************
+ */
 /**
  * @TODO naprawić rejestrowanie zmiennych
  */
@@ -186,13 +188,13 @@ $router->dispatch();
 // $database = new Framework\Database ();
 
 // $database->_options = array (
-// 		"options" => array (
-// 				"host" => "localhost",
-// 				"username" => "root",
-// 				"password" => "",
-// 				"schema" => "test",
-// 				"port" => "3306" 
-// 		) 
+// "options" => array (
+// "host" => "localhost",
+// "username" => "root",
+// "password" => "",
+// "schema" => "test",
+// "port" => "3306"
+// )
 // );
 
 // $database->initialize ();
@@ -203,3 +205,11 @@ $router->dispatch();
 
 // var_dump( $all );
 // // var_dump ( $database );
+
+/**
+ * Testy bibliotek Application :[
+ */
+$controller = new Application\Controller(array(
+        'a' => 'a'
+));
+var_dump($controller);
