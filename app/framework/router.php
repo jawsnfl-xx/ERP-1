@@ -108,17 +108,18 @@ namespace Framework
             $this->_controller = $controller;
             $this->_action = $action;
             
-            // var_dump($this);
+            var_dump($this);
             // var_dump($name);
             
             try {
                 
                 print 'borowiki<br />';
-                $name = '\Framework\Controller\\' . $name;
+                // $name = 'Application\Controller\\' . $name;
+                $name = 'Application\Controller\Home';
                 
-                var_dump( $name );
+                var_dump($name);
                 
-                $instance = new $name(
+                $instance = new \Application\Controller\Home(
                         array(
                                 "parameters" => $parameters
                         ));
