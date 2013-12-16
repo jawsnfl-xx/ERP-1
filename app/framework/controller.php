@@ -118,31 +118,41 @@ namespace Framework
          */
         public function __construct ($options = array())
         {
-            print 'public function __construct($options = array()) <br />';
-            // print 'dasdasd';
-            parent::__construct($options);
-            if ($this->getWillRenderLayoutView()) {
-                $defaultPath = $this->getDefaultPath();
-                $defaultLayout = $this->getDefaultLayout();
-                $defaultExtension = $this->getDefaultExtension();
-                $view = new View(
-                        array(
-                                "file" => APP_PATH .
-                                         "/{$defaultPath}/{$defaultLayout}.{$defaultExtension}"
-                        ));
-                $this->setLayoutView($view);
-            }
-            if ($this->getWillRenderLayoutView()) {
-                $router = Registry::get("router");
-                $controller = $router->getController();
-                $action = $router->getAction();
-                $view = new View(
-                        array(
-                                "file" => APP_PATH .
-                                         "/{$defaultPath}/{$controller}/{$action}.{$defaultExtension}"
-                        ));
-                $this->setActionView($view);
-            }
+            // print 'public function __construct ( $options = array () ) <br
+            // />';
+            // parent::__construct($options);
+            // print 'asdasd1';
+            
+            // $dupa = $this->getWillRenderLayoutView();
+            var_dump($dupa);
+            
+            // if ($this->getWillRenderLayoutView()) {
+            print 'adasd';
+            $defaultPath = $this->getDefaultPath();
+            var_dump($this);
+            $defaultLayout = $this->getDefaultLayout();
+            $defaultExtension = $this->getDefaultExtension();
+            var_dump($this);
+            print 'kupotron';
+            $view = new View(
+                    array(
+                            "file" => APP_PATH .
+                                     "/{$defaultPath}/{$defaultLayout}.{$defaultExtension}"
+                    ));
+            $this->setLayoutView($view);
+            // }
+            print 'asdasd2';
+            // if ($this->getWillRenderActionView()) {
+            $router = Registry::get("router");
+            $controller = $router->getController();
+            $action = $router->getAction();
+            $view = new View(
+                    array(
+                            "file" => APP_PATH .
+                                     "/{$defaultPath}/{$controller}/{$action}.{$defaultExtension}"
+                    ));
+            $this->setActionView($view);
+            // }
         }
 
         /**
