@@ -2,16 +2,6 @@
 try {
 	
 	/**
-	 * Próba odzyskania repo brancha DEVELOP
-	 * :)
-	 * 
-	 */
-	/**
-	 * Pędzimy dalej z rozwojem develop
-	 * @TODO odizolowanie framework od application oraz librays
-	 */
-	
-	/**
 	 * Włączenie raportowania błędów na ekran.
 	 * @TODO podpięcie tych informacji pod konfigurację
 	 * @TODO dodanie defaultowych wartości oraz narzędzia kontrolnego
