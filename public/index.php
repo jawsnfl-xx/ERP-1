@@ -1,5 +1,11 @@
 <?php
 try {
+	
+	/**
+	 * Próba odzyskania repo brancha DEVELOP
+	 * :)
+	 * 
+	 */
 	/**
 	 * Pędzimy dalej z rozwojem develop
 	 * @TODO odizolowanie framework od application oraz librays
