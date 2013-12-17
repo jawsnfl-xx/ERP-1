@@ -65,10 +65,11 @@ namespace Framework
             $sanitized = StringMethods::sanitize($expression, "()[],.<>*$@");
             foreach ($tags as $i => $tag) {
                 $sanitized = str_replace($tag, "(.*)", $sanitized);
-                $tags[$i] = str_replace(array(
-                        "{",
-                        "}"
-                ), "", $tag);
+                $tags[$i] = str_replace(
+                        array(
+                                "{",
+                                "}"
+                        ), "", $tag);
             }
             if (preg_match("#{$sanitized}#", $source, $matches)) {
                 foreach ($tags as $i => $tag) {
@@ -262,8 +263,7 @@ namespace Framework
                 }
             }
             if (isset($tree["parent"])) {
-                return $this->_implementation->handle($tree, 
-                        implode($content));
+                return $this->_implementation->handle($tree, implode($content));
             }
             return implode($content);
         }

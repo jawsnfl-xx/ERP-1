@@ -1,15 +1,17 @@
 <?php
 
 /**
- * Testy bibliotek Application :[
+ * Bootstrap
+ * @version 0.2
+ * @author Marcin Pyrka
  */
-$controller = new Application\Controller(array(
-        'a' => 'a'
-));
-var_dump($controller);
-
 
 /**
- * 
- * NIe wiem dlaczego nie robi się synchro...
+ * Wywołanie Kontrolera dla Application\Controller
  */
+$controller = new Application\Controller();
+
+/**
+ * Zrzut zawartości i struktury Application\Controller dla $controller
+ */
+// var_dump($controller);

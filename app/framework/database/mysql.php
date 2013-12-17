@@ -49,8 +49,7 @@ namespace Framework\Database
             $this->_service = new \MySQLi($_options['options']['host'], 
                     $_options['options']['username'], 
                     $_options['options']['password'], 
-                    $_options['options']['schema'], 
-                    $_options['options']['port']);
+                    $_options['options']['schema'], $_options['options']['port']);
             if ($this->_service->connect_error) {
                 throw new Exception\Service("Unable to connect to service");
             }

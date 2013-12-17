@@ -60,7 +60,7 @@ namespace Framework\Database
          */
         /**
          * (non-PHPdoc)
-         * 
+         *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
         protected function _getExceptionForImplementation ($method)

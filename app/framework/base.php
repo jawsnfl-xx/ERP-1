@@ -22,12 +22,10 @@ namespace Framework
 
         /**
          *
-         * @param unknown $options            
+         * @param array $options            
          */
         public function __construct ($options = array())
         {
-            print 
-                    'namespace Framework -> class Base -> public function __construct <br />';
             $this->_inspector = new Inspector($this);
             if (is_array($options) || is_object($options)) {
                 foreach ($options as $key => $value) {

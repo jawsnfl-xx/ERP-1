@@ -37,8 +37,7 @@ namespace Framework\Router\Route
                 // unset the matched url
                 unset($values[0]);
                 // values found, modify parameters and return
-                $derived = array_combine($keys, 
-                        ArrayMethods::flatten($values));
+                $derived = array_combine($keys, ArrayMethods::flatten($values));
                 $this->parameters = array_merge($this->parameters, $derived);
                 return true;
             }

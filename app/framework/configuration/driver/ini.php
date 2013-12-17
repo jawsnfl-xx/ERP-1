@@ -15,8 +15,8 @@ namespace Framework\Configuration\Driver
                 if (empty($config[$parts[0]])) {
                     $config[$parts[0]] = array();
                 }
-                $config[$parts[0]] = $this->_pair($config[$parts[0]], 
-                        $parts[1], $value);
+                $config[$parts[0]] = $this->_pair($config[$parts[0]], $parts[1], 
+                        $value);
             } else {
                 $config[$key] = $value;
             }

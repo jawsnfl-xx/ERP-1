@@ -44,7 +44,8 @@ namespace Framework\Template
                         array(
                                 $this,
                                 $handler
-                        ), array(
+                        ), 
+                        array(
                                 $node,
                                 $content
                         ));

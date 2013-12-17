@@ -174,7 +174,7 @@ namespace Framework
                 $this->_table = strtolower(
                         StringMethods::singular(get_class($this)));
                 // $this->_table = str_replace ( 'framework\\model\\', '',
-            // $this->_table );
+                // $this->_table );
             }
             return $this->_table;
         }
