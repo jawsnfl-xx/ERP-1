@@ -1,4 +1,10 @@
 <?php
+
+
+/**
+ * Wyłączony try?
+ * Może dodać to gdzieś w configu? CO?
+ */
 // try {
     
     /**
