@@ -72,7 +72,7 @@ namespace Framework
 
         /**
          * KONIECZNIE NALEŻY DOPISAĆ TĘ METODĘ...
-         * 
+         *
          * @param unknown $array            
          * @param unknown $return            
          * @return unknown

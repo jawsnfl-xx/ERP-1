@@ -15,11 +15,11 @@ namespace Application\Controller
 
         public function __construct ()
         {
-            /**
-             * Nic nie robi (póki co...
-             * :D )
-             */
-            print RequestMethods::get("sample") . "<br />";
+        /**
+         * Nic nie robi (póki co...
+         * :D )
+         */
+            // print RequestMethods::get("sample") . "<br />";
         }
 
         /**
@@ -28,7 +28,7 @@ namespace Application\Controller
          */
         public function init ()
         {
-            echo "init<br />";
+            // echo "init<br />";
         }
 
         /**
@@ -36,7 +36,7 @@ namespace Application\Controller
          */
         public function authenticate ()
         {
-            echo "authenticate<br />";
+            // echo "authenticate<br />";
         }
 
         /**
@@ -45,7 +45,7 @@ namespace Application\Controller
          */
         public function index ()
         {
-            echo "hello world!<br />";
+            // echo "hello world!<br />";
         }
 
         /**
@@ -53,7 +53,7 @@ namespace Application\Controller
          */
         public function notify ()
         {
-            echo "notify!<br />";
+            // echo "notify!<br />";
         }
 
         public function sample ()

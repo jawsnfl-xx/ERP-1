@@ -15,37 +15,37 @@ namespace Application\Controller
 
         public function __construct ()
         {
-            /**
-             * Nic nie robi (póki co...
-             * :D )
-             */
-            print RequestMethods::get("sample");
-        }
-
         /**
-         * @once
-         * @protected
+         * Nic nie robi (póki co...
+         * :D )
          */
-        public function init ()
-        {
-            echo "init<br />";
+            // print RequestMethods::get("sample");
         }
-
-        /**
-         * @protected
-         */
-        public function authenticate ()
-        {
-            echo "authenticate<br />";
-        }
-
-        /**
-         * @before init, authenticate,
-         * @after notify
-         */
+        
+        // /**
+        // * @once
+        // * @protected
+        // */
+        // public function init ()
+        // {
+        // // echo "init<br />";
+        // }
+        
+        // /**
+        // * @protected
+        // */
+        // public function authenticate ()
+        // {
+        // // echo "authenticate<br />";
+        // }
+        
+        // /**
+        // * @before init, authenticate,
+        // * @after notify
+        // */
         public function index ()
         {
-            echo "hello world!<br />";
+            // echo "hello world!<br />";
         }
 
         /**
@@ -53,7 +53,7 @@ namespace Application\Controller
          */
         public function notify ()
         {
-            echo "notify!<br />";
+            // echo "notify!<br />";
         }
     }
 }

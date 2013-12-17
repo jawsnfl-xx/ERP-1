@@ -96,10 +96,10 @@ namespace Framework
             // var_dump($this->_actionView);
             try {
                 if ($doAction) {
-//                     var_dump($this->_actionView);
+                    // var_dump($this->_actionView);
                     $view = $this->_actionView;
                     $results = $view->render();
-//                     var_dump($results);
+                    // var_dump($results);
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                     // print 'asd1';
