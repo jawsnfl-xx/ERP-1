@@ -10,7 +10,7 @@ namespace Application\Controller
      * @author Marcin
      *        
      */
-    class Home extends Controller
+    class Setup extends Controller
     {
 
         public function __construct ()
@@ -19,7 +19,7 @@ namespace Application\Controller
              * Nic nie robi (póki co...
              * :D )
              */
-            print RequestMethods::get("sample");
+            print RequestMethods::get("sample") . "<br />";
         }
 
         /**
@@ -54,6 +54,24 @@ namespace Application\Controller
         public function notify ()
         {
             echo "notify!<br />";
+        }
+
+        public function sample ()
+        {
+            
+            // print 'nic nie rtoib';
+        }
+
+        public function begin ()
+        {
+            
+            // print 'nic nie rtoib';
+        }
+
+        public function second ()
+        {
+            
+            // print 'nic nie rtoib';
         }
     }
 }
