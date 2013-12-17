@@ -124,34 +124,36 @@ namespace Framework
             // $dupa = $this->getWillRenderLayoutView();
             // var_dump($dupa);
             
-            // if ($this->getWillRenderLayoutView()) {
-            $defaultPath = $this->getDefaultPath();
-            // var_dump($this);
-            $defaultLayout = $this->getDefaultLayout();
-            $defaultExtension = $this->getDefaultExtension();
-            // var_dump($this);
-            // print 'kupotron';
-            $view = new View(
-                    array(
-                            "file" => APP_PATH .
-                                     "/{$defaultPath}/{$defaultLayout}.{$defaultExtension}"
-                    ));
-            $this->setLayoutView($view);
-            // }
-            // if ($this->getWillRenderActionView()) {
-            // $router = Registry::get("router");
-            $router = new \Framework\Router();
-            $controller = $router->getController();
-            $action = $router->getAction();
-            
-            $view = new View(
-                    array(
-                            "file" => APP_PATH .
-                                     "/{$defaultPath}/{$controller}/{$action}.{$defaultExtension}"
-                    ));
-            $this->setActionView($view);
-            // }
+            if ($this->getWillRenderLayoutView()) {
+                $defaultPath = $this->getDefaultPath();
+                $defaultLayout = $this->getDefaultLayout();
+                $defaultExtension = $this->getDefaultExtension();
+                $view = new View(
+                        array(
+                                "file" => "/{$defaultPath}/{$defaultLayout}.{$defaultExtension}"
+                        ));
+                $this->setLayoutView($view);
+            }
+            if ($this->getWillRenderActionView()) {
+                $router = new \Framework\Router(
+                        array(
+                                // "url" => "home/index",
+                                "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
+                                "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
+                        ));
+                $router->dispatch();
+                var_dump($router);
+                $controller = $router->getController();
+                $action = $router->getAction();
+                $view = new View(
+                        array(
+                                "file" => "/{$defaultPath}/{$controller}/{$action}.{$defaultExtension}"
+                        ));
+                $this->setActionView($view);
+            }
             // print 'qwe';
+            
+            // var_dump($this);
         }
 
         /**

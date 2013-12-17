@@ -108,26 +108,21 @@ namespace Framework
             $this->_controller = $controller;
             $this->_action = $action;
             
-            var_dump($this);
+            // var_dump($this);
             // var_dump($name);
             
             try {
                 
-                print 'borowiki<br />';
                 // $name = 'Application\Controller\\' . $name;
-                $name = 'Application\Controller\Home';
-                
-                var_dump($name);
-                
-                // $instance = new \Application\Controller\Home(
-                // array(
-                // "parameters" => $parameters
-                // ));
-                // print $name;
-                
+                $name = ucfirst($name);
+                $name = 'Application\Controllers\\' . $name;
+                // print 'asd';
+                print $name;
                 $instance = new $name();
+                print 'asdasd';
+                // $instance = new $name();
                 var_dump($instance);
-                print 'asd';
+                // print 'asd';
                 // Registry::set ( "controller", $instance );
                 // $controller = $instance;
             } catch (\Exception $e) {
@@ -188,21 +183,21 @@ namespace Framework
             $action = "index";
             
             // var_dump($url);
-            // foreach ( $this->_routes as $route ) {
-            
-            // var_dump ( $route );
-            // $matches = $route->matches ( $url );
-            
-            // print 'kupa';
-            
-            // if ($matches) {
-            // $controller = $route->controller;
-            // $action = $route->action;
-            // $parameters = $route->parameters;
-            // $this->_pass ( $controller, $action, $parameters );
-            // return;
-            // }
-            // }
+            foreach ($this->_routes as $route) {
+                
+                // var_dump ( $route );
+                $matches = $route->matches($url);
+                
+                // print 'kupa';
+                
+                if ($matches) {
+                    $controller = $route->controller;
+                    $action = $route->action;
+                    $parameters = $route->parameters;
+                    $this->_pass($controller, $action, $parameters);
+                    return;
+                }
+            }
             
             $parts = explode("/", trim($url, "/"));
             if (sizeof($parts) > 0) {
@@ -215,7 +210,7 @@ namespace Framework
                 }
             }
             // var_dump ( $controller );
-            // $this->_pass($controller, $action, $parameters);
+            $this->_pass($controller, $action, $parameters);
         }
     }
 }

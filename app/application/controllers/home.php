@@ -8,7 +8,7 @@ use Framework\RequestMethods as RequestMethods;
  * @author Marcin
  *        
  */
-class Home extends Framework\Controller
+class Home extends Controller
 {
 
     /**
