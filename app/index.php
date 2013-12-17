@@ -1,5 +1,5 @@
 <?php
-
+define('APP_DIR', dirname(realpath(__FILE__)));
 /**
  * Wyłączony try?
  * Może dodać to gdzieś w configu? CO?
@@ -40,7 +40,9 @@ function autoload ($class)
             return;
         }
     }
-    throw new Exception("{$class} not found");
+    
+    var_dump($class);
+    // throw new Exception("{$class} not found");
 }
 
 /**

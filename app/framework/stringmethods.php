@@ -141,7 +141,7 @@ namespace Framework
          * @param string $offset            
          * @return number
          */
-        public function indexOf ($string, $substring, $offset = null)
+        public static function indexOf ($string, $substring, $offset = null)
         {
             $position = strpos($string, $substring, $offset);
             if (! is_int($position)) {

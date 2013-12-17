@@ -1,5 +1,5 @@
 <?php
-use Shared\Controller as Controller;
+use Application\Controller as Controller;
 use Framework\Registry as Registry;
 use Framework\RequestMethods as RequestMethods;
 
@@ -10,6 +10,14 @@ use Framework\RequestMethods as RequestMethods;
  */
 class Users extends Controller
 {
+
+    public function __construct ()
+    {
+    /**
+     * Nic nie robi (póki co...
+     * :D )
+     */
+    }
 
     /**
      */

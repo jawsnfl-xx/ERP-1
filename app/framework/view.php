@@ -34,6 +34,7 @@ namespace Framework
         public function __construct ($options = array())
         {
             parent::__construct($options);
+            // print 'asdasdasdasdasdasd';
             $this->_template = new Template(
                     array(
                             "implementation" => new Template\Implementation\Standard()
@@ -42,10 +43,21 @@ namespace Framework
 
         public function render ()
         {
-            if (! file_exists($this->getFile())) {
+            // print '<pre>';
+            $path = $this->getFile();
+            $path = APP_DIR . $path;
+            // print '</pre>';
+            
+            // var_dump( $path );
+            
+            // var_dump(file_exists($path));
+            if (! file_exists($path)) {
                 return "";
             }
-            $content = file_get_contents($this->getFile());
+            // $content = file_get_contents($this->getFile());
+            
+            $content = file_get_contents($path);
+            // var_dump(file_get_contents($this->getFile()));
             $this->_template->parse($content);
             return $this->_template->process($this->_data);
         }

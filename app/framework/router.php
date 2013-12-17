@@ -110,30 +110,38 @@ namespace Framework
             
             // var_dump($this);
             // var_dump($name);
-            
+            // var_dump( $this );
             try {
+                $temporary = 'Application\Controller\\' . $name;
+                $instance = new $temporary(
+                        array(
+                                "parameters" => $parameters
+                        ));
                 
-                // $name = 'Application\Controller\\' . $name;
-                $name = ucfirst($name);
-                $name = 'Application\Controllers\\' . $name;
+                // var_dump($this);
+                // // print 'asd';
+                // $name = '\Application\Controllers\\' . $name;
+                // print $name;
+                // $instance = new $name(
+                // array(
+                // "parameters" => $parameters
+                // ));
+                // // print 'asdasd';
+                // // $instance = new $name();
+                // var_dump($instance);
                 // print 'asd';
-                print $name;
-                $instance = new $name();
-                print 'asdasd';
-                // $instance = new $name();
-                var_dump($instance);
-                // print 'asd';
-                // Registry::set ( "controller", $instance );
-                // $controller = $instance;
+                // // Registry::set ( "controller", $instance );
+                // $this->_controller = $instance;
             } catch (\Exception $e) {
                 
                 /**
                  * UWAGA !!!
                  * WYŁĄCZONY WYJĄTEK
                  */
-                // throw new Exception\Controller("Controller {$name} not
-                // found");
-                print 'zupa z żółwia<br />';
+                throw new Exception\Controller(
+                        "Controller {$name} not
+                found");
+                // print 'zupa z żółwia<br />';
             }
             if (! method_exists($instance, $action)) {
                 $instance->willRenderLayoutView = false;
@@ -169,7 +177,9 @@ namespace Framework
                             $action
                     ), is_array($parameters) ? $parameters : array());
             $hooks($methodMeta, "@after");
-            // unset controller
+            /**
+             * Wyczyszczenie kontrolera
+             */
             Registry::erase("controller");
         }
 
@@ -209,7 +219,7 @@ namespace Framework
                     $parameters = array_slice($parts, 2);
                 }
             }
-            // var_dump ( $controller );
+            // var_dump($controller);
             $this->_pass($controller, $action, $parameters);
         }
     }

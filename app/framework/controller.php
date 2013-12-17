@@ -38,7 +38,7 @@ namespace Framework
         /**
          * * @readwrite
          */
-        protected $_defaultPath = "application/views";
+        protected $_defaultPath = "application/view";
 
         /**
          * * @readwrite
@@ -82,31 +82,42 @@ namespace Framework
         public function render ()
         {
             // print 'public function render() <br />';
-            $defaultContentType = $this->getDefaultContentType();
+            $defaultContentType = $this->_defaultContentType;
             $results = null;
-            $doAction = $this->getWillRenderActionView() &&
-                     $this->getActionView();
-            $doLayout = $this->getWillRenderLayoutView() &&
-                     $this->getLayoutView();
+            // $doAction = $this->_willRenderActionView && $this->_actionView;
+            // $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
+            $doAction = $this->_willRenderActionView && $this->_actionView;
+            $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
+            
+            // var_dump($this);
+            // var_dump($doAction);
+            // var_dump($doLayout);
+            
+            // var_dump($this->_actionView);
             try {
                 if ($doAction) {
-                    $view = $this->getActionView();
+                    $view = $this->_actionView;
                     $results = $view->render();
+                    // print 'asd1';
                 }
                 if ($doLayout) {
-                    $view = $this->getLayoutView();
+                    $view = $this->_layoutView;
                     $view->set("template", $results);
                     $results = $view->render();
                     header("Content-type: {$defaultContentType}");
                     echo $results;
+                    // print 'asd2';
                 } else 
                     if ($doAction) {
                         header("Content-type: {$defaultContentType}");
                         echo $results;
-                        $this->setWillRenderLayoutView(false);
-                        $this->setWillRenderActionView(false);
+                        $this->_willRenderLayoutView = FALSE;
+                        $this->_willRenderActionView = FALSE;
+                        // print 'asd3';
                     }
+                // var_dump($this);
             } catch (\Exception $e) {
+                // print 'gówno';
                 throw new View\Exception\Renderer(
                         "Invalid layout/template syntax");
             }
@@ -130,8 +141,10 @@ namespace Framework
                 $defaultExtension = $this->getDefaultExtension();
                 $view = new View(
                         array(
-                                "file" => "/{$defaultPath}/{$defaultLayout}.{$defaultExtension}"
+                                "file" => "\\" . $defaultPath . "\\" .
+                                         $defaultLayout . "." . $defaultExtension
                         ));
+                // var_dump($view);
                 $this->setLayoutView($view);
             }
             if ($this->getWillRenderActionView()) {
@@ -142,12 +155,14 @@ namespace Framework
                                 "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
                         ));
                 $router->dispatch();
-                var_dump($router);
+                // var_dump($router);
                 $controller = $router->getController();
                 $action = $router->getAction();
                 $view = new View(
                         array(
-                                "file" => "/{$defaultPath}/{$controller}/{$action}.{$defaultExtension}"
+                                "file" => "\\" . $defaultPath . "\\" .
+                                         $controller . "\\" . $action . "." .
+                                         $defaultExtension
                         ));
                 $this->setActionView($view);
             }
