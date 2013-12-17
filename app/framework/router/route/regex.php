@@ -1,38 +1,39 @@
 <?php
+namespace Framework\Router\Route
+{
+    use Framework\Router as Router;
 
-namespace Framework\Router\Route {
+    /**
+     *
+     * @author Marcin Pyrka
+     *        
+     */
+    class Regex extends Router\Route
+    {
 
-	use Framework\Router as Router;
+        /**
+         * @readwrite
+         */
+        protected $_keys;
 
-	/**
-	 * 
-	 * @author Marcin Pyrka
-	 *
-	 */
-	class Regex extends Router\Route {
-		
-		/**
-		 * @readwrite
-		 */
-		protected $_keys;
-		
-		/**
-		 * 
-		 * @param unknown $url
-		 * @return boolean
-		 */
-		public function matches($url) {
-			print 'dydki';
-			$pattern = $this->pattern;
-			// check values
-			preg_match_all ( "#^{$pattern}$#", $url, $values );
-			if (sizeof ( $values ) && sizeof ( $values [0] ) && sizeof ( $values [1] )) {
-				// values found, modify parameters and return
-				$derived = array_combine ( $this->keys, $values [1] );
-				$this->parameters = array_merge ( $this->parameters, $derived );
-				return true;
-			}
-			return false;
-		}
-	}
+        /**
+         *
+         * @param unknown $url            
+         * @return boolean
+         */
+        public function matches ($url)
+        {
+            print 'dydki';
+            $pattern = $this->pattern;
+            // check values
+            preg_match_all("#^{$pattern}$#", $url, $values);
+            if (sizeof($values) && sizeof($values[0]) && sizeof($values[1])) {
+                // values found, modify parameters and return
+                $derived = array_combine($this->keys, $values[1]);
+                $this->parameters = array_merge($this->parameters, $derived);
+                return true;
+            }
+            return false;
+        }
+    }
 }
