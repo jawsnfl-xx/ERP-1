@@ -71,6 +71,18 @@ namespace Framework
         }
 
         /**
+         * KONIECZNIE NALEŻY DOPISAĆ TĘ METODĘ...
+         * 
+         * @param unknown $array            
+         * @param unknown $return            
+         * @return unknown
+         */
+        public static function last ($array, $return = array())
+        {
+            return $return;
+        }
+
+        /**
          *
          * @param unknown $array            
          * @return \stdClass

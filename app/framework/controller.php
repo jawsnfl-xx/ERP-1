@@ -38,12 +38,12 @@ namespace Framework
         /**
          * * @readwrite
          */
-        protected $_defaultPath = "application/view";
+        protected $_defaultPath = "application\\view";
 
         /**
          * * @readwrite
          */
-        protected $_defaultLayout = "layouts/standard";
+        protected $_defaultLayout = "layouts\\standard";
 
         /**
          * * @readwrite
@@ -96,8 +96,12 @@ namespace Framework
             // var_dump($this->_actionView);
             try {
                 if ($doAction) {
+//                     var_dump($this->_actionView);
                     $view = $this->_actionView;
                     $results = $view->render();
+//                     var_dump($results);
+                    header("Content-type: {$defaultContentType}");
+                    echo $results;
                     // print 'asd1';
                 }
                 if ($doLayout) {
@@ -145,7 +149,7 @@ namespace Framework
                                          $defaultLayout . "." . $defaultExtension
                         ));
                 // var_dump($view);
-                $this->setLayoutView($view);
+                $this->_layoutView = $view;
             }
             if ($this->getWillRenderActionView()) {
                 $router = new \Framework\Router(
