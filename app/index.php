@@ -62,11 +62,10 @@ class Autoloader
 /**
  */
 spl_autoload_register('autoload');
-spl_autoload_register(
-        array(
-                'autoloader',
-                'autoload'
-        ));
+spl_autoload_register(array(
+        'autoloader',
+        'autoload'
+));
 
 /**
  * Wczytanie bootstrapu z katalogu aplikacji
