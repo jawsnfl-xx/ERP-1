@@ -81,19 +81,12 @@ namespace Framework
          */
         public function render ()
         {
-            // print 'public function render() <br />';
             $defaultContentType = $this->_defaultContentType;
             $results = null;
             // $doAction = $this->_willRenderActionView && $this->_actionView;
             // $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
             $doAction = $this->_willRenderActionView && $this->_actionView;
             $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
-            
-            // var_dump($this);
-            // var_dump($doAction);
-            // var_dump($doLayout);
-            
-            // var_dump($this->_actionView);
             try {
                 if ($doAction) {
                     // var_dump($this->_actionView);
@@ -103,22 +96,20 @@ namespace Framework
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                     // print 'asd1';
-                }
-                if ($doLayout) {
+                } elseif ($doLayout) {
                     $view = $this->_layoutView;
                     $view->set("template", $results);
                     $results = $view->render();
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                     // print 'asd2';
-                } else 
-                    if ($doAction) {
-                        header("Content-type: {$defaultContentType}");
-                        echo $results;
-                        $this->_willRenderLayoutView = FALSE;
-                        $this->_willRenderActionView = FALSE;
-                        // print 'asd3';
-                    }
+                } else {
+                    header("Content-type: {$defaultContentType}");
+                    echo $results;
+                    $this->_willRenderLayoutView = FALSE;
+                    $this->_willRenderActionView = FALSE;
+                    // print 'asd3';
+                }
                 // var_dump($this);
             } catch (\Exception $e) {
                 // print 'gówno';
@@ -151,7 +142,7 @@ namespace Framework
                 // var_dump($view);
                 $this->_layoutView = $view;
             }
-            if ($this->getWillRenderActionView()) {
+            if ($this->getWillRenderLayoutView()) {
                 $router = new \Framework\Router(
                         array(
                                 // "url" => "home/index",
