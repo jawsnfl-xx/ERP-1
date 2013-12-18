@@ -55,23 +55,5 @@ namespace Application\Controller
         {
             // echo "notify!<br />";
         }
-
-        public function sample ()
-        {
-            
-            // print 'nic nie rtoib';
-        }
-
-        public function begin ()
-        {
-            
-            // print 'nic nie rtoib';
-        }
-
-        public function second ()
-        {
-            
-            // print 'nic nie rtoib';
-        }
     }
 }

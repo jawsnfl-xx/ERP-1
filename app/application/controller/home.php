@@ -45,7 +45,7 @@ namespace Application\Controller
         // */
         public function index ()
         {
-            // echo "hello world!<br />";
+            $data = "hello world!<br />";
         }
 
         /**
@@ -54,6 +54,24 @@ namespace Application\Controller
         public function notify ()
         {
             // echo "notify!<br />";
+        }
+
+        public function sample ()
+        {
+            
+            // print 'nic nie rtoib';
+        }
+
+        public function begin ()
+        {
+            
+            // print 'nic nie rtoib';
+        }
+
+        public function second ()
+        {
+            
+            // print 'nic nie rtoib';
         }
     }
 }
