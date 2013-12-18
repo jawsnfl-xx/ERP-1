@@ -3,9 +3,9 @@ namespace Module
 {
 
     /**
-     * 
-     * @author Marcin Pyrka
      *
+     * @author Marcin Pyrka
+     *        
      */
     class Module extends \Framework\Base
     {
