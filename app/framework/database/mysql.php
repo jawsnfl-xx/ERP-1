@@ -24,19 +24,13 @@ namespace Framework\Database
          * protected $_schema; protected $_port;
          */
         protected $_isConnected = false;
-        
-        // public $_options;
+
         public $_query;
 
         /**
          */
         public function query ($_query)
-        {
-            // $this->_query = new Database\Query();
-            // $this->_query->query();
-            // var_dump( $this->_query );
-            // var_dump( $_query );
-        }
+        {}
 
         /**
          *
@@ -107,12 +101,8 @@ namespace Framework\Database
          */
         public function fetch_array ($sql)
         {
-            
-            // var_dump( $sql );
-            // var_dump ( $this->_service );
             $result = $this->_service->query($sql);
             
-            // var_dump( $result );
             $rows = array();
             
             for ($i = 0; $i < $result->num_rows; $i ++) {

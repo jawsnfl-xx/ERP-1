@@ -404,8 +404,6 @@ namespace Framework\Database
          */
         public function all ($sql)
         {
-            // $sql = $this->_buildSelect ();
-            // print 'asd';
             $result = $this->_service->execute($sql);
             if ($result === false) {
                 $error = $this->_service->lastError;
@@ -424,15 +422,12 @@ namespace Framework\Database
          */
         public function query ($sql)
         {
-            // var_dump( $this );
-            print 'siusiek';
             return $this->all($sql);
         }
 
+        /**
+         */
         public function initialize ()
-        {
-            // return $this;
-            print 'kupa';
-        }
+        {}
     }
 }
