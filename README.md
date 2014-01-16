@@ -6,3 +6,7 @@ TODO I:
 TODO II:
 - przebudowa Framework\Database
 - przebudowa Framework\Exception
+
+TODO III:
+-dodanie szablonów UI
+
