@@ -8,5 +8,5 @@ TODO II:
 - przebudowa Framework\Exception
 
 TODO III:
--dodanie szablonów UI
+- dodanie szablonów UI
 
