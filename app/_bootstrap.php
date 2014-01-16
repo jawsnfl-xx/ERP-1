@@ -30,15 +30,15 @@
  *     
  * @name setWorld
  * @param unknown $value
- *            Wywoływana jest przy zapisaniu wartości dla $_world
- *            
- *            
- *            public function setWorld($value) {
- *            echo "your setter is being called!<br />";
- *            $this->_world = $value;
- *            }
- *            
- *            
+ *        	Wywoływana jest przy zapisaniu wartości dla $_world
+ *        	
+ *        	
+ *        	public function setWorld($value) {
+ *        	echo "your setter is being called!<br />";
+ *        	$this->_world = $value;
+ *        	}
+ *        	
+ *        	
  * @name getWorld
  * @return unknown Wywoływana jest przy próbie odczytu
  *        
@@ -209,7 +209,7 @@
 /**
  * Testy bibliotek Application :[
  */
-$controller = new Application\Controller(array(
-        'a' => 'a'
-));
-var_dump($controller);
+$controller = new Application\Controller ( array (
+		'a' => 'a' 
+) );
+var_dump ( $controller );

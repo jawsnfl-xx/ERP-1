@@ -48,7 +48,7 @@ namespace Framework
         /**
          * * @readwrite
          */
-        protected $_defaultExtension = "html";
+        protected $_defaultExtension = "tpl";
 
         /**
          * * @readwrite
@@ -83,36 +83,28 @@ namespace Framework
         {
             $defaultContentType = $this->_defaultContentType;
             $results = null;
-            // $doAction = $this->_willRenderActionView && $this->_actionView;
-            // $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
             $doAction = $this->_willRenderActionView && $this->_actionView;
             $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
             try {
                 if ($doAction) {
-                    // var_dump($this->_actionView);
                     $view = $this->_actionView;
                     $results = $view->render();
-                    // var_dump($results);
                     header("Content-type: {$defaultContentType}");
                     echo $results;
-                    // print 'asd1';
-                } elseif ($doLayout) {
+                }
+                if ($doLayout) {
                     $view = $this->_layoutView;
                     $view->set("template", $results);
                     $results = $view->render();
                     header("Content-type: {$defaultContentType}");
                     echo $results;
-                    // print 'asd2';
                 } else {
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                     $this->_willRenderLayoutView = FALSE;
                     $this->_willRenderActionView = FALSE;
-                    // print 'asd3';
                 }
-                // var_dump($this);
             } catch (\Exception $e) {
-                // print 'gówno';
                 throw new View\Exception\Renderer(
                         "Invalid layout/template syntax");
             }
@@ -125,10 +117,6 @@ namespace Framework
         public function __construct ($options = array())
         {
             parent::__construct($options);
-            // print 'asdasd1';
-            
-            // $dupa = $this->getWillRenderLayoutView();
-            // var_dump($dupa);
             
             if ($this->getWillRenderLayoutView()) {
                 $defaultPath = $this->getDefaultPath();
@@ -139,18 +127,15 @@ namespace Framework
                                 "file" => "\\" . $defaultPath . "\\" .
                                          $defaultLayout . "." . $defaultExtension
                         ));
-                // var_dump($view);
                 $this->_layoutView = $view;
             }
-            if ($this->getWillRenderLayoutView()) {
+            if ($this->getWillRenderActionView()) {
                 $router = new \Framework\Router(
                         array(
-                                // "url" => "home/index",
                                 "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
                                 "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
                         ));
                 $router->dispatch();
-                // var_dump($router);
                 $controller = $router->getController();
                 $action = $router->getAction();
                 $view = new View(
@@ -161,9 +146,6 @@ namespace Framework
                         ));
                 $this->setActionView($view);
             }
-            // print 'qwe';
-            
-            // var_dump($this);
         }
 
         /**

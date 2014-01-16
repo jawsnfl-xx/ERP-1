@@ -34,10 +34,17 @@ namespace Framework
         public function __construct ($options = array())
         {
             parent::__construct($options);
-            $this->_template = new Template(
-                    array(
-                            "implementation" => new Template\Implementation\Standard()
-                    ));
+            // $this->_template = new Template(
+            // array(
+            // "implementation" => new Template\Implementation\Extended()
+            // ));
+            
+            require_once 'template\smarty\libs\Smarty.class.php';
+            
+            $this->_template = new \Smarty();
+            // $smarty->display('index.tpl');
+            // fetch
+            // exit();
         }
 
         public function render ()
@@ -49,9 +56,11 @@ namespace Framework
                 return "";
             }
             
-            $content = file_get_contents($path);
-            $this->_template->parse($content);
-            return $this->_template->process($this->_data);
+            // $content = file_get_contents($path);
+            // $this->_template->parse($content);
+            // exit();
+            return $this->_template->fetch($path);
+            // return $this->_template->process($this->_data);
         }
 
         public function get ($key, $default = "")
