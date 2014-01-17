@@ -9,4 +9,7 @@ TODO II:
 
 TODO III:
 - dodanie szablonów UI
+  - dodanie pliku z podstawowym szablonem dla home/index
+  - dodanie podstron
+    - podział na podstrony  
 
