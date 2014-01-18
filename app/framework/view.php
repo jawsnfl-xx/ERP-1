@@ -39,7 +39,7 @@ namespace Framework
             // "implementation" => new Template\Implementation\Extended()
             // ));
             
-            require_once 'template\smarty\libs\Smarty.class.php';
+            require_once 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
             
             $this->_template = new \Smarty();
             // $smarty->display('index.tpl');

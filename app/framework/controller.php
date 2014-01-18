@@ -122,7 +122,7 @@ namespace Framework
                 $defaultLayout = $this->getDefaultLayout();
                 $defaultExtension = $this->getDefaultExtension();
                 $view = new View(array(
-                    "file" => "\\" . $defaultPath . "\\" . $defaultLayout . "." . $defaultExtension
+                    "file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $defaultLayout . '.' . $defaultExtension
                 ));
                 $this->_layoutView = $view;
             }
@@ -135,7 +135,7 @@ namespace Framework
                 $controller = $router->getController();
                 $action = $router->getAction();
                 $view = new View(array(
-                    "file" => "\\" . $defaultPath . "\\" . $controller . "\\" . $action . "." . $defaultExtension
+                    "file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension
                 ));
                 $this->setActionView($view);
             }
