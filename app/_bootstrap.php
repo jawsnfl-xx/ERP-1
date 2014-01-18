@@ -1,6 +1,12 @@
 <?php
 
 /**
+ * Przepisać bootsprap do wersko 0.3
+ * Skasować plik _bootsprap.php
+ * Dodać obsługę route.php
+ */
+
+/**
  * Inicjalizacja konfiguracji.
  * @TODO przenieść wszystkie stałe i zmienne do plików *.ini.
  */
