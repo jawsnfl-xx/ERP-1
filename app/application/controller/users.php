@@ -11,7 +11,7 @@ use Framework\RequestMethods as RequestMethods;
 class Users extends Controller
 {
 
-    public function __construct ()
+    public function __construct()
     {
     /**
      * Nic nie robi (póki co...
@@ -21,7 +21,7 @@ class Users extends Controller
 
     /**
      */
-    public function register ()
+    public function register()
     {
         if (RequestMethods::post("register")) {
             $first = RequestMethods::post("first");
@@ -48,13 +48,12 @@ class Users extends Controller
                 $error = true;
             }
             if (! $error) {
-                $user = new User(
-                        array(
-                                "first" => $first,
-                                "last" => $last,
-                                "email" => $email,
-                                "password" => $password
-                        ));
+                $user = new User(array(
+                    "first" => $first,
+                    "last" => $last,
+                    "email" => $email,
+                    "password" => $password
+                ));
                 $user->save();
                 $view->set("success", true);
             }
@@ -63,7 +62,7 @@ class Users extends Controller
 
     /**
      */
-    public function login ()
+    public function login()
     {
         if (RequestMethods::post("login")) {
             $email = RequestMethods::post("email");
@@ -79,21 +78,19 @@ class Users extends Controller
                 $error = true;
             }
             if (! $error) {
-                $user = User::first(
-                        array(
-                                "email = ?" => $email,
-                                "password = ?" => $password,
-                                "live = ?" => true,
-                                "deleted = ?" => false
-                        ));
+                $user = User::first(array(
+                    "email = ?" => $email,
+                    "password = ?" => $password,
+                    "live = ?" => true,
+                    "deleted = ?" => false
+                ));
                 if (! empty($user)) {
                     $session = Registry::get("session");
                     $session->set("user", serialize($user));
                     header("Location: /users/profile.html");
                     exit();
                 } else {
-                    $view->set("password_error", 
-                            "Email address and/or password are incorrect");
+                    $view->set("password_error", "Email address and/or password are incorrect");
                 }
             }
         }
@@ -101,7 +98,7 @@ class Users extends Controller
 
     /**
      */
-    public function profile ()
+    public function profile()
     {
         $session = Registry::get("session");
         $user = unserialize($session->get("user", null));

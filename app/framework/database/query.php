@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Database
 {
+
     use Framework\Base as Base;
     use Framework\ArrayMethods as ArrayMethods;
     use Framework\MySQL\Exception as Exception;
@@ -63,10 +64,9 @@ namespace Framework\Database
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        protected function _getExceptionForImplementation ($method)
+        protected function _getExceptionForImplementation($method)
         {
-            return new Exception\Implementation(
-                    "{$method} method not implemented");
+            return new Exception\Implementation("{$method} method not implemented");
         }
 
         /**
@@ -74,7 +74,7 @@ namespace Framework\Database
          * @param unknown $value            
          * @return string number
          */
-        protected function _quote ($value)
+        protected function _quote($value)
         {
             if (is_string($value)) {
                 $escaped = $this->connector->escape($value);
@@ -104,7 +104,7 @@ namespace Framework\Database
          * @throws Exception\Argument
          * @return \Framework\MySQL\Query
          */
-        public function from ($from, $fields = array("*"))
+        public function from($from, $fields = array("*"))
         {
             print 'help_topic3 from';
             
@@ -127,7 +127,7 @@ namespace Framework\Database
          * @throws Exception\Argument
          * @return \Framework\MySQL\Query
          */
-        public function join ($join, $on, $fields = array())
+        public function join($join, $on, $fields = array())
         {
             print 'help_topic4 join';
             if (empty($join)) {
@@ -137,7 +137,7 @@ namespace Framework\Database
                 throw new Exception\Argument("Invalid argument");
             }
             $this->_fields += array(
-                    $join => $fields
+                $join => $fields
             );
             $this->_join[] = "JOIN {$join} ON {$on}";
             print 'help_topic4 join';
@@ -151,7 +151,7 @@ namespace Framework\Database
          * @throws Exception\Argument
          * @return \Framework\MySQL\Query
          */
-        public function limit ($limit, $page = 1)
+        public function limit($limit, $page = 1)
         {
             if (empty($limit)) {
                 throw new Exception\Argument("Invalid argument");
@@ -168,7 +168,7 @@ namespace Framework\Database
          * @throws Exception\Argument
          * @return \Framework\MySQL\Query
          */
-        public function order ($order, $direction = "asc")
+        public function order($order, $direction = "asc")
         {
             if (empty($order)) {
                 throw new Exception\Argument("Invalid argument");
@@ -183,7 +183,7 @@ namespace Framework\Database
          * @throws Exception\Argument
          * @return \Framework\MySQL\Query
          */
-        public function where ()
+        public function where()
         {
             $arguments = func_get_args();
             if (sizeof($arguments) < 1) {
@@ -201,7 +201,7 @@ namespace Framework\Database
          *
          * @return string
          */
-        protected function _buildSelect ()
+        protected function _buildSelect()
         {
             $fields = array();
             $where = $order = $limit = $join = "";
@@ -239,8 +239,7 @@ namespace Framework\Database
                     $limit = "LIMIT {$_limit}";
                 }
             }
-            return sprintf($template, $fields, $this->from, $join, $where, 
-                    $order, $limit);
+            return sprintf($template, $fields, $this->from, $join, $where, $order, $limit);
         }
 
         /**
@@ -248,7 +247,7 @@ namespace Framework\Database
          * @param unknown $data            
          * @return string
          */
-        protected function _buildInsert ($data)
+        protected function _buildInsert($data)
         {
             $fields = array();
             $values = array();
@@ -267,7 +266,7 @@ namespace Framework\Database
          * @param unknown $data            
          * @return string
          */
-        protected function _buildUpdate ($data)
+        protected function _buildUpdate($data)
         {
             $parts = array();
             $where = $limit = "";
@@ -293,7 +292,7 @@ namespace Framework\Database
          *
          * @return string
          */
-        protected function _buildDelete ()
+        protected function _buildDelete()
         {
             $where = $limit = "";
             $template = "DELETE FROM %s %s %s";
@@ -316,7 +315,7 @@ namespace Framework\Database
          * @throws Exception\Sql
          * @return number
          */
-        public function save ($data)
+        public function save($data)
         {
             $isInsert = sizeof($this->_where) == 0;
             if ($isInsert) {
@@ -338,7 +337,7 @@ namespace Framework\Database
          *
          * @throws Exception\Sql
          */
-        public function delete ()
+        public function delete()
         {
             $sql = $this->_buildDelete();
             $result = $this->_connector->execute($sql);
@@ -352,7 +351,7 @@ namespace Framework\Database
          *
          * @return unknown
          */
-        public function first ()
+        public function first()
         {
             $limit = $this->_limit;
             $offset = $this->_offset;
@@ -372,15 +371,15 @@ namespace Framework\Database
          *
          * @return \Framework\MySQL\unknown
          */
-        public function count ()
+        public function count()
         {
             $limit = $this->limit;
             $offset = $this->offset;
             $fields = $this->fields;
             $this->_fields = array(
-                    $this->from => array(
-                            "COUNT(1)" => "rows"
-                    )
+                $this->from => array(
+                    "COUNT(1)" => "rows"
+                )
             );
             $this->limit(1);
             $row = $this->first();
@@ -402,13 +401,12 @@ namespace Framework\Database
          * @throws Exception\Sql
          * @return multitype:NULL
          */
-        public function all ($sql)
+        public function all($sql)
         {
             $result = $this->_service->execute($sql);
             if ($result === false) {
                 $error = $this->_service->lastError;
-                throw new Exception\Sql(
-                        "There was an error with your SQL query: {$error}");
+                throw new Exception\Sql("There was an error with your SQL query: {$error}");
             }
             $rows = array();
             for ($i = 0; $i < $result->num_rows; $i ++) {
@@ -420,14 +418,14 @@ namespace Framework\Database
         /**
          * Test
          */
-        public function query ($sql)
+        public function query($sql)
         {
             return $this->all($sql);
         }
 
         /**
          */
-        public function initialize ()
+        public function initialize()
         {}
     }
 }

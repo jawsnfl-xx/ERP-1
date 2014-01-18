@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Database
 {
+
     use Framework\Database as Database;
     use Framework\Database\Exception as Exception;
     use Framework\ArrayMethods as ArrayMethods;
@@ -20,8 +21,7 @@ namespace Framework\Database
         protected $_service;
         
         /*
-         * protected $_host; protected $_username; protected $_password;
-         * protected $_schema; protected $_port;
+         * protected $_host; protected $_username; protected $_password; protected $_schema; protected $_port;
          */
         protected $_isConnected = false;
 
@@ -29,7 +29,7 @@ namespace Framework\Database
 
         /**
          */
-        public function query ($_query)
+        public function query($_query)
         {}
 
         /**
@@ -38,12 +38,9 @@ namespace Framework\Database
          * @throws Exception\Service
          * @return \Framework\Database\MySQL
          */
-        public function connect ($_options)
+        public function connect($_options)
         {
-            $this->_service = new \MySQLi($_options['options']['host'], 
-                    $_options['options']['username'], 
-                    $_options['options']['password'], 
-                    $_options['options']['schema'], $_options['options']['port']);
+            $this->_service = new \MySQLi($_options['options']['host'], $_options['options']['username'], $_options['options']['password'], $_options['options']['schema'], $_options['options']['port']);
             if ($this->_service->connect_error) {
                 throw new Exception\Service("Unable to connect to service");
             }
@@ -55,7 +52,7 @@ namespace Framework\Database
          *
          * @param unknown $sql            
          */
-        public function execute ($sql)
+        public function execute($sql)
         {
             return $this->_service->query($sql);
         }
@@ -64,28 +61,28 @@ namespace Framework\Database
          *
          * @param unknown $value            
          */
-        public function escape ($value)
+        public function escape($value)
         {
             return $this->_service->real_escape_string($value);
         }
 
         /**
          */
-        public function getLastInsertId ()
+        public function getLastInsertId()
         {
             return $this->_service->insert_id;
         }
 
         /**
          */
-        public function getAffectedRows ()
+        public function getAffectedRows()
         {
             return $this->_service->affected_rows;
         }
 
         /**
          */
-        public function getLastError ()
+        public function getLastError()
         {
             return $this->_service->error;
         }
@@ -99,7 +96,7 @@ namespace Framework\Database
          *
          * @param unknown $sql            
          */
-        public function fetch_array ($sql)
+        public function fetch_array($sql)
         {
             $result = $this->_service->query($sql);
             

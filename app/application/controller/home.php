@@ -1,6 +1,7 @@
 <?php
 namespace Application\Controller
 {
+
     use Application\Controller as Controller;
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
@@ -13,7 +14,7 @@ namespace Application\Controller
     class Home extends Controller
     {
 
-        public function __construct ()
+        public function __construct()
         {
         /**
          * Nic nie robi (póki co...
@@ -43,7 +44,7 @@ namespace Application\Controller
         // * @before init, authenticate,
         // * @after notify
         // */
-        public function index ()
+        public function index()
         {
             $data = "hello world!<br />";
         }
@@ -51,24 +52,24 @@ namespace Application\Controller
         /**
          * @protected
          */
-        public function notify ()
+        public function notify()
         {
             // echo "notify!<br />";
         }
 
-        public function sample ()
+        public function sample()
         {
             
             // print 'nic nie rtoib';
         }
 
-        public function begin ()
+        public function begin()
         {
             
             // print 'nic nie rtoib';
         }
 
-        public function second ()
+        public function second()
         {
             
             // print 'nic nie rtoib';

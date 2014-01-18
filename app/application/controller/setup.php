@@ -1,6 +1,7 @@
 <?php
 namespace Application\Controller
 {
+
     use Application\Controller as Controller;
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
@@ -13,7 +14,7 @@ namespace Application\Controller
     class Setup extends Controller
     {
 
-        public function __construct ()
+        public function __construct()
         {
         /**
          * Nic nie robi (póki co...
@@ -26,7 +27,7 @@ namespace Application\Controller
          * @once
          * @protected
          */
-        public function init ()
+        public function init()
         {
             // echo "init<br />";
         }
@@ -34,7 +35,7 @@ namespace Application\Controller
         /**
          * @protected
          */
-        public function authenticate ()
+        public function authenticate()
         {
             // echo "authenticate<br />";
         }
@@ -43,7 +44,7 @@ namespace Application\Controller
          * @before init, authenticate,
          * @after notify
          */
-        public function index ()
+        public function index()
         {
             // echo "hello world!<br />";
         }
@@ -51,7 +52,7 @@ namespace Application\Controller
         /**
          * @protected
          */
-        public function notify ()
+        public function notify()
         {
             // echo "notify!<br />";
         }

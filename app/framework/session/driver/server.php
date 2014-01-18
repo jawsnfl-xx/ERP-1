@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Session\Driver
 {
+
     use Framework\Session as Session;
 
     /**
@@ -20,7 +21,7 @@ namespace Framework\Session\Driver
          *
          * @param unknown $options            
          */
-        public function __construct ($options = array())
+        public function __construct($options = array())
         {
             parent::__construct($options);
             session_start();
@@ -32,7 +33,7 @@ namespace Framework\Session\Driver
          * @param string $default            
          * @return unknown string
          */
-        public function get ($key, $default = null)
+        public function get($key, $default = null)
         {
             $prefix = $this->getPrefix();
             if (isset($_SESSION[$prefix . $key])) {
@@ -47,7 +48,7 @@ namespace Framework\Session\Driver
          * @param unknown $value            
          * @return \Framework\Session\Driver\Server
          */
-        public function set ($key, $value)
+        public function set($key, $value)
         {
             $prefix = $this->getPrefix();
             $_SESSION[$prefix . $key] = $value;
@@ -59,7 +60,7 @@ namespace Framework\Session\Driver
          * @param unknown $key            
          * @return \Framework\Session\Driver\Server
          */
-        public function erase ($key)
+        public function erase($key)
         {
             $prefix = $this->getPrefix();
             unset($_SESSION[$prefix . $key]);
@@ -68,7 +69,7 @@ namespace Framework\Session\Driver
 
         /**
          */
-        public function __destruct ()
+        public function __destruct()
         {
             session_commit();
         }
