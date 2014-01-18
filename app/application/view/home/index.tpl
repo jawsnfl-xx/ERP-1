@@ -14,32 +14,181 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="">
+	<div id="wrap">
+		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="row navbar-collapse collapse">
+					<div class="col-xs-8">
+						<ul class="nav navbar-nav" placeholder=".col-xs-8">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Profile</a></li>
+							<li><a href="#">Messages</a></li>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h3>Index</h3>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2">
-				<ul class="nav nav-pills nav-stacked">
-					<li><a href="index.php?url=home/index">home/index</a></li>
-					<li><a href="index.php?url=home/sample">home/sample</a></li>
-					<li><a href="index.php?url=home/begin">home/begin</a></li>
-					<li><a href="index.php?url=home/second">home/second</a></li>
-				</ul>
-			</div>
-			<div class="col-md-10">
-				<p>index.html</p>
+
+						</ul>
+					</div>
+					<div class="col-xs-4">
+						<ul class="nav navbar-nav" placeholder=".col-xs-4">
+							<li>
+								<div class="input-group input-group-sm">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
+									</span> <input type="text" class="form-control">
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="public/js/bootstrap.min.js"></script>
-</body>
-</html>
+	<div class="container">
+
+
+		<div class="page-header">
+			<h1>
+				Interfejs <small>Imię_Nazwisko</small>
+			</h1>
+		</div>
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a href="#"><span class="glyphicon glyphicon-bell">
+								AKTUALNOŚCI</a></li>
+					<li><a href="#"><span
+							class="glyphicon glyphicon-briefcase">RAPORTY</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown"><span
+							class="glyphicon glyphicon-wrench"></span> USTAWIENIA <b
+							class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Informacje <span
+									class="glyphicon glyphicon-info-sign"></span></a></li>
+							<li><a href="#"></a></li>
+							<li><a href="#">Preferencje <span
+									class="glyphicon glyphicon-user"></span></a></li>
+							<li class="divider"></li>
+
+						</ul></li>
+				</ul>
+
+
+				</ul>
+				</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Do zrobienia</h3>
+			</div>
+			<div class="panel-body">zawartość pobrana z harmonogramu zadań
+				(jeśli istnieje)</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Index</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="index.php?url=home/index">home/index</a></li>
+						<li><a href="index.php?url=home/sample">home/sample</a></li>
+						<li><a href="index.php?url=home/begin">home/begin</a></li>
+						<li><a href="index.php?url=home/second">home/second</a></li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<p>index.html</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Index</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="index.php?url=home/index">home/index</a></li>
+						<li><a href="index.php?url=home/sample">home/sample</a></li>
+						<li><a href="index.php?url=home/begin">home/begin</a></li>
+						<li><a href="index.php?url=home/second">home/second</a></li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<p>index.html</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Index</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="index.php?url=home/index">home/index</a></li>
+						<li><a href="index.php?url=home/sample">home/sample</a></li>
+						<li><a href="index.php?url=home/begin">home/begin</a></li>
+						<li><a href="index.php?url=home/second">home/second</a></li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<p>index.html</p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Index</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="index.php?url=home/index">home/index</a></li>
+						<li><a href="index.php?url=home/sample">home/sample</a></li>
+						<li><a href="index.php?url=home/begin">home/begin</a></li>
+						<li><a href="index.php?url=home/second">home/second</a></li>
+					</ul>
+				</div>
+				<div class="col-md-10">
+					<p>index.html</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<p class="text-muted">Place sticky footer content here.</p>
+		</div>
+	</div>

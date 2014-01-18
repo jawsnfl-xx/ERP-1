@@ -15,7 +15,6 @@
     <![endif]-->
 </head>
 <body>
-
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -36,10 +35,3 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="public/js/bootstrap.min.js"></script>
-</body>
-</html>
