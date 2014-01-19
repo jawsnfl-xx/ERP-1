@@ -57,7 +57,7 @@ namespace Application\Controller
             // echo "notify!<br />";
         }
 
-        public function sample()
+        public function login()
         {
             
             // print 'nic nie rtoib';

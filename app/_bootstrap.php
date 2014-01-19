@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * @TODO
  * Przepisać bootsprap do wersko 0.3
  * Skasować plik _bootsprap.php
  * Dodać obsługę route.php

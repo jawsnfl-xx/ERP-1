@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <!-- Bootstrap -->
 <link href="../public/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,46 +16,7 @@
     <![endif]-->
 </head>
 <body data-spy="scroll" data-target="">
-	<div id="wrap">
-		<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-			<div class="container">
-				<div class="row navbar-collapse collapse">
-					<div class="col-xs-8">
-						<ul class="nav navbar-nav" placeholder=".col-xs-8">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Profile</a></li>
-							<li><a href="#">Messages</a></li>
-
-
-						</ul>
-					</div>
-					<div class="col-xs-4">
-						<ul class="nav navbar-nav" placeholder=".col-xs-4">
-							<li>
-								<div class="input-group input-group-sm">
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="button">
-											<span class="glyphicon glyphicon-search"></span>
-										</button>
-									</span> <input type="text" class="form-control">
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
 	<div class="container">
-
-
-		<div class="page-header">
-			<h1>
-				Interfejs <small>Imię_Nazwisko</small>
-			</h1>
-		</div>
 		<nav class="navbar navbar-default" role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -64,131 +26,62 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-
+				<a class="navbar-brand" href="#">Simple ERP System</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="#"><span class="glyphicon glyphicon-bell">
-								AKTUALNOŚCI</a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-briefcase">RAPORTY</a></li>
+				<ul class="nav navbar-nav col-lg-3">
+					<li class="active"><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown"><span
-							class="glyphicon glyphicon-wrench"></span> USTAWIENIA <b
-							class="caret"></b></a>
+						data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Informacje <span
-									class="glyphicon glyphicon-info-sign"></span></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#">Preferencje <span
-									class="glyphicon glyphicon-user"></span></a></li>
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
 							<li class="divider"></li>
-
+							<li><a href="#">Separated link</a></li>
+							<li class="divider"></li>
+							<li><a href="#">One more separated link</a></li>
 						</ul></li>
 				</ul>
-
-
+				<ul class="nav navbar-nav col-lg-3">
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group input-group-sm">
+							<div class="input-group">
+								<input type="text" class="form-control"> <span
+									class="input-group-btn">
+									<button class="btn btn-default" type="button">Szukaj...</button>
+								</span>
+							</div>
+						</div>
+					</form>
 				</ul>
-				</li>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-book"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-barcode"></span></a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown">Session <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li class="divider"></li>
+							<li role="presentation" class="dropdown-header">Zarządzanie
+								sesją</li>
+							<li><a href="#">Separated link</a></li>
+						</ul></li>
 				</ul>
 			</div>
 		</nav>
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Do zrobienia</h3>
-			</div>
-			<div class="panel-body">zawartość pobrana z harmonogramu zadań
-				(jeśli istnieje)</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h3>Index</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="index.php?url=home/index">home/index</a></li>
-						<li><a href="index.php?url=home/sample">home/sample</a></li>
-						<li><a href="index.php?url=home/begin">home/begin</a></li>
-						<li><a href="index.php?url=home/second">home/second</a></li>
-					</ul>
-				</div>
-				<div class="col-md-10">
-					<p>index.html</p>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h3>Index</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="index.php?url=home/index">home/index</a></li>
-						<li><a href="index.php?url=home/sample">home/sample</a></li>
-						<li><a href="index.php?url=home/begin">home/begin</a></li>
-						<li><a href="index.php?url=home/second">home/second</a></li>
-					</ul>
-				</div>
-				<div class="col-md-10">
-					<p>index.html</p>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h3>Index</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="index.php?url=home/index">home/index</a></li>
-						<li><a href="index.php?url=home/sample">home/sample</a></li>
-						<li><a href="index.php?url=home/begin">home/begin</a></li>
-						<li><a href="index.php?url=home/second">home/second</a></li>
-					</ul>
-				</div>
-				<div class="col-md-10">
-					<p>index.html</p>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h3>Index</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="index.php?url=home/index">home/index</a></li>
-						<li><a href="index.php?url=home/sample">home/sample</a></li>
-						<li><a href="index.php?url=home/begin">home/begin</a></li>
-						<li><a href="index.php?url=home/second">home/second</a></li>
-					</ul>
-				</div>
-				<div class="col-md-10">
-					<p>index.html</p>
-				</div>
-			</div>
-		</div>
-	</div>
 	</div>
 
-
-	<div id="footer">
-		<div class="container">
-			<p class="text-muted">Place sticky footer content here.</p>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">.col-md-3</div>
+			<div class="col-md-9">.col-md-9</div>
 		</div>
 	</div>
