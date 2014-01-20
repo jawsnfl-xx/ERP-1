@@ -58,7 +58,7 @@
 						<li role="presentation" class="dropdown-header">Zarządzanie
 							sesją</li>
 						<li><a href="#">Zapamiętaj sesję na tym urządzeniu</a></li>
-						<li><a href="#">Wyloguj</a></li>
+						<li><a href="?url=home/login">Wyloguj</a></li>
 					</ul></li>
 			</ul>
 		</div>

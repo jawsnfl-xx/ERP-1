@@ -81,16 +81,31 @@ namespace Application\Controller
          * - system settings
          */
         public function settings()
-        {}
+        {
+            /**
+             */
+            if ($this->_parameters[0] === 'access_permissions') {
+                // print 'access permissions';
+            }
+            
+            /**
+             */
+            if ($this->_parameters[0] === 'properties') {
+                // print 'properties';
+            }
+            
+            /**
+             */
+            if ($this->_parameters[0] === 'system settings') {
+                // print 'system_settings';
+            }
+        }
 
         /**
          * @before init, authenticate,
          * @after notify
          */
         public function login()
-        {
-            
-            // print 'nic nie rtoib';
-        }
+        {}
     }
 }
