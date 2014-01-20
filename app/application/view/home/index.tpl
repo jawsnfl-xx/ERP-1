@@ -63,9 +63,12 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">.col-md-3</div>
+		<div class="col-md-3"></div>
 		<div class="col-md-9">
-			<h2>as</h2>
+			<ul>
+				{foreach from=$parameters item=foo}
+				<li>{$foo}</li> {/foreach}
+			</ul>
 		</div>
 	</div>
 </div>

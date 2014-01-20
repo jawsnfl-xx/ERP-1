@@ -15,6 +15,11 @@ namespace Framework
         protected $_file;
 
         /**
+         * * @readwrite
+         */
+        protected $_parameters;
+
+        /**
          * * @read
          */
         protected $_template;
@@ -43,7 +48,9 @@ namespace Framework
                 ->setCompileDir('..' . DIRECTORY_SEPARATOR . 'templates_c')
                 ->setCacheDir('..' . DIRECTORY_SEPARATOR . 'cache');
             
-            $cacheDir = $this->_template->getCacheDir();
+            $this->_template->assign('parameters', $options['parameters']);
+            
+            // var_dump($options['parameters']);
         }
 
         public function render()

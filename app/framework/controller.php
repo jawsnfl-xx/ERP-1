@@ -159,10 +159,14 @@ namespace Framework
                 $controller = $router->getController();
                 $action = $router->getAction();
                 $parameters = $router->getParameters();
+                
                 /**
+                 * !!!!
+                 * Dodano przekazywanie parametru
                  */
                 $view = new View(array(
-                    "file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension
+                    "file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
+                    "parameters" => $parameters
                 ));
                 
                 /**
