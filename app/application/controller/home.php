@@ -59,6 +59,13 @@ namespace Application\Controller
             $data = "hello world!<br />";
         }
 
+        /**
+         * @once
+         * @protected
+         */
+        public function notify()
+        {}
+
         public function login()
         {
             
