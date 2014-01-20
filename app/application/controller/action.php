@@ -23,8 +23,14 @@ namespace Application\Controller
          */
         protected $_parameters;
 
+        /**
+         *
+         * @param unknown $options            
+         */
         public function __construct($options)
         {
+            /**
+             */
             $this->_parameters = $options['parameters'];
         }
 
@@ -81,6 +87,8 @@ namespace Application\Controller
          * @after notify
          *
          * @NOTE
+         * ref = references
+         *
          * @TODO
          * Dodać wartości ref
          */
@@ -94,6 +102,8 @@ namespace Application\Controller
          * @after notify
          *
          * @NOTE
+         * rat = retrying
+         *
          * @TODO
          * Dodać wartości ret
          */

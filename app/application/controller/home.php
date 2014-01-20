@@ -19,8 +19,14 @@ namespace Application\Controller
          */
         protected $_parameters;
 
+        /**
+         *
+         * @param unknown $options            
+         */
         public function __construct($options)
         {
+            /**
+             */
             $this->_parameters = $options['parameters'];
         }
 
@@ -55,9 +61,7 @@ namespace Application\Controller
          * @after notify
          */
         public function index()
-        {
-            $data = "hello world!<br />";
-        }
+        {}
 
         /**
          * @once
@@ -66,19 +70,11 @@ namespace Application\Controller
         public function notify()
         {}
 
+        /**
+         * @before init, authenticate,
+         * @after notify
+         */
         public function login()
-        {
-            
-            // print 'nic nie rtoib';
-        }
-
-        public function begin()
-        {
-            
-            // print 'nic nie rtoib';
-        }
-
-        public function second()
         {
             
             // print 'nic nie rtoib';
