@@ -57,6 +57,13 @@ namespace Application\Controller
         {}
 
         /**
+         * @once
+         * @protected
+         */
+        public function notify()
+        {}
+
+        /**
          * @before init, authenticate,
          * @after notify
          */
@@ -64,10 +71,16 @@ namespace Application\Controller
         {}
 
         /**
-         * @once
-         * @protected
+         * @before init, authenticate,
+         * @after notify
+         *
+         * @NOTE
+         * Podstrony możliwe dla settings:
+         * - access permissions
+         * - properties
+         * - system settings
          */
-        public function notify()
+        public function settings()
         {}
 
         /**
