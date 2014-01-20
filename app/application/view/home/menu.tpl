@@ -64,3 +64,8 @@
 		</div>
 	</nav>
 </div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<h4>Pionowe menu :D</h4>
+		</div>
