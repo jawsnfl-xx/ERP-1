@@ -42,15 +42,17 @@
 				</form>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-book"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-bell"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-barcode"></span></a></li>
+				<li><a href="#" alt="Powiadomienia"><span
+						class="glyphicon glyphicon-bell"></span> Powiadomienia <span
+						class="badge">42</span></a></li>
+
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Session <b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
+						<li role="presentation" class="dropdown-header">Ustawienia</li>
+						<li><a href="#">Uprawnienia dostępu</a></li>
+						<li><a href="#">Właściwości</a></li>
+						<li><a href="#">Ustawienia systemowe</a></li>
 						<li class="divider"></li>
 						<li role="presentation" class="dropdown-header">Zarządzanie
 							sesją</li>
