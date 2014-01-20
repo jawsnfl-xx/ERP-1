@@ -14,47 +14,49 @@ namespace Application\Controller
     class Home extends Controller
     {
 
-        public function __construct()
-        {
         /**
-         * Nic nie robi (póki co...
-         * :D )
+         * @read
          */
-            // print RequestMethods::get("sample");
-        }
-        
-        // /**
-        // * @once
-        // * @protected
-        // */
-        // public function init ()
-        // {
-        // // echo "init<br />";
-        // }
-        
-        // /**
-        // * @protected
-        // */
-        // public function authenticate ()
-        // {
-        // // echo "authenticate<br />";
-        // }
-        
-        // /**
-        // * @before init, authenticate,
-        // * @after notify
-        // */
-        public function index()
+        protected $_parameters;
+
+        public function __construct($options)
         {
-            $data = "hello world!<br />";
+            $this->_parameters = $options['parameters'];
         }
+
+        /**
+         * @once
+         * @protected
+         */
+        /**
+         * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
+         *
+         * @TODO
+         * Włącznie z przekazaniem dalszych danych dla Smatry
+         */
+        public function init()
+        {}
 
         /**
          * @protected
          */
-        public function notify()
+        /**
+         * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
+         *
+         * @TODO
+         * Budowa oddzielnej klasy autentykacji.
+         * W tym miejscy jedynie jej uruchmienie.
+         */
+        public function authenticate()
+        {}
+
+        /**
+         * @before init, authenticate,
+         * @after notify
+         */
+        public function index()
         {
-            // echo "notify!<br />";
+            $data = "hello world!<br />";
         }
 
         public function login()

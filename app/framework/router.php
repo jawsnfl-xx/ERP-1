@@ -33,6 +33,11 @@ namespace Framework
         /**
          * @read
          */
+        protected $_parameters;
+
+        /**
+         * @read
+         */
         protected $_action;
 
         /**
@@ -107,30 +112,15 @@ namespace Framework
             $name = ucfirst($controller);
             $this->_controller = $controller;
             $this->_action = $action;
+            $this->_parameters = $parameters;
             
-            // var_dump($this);
-            // var_dump($name);
-            // var_dump( $this );
+            /**
+             */
             try {
                 $temporary = 'Application\Controller\\' . $name;
                 $instance = new $temporary(array(
                     "parameters" => $parameters
                 ));
-                
-                // var_dump($this);
-                // // print 'asd';
-                // $name = '\Application\Controllers\\' . $name;
-                // print $name;
-                // $instance = new $name(
-                // array(
-                // "parameters" => $parameters
-                // ));
-                // // print 'asdasd';
-                // // $instance = new $name();
-                // var_dump($instance);
-                // print 'asd';
-                // // Registry::set ( "controller", $instance );
-                // $this->_controller = $instance;
             } catch (\Exception $e) {
                 
                 /**
@@ -172,10 +162,6 @@ namespace Framework
                 $action
             ), is_array($parameters) ? $parameters : array());
             $hooks($methodMeta, "@after");
-            /**
-             * Wyczyszczenie kontrolera
-             */
-            Registry::erase("controller");
         }
 
         /**
@@ -214,7 +200,7 @@ namespace Framework
                     $parameters = array_slice($parts, 2);
                 }
             }
-            // var_dump($controller);
+            
             $this->_pass($controller, $action, $parameters);
         }
     }

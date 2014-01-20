@@ -86,15 +86,16 @@ namespace Framework
             $doAction = $this->_willRenderActionView && $this->_actionView;
             $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
             try {
-                if ($doAction) {
-                    $view = $this->_actionView;
+                
+                if ($doLayout) {
+                    $view = $this->_layoutView;
+                    $view->set("template", $results);
                     $results = $view->render();
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                 }
-                if ($doLayout) {
-                    $view = $this->_layoutView;
-                    $view->set("template", $results);
+                if ($doAction) {
+                    $view = $this->_actionView;
                     $results = $view->render();
                     header("Content-type: {$defaultContentType}");
                     echo $results;
@@ -117,27 +118,57 @@ namespace Framework
         {
             parent::__construct($options);
             
+            /**
+             */
             if ($this->getWillRenderLayoutView()) {
+                
+                /**
+                 */
                 $defaultPath = $this->getDefaultPath();
                 $defaultLayout = $this->getDefaultLayout();
                 $defaultExtension = $this->getDefaultExtension();
+                
+                /**
+                 */
                 $view = new View(array(
                     "file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $defaultLayout . '.' . $defaultExtension
                 ));
+                
+                /**
+                 */
                 $this->_layoutView = $view;
             }
+            
+            /**
+             */
             if ($this->getWillRenderActionView()) {
+                
+                /**
+                 */
                 $router = new \Framework\Router(array(
                     "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
-                    "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
+                    "extension" => isset($_GET["extension"]) ? $_GET["extension"] : "html"
                 ));
+                
+                /**
+                 */
                 $router->dispatch();
+                
+                /**
+                 */
                 $controller = $router->getController();
                 $action = $router->getAction();
+                $parameters = $router->getParameters();
+                /**
+                 */
                 $view = new View(array(
                     "file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension
                 ));
+                
+                /**
+                 */
                 $this->setActionView($view);
+                // var_dump($parameters);
             }
         }
 
@@ -145,9 +176,9 @@ namespace Framework
          */
         public function __destruct()
         {
-            // print 'public function __destruct() <br />';
+            /**
+             */
             $this->render();
-            // print 'asd';
         }
     }
 }
