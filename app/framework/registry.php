@@ -18,14 +18,14 @@ namespace Framework
 
         /**
          */
-        private function __construct ()
+        private function __construct()
         {
             // do nothing
         }
 
         /**
          */
-        private function __clone ()
+        private function __clone()
         {
             // do nothing
         }
@@ -36,7 +36,7 @@ namespace Framework
          * @param string $default            
          * @return \Framework\unknown string
          */
-        public static function get ($key, $default = null)
+        public static function get($key, $default = null)
         {
             if (isset(self::$_instances[$key])) {
                 return self::$_instances[$key];
@@ -49,7 +49,7 @@ namespace Framework
          * @param unknown $key            
          * @param string $instance            
          */
-        public static function set ($key, $instance = null)
+        public static function set($key, $instance = null)
         {
             self::$_instances[$key] = $instance;
         }
@@ -58,7 +58,7 @@ namespace Framework
          *
          * @param unknown $key            
          */
-        public static function erase ($key)
+        public static function erase($key)
         {
             unset(self::$_instances[$key]);
         }

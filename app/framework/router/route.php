@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Router
 {
+
     use Framework\Base as Base;
     use Framework\Router\Exception as Exception;
 
@@ -37,10 +38,9 @@ namespace Framework\Router
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        public function _getExceptionForImplementation ($method)
+        public function _getExceptionForImplementation($method)
         {
-            return new Exception\Implementation(
-                    "{$method} method not implemented");
+            return new Exception\Implementation("{$method} method not implemented");
         }
     }
 }

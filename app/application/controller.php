@@ -14,7 +14,7 @@ namespace Application
          *
          * @param unknown $options            
          */
-        public function __construct ($options = array())
+        public function __construct($options = array())
         {
             /**
              */

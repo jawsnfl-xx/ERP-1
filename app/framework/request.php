@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Base as Base;
     use Framework\StringMethods as StringMethods;
     use Framework\RequestMethods as RequestMethods;
@@ -50,7 +51,7 @@ namespace Framework
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        protected function _getExceptionForImplementation ($method)
+        protected function _getExceptionForImplementation($method)
         {
             return new Exception\Implementation("{$method} not implemented");
         }
@@ -59,7 +60,7 @@ namespace Framework
          *
          * @return \Framework\Request\Exception\Argument
          */
-        protected function _getExceptionForArgument ()
+        protected function _getExceptionForArgument()
         {
             return new Exception\Argument("Invalid argument");
         }
@@ -68,12 +69,10 @@ namespace Framework
          *
          * @param unknown $options            
          */
-        public function __construct ($options = array())
+        public function __construct($options = array())
         {
             parent::__construct($options);
-            $this->setAgent(
-                    RequestMethods::server("HTTP_USER_AGENT", 
-                            "Curl/PHP " . PHP_VERSION));
+            $this->setAgent(RequestMethods::server("HTTP_USER_AGENT", "Curl/PHP " . PHP_VERSION));
         }
 
         /**
@@ -81,7 +80,7 @@ namespace Framework
          * @param unknown $url            
          * @param unknown $parameters            
          */
-        public function delete ($url, $parameters = array())
+        public function delete($url, $parameters = array())
         {
             return $this->request("DELETE", $url, $parameters);
         }
@@ -91,12 +90,11 @@ namespace Framework
          * @param unknown $url            
          * @param unknown $parameters            
          */
-        function get ($url, $parameters = array())
+        function get($url, $parameters = array())
         {
             if (! empty($parameters)) {
                 $url .= StringMethods::indexOf($url, "?") ? "&" : "?";
-                $url .= is_string($parameters) ? $parameters : http_build_query(
-                        $parameters, "", "&");
+                $url .= is_string($parameters) ? $parameters : http_build_query($parameters, "", "&");
             }
             return $this->request("GET", $url);
         }
@@ -106,7 +104,7 @@ namespace Framework
          * @param unknown $url            
          * @param unknown $parameters            
          */
-        function head ($url, $parameters = array())
+        function head($url, $parameters = array())
         {
             return $this->request("HEAD", $url, $parameters);
         }
@@ -116,7 +114,7 @@ namespace Framework
          * @param unknown $url            
          * @param unknown $parameters            
          */
-        function post ($url, $parameters = array())
+        function post($url, $parameters = array())
         {
             return $this->request("POST", $url, $parameters);
         }
@@ -126,7 +124,7 @@ namespace Framework
          * @param unknown $url            
          * @param unknown $parameters            
          */
-        function put ($url, $parameters = array())
+        function put($url, $parameters = array())
         {
             return $this->request("PUT", $url, $parameters);
         }
@@ -139,7 +137,7 @@ namespace Framework
          * @throws Exception\Response
          * @return Ambigous <\Framework\Request\Response, mixed>
          */
-        function request ($method, $url, $parameters = array())
+        function request($method, $url, $parameters = array())
         {
             $request = $this->_request = curl_init();
             if (is_array($parameters)) {
@@ -150,13 +148,11 @@ namespace Framework
                 ->_setRequestHeaders();
             $response = curl_exec($request);
             if ($response) {
-                $response = new Request\Response(
-                        array(
-                                "response" => $response
-                        ));
+                $response = new Request\Response(array(
+                    "response" => $response
+                ));
             } else {
-                throw new Exception\Response(
-                        curl_errno($request) . ' - ' . curl_error($request));
+                throw new Exception\Response(curl_errno($request) . ' - ' . curl_error($request));
             }
             curl_close($request);
             return $response;
@@ -168,7 +164,7 @@ namespace Framework
          * @param unknown $value            
          * @return \Framework\Request
          */
-        protected function _setOption ($key, $value)
+        protected function _setOption($key, $value)
         {
             curl_setopt($this->_request, $key, $value);
             return $this;
@@ -179,7 +175,7 @@ namespace Framework
          * @param unknown $key            
          * @return string
          */
-        protected function _normalize ($key)
+        protected function _normalize($key)
         {
             return "CURLOPT_" . str_replace("CURLOPT_", "", strtoupper($key));
         }
@@ -189,7 +185,7 @@ namespace Framework
          * @param unknown $method            
          * @return \Framework\Request
          */
-        protected function _setRequestMethod ($method)
+        protected function _setRequestMethod($method)
         {
             switch (strtoupper($method)) {
                 case "HEAD":
@@ -214,7 +210,7 @@ namespace Framework
          * @param unknown $parameters            
          * @return \Framework\Request
          */
-        protected function _setRequestOptions ($url, $parameters)
+        protected function _setRequestOptions($url, $parameters)
         {
             $this->_setOption(CURLOPT_URL, $url)
                 ->_setOption(CURLOPT_HEADER, true)
@@ -239,7 +235,7 @@ namespace Framework
          *
          * @return \Framework\Request
          */
-        protected function _setRequestHeaders ()
+        protected function _setRequestHeaders()
         {
             $headers = array();
             foreach ($this->getHeaders() as $key => $value) {

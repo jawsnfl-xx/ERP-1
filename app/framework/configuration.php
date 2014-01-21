@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Base as Base;
     use Framework\Configuration as Configuration;
     use Framework\Configuration\Exception as Exception;
@@ -28,10 +29,9 @@ namespace Framework
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        protected function _getExceptionForImplementation ($method)
+        protected function _getExceptionForImplementation($method)
         {
-            return new Exception\Implementation(
-                    "{$method} method not implemented");
+            return new Exception\Implementation("{$method} method not implemented");
         }
 
         /**
@@ -39,7 +39,7 @@ namespace Framework
          * @throws Exception\Argument
          * @return \Framework\Configuration\Driver\Ini
          */
-        public function initialize ()
+        public function initialize()
         {
             if (! $this->type) {
                 throw new Exception\Argument("Invalid type");

@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * @TODO
+ * Przepisać bootsprap do wersko 0.3
+ * Skasować plik _bootsprap.php
+ * Dodać obsługę route.php
+ */
+
+/**
  * Inicjalizacja konfiguracji.
  * @TODO przenieść wszystkie stałe i zmienne do plików *.ini.
  */
@@ -30,15 +37,15 @@
  *     
  * @name setWorld
  * @param unknown $value
- *        	Wywoływana jest przy zapisaniu wartości dla $_world
- *        	
- *        	
- *        	public function setWorld($value) {
- *        	echo "your setter is being called!<br />";
- *        	$this->_world = $value;
- *        	}
- *        	
- *        	
+ *            Wywoływana jest przy zapisaniu wartości dla $_world
+ *            
+ *            
+ *            public function setWorld($value) {
+ *            echo "your setter is being called!<br />";
+ *            $this->_world = $value;
+ *            }
+ *            
+ *            
  * @name getWorld
  * @return unknown Wywoływana jest przy próbie odczytu
  *        
@@ -209,7 +216,7 @@
 /**
  * Testy bibliotek Application :[
  */
-$controller = new Application\Controller ( array (
-		'a' => 'a' 
-) );
-var_dump ( $controller );
+$controller = new Application\Controller(array(
+    'a' => 'a'
+));
+var_dump($controller);

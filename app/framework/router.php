@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Base as Base;
     use Framework\Registry as Registry;
     use Framework\Inspector as Inspector;
@@ -32,6 +33,11 @@ namespace Framework
         /**
          * @read
          */
+        protected $_parameters;
+
+        /**
+         * @read
+         */
         protected $_action;
 
         /**
@@ -45,10 +51,9 @@ namespace Framework
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        public function _getExceptionForImplementation ($method)
+        public function _getExceptionForImplementation($method)
         {
-            return new Exception\Implementation(
-                    "{$method} method not implemented");
+            return new Exception\Implementation("{$method} method not implemented");
         }
 
         /**
@@ -56,7 +61,7 @@ namespace Framework
          * @param unknown $route            
          * @return \Framework\Router
          */
-        public function addRoute ($route)
+        public function addRoute($route)
         {
             $this->_routes[] = $route;
             return $this;
@@ -67,7 +72,7 @@ namespace Framework
          * @param unknown $route            
          * @return \Framework\Router
          */
-        public function removeRoute ($route)
+        public function removeRoute($route)
         {
             foreach ($this->_routes as $i => $stored) 
 
@@ -83,7 +88,7 @@ namespace Framework
          *
          * @return multitype:string
          */
-        public function getRoutes ()
+        public function getRoutes()
         {
             $list = array();
             foreach ($this->_routes as $route) 
@@ -102,44 +107,27 @@ namespace Framework
          * @throws Exception\Controller
          * @throws Exception\Action
          */
-        protected function _pass ($controller, $action, $parameters = array())
+        protected function _pass($controller, $action, $parameters = array())
         {
             $name = ucfirst($controller);
             $this->_controller = $controller;
             $this->_action = $action;
+            $this->_parameters = $parameters;
             
-            // var_dump($this);
-            // var_dump($name);
-            // var_dump( $this );
+            /**
+             */
             try {
                 $temporary = 'Application\Controller\\' . $name;
-                $instance = new $temporary(
-                        array(
-                                "parameters" => $parameters
-                        ));
-                
-                // var_dump($this);
-                // // print 'asd';
-                // $name = '\Application\Controllers\\' . $name;
-                // print $name;
-                // $instance = new $name(
-                // array(
-                // "parameters" => $parameters
-                // ));
-                // // print 'asdasd';
-                // // $instance = new $name();
-                // var_dump($instance);
-                // print 'asd';
-                // // Registry::set ( "controller", $instance );
-                // $this->_controller = $instance;
+                $instance = new $temporary(array(
+                    "parameters" => $parameters
+                ));
             } catch (\Exception $e) {
                 
                 /**
                  * UWAGA !!!
                  * WYŁĄCZONY WYJĄTEK
                  */
-                throw new Exception\Controller(
-                        "Controller {$name} not
+                throw new Exception\Controller("Controller {$name} not
                 found");
                 // print 'zupa z żółwia<br />';
             }
@@ -150,18 +138,16 @@ namespace Framework
             }
             $inspector = new Inspector($instance);
             $methodMeta = $inspector->getMethodMeta($action);
-            if (! empty($methodMeta["@protected"]) ||
-                     ! empty($methodMeta["@private"])) {
+            if (! empty($methodMeta["@protected"]) || ! empty($methodMeta["@private"])) {
                 throw new Exception\Action("Action {$action} not found");
             }
-            $hooks = function  ($meta, $type) use( $inspector, $instance)
+            $hooks = function ($meta, $type) use($inspector, $instance)
             {
                 if (isset($meta[$type])) {
                     $run = array();
                     foreach ($meta[$type] as $method) {
                         $hookMeta = $inspector->getMethodMeta($method);
-                        if (in_array($method, $run) &&
-                                 ! empty($hookMeta["@once"])) {
+                        if (in_array($method, $run) && ! empty($hookMeta["@once"])) {
                             continue;
                         }
                         $instance->$method();
@@ -171,21 +157,16 @@ namespace Framework
             };
             $hooks($methodMeta, "@before");
             
-            call_user_func_array(
-                    array(
-                            $instance,
-                            $action
-                    ), is_array($parameters) ? $parameters : array());
+            call_user_func_array(array(
+                $instance,
+                $action
+            ), is_array($parameters) ? $parameters : array());
             $hooks($methodMeta, "@after");
-            /**
-             * Wyczyszczenie kontrolera
-             */
-            Registry::erase("controller");
         }
 
         /**
          */
-        public function dispatch ()
+        public function dispatch()
         {
             $url = $this->url;
             $parameters = array();
@@ -219,7 +200,7 @@ namespace Framework
                     $parameters = array_slice($parts, 2);
                 }
             }
-            // var_dump($controller);
+            
             $this->_pass($controller, $action, $parameters);
         }
     }

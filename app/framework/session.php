@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Base as Base;
     use Framework\Registry as Registry;
     use Framework\Session as Session;
@@ -29,17 +30,16 @@ namespace Framework
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        protected function _getExceptionForImplementation ($method)
+        protected function _getExceptionForImplementation($method)
         {
-            return new Exception\Implementation(
-                    "{$method} method not implemented");
+            return new Exception\Implementation("{$method} method not implemented");
         }
 
         /**
          *
          * @return \Framework\Session\Exception\Argument
          */
-        protected function _getExceptionForArgument ()
+        protected function _getExceptionForArgument()
         {
             return new Exception\Argument("Invalid argument");
         }
@@ -49,7 +49,7 @@ namespace Framework
          * @throws Exception\Argument
          * @return \Framework\Session\Driver\Server
          */
-        public function initialize ()
+        public function initialize()
         {
             $type = $this->getType();
             if (empty($type)) {
@@ -57,15 +57,13 @@ namespace Framework
                 if ($configuration) {
                     $configuration = $configuration->initialize();
                     $parsed = $configuration->parse("configuration/session");
-                    if (! empty($parsed->session->default) &&
-                             ! empty($parsed->session->default->type)) {
+                    if (! empty($parsed->session->default) && ! empty($parsed->session->default->type)) {
                         $type = $parsed->session->default->type;
                         unset($parsed->session->default->type);
-                        $this->__construct(
-                                array(
-                                        "type" => $type,
-                                        "options" => (array) $parsed->session->default
-                                ));
+                        $this->__construct(array(
+                            "type" => $type,
+                            "options" => (array) $parsed->session->default
+                        ));
                     }
                 }
             }

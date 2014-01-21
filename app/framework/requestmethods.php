@@ -12,14 +12,14 @@ namespace Framework
 
         /**
          */
-        private function __construct ()
+        private function __construct()
         {
             // do nothing
         }
 
         /**
          */
-        private function __clone ()
+        private function __clone()
         {
             // do nothing
         }
@@ -30,7 +30,7 @@ namespace Framework
          * @param string $default            
          * @return unknown string
          */
-        public static function get ($key, $default = "")
+        public static function get($key, $default = "")
         {
             if (! empty($_GET[$key])) {
                 return $_GET[$key];
@@ -44,7 +44,7 @@ namespace Framework
          * @param string $default            
          * @return unknown string
          */
-        public static function post ($key, $default = "")
+        public static function post($key, $default = "")
         {
             if (! empty($_POST[$key])) {
                 return $_POST[$key];
@@ -58,7 +58,7 @@ namespace Framework
          * @param string $default            
          * @return unknown string
          */
-        public static function server ($key, $default = "")
+        public static function server($key, $default = "")
         {
             if (! empty($_SERVER[$key])) {
                 return $_SERVER[$key];

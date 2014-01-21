@@ -12,14 +12,14 @@ namespace Framework
 
         /**
          */
-        private function __construct ()
+        private function __construct()
         {
             // do nothing
         }
 
         /**
          */
-        private function __clone ()
+        private function __clone()
         {
             // do nothing
         }
@@ -29,13 +29,12 @@ namespace Framework
          * @param unknown $array            
          * @return multitype: boolean
          */
-        public static function clean ($array)
+        public static function clean($array)
         {
-            return array_filter($array, 
-                    function  ($item)
-                    {
-                        return ! empty($item);
-                    });
+            return array_filter($array, function ($item)
+            {
+                return ! empty($item);
+            });
         }
 
         /**
@@ -43,13 +42,12 @@ namespace Framework
          * @param unknown $array            
          * @return multitype: string
          */
-        public static function trim ($array)
+        public static function trim($array)
         {
-            return array_map(
-                    function  ($item)
-                    {
-                        return trim($item);
-                    }, $array);
+            return array_map(function ($item)
+            {
+                return trim($item);
+            }, $array);
         }
 
         /**
@@ -58,7 +56,7 @@ namespace Framework
          * @param unknown $return            
          * @return unknown
          */
-        public static function flatten ($array, $return = array())
+        public static function flatten($array, $return = array())
         {
             foreach ($array as $key => $value) {
                 if (is_array($value) || is_object($value)) {
@@ -77,7 +75,7 @@ namespace Framework
          * @param unknown $return            
          * @return unknown
          */
-        public static function last ($array, $return = array())
+        public static function last($array, $return = array())
         {
             return $return;
         }
@@ -87,7 +85,7 @@ namespace Framework
          * @param unknown $array            
          * @return \stdClass
          */
-        public static function toObject ($array)
+        public static function toObject($array)
         {
             $result = new \stdClass();
             foreach ($array as $key => $value) {

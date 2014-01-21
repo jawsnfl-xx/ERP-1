@@ -11,7 +11,7 @@
  * @TODO przeniesienie wszystkich ustanień do pliku ini
  */
 $configuration = new Framework\Configuration(array(
-        "type" => "ini"
+    "type" => "ini"
 ));
 
 $configuration = $configuration->initialize();

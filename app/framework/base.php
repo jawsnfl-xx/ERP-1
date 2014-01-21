@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Inspector as Inspector;
     use Framework\ArrayMethods as ArrayMethods;
     use Framework\StringMethods as StringMethods;
@@ -24,7 +25,7 @@ namespace Framework
          *
          * @param array $options            
          */
-        public function __construct ($options = array())
+        public function __construct($options = array())
         {
             $this->_inspector = new Inspector($this);
             if (is_array($options) || is_object($options)) {
@@ -43,7 +44,7 @@ namespace Framework
          * @throws Exception
          * @return NULL \Framework\Base
          */
-        public function __call ($name, $arguments)
+        public function __call($name, $arguments)
         {
             if (empty($this->_inspector)) {
                 throw new Exception("Call parent::__construct!");
@@ -89,7 +90,7 @@ namespace Framework
          *
          * @param unknown $name            
          */
-        public function __get ($name)
+        public function __get($name)
         {
             $function = "get" . ucfirst($name);
             return $this->$function();
@@ -100,7 +101,7 @@ namespace Framework
          * @param unknown $name            
          * @param unknown $value            
          */
-        public function __set ($name, $value)
+        public function __set($name, $value)
         {
             $function = "set" . ucfirst($name);
             return $this->$function($value);
@@ -111,7 +112,7 @@ namespace Framework
          * @param unknown $property            
          * @return \Framework\Core\Exception\ReadOnly
          */
-        protected function _getExceptionForReadonly ($property)
+        protected function _getExceptionForReadonly($property)
         {
             return new Exception\ReadOnly("{$property} is read-only");
         }
@@ -121,7 +122,7 @@ namespace Framework
          * @param unknown $property            
          * @return \Framework\Core\Exception\WriteOnly
          */
-        protected function _getExceptionForWriteonly ($property)
+        protected function _getExceptionForWriteonly($property)
         {
             return new Exception\WriteOnly("{$property} is write-only");
         }
@@ -130,7 +131,7 @@ namespace Framework
          *
          * @return \Framework\Core\Exception\Property
          */
-        protected function _getExceptionForProperty ()
+        protected function _getExceptionForProperty()
         {
             return new Exception\Property("Invalid property");
         }
@@ -140,7 +141,7 @@ namespace Framework
          * @param unknown $method            
          * @return \Framework\Core\Exception\Argument
          */
-        protected function _getExceptionForImplementation ($method)
+        protected function _getExceptionForImplementation($method)
         {
             return new Exception\Argument("{$method} method not implemented");
         }

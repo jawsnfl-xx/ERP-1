@@ -1,5 +1,5 @@
 <?php
-define ( 'APP_DIR', dirname ( realpath ( __FILE__ ) ) );
+define('APP_DIR', dirname(realpath(__FILE__)));
 /**
  * Wyłączony try?
  * Może dodać to gdzieś w configu? CO?
@@ -13,36 +13,37 @@ define ( 'APP_DIR', dirname ( realpath ( __FILE__ ) ) );
  *
  * @TODO UWAGA! zmiana \ oraz / na DIRECTORY_SEPARATOR. KONIECZNIE!
  */
-error_reporting ( E_ALL ^ E_NOTICE );
-ini_set ( "display_errors", 1 );
+error_reporting(E_ALL ^ E_NOTICE);
+ini_set("display_errors", 1);
 
 /**
  * Kontrola wersji
  * @TODO podpięcie tych informacji pod konfigurację
  */
-if (version_compare ( PHP_VERSION, '5.3.7', '<' )) {
-	exit ( "PHP version smaller than 5.3.7 !" );
+if (version_compare(PHP_VERSION, '5.3.7', '<')) {
+    exit("PHP version smaller than 5.3.7 !");
 }
 
 /**
  *
- * @param unknown $class        	
+ * @param unknown $class            
  * @throws Exception
  */
-function autoload($class) {
-	$paths = explode ( PATH_SEPARATOR, get_include_path () );
-	$flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
-	$file = strtolower ( str_replace ( "\\", DIRECTORY_SEPARATOR, trim ( $class, "\\" ) ) ) . ".php";
-	foreach ( $paths as $path ) {
-		$combined = $path . DIRECTORY_SEPARATOR . $file;
-		if (file_exists ( $combined )) {
-			include ($combined);
-			return;
-		}
-	}
-	
-	var_dump ( $class );
-	// throw new Exception("{$class} not found");
+function autoload($class)
+{
+    $paths = explode(PATH_SEPARATOR, get_include_path());
+    $flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
+    $file = strtolower(str_replace("\\", DIRECTORY_SEPARATOR, trim($class, "\\"))) . ".php";
+    foreach ($paths as $path) {
+        $combined = $path . DIRECTORY_SEPARATOR . $file;
+        if (file_exists($combined)) {
+            include ($combined);
+            return;
+        }
+    }
+    
+    var_dump($class);
+    // throw new Exception("{$class} not found");
 }
 
 /**
@@ -50,19 +51,22 @@ function autoload($class) {
  * @author Marcin Pyrka
  *        
  */
-class Autoloader {
-	public static function autoload($class) {
-		autoload ( $class );
-	}
+class Autoloader
+{
+
+    public static function autoload($class)
+    {
+        autoload($class);
+    }
 }
 
 /**
  */
-spl_autoload_register ( 'autoload' );
-spl_autoload_register ( array (
-		'autoloader',
-		'autoload' 
-) );
+spl_autoload_register('autoload');
+spl_autoload_register(array(
+    'autoloader',
+    'autoload'
+));
 
 /**
  * Wczytanie bootstrapu z katalogu aplikacji

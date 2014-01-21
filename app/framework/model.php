@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Base as Base;
     use Framework\Registry as Registry;
     use Framework\Inspector as Inspector;
@@ -29,12 +30,12 @@ namespace Framework
          * @read
          */
         protected $_types = array(
-                "autonumber",
-                "text",
-                "integer",
-                "decimal",
-                "boolean",
-                "datetime"
+            "autonumber",
+            "text",
+            "integer",
+            "decimal",
+            "boolean",
+            "datetime"
         );
 
         /**
@@ -54,17 +55,16 @@ namespace Framework
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        public function _getExceptionForImplementation ($method)
+        public function _getExceptionForImplementation($method)
         {
-            return new Exception\Implementation(
-                    "{$method} method not implemented");
+            return new Exception\Implementation("{$method} method not implemented");
         }
 
         /**
          *
          * @param unknown $options            
          */
-        public function __construct ($options = array())
+        public function __construct($options = array())
         {
             parent::__construct($options);
             // var_dump ( $this );
@@ -73,7 +73,7 @@ namespace Framework
 
         /**
          */
-        public function load ()
+        public function load()
         {
             $primary = $this->primaryColumn;
             $raw = $primary["raw"];
@@ -105,7 +105,7 @@ namespace Framework
 
         /**
          */
-        public function delete ()
+        public function delete()
         {
             $primary = $this->primaryColumn;
             $raw = $primary["raw"];
@@ -122,7 +122,7 @@ namespace Framework
          *
          * @param unknown $where            
          */
-        public static function deleteAll ($where = array())
+        public static function deleteAll($where = array())
         {
             $instance = new static();
             $query = $instance->connector->query()->from($instance->table);
@@ -136,7 +136,7 @@ namespace Framework
          *
          * @return unknown
          */
-        public function save ()
+        public function save()
         {
             $primary = $this->primaryColumn;
             $raw = $primary["raw"];
@@ -168,11 +168,10 @@ namespace Framework
 
         /**
          */
-        public function getTable ()
+        public function getTable()
         {
             if (empty($this->_table)) {
-                $this->_table = strtolower(
-                        StringMethods::singular(get_class($this)));
+                $this->_table = strtolower(StringMethods::singular(get_class($this)));
                 // $this->_table = str_replace ( 'framework\\model\\', '',
                 // $this->_table );
             }
@@ -183,7 +182,7 @@ namespace Framework
          *
          * @throws Exception\Connector
          */
-        public function getConnector ()
+        public function getConnector()
         {
             if (empty($this->_connector)) {
                 $database = Registry::get("database");
@@ -201,7 +200,7 @@ namespace Framework
          * @throws Exception\Primary
          * @return NULL \Framework\unknown
          */
-        public function getColumns ()
+        public function getColumns()
         {
             if (empty($_columns)) {
                 $primaries = 0;
@@ -210,7 +209,7 @@ namespace Framework
                 $types = $this->types;
                 $inspector = new Inspector($this);
                 $properties = $inspector->getClassProperties();
-                $first = function  ($array, $key)
+                $first = function ($array, $key)
                 {
                     if (! empty($array[$key]) && sizeof($array[$key]) == 1) {
                         return $array[$key][0];
@@ -232,29 +231,27 @@ namespace Framework
                         $validate = ! empty($propertyMeta["@validate"]) ? $propertyMeta["@validate"] : false;
                         $label = $first($propertyMeta, "@label");
                         if (! in_array($type, $types)) {
-                            throw new Exception\Type(
-                                    "{$type} is not a valid type");
+                            throw new Exception\Type("{$type} is not a valid type");
                         }
                         if ($primary) {
                             $primaries ++;
                         }
                         $columns[$name] = array(
-                                "raw" => $property,
-                                "name" => $name,
-                                "primary" => $primary,
-                                "type" => $type,
-                                "length" => $length,
-                                "index" => $index,
-                                "read" => $read,
-                                "write" => $write,
-                                "validate" => $validate,
-                                "label" => $label
+                            "raw" => $property,
+                            "name" => $name,
+                            "primary" => $primary,
+                            "type" => $type,
+                            "length" => $length,
+                            "index" => $index,
+                            "read" => $read,
+                            "write" => $write,
+                            "validate" => $validate,
+                            "label" => $label
                         );
                     }
                 }
                 if ($primaries !== 1) {
-                    throw new Exception\Primary(
-                            "{$class} must have exactly one É
+                    throw new Exception\Primary("{$class} must have exactly one É
 								@primary column");
                 }
                 $this->_columns = $columns;
@@ -267,7 +264,7 @@ namespace Framework
          * @param unknown $name            
          * @return \Framework\unknown NULL
          */
-        public function getColumn ($name)
+        public function getColumn($name)
         {
             if (! empty($this->_columns[$name])) {
                 return $this->_columns[$name];
@@ -277,7 +274,7 @@ namespace Framework
 
         /**
          */
-        public function getPrimaryColumn ()
+        public function getPrimaryColumn()
         {
             if (! isset($this->_primary)) {
                 $primary;
@@ -300,8 +297,7 @@ namespace Framework
          * @param string $direction            
          * @return Ambigous <unknown, NULL>
          */
-        public static function first ($where = array(), $fields = array("*"), É $order = null, 
-                $direction = null)
+        public static function first($where = array(), $fields = array("*"), É $order = null, $direction = null)
         {
             $model = new static();
             return $model->_first($where, $fields, $order, $direction);
@@ -315,8 +311,7 @@ namespace Framework
          * @param string $direction            
          * @return unknown NULL
          */
-        protected function _first ($where = array(), $fields = array("*"), É $order = null, 
-                $direction = null)
+        protected function _first($where = array(), $fields = array("*"), É $order = null, $direction = null)
         {
             $query = $this->connector->query()->from($this->table, $fields);
             foreach ($where as $clause => $value) {
@@ -344,12 +339,10 @@ namespace Framework
          * @param string $page            
          * @return multitype:unknown
          */
-        public static function all ($where = array(), $fields = array("*"), É $order = null, 
-                $direction = null, $limit = null, $page = null)
+        public static function all($where = array(), $fields = array("*"), É $order = null, $direction = null, $limit = null, $page = null)
         {
             $model = new static();
-            return $model->_all($where, $fields, $order, $direction, $limit, 
-                    $page);
+            return $model->_all($where, $fields, $order, $direction, $limit, $page);
         }
 
         /**
@@ -362,8 +355,7 @@ namespace Framework
          * @param string $page            
          * @return multitype:unknown
          */
-        protected function _all ($where = array(), $fields = array("*"), É $order = null, 
-                $direction = null, $limit = null, $page = null)
+        protected function _all($where = array(), $fields = array("*"), É $order = null, $direction = null, $limit = null, $page = null)
         {
             $query = $this->connector->query()->from($this->table, $fields);
             foreach ($where as $clause => $value) {
@@ -388,7 +380,7 @@ namespace Framework
          * @param unknown $where            
          * @return number
          */
-        public static function count ($where = array())
+        public static function count($where = array())
         {
             $model = new static();
             return $model->_count($where);
@@ -399,7 +391,7 @@ namespace Framework
          * @param unknown $where            
          * @return number
          */
-        protected function _count ($where = array())
+        protected function _count($where = array())
         {
             $query = $this->connector->query()->from($this->table);
             foreach ($where as $clause => $value) {

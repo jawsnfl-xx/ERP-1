@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Request
 {
+
     use Framework\Base as Base;
     use Framework\Request\Exception as Exception;
 
@@ -28,7 +29,7 @@ namespace Framework\Request
          *
          * @see \Framework\Base::_getExceptionForImplementation()
          */
-        protected function _getExceptionForImplementation ($method)
+        protected function _getExceptionForImplementation($method)
         {
             return new Exception\Implementation("{$method} not implemented");
         }
@@ -37,7 +38,7 @@ namespace Framework\Request
          *
          * @return \Framework\Request\Exception\Argument
          */
-        protected function _getExceptionForArgument ()
+        protected function _getExceptionForArgument()
         {
             return new Exception\Argument("Invalid argument");
         }
@@ -46,7 +47,7 @@ namespace Framework\Request
          *
          * @param unknown $options            
          */
-        function __construct ($options = array())
+        function __construct($options = array())
         {
             if (! empty($options["response"])) {
                 $response = $this->_response = $options["response"];
@@ -71,7 +72,7 @@ namespace Framework\Request
 
         /**
          */
-        function __toString ()
+        function __toString()
         {
             return $this->getBody();
         }
@@ -82,7 +83,7 @@ namespace Framework\Request
          * @param unknown $content            
          * @return string
          */
-        protected function _partial ($tree, $content)
+        protected function _partial($tree, $content)
         {
             $address = trim($tree["raw"], " /");
             if (StringMethods::indexOf($address, "http") != 0) {
@@ -99,7 +100,7 @@ namespace Framework\Request
          * @param unknown $tree            
          * @return NULL string
          */
-        protected function _getKey ($tree)
+        protected function _getKey($tree)
         {
             if (empty($tree["arguments"]["key"])) {
                 return null;
@@ -112,7 +113,7 @@ namespace Framework\Request
          * @param unknown $key            
          * @param unknown $value            
          */
-        protected function _setValue ($key, $value)
+        protected function _setValue($key, $value)
         {
             if (! empty($key)) {
                 $default = $this->getDefaultKey();
@@ -127,7 +128,7 @@ namespace Framework\Request
          * @param unknown $key            
          * @return unknown string
          */
-        protected function _getValue ($key)
+        protected function _getValue($key)
         {
             $data = Registry::get($this->getDefaultKey());
             if (isset($data[$key])) {
@@ -141,13 +142,12 @@ namespace Framework\Request
          * @param unknown $key            
          * @param unknown $value            
          */
-        public function set ($key, $value)
+        public function set($key, $value)
         {
             if (StringMethods::indexOf($value, "\$_text") > 1) {
                 $first = StringMethods::indexOf($value, "\"");
                 $last = StringMethods::lastIndexOf($value, "\"");
-                $value = stripslashes(
-                        substr($value, $first + 1, ($last - $first) - 1));
+                $value = stripslashes(substr($value, $first + 1, ($last - $first) - 1));
             }
             if (is_array($key)) {
                 $key = $this->_getKey($key);
@@ -160,7 +160,7 @@ namespace Framework\Request
          * @param unknown $key            
          * @param unknown $value            
          */
-        public function append ($key, $value)
+        public function append($key, $value)
         {
             if (is_array($key)) {
                 $key = $this->_getKey($key);
@@ -174,7 +174,7 @@ namespace Framework\Request
          * @param unknown $key            
          * @param unknown $value            
          */
-        public function prepend ($key, $value)
+        public function prepend($key, $value)
         {
             if (is_array($key)) {
                 $key = $this->_getKey($key);
@@ -189,7 +189,7 @@ namespace Framework\Request
          * @param unknown $content            
          * @return string
          */
-        public function yield ($tree, $content)
+        public function yield($tree, $content)
         {
             $key = trim($tree["raw"]);
             $value = addslashes($this->_getValue($key));

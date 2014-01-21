@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Base as Base;
     use Framework\Database as Database;
     use Framework\Database\Exception as Exception;
@@ -37,7 +38,7 @@ namespace Framework
         
         /**
          */
-        public function initialize ()
+        public function initialize()
         {
             $this->_mysql = new Database\Mysql();
             $this->_mysql->connect($this->_options);

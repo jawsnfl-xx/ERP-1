@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\Base as Base;
     use Framework\Template as Template;
     use Framework\View\Exception as Exception;
@@ -14,40 +15,45 @@ namespace Framework
         protected $_file;
 
         /**
+         * * @readwrite
+         */
+        protected $_parameters;
+
+        /**
          * * @read
          */
         protected $_template;
 
         protected $_data = array();
 
-        public function _getExceptionForImplementation ($method)
+        public function _getExceptionForImplementation($method)
         {
-            return new Exception\Implementation(
-                    "{$method} method not implemented");
+            return new Exception\Implementation("{$method} method not implemented");
         }
 
-        public function _getExceptionForArgument ()
+        public function _getExceptionForArgument()
         {
             return new Exception\Argument("Invalid argument");
         }
 
-        public function __construct ($options = array())
+        public function __construct($options = array())
         {
             parent::__construct($options);
-            // $this->_template = new Template(
-            // array(
-            // "implementation" => new Template\Implementation\Extended()
-            // ));
             
-            require_once 'template\smarty\libs\Smarty.class.php';
+            require_once 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
             
             $this->_template = new \Smarty();
-            // $smarty->display('index.tpl');
-            // fetch
-            // exit();
+            
+            $this->_template->setTemplateDir('..' . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'view')
+                ->setCompileDir('..' . DIRECTORY_SEPARATOR . 'templates_c')
+                ->setCacheDir('..' . DIRECTORY_SEPARATOR . 'cache');
+            
+            $this->_template->assign('parameters', $options['parameters']);
+            
+            // var_dump($options['parameters']);
         }
 
-        public function render ()
+        public function render()
         {
             $path = $this->getFile();
             $path = APP_DIR . $path;
@@ -56,14 +62,10 @@ namespace Framework
                 return "";
             }
             
-            // $content = file_get_contents($path);
-            // $this->_template->parse($content);
-            // exit();
             return $this->_template->fetch($path);
-            // return $this->_template->process($this->_data);
         }
 
-        public function get ($key, $default = "")
+        public function get($key, $default = "")
         {
             if (isset($this->_data[$key])) {
                 return $this->_data[$key];
@@ -71,7 +73,7 @@ namespace Framework
             return $default;
         }
 
-        protected function _set ($key, $value)
+        protected function _set($key, $value)
         {
             if (! is_string($key) && ! is_numeric($key)) {
                 throw new Exception\Data("Key must be a string or a number");
@@ -79,7 +81,7 @@ namespace Framework
             $this->_data[$key] = $value;
         }
 
-        public function set ($key, $value = null)
+        public function set($key, $value = null)
         {
             if (is_array($key)) {
                 foreach ($key as $_key => $value) {
@@ -91,7 +93,7 @@ namespace Framework
             return $this;
         }
 
-        public function erase ($key)
+        public function erase($key)
         {
             unset($this->_data[$key]);
             return $this;

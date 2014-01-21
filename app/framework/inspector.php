@@ -1,6 +1,7 @@
 <?php
 namespace Framework
 {
+
     use Framework\ArrayMethods as ArrayMethods;
     use Framework\StringMethods as StringMethods;
 
@@ -23,9 +24,9 @@ namespace Framework
          * @var unknown
          */
         protected $_meta = array(
-                "class" => array(),
-                "properties" => array(),
-                "methods" => array()
+            "class" => array(),
+            "properties" => array(),
+            "methods" => array()
         );
 
         /**
@@ -44,7 +45,7 @@ namespace Framework
          *
          * @param unknown $class            
          */
-        public function __construct ($class)
+        public function __construct($class)
         {
             $this->_class = $class;
         }
@@ -53,7 +54,7 @@ namespace Framework
          *
          * @return string
          */
-        protected function _getClassComment ()
+        protected function _getClassComment()
         {
             $reflection = new \ReflectionClass($this->_class);
             return $reflection->getDocComment();
@@ -63,7 +64,7 @@ namespace Framework
          *
          * @return multitype:
          */
-        protected function _getClassProperties ()
+        protected function _getClassProperties()
         {
             $reflection = new \ReflectionClass($this->_class);
             return $reflection->getProperties();
@@ -73,7 +74,7 @@ namespace Framework
          *
          * @return multitype:
          */
-        protected function _getClassMethods ()
+        protected function _getClassMethods()
         {
             $reflection = new \ReflectionClass($this->_class);
             return $reflection->getMethods();
@@ -84,7 +85,7 @@ namespace Framework
          * @param unknown $property            
          * @return string
          */
-        protected function _getPropertyComment ($property)
+        protected function _getPropertyComment($property)
         {
             $reflection = new \ReflectionProperty($this->_class, $property);
             return $reflection->getDocComment();
@@ -95,7 +96,7 @@ namespace Framework
          * @param unknown $method            
          * @return string
          */
-        protected function _getMethodComment ($method)
+        protected function _getMethodComment($method)
         {
             $reflection = new \ReflectionMethod($this->_class, $method);
             return $reflection->getDocComment();
@@ -107,21 +108,17 @@ namespace Framework
          * @return multitype:boolean Ambigous <\Framework\multitype:, boolean,
          *         multitype:>
          */
-        protected function _parse ($comment)
+        protected function _parse($comment)
         {
             $meta = array();
             $pattern = "(@[a-zA-Z]+\s*[a-zA-Z0-9, ()_]*)";
             $matches = StringMethods::match($comment, $pattern);
             if ($matches != null) {
                 foreach ($matches as $match) {
-                    $parts = ArrayMethods::clean(
-                            ArrayMethods::trim(
-                                    StringMethods::split($match, "[\s]", 2)));
+                    $parts = ArrayMethods::clean(ArrayMethods::trim(StringMethods::split($match, "[\s]", 2)));
                     $meta[$parts[0]] = true;
                     if (sizeof($parts) > 1) {
-                        $meta[$parts[0]] = ArrayMethods::clean(
-                                ArrayMethods::trim(
-                                        StringMethods::split($parts[1], ",")));
+                        $meta[$parts[0]] = ArrayMethods::clean(ArrayMethods::trim(StringMethods::split($parts[1], ",")));
                     }
                 }
             }
@@ -133,7 +130,7 @@ namespace Framework
          * @return Ambigous <boolean, Ambigous <\Framework\multitype:, boolean,
          *         multitype:>>
          */
-        public function getClassMeta ()
+        public function getClassMeta()
         {
             if (! isset($_meta["class"])) {
                 $comment = $this->_getClassComment();
@@ -150,7 +147,7 @@ namespace Framework
          *
          * @return unknown
          */
-        public function getClassProperties ()
+        public function getClassProperties()
         {
             if (! isset($_properties)) {
                 $properties = $this->_getClassProperties();
@@ -165,7 +162,7 @@ namespace Framework
          *
          * @return unknown
          */
-        public function getClassMethods ()
+        public function getClassMethods()
         {
             if (! isset($_methods)) {
                 $methods = $this->_getClassMethods();
@@ -180,7 +177,7 @@ namespace Framework
          *
          * @param unknown $property            
          */
-        public function getPropertyMeta ($property)
+        public function getPropertyMeta($property)
         {
             if (! isset($_meta["properties"][$property])) {
                 $comment = $this->_getPropertyComment($property);
@@ -197,7 +194,7 @@ namespace Framework
          *
          * @param unknown $method            
          */
-        public function getMethodMeta ($method)
+        public function getMethodMeta($method)
         {
             if (! isset($_meta["actions"][$method])) {
                 $comment = $this->_getMethodComment($method);

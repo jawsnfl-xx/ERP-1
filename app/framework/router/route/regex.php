@@ -1,6 +1,7 @@
 <?php
 namespace Framework\Router\Route
 {
+
     use Framework\Router as Router;
 
     /**
@@ -21,7 +22,7 @@ namespace Framework\Router\Route
          * @param unknown $url            
          * @return boolean
          */
-        public function matches ($url)
+        public function matches($url)
         {
             $pattern = $this->pattern;
             preg_match_all("#^{$pattern}$#", $url, $values);

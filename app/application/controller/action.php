@@ -9,13 +9,17 @@ namespace Application\Controller
     /**
      *
      * @author Marcin
+     *         @NOTE
+     *         W ten sposób można zapisać podstawę działania kontrolerów.
+     *         Za pomocą wpisów w komentarzach przez deklaracją
+     *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
      *        
      */
-    class Home extends Controller
+    class Action extends Controller
     {
 
         /**
-         * @read
+         * @readwrite
          */
         protected $_parameters;
 
@@ -41,7 +45,9 @@ namespace Application\Controller
          * Włącznie z przekazaniem dalszych danych dla Smatry
          */
         public function init()
-        {}
+        {
+            print 'init';
+        }
 
         /**
          * @protected
@@ -54,58 +60,56 @@ namespace Application\Controller
          * W tym miejscy jedynie jej uruchmienie.
          */
         public function authenticate()
-        {}
+        {
+            print 'authenticate';
+        }
 
         /**
          * @once
          * @protected
          */
         public function notify()
-        {}
-
-        /**
-         * @before init, authenticate,
-         * @after notify
-         */
-        public function index()
-        {}
-
-        /**
-         * @before init, authenticate,
-         * @after notify
-         *
-         * @NOTE
-         * Podstrony możliwe dla settings:
-         * - access permissions
-         * - properties
-         * - system settings
-         */
-        public function settings()
         {
-            /**
-             */
-            if ($this->_parameters[0] === 'access_permissions') {
-                // print 'access permissions';
-            }
-            
-            /**
-             */
-            if ($this->_parameters[0] === 'properties') {
-                // print 'properties';
-            }
-            
-            /**
-             */
-            if ($this->_parameters[0] === 'system settings') {
-                // print 'system_settings';
-            }
+            print 'notify';
         }
 
         /**
          * @before init, authenticate,
          * @after notify
          */
-        public function login()
-        {}
+        public function index()
+        {
+            print 'index';
+        }
+
+        /**
+         * @before init, authenticate,
+         * @after notify
+         *
+         * @NOTE
+         * ref = references
+         *
+         * @TODO
+         * Dodać wartości ref
+         */
+        public function ref()
+        {
+            print 'ref';
+        }
+
+        /**
+         * @before init,
+         * @after notify
+         *
+         * @NOTE
+         * rat = retrying
+         *
+         * @TODO
+         * Dodać wartości ret
+         */
+        public function ret()
+        {
+            print 'ret';
+        }
     }
 }
