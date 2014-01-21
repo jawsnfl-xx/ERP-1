@@ -19,6 +19,11 @@ namespace Application
             /**
              */
             parent::__construct($options);
+        
+        /**
+         * @TODO:
+         * - nawiązać połączenie z bazą danych;
+         */
         }
     }
 }
