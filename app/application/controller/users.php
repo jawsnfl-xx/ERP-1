@@ -85,6 +85,7 @@ namespace Application\Controller
                 /**
                  * @TODO
                  * - sprawdzić działanie requestmethods
+                 * - koniecznie przez requestami zbudować form logowania :D
                  */
                 $email = RequestMethods::post("email");
                 $password = RequestMethods::post("password");
