@@ -124,11 +124,19 @@ namespace Framework
          */
         public static function deleteAll($where = array())
         {
+            /**
+             */
             $instance = new static();
+            
+            /**
+             */
             $query = $instance->connector->query()->from($instance->table);
             foreach ($where as $clause => $value) {
                 $query->where($clause, $value);
             }
+            
+            /**
+             */
             return $query->delete();
         }
 
@@ -159,6 +167,8 @@ namespace Framework
                 }
             }
             
+            /**
+             */
             $result = $query->save($data);
             if ($result > 0) {
                 $this->$raw = $result;
