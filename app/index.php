@@ -1,11 +1,6 @@
 <?php
 define('APP_DIR', dirname(realpath(__FILE__)));
-/**
- * Wyłączony try?
- * Może dodać to gdzieś w configu? CO?
- */
-// try {
-
+try {
 /**
  * Włączenie raportowania błędów na ekran.
  * @TODO podpięcie tych informacji pod konfigurację
@@ -73,19 +68,18 @@ spl_autoload_register(array(
  * a nie z bierzacego dla index.php
  */
 require_once ('bootstrap.php');
-// } catch (Exception $e) {
+} catch (Exception $e) {
     
 //     /**
 //      * Lista wyjątków.
 //      * Do aktualizacji zgodnie z zawartością FRAMEWORK
 //      */
     
-//     $exceptions = array(
-//             "500" => array(
-//                     // "Framework\Cache\Exception",
-//                     // "Framework\Cache\Exception\Argument",
-//                     // "Framework\Cache\Exception\Implementation",
-//                     // "Framework\Cache\Exception\Service",
+    $exceptions = array(
+             "500" => array(
+                    // "Framework\Cache\Exception",                 
+"Framework\Cache\Exception\Argument"                    "Framework\Cache\Exception\Implementation",
+             // "Framework\Cache\Exception\Service",
 //                     "Framework\Configuration\Exception",
 //                     "Framework\Configuration\Exception\Argument",
 //                     "Framework\Configuration\Exception\Implementation",
@@ -105,58 +99,55 @@ require_once ('bootstrap.php');
 //                     "Framework\Database\Exception\Service",
 //                     "Framework\Database\Exception\Sql",
 //                     "Framework\Model\Exception",
-//                     "Framework\Model\Exception\Argument",
-//                     "Framework\Model\Exception\Connector",
-//                     "Framework\Model\Exception\Implementation",
-//                     "Framework\Model\Exception\Primary",
-//                     "Framework\Model\Exception\Type",
-//                     "Framework\Model\Exception\Validation",
-//                     "Framework\Request\Exception",
-//                     "Framework\Request\Exception\Argument",
-//                     "Framework\Request\Exception\Implementation",
-//                     "Framework\Request\Exception\Response",
-//                     "Framework\Router\Exception",
-//                     "Framework\Router\Exception\Argument",
-//                     "Framework\Router\Exception\Implementation",
-//                     "Framework\Session\Exception",
-//                     "Framework\Session\Exception\Argument",
-//                     "Framework\Session\Exception\Implementation",
-//                     "Framework\Template\Exception",
-//                     "Framework\Template\Exception\Argument",
-//                     "Framework\Template\Exception\Implementation",
-//                     "Framework\Template\Exception\Parser",
-//                     "Framework\View\Exception",
-//                     "Framework\View\Exception\Argument",
-//                     "Framework\View\Exception\Data",
-//                     "Framework\View\Exception\Implementation",
-//                     "Framework\View\Exception\Renderer",
-//                     "Framework\View\Exception\Syntax"
-//             ),
-//             "404" => array(
-//                     "Framework\Router\Exception\Action",
-//                     "Framework\Router\Exception\Controller"
-//             )
-//     );
+                     "Framework\Model\Exception\Argument",
+                   "Framework\Model\Exception\Connector",
+                 "Framework\Model\Exception\Implementation",                  "Framework\Model\Exception\Primary",
+                   "Framework\Model\Exception\Type",
+                    "Framework\Model\Exception\Validation",
+                  "Framework\Request\Exception",
+                     "Framework\Request\Exception\Argument",                     "Framework\Request\Exception\Implementation",
+                 "Framework\Request\Exception\Response",
+                    "Framework\Router\Exception",
+                     "Framework\Router\Exception\Argument",
+                  "Framework\Router\Exception\Implementation",
+                     "Framework\Session\Exception",
+                    "Framework\Session\Exception\Argument",
+                     "Framework\Session\Exception\Implementation",
+             "Framework\Template\Exception",
+                  "Framework\Template\Exception\Argument",
+                  "Framework\Template\Exception\Implementation",
+                  "Framework\Template\Exception\Parser",
+                 "Framework\View\Exception",
+                 "Framework\View\Exception\Argument",
+                  "Framework\View\Exception\Data",
+                    "Framework\View\Exception\Implementation",
+                 "Framework\View\Exception\Renderer",
+                  "Framework\View\Exception\Syntax"
+           ),
+        "404" => array (                   "Framework\Router\Exception\Action",
+                    "Framework\Router\Exception\Controller"
+        )
+);
     
-//     $exception = get_class($e);
+   $exception = get_class($e);
     
-//     /**
-//      * Szybkie renderowanie strony błędy po wyłapaniu aktywnego wyjątku
-//      */
-//     foreach ($exceptions as $template => $classes) {
-//         foreach ($classes as $class) {
-//             if ($class == $exception) {
-//                 header("Content-type: text/html");
-//                 include (APP_PATH . "/application/views/errors/{$template}.php");
-//                 exit();
-//             }
-//         }
-//     }
+   /**
+     * Szybkie renderowanie strony błędy po wyłapaniu aktywnego wyjątku
+    */
+    foreach ($exceptions as $template => $classes) {
+        foreach ($classes as $class) {
+          if ($class == $exception) {
+               header("Content-type: text/html");
+           include (APP_PATH . "/application/views/errors/{$template}.php");
+             exit();
+         }
+      }
+     }
     
-//     /**
-//      * Wywołanie stroy błedu bez wyłapania wyjątku.
-//      */
-//     header("Content-type: text/html");
-//     echo "An error occurred.";
-//     exit();
-// }
+    /**
+     * Wywołanie stroy błedu bez wyłapania wyjątku.
+      */
+     header("Content-type: text/html");
+  echo "An error occurred.";
+   exit();
+ }
