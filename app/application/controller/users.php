@@ -37,8 +37,7 @@ namespace Application\Controller
         /**
          * @once
          * @protected
-         */
-        /**
+         *
          * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
          *
          * @TODO
@@ -55,8 +54,7 @@ namespace Application\Controller
 
         /**
          * @protected
-         */
-        /**
+         *
          * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
          *
          * @TODO

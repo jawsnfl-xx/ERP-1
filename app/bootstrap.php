@@ -1,7 +1,8 @@
 <?php
-
+use Framework\Registry;
 /**
  * Bootstrap
+ *
  * @version 0.2
  * @author Marcin Pyrka
  */
@@ -16,16 +17,19 @@ $configuration = new Framework\Configuration(array(
 
 $configuration = $configuration->initialize();
 $parsed = $configuration->parse('configuration/default_config');
+Registry::set("configuration", $parsed);
 
 /**
  * Manager sesji
  */
 $session = new Framework\Session();
+Registry::set("session", $session);
 
 /**
  * @TODO:
  * - nawiązać połączenie z bazą danych;
  */
+
 $database = new \Framework\Database();
 
 $database->_options = array(
@@ -38,7 +42,7 @@ $database->_options = array(
     )
 );
 
-$database->initialize();
+Registry::set("database", $database);
 
 // Przykład stosowania połączenia z bazą danych MySQL
 // $data = $database->_mysql->fetch_array('SHOW TABLES');
