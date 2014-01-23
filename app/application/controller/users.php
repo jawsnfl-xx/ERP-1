@@ -46,10 +46,6 @@ namespace Application\Controller
         public function init()
         {
             // parent::init();
-            
-            // var_dump($this);
-            // var_dump(parent::$database);
-            // $data = $database->_mysql->fetch_array('SHOW TABLES');
         }
 
         /**
