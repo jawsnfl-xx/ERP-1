@@ -15,17 +15,21 @@ namespace Application\Controller
     {
 
         /**
-         * @read
+         * @readwrite
          */
         protected $_parameters;
+
+        /**
+         * @readwrite
+         */
+        protected $_options;
 
         /**
          *
          * @param unknown $options            
          */
-        public function __construct($options)
+        public function __construct($options = array())
         {
-            // parent::__construct($options);
             /**
              */
             $this->_parameters = $options['parameters'];
@@ -43,9 +47,9 @@ namespace Application\Controller
          */
         public function init()
         {
-            parent::init();
+            // parent::init();
             
-            var_dump($this);
+            // var_dump($this);
             // var_dump(parent::$database);
             // $data = $database->_mysql->fetch_array('SHOW TABLES');
         }
@@ -61,14 +65,18 @@ namespace Application\Controller
          * W tym miejscy jedynie jej uruchmienie.
          */
         public function authenticate()
-        {}
+        {
+            // parent::authenticate();
+        }
 
         /**
          * @once
          * @protected
          */
         public function notify()
-        {}
+        {
+            // parent::notify();
+        }
 
         /**
          * @before init, authenticate,

@@ -11,11 +11,6 @@ namespace Application
     {
 
         /**
-         * @readwrite
-         */
-        public $database;
-
-        /**
          *
          * @param unknown $options            
          */
@@ -24,15 +19,6 @@ namespace Application
             /**
              */
             parent::__construct($options);
-        }
-
-        /**
-         * @once
-         * @protected
-         */
-        public function init()
-        {
-            print 'init';
         }
     }
 }
