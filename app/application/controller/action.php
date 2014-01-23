@@ -46,7 +46,7 @@ namespace Application\Controller
          */
         public function init()
         {
-            print 'init';
+            parent::init();
         }
 
         /**

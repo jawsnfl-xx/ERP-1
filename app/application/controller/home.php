@@ -25,6 +25,7 @@ namespace Application\Controller
          */
         public function __construct($options)
         {
+            // parent::__construct($options);
             /**
              */
             $this->_parameters = $options['parameters'];
@@ -41,7 +42,13 @@ namespace Application\Controller
          * Włącznie z przekazaniem dalszych danych dla Smatry
          */
         public function init()
-        {}
+        {
+            parent::init();
+            
+            var_dump($this);
+            // var_dump(parent::$database);
+            // $data = $database->_mysql->fetch_array('SHOW TABLES');
+        }
 
         /**
          * @protected
