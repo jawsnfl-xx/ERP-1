@@ -11,6 +11,11 @@ namespace Application
     {
 
         /**
+         * @readwrite
+         */
+        public $database;
+
+        /**
          *
          * @param unknown $options            
          */
@@ -24,9 +29,9 @@ namespace Application
              * @TODO:
              * - nawiązać połączenie z bazą danych;
              */
-            $database = new \Framework\Database();
+            $this->database = new \Framework\Database();
             
-            $database->_options = array(
+            $this->database->_options = array(
                 "options" => array(
                     "host" => "localhost",
                     "username" => "root",
@@ -36,9 +41,19 @@ namespace Application
                 )
             );
             
-            $database->initialize();
+            $this->database->initialize();
+            
             // Przykład stosowania połączenia z bazą danych MySQL
-            $data = $database->_mysql->fetch_array('SHOW TABLES');
+            // $data = $database->_mysql->fetch_array('SHOW TABLES');
+        }
+
+        /**
+         * @once
+         * @protected
+         */
+        public function init()
+        {
+            print 'init';
         }
     }
 }

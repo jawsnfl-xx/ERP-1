@@ -31,6 +31,7 @@ namespace Application\Controller
         {
             /**
              */
+            // parent::__construct($options);
             $this->_parameters = $options['parameters'];
         }
 
@@ -87,15 +88,19 @@ namespace Application\Controller
                  * - sprawdzić działanie requestmethods
                  * - koniecznie przez requestami zbudować form logowania :D
                  */
-                $email = RequestMethods::post("email");
+                $email = RequestMethods::post("name");
                 $password = RequestMethods::post("password");
+                
+                var_dump($email);
+                var_dump($password);
+                exit();
                 
                 /**
                  * @TODO
                  * - zmienić odwołanie dla view na zgodne z aktualnym
                  * - poprawić komunukacje z widokiem
                  */
-                $view = $this->getActionView();
+                // $view = $this->getActionView();
                 $error = false;
                 if (empty($email)) {
                     // $view->set("email_error", "Email not provided");
@@ -128,7 +133,7 @@ namespace Application\Controller
                     if (! empty($user)) {
                         $session = Registry::get("session");
                         $session->set("user", serialize($user));
-                        header("Location: /users/profile.html");
+                        header("Location: ?url=home/index");
                         exit();
                     } else {
                     
