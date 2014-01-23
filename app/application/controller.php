@@ -29,8 +29,10 @@ namespace Application
              * natomiast wywoływana po rejestracji
              * w dowolnym z kontrolerów.
              */
+            
+            $configuration = Registry::get("configuration");
             $database = Registry::get("database");
-            // var_dump($database);
+            $session = Registry::get("session");
         }
     }
 }

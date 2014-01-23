@@ -3,8 +3,17 @@ use Framework\Registry;
 /**
  * Bootstrap
  *
- * @version 0.2
+ * @version 0.3
  * @author Marcin Pyrka
+ *        
+ *         @CHANGELOG
+ *        
+ *         0.3
+ *         Włączenie rejestracji obiektów.
+ *         Dzięki temu dostępne są z każdego poziomu, przy czym dostęp do nich może być
+ *         ograniczany i monitorowany. Można także logować kożystanie
+ *         z rejestrowanych obiektów.
+ *        
  */
 
 /**
