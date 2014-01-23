@@ -46,7 +46,11 @@ namespace Application\Controller
          */
         public function init()
         {
-            print 'init';
+            // parent::init();
+            
+            // var_dump($this);
+            // var_dump(parent::$database);
+            // $data = $database->_mysql->fetch_array('SHOW TABLES');
         }
 
         /**
@@ -61,7 +65,7 @@ namespace Application\Controller
          */
         public function authenticate()
         {
-            print 'authenticate';
+            // parent::authenticate();
         }
 
         /**
@@ -70,7 +74,7 @@ namespace Application\Controller
          */
         public function notify()
         {
-            print 'notify';
+            // parent::notify();
         }
 
         /**

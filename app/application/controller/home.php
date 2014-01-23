@@ -15,15 +15,20 @@ namespace Application\Controller
     {
 
         /**
-         * @read
+         * @readwrite
          */
         protected $_parameters;
+
+        /**
+         * @readwrite
+         */
+        protected $_options;
 
         /**
          *
          * @param unknown $options            
          */
-        public function __construct($options)
+        public function __construct($options = array())
         {
             /**
              */
@@ -33,20 +38,26 @@ namespace Application\Controller
         /**
          * @once
          * @protected
-         */
-        /**
+         *
+         *
          * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
          *
          * @TODO
          * Włącznie z przekazaniem dalszych danych dla Smatry
          */
         public function init()
-        {}
+        {
+            // parent::init();
+            
+            // var_dump($this);
+            // var_dump(parent::$database);
+            // $data = $database->_mysql->fetch_array('SHOW TABLES');
+        }
 
         /**
          * @protected
-         */
-        /**
+         *
+         *
          * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
          *
          * @TODO
@@ -54,14 +65,18 @@ namespace Application\Controller
          * W tym miejscy jedynie jej uruchmienie.
          */
         public function authenticate()
-        {}
+        {
+            // parent::authenticate();
+        }
 
         /**
          * @once
          * @protected
          */
         public function notify()
-        {}
+        {
+            // parent::notify();
+        }
 
         /**
          * @before init, authenticate,
@@ -104,8 +119,26 @@ namespace Application\Controller
         /**
          * @before init, authenticate,
          * @after notify
+         *
+         * @NOTE
+         * Podstrony możliwe dla settings:
+         * - access permissions
+         * - properties
+         * - system settings
          */
-        public function login()
-        {}
+        public function quality_management()
+        {
+            /**
+             */
+            if ($this->_parameters[0] === 'review') {
+                // print 'access permissions';
+            }
+            
+            /**
+             */
+            if ($this->_parameters[0] === 'add') {
+                // print 'properties';
+            }
+        }
     }
 }

@@ -1,6 +1,5 @@
 <div class="container">
 	<nav class="navbar navbar-default" role="navigation">
-		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target="#bs-example-navbar-collapse-1">
@@ -10,8 +9,6 @@
 			</button>
 			<a class="navbar-brand" href="?url=home/index">Simple ERP System</a>
 		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav col-lg-3">
@@ -35,7 +32,8 @@
 						<div class="input-group">
 							<input type="text" class="form-control"> <span
 								class="input-group-btn">
-								<button class="btn btn-default" type="button">Szukaj...</button>
+								<button class="btn btn-default" type="button">Szukaj
+									...</button>
 							</span>
 						</div>
 					</div>
@@ -43,10 +41,10 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#"><span class="glyphicon glyphicon-bell"></span>
-						Powiadomienia <span class="badge">42</span></a></li>
+						Powiadomienia <span class="badge">6</span></a></li>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Session <b class="caret"></b></a>
+					data-toggle="dropdown">Więcej ... <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li role="presentation" class="dropdown-header">Ustawienia</li>
 						<li><a href="?url=home/settings/access_permissions">Uprawnienia
@@ -58,14 +56,9 @@
 						<li role="presentation" class="dropdown-header">Zarządzanie
 							sesją</li>
 						<li><a href="#">Zapamiętaj sesję na tym urządzeniu</a></li>
-						<li><a href="?url=home/login">Wyloguj</a></li>
+						<li><a href="?url=users/index">Wyloguj</a></li>
 					</ul></li>
 			</ul>
 		</div>
 	</nav>
 </div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-3">
-			<h4>Pionowe menu :D</h4>
-		</div>
