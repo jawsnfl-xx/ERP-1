@@ -13,8 +13,8 @@
 				<p>
 					@TODO:<br /> Koniecznie zrobic:
 				<ul>
-					<li>obsługę <strong>ref</strong> i <strong>ret</strong></li>
-					<li>obsługę <strong>action</strong></li>
+					<li>obsługa <strong>ref</strong> i <strong>ret</strong></li>
+					<li>obsługa <strong>action</strong></li>
 				</ul>
 				</p>
 				<h3>Naprawić SMARTY!!</h3>
@@ -23,7 +23,6 @@
 	</div>
 </div>
 <script src="../public/js/jquery.min.js"></script>
-<script src="../public/js/modernizr.min.js"></script>
 <script src="../public/js/bootstrap.min.js"></script>
 </body>
 </html>

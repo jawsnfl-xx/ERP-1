@@ -72,9 +72,7 @@ namespace Application\Controller
          * @after notify
          */
         public function index()
-        {
-            print 'formularz logowania';
-        }
+        {}
 
         /**
          * @before init
