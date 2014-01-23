@@ -119,8 +119,26 @@ namespace Application\Controller
         /**
          * @before init, authenticate,
          * @after notify
+         *
+         * @NOTE
+         * Podstrony możliwe dla settings:
+         * - access permissions
+         * - properties
+         * - system settings
          */
-        public function login()
-        {}
+        public function quality_management()
+        {
+            /**
+             */
+            if ($this->_parameters[0] === 'review') {
+                // print 'access permissions';
+            }
+            
+            /**
+             */
+            if ($this->_parameters[0] === 'add') {
+                // print 'properties';
+            }
+        }
     }
 }
