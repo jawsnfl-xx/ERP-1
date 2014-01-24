@@ -2,12 +2,10 @@
 
 /**
  * 
+ * @var unknown
  * 
  * 
- * 
- * test
- * 
- * 
+ * hjijkbwsdfvhkjlb.m,sdghkl;n
  */
 define('APP_DIR', dirname(realpath(__FILE__)));
 try {
