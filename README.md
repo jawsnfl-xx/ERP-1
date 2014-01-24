@@ -1,10 +1,3 @@
-BRANCHE:
-	- master
-	- develop-database - rozwój bazy danych
-	- develop-application - rozwój aplikacji app/application, poza app/application/views
-	- develop-framework - rozwój struktury silnika app/framework
-	- develop-UI - rozwój interfejsu użytkownika, app/application/views, public itp.
-
 TODO I:
   - autentykacja i autoryzacja użytkownika: [===-------]
     - model + uzupełnienie struktury bazy danych [=---------]
