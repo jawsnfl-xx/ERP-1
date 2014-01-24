@@ -7,6 +7,8 @@ use Framework\Registry;
  * Ważne
  * Zamykam bootstrap.
  *
+ *
+ *
  * @version 1
  * @author Marcin Pyrka
  *        
