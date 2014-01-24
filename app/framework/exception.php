@@ -1,15 +1,14 @@
 <?php
-namespace Framework
-{
 
-    use Framework\Base as Base;
+namespace Framework {
 
-    /**
-     *
-     * @author Jet
-     *        
-     */
-    class Exception
-    {
-    }
+	use Framework\Base as Base;
+
+	/**
+	 *
+	 * @author Jet
+	 *        
+	 */
+	class Exception {
+	}
 }
