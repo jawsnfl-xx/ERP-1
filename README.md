@@ -1,3 +1,12 @@
+== Zarządzanie branchami: ==
+1. Branch powstaje dla rozwiązania problemy, dodania elementu aplikacji lub plików.
+2. Branch jest scalany gdy element osiąga swoją funkcjonalność.
+3. Podstawowa linia kodu to linia master.
+4. Robocza linia kodu to linia develop.
+5. Do linii develop trafiają najpierw wszystkie request pulle.
+6. Z linni develop trafią do mastera zgodnie z wersjonowaniem programu (0.1, 0.2 itd).
+
+
 TODO I:
   - autentykacja i autoryzacja użytkownika: [===-------]
     - model + uzupełnienie struktury bazy danych [=---------]
