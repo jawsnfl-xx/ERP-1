@@ -3,22 +3,21 @@ use Framework\Registry;
 /**
  * Bootstrap
  *
- * @version 0.3
+ * !!
+ * Ważne
+ * Zamykam bootstrap.
+ *
+ * @version 1
  * @author Marcin Pyrka
  *        
- *         @CHANGELOG
- *        
- *         0.3
  *         Włączenie rejestracji obiektów.
- *         Dzięki temu dostępne są z każdego poziomu, przy czym dostęp do nich może być
+ *         Dzięki temu dostępne są z każdego poziomu,
+ *         przy czym dostęp do nich może być
  *         ograniczany i monitorowany. Można także logować kożystanie
  *         z rejestrowanych obiektów.
  *        
- */
-
-/**
- * Wczytanie konfiguracji
- * @TODO przeniesienie wszystkich ustanień do pliku ini
+ *         Wczytanie konfiguracji
+ *         @TODO przeniesienie wszystkich ustanień do pliku ini
  */
 $configuration = new Framework\Configuration ( array (
 		"type" => "ini" 
@@ -37,6 +36,10 @@ Registry::set ( "session", $session );
 /**
  * @TODO:
  * - nawiązać połączenie z bazą danych;
+ *
+ * @SAMPLE
+ * Przykład stosowania połączenia z bazą danych MySQL
+ * $data = $database->_mysql->fetch_array('SHOW TABLES');
  */
 
 $database = new \Framework\Database ();
@@ -53,10 +56,10 @@ $database->_options = array (
 
 Registry::set ( "database", $database );
 
-// Przykład stosowania połączenia z bazą danych MySQL
-// $data = $database->_mysql->fetch_array('SHOW TABLES');
-
 /**
  * Wywołanie Kontrolera dla Application\Controller
+ * To ostatni krok w bootstrap.
+ * Pozostałe działania muszą być wykonywane
+ * w lokalnym kontrolerze oraz kontrolerach akcji i modułów.
  */
 $controller = new Application\Controller ();
