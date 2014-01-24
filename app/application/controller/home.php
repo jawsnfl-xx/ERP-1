@@ -46,13 +46,7 @@ namespace Application\Controller
          * Włącznie z przekazaniem dalszych danych dla Smatry
          */
         public function init()
-        {
-            // parent::init();
-            
-            // var_dump($this);
-            // var_dump(parent::$database);
-            // $data = $database->_mysql->fetch_array('SHOW TABLES');
-        }
+        {}
 
         /**
          * @protected
@@ -65,18 +59,14 @@ namespace Application\Controller
          * W tym miejscy jedynie jej uruchmienie.
          */
         public function authenticate()
-        {
-            // parent::authenticate();
-        }
+        {}
 
         /**
          * @once
          * @protected
          */
         public function notify()
-        {
-            // parent::notify();
-        }
+        {}
 
         /**
          * @before init, authenticate,
