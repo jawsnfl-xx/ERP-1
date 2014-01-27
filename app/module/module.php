@@ -1,24 +1,22 @@
 <?php
-namespace Module
-{
 
-    /**
-     *
-     * @author Marcin Pyrka
-     *        
-     */
-    class Module extends \Framework\Base
-    {
+namespace Module {
 
-        /**
-         *
-         * @param unknown $options            
-         */
-        public function __construct($options = array())
-        {
-            /**
-             */
-            parent::__construct($options);
-        }
-    }
+	/**
+	 *
+	 * @author Marcin Pyrka
+	 *        
+	 */
+	class Module extends \Framework\Base {
+		
+		/**
+		 *
+		 * @param unknown $options        	
+		 */
+		public function __construct($options = array()) {
+			/**
+			 */
+			parent::__construct ( $options );
+		}
+	}
 }

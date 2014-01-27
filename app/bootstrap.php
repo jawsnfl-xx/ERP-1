@@ -21,19 +21,19 @@ use Framework\Registry;
  *         Wczytanie konfiguracji
  *         @TODO przeniesienie wszystkich ustanień do pliku ini
  */
-$configuration = new Framework\Configuration(array(
-    "type" => "ini"
-));
+$configuration = new Framework\Configuration ( array (
+		"type" => "ini" 
+) );
 
-$configuration = $configuration->initialize();
-$parsed = $configuration->parse('configuration/default_config');
-Registry::set("configuration", $parsed);
+$configuration = $configuration->initialize ();
+$parsed = $configuration->parse ( 'configuration/default_config' );
+Registry::set ( "configuration", $parsed );
 
 /**
  * Manager sesji
  */
-$session = new Framework\Session();
-Registry::set("session", $session);
+$session = new Framework\Session ();
+Registry::set ( "session", $session );
 
 /**
  * @TODO:
@@ -44,19 +44,19 @@ Registry::set("session", $session);
  * $data = $database->_mysql->fetch_array('SHOW TABLES');
  */
 
-$database = new \Framework\Database();
+$database = new \Framework\Database ();
 
-$database->_options = array(
-    "options" => array(
-        "host" => "localhost",
-        "username" => "root",
-        "password" => "",
-        "schema" => "test",
-        "port" => "3306"
-    )
+$database->_options = array (
+		"options" => array (
+				"host" => "localhost",
+				"username" => "root",
+				"password" => "",
+				"schema" => "test",
+				"port" => "3306" 
+		) 
 );
 
-Registry::set("database", $database);
+Registry::set ( "database", $database );
 
 /**
  * Wywołanie Kontrolera dla Application\Controller
@@ -64,4 +64,4 @@ Registry::set("database", $database);
  * Pozostałe działania muszą być wykonywane
  * w lokalnym kontrolerze oraz kontrolerach akcji i modułów.
  */
-$controller = new Application\Controller();
+$controller = new Application\Controller ();
