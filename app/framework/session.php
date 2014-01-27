@@ -10,7 +10,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      */
     class Session extends Base
     {

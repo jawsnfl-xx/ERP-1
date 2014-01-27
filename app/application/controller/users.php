@@ -5,6 +5,7 @@ namespace Application\Controller
     use Application\Controller as Controller;
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
+    use Framework\Session\Driver\Server;
 
     /**
      *
@@ -13,7 +14,7 @@ namespace Application\Controller
      *         W ten sposób można zapisać podstawę działania kontrolerów.
      *         Za pomocą wpisów w komentarzach przez deklaracją
      *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-     *        
+     *
      */
     class Users extends Controller
     {
@@ -25,7 +26,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options)
         {
@@ -56,7 +57,18 @@ namespace Application\Controller
          * W tym miejscy jedynie jej uruchmienie.
          */
         public function authenticate()
-        {}
+        {
+            $session = Registry::get("session");
+
+            // var_dump($session);
+            // var_dump($session->get("user"));
+
+            // if (empty($session->get("user"))) {
+
+            // header("Location: ?url=users/index");
+            // exit();
+            // }
+        }
 
         /**
          * @once
@@ -79,7 +91,7 @@ namespace Application\Controller
         public function login()
         {
             if (RequestMethods::post("login")) {
-                
+
                 /**
                  * @TODO
                  * - sprawdzić działanie requestmethods
@@ -87,11 +99,11 @@ namespace Application\Controller
                  */
                 $email = RequestMethods::post("name");
                 $password = RequestMethods::post("password");
-                
+
                 var_dump($email);
                 var_dump($password);
                 exit();
-                
+
                 /**
                  * @TODO
                  * - zmienić odwołanie dla view na zgodne z aktualnym
@@ -108,7 +120,7 @@ namespace Application\Controller
                     $error = true;
                 }
                 if (! $error) {
-                    
+
                     /**
                      * @TODO
                      * - zbudować zapytanie zgodne z aktualną uproszczoną metodą dostępu
@@ -120,7 +132,7 @@ namespace Application\Controller
                         "live = ?" => true,
                         "deleted = ?" => false
                     ));
-                    
+
                     /**
                      * @TODO
                      * - wyłączyć rejestrację zmiennej
@@ -133,7 +145,7 @@ namespace Application\Controller
                         header("Location: ?url=home/index");
                         exit();
                     } else {
-                    
+
                     /**
                      * @TODO
                      * - obsłużyć błędy logowania

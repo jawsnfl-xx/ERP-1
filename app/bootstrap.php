@@ -11,13 +11,13 @@ use Framework\Registry;
  *
  * @version 1
  * @author Marcin Pyrka
- *        
+ *
  *         Włączenie rejestracji obiektów.
  *         Dzięki temu dostępne są z każdego poziomu,
  *         przy czym dostęp do nich może być
  *         ograniczany i monitorowany. Można także logować kożystanie
  *         z rejestrowanych obiektów.
- *        
+ *
  *         Wczytanie konfiguracji
  *         @TODO przeniesienie wszystkich ustanień do pliku ini
  */
@@ -33,6 +33,8 @@ Registry::set("configuration", $parsed);
  * Manager sesji
  */
 $session = new Framework\Session();
+// var_dump($session);
+// $session->initialize();
 Registry::set("session", $session);
 
 /**
