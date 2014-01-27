@@ -4,16 +4,12 @@
 	<!-- Two columns of text -->
 	<div class="row">
 		<div class="col-lg-4">
-			
-			
+
+
 			<h2>Utwórz</h2>
-			<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
-				euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-				Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-				Praesent commodo cursus magna.</p>
+			<p>Tworzenie nowego arkusza x</p>
 			<p>
-				<a class="btn btn-default" href="#" role="button">Dalej
-					&raquo;</a>
+				<a class="btn btn-default" href="#" role="button">Dalej &raquo;</a>
 			</p>
 		</div>
 		<!-- /.col-lg-4 -->
@@ -24,8 +20,7 @@
 				purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
 				tortor mauris condimentum nibh.</p>
 			<p>
-				<a class="btn btn-default" href="#" role="button">Dalej
-					&raquo;</a>
+				<a class="btn btn-default" href="#" role="button">Dalej &raquo;</a>
 			</p>
 		</div>
 		<!-- /.col-lg-4 -->
