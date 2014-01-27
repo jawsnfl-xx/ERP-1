@@ -5,6 +5,7 @@ namespace Application\Controller
     use Application\Controller as Controller;
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
+    use Framework\View;
 
     /**
      *
@@ -118,16 +119,19 @@ namespace Application\Controller
          */
         public function quality_management()
         {
+            $quality_management = new \Module\Quality_management();
+            
+            // var_dump($production_quality_management);
             /**
              */
             if ($this->_parameters[0] === 'review') {
-                // print 'access permissions';
+                // print 'review';
             }
             
             /**
              */
             if ($this->_parameters[0] === 'add') {
-                // print 'properties';
+                // print 'add';
             }
         }
     }
