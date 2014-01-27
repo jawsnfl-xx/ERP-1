@@ -1,17 +1,4 @@
 <?php
-
-/**
- * 
- * 
- * 
- * 
- * 
- * @author Marcin Pyrka
- * 
- * @TODO
- * 
- *
- */
 namespace Application
 {
 
@@ -43,8 +30,16 @@ namespace Application
              * w dowolnym z kontrolerów.
              */
             
+            /**
+             */
             $configuration = Registry::get("configuration");
+            
+            /**
+             */
             $database = Registry::get("database");
+            
+            /**
+             */
             $session = Registry::get("session");
         }
     }
