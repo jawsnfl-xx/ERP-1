@@ -86,26 +86,26 @@ namespace Application
      * framework.view.render.before function($file)
      * $file—The template file that should be rendered
      */
-
+    
     /**
      *
      * @author Marcin Pyrka
-     *
-     *
+     *        
+     *        
      */
     class Controller extends \Framework\Controller
     {
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {
             /**
              */
             parent::__construct($options);
-
+            
             /**
              * Planowane działanie przy rozłączeniu bazy danych
              */
@@ -113,7 +113,7 @@ namespace Application
             {
                 $database = Registry::get("database");
             });
-
+            
             /**
              * Tak działa przekazywanie klas przez Registry
              *
@@ -121,15 +121,15 @@ namespace Application
              * natomiast wywoływana po rejestracji
              * w dowolnym z kontrolerów.
              */
-
+            
             /**
              */
             $configuration = Registry::get("configuration");
-
+            
             /**
              */
             $database = Registry::get("database");
-
+            
             /**
              */
             $session = Registry::get("session");
