@@ -29,111 +29,112 @@
  * 
  * 
  */
-class User extends Framework\Model {
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @primary
-	 * @type autonumber
-	 */
-	protected $_id_users;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type text
-	 * @length 45
-	 */
-	protected $_first_name;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type text
-	 * @length 45
-	 */
-	protected $_last_name;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type text
-	 * @length 100
-	 * @index
-	 */
-	protected $_password;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type text
-	 * @length 100
-	 * @index
-	 */
-	protected $_key_public;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type text
-	 * @length 100
-	 * @index
-	 */
-	protected $_key_private;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type text
-	 * @length 100
-	 * @index
-	 */
-	protected $_key_salt;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type integer
-	 * @index
-	 */
-	protected $_live;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type integer
-	 * @index
-	 */
-	protected $_deleted;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type integer
-	 * @index
-	 */
-	protected $_live;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type boolean
-	 * @index
-	 */
-	protected $_deleted;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type datetime
-	 */
-	protected $_created;
-	
-	/**
-	 * @column
-	 * @readwrite
-	 * @type datetime
-	 */
-	protected $_modified;
+class User extends Framework\Model
+{
+
+    /**
+     * @column
+     * @readwrite
+     * @primary
+     * @type autonumber
+     */
+    protected $_id_users;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
+     * @length 45
+     */
+    protected $_first_name;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
+     * @length 45
+     */
+    protected $_last_name;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
+     * @length 100
+     * @index
+     */
+    protected $_password;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
+     * @length 100
+     * @index
+     */
+    protected $_key_public;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
+     * @length 100
+     * @index
+     */
+    protected $_key_private;
+
+    /**
+     * @column
+     * @readwrite
+     * @type text
+     * @length 100
+     * @index
+     */
+    protected $_key_salt;
+
+    /**
+     * @column
+     * @readwrite
+     * @type integer
+     * @index
+     */
+    protected $_live;
+
+    /**
+     * @column
+     * @readwrite
+     * @type integer
+     * @index
+     */
+    protected $_deleted;
+
+    /**
+     * @column
+     * @readwrite
+     * @type integer
+     * @index
+     */
+    protected $_live;
+
+    /**
+     * @column
+     * @readwrite
+     * @type boolean
+     * @index
+     */
+    protected $_deleted;
+
+    /**
+     * @column
+     * @readwrite
+     * @type datetime
+     */
+    protected $_created;
+
+    /**
+     * @column
+     * @readwrite
+     * @type datetime
+     */
+    protected $_modified;
 }
