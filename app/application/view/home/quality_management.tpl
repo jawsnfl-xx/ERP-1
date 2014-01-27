@@ -1,7 +1,7 @@
 {include file='./menu.tpl'}
 <div class="container marketing">
 
-	<!-- Three columns of text below the carousel -->
+	<!-- Two columns of text -->
 	<div class="row">
 		<div class="col-lg-4">
 			
