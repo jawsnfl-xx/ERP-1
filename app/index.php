@@ -2,10 +2,6 @@
 
 /**
  *
- * @var unknown
- *
- *
- * hjijkbwsdfvhkjlb.m,sdghkl;n
  */
 define('APP_DIR', dirname(realpath(__FILE__)));
 try {
@@ -17,7 +13,7 @@ try {
      */
     error_reporting(E_ALL ^ E_NOTICE);
     ini_set("display_errors", 1);
-    
+
     /**
      * Kontrola wersji
      * @TODO podpięcie tych informacji pod konfigurację
@@ -28,7 +24,7 @@ try {
 
     /**
      *
-     * @param unknown $class            
+     * @param unknown $class
      * @throws Exception
      */
     function autoload($class)
@@ -43,7 +39,7 @@ try {
                 return;
             }
         }
-        
+
         var_dump($class);
         // throw new Exception("{$class} not found");
     }
@@ -51,7 +47,7 @@ try {
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      */
     class Autoloader
     {
@@ -61,7 +57,7 @@ try {
             autoload($class);
         }
     }
-    
+
     /**
      */
     spl_autoload_register('autoload');
@@ -69,14 +65,14 @@ try {
         'autoloader',
         'autoload'
     ));
-    
+
     /**
      * Wczytanie bootstrapu z katalogu aplikacji
      * a nie z bierzacego dla index.php
      */
     require_once ('bootstrap.php');
 } catch (Exception $e) {
-    
+
     $exceptions = array(
         "500" => array(
             "Framework\Cache\Exception",
@@ -134,9 +130,9 @@ try {
             "Framework\Router\Exception\Controller"
         )
     );
-    
+
     $exception = get_class($e);
-    
+
     /**
      * Szybkie renderowanie strony błędy po wyłapaniu aktywnego wyjątku
      */
@@ -149,7 +145,7 @@ try {
             }
         }
     }
-    
+
     /**
      * Wywołanie stroy błedu bez wyłapania wyjątku.
      */
