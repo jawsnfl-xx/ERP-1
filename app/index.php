@@ -14,7 +14,7 @@ define('APP_DIR', dirname(realpath(__FILE__)));
 /**
  */
 try {
-    
+
     /**
      * Włączenie raportowania błędów na ekran.
      *
@@ -23,7 +23,7 @@ try {
      */
     error_reporting(E_ALL ^ E_NOTICE);
     ini_set("display_errors", 1);
-    
+
     /**
      * Kontrola wersji
      * @TODO podpięcie tych informacji pod konfigurację
@@ -34,7 +34,7 @@ try {
 
     /**
      *
-     * @param unknown $class            
+     * @param unknown $class
      * @throws Exception
      */
     function autoload($class)
@@ -49,14 +49,14 @@ try {
                 return;
             }
         }
-        
+
         throw new Exception("{$class} not found");
     }
 
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      */
     class Autoloader
     {
@@ -66,7 +66,7 @@ try {
             autoload($class);
         }
     }
-    
+
     /**
      */
     spl_autoload_register('autoload');
@@ -74,7 +74,7 @@ try {
         'autoloader',
         'autoload'
     ));
-    
+
     /**
      * Próba zbudowania automatycznego ładowania
      * wszystkich modułów.
@@ -82,23 +82,23 @@ try {
      */
     // $path = "./module";
     // $iterator = new DirectoryIterator($path);
-    
+
     // foreach ($iterator as $item) {
     // if (! $item->isDot() && ! $item->isDir()) {
-    
+
     // include ($path . "/" . $item->getFilename());
     // }
     // }
-    
+
     // var_dump($iterator);
-    
+
     /**
      * Wczytanie bootstrapu z katalogu aplikacji
      * a nie z bierzacego dla index.php
      */
     require_once ('bootstrap.php');
 } catch (Exception $e) {
-    
+
     $exceptions = array(
         "500" => array(
             "Framework\Cache\Exception",
@@ -156,9 +156,9 @@ try {
             "Framework\Router\Exception\Controller"
         )
     );
-    
+
     $exception = get_class($e);
-    
+
     /**
      * Szybkie renderowanie strony błędy po wyłapaniu aktywnego wyjątku
      */
@@ -171,7 +171,7 @@ try {
             }
         }
     }
-    
+
     /**
      * Wywołanie stroy błedu bez wyłapania wyjątku.
      */
