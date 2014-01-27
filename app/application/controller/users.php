@@ -33,6 +33,8 @@ namespace Application\Controller
             /**
              */
             $this->_parameters = $options['parameters'];
+            // $database = new Framework\Database();
+            // $database->initialize();
         }
 
         /**
@@ -58,7 +60,7 @@ namespace Application\Controller
          */
         public function authenticate()
         {
-            $session = Registry::get("session");
+            // $session = Registry::get("session");
             
             // var_dump($session);
             // var_dump($session->get("user"));

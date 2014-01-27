@@ -7,8 +7,8 @@ namespace Framework
     use Framework\Registry as Registry;
     use Framework\Template as Template;
     use Framework\Controller\Exception as Exception;
-    use Framework\Events as Events;
-
+    // use Framework\Events as Events;
+    
     /**
      *
      * @author Marcin Pyrka
@@ -199,13 +199,13 @@ namespace Framework
          */
         public function __destruct()
         {
-            Events::fire("framework.controller.destruct.before", array(
-                $this->name
-            ));
+            // Events::fire("framework.controller.destruct.before", array(
+            // $this->name
+            // ));
             $this->render();
-            Events::fire("framework.controller.destruct.after", array(
-                $this->name
-            ));
+            // Events::fire("framework.controller.destruct.after", array(
+            // $this->name
+            // ));
         }
     }
 }

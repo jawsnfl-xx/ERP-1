@@ -1,8 +1,8 @@
 <?php
 namespace Application
 {
-
-    use Framework\Events as Events;
+    
+    // use Framework\Events as Events;
     use Framework\Registry as Registry;
 
     /**
@@ -109,10 +109,10 @@ namespace Application
             /**
              * Planowane działanie przy rozłączeniu bazy danych
              */
-            Events::add("framework.controller.destruct.after", function ($name)
-            {
-                $database = Registry::get("database");
-            });
+            // Events::add("framework.controller.destruct.after", function ($name)
+            // {
+            // $database = Registry::get("database");
+            // });
             
             /**
              * Tak działa przekazywanie klas przez Registry

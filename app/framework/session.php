@@ -4,7 +4,7 @@ namespace Framework
 
     use Framework\Base as Base;
     use Framework\Registry as Registry;
-    use Framework\Session as Session;
+    // use Framework\Session as Session;
     use Framework\Session\Exception as Exception;
 
     /**
@@ -51,9 +51,10 @@ namespace Framework
          */
         public function initialize()
         {
+            print 'public function initialize()';
             $type = $this->getType();
             if (empty($type)) {
-                $configuration = Registry::get("configuration");
+                // $configuration = Registry::get("configuration");
                 if ($configuration) {
                     $configuration = $configuration->initialize();
                     $parsed = $configuration->parse("configuration/session");
@@ -66,8 +67,14 @@ namespace Framework
                         ));
                     }
                 }
+                
+                /**
+                 * tymczasowe
+                 */
+                $type = 'server';
             }
             if (empty($type)) {
+                print 'jest puste';
                 throw new Exception\Argument("Invalid type");
             }
             switch ($type) {
