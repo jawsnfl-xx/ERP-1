@@ -89,7 +89,7 @@ namespace Application
     
     /**
      *
-     * @author Marcin
+     * @author Marcin Pyrka
      *        
      */
     class Controller extends \Framework\Controller
@@ -110,9 +110,7 @@ namespace Application
              */
             Events::add("framework.controller.destruct.after", function ($name)
             {
-                print 'lol';
                 $database = Registry::get("database");
-                // $database->disconnect();
             });
             
             /**

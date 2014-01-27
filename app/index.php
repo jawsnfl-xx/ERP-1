@@ -3,8 +3,18 @@
 /**
  *
  */
+
+/**
+ * ?
+ *
+ * @var unknown
+ */
 define('APP_DIR', dirname(realpath(__FILE__)));
+
+/**
+ */
 try {
+    
     /**
      * Włączenie raportowania błędów na ekran.
      *
@@ -40,8 +50,7 @@ try {
             }
         }
         
-        var_dump($class);
-        // throw new Exception("{$class} not found");
+        throw new Exception("{$class} not found");
     }
 
     /**
@@ -65,6 +74,23 @@ try {
         'autoloader',
         'autoload'
     ));
+    
+    /**
+     * Próba zbudowania automatycznego ładowania
+     * wszystkich modułów.
+     * Lekko to bez sensu, ale pomyślimy.
+     */
+    // $path = "./module";
+    // $iterator = new DirectoryIterator($path);
+    
+    // foreach ($iterator as $item) {
+    // if (! $item->isDot() && ! $item->isDir()) {
+    
+    // include ($path . "/" . $item->getFilename());
+    // }
+    // }
+    
+    // var_dump($iterator);
     
     /**
      * Wczytanie bootstrapu z katalogu aplikacji
@@ -140,7 +166,7 @@ try {
         foreach ($classes as $class) {
             if ($class == $exception) {
                 header("Content-type: text/html");
-                include (APP_PATH . "/application/views/errors/{$template}.php");
+                include ("./application/views/errors/{$template}.php");
                 exit();
             }
         }

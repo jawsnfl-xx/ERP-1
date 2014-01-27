@@ -2,6 +2,11 @@
 namespace Framework
 {
 
+    /**
+     *
+     * @author Marcin Pyrka
+     *        
+     */
     class Events
     {
 
@@ -52,6 +57,11 @@ namespace Framework
             }
         }
 
+        /**
+         *
+         * @param unknown $type            
+         * @param unknown $callback            
+         */
         public static function remove($type, $callback)
         {
             if (! empty(self::$_callbacks[$type])) {
