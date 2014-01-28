@@ -1,26 +1,33 @@
 {include file='./menu.tpl'}
-<div class="container">
-	<div class="row">
-		<div class="col-md-3">{include file='./vmenu.tpl'}</div>
-		<div class="col-md-9">
-			<ol class="breadcrumb">
-				<li><a href="?url=home/index">Główna</a></li>
-				<li><a href="?url=home/quality_management">Zarządzanie
-						jakością</a></li> {if $parameters['0'] eq 'review'}
-				<li class="active">Przegląd raportów</li> {elseif $parameters['0']
-				eq 'add'}
-				<li class="active">Dodaj</li> {else} {/if}
-			</ol>
+<div class="container marketing">
 
-			{if $parameters['0'] eq 'review'}
-			<h1>review</h1>
-			{elseif $parameters['0'] eq 'add'}
-			<h1>add</h1>
-			{else} {/if}
+	<!-- Two columns of text -->
+	<div class="row">
+		<div class="col-lg-4">
+
+
+			<h2>Utw�rz</h2>
+			<p>Tworzenie nowego arkusza x</p>
+			<p>
+				<a class="btn btn-default" href="#" role="button">Dalej &raquo;</a>
+			</p>
 		</div>
+		<!-- /.col-lg-4 -->
+		<div class="col-lg-4">
+			<h2>Przegl�d</h2>
+			<p>Duis mollis, est non commodo luctus, nisi erat porttitor
+				ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
+				purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
+				tortor mauris condimentum nibh.</p>
+			<p>
+				<a class="btn btn-default" href="#" role="button">Dalej &raquo;</a>
+			</p>
+		</div>
+		<!-- /.col-lg-4 -->
+		<div class="col-lg-4"></div>
+		<!-- /.row -->
+
+		<script src="../public/js/jquery.min.js"></script>
+		<script src="../public/js/bootstrap.min.js"></script>
 	</div>
 </div>
-<script src="../public/js/jquery.min.js"></script>
-<script src="../public/js/bootstrap.min.js"></script>
-</body>
-</html>

@@ -13,7 +13,6 @@
 				'system_settings'}
 				<li class="active">system settings</li> {else} {/if}
 			</ol>
-
 			{if $parameters['0'] eq 'access_permissions'}
 			<h1>access permissions</h1>
 			{elseif $parameters['0'] eq 'properties'}
