@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="page-header">
-		<h1>Interfejs UÅ¼ytkownika</h1>
+		<h1>Interfejs U¿ytkownika</h1>
 	</div>
 	<nav class="navbar navbar-default" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -36,7 +36,7 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li><a href="#"><span class="glyphicon glyphicon-bell"></span>
-						AKTUALNOÅšCI</a></li>
+						AKTUALNOŒCI</a></li>
 				<li><a href="#"><span class="glyphicon glyphicon-briefcase"></span>
 						RAPORTY</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -60,8 +60,8 @@
 					<span class="glyphicon glyphicon-search"></span> Wyszukaj
 				</button>
 
-				<button type="button" class="btn btn-default navbar-btn">Wyloguj
-					siÄ™</button>
+				<a href="?url=users/logout" type="button"
+					class="btn btn-default navbar-btn">Wyloguj siê</a>
 			</form>
 
 
@@ -81,13 +81,13 @@
 		<!-- Three columns of text below the carousel -->
 		<div class="row">
 			<div class="col-lg-4">
-				<h2>Kontrola jakoÅ›ci</h2>
+				<h2>Kontrola jakoœci</h2>
 				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
 					euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
 					Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 					Praesent commodo cursus magna.</p>
 				<p>
-				
+
 					<a class="btn btn-default" href="#" role="button">View details
 						&raquo;</a>
 				</p>
