@@ -1,15 +1,15 @@
 <?php
-namespace Module
+namespace Framework\Session
 {
 
-    use Module\Quality_management as Quality_management;
+    use Framework\Session as Session;
 
     /**
      *
      * @author Marcin Pyrka
      *        
      */
-    class Production_quality_management extends Quality_management
+    class Driver extends Session
     {
 
         /**
@@ -18,8 +18,6 @@ namespace Module
          */
         public function __construct($options = array())
         {
-            /**
-             */
             parent::__construct($options);
         }
     }

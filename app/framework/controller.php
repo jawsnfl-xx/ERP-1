@@ -7,9 +7,20 @@ namespace Framework
     use Framework\Registry as Registry;
     use Framework\Template as Template;
     use Framework\Controller\Exception as Exception;
-
+    // use Framework\Events as Events;
+    
+    /**
+     *
+     * @author Marcin Pyrka
+     *        
+     */
     class Controller extends Base
     {
+
+        /**
+         * @read
+         */
+        protected $_name;
 
         /**
          * @readwrite
@@ -161,8 +172,6 @@ namespace Framework
                 $parameters = $router->getParameters();
                 
                 /**
-                 * !!!!
-                 * Dodano przekazywanie parametru
                  */
                 $view = new View(array(
                     "file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
@@ -178,11 +187,25 @@ namespace Framework
 
         /**
          */
+        protected function getName()
+        {
+            if (empty($this->_name)) {
+                $this->_name = get_class($this);
+            }
+            return $this->_name;
+        }
+
+        /**
+         */
         public function __destruct()
         {
-            /**
-             */
+            // Events::fire("framework.controller.destruct.before", array(
+            // $this->name
+            // ));
             $this->render();
+            // Events::fire("framework.controller.destruct.after", array(
+            // $this->name
+            // ));
         }
     }
 }

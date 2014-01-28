@@ -1,5 +1,7 @@
 <?php
-use Framework\Registry;
+// use Framework;
+// use Framework\Registry as Registry;
+// use Framework\Session as Session;
 /**
  * Bootstrap
  *
@@ -27,13 +29,15 @@ $configuration = new Framework\Configuration(array(
 
 $configuration = $configuration->initialize();
 $parsed = $configuration->parse('configuration/default_config');
-Registry::set("configuration", $parsed);
+Framework\Registry::set("configuration", $parsed);
 
 /**
  * Manager sesji
  */
 $session = new Framework\Session();
-Registry::set("session", $session);
+$session = $session->initialize();
+$session->setup('test', 'test1');
+Framework\Registry::set("session", $session);
 
 /**
  * @TODO:
@@ -44,7 +48,7 @@ Registry::set("session", $session);
  * $data = $database->_mysql->fetch_array('SHOW TABLES');
  */
 
-$database = new \Framework\Database();
+$database = new Framework\Database();
 
 $database->_options = array(
     "options" => array(
@@ -56,7 +60,7 @@ $database->_options = array(
     )
 );
 
-Registry::set("database", $database);
+Framework\Registry::set("database", $database);
 
 /**
  * Wywołanie Kontrolera dla Application\Controller

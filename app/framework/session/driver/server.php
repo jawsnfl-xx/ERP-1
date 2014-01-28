@@ -24,6 +24,7 @@ namespace Framework\Session\Driver
         public function __construct($options = array())
         {
             parent::__construct($options);
+            // print 'asd';
             session_start();
         }
 
@@ -33,7 +34,7 @@ namespace Framework\Session\Driver
          * @param string $default            
          * @return unknown string
          */
-        public function get($key, $default = null)
+        public function getup($key, $default = null)
         {
             $prefix = $this->getPrefix();
             if (isset($_SESSION[$prefix . $key])) {
@@ -48,7 +49,7 @@ namespace Framework\Session\Driver
          * @param unknown $value            
          * @return \Framework\Session\Driver\Server
          */
-        public function set($key, $value)
+        public function setup($key, $value)
         {
             $prefix = $this->getPrefix();
             $_SESSION[$prefix . $key] = $value;

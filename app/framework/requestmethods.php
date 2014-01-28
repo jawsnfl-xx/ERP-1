@@ -39,6 +39,8 @@ namespace Framework
         }
 
         /**
+         * @NOTE
+         * Kasia <3 na to patrzyła.
          *
          * @param unknown $key            
          * @param string $default            
