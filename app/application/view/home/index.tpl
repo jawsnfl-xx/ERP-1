@@ -17,9 +17,7 @@
 </head>
 <body>
 	<div class="page-header">
-		<h1>
-			Interfejs <small>Imiê_Nazwisko</small>
-		</h1>
+		<h1>Interfejs UÅ¼ytkownika</h1>
 	</div>
 	<nav class="navbar navbar-default" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->
@@ -37,10 +35,10 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="#"><span class="glyphicon glyphicon-bell">
-							AKTUALNOŒCI</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-briefcase">
-							RAPORTY</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-bell"></span>
+						AKTUALNOÅšCI</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-briefcase"></span>
+						RAPORTY</a></li>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>
 						USTAWIENIA <b class="caret"></b></a>
@@ -63,9 +61,7 @@
 				</button>
 			</form>
 
-			</ul>
-			</li>
-			</ul>
+
 		</div>
 		<!-- /.navbar-collapse -->
 	</nav>
@@ -73,10 +69,8 @@
 		<div class="panel-heading">
 			<h3 class="panel-title">Do zrobienia</h3>
 		</div>
-		<div class="panel-body">zawartoœæ pobrana z harmonogramu zadañ
-			(jeœli istnieje)</div>
-	</div>
 
+	</div>
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
 	<div class="container marketing">
@@ -137,5 +131,6 @@
 					quam enim, id lorem.</p>
 			</div>
 		</div>
+	</div>
 </body>
 </html>
