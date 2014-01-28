@@ -51,32 +51,33 @@ namespace Framework
          */
         public function initialize()
         {
-            print 'public function initialize()';
+            // print 'public function initialize()';
             $type = $this->getType();
             if (empty($type)) {
                 // $configuration = Registry::get("configuration");
-                if ($configuration) {
-                    $configuration = $configuration->initialize();
-                    $parsed = $configuration->parse("configuration/session");
-                    if (! empty($parsed->session->default) && ! empty($parsed->session->default->type)) {
-                        $type = $parsed->session->default->type;
-                        unset($parsed->session->default->type);
-                        $this->__construct(array(
-                            "type" => $type,
-                            "options" => (array) $parsed->session->default
-                        ));
-                    }
-                }
+                // if ($configuration) {
+                // $configuration = $configuration->initialize();
+                // $parsed = $configuration->parse("configuration/session");
+                // if (! empty($parsed->session->default) && ! empty($parsed->session->default->type)) {
+                // $type = $parsed->session->default->type;
+                // unset($parsed->session->default->type);
+                // $this->__construct(array(
+                // "type" => $type,
+                // "options" => (array) $parsed->session->default
+                // ));
+                // }
+                // }
                 
                 /**
                  * tymczasowe
                  */
                 $type = 'server';
+                // var_dump($this);
             }
-            if (empty($type)) {
-                print 'jest puste';
-                throw new Exception\Argument("Invalid type");
-            }
+            // if (empty($type)) {
+            // print 'jest puste';
+            // throw new Exception\Argument("Invalid type");
+            // }
             switch ($type) {
                 case "server":
                     {

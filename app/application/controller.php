@@ -1,9 +1,10 @@
 <?php
 namespace Application
 {
-    
-    // use Framework\Events as Events;
+
+    use Framework\Events as Events;
     use Framework\Registry as Registry;
+    use Framework\Session as Session;
 
     /**
      * framework.cache.initialize.before function($type, $options)
@@ -133,6 +134,7 @@ namespace Application
             /**
              */
             $session = Registry::get("session");
+            // var_dump($session->getup('test'));
         }
     }
 }

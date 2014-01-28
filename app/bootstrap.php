@@ -34,12 +34,10 @@ Framework\Registry::set("configuration", $parsed);
 /**
  * Manager sesji
  */
-// $session = new Framework\Session();
-// $session->initialize();
-// var_dump($session);
-// $session->set('dupa', 'kupa');
-// var_dump($session);
-// Framework\Registry::set("session", $session);
+$session = new Framework\Session();
+$session = $session->initialize();
+$session->setup('test', 'test1');
+Framework\Registry::set("session", $session);
 
 /**
  * @TODO:
