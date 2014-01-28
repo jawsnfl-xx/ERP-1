@@ -87,6 +87,7 @@
 					Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 					Praesent commodo cursus magna.</p>
 				<p>
+				
 					<a class="btn btn-default" href="#" role="button">View details
 						&raquo;</a>
 				</p>
