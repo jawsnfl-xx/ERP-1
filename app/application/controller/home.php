@@ -10,7 +10,7 @@ namespace Application\Controller
     /**
      *
      * @author Marcin
-     *        
+     *
      */
     class Home extends Controller
     {
@@ -27,7 +27,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options = array())
         {
@@ -60,7 +60,20 @@ namespace Application\Controller
          * W tym miejscy jedynie jej uruchmienie.
          */
         public function authenticate()
-        {}
+        {
+
+            /**
+             */
+            // $configuration = Registry::get("configuration");
+            // $database = Registry::get("database");
+            $session = Registry::get("session");
+
+            if (! $session->getup('user')) {
+                header("Location: ?url=users/index");
+                // print 'nie jest zalogowany';
+            }
+            // var_dump($session);
+        }
 
         /**
          * @once
@@ -93,13 +106,13 @@ namespace Application\Controller
             if ($this->_parameters[0] === 'access_permissions') {
                 // print 'access permissions';
             }
-            
+
             /**
              */
             if ($this->_parameters[0] === 'properties') {
                 // print 'properties';
             }
-            
+
             /**
              */
             if ($this->_parameters[0] === 'system settings') {
@@ -120,14 +133,14 @@ namespace Application\Controller
         public function quality_management()
         {
             $quality_management = new \Module\Quality_management();
-            
+
             // var_dump($production_quality_management);
             /**
              */
             if ($this->_parameters[0] === 'review') {
                 // print 'review';
             }
-            
+
             /**
              */
             if ($this->_parameters[0] === 'add') {

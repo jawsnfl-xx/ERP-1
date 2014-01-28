@@ -6,6 +6,7 @@ namespace Application\Controller
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
     use Framework\Session\Driver\Server;
+    use Framework\Request;
 
     /**
      *
@@ -14,7 +15,7 @@ namespace Application\Controller
      *         W ten sposób można zapisać podstawę działania kontrolerów.
      *         Za pomocą wpisów w komentarzach przez deklaracją
      *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-     *        
+     *
      */
     class Users extends Controller
     {
@@ -26,7 +27,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options)
         {
@@ -61,15 +62,33 @@ namespace Application\Controller
         public function authenticate()
         {
             // $session = Registry::get("session");
-            
+
             // var_dump($session);
             // var_dump($session->get("user"));
-            
+
             // if (empty($session->get("user"))) {
-            
+
             // header("Location: ?url=users/index");
             // exit();
             // }
+
+            /**
+             */
+            // $configuration = Registry::get("configuration");
+            // $database = Registry::get("database");
+            $session = Registry::get("session");
+
+            if ($session->getup('user')) {
+
+                header("Location: ?url=home/index");
+                // print 'nie jest zalogowany';
+            } elseif (RequestMethods::get(url) === 'users/index') {
+                // nic nie robi
+            } else {
+
+                header("Location: ?url=users/index");
+            }
+            // var_dump($session);
         }
 
         /**
@@ -90,22 +109,33 @@ namespace Application\Controller
          * @before init
          * @after notify
          */
+        public function logout()
+        {
+            $session = Registry::get("session");
+            $session->setup("user", FALSE);
+            header("Location: ?url=users/index");
+            exit();
+        }
+
+        /**
+         * @before init
+         * @after notify
+         */
         public function login()
         {
             if (RequestMethods::post("login")) {
-                
+
                 /**
                  * @TODO
                  * - sprawdzić działanie requestmethods
                  * - koniecznie przez requestami zbudować form logowania :D
                  */
-                $email = RequestMethods::post("name");
+                $name = RequestMethods::post("name");
                 $password = RequestMethods::post("password");
-                
-                var_dump($email);
-                var_dump($password);
-                exit();
-                
+
+                // var_dump($name);
+                // var_dump($password);
+
                 /**
                  * @TODO
                  * - zmienić odwołanie dla view na zgodne z aktualnym
@@ -113,8 +143,8 @@ namespace Application\Controller
                  */
                 // $view = $this->getActionView();
                 $error = false;
-                if (empty($email)) {
-                    // $view->set("email_error", "Email not provided");
+                if (empty($name)) {
+                    // $view->set("name", "name not provided");
                     $error = true;
                 }
                 if (empty($password)) {
@@ -122,19 +152,23 @@ namespace Application\Controller
                     $error = true;
                 }
                 if (! $error) {
-                    
+
                     /**
                      * @TODO
                      * - zbudować zapytanie zgodne z aktualną uproszczoną metodą dostępu
                      * do bazy danych
                      */
-                    $user = User::first(array(
-                        "email = ?" => $email,
-                        "password = ?" => $password,
-                        "live = ?" => true,
-                        "deleted = ?" => false
-                    ));
-                    
+                    // $user = User::first(array(
+                    // "email = ?" => $name,
+                    // "password = ?" => $password,
+                    // "live = ?" => true,
+                    // "deleted = ?" => false
+                    // ));
+
+                    if ($name === "test" and $password === "test1") {
+                        $user = TRUE;
+                    }
+
                     /**
                      * @TODO
                      * - wyłączyć rejestrację zmiennej
@@ -143,16 +177,19 @@ namespace Application\Controller
                      */
                     if (! empty($user)) {
                         $session = Registry::get("session");
-                        $session->set("user", serialize($user));
+                        $session->setup("user", TRUE);
                         header("Location: ?url=home/index");
                         exit();
                     } else {
-                    
-                    /**
-                     * @TODO
-                     * - obsłużyć błędy logowania
-                     */
+
+                        /**
+                         * @TODO
+                         * - obsłużyć błędy logowania
+                         */
                         // $view->set("password_error", "Email address and/or password are incorrect");
+
+                        header("Location: ?url=users/index");
+                        exit();
                     }
                     exit();
                 }

@@ -106,35 +106,14 @@ namespace Application
             /**
              */
             parent::__construct($options);
-            
-            /**
-             * Planowane działanie przy rozłączeniu bazy danych
-             */
+        
+        /**
+         * Planowane działanie przy rozłączeniu bazy danych
+         */
             // Events::add("framework.controller.destruct.after", function ($name)
             // {
             // $database = Registry::get("database");
             // });
-            
-            /**
-             * Tak działa przekazywanie klas przez Registry
-             *
-             * Całość może być deklarowana w bootsprap,
-             * natomiast wywoływana po rejestracji
-             * w dowolnym z kontrolerów.
-             */
-            
-            /**
-             */
-            $configuration = Registry::get("configuration");
-            
-            /**
-             */
-            $database = Registry::get("database");
-            
-            /**
-             */
-            $session = Registry::get("session");
-            // var_dump($session->getup('test'));
         }
     }
 }
