@@ -1,16 +1,7 @@
 <?php
+
 /**
- * deleleleleleoooop
  *
- *
- * delelelop
- *
- *
- * deleleleop
- *
- * deleleleleleleeeeeeeeeeeleop
- *
- * fuck you
  * @author Marcin
  *
  */
@@ -118,14 +109,6 @@ namespace Application {
 			/**
 			 */
 			parent::__construct ( $options );
-
-		/**
-		 * Planowane działanie przy rozłączeniu bazy danych
-		 */
-			// Events::add("framework.controller.destruct.after", function ($name)
-			// {
-			// $database = Registry::get("database");
-			// });
 		}
 	}
 }
