@@ -1,15 +1,15 @@
 <?php
-namespace Module\Quality_management\Production_quality_management
+namespace Module
 {
 
-    use Module\Quality_management\Production_quality_management as Production_quality_management;
+    use Module\Product_technology as Product_technology;
 
     /**
      *
      * @author Marcin Pyrka
      *        
      */
-    class Mensuration extends Production_quality_management
+    class Product extends Product_technology
     {
 
         /**

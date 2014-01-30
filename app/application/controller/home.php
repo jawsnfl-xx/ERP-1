@@ -132,7 +132,7 @@ namespace Application\Controller {
 		 * - system settings
 		 */
 		public function quality_management() {
-			$quality_management = new \Module\Quality_management ();
+			// $quality_management = new \Module\Quality_management ();
 
 			// var_dump($production_quality_management);
 			/**
