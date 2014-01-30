@@ -58,12 +58,7 @@
 		</div>
 		<!-- /.navbar-collapse -->
 	</nav>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Do zrobienia</h3>
-		</div>
-
-	</div>
+	
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
 	<div class="container marketing">
@@ -78,7 +73,7 @@
 					Praesent commodo cursus magna.</p>
 				<p>
 
-					<a class="btn btn-default" href="?url=home/quality_management.tpl"
+					<a class="btn btn-default" href="?url=home/quality_management"
 						role="button">View details &raquo;</a>
 				</p>
 			</div>
