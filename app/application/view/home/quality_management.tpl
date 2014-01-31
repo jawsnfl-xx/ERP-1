@@ -6,7 +6,7 @@
 		<div class="col-lg-4">
 
 
-			<h2>Utwórz</h2>
+			<h2>UtwÃ³rz</h2>
 			<p>Tworzenie nowego arkusza x</p>
 			<p>
 				<a class="btn btn-default" href="#" role="button">Dalej &raquo;</a>
@@ -14,7 +14,7 @@
 		</div>
 		<!-- /.col-lg-4 -->
 		<div class="col-lg-4">
-			<h2>Przegl¹d</h2>
+			<h2>PrzeglÄ…d</h2>
 			<p>Duis mollis, est non commodo luctus, nisi erat porttitor
 				ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
 				purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,

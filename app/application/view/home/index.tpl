@@ -16,9 +16,6 @@
     <![endif]-->
 </head>
 <body>
-	<div class="page-header">
-		<h1>Interfejs U¿ytkownika</h1>
-	</div>
 	<nav class="navbar navbar-default" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -35,22 +32,15 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="#"><span class="glyphicon glyphicon-bell"></span>
-						AKTUALNOŒCI</a></li>
+				<li><a href=""><span class="glyphicon glyphicon-bell"></span>
+						AKTUALNOÅšCI</a></li>
 				<li><a href="#"><span class="glyphicon glyphicon-briefcase"></span>
 						RAPORTY</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>
-						USTAWIENIA <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Informacje <span
-								class="glyphicon glyphicon-info-sign"></span></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#">Preferencje <span
-								class="glyphicon glyphicon-user"></span></a></li>
-						<li class="divider"></li>
+				<li><a href="#"><span class="glyphicon glyphicon-wrench"></span>
+						USTAWIENIA </a></li>
 
-					</ul></li>
+
+
 			</ul>
 			<form class="navbar-form navbar-right" role="search">
 				<div class="form-group">
@@ -61,19 +51,14 @@
 				</button>
 
 				<a href="?url=users/logout" type="button"
-					class="btn btn-default navbar-btn">Wyloguj siê</a>
+					class="btn btn-default navbar-btn">Wyloguj siÄ™</a>
 			</form>
 
 
 		</div>
 		<!-- /.navbar-collapse -->
 	</nav>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<h3 class="panel-title">Do zrobienia</h3>
-		</div>
-
-	</div>
+	
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
 	<div class="container marketing">
@@ -81,39 +66,15 @@
 		<!-- Three columns of text below the carousel -->
 		<div class="row">
 			<div class="col-lg-4">
-				<h2>Kontrola jakoœci</h2>
+				<h2>Kontrola jakoÅ›ci</h2>
 				<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
 					euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
 					Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 					Praesent commodo cursus magna.</p>
 				<p>
 
-					<a class="btn btn-default" href="#" role="button">View details
-						&raquo;</a>
-				</p>
-			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-lg-4">
-				<h2>Heading</h2>
-				<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-					ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
-					purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
-					tortor mauris condimentum nibh.</p>
-				<p>
-					<a class="btn btn-default" href="#" role="button">View details
-						&raquo;</a>
-				</p>
-			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-lg-4">
-				<h2>Heading</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-					egestas eget quam. Vestibulum id ligula porta felis euismod semper.
-					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus.</p>
-				<p>
-					<a class="btn btn-default" href="#" role="button">View details
-						&raquo;</a>
+					<a class="btn btn-default" href="?url=home/quality_management"
+						role="button">View details &raquo;</a>
 				</p>
 			</div>
 			<!-- /.col-lg-4 -->
