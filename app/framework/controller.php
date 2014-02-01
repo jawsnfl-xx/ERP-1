@@ -92,12 +92,22 @@ namespace Framework
          */
         public function render()
         {
+            /**
+             */
             $defaultContentType = $this->_defaultContentType;
             $results = null;
+            
+            /**
+             */
             $doAction = $this->_willRenderActionView && $this->_actionView;
             $doLayout = $this->_willRenderLayoutView && $this->_layoutView;
+            
+            /**
+             */
             try {
                 
+                /**
+                 */
                 if ($doLayout) {
                     $view = $this->_layoutView;
                     $view->set("template", $results);
@@ -105,6 +115,9 @@ namespace Framework
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                 }
+                
+                /**
+                 */
                 if ($doAction) {
                     $view = $this->_actionView;
                     $results = $view->render();
@@ -127,6 +140,8 @@ namespace Framework
          */
         public function __construct($options = array())
         {
+            /**
+             */
             parent::__construct($options);
             
             /**
@@ -189,9 +204,13 @@ namespace Framework
          */
         protected function getName()
         {
+            /**
+             */
             if (empty($this->_name)) {
                 $this->_name = get_class($this);
             }
+            /**
+             */
             return $this->_name;
         }
 

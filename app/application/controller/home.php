@@ -1,151 +1,151 @@
 <?php
-namespace Application\Controller
-{
 
-    use Application\Controller as Controller;
-    use Framework\Registry as Registry;
-    use Framework\RequestMethods as RequestMethods;
-    use Framework\View;
+/**
+ *
+ * @author Marcin
+ *
+ */
+namespace Application\Controller {
 
-    /**
-     *
-     * @author Marcin
-     *
-     */
-    class Home extends Controller
-    {
+	use Application\Controller as Controller;
+	use Framework\Registry as Registry;
+	use Framework\RequestMethods as RequestMethods;
+	use Framework\View;
 
-        /**
-         * @readwrite
-         */
-        protected $_parameters;
+	/**
+	 *
+	 * @author Marcin
+	 *
+	 */
+	class Home extends Controller {
 
-        /**
-         * @readwrite
-         */
-        protected $_options;
+		/**
+		 * @readwrite
+		 */
+		protected $_parameters;
 
-        /**
-         *
-         * @param unknown $options
-         */
-        public function __construct($options = array())
-        {
-            /**
-             */
-            $this->_parameters = $options['parameters'];
-        }
+		/**
+		 * @readwrite
+		 */
+		protected $_options;
 
-        /**
-         * @once
-         * @protected
-         *
-         *
-         * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
-         *
-         * @TODO
-         * Włącznie z przekazaniem dalszych danych dla Smatry
-         */
-        public function init()
-        {}
+		/**
+		 *
+		 * @param unknown $options
+		 */
+		public function __construct($options = array()) {
+			/**
+			 */
+			$this->_parameters = $options ['parameters'];
+		}
 
-        /**
-         * @protected
-         *
-         *
-         * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
-         *
-         * @TODO
-         * Budowa oddzielnej klasy autentykacji.
-         * W tym miejscy jedynie jej uruchmienie.
-         */
-        public function authenticate()
-        {
+		/**
+		 * @once
+		 * @protected
+		 *
+		 *
+		 * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
+		 *
+		 * @TODO
+		 * Włącznie z przekazaniem dalszych danych dla Smatry
+		 */
+		public function init() {
+		}
 
-            /**
-             */
-            // $configuration = Registry::get("configuration");
-            // $database = Registry::get("database");
-            $session = Registry::get("session");
+		/**
+		 * @protected
+		 *
+		 *
+		 * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
+		 *
+		 * @TODO
+		 * Budowa oddzielnej klasy autentykacji.
+		 * W tym miejscy jedynie jej uruchmienie.
+		 */
+		public function authenticate() {
 
-            if (! $session->getup('user')) {
-                header("Location: ?url=users/index");
-                // print 'nie jest zalogowany';
-            }
-            // var_dump($session);
-        }
+			/**
+			 */
+			// $configuration = Registry::get("configuration");
+			// $database = Registry::get("database");
+			$session = Registry::get ( "session" );
 
-        /**
-         * @once
-         * @protected
-         */
-        public function notify()
-        {}
+			if (! $session->getup ( 'user' )) {
+				header ( "Location: ?url=users/index" );
+				// print 'nie jest zalogowany';
+			}
+			// var_dump($session);
+		}
 
-        /**
-         * @before init, authenticate,
-         * @after notify
-         */
-        public function index()
-        {}
+		/**
+		 * @once
+		 * @protected
+		 */
+		public function notify() {
+		}
 
-        /**
-         * @before init, authenticate,
-         * @after notify
-         *
-         * @NOTE
-         * Podstrony możliwe dla settings:
-         * - access permissions
-         * - properties
-         * - system settings
-         */
-        public function settings()
-        {
-            /**
-             */
-            if ($this->_parameters[0] === 'access_permissions') {
-                // print 'access permissions';
-            }
+		/**
+		 * @before init, authenticate,
+		 * @after notify
+		 */
+		public function index() {
+		}
 
-            /**
-             */
-            if ($this->_parameters[0] === 'properties') {
-                // print 'properties';
-            }
+		/**
+		 * @before init, authenticate,
+		 * @after notify
+		 *
+		 * @NOTE
+		 * Podstrony możliwe dla settings:
+		 * - access permissions
+		 * - properties
+		 * - system settings
+		 */
+		public function settings() {
+			/**
+			 */
+			if ($this->_parameters [0] === 'access_permissions') {
+				// print 'access permissions';
+			}
 
-            /**
-             */
-            if ($this->_parameters[0] === 'system settings') {
-                // print 'system_settings';
-            }
-        }
+			/**
+			 */
+			if ($this->_parameters [0] === 'properties') {
+				// print 'properties';
+			}
 
-        /**
-         * @before init, authenticate,
-         * @after notify
-         *
-         * @NOTE
-         * Podstrony możliwe dla settings:
-         * - access permissions
-         * - properties
-         * - system settings
-         */
-        public function quality_management()
-        {
-            $quality_management = new \Module\Quality_management();
+			/**
+			 */
+			if ($this->_parameters [0] === 'system settings') {
+				// print 'system_settings';
+			}
+		}
 
-            // var_dump($production_quality_management);
-            /**
-             */
-            if ($this->_parameters[0] === 'review') {
-                // print 'review';
-            }
+		/**
+		 * @before init, authenticate,
+		 * @after notify
+		 *
+		 * @NOTE
+		 * Podstrony możliwe dla settings:
+		 * - access permissions
+		 * - properties
+		 * - system settings
+		 */
+		public function quality_management() {
+			// $quality_management = new \Module\Quality_management ();
 
-            /**
-             */
-            if ($this->_parameters[0] === 'add') {
-                // print 'add';
-            }
-        }
-    }
+			// var_dump($production_quality_management);
+			/**
+			 */
+			if ($this->_parameters [0] === 'review') {
+				// print 'review';
+			}
+
+			/**
+			 */
+			if ($this->_parameters [0] === 'add') {
+				// print 'add';
+			}
+		}
+	}
 }

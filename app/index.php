@@ -34,7 +34,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 
 /**
  *
- * @param unknown $class            
+ * @param unknown $class
  * @throws Exception
  */
 function autoload($class)
@@ -56,7 +56,7 @@ function autoload($class)
 /**
  *
  * @author Marcin Pyrka
- *        
+ *
  */
 class Autoloader
 {

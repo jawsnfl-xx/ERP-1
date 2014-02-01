@@ -1,4 +1,10 @@
 <?php
+
+/**
+ *
+ * @author Marcin
+ *
+ */
 namespace Application\Controller
 {
 
@@ -15,7 +21,7 @@ namespace Application\Controller
      *         W ten sposób można zapisać podstawę działania kontrolerów.
      *         Za pomocą wpisów w komentarzach przez deklaracją
      *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-     *
+     *        
      */
     class Users extends Controller
     {
@@ -27,7 +33,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options)
         {
@@ -62,30 +68,30 @@ namespace Application\Controller
         public function authenticate()
         {
             // $session = Registry::get("session");
-
+            
             // var_dump($session);
             // var_dump($session->get("user"));
-
+            
             // if (empty($session->get("user"))) {
-
+            
             // header("Location: ?url=users/index");
             // exit();
             // }
-
+            
             /**
              */
             // $configuration = Registry::get("configuration");
             // $database = Registry::get("database");
             $session = Registry::get("session");
-
+            
             if ($session->getup('user')) {
-
+                
                 header("Location: ?url=home/index");
                 // print 'nie jest zalogowany';
             } elseif (RequestMethods::get(url) === 'users/index') {
                 // nic nie robi
             } else {
-
+                
                 header("Location: ?url=users/index");
             }
             // var_dump($session);
@@ -124,7 +130,7 @@ namespace Application\Controller
         public function login()
         {
             if (RequestMethods::post("login")) {
-
+                
                 /**
                  * @TODO
                  * - sprawdzić działanie requestmethods
@@ -132,10 +138,10 @@ namespace Application\Controller
                  */
                 $name = RequestMethods::post("name");
                 $password = RequestMethods::post("password");
-
+                
                 // var_dump($name);
                 // var_dump($password);
-
+                
                 /**
                  * @TODO
                  * - zmienić odwołanie dla view na zgodne z aktualnym
@@ -152,7 +158,7 @@ namespace Application\Controller
                     $error = true;
                 }
                 if (! $error) {
-
+                    
                     /**
                      * @TODO
                      * - zbudować zapytanie zgodne z aktualną uproszczoną metodą dostępu
@@ -164,11 +170,11 @@ namespace Application\Controller
                     // "live = ?" => true,
                     // "deleted = ?" => false
                     // ));
-
+                    
                     if ($name === "test" and $password === "test1") {
                         $user = TRUE;
                     }
-
+                    
                     /**
                      * @TODO
                      * - wyłączyć rejestrację zmiennej
@@ -181,13 +187,13 @@ namespace Application\Controller
                         header("Location: ?url=home/index");
                         exit();
                     } else {
-
+                        
                         /**
                          * @TODO
                          * - obsłużyć błędy logowania
                          */
                         // $view->set("password_error", "Email address and/or password are incorrect");
-
+                        
                         header("Location: ?url=users/index");
                         exit();
                     }
