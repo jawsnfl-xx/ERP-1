@@ -13,7 +13,7 @@
 			</p>
 		</div>
 		<!-- /.col-lg-4 -->
-		<div class="col-lg-4"> 
+		<div class="col-lg-4">
 			<h2>Przegląd</h2>
 			<p>Duis mollis, est non commodo luctus, nisi erat porttitor
 				ligula, eget lacinia odio sem nec elit. Cras mattis consectetur

@@ -17,7 +17,8 @@
 						Powiadomienia <span class="badge">6</span></a></li>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">Więcej ... <b class="caret"></b>  </a>
+					data-toggle="dropdown">Więcej ... <b class="caret"></b>
+				</a>
 					<ul class="dropdown-menu">
 						<li role="presentation" class="dropdown-header">Ustawienia</li>
 						<li><a href="?url=home/settings/access_permissions">Uprawnienia

@@ -1,24 +1,22 @@
 <?php
-namespace Framework\Session
-{
 
-    use Framework\Session as Session;
+namespace Framework\Session {
 
-    /**
-     *
-     * @author Marcin Pyrka
-     *        
-     */
-    class Driver extends Session
-    {
+	use Framework\Session as Session;
 
-        /**
-         *
-         * @param unknown $options            
-         */
-        public function __construct($options = array())
-        {
-            parent::__construct($options);
-        }
-    }
+	/**
+	 *
+	 * @author Marcin Pyrka
+	 *        
+	 */
+	class Driver extends Session {
+		
+		/**
+		 *
+		 * @param unknown $options        	
+		 */
+		public function __construct($options = array()) {
+			parent::__construct ( $options );
+		}
+	}
 }
