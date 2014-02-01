@@ -1,5 +1,5 @@
 {include file='./menu.tpl'}
-<div class="container marketing">
+<div class="container-fluid">
 
 	<!-- Two columns of text -->
 	<div class="row">
@@ -13,7 +13,7 @@
 			</p>
 		</div>
 		<!-- /.col-lg-4 -->
-		<div class="col-lg-4">
+		<div class="col-lg-4"> 
 			<h2>Przegląd</h2>
 			<p>Duis mollis, est non commodo luctus, nisi erat porttitor
 				ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
@@ -27,7 +27,7 @@
 		<div class="col-lg-4"></div>
 		<!-- /.row -->
 
-		<script src="../public/js/jquery.min.js"></script>
-		<script src="../public/js/bootstrap.min.js"></script>
+		<script src="../public/js/jquery.js"></script>
+		<script src="../public/js/bootstrap.js"></script>
 	</div>
 </div>
