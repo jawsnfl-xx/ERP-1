@@ -1,26 +1,24 @@
 <?php
-namespace Module
-{
 
-    use Module\Quality_management as Quality_management;
+namespace Module {
 
-    /**
-     *
-     * @author Marcin Pyrka
-     *        
-     */
-    class Production_quality_management extends Quality_management
-    {
+	use Module\Quality_management as Quality_management;
 
-        /**
-         *
-         * @param unknown $options            
-         */
-        public function __construct($options = array())
-        {
-            /**
-             */
-            parent::__construct($options);
-        }
-    }
+	/**
+	 *
+	 * @author Marcin Pyrka
+	 *        
+	 */
+	class Production_quality_management extends Quality_management {
+		
+		/**
+		 *
+		 * @param unknown $options        	
+		 */
+		public function __construct($options = array()) {
+			/**
+			 */
+			parent::__construct ( $options );
+		}
+	}
 }

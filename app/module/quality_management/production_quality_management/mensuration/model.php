@@ -1,24 +1,23 @@
 <?php
-namespace Framework\Model
-{
 
-    use Framework\Base as Base;
-    use Framework\Model as Model;
+namespace Framework\Model {
 
-    /**
-     *
-     * @author Marcin Pyrka
-     *        
-     */
-    class Mensuration extends Model
-    {
+	use Framework\Base as Base;
+	use Framework\Model as Model;
 
-        /**
-         * @column
-         * @readwrite
-         * @primary
-         * @type autonumber
-         */
-        protected $_id_test;
-    }
+	/**
+	 *
+	 * @author Marcin Pyrka
+	 *        
+	 */
+	class Mensuration extends Model {
+		
+		/**
+		 * @column
+		 * @readwrite
+		 * @primary
+		 * @type autonumber
+		 */
+		protected $_id_test;
+	}
 }

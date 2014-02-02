@@ -1,26 +1,24 @@
 <?php
-namespace Module
-{
 
-    use Module\Product_technology as Product_technology;
+namespace Module {
 
-    /**
-     *
-     * @author Marcin Pyrka
-     *        
-     */
-    class Product extends Product_technology
-    {
+	use Module\Product_technology as Product_technology;
 
-        /**
-         *
-         * @param unknown $options            
-         */
-        public function __construct($options = array())
-        {
-            /**
-             */
-            parent::__construct($options);
-        }
-    }
+	/**
+	 *
+	 * @author Marcin Pyrka
+	 *        
+	 */
+	class Product extends Product_technology {
+		
+		/**
+		 *
+		 * @param unknown $options        	
+		 */
+		public function __construct($options = array()) {
+			/**
+			 */
+			parent::__construct ( $options );
+		}
+	}
 }
