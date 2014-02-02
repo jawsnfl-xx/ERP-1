@@ -25,6 +25,6 @@ namespace Framework\Model {
 		 * @primary
 		 * @type autonumber
 		 */
-		protected $_id_test;
+		protected $idtype_of_io_operations;
 	}
 }

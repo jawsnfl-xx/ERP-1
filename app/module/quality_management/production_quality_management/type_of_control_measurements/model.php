@@ -25,6 +25,6 @@ namespace Framework\Model {
 		 * @primary
 		 * @type autonumber
 		 */
-		protected $_id_test;
+		protected $id_type_of_control_measurements;
 	}
 }
