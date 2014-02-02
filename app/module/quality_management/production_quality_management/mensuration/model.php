@@ -1,17 +1,24 @@
 <?php
 
+/**
+ *
+ * @author Marcin
+ *
+ */
 namespace Framework\Model {
 
+	/**
+	 */
 	use Framework\Base as Base;
 	use Framework\Model as Model;
 
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *        
+	 *
 	 */
 	class Mensuration extends Model {
-		
+
 		/**
 		 * @column
 		 * @readwrite
