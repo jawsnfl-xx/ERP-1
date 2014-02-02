@@ -31,3 +31,5 @@
 		<script src="../public/js/bootstrap.js"></script>
 	</div>
 </div>
+</div>
+</div>
