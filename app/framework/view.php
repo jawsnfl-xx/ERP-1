@@ -7,17 +7,17 @@ namespace Framework {
 	use Framework\View\Exception as Exception;
 
 	class View extends Base {
-		
+
 		/**
 		 * * @readwrite
 		 */
 		protected $_file;
-		
+
 		/**
 		 * * @readwrite
 		 */
 		protected $_parameters;
-		
+
 		/**
 		 * * @read
 		 */
@@ -31,25 +31,25 @@ namespace Framework {
 		}
 		public function __construct($options = array()) {
 			parent::__construct ( $options );
-			
-			require_once 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
-			
+
+			require_once DIRECTORY_SEPARATOR . 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
+
 			$this->_template = new \Smarty ();
-			
-			$this->_template->setTemplateDir ( '..' . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'view' )->setCompileDir ( '..' . DIRECTORY_SEPARATOR . 'templates_c' )->setCacheDir ( '..' . DIRECTORY_SEPARATOR . 'cache' );
-			
+
+			$this->_template->setTemplateDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_tp' );
+			$this->_template->setCompileDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_cp' );
+			$this->_template->setCacheDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_cd' );
+
 			$this->_template->assign ( 'parameters', $options ['parameters'] );
-			
-			// var_dump($options['parameters']);
 		}
 		public function render() {
 			$path = $this->getFile ();
 			$path = APP_DIR . $path;
-			
+
 			if (! file_exists ( $path )) {
 				return "";
 			}
-			
+
 			return $this->_template->fetch ( $path );
 		}
 		public function get($key, $default = "") {

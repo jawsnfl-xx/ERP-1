@@ -21,8 +21,8 @@ define ( 'APP_DIR', dirname ( realpath ( __FILE__ ) ) );
  * @TODO podpięcie tych informacji pod konfigurację
  * @TODO dodanie defaultowych wartości oraz narzędzia kontrolnego
  */
-error_reporting ( E_ALL ^ E_NOTICE );
-ini_set ( "display_errors", 1 );
+error_reporting ( E_ERROR | E_WARNING | E_PARSE | E_NOTICE );
+ini_set ( "display_errors", 0 );
 
 /**
  * Kontrola wersji
@@ -34,7 +34,7 @@ if (version_compare ( PHP_VERSION, '5.3.7', '<' )) {
 
 /**
  *
- * @param unknown $class        	
+ * @param unknown $class
  * @throws Exception
  */
 function autoload($class) {
@@ -55,7 +55,7 @@ function autoload($class) {
 /**
  *
  * @author Marcin Pyrka
- *        
+ *
  */
 class Autoloader {
 	public static function autoload($class) {
@@ -68,7 +68,7 @@ class Autoloader {
 spl_autoload_register ( 'autoload' );
 spl_autoload_register ( array (
 		'autoloader',
-		'autoload' 
+		'autoload'
 ) );
 
 /**
