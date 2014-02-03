@@ -158,6 +158,7 @@ namespace Application\Controller {
 			 * 1. wprowadzenie danych początkowych
 			 * 2. wprowadzenie pomiarów kontolnych
 			 */
+				// print 'add';
 			}
 		}
 	}
