@@ -1,7 +1,7 @@
 <?php
 
 /**
- * test gita przez droidedit 
+ * test gita przez droidedit
  */
 
 /**
