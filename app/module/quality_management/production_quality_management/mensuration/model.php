@@ -15,10 +15,10 @@ namespace Framework\Model {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Mensuration extends Model {
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -26,7 +26,7 @@ namespace Framework\Model {
 		 * @type autonumber
 		 */
 		protected $id_mensuration;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -35,7 +35,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $measurement_id_measurement;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -44,7 +44,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $control_measurements_id_control_measurements;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -53,7 +53,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $dimension_id_dimension;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -62,7 +62,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $sample_numer;
-
+		
 		/**
 		 * @column
 		 * @readwrite

@@ -15,10 +15,10 @@ namespace Framework\Model {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Dimension extends Model {
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -26,7 +26,7 @@ namespace Framework\Model {
 		 * @type autonumber
 		 */
 		protected $id_dimension;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -35,7 +35,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $products_id_products;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -44,7 +44,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $type_of_dimension_id_type_of_dimension;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -53,7 +53,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $value;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -62,7 +62,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $tolerance;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -71,7 +71,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $interval_max;
-
+		
 		/**
 		 * @column
 		 * @readwrite

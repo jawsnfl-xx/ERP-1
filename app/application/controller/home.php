@@ -15,30 +15,30 @@ namespace Application\Controller {
 	/**
 	 *
 	 * @author Marcin
-	 *
+	 *        
 	 */
 	class Home extends Controller {
-
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_parameters;
-
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_options;
-
+		
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			/**
 			 */
 			$this->_parameters = $options ['parameters'];
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
@@ -51,7 +51,7 @@ namespace Application\Controller {
 		 */
 		public function init() {
 		}
-
+		
 		/**
 		 * @protected
 		 *
@@ -63,34 +63,34 @@ namespace Application\Controller {
 		 * W tym miejscy jedynie jej uruchmienie.
 		 */
 		public function authenticate() {
-
+			
 			/**
 			 */
 			// $configuration = Registry::get("configuration");
 			// $database = Registry::get("database");
 			$session = Registry::get ( "session" );
-
+			
 			if (! $session->getup ( 'user' )) {
 				header ( "Location: ?url=users/index" );
 				// print 'nie jest zalogowany';
 			}
 			// var_dump($session);
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 */
 		public function index() {
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -106,13 +106,13 @@ namespace Application\Controller {
 			 */
 			if ($this->_parameters [0] === 'access_permissions') {
 				// print 'access permissions';
-			}
+			} 
 
 			/**
 			 */
 			elseif ($this->_parameters [0] === 'properties') {
 				// print 'properties';
-			}
+			} 
 
 			/**
 			 */
@@ -120,7 +120,7 @@ namespace Application\Controller {
 				// print 'system_settings';
 			}
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -133,18 +133,18 @@ namespace Application\Controller {
 		 */
 		public function quality_management() {
 			// $quality_management = new \Module\Quality_management ();
-
+			
 			// var_dump($production_quality_management);
 			/**
 			 */
 			if ($this->_parameters [0] === 'review') {
-
+			
 			/**
 			 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
 			 */
 				// print 'review';
 			} elseif ($this->_parameters [0] === 'view') {
-
+			
 			/**
 			 * Wyświetla arkusz kontrolny z badania
 			 */
@@ -158,6 +158,7 @@ namespace Application\Controller {
 			 * 1. wprowadzenie danych początkowych
 			 * 2. wprowadzenie pomiarów kontolnych
 			 */
+				// print 'add';
 			}
 		}
 	}
