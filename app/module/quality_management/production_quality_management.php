@@ -14,13 +14,13 @@ namespace Module {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Production_quality_management extends Quality_management {
-
+		
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			/**

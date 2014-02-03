@@ -15,10 +15,10 @@ namespace Framework\Model {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Type_of_dimension extends Model {
-
+		
 		/**
 		 * @column
 		 * @readwrite

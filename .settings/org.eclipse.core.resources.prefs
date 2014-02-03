@@ -4,6 +4,7 @@ encoding//app/application/view/errors/500.html=UTF-8
 encoding//app/application/view/home/index.tpl=UTF-8
 encoding//app/application/view/home/menu.tpl=UTF-8
 encoding//app/application/view/home/quality_management.tpl=UTF-8
+encoding//app/application/view/home/quality_management_form.tpl=UTF-8
 encoding//app/application/view/home/quality_management_review.tpl=UTF-8
 encoding//app/application/view/home/settings.tpl=UTF-8
 encoding//app/application/view/home/vmenu.tpl=UTF-8

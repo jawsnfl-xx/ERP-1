@@ -1,5 +1,6 @@
 <ul class="nav nav-pills nav-stacked">
-	<li><a href="?url=home/index">Tablica <span class="badge pull-right">42</span></a></li>
+	<li><a href="?url=home/index">Tablica <span
+			class="badge pull-right">42</span></a></li>
 </ul>
 <hr />
 <ul class="nav nav-pills nav-stacked">

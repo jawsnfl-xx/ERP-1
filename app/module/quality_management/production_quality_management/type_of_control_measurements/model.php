@@ -15,10 +15,10 @@ namespace Framework\Model {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Type_of_control_measurements extends Model {
-
+		
 		/**
 		 * @column
 		 * @readwrite

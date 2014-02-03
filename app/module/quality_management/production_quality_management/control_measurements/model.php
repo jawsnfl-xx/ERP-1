@@ -15,10 +15,10 @@ namespace Framework\Model {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Control_measurements extends Model {
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -26,7 +26,7 @@ namespace Framework\Model {
 		 * @type autonumber
 		 */
 		protected $id_control_measurements;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -35,7 +35,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $orders_id_orders;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -44,7 +44,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $products_id_products;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -53,7 +53,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $packages_id_packages;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -62,7 +62,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $type_of_control_measurements_id_type_of_control_measurements;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -71,7 +71,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $sample_size;
-
+		
 		/**
 		 * @column
 		 * @readwrite
@@ -80,7 +80,7 @@ namespace Framework\Model {
 		 * @var unknown
 		 */
 		protected $date_start;
-
+		
 		/**
 		 * @column
 		 * @readwrite
