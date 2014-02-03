@@ -1,16 +1,4 @@
- {include file='./menu.tpl'}
-<div class="container">
-	<div class="row">
-		<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-		<div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
-	</div>
 
-	<ul class="pager">
-		<li><a href="#">Previous</a></li>
-		<li><a href="#">Next</a></li>
-	</ul>
-</div>
-{if $parameters['0'] eq 'access_permissions'}
 
 <div class="panel panel-default">
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
@@ -289,11 +277,9 @@
 		</tr>
 
 	</table>
-
-
 </div>
 
-<script src="../public/js/jquery.js"></script>
-<script src="../public/js/bootstrap.js"></script>
-</body>
-</html>
+<ul class="pager">
+	<li><a href="#">Previous</a></li>
+	<li><a href="#">Next</a></li>
+</ul>
