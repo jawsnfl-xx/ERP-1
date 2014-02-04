@@ -8,14 +8,13 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="?url=home/index">Simple ERP System</a>
+				<a class="navbar-brand" href="?url=home/index">Nazwa firmy / logotyp</a>
 			</div>
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-bell"></span>
-							Powiadomienia <span class="badge">6</span></a></li>
+					
 
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Więcej ... <b class="caret"></b>
