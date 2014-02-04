@@ -1,4 +1,4 @@
-
+  
 
 <div class="panel panel-default">
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
@@ -49,6 +49,9 @@
 				</div>
 
 			</td>
+			
+			
+			
 			<td><input type="text" class="form-control input-sm"
 				id="exampleInputEmail1" placeholder=""
 				style="magin: 0; border: 0; box-shadow: none;"></td>
@@ -280,6 +283,18 @@
 </div>
 
 <ul class="pager">
-	<li><a href="#">Previous</a></li>
-	<li><a href="#">Next</a></li>
+	<li class="previous"><a href="#">&larr; Older</a></li>
+	<ul class="pagination pagination-lg">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">6</a></li>
+		<li><a href="#">7</a></li>
+		<li><a href="#">8</a></li>
+		<li><a href="#">9</a></li>
+	</ul>
+
+	<li class="next"><a href="#">Newer &rarr;</a></li>
 </ul>
