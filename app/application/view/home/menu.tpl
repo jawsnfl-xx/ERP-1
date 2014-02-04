@@ -17,10 +17,13 @@
 				<ul class="nav navbar-nav navbar-right">
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Wpisz lub zeskanuj kod">
+							<input type="text" class="form-control"
+								placeholder="Wpisz lub zeskanuj kod">
 						</div>
 						<button type="submit" class="btn btn-info">Szukaj...</button>
 					</form>
+
+
 
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">Menu<b class="caret"></b>
@@ -38,7 +41,6 @@
 							<li><a href="#">Zapamiętaj sesję na tym urządzeniu</a></li>
 							<li><a href="?url=users/logout">Wyloguj</a></li>
 						</ul></li>
-
 				</ul>
 
 			</div>
