@@ -1,11 +1,22 @@
  {if $parameters['1'] neq '' }
-<ul class="list-inline">
-	<li><a href="?url=home/quality_management/add">add</a></li>
-	<li><a href="?url=home/quality_management/add/step1">step1</a></li>
-	<li><a href="?url=home/quality_management/add/step2">step2</a></li>
-	<li><a href="?url=home/quality_management/add/step3">step3</a></li>
-	<li><a href="?url=home/quality_management/add/summary">summary</a></li>
-</ul>
+<div class="container-liquid">
+	<ul class="list-inline row">
+		<li class="col-md-2 col-md-offset-1"><a
+			class="btn btn-info col-md-9" href="?url=home/quality_management/add">Informacja</a>
+			<span class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
+		<li class="col-md-2"><a class="btn btn-success col-md-9 disabled"
+			href="?url=home/quality_management/add/step1">step1</a> <span
+			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
+		<li class="col-md-2"><a class="btn btn-primary col-md-9 disabled"
+			href="?url=home/quality_management/add/step2">step2</a> <span
+			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
+		<li class="col-md-2"><a class="btn btn-default col-md-9 disabled"
+			href="?url=home/quality_management/add/step3">step3</a> <span
+			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
+		<li class="col-md-2"><a class="btn btn-default col-md-9 disabled"
+			href="?url=home/quality_management/add/summary">summary</a></li>
+	</ul>
+</div>
 {/if} {if $parameters['1'] eq '' }
 <div class="page-header">
 	<h1>Utwórz nowy formularz</h1>
