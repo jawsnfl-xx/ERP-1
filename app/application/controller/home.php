@@ -141,6 +141,7 @@ namespace Application\Controller {
 			
 			/**
 			 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
+             Dziwnie działa edycja na tablecie. :-) 
 			 */
 				// print 'review';
 			} elseif ($this->_parameters [0] === 'view') {
