@@ -91,3 +91,17 @@
 	<option>29</option>
 	<option>30</option>
 </select>
+<div class="alert alert-success">
+	<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
+</div>
+<div class="alert alert-warning">
+	<span class="glyphicon glyphicon-thumbs-down"></span> Nie zrobiłeś do
+	końca
+</div>
+<div class="alert alert-danger">
+	<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i rzal
+</div>
+
+
+
+$(".alert").alert()
