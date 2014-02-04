@@ -1,4 +1,4 @@
-{include file='./menu.tpl'}
+	{include file='./menu.tpl'}
 <div class="container-fluid">
 	{if $parameters['0'] eq '' }
 	<!-- Two columns of text -->

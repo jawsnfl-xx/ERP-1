@@ -1,3 +1,36 @@
+ {if $parameters['1'] neq '' }
+<ul class="list-inline">
+	<li><a href="?url=home/quality_management/add">add</a></li>
+	<li><a href="?url=home/quality_management/add/step1">step1</a></li>
+	<li><a href="?url=home/quality_management/add/step2">step2</a></li>
+	<li><a href="?url=home/quality_management/add/step3">step3</a></li>
+	<li><a href="?url=home/quality_management/add/summary">summary</a></li>
+</ul>
+{/if} {if $parameters['1'] eq '' }
+<div class="page-header">
+	<h1>Utwórz nowy formularz</h1>
+</div>
+<div class="progress progress-striped active">
+	<div class="progress-bar" role="progressbar" aria-valuenow="45"
+		aria-valuemin="0" aria-valuemax="100" style="width: 10%">
+		<span class="sr-only">45% Complete</span>
+	</div>
+</div>
+
+<div class="alert alert-success">
+	<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
+</div>
+<div class="alert alert-warning">
+	<span class="glyphicon glyphicon-thumbs-down"></span> Nie zrobiłeś do
+	końca
+</div>
+<div class="alert alert-danger">
+	<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i rzal
+</div>
+<a class="btn btn-primary btn btn-block"
+	href="?url=home/quality_management/add/step1"> Block level button</a>
+{elseif $parameters['1'] eq 'step1' }
+<p>
 <div class="page-header">
 	<h1>Utwórz nowy formularz</h1>
 </div>
@@ -101,7 +134,13 @@
 <div class="alert alert-danger">
 	<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i rzal
 </div>
-
-
-
-
+<a class="btn btn-primary btn btn-block"
+	href="?url=home/quality_management/add/step1"> Block level button</a>
+</p>
+{elseif $parameters['1'] eq 'step2' }
+<p>lol</p>
+{elseif $parameters['1'] eq 'step3' }
+<p>dupa dupa i 3 dupa</p>
+{elseif $parameters['1'] eq 'summary' }
+<p>dupa dupa i 8 cyceków dupa</p>
+{/if}

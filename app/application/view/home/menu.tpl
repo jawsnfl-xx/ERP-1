@@ -8,16 +8,23 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="?url=home/index">Nazwa firmy / logotyp</a>
+				<a class="navbar-brand" href="?url=home/index">Nazwa firmy /
+					logotyp</a>
 			</div>
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 
 				<ul class="nav navbar-nav navbar-right">
-					
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control"
+								placeholder="Wpisz lub zeskanuj kod">
+						</div>
+						<button type="submit" class="btn btn-info">Szukaj...</button>
+					</form>
 
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">Więcej ... <b class="caret"></b>
+						data-toggle="dropdown">Menu<b class="caret"></b>
 					</a>
 						<ul class="dropdown-menu">
 							<li role="presentation" class="dropdown-header">Ustawienia</li>
@@ -32,8 +39,6 @@
 							<li><a href="#">Zapamiętaj sesję na tym urządzeniu</a></li>
 							<li><a href="?url=users/logout">Wyloguj</a></li>
 						</ul></li>
-					<li><a href="#"> LInk 1</a></li>
-					<li><a href="#"> LInk 2</a></li>
 
 				</ul>
 
