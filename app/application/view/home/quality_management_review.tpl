@@ -49,6 +49,9 @@
 				</div>
 
 			</td>
+			
+			
+			
 			<td><input type="text" class="form-control input-sm"
 				id="exampleInputEmail1" placeholder=""
 				style="magin: 0; border: 0; box-shadow: none;"></td>
