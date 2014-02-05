@@ -36,72 +36,21 @@
 
 
 			{if $parameters['0'] eq 'access_permissions'}
-
-			<div class="panel panel-default">
-				<div class="panel-heading">Nunc luctus, lacus id aliquet
-					bibendum, nunc mauris imperdiet urna</div>
-				<div class="panel-body">
-					<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit.
-						Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a
-						accumsan vehicula. Vestibulum nec ultrices mi, ut rutrum elit.
-						Nunc cursus ultricies commodo.</p>
-				</div>
-
-				<table class="table table-bordered">
-					<tr>
-						<th>ytuk</th>
-						<th>Header 2</th>
-						<th>Header 3</th>
-						<th>Header 4</th>
-						<th>Header 5</th>
-					</tr>
-					<tr>
-						<td><input type="email" class="form-control" id="inputEmail3"
-							placeholder="Email" style="border: 0; box-shadow: none;"></td>
-						<td>Row:1 Cell:2</td>
-						<td class="warning">Row:1 Cell:3</td>
-						<td>Row:1 Cell:4</td>
-						<td>Row:1 Cell:5</td>
-					</tr>
-					<tr>
-						<td>Row:2 Cell:1</td>
-						<td>Row:2 Cell:2</td>
-						<td>Row:2 Cell:3</td>
-						<td>Row:2 Cell:4</td>
-						<td>Row:2 Cell:5</td>
-					</tr>
-					<tr>
-						<td>Row:3 Cell:1</td>
-						<td>Row:3 Cell:2</td>
-						<td>Row:3 Cell:3</td>
-						<td class="danger">Row:3 Cell:4</td>
-						<td>Row:3 Cell:5</td>
-					</tr>
-					<tr>
-						<td>Row:4 Cell:1</td>
-						<td>Row:4 Cell:2</td>
-						<td>Row:4 Cell:3</td>
-						<td>Row:4 Cell:4</td>
-						<td>Row:4 Cell:5</td>
-					</tr>
-					<tr>
-						<td>Row:5 Cell:1</td>
-						<td>Row:5 Cell:2</td>
-						<td>Row:5 Cell:3</td>
-						<td>Row:5 Cell:4</td>
-						<td>Row:5 Cell:5</td>
-					</tr>
-					<tr>
-						<td>Row:6 Cell:1</td>
-						<td>Row:6 Cell:2</td>
-						<td>Row:6 Cell:3 <span class="badge pull-right">42</span></td>
-						<td>Row:6 Cell:4</td>
-						<td>Row:6 Cell:5</td>
-					</tr>
-				</table>
-
+			<div class="page-header">
+				<h1>Utwórz nowy formularz</h1>
 			</div>
 
+			<div class="alert alert-success">
+				<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
+			</div>
+			<div class="alert alert-warning">
+				<span class="glyphicon glyphicon-thumbs-down"></span> Nie zrobiłeś
+				do końca
+			</div>
+			<div class="alert alert-danger">
+				<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i
+				rzal
+			</div>
 
 
 			<div class="progress progress-striped">
