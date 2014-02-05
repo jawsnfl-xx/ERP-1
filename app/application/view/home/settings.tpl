@@ -1,15 +1,15 @@
 {include file='./menu.tpl'}
 <ol class="breadcrumb">
-	<li><a href="?url=home/index">Główna</a></li>
-	<li><a href="?url=home/settings">Ustawienia</a></li> {if
+	<li><a href="?url=home/index"><span>Główna</span></a></li>
+	<li><a href="?url=home/settings"><span>Ustawienia</span></a></li> {if
 	$parameters['0'] eq 'access_permissions'}
-	<li class="active">access permissions</li> {elseif $parameters['0'] eq
-	'properties'}
-	<li class="active">properties</li> {elseif $parameters['0'] eq
-	'system_settings'}
-	<li class="active">system settings</li> {else} {/if}
+	<li class="active"><span>access permissions</span></li> {elseif
+	$parameters['0'] eq 'properties'}
+	<li class="active"><span>properties</span></li> {elseif
+	$parameters['0'] eq 'system_settings'}
+	<li class="active"><span>system settings</span></li> {else} {/if}
 </ol>
-<div id="container">
+<div id="container-fluid">
 
 	<div class="row">
 		<div class="col-md-3">
@@ -31,10 +31,6 @@
 			</div>
 		</div>
 		<div class="col-md-9">
-
-
-
-
 			{if $parameters['0'] eq 'access_permissions'}
 			<div class="page-header">
 				<h1>Utwórz nowy formularz</h1>
@@ -51,8 +47,6 @@
 				<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i
 				rzal
 			</div>
-
-
 			<div class="progress progress-striped">
 				<div class="progress-bar progress-bar-success" role="progressbar"
 					aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
