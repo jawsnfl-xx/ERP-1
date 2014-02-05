@@ -1,4 +1,4 @@
-<div class="container-liquid">
+<div class="container-fluid">
 	<div class="panel panel-default">
 		<div class="panel-heading">Nunc luctus, lacus id aliquet
 			bibendum, nunc mauris imperdiet urna</div>
@@ -22,17 +22,21 @@
 				<td><h3>&#8960; 72</h3></td>
 				<td>
 					<div class="row">
+
 						<div class="col-md-1">
 							<h3>N7</h3>
 						</div>
 						<div class="col-md-1">
 							<div class="row">
+
 								<div class="col-md-1">
 									<span> <small>-0,009 </small>
 									</span>
 								</div>
 							</div>
+
 							<div class="row">
+
 								<div class="col-md-1">
 									<span> <small>-0,039 </small>
 									</span>

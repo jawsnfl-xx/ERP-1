@@ -24,9 +24,7 @@
 	</ul>
 </div>
 {/if} {if $parameters['1'] eq '' }
-
 <div class="container-liquid">
-
 	<div class="row">
 		<div class=" col-md-6">
 			<div class="panel panel-default">
@@ -40,8 +38,6 @@
 						nec, sagittis sed lorem. Sed sed arcu nec nunc pretium laoreet.
 						Proin felis massa, iaculis eget suscipit faucibus, scelerisque ac
 						odio.</p>
-
-
 					<p>Maecenas vestibulum est non tortor ornare gravida. In leo
 						nunc, vestibulum eget gravida vitae, varius non erat. Fusce
 						pharetra, diam vitae blandit adipiscing, quam est molestie tortor,
@@ -63,11 +59,9 @@
 						tempor est. Sed placerat congue nisi at sodales. Aenean dictum
 						mollis elit, sit amet accumsan ipsum rutrum pretium. Praesent
 						sollicitudin urna ante, venenatis tristique neque blandit non.</p>
-
 					<img
 						src="http://www.stalco.pl/produkt/suwmiarka_elektroniczna_s11215.jpg"
 						alt="..." class="img-rounded img-responsive">
-
 					<p>Mauris vehicula, orci luctus porttitor dignissim, purus
 						dolor tincidunt ligula, eu varius ipsum libero ac nunc. Morbi
 						pellentesque enim arcu, quis consectetur nisi gravida vitae.</p>
@@ -76,13 +70,12 @@
 		</div>
 	</div>
 	<div class="row">
-		<a class="btn btn-primary btn btn-block btn-lg"
+		<a class="btn btn-primary btn-block btn-lg"
 			href="?url=home/quality_management/add/step1">Wykonaj nowe
 			badanie</a>
 	</div>
 </div>
 {elseif $parameters['1'] eq 'step1' }
-
 <div class="page-header">
 	<h1>Utwórz nowy formularz</h1>
 </div>
@@ -93,7 +86,6 @@
 	</div>
 </div>
 <input class="form-control input-lg" type="text" placeholder="NAZWA">
-
 <div>
 	<label class="checkbox-inline"> <input type="checkbox"
 		id="inlineCheckbox1" value="option1"> 1
@@ -109,7 +101,6 @@
 	placeholder="PRZYDATNY INPUT 2">
 <input class="form-control input-lg" type="text"
 	placeholder="PRZYDATNY INPUT 3">
-
 <h3>Ilość pomiarów</h3>
 <select class="form-control">
 	<option>1</option>
@@ -190,7 +181,6 @@
 	href="?url=home/quality_management/add/step1"> Block level button</a>
 </p>
 {elseif $parameters['1'] eq 'step2' }
-
 <div class="panel panel-default">
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
@@ -200,7 +190,6 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-
 	<table class="table table-bordered">
 		<tr>
 			<th>ytuk</th>
@@ -253,11 +242,8 @@
 			<td>Row:6 Cell:5</td>
 		</tr>
 	</table>
-
 </div>
-
 {elseif $parameters['1'] eq 'step3' }
-
 <div class="panel panel-default">
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
@@ -267,7 +253,6 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-
 	<table class="table table-bordered">
 		<tr>
 			<th>ytuk</th>
@@ -299,9 +284,7 @@
 			<td>Row:3 Cell:5</td>
 		</tr>
 	</table>
-
 </div>
-
 {elseif $parameters['1'] eq 'summary' }
 <p>dupa dupa i 8 cyceków dupa</p>
 {/if}

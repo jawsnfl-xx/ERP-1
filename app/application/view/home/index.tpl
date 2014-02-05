@@ -1,7 +1,5 @@
 {include file='./menu.tpl'}
-
 <h1 class="page-header">Dashboard</h1>
-
 <div class="row">
 	<div class="col-lg-4">
 		<h2>Kontrola jakości</h2>
@@ -16,13 +14,6 @@
 		</p>
 	</div>
 </div>
-
-
-</div>
-</div>
-</div>
-</div>
-
 <script src="../public/js/jquery.js"></script>
 <script src="../public/js/bootstrap.js"></script>
 </body>
