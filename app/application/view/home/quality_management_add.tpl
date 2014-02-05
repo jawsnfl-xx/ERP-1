@@ -182,6 +182,12 @@
 </p>
 {elseif $parameters['1'] eq 'step2' }
 <div class="panel panel-default">
+	<div class="progress progress-striped active">
+		<div class="progress-bar" role="progressbar" aria-valuenow="45"
+			aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+			<span class="sr-only">45% Complete</span>
+		</div>
+	</div>
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
 	<div class="panel-body">
@@ -190,6 +196,7 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
+
 	<table class="table table-bordered">
 		<tr>
 			<th>ytuk</th>
@@ -250,6 +257,12 @@
 </div>
 {elseif $parameters['1'] eq 'step3' }
 <div class="panel panel-default">
+	<div class="progress progress-striped active">
+		<div class="progress-bar" role="progressbar" aria-valuenow="45"
+			aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+			<span class="sr-only">45% Complete</span>
+		</div>
+	</div>
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
 	<div class="panel-body">
@@ -306,5 +319,37 @@
 	</table>
 </div>
 {elseif $parameters['1'] eq 'summary' }
-<p>dupa dupa i 8 cyceków dupa</p>
-{/if}
+<div class="panel panel-default">
+	<div class="progress progress-striped active">
+		<div class="progress-bar" role="progressbar" aria-valuenow="45"
+			aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+			<span class="sr-only">45% Complete</span>
+		</div>
+	</div>
+	<div class=" col-md-4">
+		<div class="alert alert-success">
+			<a href="#" class="alert-link">ZIELONY ALERCIK ZA ŚLICZNIE
+				ZROBIONY FORMULARZYK :3</a>
+		</div>
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">Panel heading</div>
+			<div class="panel-body">
+				<p>...</p>
+			</div>
+
+		</div>
+	</div>
+	<div class=" col-md-8">
+		<!-- List group -->
+		<ul class="list-group">
+			<li class="list-group-item">Cras justo odio</li>
+			<li class="list-group-item">Dapibus ac facilisis in</li>
+			<li class="list-group-item">Morbi leo risus</li>
+			<li class="list-group-item">Porta ac consectetur ac</li>
+			<li class="list-group-item">Vestibulum at eros</li>
+		</ul>
+	</div>
+
+
+	{/if}
