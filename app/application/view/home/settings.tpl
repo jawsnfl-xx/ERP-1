@@ -1,13 +1,13 @@
 {include file='./menu.tpl'}
 <ol class="breadcrumb">
-	<li><a href="?url=home/index">Główna</a></li>
-	<li><a href="?url=home/settings">Ustawienia</a></li> {if
+	<li><a href="?url=home/index"><span>Główna</span></a></li>
+	<li><a href="?url=home/settings"><span>Ustawienia</span></a></li> {if
 	$parameters['0'] eq 'access_permissions'}
-	<li class="active">access permissions</li> {elseif $parameters['0'] eq
-	'properties'}
-	<li class="active">properties</li> {elseif $parameters['0'] eq
-	'system_settings'}
-	<li class="active">system settings</li> {else} {/if}
+	<li class="active"><span>access permissions</span></li> {elseif
+	$parameters['0'] eq 'properties'}
+	<li class="active"><span>properties</span></li> {elseif
+	$parameters['0'] eq 'system_settings'}
+	<li class="active"><span>system settings</span></li> {else} {/if}
 </ol>
 <div id="container-fluid">
 

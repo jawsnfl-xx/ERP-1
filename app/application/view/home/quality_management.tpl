@@ -1,11 +1,15 @@
 {include file='./menu.tpl'}
 <ol class="breadcrumb">
 	<li><a href="?url=home/index">Główna</a></li>
-	<li><a href="?url=home/quality_management">Kontrola jakości</a></li>
-	{if $parameters['0'] eq 'add'}
-	<li class="active">Dodaj</li> {elseif $parameters['0'] eq 'review'}
-	<li class="active">Przegląd</li> {elseif $parameters['0'] eq 'view'}
-	<li class="active">Szczegóły</li> {else} {/if}
+	<li class="active">{if $parameters['0'] neq ''} <a
+		href="?url=home/quality_management"><span>Kontrola jakości</span></a>
+		{else}<span>Kontrola jakości</span> {/if}
+	</li> {if $parameters['0'] eq 'add'}
+	<li class="active"><span>Dodaj</span></li> {elseif $parameters['0'] eq
+	'review'}
+	<li class="active"><span>Przegląd</span></li> {elseif $parameters['0']
+	eq 'view'}
+	<li class="active"><span>Szczegóły</span></li> {else} {/if}
 </ol>
 {if $parameters['0'] eq '' }
 
