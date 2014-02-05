@@ -1,7 +1,14 @@
  {include file='./menu.tpl'}
 <div class="container-fluid">
+	<ol class="breadcrumb">
+		<li><a href="?url=home/index">Główna</a></li>
+		<li><a href="?url=home/quality_management">Kontrola jakości</a></li>
+		{if $parameters['0'] eq 'add'}
+		<li class="active">Dodaj</li> {elseif $parameters['0'] eq 'review'}
+		<li class="active">Przegląd</li> {elseif $parameters['0'] eq 'view'}
+		<li class="active">Szczegóły</li> {else} {/if}
+	</ol>
 	{if $parameters['0'] eq '' }
-
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
@@ -50,7 +57,7 @@
 						purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
 						tortor mauris condimentum nibh.</p>
 					<div>
-						<a class="btn btn-default"
+						<a class="btn btn-default btn btn-block"
 							href="?url=home/quality_management/review" role="button">Dalej
 							&raquo;</a>
 					</div>
