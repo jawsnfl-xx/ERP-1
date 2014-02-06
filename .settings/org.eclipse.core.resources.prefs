@@ -5,6 +5,7 @@ encoding//app/application/view/home/index.tpl=UTF-8
 encoding//app/application/view/home/quality_management.tpl=UTF-8
 encoding//app/application/view/home/quality_management_add.tpl=UTF-8
 encoding//app/application/view/home/quality_management_review.tpl=UTF-8
+encoding//app/application/view/home/quality_management_view.tpl=UTF-8
 encoding//app/application/view/users/index.tpl=UTF-8
 encoding/<project>=UTF-8
 separateDerivedEncodings=true
