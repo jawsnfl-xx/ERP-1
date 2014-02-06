@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 	<div class="panel panel-default">
 		<div class="panel-heading">Nunc luctus, lacus id aliquet
@@ -8,6 +9,7 @@
 				vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 				ultricies commodo.</p>
 		</div>
+
 		<table class="table table-bordered table-condensed">
 			<tr>
 				<th>WYMIAR</th>
@@ -272,6 +274,8 @@
 					style="magin: 0; border: 0; box-shadow: none;"></td>
 			</tr>
 		</table>
+		<button onclick="window.print()">Wydrukuj stronę</button>
+
 	</div>
 	<ul class="pager">
 		<li class="previous"><a href="#">&larr; Older</a></li>

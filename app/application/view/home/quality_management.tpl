@@ -62,7 +62,7 @@
 					tortor mauris condimentum nibh.</p>
 				<div>
 					<a class="btn btn-default btn-block"
-						href="?url=home/quality_management/review" role="button">Dalej
+						href="?url=home/quality_management/view" role="button">Dalej
 						&raquo;</a>
 				</div>
 			</div>
