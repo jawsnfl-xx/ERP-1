@@ -178,7 +178,7 @@
 	<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i rzal
 </div>
 <a class="btn btn-primary btn btn-block"
-	href="?url=home/quality_management/add/step1"> Block level button</a>
+	href="?url=home/quality_management/add/step2"> Block level button</a>
 </p>
 {elseif $parameters['1'] eq 'step2' }
 <div class="panel panel-default">
@@ -255,6 +255,8 @@
 		</tr>
 	</table>
 </div>
+<a class="btn btn-primary btn btn-block"
+	href="?url=home/quality_management/add/step3"> Block level button</a>
 {elseif $parameters['1'] eq 'step3' }
 <div class="panel panel-default">
 	<div class="progress progress-striped active">
@@ -318,6 +320,8 @@
 		</tr>
 	</table>
 </div>
+<a class="btn btn-primary btn btn-block"
+	href="?url=home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
 	<div class="progress progress-striped active">
@@ -328,7 +332,7 @@
 	</div>
 	<div class=" col-md-4">
 		<div class="alert alert-success">
-			<a href="#" class="alert-link">ZIELONY ALERCIK ZA ŚLICZNIE
+			<a  class="alert-link">ZIELONY ALERCIK ZA ŚLICZNIE
 				ZROBIONY FORMULARZYK :3</a>
 		</div>
 		<div class="panel panel-default">
@@ -353,3 +357,5 @@
 
 
 	{/if}
+
+	
