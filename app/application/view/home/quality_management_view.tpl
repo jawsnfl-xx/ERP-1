@@ -11,11 +11,9 @@
 		</div>
 		<div class="row">
 
-			<div class="col-md-4">sortuj według</div>
-
-			<div class="col-md-4">rosnąco</div>
-
-
+			<div class="col-md-4">
+			
+			
 			<table class="table table-bordered table-condensed">
 				<tr>
 					<th>WYMIAR</th>

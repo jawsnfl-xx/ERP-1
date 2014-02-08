@@ -6,7 +6,7 @@
  -->
 <div class="container-liquid">
 	<ul class="list-inline row">
-		<li classclass="disabled" class="col-md-2 col-md-offset-1"><a
+		<li class="disabled" class="col-md-2 col-md-offset-1"><a
 			class="btn btn-info col-md-9">Informacja</a>
 			<span class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span>
 		</li>
