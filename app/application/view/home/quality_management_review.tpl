@@ -3,14 +3,11 @@
 		<div class="panel-heading">
 			Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet urna
 			<div class="pull-right">
-				<button type="button" class="btn btn-primary">
-					refresh <span class="glyphicon glyphicon-refresh"><button
-							type="button" class="btn btn-primary">
-							refresh <span class="glyphicon glyphicon-refresh"><button
-									type="button" class="btn btn-primary">
-									refresh <span class="glyphicon glyphicon-refresh">
-								</button>
-			</div>
+				<div class="btn-group">
+  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-"></span> Left</button>
+  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Pobierz zaznaczone</button>
+  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Szukaj</button>
+</div>			</div>
 		</div>
 		<div class="panel-body">
 			<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
