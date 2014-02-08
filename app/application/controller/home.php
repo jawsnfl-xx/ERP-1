@@ -162,19 +162,39 @@ namespace Application\Controller {
 			 */
 
 			elseif ($this->_parameters [0] === 'add') {
-			/**
-			 * Wyświetla arkusz kontroli pomiaru.
-			 * Na tym etapie musi być podzielony na 3 etapy.
-			 * 1. wprowadzenie danych początkowych
-			 * 2. wprowadzenie pomiarów wymiarów kontolnych
-			 * 3. wprowadzenie pomiarów tolerancji geometrii i kształtu
-			 *
-			 * Do tego dochodzi jeszcze podsumowanie,
-			 * ale to nie na teraz... :)
-			 *
-			 * Lol - jak zabawnie :D
-			 */
+				/**
+				 * Wyświetla arkusz kontroli pomiaru.
+				 * Na tym etapie musi być podzielony na 3 etapy.
+				 * 1. wprowadzenie danych początkowych
+				 * 2. wprowadzenie pomiarów wymiarów kontolnych
+				 * 3. wprowadzenie pomiarów tolerancji geometrii i kształtu
+				 *
+				 * Do tego dochodzi jeszcze podsumowanie,
+				 * ale to nie na teraz... :)
+				 *
+				 * Lol - jak zabawnie :D
+				 */
 				// print 'add';
+
+				if ($this->_parameters [1] === 'step1') {
+					print 'stp1';
+				} elseif ($this->_parameters [1] === 'step2') {
+					print 'stp2';
+				} elseif ($this->_parameters [1] === 'step3') {
+					print 'stp3';
+				} elseif ($this->_parameters [1] === 'summary') {
+					print 'summary';
+				} else {
+					// jeśli to zostanie wywołane?
+					// czy to jest błąd?
+				}
+			} else {
+				/**
+				 * Główna qm? Nie wiem...
+				 *
+				 * 1. Zdecydowanie to główna dla QM :S :S :S :S :S :S :S
+				 */
+				print 'else na qm :D';
 			}
 		}
 	}
