@@ -6,7 +6,7 @@
 		{else}<span>Kontrola jakości</span> {/if}
 	</li> {if $parameters['0'] eq 'add'}
 	<li class="active"><span>Dodaj</span></li> {elseif $parameters['0'] eq
-	'review'}
+	'view'}
 	<li class="active"><span>Przegląd</span></li> {elseif $parameters['0']
 	eq 'view'}
 	<li class="active"><span>Szczegóły</span></li> {else} {/if}
@@ -71,8 +71,8 @@
 	</div>
 </div>
 
-{elseif $parameters['0'] eq 'review' } {include
-file='./quality_management_review.tpl'} {elseif $parameters['0'] eq
+{elseif $parameters['0'] eq 'view' } {include
+file='./quality_management_view.tpl'} {elseif $parameters['0'] eq
 'view' } {include file='./quality_management_view.tpl'} {elseif
 $parameters['0'] eq 'add' } {include
 file='./quality_management_add.tpl'} {/if}
