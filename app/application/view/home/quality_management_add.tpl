@@ -79,6 +79,7 @@
 </div>
 
 <form>
+<div class="form-group has-success">
 <input class="form-control input-lg" data-toggle="tooltip"
 	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
 	placeholder="NAZWA">
@@ -89,7 +90,32 @@
 <input class="form-control input-lg" data-toggle="tooltip"
 	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
 	placeholder="Ilość w zamówieniu">
+</div>
+<div class="form-group has-warning">
 
+<input class="form-control input-lg has-success" data-toggle="tooltip"
+	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
+	placeholder="NAZWA">
+
+<input class="form-control input-lg  " data-toggle="tooltip"
+	data-placement="left" title="Wpisz ilosc elementow w partii"name="amount"
+	type="text" placeholder="Ilość w partii">
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
+	placeholder="Ilość w zamówieniu">
+	</div>
+	<div class="form-group has-error">
+	<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
+	placeholder="NAZWA">
+
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Wpisz ilosc elementow w partii"name="amount"
+	type="text" placeholder="Ilość w partii">
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
+	placeholder="Ilość w zamówieniu">
+</div>
 <div class="alert alert-success">
 	<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
 </div>
