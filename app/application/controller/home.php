@@ -141,7 +141,8 @@ namespace Application\Controller {
 			
 			/**
 			 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
-             Dziwnie działa edycja na tablecie. :-) 
+			 * Dziwnie działa edycja na tablecie.
+			 * :-)
 			 */
 				// print 'review';
 			} elseif ($this->_parameters [0] === 'view') {
@@ -152,12 +153,19 @@ namespace Application\Controller {
 				// print 'view';
 			} /**
 			 */
+			
 			elseif ($this->_parameters [0] === 'add') {
 			/**
 			 * Wyświetla arkusz kontroli pomiaru.
-			 * Na tym etapie musi być podzielony na 2 etapy.
+			 * Na tym etapie musi być podzielony na 3 etapy.
 			 * 1. wprowadzenie danych początkowych
-			 * 2. wprowadzenie pomiarów kontolnych
+			 * 2. wprowadzenie pomiarów wymiarów kontolnych
+			 * 3. wprowadzenie pomiarów tolerancji geometrii i kształtu
+			 *
+			 * Do tego dochodzi jeszcze podsumowanie,
+			 * ale to nie na teraz... :)
+			 *
+			 * Lol - jak zabawnie :D
 			 */
 				// print 'add';
 			}
