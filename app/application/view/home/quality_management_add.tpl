@@ -69,7 +69,7 @@
 	</div>
 	<div class="row">
 		<button class="btn btn-primary btn-block btn-lg"
-			href="?url=home/quality_management/add/step1">Wykonaj nowe
+		type="submit" value="dalej" href="?url=home/quality_management/add/step1">Wykonaj nowe
 			badanie</button>
 	</div>
 </div>
