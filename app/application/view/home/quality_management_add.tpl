@@ -68,9 +68,9 @@
 		</div>
 	</div>
 	<div class="row">
-		<button class="btn btn-primary btn-block btn-lg"
-		type="submit" value="dalej" href="?url=home/quality_management/add/step1">Wykonaj nowe
-			badanie</button>
+		<a class="btn btn-primary btn-block btn-lg"
+			href="?url=home/quality_management/add/step1">Wykonaj nowe
+			badanie</a>
 	</div>
 </div>
 {elseif $parameters['1'] eq 'step1' }
@@ -78,32 +78,31 @@
 	<h1>Utwórz nowy formularz</h1>
 </div>
 
-<form action="?url=home/quality_management/add/_step1" method="post">
-	<input class="form-control input-lg" data-toggle="tooltip"
-		data-placement="left" title="Wpisz nazwe produktu" name="name"
-		type="text" placeholder="NAZWA"> <input
-		class="form-control input-lg" data-toggle="tooltip"
-		data-placement="left" title="Wpisz ilosc elementow w partii"
-		name="amount" type="text" placeholder="Ilość w partii"> <input
-		class="form-control input-lg" data-toggle="tooltip"
-		data-placement="left" title="Ile sztuk zamowiono" name="quan"
-		type="text" placeholder="Ilość w zamówieniu">
+<form>
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
+	placeholder="NAZWA">
 
-	<div class="alert alert-success">
-		<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
-	</div>
-	<div class="alert alert-warning">
-		<span class="glyphicon glyphicon-thumbs-down"></span> Nie zrobiłeś do
-		końca
-	</div>
-	<div class="alert alert-danger">
-		<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i
-		rzal
-	</div>
-	<button class="btn btn-primary btn btn-block"
-		href="?url=home/quality_management/add/step2">Block level
-		button</button>
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Wpisz ilosc elementow w partii"name="amount"
+	type="text" placeholder="Ilość w partii">
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
+	placeholder="Ilość w zamówieniu">
 
+<div class="alert alert-success">
+	<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
+</div>
+<div class="alert alert-warning">
+	<span class="glyphicon glyphicon-thumbs-down"></span> Nie zrobiłeś do
+	końca
+</div>
+<div class="alert alert-danger">
+	<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i rzal
+</div>
+<button> class="btn btn-primary btn btn-block"
+	type="submit" value="dalej" href="?url=home/quality_management/add/step2"> Block level button</button>
+</p>
 </form>
 {elseif $parameters['1'] eq 'step2' }
 
