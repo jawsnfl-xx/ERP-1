@@ -1,3 +1,25 @@
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			</div>
+			<div class="modal-body">
+				Możesz teraz zeskanować kod <input type="text" class="form-control"
+					placeholder="Text input">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -16,29 +38,9 @@
 				<form class="navbar-form navbar-left" role="search">
 					<div class="form-group">
 						<!-- Button trigger modal -->
-<button class="btn btn-primary " data-toggle="modal" data-target="#myModal">
-  skanuj kod
-</button>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-						<input type="text" class="form-control"
-							placeholder="Wpisz kod">
+						<button class="btn btn-primary " data-toggle="modal"
+							data-target="#myModal">skanuj kod</button>
+						<input type="text" class="form-control" placeholder="Wpisz kod">
 					</div>
 					<button type="submit" class="btn btn-info">Szukaj...</button>
 				</form>
