@@ -6,8 +6,8 @@
  -->
 <div class="container-liquid">
 	<ul class="list-inline row">
-		<li class="col-md-2 col-md-offset-1"><a
-			class="btn btn-info col-md-9" href="?url=home/quality_management/add">Informacja</a>
+		<li classclass="disabled" class="col-md-2 col-md-offset-1"><a
+			class="btn btn-info col-md-9">Informacja</a>
 			<span class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span>
 		</li>
 		<li class="col-md-2"><a class="btn btn-success col-md-9"
@@ -79,12 +79,8 @@
 <div class="page-header">
 	<h1>Utwórz nowy formularz</h1>
 </div>
-<div class="progress progress-striped active">
-	<div class="progress-bar" role="progressbar" aria-valuenow="45"
-		aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-		<span class="sr-only">45% Complete</span>
-	</div>
-</div>
+
+
 <input class="form-control input-lg" data-toggle="tooltip" data-placement="left" title="Wpisz nazwe produktu" type="text" placeholder="NAZWA">
 
 <input class="form-control input-lg"data-toggle="tooltip" data-placement="left" title="Wpisz ilosc elementow w partii" type="text"
@@ -107,12 +103,6 @@
 </p>
 {elseif $parameters['1'] eq 'step2' }
 <div class="panel panel-default">
-	<div class="progress progress-striped active">
-		<div class="progress-bar" role="progressbar" aria-valuenow="45"
-			aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-			<span class="sr-only">45% Complete</span>
-		</div>
-	</div>
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
 	<div class="panel-body">
@@ -184,12 +174,6 @@
 	href="?url=home/quality_management/add/step3"> Block level button</a>
 {elseif $parameters['1'] eq 'step3' }
 <div class="panel panel-default">
-	<div class="progress progress-striped active">
-		<div class="progress-bar" role="progressbar" aria-valuenow="45"
-			aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-			<span class="sr-only">45% Complete</span>
-		</div>
-	</div>
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
 	<div class="panel-body">
@@ -249,12 +233,6 @@
 	href="?url=home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
-	<div class="progress progress-striped active">
-		<div class="progress-bar" role="progressbar" aria-valuenow="45"
-			aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-			<span class="sr-only">45% Complete</span>
-		</div>
-	</div>
 	<div class=" col-md-4">
 		<div class="alert alert-success">
 			<a  class="alert-link">ZIELONY ALERCIK ZA ŚLICZNIE
