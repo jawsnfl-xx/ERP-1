@@ -48,7 +48,6 @@ function autoload($class) {
 			return;
 		}
 	}
-	var_dump ( $class );
 	// throw new Exception("{$class} not found");
 }
 
@@ -86,7 +85,6 @@ spl_autoload_register ( array (
 // }
 // }
 
-// var_dump($iterator);
 
 /**
  * Wczytanie bootstrapu z katalogu aplikacji

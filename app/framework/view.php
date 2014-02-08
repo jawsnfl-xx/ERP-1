@@ -19,6 +19,11 @@ namespace Framework {
 		protected $_parameters;
 
 		/**
+		 * * @readwrite
+		 */
+		protected $_table;
+
+		/**
 		 * * @read
 		 */
 		protected $_template;
@@ -40,12 +45,10 @@ namespace Framework {
 			$this->_template->setCompileDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_cp' );
 			$this->_template->setCacheDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_cd' );
 
-			/**
-			 * wypadało by zrobić jeszcze pełną konfigurację Smarty,
-			 * bo coś dobrze nie współpracuje...
-			 */
-
 			$this->_template->assign ( 'parameters', $options ['parameters'] );
+			$this->_template->assign ( 'table', $options ['table'] );
+
+			// var_dump ( $options );
 		}
 		public function render() {
 			$path = $this->getFile ();
