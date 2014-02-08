@@ -204,14 +204,54 @@ namespace Application\Controller {
 						$form_err = explode ( '|', RequestMethods::get ( "form_err" ) );
 
 						$this->_table ['form_err'] = $form_err;
+						$this->_table ['form_name'] = RequestMethods::get ( "form_name" );
+						$this->_table ['form_amount'] = RequestMethods::get ( "form_amount" );
+						$this->_table ['form_quan'] = RequestMethods::get ( "form_quan" );
 					}
 				} elseif ($this->_parameters [1] === '_step1') {
-				/**
-				 * Sprawdzenie Krok 1.
-				 * Musi sprawdzić zawartość wszystkich pól w które zostały wpisane informacje.
-				 * Jeśli są te, które niezbędne są do założenia karty pomiaru, robi to.
-				 * Jeśli brakuje wymaganych informacji wróci do poprzedniej strony i zakomunikuje które pola były brzydkie, a które puste.
-				 */
+					/**
+					 * Sprawdzenie Krok 1.
+					 * Musi sprawdzić zawartość wszystkich pól w które zostały wpisane informacje.
+					 * Jeśli są te, które niezbędne są do założenia karty pomiaru, robi to.
+					 * Jeśli brakuje wymaganych informacji wróci do poprzedniej strony i zakomunikuje które pola były brzydkie, a które puste.
+					 */
+
+					/**
+					 * Lista name pól ze strony step1:
+					 * - text
+					 * - amount
+					 * - quan
+					 */
+
+					$tmp_array = array ();
+					$tmp_error = FALSE;
+					if (! RequestMethods::post ( 'name' )) {
+						$tmp_array [] = 'name';
+						$tmp_error = TRUE;
+					} else {
+						$tmp_name = RequestMethods::post ( 'name' );
+					}
+					if (! RequestMethods::post ( 'amount' )) {
+						$tmp_array [] = 'amount';
+						$tmp_error = TRUE;
+					} else {
+						$tmp_amount = RequestMethods::post ( 'amount' );
+					}
+					if (! RequestMethods::post ( 'quan' )) {
+						$tmp_array [] = 'quan';
+						$tmp_error = TRUE;
+					} else {
+						$tmp_quan = RequestMethods::post ( 'quan' );
+					}
+
+					var_dump ( $form_err );
+					if ($tmp_error) {
+						$tmp_array = implode ( '|', $tmp_array );
+						header ( 'Location: ?url=home/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan );
+						exit ();
+					} else {
+						header ( 'Location: ?url=home/quality_management/add/step2' );
+					}
 				} elseif ($this->_parameters [1] === 'step2') {
 				/**
 				 * Krok 2.
@@ -238,7 +278,9 @@ namespace Application\Controller {
 				/**
 				 * Sprawdzenie podsumowania.
 				 */
-				} else {
+				} else
+
+				{
 					// jeśli to zostanie wywołane?
 					// czy to jest błąd?
 				}
