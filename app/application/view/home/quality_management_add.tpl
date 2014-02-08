@@ -7,9 +7,7 @@
 <div class="container-liquid">
 	<ul class="list-inline row">
 		<li class="disabled" class="col-md-2 col-md-offset-1"><a
-			class="btn btn-info col-md-9">Informacja</a>
-			<span class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span>
-		</li>
+			class="btn btn-info col-md-9">Informacja</a></li>
 		<li class="col-md-2"><a class="btn btn-success col-md-9"
 			href="?url=home/quality_management/add/step1">Wstęp</a> <span
 			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
@@ -81,12 +79,16 @@
 </div>
 
 
-<input class="form-control input-lg" data-toggle="tooltip" data-placement="left" title="Wpisz nazwe produktu" type="text" placeholder="NAZWA">
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
+	placeholder="NAZWA">
 
-<input class="form-control input-lg"data-toggle="tooltip" data-placement="left" title="Wpisz ilosc elementow w partii" type="text"
-	placeholder="Iloß© w partii">
-<input class="form-control input-lg"data-toggle="tooltip" data-placement="left" title="Ile sztuk zamowiono" type="text"
-	placeholder="Iloß© w zamówieniu">
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Wpisz ilosc elementow w partii"name="amount"
+	type="text" placeholder="Ilość w partii">
+<input class="form-control input-lg" data-toggle="tooltip"
+	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
+	placeholder="Ilość w zamówieniu">
 
 <div class="alert alert-success">
 	<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
@@ -102,6 +104,8 @@
 	href="?url=home/quality_management/add/step2"> Block level button</a>
 </p>
 {elseif $parameters['1'] eq 'step2' }
+
+
 <div class="panel panel-default">
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
@@ -235,8 +239,8 @@
 <div class="panel panel-default">
 	<div class=" col-md-4">
 		<div class="alert alert-success">
-			<a  class="alert-link">ZIELONY ALERCIK ZA ŚLICZNIE
-				ZROBIONY FORMULARZYK :3</a>
+			<a class="alert-link">ZIELONY ALERCIK ZA ŚLICZNIE ZROBIONY
+				FORMULARZYK :3</a>
 		</div>
 		<div class="panel panel-default">
 			<!-- Default panel contents -->
@@ -260,5 +264,3 @@
 
 
 	{/if}
-
-	
