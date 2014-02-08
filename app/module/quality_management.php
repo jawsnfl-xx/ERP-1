@@ -10,11 +10,6 @@ namespace Module {
 	class Quality_management extends Module {
 
 		/**
-		 * @readwrite
-		 */
-		public $sheet;
-
-		/**
 		 *
 		 * @param unknown $options
 		 */
@@ -23,10 +18,5 @@ namespace Module {
 			 */
 			parent::__construct ( $options );
 		}
-		// public function view_sheet() {
-		// print 'asdasd';
-		// $this->sheet = new \Module\Quality_management\Production_quality_management ();
-		// return $this->sheet;
-		// }
 	}
 }
