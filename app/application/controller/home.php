@@ -153,6 +153,7 @@ namespace Application\Controller {
 				// print 'view';
 			} /**
 			 */
+			
 			elseif ($this->_parameters [0] === 'add') {
 			/**
 			 * Wyświetla arkusz kontroli pomiaru.
