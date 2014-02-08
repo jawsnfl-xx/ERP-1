@@ -30,6 +30,10 @@ namespace Application\Controller {
 		 * @readwrite
 		 */
 		protected $_parameters;
+		/**
+		 * @readwrite
+		 */
+		protected $_table = array ();
 
 		/**
 		 * @readwrite
@@ -41,9 +45,12 @@ namespace Application\Controller {
 		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
-			/**
-			 */
+			// print 'asd';
 			$this->_parameters = $options ['parameters'];
+		}
+		public function givmetable() {
+			// print 'czosnek';
+			return ($this->_table);
 		}
 
 		/**
@@ -79,9 +86,7 @@ namespace Application\Controller {
 
 			if (! $session->getup ( 'user' )) {
 				header ( "Location: ?url=users/index" );
-				// print 'nie jest zalogowany';
 			}
-			// var_dump($session);
 		}
 
 		/**
@@ -141,7 +146,6 @@ namespace Application\Controller {
 		public function quality_management() {
 			// $quality_management = new \Module\Quality_management ();
 
-			// var_dump($production_quality_management);
 			/**
 			 */
 			if ($this->_parameters [0] === 'review') {
@@ -174,27 +178,81 @@ namespace Application\Controller {
 				 *
 				 * Lol - jak zabawnie :D
 				 */
-				// print 'add';
 
 				if ($this->_parameters [1] === 'step1') {
-					print 'stp1';
+					/**
+					 * Krok 1.
+					 * Widok robi pola do wpisania informacji
+					 * Kontroler chyba nie będzie robił nic... Nie nie i nie... !
+					 * Kontroler musi sprawdzić, czy nie zostały do niego przekazane błedy dotyczące brakujących lub niepoprawnych danych
+					 * z niego samego z _step1
+					 *
+					 * UWAGA!
+					 * Dane błędów przekazywane będą przez _GET['form_err']
+					 */
+
+					/**
+					 * Sprawdzenie _GET['form_err']
+					 * Jeśli zawiera pola błędów trzeba przekazać tablicę do widoku...
+					 * :D
+					 */
+					if (RequestMethods::get ( "form_err" )) {
+						/**
+						 * No to mamy jakieś błędy.
+						 * Trzeba sprawdzić poprawność tego co tam jest i zbudować tablicę.
+						 */
+						$form_err = explode ( '|', RequestMethods::get ( "form_err" ) );
+
+						$this->_table ['form_err'] = $form_err;
+					}
+				} elseif ($this->_parameters [1] === '_step1') {
+				/**
+				 * Sprawdzenie Krok 1.
+				 * Musi sprawdzić zawartość wszystkich pól w które zostały wpisane informacje.
+				 * Jeśli są te, które niezbędne są do założenia karty pomiaru, robi to.
+				 * Jeśli brakuje wymaganych informacji wróci do poprzedniej strony i zakomunikuje które pola były brzydkie, a które puste.
+				 */
 				} elseif ($this->_parameters [1] === 'step2') {
-					print 'stp2';
+				/**
+				 * Krok 2.
+				 * Widok wyświetla tabelę do pomiarów zgodną z wpisanym wcześniej detalem.
+				 * Kontroler przelicza rozmiar tabeli, czyta pola wymiarów, tolerancji itp., utrzymuje rozpoczęta kartę pomiaru.
+				 */
+				} elseif ($this->_parameters [1] === '_step2') {
+				/**
+				 * Sprawdzenie krok 2.
+				 */
 				} elseif ($this->_parameters [1] === 'step3') {
-					print 'stp3';
+				/**
+				 * Krok 3.
+				 */
+				} elseif ($this->_parameters [1] === '_step3') {
+				/**
+				 * Sprawdzenie krok 3.
+				 */
 				} elseif ($this->_parameters [1] === 'summary') {
-					print 'summary';
+				/**
+				 * Podsumowanie.
+				 */
+				} elseif ($this->_parameters [1] === '_summary') {
+				/**
+				 * Sprawdzenie podsumowania.
+				 */
 				} else {
 					// jeśli to zostanie wywołane?
 					// czy to jest błąd?
 				}
-			} else {
-				/**
-				 * Główna qm? Nie wiem...
-				 *
-				 * 1. Zdecydowanie to główna dla QM :S :S :S :S :S :S :S
-				 */
-				print 'else na qm :D';
+			} else
+
+			{
+			/**
+			 * Główna qm? Nie wiem...
+			 *
+			 * 1. Zdecydowanie to główna dla QM :S :S :S :S :S :S :S
+			 *
+			 * 2. Tutaj chyba nic nie będzie się robić. To póki co głowna
+			 */
+				// print 'else na qm :D';
 			}
 		}
 	}
