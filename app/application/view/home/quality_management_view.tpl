@@ -9,6 +9,12 @@
 				vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 				ultricies commodo.</p>
 		</div>
+		<div class="row">
+		
+  <div class="col-md-4">sortuj według</div>
+  
+  <div class="col-md-4">rosnąco</div>
+		
 
 		<table class="table table-bordered table-condensed">
 			<tr>
