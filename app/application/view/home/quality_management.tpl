@@ -72,8 +72,8 @@
 </div>
 
 {elseif $parameters['0'] eq 'view' } {include
-file='./quality_management_view.tpl'} {elseif $parameters['0'] eq
-'view' } {include file='./quality_management_view.tpl'} {elseif
+file='./quality_management_view.tpl'} {elseif $parameters['0'] eq 'view'
+} {include file='./quality_management_view.tpl'} {elseif
 $parameters['0'] eq 'add' } {include
 file='./quality_management_add.tpl'} {/if}
 

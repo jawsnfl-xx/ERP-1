@@ -85,11 +85,11 @@
 		<span class="sr-only">45% Complete</span>
 	</div>
 </div>
-<input class="form-control input-lg" type="text" placeholder="NAZWA">
+<input class="form-control input-lg" data-toggle="tooltip" data-placement="left" title="Wpisz nazwe produktu" type="text" placeholder="NAZWA">
 
-<input class="form-control input-lg" type="text"
+<input class="form-control input-lg"data-toggle="tooltip" data-placement="left" title="Wpisz ilosc elementow w partii" type="text"
 	placeholder="Iloß© w partii">
-<input class="form-control input-lg" type="text"
+<input class="form-control input-lg"data-toggle="tooltip" data-placement="left" title="Ile sztuk zamowiono" type="text"
 	placeholder="Iloß© w zamówieniu">
 
 <div class="alert alert-success">
