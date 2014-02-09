@@ -1,14 +1,4 @@
 <?php
-
-/**
- * test gita przez droidedit
- */
-
-/**
- * ?
- *
- * @var unknown
- */
 define ( 'APP_DIR', dirname ( realpath ( __FILE__ ) ) );
 
 /**
@@ -84,7 +74,6 @@ spl_autoload_register ( array (
 // include ($path . "/" . $item->getFilename());
 // }
 // }
-
 
 /**
  * Wczytanie bootstrapu z katalogu aplikacji

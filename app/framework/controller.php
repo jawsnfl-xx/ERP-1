@@ -116,9 +116,8 @@ namespace Framework {
 				$action = $router->getAction ();
 				$parameters = $router->getParameters ();
 				$table = $router->getTable ();
-
 				$view = new View ( array (
-// 						"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
+						"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
 						"parameters" => $parameters,
 						"table" => $table
 				) );
@@ -127,8 +126,8 @@ namespace Framework {
 				 */
 				$this->setActionView ( $view );
 			}
-		}
 
+		}
 		/**
 		 * (non-PHPdoc)
 		 *
@@ -161,6 +160,7 @@ namespace Framework {
 			 */
 			$doAction = $this->_willRenderActionView && $this->_actionView;
 			$doLayout = $this->_willRenderLayoutView && $this->_layoutView;
+
 
 			/**
 			 */
