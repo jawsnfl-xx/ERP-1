@@ -42,7 +42,7 @@
 							data-target="#myModal">skanuj kod</button>
 						<input type="text" class="form-control" placeholder="Wpisz kod">
 					</div>
-					<button type="submit" class="btn btn-info">Szukaj...</button>
+					<button type="submit" class="btn btn-default">Szukaj...</button>
 				</form>
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown">Menu<b class="caret"></b>

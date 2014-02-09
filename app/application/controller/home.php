@@ -243,27 +243,27 @@ namespace Application\Controller {
 					}
 
 					// var_dump ( $form_err );
-					// if ($tmp_error) {
-					// $tmp_array = implode ( '|', $tmp_array );
-					// header ( 'Location: ?url=home/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan );
-					// exit ();
-					// } else {
-					/**
-					 * Cholerka...
-					 * Wszystko zapowiada się dobrze.
-					 * Poza otworzyć arkusz (sheet) kontroli jakości... :)
-					 */
+					if ($tmp_error) {
+						$tmp_array = implode ( '|', $tmp_array );
+						header ( 'Location: ?url=home/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan );
+						exit ();
+					} else {
+						/**
+						 * Cholerka...
+						 * Wszystko zapowiada się dobrze.
+						 * Poza otworzyć arkusz (sheet) kontroli jakości... :)
+						 */
 
-					$quality_management->sheet = new \Module\Quality_management\Sheet ();
+						// $quality_management->sheet = new \Module\Quality_management\Sheet ();
 
-					var_dump ( $quality_management );
+						// var_dump ( $quality_management );
 
-				/**
-				 * Po utworzeniu arkusza należy przejść do kroku 2...
-				 * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
-				 */
-					// header ( 'Location: ?url=home/quality_management/add/step2' );
-					// }
+						/**
+						 * Po utworzeniu arkusza należy przejść do kroku 2...
+						 * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
+						 */
+						header ( 'Location: ?url=home/quality_management/add/step2' );
+					}
 				} elseif ($this->_parameters [1] === 'step2') {
 				/**
 				 * Krok 2.

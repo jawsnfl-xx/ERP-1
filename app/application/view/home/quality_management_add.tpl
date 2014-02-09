@@ -6,8 +6,9 @@
  -->
 <div class="container-liquid">
 	<ul class="list-inline row">
-		<li class="disabled" class="col-md-2 col-md-offset-1"><a
-			class="btn btn-info col-md-9">Informacja</a></li>
+		<li class="col-md-2 col-md-offset-1"><a
+			class="btn btn-info col-md-9 disabled">Informacja</a><span
+			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
 		<li class="col-md-2"><a class="btn btn-success col-md-9"
 			href="?url=home/quality_management/add/step1">Wstęp</a> <span
 			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
@@ -78,57 +79,29 @@
 	<h1>Utwórz nowy formularz</h1>
 </div>
 
-<form>
-<div class="form-group has-success">
-<input class="form-control input-lg" data-toggle="tooltip"
-	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
-	placeholder="NAZWA">
-
-<input class="form-control input-lg" data-toggle="tooltip"
-	data-placement="left" title="Wpisz ilosc elementow w partii"name="amount"
-	type="text" placeholder="Ilość w partii">
-<input class="form-control input-lg" data-toggle="tooltip"
-	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
-	placeholder="Ilość w zamówieniu">
-</div>
-<div class="form-group has-warning">
-
-<input class="form-control input-lg has-success" data-toggle="tooltip"
-	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
-	placeholder="NAZWA">
-
-<input class="form-control input-lg  " data-toggle="tooltip"
-	data-placement="left" title="Wpisz ilosc elementow w partii"name="amount"
-	type="text" placeholder="Ilość w partii">
-<input class="form-control input-lg" data-toggle="tooltip"
-	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
-	placeholder="Ilość w zamówieniu">
+<form action="?url=home/quality_management/add/_step1" method="post">
+	<div class="form-group">
+		<input
+			class="form-control alert {if in_array( 'name', $table['form_err']) }alert-danger {/if}"
+			data-toggle="tooltip" data-placement="left"
+			title="Wpisz nazwe produktu" name="name" type="text"
+			placeholder="NAZWA"
+			{if $table['form_name'] }value="{$table['form_name']}"{/if}>
+		<input
+			class="form-control alert  {if in_array( 'amount', $table['form_err']) }alert-danger {/if}"
+			data-toggle="tooltip" data-placement="left"
+			title="Wpisz ilosc elementow w partii" name="amount" type="text"
+			placeholder="Ilość w partii"
+			{if $table['form_amount'] }value="{$table['form_amount']}"{/if}>
+		<input
+			class="form-control alert {if in_array( 'quan', $table['form_err']) }alert-danger {/if}"
+			data-toggle="tooltip" data-placement="left"
+			title="Ile sztuk zamowiono" name="quan" type="text"
+			placeholder="Ilość w zamówieniu"
+			{if $table['form_quan'] }value="{$table['form_quan']}"{/if}>
 	</div>
-	<div class="form-group has-error">
-	<input class="form-control input-lg" data-toggle="tooltip"
-	data-placement="left" title="Wpisz nazwe produktu" name="name" type="text"
-	placeholder="NAZWA">
-
-<input class="form-control input-lg" data-toggle="tooltip"
-	data-placement="left" title="Wpisz ilosc elementow w partii"name="amount"
-	type="text" placeholder="Ilość w partii">
-<input class="form-control input-lg" data-toggle="tooltip"
-	data-placement="left" title="Ile sztuk zamowiono" name="quan" type="text"
-	placeholder="Ilość w zamówieniu">
-</div>
-<div class="alert alert-success">
-	<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
-</div>
-<div class="alert alert-warning">
-	<span class="glyphicon glyphicon-thumbs-down"></span> Nie zrobiłeś do
-	końca
-</div>
-<div class="alert alert-danger">
-	<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i rzal
-</div>
-<button> class="btn btn-primary btn btn-block"
-	type="submit" value="dalej" href="?url=home/quality_management/add/step2"> Block level button</button>
-</p>
+	<button class="btn btn-primary btn-block" type="submit"
+		value="Przejdź do kolejnego kroku">Przejdź do kolejnego kroku</button>
 </form>
 {elseif $parameters['1'] eq 'step2' }
 
