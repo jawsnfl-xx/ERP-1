@@ -4,10 +4,17 @@
 			Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet urna
 			<div class="pull-right">
 				<div class="btn-group">
-  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-"></span> Left</button>
-  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Pobierz zaznaczone</button>
-  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Szukaj</button>
-</div>			</div>
+					<button type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-"></span> Left
+					</button>
+					<button type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-save"></span> Pobierz zaznaczone
+					</button>
+					<button type="button" class="btn btn-primary">
+						<span class="glyphicon glyphicon-search"></span> Szukaj
+					</button>
+				</div>
+			</div>
 		</div>
 		<div class="panel-body">
 			<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
@@ -103,41 +110,83 @@
 				<ul class="list-group">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
 						</div>
-					</li><li class="list-group-item">Cras justo odio
+					</li>
+					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
 						</div>
-					</li><li class="list-group-item">Cras justo odio
+					</li>
+					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
 						</div>
-					</li><li class="list-group-item">Cras justo odio
+					</li>
+					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
 						</div>
-					</li><li class="list-group-item">Cras justo odio
+					</li>
+					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
 						</div>
-					</li><li class="list-group-item">Cras justo odio
+					</li>
+					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-save"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bookmark"></span></button>
-							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-print"></span></button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
 						</div>
-					</li>				</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
 		<div class="row">
