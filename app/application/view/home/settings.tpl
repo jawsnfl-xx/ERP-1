@@ -11,11 +11,116 @@
 </ol>
 <div id="container-fluid">
 
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<div class="container-fluid">
+
+				<div class="panel-title col-sm-4">Panel heading with title</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">x</a></li>
+					<li><a href="#">y</a></li>
+					<li><a href="#">z</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class=" col-sm-4">
+					<div class="input-group">
+						<input class="form-control" placeholder="Filter" type="text"
+							aria-controls="dt_basic"> <span class="input-group-addon"><span
+							class="glyphicon glyphicon-search"></span></span>
+					</div>
+
+				</div>
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="input-group pull-right">
+						<div class="btn-group">
+							<button class="btn btn-default dropdown-toggle" type="button"
+								data-toggle="dropdown">
+								Wyświetl <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">10</a></li>
+								<li><a href="#">25</a></li>
+								<li><a href="#">50</a></li>
+								<li><a href="#">100</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="panel-footer">
+
+			<div class="row">
+				<div class="col-md-8">
+					<p>Integer nunc eros, pellentesque et tortor eget, pharetra
+						porta magna.</p>
+				</div>
+				<div class="col-md-4 pull-right">
+					<ul class="pagination">
+						<li><a href="#">&laquo;</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-md-3">
 
 			<div class="panel panel-default">
-				<div class="panel-heading">
+				<div class="panel-heading navbar navbar-default">
 					<a href="?url=home/settings/">Ustawienia ogólne</a>
 				</div>
 				<div class="panel-body">
