@@ -17,12 +17,12 @@ namespace Module\Quality_management {
 	 * @author Marcin Pyrka
 	 *
 	 */
-	class Production_quality_management extends Quality_management {
+	class Sheet extends Quality_management {
 
 		/**
 		 * @readwrite
 		 */
-		public $sheet;
+		public $_sheet_id;
 		/**
 		 *
 		 * @param unknown $options
@@ -31,6 +31,19 @@ namespace Module\Quality_management {
 			/**
 			 */
 			parent::__construct ( $options );
+		}
+		public function initialize($_sheet_id = NULL) {
+			if ($_sheet_id == NULL) {
+			/**
+			 * Można rozpocząć tworzenie nowego arkusza...
+			 */
+			} else {
+			/**
+			 * Można inicjalizować arkusz, jeśli okaże się, że jest wszystko ok...
+			 *
+			 * :D
+			 */
+			}
 		}
 	}
 }

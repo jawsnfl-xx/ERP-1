@@ -28,6 +28,10 @@ namespace Application\Controller {
 		 * @readwrite
 		 */
 		protected $_parameters;
+		/**
+		 * @readwrite
+		 */
+		protected $_table = array ();
 		
 		/**
 		 *
@@ -39,6 +43,10 @@ namespace Application\Controller {
 			$this->_parameters = $options ['parameters'];
 			// $database = new Framework\Database();
 			// $database->initialize();
+		}
+		public function givmetable() {
+			// print 'czosnek';
+			return ($this->_table);
 		}
 		
 		/**

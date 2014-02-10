@@ -2,6 +2,13 @@
 
 /**
  *
+ *
+ *
+ * Testujemy :D
+ */
+
+/**
+ *
  * @author Marcin
  *
  */
@@ -15,30 +22,37 @@ namespace Application\Controller {
 	/**
 	 *
 	 * @author Marcin
-	 *        
+	 *
 	 */
 	class Home extends Controller {
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_parameters;
-		
+		/**
+		 * @readwrite
+		 */
+		protected $_table = array ();
+
 		/**
 		 * @readwrite
 		 */
 		protected $_options;
-		
+
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
-			/**
-			 */
+			// print 'asd';
 			$this->_parameters = $options ['parameters'];
 		}
-		
+		public function givmetable() {
+			// print 'czosnek';
+			return ($this->_table);
+		}
+
 		/**
 		 * @once
 		 * @protected
@@ -51,7 +65,7 @@ namespace Application\Controller {
 		 */
 		public function init() {
 		}
-		
+
 		/**
 		 * @protected
 		 *
@@ -63,34 +77,32 @@ namespace Application\Controller {
 		 * W tym miejscy jedynie jej uruchmienie.
 		 */
 		public function authenticate() {
-			
+
 			/**
 			 */
 			// $configuration = Registry::get("configuration");
 			// $database = Registry::get("database");
 			$session = Registry::get ( "session" );
-			
+
 			if (! $session->getup ( 'user' )) {
 				header ( "Location: ?url=users/index" );
-				// print 'nie jest zalogowany';
 			}
-			// var_dump($session);
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 */
 		public function index() {
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -106,13 +118,13 @@ namespace Application\Controller {
 			 */
 			if ($this->_parameters [0] === 'access_permissions') {
 				// print 'access permissions';
-			} 
+			}
 
 			/**
 			 */
 			elseif ($this->_parameters [0] === 'properties') {
 				// print 'properties';
-			} 
+			}
 
 			/**
 			 */
@@ -120,25 +132,22 @@ namespace Application\Controller {
 				// print 'system_settings';
 			}
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 *
 		 * @NOTE
-		 * Podstrony możliwe dla settings:
-		 * - access permissions
-		 * - properties
-		 * - system settings
 		 */
 		public function quality_management() {
-			// $quality_management = new \Module\Quality_management ();
-			
-			// var_dump($production_quality_management);
+			$quality_management = new \Module\Quality_management\Production_quality_management ();
+
+			// var_dump ( $quality_management );
+
 			/**
 			 */
 			if ($this->_parameters [0] === 'review') {
-			
+
 			/**
 			 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
 			 * Dziwnie działa edycja na tablecie.
@@ -146,28 +155,158 @@ namespace Application\Controller {
 			 */
 				// print 'review';
 			} elseif ($this->_parameters [0] === 'view') {
-			
+
 			/**
 			 * Wyświetla arkusz kontrolny z badania
 			 */
 				// print 'view';
 			} /**
 			 */
-			
+
 			elseif ($this->_parameters [0] === 'add') {
+				/**
+				 * Wyświetla arkusz kontroli pomiaru.
+				 * Na tym etapie musi być podzielony na 3 etapy.
+				 * 1. wprowadzenie danych początkowych
+				 * 2. wprowadzenie pomiarów wymiarów kontolnych
+				 * 3. wprowadzenie pomiarów tolerancji geometrii i kształtu
+				 *
+				 * Do tego dochodzi jeszcze podsumowanie,
+				 * ale to nie na teraz... :)
+				 *
+				 * Lol - jak zabawnie :D
+				 */
+
+				if ($this->_parameters [1] === 'step1') {
+					/**
+					 * Krok 1.
+					 * Widok robi pola do wpisania informacji
+					 * Kontroler chyba nie będzie robił nic... Nie nie i nie... !
+					 * Kontroler musi sprawdzić, czy nie zostały do niego przekazane błedy dotyczące brakujących lub niepoprawnych danych
+					 * z niego samego z _step1
+					 *
+					 * UWAGA!
+					 * Dane błędów przekazywane będą przez _GET['form_err']
+					 */
+
+					/**
+					 * Sprawdzenie _GET['form_err']
+					 * Jeśli zawiera pola błędów trzeba przekazać tablicę do widoku...
+					 * :D
+					 */
+					if (RequestMethods::get ( "form_err" )) {
+						/**
+						 * No to mamy jakieś błędy.
+						 * Trzeba sprawdzić poprawność tego co tam jest i zbudować tablicę.
+						 */
+						$form_err = explode ( '|', RequestMethods::get ( "form_err" ) );
+
+						$this->_table ['form_err'] = $form_err;
+						$this->_table ['form_name'] = RequestMethods::get ( "form_name" );
+						$this->_table ['form_amount'] = RequestMethods::get ( "form_amount" );
+						$this->_table ['form_quan'] = RequestMethods::get ( "form_quan" );
+					}
+				} elseif ($this->_parameters [1] === '_step1') {
+					/**
+					 * Sprawdzenie Krok 1.
+					 * Musi sprawdzić zawartość wszystkich pól w które zostały wpisane informacje.
+					 * Jeśli są te, które niezbędne są do założenia karty pomiaru, robi to.
+					 * Jeśli brakuje wymaganych informacji wróci do poprzedniej strony i zakomunikuje które pola były brzydkie, a które puste.
+					 */
+
+					/**
+					 * Lista name pól ze strony step1:
+					 * - text
+					 * - amount
+					 * - quan
+					 */
+
+					$tmp_array = array ();
+					$tmp_error = FALSE;
+					if (! RequestMethods::post ( 'name' )) {
+						$tmp_array [] = 'name';
+						$tmp_error = TRUE;
+					} else {
+						$tmp_name = RequestMethods::post ( 'name' );
+					}
+					if (! RequestMethods::post ( 'amount' )) {
+						$tmp_array [] = 'amount';
+						$tmp_error = TRUE;
+					} else {
+						$tmp_amount = RequestMethods::post ( 'amount' );
+					}
+					if (! RequestMethods::post ( 'quan' )) {
+						$tmp_array [] = 'quan';
+						$tmp_error = TRUE;
+					} else {
+						$tmp_quan = RequestMethods::post ( 'quan' );
+					}
+
+					// var_dump ( $form_err );
+					if ($tmp_error) {
+						$tmp_array = implode ( '|', $tmp_array );
+						header ( 'Location: ?url=home/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan );
+						exit ();
+					} else {
+						/**
+						 * Cholerka...
+						 * Wszystko zapowiada się dobrze.
+						 * Poza otworzyć arkusz (sheet) kontroli jakości... :)
+						 */
+
+						// $quality_management->sheet = new \Module\Quality_management\Sheet ();
+
+						// var_dump ( $quality_management );
+
+						/**
+						 * Po utworzeniu arkusza należy przejść do kroku 2...
+						 * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
+						 */
+						header ( 'Location: ?url=home/quality_management/add/step2' );
+					}
+				} elseif ($this->_parameters [1] === 'step2') {
+				/**
+				 * Krok 2.
+				 * Widok wyświetla tabelę do pomiarów zgodną z wpisanym wcześniej detalem.
+				 * Kontroler przelicza rozmiar tabeli, czyta pola wymiarów, tolerancji itp., utrzymuje rozpoczęta kartę pomiaru.
+				 */
+				} elseif ($this->_parameters [1] === '_step2') {
+				/**
+				 * Sprawdzenie krok 2.
+				 */
+				} elseif ($this->_parameters [1] === 'step3') {
+				/**
+				 * Krok 3.
+				 */
+				} elseif ($this->_parameters [1] === '_step3') {
+				/**
+				 * Sprawdzenie krok 3.
+				 */
+				} elseif ($this->_parameters [1] === 'summary') {
+				/**
+				 * Podsumowanie.
+				 */
+				} elseif ($this->_parameters [1] === '_summary') {
+				/**
+				 * Sprawdzenie podsumowania.
+				 */
+				} else
+
+				{
+					// jeśli to zostanie wywołane?
+					// czy to jest błąd?
+				}
+			} else
+
+			{
 			/**
-			 * Wyświetla arkusz kontroli pomiaru.
-			 * Na tym etapie musi być podzielony na 3 etapy.
-			 * 1. wprowadzenie danych początkowych
-			 * 2. wprowadzenie pomiarów wymiarów kontolnych
-			 * 3. wprowadzenie pomiarów tolerancji geometrii i kształtu
+			 * Główna qm? Nie wiem...
 			 *
-			 * Do tego dochodzi jeszcze podsumowanie,
-			 * ale to nie na teraz... :)
+			 * 1. Zdecydowanie to główna dla QM :S :S :S :S :S :S :S
 			 *
-			 * Lol - jak zabawnie :D
+			 * 2. Tutaj chyba nic nie będzie się robić. To póki co głowna
 			 */
-				// print 'add';
+				// print 'else na qm :D';
 			}
 		}
 	}
