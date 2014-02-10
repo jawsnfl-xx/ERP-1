@@ -79,26 +79,40 @@
 	<h1>Utwórz nowy formularz</h1>
 </div>
 
-<form action="?url=home/quality_management/add/_step1" method="post">
-	<div class="form-group">
-		<input
-			class="form-control alert {if in_array( 'name', $table['form_err']) }alert-danger {/if}"
-			data-toggle="tooltip" data-placement="left"
-			title="Wpisz nazwe produktu" name="name" type="text"
-			placeholder="NAZWA"
-			{if $table['form_name'] }value="{$table['form_name']}"{/if}>
-		<input
-			class="form-control alert  {if in_array( 'amount', $table['form_err']) }alert-danger {/if}"
-			data-toggle="tooltip" data-placement="left"
-			title="Wpisz ilosc elementow w partii" name="amount" type="text"
-			placeholder="Ilość w partii"
-			{if $table['form_amount'] }value="{$table['form_amount']}"{/if}>
-		<input
-			class="form-control alert {if in_array( 'quan', $table['form_err']) }alert-danger {/if}"
-			data-toggle="tooltip" data-placement="left"
-			title="Ile sztuk zamowiono" name="quan" type="text"
-			placeholder="Ilość w zamówieniu"
-			{if $table['form_quan'] }value="{$table['form_quan']}"{/if}>
+<form action="?url=home/quality_management/add/_step1" method="post"
+	class="form-horizontal" role="form">
+	<div
+		class="form-group {if in_array( 'name', $table['form_err']) } has-error has-feedback{/if}">
+
+		<label class="control-label col-sm-3" for="inputSuccess3">Nazwa
+			/ numer</label>
+		<div class="col-sm-9">
+			<input class="form-control" data-toggle="tooltip"
+				data-placement="left" title="Wpisz nazwe produktu" name="name"
+				type="text" placeholder="NAZWA"
+				{if $table['form_name'] }value="{$table['form_name']}"{/if}>
+		</div>
+	</div>
+	<div
+		class="form-group {if in_array( 'amount', $table['form_err']) }  has-error has-feedback{/if}">
+		<label class="control-label col-sm-3" for="inputSuccess3">...</label>
+		<div class="col-sm-9">
+			<input class="form-control" data-toggle="tooltip"
+				data-placement="left" title="Wpisz ilosc elementow w partii"
+				name="amount" type="text" placeholder="Ilość w partii"
+				{if $table['form_amount'] }value="{$table['form_amount']}"{/if}>
+		</div>
+	</div>
+
+	<div
+		class="form-group {if in_array( 'quan', $table['form_err']) } has-error has-feedback{/if}">
+		<label class="control-label col-sm-3" for="inputSuccess3">...</label>
+		<div class="col-sm-9">
+			<input class="form-control " data-toggle="tooltip"
+				data-placement="left" title="Ile sztuk zamowiono" name="quan"
+				type="text" placeholder="Ilość w zamówieniu"
+				{if $table['form_quan'] }value="{$table['form_quan']}"{/if}>
+		</div>
 	</div>
 	<button class="btn btn-primary btn-block" type="submit"
 		value="Przejdź do kolejnego kroku">Przejdź do kolejnego kroku</button>
