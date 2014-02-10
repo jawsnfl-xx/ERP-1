@@ -362,30 +362,41 @@
 	href="?url=home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
-	<div class=" col-md-4">
-		<div class="alert alert-success">
-			<a class="alert-link">ZIELONY ALERCIK ZA ŚLICZNIE ZROBIONY
-				FORMULARZYK :3</a>
+	<div class="row"><div class=" col-md-4">
+		<div class="alert alert-warning">
+			<a class="alert-link">Potwierdź utworzenie formularza</a>
 		</div>
+		<div class=" col-md-8">
 		<div class="panel panel-default">
 			<!-- Default panel contents -->
 			<div class="panel-heading">Panel heading</div>
 			<div class="panel-body">
-				<p>...</p>
+			<a>Z.P.U.H. Rolmech</a>
+			<a>detail_name</a>
+			<a>date</a>
+			<a></a>
+		
+			</div>
+			
 			</div>
 
 		</div>
 	</div>
-	<div class=" col-md-8">
-		<!-- List group -->
-		<ul class="list-group">
-			<li class="list-group-item">Cras justo odio</li>
-			<li class="list-group-item">Dapibus ac facilisis in</li>
-			<li class="list-group-item">Morbi leo risus</li>
-			<li class="list-group-item">Porta ac consectetur ac</li>
-			<li class="list-group-item">Vestibulum at eros</li>
-		</ul>
 	</div>
-
+	<table class="table table-bordered">
+	<tr>
+			<th></th>
+			<th>Header 2<th>asdasd</th></th>
+			<th>Header 3</th>
+			<th>Header 4</th>
+			<th>Header 5</th>
+		</tr>
+		<tr>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td>Row:1 Cell:2</td>
+			<td class="warning">Row:1 Cell:3</td>
+			<td>Row:1 Cell:4</td>
+			<td>Row:1 Cell:5</td>
 
 	{/if}

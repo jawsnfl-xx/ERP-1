@@ -27,6 +27,7 @@
 			<div class="col-xs-6">
 				<ul class="list-group">
 
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -40,6 +41,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -53,6 +55,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -66,6 +69,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -79,6 +83,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -92,6 +97,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -108,6 +114,7 @@
 			</div>
 			<div class="col-xs-6">
 				<ul class="list-group">
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -121,6 +128,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -134,6 +142,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -147,6 +156,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -160,6 +170,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
@@ -173,6 +184,7 @@
 							</button>
 						</div>
 					</li>
+					<input type="checkbox">
 					<li class="list-group-item">Cras justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
