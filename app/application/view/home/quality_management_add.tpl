@@ -96,7 +96,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<a class="btn btn-primary btn-block btn-lg"
+		<a class="btn btn-primary btn-block"
 			href="?url=home/quality_management/add/step1">Wykonaj nowe
 			badanie</a>
 	</div>
@@ -140,7 +140,8 @@
 					<div class="col-sm-9">
 						<input class="form-control" data-toggle="tooltip"
 							data-placement="left" title="Wpisz nazwe produktu" name="name"
-							type="text" placeholder="NAZWA"
+							type="text"
+							placeholder="Wpisz nazwę detalu lub numer pod który występuje"
 							{if $table['form_name'] }value="{$table['form_name']}"{/if}>
 					</div>
 				</div>
@@ -151,7 +152,8 @@
 					<div class="col-sm-9">
 						<input class="form-control" data-toggle="tooltip"
 							data-placement="left" title="Wpisz ilosc elementow w partii"
-							name="amount" type="text" placeholder="Ilość w partii"
+							name="amount" type="text"
+							placeholder="Wpisz ilość detali w partii"
 							{if $table['form_amount'] }value="{$table['form_amount']}"{/if}>
 					</div>
 				</div>

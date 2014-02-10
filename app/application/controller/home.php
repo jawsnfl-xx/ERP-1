@@ -10,7 +10,7 @@
 /**
  *
  * @author Marcin
- *
+ *        
  */
 namespace Application\Controller {
 
@@ -22,10 +22,10 @@ namespace Application\Controller {
 	/**
 	 *
 	 * @author Marcin
-	 *
+	 *        
 	 */
 	class Home extends Controller {
-
+		
 		/**
 		 * @readwrite
 		 */
@@ -34,15 +34,15 @@ namespace Application\Controller {
 		 * @readwrite
 		 */
 		protected $_table = array ();
-
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_options;
-
+		
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			// print 'asd';
@@ -52,7 +52,7 @@ namespace Application\Controller {
 			// print 'czosnek';
 			return ($this->_table);
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
@@ -65,7 +65,7 @@ namespace Application\Controller {
 		 */
 		public function init() {
 		}
-
+		
 		/**
 		 * @protected
 		 *
@@ -77,32 +77,32 @@ namespace Application\Controller {
 		 * W tym miejscy jedynie jej uruchmienie.
 		 */
 		public function authenticate() {
-
+			
 			/**
 			 */
 			// $configuration = Registry::get("configuration");
 			// $database = Registry::get("database");
 			$session = Registry::get ( "session" );
-
+			
 			if (! $session->getup ( 'user' )) {
 				header ( "Location: ?url=users/index" );
 			}
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 */
 		public function index() {
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -118,13 +118,13 @@ namespace Application\Controller {
 			 */
 			if ($this->_parameters [0] === 'access_permissions') {
 				// print 'access permissions';
-			}
+			} 
 
 			/**
 			 */
 			elseif ($this->_parameters [0] === 'properties') {
 				// print 'properties';
-			}
+			} 
 
 			/**
 			 */
@@ -132,7 +132,7 @@ namespace Application\Controller {
 				// print 'system_settings';
 			}
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -141,13 +141,13 @@ namespace Application\Controller {
 		 */
 		public function quality_management() {
 			$quality_management = new \Module\Quality_management\Production_quality_management ();
-
+			
 			// var_dump ( $quality_management );
-
+			
 			/**
 			 */
 			if ($this->_parameters [0] === 'review') {
-
+			
 			/**
 			 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
 			 * Dziwnie działa edycja na tablecie.
@@ -155,14 +155,14 @@ namespace Application\Controller {
 			 */
 				// print 'review';
 			} elseif ($this->_parameters [0] === 'view') {
-
+			
 			/**
 			 * Wyświetla arkusz kontrolny z badania
 			 */
 				// print 'view';
 			} /**
 			 */
-
+			
 			elseif ($this->_parameters [0] === 'add') {
 				/**
 				 * Wyświetla arkusz kontroli pomiaru.
@@ -176,7 +176,7 @@ namespace Application\Controller {
 				 *
 				 * Lol - jak zabawnie :D
 				 */
-
+				
 				if ($this->_parameters [1] === 'step1') {
 					/**
 					 * Krok 1.
@@ -188,7 +188,7 @@ namespace Application\Controller {
 					 * UWAGA!
 					 * Dane błędów przekazywane będą przez _GET['form_err']
 					 */
-
+					
 					/**
 					 * Sprawdzenie _GET['form_err']
 					 * Jeśli zawiera pola błędów trzeba przekazać tablicę do widoku...
@@ -200,7 +200,7 @@ namespace Application\Controller {
 						 * Trzeba sprawdzić poprawność tego co tam jest i zbudować tablicę.
 						 */
 						$form_err = explode ( '|', RequestMethods::get ( "form_err" ) );
-
+						
 						$this->_table ['form_err'] = $form_err;
 						$this->_table ['form_name'] = RequestMethods::get ( "form_name" );
 						$this->_table ['form_amount'] = RequestMethods::get ( "form_amount" );
@@ -213,14 +213,14 @@ namespace Application\Controller {
 					 * Jeśli są te, które niezbędne są do założenia karty pomiaru, robi to.
 					 * Jeśli brakuje wymaganych informacji wróci do poprzedniej strony i zakomunikuje które pola były brzydkie, a które puste.
 					 */
-
+					
 					/**
 					 * Lista name pól ze strony step1:
 					 * - text
 					 * - amount
 					 * - quan
 					 */
-
+					
 					$tmp_array = array ();
 					$tmp_error = FALSE;
 					if (! RequestMethods::post ( 'name' )) {
@@ -241,7 +241,7 @@ namespace Application\Controller {
 					} else {
 						$tmp_quan = RequestMethods::post ( 'quan' );
 					}
-
+					
 					// var_dump ( $form_err );
 					if ($tmp_error) {
 						$tmp_array = implode ( '|', $tmp_array );
@@ -253,11 +253,11 @@ namespace Application\Controller {
 						 * Wszystko zapowiada się dobrze.
 						 * Poza otworzyć arkusz (sheet) kontroli jakości... :)
 						 */
-
+						
 						// $quality_management->sheet = new \Module\Quality_management\Sheet ();
-
+						
 						// var_dump ( $quality_management );
-
+						
 						/**
 						 * Po utworzeniu arkusza należy przejść do kroku 2...
 						 * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
@@ -290,13 +290,13 @@ namespace Application\Controller {
 				/**
 				 * Sprawdzenie podsumowania.
 				 */
-				} else
+				} else 
 
 				{
 					// jeśli to zostanie wywołane?
 					// czy to jest błąd?
 				}
-			} else
+			} else 
 
 			{
 			/**
