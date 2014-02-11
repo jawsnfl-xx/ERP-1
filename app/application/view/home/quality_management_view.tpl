@@ -281,19 +281,5 @@
 				<button onclick="window.print()">Wydrukuj stronę</button>
 
 			</div>
-			<ul class="pager">
-				<li class="previous"><a href="#">&larr; Older</a></li>
-				<ul class="pagination pagination-lg">
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
-				</ul>
-				<li class="next"><a href="#">Newer &rarr;</a></li>
-			</ul>
+
 		</div>
