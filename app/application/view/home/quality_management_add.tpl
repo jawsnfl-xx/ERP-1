@@ -362,31 +362,31 @@
 	href="?url=home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
-	<div class="row"><div class=" col-md-4">
-		<div class="alert alert-warning">
-			<a class="alert-link">Potwierdź utworzenie formularza</a>
-		</div>
-		<div class=" col-md-8">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading">Panel heading</div>
-			<div class="panel-body">
-			<a>Z.P.U.H. Rolmech</a>
-			<a>detail_name</a>
-			<a>date</a>
-			<a></a>
-		
+	<div class="row">
+		<div class=" col-md-4">
+			<div class="alert alert-warning">
+				<a class="alert-link">Potwierdź utworzenie formularza</a>
 			</div>
-			
-			</div>
+			<div class=" col-md-8">
+				<div class="panel panel-default">
+					<!-- Default panel contents -->
+					<div class="panel-heading">Panel heading</div>
+					<div class="panel-body">
+						<a>Z.P.U.H. Rolmech</a> <a>detail_name</a> <a>date</a> <a></a>
 
+					</div>
+
+				</div>
+
+			</div>
 		</div>
-	</div>
 	</div>
 	<table class="table table-bordered">
-	<tr>
+		<tr>
 			<th></th>
-			<th>Header 2<th>asdasd</th></th>
+			<th>Header 2
+			<th>asdasd</th>
+			</th>
 			<th>Header 3</th>
 			<th>Header 4</th>
 			<th>Header 5</th>
@@ -397,6 +397,4 @@
 			<td>Row:1 Cell:2</td>
 			<td class="warning">Row:1 Cell:3</td>
 			<td>Row:1 Cell:4</td>
-			<td>Row:1 Cell:5</td>
-
-	{/if}
+			<td>Row:1 Cell:5</td> {/if}
