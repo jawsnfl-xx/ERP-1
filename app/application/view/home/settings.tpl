@@ -1,4 +1,3 @@
-{include file='./menu.tpl'}
 <ol class="breadcrumb">
 	<li><a href="?url=home/index"><span>Główna</span></a></li>
 	<li><a href="?url=home/settings"><span>Ustawienia</span></a></li> {if
