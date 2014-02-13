@@ -95,13 +95,12 @@
 			</tbody>
 		</table>
 		<div class="panel-footer">
-
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-sm-8">
 					<p>Integer nunc eros, pellentesque et tortor eget, pharetra
 						porta magna.</p>
 				</div>
-				<div class="col-md-4 pull-right">
+				<div class="col-sm-4 pull-right">
 					<ul class="pagination">
 						<li><a href="#">&laquo;</a></li>
 						<li><a href="#">1</a></li>

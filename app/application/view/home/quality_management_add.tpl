@@ -362,41 +362,77 @@
 	href="?url=home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
-	<div class="row"><div class=" col-md-4">
-		<div class="alert alert-warning">
-			<a class="alert-link">Potwierdź utworzenie formularza</a>
-		</div>
-		<div class=" col-md-8">
-		<div class="panel panel-default">
-			<!-- Default panel contents -->
-			<div class="panel-heading">Panel heading</div>
-			<div class="panel-body">
-			<a>Z.P.U.H. Rolmech</a>
-			<a>detail_name</a>
-			<a>date</a>
-			<a></a>
-		
-			</div>
-			
-			</div>
+	<a class="alert-link">Potwierdź utworzenie formularza</a>
+</div>
+<div class=" col-md-12">
+	<div class="panel panel-default">
+		<!-- Default panel contents -->
+		<div class="panel-heading">Panel heading</div>
+		<div class="panel-body">
+			<a>Z.P.U.H. Rolmech</a> - <a>detail_name</a> - <a>date</a>
 
 		</div>
-	</div>
-	</div>
-	<table class="table table-bordered">
-	<tr>
-			<th></th>
-			<th>Header 2<th>asdasd</th></th>
-			<th>Header 3</th>
-			<th>Header 4</th>
-			<th>Header 5</th>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td>Row:1 Cell:2</td>
-			<td class="warning">Row:1 Cell:3</td>
-			<td>Row:1 Cell:4</td>
-			<td>Row:1 Cell:5</td>
-
-	{/if}
+		<div class="row">
+			<div class=" col-md-1">
+				<ul class="list-group">
+					<li class="list-group-item">1</li>
+					<li class="list-group-item">2</li>
+					<li class="list-group-item">3</li>
+					<li class="list-group-item">4</li>
+					<li class="list-group-item">5</li>
+				</ul>
+			</div>
+			<div class=" col-md-2">
+				<!-- List group -->
+				<ul class="list-group">
+					<li class="list-group-item">żyto</li>
+					<li class="list-group-item">syrop</li>
+					<li class="list-group-item">wieś</li>
+					<li class="list-group-item">cześć</li>
+					<li class="list-group-item">taki zamysł</li>
+				</ul>
+			</div>
+			<div class=" col-md-2">
+				<!-- List group -->
+				<ul class="list-group">
+					<li class="list-group-item">żyto</li>
+					<li class="list-group-item">syrop</li>
+					<li class="list-group-item">wieś</li>
+					<li class="list-group-item">cześć</li>
+					<li class="list-group-item">taki zamysł</li>
+				</ul>
+			</div>
+			<div class=" col-md-2">
+				<!-- List group -->
+				<ul class="list-group">
+					<li class="list-group-item">żyto</li>
+					<li class="list-group-item">syrop</li>
+					<li class="list-group-item">wieś</li>
+					<li class="list-group-item">cześć</li>
+					<li class="list-group-item">taki zamysł</li>
+				</ul>
+			</div>
+			<div class=" col-md-2">
+				<!-- List group -->
+				<ul class="list-group">
+					<li class="list-group-item">żyto</li>
+					<li class="list-group-item">syrop</li>
+					<li class="list-group-item">wieś</li>
+					<li class="list-group-item">cześć</li>
+					<li class="list-group-item">taki zamysł</li>
+				</ul>
+			</div>
+			<div class=" col-md-2">
+				<!-- List group -->
+				<ul class="list-group">
+					<li class="list-group-item">żyto</li>
+					<li class="list-group-item">syrop</li>
+					<li class="list-group-item">wieś</li>
+					<li class="list-group-item">cześć</li>
+					<li class="list-group-item">taki zamysł</li>
+				</ul>
+			</div>
+		</div>
+		<a class="btn btn-primary btn btn-block"
+	href="?url=home/quality_management"> ZAKOŃCZ</a>
+		{/if}
