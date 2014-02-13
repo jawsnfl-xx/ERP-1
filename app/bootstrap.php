@@ -1,7 +1,9 @@
 <?php
+
 // use Framework;
 // use Framework\Registry as Registry;
 // use Framework\Session as Session;
+
 /**
  * Bootstrap
  *
@@ -9,26 +11,32 @@
  * Ważne
  * Zamykam bootstrap.
  *
- *
- *
- * @version 1
+ * @version 2
  * @author Marcin Pyrka
- *        
+ *
  *         Włączenie rejestracji obiektów.
  *         Dzięki temu dostępne są z każdego poziomu,
  *         przy czym dostęp do nich może być
  *         ograniczany i monitorowany. Można także logować kożystanie
  *         z rejestrowanych obiektów.
- *        
+ *
  *         Wczytanie konfiguracji
  *         @TODO przeniesienie wszystkich ustanień do pliku ini
  */
 $configuration = new Framework\Configuration ( array (
-		"type" => "ini" 
+		"type" => "ini"
 ) );
 
+/**
+ */
 $configuration = $configuration->initialize ();
+
+/**
+ */
 $parsed = $configuration->parse ( 'configuration/default_config' );
+
+/**
+ */
 Framework\Registry::set ( "configuration", $parsed );
 
 /**
@@ -36,7 +44,6 @@ Framework\Registry::set ( "configuration", $parsed );
  */
 $session = new Framework\Session ();
 $session = $session->initialize ();
-$session->setup ( 'test', 'test1' );
 Framework\Registry::set ( "session", $session );
 
 /**
@@ -47,19 +54,22 @@ Framework\Registry::set ( "session", $session );
  * Przykład stosowania połączenia z bazą danych MySQL
  * $data = $database->_mysql->fetch_array('SHOW TABLES');
  */
-
 $database = new Framework\Database ();
 
+/**
+ */
 $database->_options = array (
 		"options" => array (
 				"host" => "localhost",
 				"username" => "root",
 				"password" => "",
 				"schema" => "test",
-				"port" => "3306" 
-		) 
+				"port" => "3306"
+		)
 );
 
+/**
+ */
 Framework\Registry::set ( "database", $database );
 
 /**
