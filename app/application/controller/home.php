@@ -10,7 +10,7 @@
 /**
  *
  * @author Marcin
- *
+ *        
  */
 namespace Application\Controller {
 
@@ -18,15 +18,16 @@ namespace Application\Controller {
 	use Framework\Registry as Registry;
 	use Framework\RequestMethods as RequestMethods;
 	use Framework\Request as Request;
+	use Framework\Request\Response as Response;
 	use Framework\View;
 
 	/**
 	 *
 	 * @author Marcin
-	 *
+	 *        
 	 */
 	class Home extends Controller {
-
+		
 		/**
 		 * @readwrite
 		 */
@@ -35,25 +36,23 @@ namespace Application\Controller {
 		 * @readwrite
 		 */
 		protected $_table = array ();
-
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_options;
-
+		
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
-			// print 'asd';
 			$this->_parameters = $options ['parameters'];
 		}
 		public function givmetable() {
-			// print 'czosnek';
 			return ($this->_table);
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
@@ -65,16 +64,19 @@ namespace Application\Controller {
 		 * Włącznie z przekazaniem dalszych danych dla Smatry
 		 */
 		public function init() {
-
+			
 			/**
-			 * WAŻNE!
+			 * WAŻNE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			 * Sprawdzić czy działa to poprawnie i czy popranie przenosi
 			 * wewnętrze informacje.
 			 */
 			$request = new Request ();
+			$response = new Response ();
+			
 			// var_dump ( $request );
+			// var_dump ( $response );
 		}
-
+		
 		/**
 		 * @protected
 		 *
@@ -86,32 +88,32 @@ namespace Application\Controller {
 		 * W tym miejscy jedynie jej uruchmienie.
 		 */
 		public function authenticate() {
-
+			
 			/**
 			 */
 			// $configuration = Registry::get("configuration");
 			// $database = Registry::get("database");
 			$session = Registry::get ( "session" );
-
+			
 			if (! $session->getup ( 'user' )) {
 				header ( "Location: ?url=users/index" );
 			}
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 */
 		public function index() {
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -127,13 +129,13 @@ namespace Application\Controller {
 			 */
 			if ($this->_parameters [0] === 'access_permissions') {
 				// print 'access permissions';
-			}
+			} 
 
 			/**
 			 */
 			elseif ($this->_parameters [0] === 'properties') {
 				// print 'properties';
-			}
+			} 
 
 			/**
 			 */
@@ -141,7 +143,7 @@ namespace Application\Controller {
 				// print 'system_settings';
 			}
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -150,13 +152,13 @@ namespace Application\Controller {
 		 */
 		public function quality_management() {
 			$quality_management = new \Module\Quality_management\Production_quality_management ();
-
+			
 			// var_dump ( $quality_management );
-
+			
 			/**
 			 */
 			if ($this->_parameters [0] === 'review') {
-
+			
 			/**
 			 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
 			 * Dziwnie działa edycja na tablecie.
@@ -164,14 +166,14 @@ namespace Application\Controller {
 			 */
 				// print 'review';
 			} elseif ($this->_parameters [0] === 'view') {
-
+			
 			/**
 			 * Wyświetla arkusz kontrolny z badania
 			 */
 				// print 'view';
 			} /**
 			 */
-
+			
 			elseif ($this->_parameters [0] === 'add') {
 				/**
 				 * Wyświetla arkusz kontroli pomiaru.
@@ -185,7 +187,7 @@ namespace Application\Controller {
 				 *
 				 * Lol - jak zabawnie :D
 				 */
-
+				
 				if ($this->_parameters [1] === 'step1') {
 					/**
 					 * Krok 1.
@@ -198,7 +200,7 @@ namespace Application\Controller {
 					 * UWAGA!
 					 * Dane błędów przekazywane będą przez _GET['form_err']
 					 */
-
+					
 					/**
 					 * Sprawdzenie _GET['form_err']
 					 * Jeśli zawiera pola błędów trzeba przekazać tablicę do widoku...
@@ -210,7 +212,7 @@ namespace Application\Controller {
 						 * Trzeba sprawdzić poprawność tego co tam jest i zbudować tablicę.
 						 */
 						$form_err = explode ( '|', RequestMethods::get ( "form_err" ) );
-
+						
 						$this->_table ['form_err'] = $form_err;
 						$this->_table ['form_name'] = RequestMethods::get ( "form_name" );
 						$this->_table ['form_amount'] = RequestMethods::get ( "form_amount" );
@@ -224,13 +226,13 @@ namespace Application\Controller {
 					 * Jeśli brakuje wymaganych informacji wróci do poprzedniej
 					 * strony i zakomunikuje które pola były brzydkie, a które puste.
 					 */
-
+					
 					/**
 					 * - text
 					 * - amount
 					 * - quan
 					 */
-
+					
 					/**
 					 *
 					 * @todo Należy tak rozbudować kontrolę pól,
@@ -238,7 +240,7 @@ namespace Application\Controller {
 					 *       tych pól do strony z inputami, oraz przekazywać wartości pól
 					 *       błędnie wpisanych lub bez wartości wpisanej przez użytkownika.
 					 */
-
+					
 					$tmp_array = array ();
 					$tmp_error = FALSE;
 					if (! RequestMethods::post ( 'name' )) {
@@ -259,7 +261,7 @@ namespace Application\Controller {
 					} else {
 						$tmp_quan = RequestMethods::post ( 'quan' );
 					}
-
+					
 					// var_dump ( $form_err );
 					if ($tmp_error) {
 						$tmp_array = implode ( '|', $tmp_array );
@@ -271,11 +273,11 @@ namespace Application\Controller {
 						 * Wszystko zapowiada się dobrze.
 						 * Poza otworzyć arkusz (sheet) kontroli jakości... :)
 						 */
-
+						
 						// $quality_management->sheet = new \Module\Quality_management\Sheet ();
-
+						
 						// var_dump ( $quality_management );
-
+						
 						/**
 						 * Po utworzeniu arkusza należy przejść do kroku 2...
 						 * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
@@ -313,13 +315,13 @@ namespace Application\Controller {
 				 * oraz przejść do review z podkreślonym danym wspisem,
 				 * albo do view z danym wpisem.
 				 */
-				} else
+				} else 
 
 				{
 					// jeśli to zostanie wywołane?
 					// czy to jest błąd?
 				}
-			} else
+			} else 
 
 			{
 			/**
