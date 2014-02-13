@@ -17,8 +17,6 @@ namespace Application\Controller {
 	use Application\Controller as Controller;
 	use Framework\Registry as Registry;
 	use Framework\RequestMethods as RequestMethods;
-	use Framework\Request as Request;
-	use Framework\Request\Response as Response;
 	use Framework\View;
 
 	/**
@@ -64,17 +62,6 @@ namespace Application\Controller {
 		 * Włącznie z przekazaniem dalszych danych dla Smatry
 		 */
 		public function init() {
-			
-			/**
-			 * WAŻNE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			 * Sprawdzić czy działa to poprawnie i czy popranie przenosi
-			 * wewnętrze informacje.
-			 */
-			$request = new Request ();
-			$response = new Response ();
-			
-			// var_dump ( $request );
-			// var_dump ( $response );
 		}
 		
 		/**

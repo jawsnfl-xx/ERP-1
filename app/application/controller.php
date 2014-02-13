@@ -10,6 +10,8 @@ namespace Application {
 	use Framework\Events as Events;
 	use Framework\Registry as Registry;
 	use Framework\Session as Session;
+	use Framework\Request as Request;
+	use Framework\Request\Response as Response;
 
 	/**
 	 * framework.cache.initialize.before function($type, $options)
@@ -109,6 +111,14 @@ namespace Application {
 			/**
 			 */
 			parent::__construct ( $options );
+			
+			/**
+			 * WAŻNE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			 * Sprawdzić czy działa to poprawnie i czy popranie przenosi
+			 * wewnętrze informacje.
+			 */
+			$request = new Request ();
+			// var_dump ( $request );
 		}
 	}
 }
