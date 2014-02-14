@@ -1,3 +1,4 @@
+{include file='../layouts/navigation.tpl'}
 <ol class="breadcrumb">
 	<li><a href="?url=home/index">Główna</a></li>
 	<li class="active">{if $parameters['0'] neq ''} <a
