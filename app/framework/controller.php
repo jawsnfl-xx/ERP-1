@@ -126,7 +126,6 @@ namespace Framework {
 				 */
 				$this->setActionView ( $view );
 			}
-
 		}
 		/**
 		 * (non-PHPdoc)
@@ -160,7 +159,6 @@ namespace Framework {
 			 */
 			$doAction = $this->_willRenderActionView && $this->_actionView;
 			$doLayout = $this->_willRenderLayoutView && $this->_layoutView;
-
 
 			/**
 			 */
