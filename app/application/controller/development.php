@@ -4,16 +4,17 @@ namespace Application\Controller {
 
 	use Application\Controller as Controller;
 	use Framework\Registry as Registry;
+	use Framework\Request as Request;
 	use Framework\RequestMethods as RequestMethods;
 	use Framework\View;
 
 	/**
 	 *
 	 * @author Marcin
-	 *
+	 *        
 	 */
 	class Development extends Controller {
-
+		
 		/**
 		 * @readwrite
 		 */
@@ -22,7 +23,7 @@ namespace Application\Controller {
 		 * @readwrite
 		 */
 		protected $_table = array ();
-
+		
 		/**
 		 * @readwrite
 		 */
@@ -33,37 +34,39 @@ namespace Application\Controller {
 		public function givmetable() {
 			return ($this->_table);
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function init() {
+			// $request = new Request ();
+			// var_dump ( $request );
 		}
-
+		
 		/**
 		 * @protected
 		 */
 		public function authenticate() {
-
+			
 			/**
 			 */
 			// $configuration = Registry::get("configuration");
 			// $database = Registry::get("database");
 			$session = Registry::get ( "session" );
-
+			
 			if (! $session->getup ( 'user' )) {
 				header ( "Location: ?url=users/index" );
 			}
 		}
-
+		
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-
+		
 		/**
 		 * @before init, authenticate,
 		 * @after notify
