@@ -70,6 +70,10 @@ $database->_options = array (
 
 /**
  */
+
+$database->initialize ();
+// var_dump ( $database );
+
 Framework\Registry::set ( "database", $database );
 
 /**
