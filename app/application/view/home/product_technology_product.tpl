@@ -31,6 +31,20 @@
 			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
+
+		<h4>TODO:</h4>
+		<ul>
+			<li>podział na arkusze:
+				<ul>
+					<li>informacje ogólne,</li>
+					<li>technologia</li>
+					<li>kontrola</li>
+				</ul>
+			</li>
+			<li>sprawdzanie stanu wypełnienia danych dla produktu</li>
+			<li>w przyszłości: obliczałkę tego, jaki jest poziom
+				uzupełnienia danych dla poszczególnego produktu</li>
+		</ul>
 	</div>
 	<div class="panel-body">
 		<ul>
