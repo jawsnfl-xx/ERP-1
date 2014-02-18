@@ -4,7 +4,7 @@
 	W przyszłości wykazujący również statusy i informacje o nieścisłościach i błędach (być może? )
 
  -->
- 
+
 <div class="container-liquid">
 	<ul class="list-inline row">
 		<li class="col-md-2 col-md-offset-1"><a
@@ -454,11 +454,7 @@
 <a class="btn btn-primary btn btn-block"
 	href="?url=home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
-<div class="panel panel-default">
-
-
-
-</div>
+<div class="panel panel-default"></div>
 <div class=" col-md-12">
 	<div class="panel panel-default">
 		<!-- Default panel contents -->

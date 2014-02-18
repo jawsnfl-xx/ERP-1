@@ -21,9 +21,10 @@
 	</table>
 	<div class="panel-footer">
 		<ul class="pagination">
-			<li><a href="#">&laquo;&laquo;</a></li>
-			{foreach from=$table['product']['pager'] item=pager}
-			<li><a href="?url=home/product_technology/product&page={$pager['page']}&limit={$pager['limit']}">{$pager['page']}</a></li>
+			<li><a href="#">&laquo;&laquo;</a></li> {foreach
+			from=$table['product']['pager'] item=pager}
+			<li><a
+				href="?url=home/product_technology/product&page={$pager['page']}&limit={$pager['limit']}">{$pager['page']}</a></li>
 			{/foreach}
 			<li><a href="#">&raquo;&raquo;</a></li>
 		</ul>

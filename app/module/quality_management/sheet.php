@@ -15,17 +15,17 @@ namespace Module\Quality_management {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Sheet extends Quality_management {
-
+		
 		/**
 		 * @readwrite
 		 */
 		public $_sheet_id;
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			/**

@@ -8,13 +8,13 @@ namespace Module\Product_technology {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Technology extends Product_technology {
-
+		
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			/**

@@ -17,17 +17,17 @@ namespace Module\Quality_management {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Production_quality_management extends Quality_management {
-
+		
 		/**
 		 * @readwrite
 		 */
 		public $sheet;
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			/**
