@@ -138,6 +138,12 @@ namespace Application\Controller {
 		 * @NOTE
 		 */
 		public function product_technology() {
+			$product = new \Module\Product_technology\Product ();
+
+			if ($this->_parameters [0] === 'product') {
+				$this->_table ['product'] ['list'] = $product->_createList ();
+			} elseif ($this->_parameters [0] === 'technology') {
+			}
 		}
 
 		/**
@@ -147,10 +153,7 @@ namespace Application\Controller {
 		 * @NOTE
 		 */
 		public function quality_management() {
-			print '324';
 			$quality_management = new \Module\Quality_management\Production_quality_management ();
-			print '12';
-			// var_dump ( $quality_management );
 
 			/**
 			 */
