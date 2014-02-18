@@ -165,7 +165,6 @@ namespace Application\Controller {
 					 * Wywołanie tabeli z bazy
 					 */
 
-					var_dump( $limit);
 					$this->_table ['product'] ['list'] = $product->_createSoftList ( $page, $limit );
 
 					/**
@@ -318,7 +317,6 @@ namespace Application\Controller {
 						$tmp_quan = RequestMethods::post ( 'quan' );
 					}
 
-					// var_dump ( $form_err );
 					if ($tmp_error) {
 						$tmp_array = implode ( '|', $tmp_array );
 						header ( 'Location: ?url=home/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan );
@@ -331,8 +329,6 @@ namespace Application\Controller {
 						 */
 
 						// $quality_management->sheet = new \Module\Quality_management\Sheet ();
-
-						// var_dump ( $quality_management );
 
 						/**
 						 * Po utworzeniu arkusza należy przejść do kroku 2...
