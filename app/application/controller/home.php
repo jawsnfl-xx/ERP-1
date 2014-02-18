@@ -145,9 +145,60 @@ namespace Application\Controller {
 				if ($this->_parameters [1] === 'view') {
 					$this->_table ['product'] ['view'] = $product->_createView ( $this->_parameters [2] );
 				} else {
-					$this->_table ['product'] ['list'] = $product->_createList ();
+
+					/**
+					 * Sprawdzenie poprawności danych
+					 */
+					if (RequestMethods::get ( 'page' ) == NULL) {
+						$page = 1;
+					} else {
+						$page = RequestMethods::get ( 'page' );
+					}
+
+					if (RequestMethods::get ( 'limit' ) == NULL) {
+						$limit = 20;
+					} else {
+						$limit = RequestMethods::get ( 'limit' );
+					}
+
+					/**
+					 * Wywołanie tabeli z bazy
+					 */
+
+					var_dump( $limit);
+					$this->_table ['product'] ['list'] = $product->_createSoftList ( $page, $limit );
+
+					/**
+					 * Budowa pagera
+					 *
+					 * UWAGA!
+					 * Napisać na szybko, później przenieść jako uniwersalny element...
+					 */
+					$count = $product->_createListCount ();
+
+					/**
+					 * oblicza ile jest stron pełnych lub napoczętych
+					 */
+					$countPage = ceil ( $count / $limit );
+					/**
+					 * Teraz powinnien zbudować tablicę, z wartościami dla poszczególych klocków pagiera ;P
+					 */
+					$pager = array ();
+					for($i = 1; $i <= $countPage; $i ++) {
+						$tmp = array ();
+						$tmp ['page'] = $i;
+						$tmp ['limit'] = $limit;
+						$pager [] = $tmp;
+					}
+					$this->_table ['product'] ['pager'] = $pager;
 				}
 			} elseif ($this->_parameters [0] === 'technology') {
+
+				/**
+				 * Jakieś tam informacje dla technologii
+				 */
+				$data = 0;
+				// nic nie robi
 			}
 		}
 
