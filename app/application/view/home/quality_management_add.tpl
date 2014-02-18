@@ -4,7 +4,7 @@
 	W przyszłości wykazujący również statusy i informacje o nieścisłościach i błędach (być może? )
 
  -->
-
+ 
 <div class="container-liquid">
 	<ul class="list-inline row">
 		<li class="col-md-2 col-md-offset-1"><a
