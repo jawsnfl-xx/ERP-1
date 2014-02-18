@@ -1,8 +1,11 @@
 {include file='../layouts/navigation.tpl'}
 <ol class="breadcrumb">
 	<li><a href="?url=home/index"><span>Główna</span></a></li>
-	<li><a href="?url=home/product_technology"><span>Produkt
-				i technologia</span></a></li> {if $parameters['0'] eq 'product'}
+	<li>{if $parameters['0'] neq ''} <a
+		href="?url=home/product_technology"><span>Produkt i
+				technologia</span></a> {else} <span>Produkt i technologia</span> {/if} {if
+		$parameters['0'] eq 'product'}
+	</li>
 	<li class="active"><span>Produkt</span></li> {elseif $parameters['0']
 	eq 'technology'}
 	<li class="active"><span>Technologia</span></li> {else} {/if}
