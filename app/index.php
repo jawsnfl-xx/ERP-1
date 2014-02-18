@@ -81,7 +81,7 @@ try {
 	 */
 	require_once ('bootstrap.php');
 } catch ( Exception $e ) {
-
+	print 'i tak jest błąd';
 	$exceptions = array (
 			"500" => array (
 					"Framework\Cache\Exception",
@@ -141,7 +141,7 @@ try {
 	);
 
 	$exception = get_class ( $e );
-
+	print 'jest mega błąd';
 	/**
 	 * Szybkie renderowanie strony błędy po wyłapaniu aktywnego wyjątku
 	 */

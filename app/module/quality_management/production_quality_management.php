@@ -11,6 +11,8 @@ namespace Module\Quality_management {
 	 */
 	use Module as Module;
 	use Module\Quality_management as Quality_management;
+	use Module\Product_technology as Product_technology;
+	use Module\Product_technology\Product as Product;
 
 	/**
 	 *
@@ -31,6 +33,8 @@ namespace Module\Quality_management {
 			/**
 			 */
 			parent::__construct ( $options );
+			$product = new Product ();
+			$_isExists = $product->_isExists ( '111' );
 		}
 	}
 }

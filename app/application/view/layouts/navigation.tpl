@@ -67,22 +67,31 @@
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-3 col-md-2 sidebar">
+			<div class="col-sm-4 col-md-2 sidebar">
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="?url=home/index">Tablica</a></li>
 				</ul>
-
-
 				<hr />
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="?url=home/quality_management">Kontrola
 							jakości</a></li>
 				</ul>
-
-
-
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="?url=home/settings">Ustawienia</a></li>
 				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="?url=home/product_technology">Produkt i
+							technologie<span class="badge pull-right">Nowe!</span>
+					</a></li>
+					<li>
+						<ul class="nav nav-pills nav-stacked">
+							<li><a href="?url=home/product_technology/product">Produkt</a></li>
+							<li><a href="?url=home/product_technology/technology">Technologie</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav nav-pills nav-stacked">
+					<li><a href="?url=development/index">Development</a></li>
+				</ul>
 			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+			<div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 main">
