@@ -15,11 +15,15 @@
 					<input type="text" class="form-control" id="number"
 						placeholder="Wprowadź numer" name="number"> <span
 						class="input-group-btn">
-						<button class="btn btn-default" type="submit">szukaj ...</button>
+						<button class="btn btn-default" type="submit">Szukaj ...</button>
 					</span>
 				</div>
 
 			</form>
+		</div>
+		<div class="col-lg-6">
+			<a href="?url=home/product_technology/product/add"
+				class="btn btn-default">Dodaj ...</a>
 		</div>
 	</div>
 	<table class="table table-bordered">
@@ -42,6 +46,27 @@
 			{/foreach}
 			<li><a href="#">&raquo;&raquo;</a></li>
 		</ul>
+	</div>
+</div>
+{elseif $parameters['1'] eq 'add' }
+
+<div class="panel panel-default">
+	<div class="panel-heading">Nunc luctus, lacus id aliquet
+		bibendum, nunc mauris imperdiet urna</div>
+	<div class="panel-body">
+		<p>jksdf hgksjdhf gkshdgk jhsdfkjg hsdkjfhg ksjdfhg kjsdfhg
+			lkjafdhgl ksjdfhglk jsdhf glkjshdlkfjgh sdlkfj hg</p>
+		<form role="form" method="post"
+			action="?url=home/product_technology/product/_add">
+			<div class="input-group">
+				<input type="text" class="form-control" id="number"
+					placeholder="Wprowadź numer" name="number"> <span
+					class="input-group-btn">
+					<button class="btn btn-default" type="submit">Dodaj</button>
+				</span>
+			</div>
+
+		</form>
 	</div>
 </div>
 {elseif $parameters['1'] eq 'view' and $parameters['2'] neq '' }
