@@ -48,6 +48,20 @@ namespace Module\Product_technology {
 		 *
 		 * @return unknown
 		 */
+		public function _createListSearch($_keywords) {
+			$database = Registry::get ( "database" );
+			$data = NULL;
+
+			// var_dump ( $database );
+			$data = $database->_mysql->fetch_array ( 'SELECT * FROM products WHERE `products_name` LIKE \'%' . $_keywords . '%\' LIMIT 100;' );
+			// var_dump ( $data );
+			return $data;
+		}
+
+		/**
+		 *
+		 * @return unknown
+		 */
 		public function _createListCount() {
 			$database = Registry::get ( "database" );
 			/**
