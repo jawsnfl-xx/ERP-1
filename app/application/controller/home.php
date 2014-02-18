@@ -141,7 +141,12 @@ namespace Application\Controller {
 			$product = new \Module\Product_technology\Product ();
 
 			if ($this->_parameters [0] === 'product') {
-				$this->_table ['product'] ['list'] = $product->_createList ();
+
+				if ($this->_parameters [1] === 'view') {
+					$this->_table ['product'] ['view'] = $product->_createView ( $this->_parameters [2] );
+				} else {
+					$this->_table ['product'] ['list'] = $product->_createList ();
+				}
 			} elseif ($this->_parameters [0] === 'technology') {
 			}
 		}
