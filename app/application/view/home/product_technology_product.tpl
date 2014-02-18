@@ -19,8 +19,17 @@
 		</tr>
 		{/foreach}
 	</table>
-	<div class="panel-footer">Nunc luctus, lacus id aliquet bibendum,
-		nunc mauris imperdiet urna</div>
+	<div class="panel-footer">
+		<ul class="pagination">
+			<li><a href="#">&laquo;</a></li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li><a href="#">&raquo;</a></li>
+		</ul>
+	</div>
 </div>
 {elseif $parameters['1'] eq 'view' and $parameters['2'] neq '' }
 <div class="panel panel-default">
