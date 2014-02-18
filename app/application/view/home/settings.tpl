@@ -9,7 +9,7 @@
 	$parameters['0'] eq 'system_settings'}
 	<li class="active"><span>system settings</span></li> {else} {/if}
 </ol>
-<div id="container-fluid">
+<div class="container-fluid">
 
 
 	<div class="panel panel-default">

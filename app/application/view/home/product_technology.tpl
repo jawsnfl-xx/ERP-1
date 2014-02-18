@@ -8,7 +8,6 @@
 	<li class="active"><span>Technologia</span></li> {else} {/if}
 </ol>
 
-
 {if $parameters['0'] eq 'product' } {include
 file='./product_technology_product.tpl'} {elseif $parameters['0'] eq
 'technology'} {include file='./product_technology_technology.tpl'} {/if}
