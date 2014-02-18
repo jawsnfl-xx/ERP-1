@@ -21,13 +21,11 @@
 	</table>
 	<div class="panel-footer">
 		<ul class="pagination">
-			<li><a href="#">&laquo;</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">&raquo;</a></li>
+			<li><a href="#">&laquo;&laquo;</a></li>
+			{foreach from=$table['product']['pager'] item=pager}
+			<li><a href="?url=home/product_technology/product&page={$pager['page']}&limit={$pager['limit']}">{$pager['page']}</a></li>
+			{/foreach}
+			<li><a href="#">&raquo;&raquo;</a></li>
 		</ul>
 	</div>
 </div>
