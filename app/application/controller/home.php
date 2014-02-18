@@ -137,6 +137,15 @@ namespace Application\Controller {
 		 *
 		 * @NOTE
 		 */
+		public function product_technology() {
+		}
+
+		/**
+		 * @before init, authenticate,
+		 * @after notify
+		 *
+		 * @NOTE
+		 */
 		public function quality_management() {
 			print '324';
 			$quality_management = new \Module\Quality_management\Production_quality_management ();
