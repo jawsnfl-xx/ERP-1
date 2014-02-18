@@ -94,30 +94,30 @@ namespace Application {
 	 * framework.view.render.before function($file)
 	 * $file—The template file that should be rendered
 	 */
-	
+
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *        
-	 *        
+	 *
+	 *
 	 */
 	class Controller extends \Framework\Controller {
-		
+
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
 			/**
 			 */
 			parent::__construct ( $options );
-			
+
 			/**
 			 * WAŻNE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			 * Sprawdzić czy działa to poprawnie i czy popranie przenosi
 			 * wewnętrze informacje.
 			 */
-			
+
 			/**
 			 * object(Framework\Request)[31]
 			 * protected '_request' => null
@@ -153,7 +153,6 @@ namespace Application {
 			 * empty
 			 */
 			$request = new Request ();
-			// var_dump ( $request );
 		}
 	}
 }
