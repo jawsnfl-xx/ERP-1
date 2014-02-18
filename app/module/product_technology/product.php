@@ -29,5 +29,20 @@ namespace Module\Product_technology {
 		public function _isExists($_id) {
 			$database = Registry::get ( "database" );
 		}
+
+		/**
+		 *
+		 * @return unknown
+		 */
+		public function _createList() {
+			$database = Registry::get ( "database" );
+			$data = NULL;
+
+			// var_dump ( $database );
+			$data = $database->_mysql->fetch_array ( 'SELECT * FROM test.products LIMIT 100;' );
+			// var_dump ( $data );
+
+			return $data;
+		}
 	}
 }
