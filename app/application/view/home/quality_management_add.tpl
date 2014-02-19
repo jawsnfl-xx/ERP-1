@@ -578,5 +578,6 @@
 			</div>
 		</div>
 	</div>
+	<b>JAK SIĘ COMITNIE TO JESTEM CUDOTWÓRCĄ</b>
 	<a class="btn btn-primary btn btn-block"
 		href="?url=home/quality_management"> ZAKOŃCZ</a> {/if}
