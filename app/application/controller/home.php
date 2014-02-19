@@ -148,10 +148,9 @@ namespace Application\Controller {
 				}
 
 				elseif ($this->_parameters [1] === 'search') {
+
 					/**
-					 * nkmnkmnkmnkd
 					 */
-					// będzie wyszukiwać
 					$_keywords = RequestMethods::post ( 'number' );
 					$this->_table ['product'] ['search'] = $_keywords;
 

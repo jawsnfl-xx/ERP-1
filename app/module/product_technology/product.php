@@ -119,7 +119,7 @@ namespace Module\Product_technology {
 
 			// var_dump ( $database );
 			$data = $database->_mysql->fetch_array ( 'SELECT * FROM products WHERE
-    `id_products` = ' . $_id . ' LIMIT 100;' );
+    `id_products` = ' . $_id . ' LIMIT 1;' );
 			// var_dump ( $data );
 			return $data;
 		}
