@@ -153,7 +153,6 @@ namespace Application {
 			 * empty
 			 */
 			$request = new Request ();
-			// var_dump ( $request );
 		}
 	}
 }

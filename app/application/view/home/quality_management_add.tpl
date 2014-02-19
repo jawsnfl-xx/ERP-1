@@ -4,7 +4,7 @@
 	W przyszłości wykazujący również statusy i informacje o nieścisłościach i błędach (być może? )
 
  -->
- 
+
 <div class="container-liquid">
 	<ul class="list-inline row">
 		<li class="col-md-2 col-md-offset-1"><a
@@ -250,23 +250,10 @@
 			<th>6</th>
 		</tr>
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-
-		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -280,8 +267,10 @@
 		</tr>
 
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -295,8 +284,27 @@
 		</tr>
 
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+		</tr>
+
+		<tr>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -309,8 +317,10 @@
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -323,8 +333,10 @@
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -363,23 +375,10 @@
 			<th>5</th>
 		</tr>
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-
-		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -393,8 +392,10 @@
 		</tr>
 
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -408,8 +409,27 @@
 		</tr>
 
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+		</tr>
+
+		<tr>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -422,8 +442,10 @@
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -436,8 +458,10 @@
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
 		<tr>
-			<td>Row:4 Cell:1</td>
-			<td>Row:4 Cell:2</td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			<td><input type="email" class="form-control" id="inputEmail3"
+				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 			<td><input type="email" class="form-control" id="inputEmail3"
@@ -454,11 +478,7 @@
 <a class="btn btn-primary btn btn-block"
 	href="?url=home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
-<div class="panel panel-default">
-
-
-
-</div>
+<div class="panel panel-default"></div>
 <div class=" col-md-12">
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
@@ -541,7 +561,22 @@
 
 			</table>
 		</div>
-
+		<div class="form-group">
+			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi</label>
+			<div class="col-sm-9">
+				<input class="form-control" data-toggle="tooltip"
+					data-placement="left" title="" name="addt_01" type="text"
+					placeholder="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi2</label>
+			<div class="col-sm-9">
+				<input class="form-control" data-toggle="tooltip"
+					data-placement="left" title="" name="addt_02" type="text"
+					placeholder="">
+			</div>
+		</div>
 	</div>
 	<a class="btn btn-primary btn btn-block"
 		href="?url=home/quality_management"> ZAKOŃCZ</a> {/if}

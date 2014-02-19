@@ -81,8 +81,7 @@
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="?url=home/product_technology">Produkt i
-							technologie<span class="badge pull-right">Nowe!</span>
-					</a></li>
+							technologie</a></li>
 					<li>
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="?url=home/product_technology/product">Produkt</a></li>

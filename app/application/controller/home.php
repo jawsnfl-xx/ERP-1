@@ -18,6 +18,7 @@ namespace Application\Controller {
 	use Framework\Registry as Registry;
 	use Framework\RequestMethods as RequestMethods;
 	use Framework\View;
+	use Framework\Request;
 
 	/**
 	 *
@@ -144,6 +145,19 @@ namespace Application\Controller {
 
 				if ($this->_parameters [1] === 'view') {
 					$this->_table ['product'] ['view'] = $product->_createView ( $this->_parameters [2] );
+				}
+
+				elseif ($this->_parameters [1] === 'search') {
+					/**
+					 * nkmnkmnkmnkd
+					 */
+					// będzie wyszukiwać
+					$_keywords = RequestMethods::post ( 'number' );
+					$this->_table ['product'] ['search'] = $_keywords;
+
+					$this->_table ['product'] ['listSearch'] = $product->_createListSearch ( $_keywords );
+
+					// var_dump ( $this->_table ['product'] ['listSearch'] );
 				} else {
 
 					/**
@@ -165,7 +179,6 @@ namespace Application\Controller {
 					 * Wywołanie tabeli z bazy
 					 */
 
-					var_dump( $limit);
 					$this->_table ['product'] ['list'] = $product->_createSoftList ( $page, $limit );
 
 					/**
@@ -318,7 +331,6 @@ namespace Application\Controller {
 						$tmp_quan = RequestMethods::post ( 'quan' );
 					}
 
-					// var_dump ( $form_err );
 					if ($tmp_error) {
 						$tmp_array = implode ( '|', $tmp_array );
 						header ( 'Location: ?url=home/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan );
@@ -331,8 +343,6 @@ namespace Application\Controller {
 						 */
 
 						// $quality_management->sheet = new \Module\Quality_management\Sheet ();
-
-						// var_dump ( $quality_management );
 
 						/**
 						 * Po utworzeniu arkusza należy przejść do kroku 2...
