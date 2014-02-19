@@ -561,22 +561,19 @@
 
 			</table>
 		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi</label>
-			<div class="col-sm-9">
-				<input class="form-control" data-toggle="tooltip"
-					data-placement="left" title="" name="addt_01" type="text"
-					placeholder="">
-			</div>
+<div class="panel panel-default">
+		<label class="control-label col-sm-3" for="inputSuccess3">Uwagi</label>
+		
+</div>
+<div class="col-sm-4">
+			<input class="form-control" data-toggle="tooltip"
+				data-placement="left" title="" name="addt_01" type="text"
+				placeholder="">
 		</div>
-		<div class="form-group">
-			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi2</label>
-			<div class="col-sm-9">
-				<input class="form-control" data-toggle="tooltip"
-					data-placement="left" title="" name="addt_02" type="text"
-					placeholder="">
-			</div>
-		</div>
-	</div>
+
+
+<div class="col-sm-4">
 	<a class="btn btn-primary btn btn-block"
-		href="?url=home/quality_management"> ZAKOŃCZ</a> {/if}
+		href="?url=home/quality_management"> ZAKOŃCZ</a> 
+		</div>
+			</div>{/if}
