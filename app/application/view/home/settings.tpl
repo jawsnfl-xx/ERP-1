@@ -135,6 +135,9 @@
 			</div>
 		</div>
 		<div class="col-md-9">
+		<div class="alert alert-warning">W razie kłopotów, kilkaj 
+  <a href="#" class="alert-link">w taki fajny link do pliku pomocy</a>
+</div>
 			{if $parameters['0'] eq 'access_permissions'}
 			<div class="page-header">
 				<h1>Utwórz nowy formularz</h1>
