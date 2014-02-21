@@ -8,7 +8,6 @@
 			leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
 			commodo cursus magna.</p>
 		<p>
-
 			<a class="btn btn-default" href="/home/quality_management"
 				role="button">View details &raquo;</a>
 		</p>
@@ -20,7 +19,6 @@
 			leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
 			commodo cursus magna.</p>
 		<p>
-
 			<a class="btn btn-default" href="/home/product_technology"
 				role="button">Pokaż szczegóły &raquo;</a>
 		</p>

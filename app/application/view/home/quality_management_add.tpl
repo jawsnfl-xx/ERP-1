@@ -46,9 +46,7 @@
 	</ul>
 </div>
 {/if}
-
 <!--  TREŚĆ  -->
-
 {if $parameters['1'] eq '' }
 <div class="container-liquid">
 	<div class="row">
@@ -101,20 +99,16 @@
 	</div>
 </div>
 {elseif $parameters['1'] eq 'step1' }
-
-
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<strong>Utwórz nowy formularz</strong>
 	</div>
-
 	<div class="panel-body">
 		<p>Integer condimentum, turpis sed interdum pretium, ante libero
 			posuere dui, at ornare magna urna sed augue. Lorem ipsum dolor sit
 			amet, consectetur adipiscing elit. Cras scelerisque est non massa
 			dictum varius. Integer auctor massa nec sapien faucibus, non
 			adipiscing lectus tristique.</p>
-
 	</div>
 	<ul class="list-group">
 		<form action="/home/quality_management/add/_step1" method="post"
@@ -226,8 +220,6 @@
 	</ul>
 </div>
 {elseif $parameters['1'] eq 'step2' }
-
-
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<strong>Nunc luctus, lacus id aliquet bibendum, nunc mauris
@@ -239,7 +231,6 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-
 	<table class="table table-bordered">
 		<tr>
 			<th>Wymiary</th>
@@ -266,7 +257,6 @@
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
-
 		<tr>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
@@ -283,7 +273,6 @@
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
-
 		<tr>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
@@ -300,7 +289,6 @@
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
-
 		<tr>
 			<td><input type="email" class="form-control" id="inputEmail3"
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
@@ -491,8 +479,6 @@
 				<div class=" col-md-3">date</div>
 			</div>
 		</div>
-
-
 		<div class="table-responsive">
 			<table class="table">
 				<tr>
@@ -558,24 +544,19 @@
 					<td>Row:6 Cell:6</td>
 					<td>Row:6 Cell:7</td>
 				</tr>
-
-
 			</table>
 		</div>
 		<div class="panel panel-default">
 			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi</label>
-
 		</div>
 		<div class="col-sm-4">
 			<input class="form-control" data-toggle="tooltip"
 				data-placement="left" title="" name="addt_01" type="text"
 				placeholder="">
 		</div>
-
-
 		<div class="col-sm-4">
 			<a class="btn btn-primary btn btn-block"
 				href="/home/quality_management"> ZAKOŃCZ</a>
 		</div>
 	</div>
-	{/if}
+{/if}

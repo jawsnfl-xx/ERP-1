@@ -20,7 +20,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -81,7 +80,6 @@
 					<li><a href="/home/product_technology">Produkt i
 							technologie</a></li>
 					<li>
-
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="/home/product_technology/product">Produkt</a></li>
 							<li><a href="/home/product_technology/technology">Technologie</a></li>

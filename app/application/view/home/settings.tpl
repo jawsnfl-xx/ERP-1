@@ -10,8 +10,6 @@
 	<li class="active"><span>system settings</span></li> {else} {/if}
 </ol>
 <div class="container-fluid">
-
-
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<div class="container-fluid">
@@ -32,7 +30,6 @@
 							aria-controls="dt_basic"> <span class="input-group-addon"><span
 							class="glyphicon glyphicon-search"></span></span>
 					</div>
-
 				</div>
 				<div class="col-sm-4 col-sm-offset-4">
 					<div class="input-group pull-right">
@@ -114,10 +111,8 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="row">
 		<div class="col-md-3">
-
 			<div class="panel panel-default">
 				<div class="panel-heading navbar navbar-default">
 					<a href="/home/settings/">Ustawienia ogólne</a>
@@ -130,7 +125,6 @@
 						<li><a href="/home/settings/system_settings">Ustawienia
 								systemowe</a></li>
 					</ul>
-
 				</div>
 			</div>
 		</div>
@@ -143,7 +137,6 @@
 			<div class="page-header">
 				<h1>Utwórz nowy formularz</h1>
 			</div>
-
 			<div class="alert alert-success">
 				<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
 			</div>
@@ -183,7 +176,6 @@
 					<span class="sr-only">80% Complete (danger)</span>
 				</div>
 			</div>
-
 			<div class="progress progress-striped active">
 				<div class="progress-bar progress-bar-danger" role="progressbar"
 					aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
@@ -192,7 +184,6 @@
 				</div>
 			</div>
 			{elseif $parameters['0'] eq 'properties'}
-
 			<ul class="nav nav-tabs">
 				<li
 					{if $parameters['0'] eq 'properties'  and  $parameters['1'] eq ''} class="active"{/if} ><a
@@ -204,9 +195,7 @@
 					{if $parameters['0'] eq 'properties' and  $parameters['1'] eq 'form'} class="active"{/if} ><a
 					href="/home/settings/properties/form">formularz</a></li>
 			</ul>
-
 			{if $parameters['0'] eq 'properties' and $parameters['1'] eq ''}
-
 			<div class="container">
 				<ul class="pagination">
 					<li><a href="#">&laquo; &laquo;</a></li>
@@ -219,10 +208,7 @@
 					<li><a href="#">&raquo;</a></li>
 					<li><a href="#">&raquo; &raquo;</a></li>
 				</ul>
-
 			</div>
-
-
 			{/if} {if $parameters['0'] eq 'properties' and $parameters['1'] eq
 			'kotki'}
 			<div id="container" style="margin-top: 10px;">
@@ -342,10 +328,7 @@
 						</div>
 					</div>
 				</form>
-
 			</div>
-
-
 			<div class="list-group">
 				<a href="#" class="list-group-item active"> Cras justo odio </a> <a
 					href="#" class="list-group-item">Dapibus ac facilisis in</a> <a
@@ -355,7 +338,6 @@
 			</div>
 			{/if} {elseif $parameters['0'] eq 'system_settings'}
 			<h1>system settings</h1>
-
 			<ul class="list-group">
 				<li class="list-group-item list-group-item-success">Dapibus ac
 					facilisis in</li>
@@ -375,8 +357,6 @@
 					class="list-group-item list-group-item-danger">Vestibulum at
 					eros</a>
 			</div>
-
-
 			<div class="list-group">
 				<a href="#" class="list-group-item">
 					<h4 class="list-group-item-heading">List group item heading</h4>
@@ -440,9 +420,7 @@
 						convallis. Fusce ullamcorper id dui sed lobortis.</p>
 				</a>
 			</div>
-
 			{else}
-
 			<div class="panel panel-default">
 				<div class="panel-heading">Nunc luctus, lacus id aliquet
 					bibendum, nunc mauris imperdiet urna</div>
@@ -453,12 +431,7 @@
 						Nunc cursus ultricies commodo.</p>
 				</div>
 			</div>
-
-
-
-
 		</div>
-
 		{/if}
 	</div>
 </div>

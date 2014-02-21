@@ -18,7 +18,6 @@
 						<button class="btn btn-default" type="submit">Szukaj ...</button>
 					</span>
 				</div>
-
 			</form>
 		</div>
 		<div class="col-lg-6">
@@ -51,11 +50,9 @@
 			<li><a href="#">5</a></li>
 			<li><a href="#">&raquo;</a></li>
 		</ul>
-
 	</div>
 </div>
 {elseif $parameters['1'] eq 'add' }
-
 <div class="panel panel-default">
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
@@ -71,7 +68,6 @@
 					<button class="btn btn-default" type="submit">Dodaj</button>
 				</span>
 			</div>
-
 		</form>
 	</div>
 </div>
@@ -84,7 +80,6 @@
 			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
-
 		<h4>TODO:</h4>
 		<ul>
 			<li>podział na arkusze:
@@ -112,7 +107,6 @@
 		nunc mauris imperdiet urna</div>
 </div>
 {elseif $parameters['1'] eq 'search' }
-
 <h3>Wpisano w pole szukania:</h3>
 <p>{$table.product.search}</p>
 {if $table['product']['listSearch'] }

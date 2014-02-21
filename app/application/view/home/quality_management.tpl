@@ -12,7 +12,6 @@
 	<li class="active"><span>Szczegóły</span></li> {else} {/if}
 </ol>
 {if $parameters['0'] eq '' }
-
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
@@ -29,11 +28,8 @@
 		</div>
 	</div>
 </div>
-
-
 <div class="row">
 	<div class="col-lg-4">
-
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h2>Utwórz</h2>
@@ -70,13 +66,11 @@
 
 	</div>
 </div>
-
 {elseif $parameters['0'] eq 'view' } {include
 file='./quality_management_view.tpl'} {elseif $parameters['0'] eq
 'review' } {include file='./quality_management_review.tpl'} {elseif
 $parameters['0'] eq 'add' } {include
 file='./quality_management_add.tpl'} {/if}
-
 <script src="/public/js/jquery.js"></script>
 <script src="/public/js/bootstrap.js"></script>
 </body>
