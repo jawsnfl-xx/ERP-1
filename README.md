@@ -1,4 +1,4 @@
-Zarządzanie branchami:
+﻿Zarządzanie branchami:
 
 1. Branch powstaje dla rozwiązania problemy, dodania elementu aplikacji lub plików.
 2. Branch jest scalany gdy element osiąga swoją funkcjonalność.
@@ -25,11 +25,11 @@ TODO II:
       - odział na podstrony
 
 TODO III:
-1.Tu proszę nie ingerować, a jeśli już to po wcześniejszym znalezieniu sensownego powodu.
--Zrobienie (ogółem, bo świeci pustką teraz) product_technology
---Zrobienie (do końca) product_technology/technology &product_technology/product
----estetyka jest ważna. Tak samo jak funkcjonalność.
-2.A tutaj wszelkie pomysły i dobre nowiny jak najbardziej się przydadzą.
-----szlify i dopracowywanie elementów wcześniej wykonanych. 
------dodatki typowo techniczne (typu: da się szybciej, bardziej uniwersalnie)
-------czas, czas... i więcej trafnych pomysłów. oby przychodziły one szybciej. :)
+1. Tu proszę nie ingerować, a jeśli już to po wcześniejszym znalezieniu sensownego powodu.
+  - Zrobienie (ogółem, bo świeci pustką teraz) product_technology
+  - Zrobienie (do końca) product_technology/technology &product_technology/product
+  - Eestetyka jest ważna. Tak samo jak funkcjonalność.
+2. A tutaj wszelkie pomysły i dobre nowiny jak najbardziej się przydadzą.
+  - szlify i dopracowywanie elementów wcześniej wykonanych. 
+  - dodatki typowo techniczne (typu: da się szybciej, bardziej uniwersalnie)
+  - czas, czas... i więcej trafnych pomysłów. oby przychodziły one szybciej. :)
