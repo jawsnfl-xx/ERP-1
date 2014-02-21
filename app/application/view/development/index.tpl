@@ -23,10 +23,10 @@
 				traditional href="" links. See documentation for details.
 				-->
 				<ul class="nav nav-pills nav-stacked">
-					<li class=""><a href="/development/index" title="Dashboard"><i
+					<li class=""><a href="/ajax/index" title="Dashboard"><i
 							class="fa fa-lg fa-fw fa-home"></i> <span
 							class="menu-item-parent">Dashboard</span></a></li>
-					<li><a href="/development/index/dupoa"><i
+					<li><a href="/ajax/index1"><i
 							class="fa fa-lg fa-fw fa-inbox"></i> <span
 							class="menu-item-parent">Inbox</span><span
 							class="badge pull-right inbox-badge">14</span></a></li>
@@ -37,13 +37,13 @@
 							<li><a href="ajax/morris.html">Morris Charts</a></li>
 							<li><a href="ajax/inline-charts.html">Inline Charts</a></li>
 						</ul></li>
-					<li><a href="#"><i class="fa fa-lg fa-fw fa-table"></i> <span
+					<li><a href="/ajax/index2"><i class="fa fa-lg fa-fw fa-table"></i> <span
 							class="menu-item-parent">Tables</span></a>
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="ajax/table.html">Normal Tables</a></li>
 							<li><a href="ajax/datatables.html">Data Tables</a></li>
 						</ul></li>
-					<li><a href="#"><i
+					<li><a href="/ajax/index3"><i
 							class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span
 							class="menu-item-parent">Forms</span></a>
 						<ul class="nav nav-pills nav-stacked">
@@ -63,7 +63,7 @@
 									class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
 							</li>
 						</ul></li>
-					<li><a href="#"><i class="fa fa-lg fa-fw fa-desktop"></i>
+					<li><a href="/ajax/index4"><i class="fa fa-lg fa-fw fa-desktop"></i>
 							<span class="menu-item-parent">UI Elements</span></a>
 						<ul class="nav nav-pills nav-stacked">
 							<li><a href="ajax/general-elements.html">General
@@ -128,6 +128,6 @@
 	</div>
 	<script src="/public/js/jquery.js"></script>
 	<script src="/public/js/bootstrap.js"></script>
-	<script src="/public/js/~~app.js"></script>
+	<script src="/public/js/app.js"></script>
 </body>
 </html>
