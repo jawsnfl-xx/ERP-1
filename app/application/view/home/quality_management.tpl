@@ -1,8 +1,8 @@
 {include file='../layouts/navigation.tpl'}
 <ol class="breadcrumb">
-	<li><a href="?url=home/index">Główna</a></li>
+	<li><a href="/home/index">Główna</a></li>
 	<li class="active">{if $parameters['0'] neq ''} <a
-		href="?url=home/quality_management"><span>Kontrola jakości</span></a>
+		href="/home/quality_management"><span>Kontrola jakości</span></a>
 		{else}<span>Kontrola jakości</span> {/if}
 	</li> {if $parameters['0'] eq 'add'}
 	<li class="active"><span>Dodaj</span></li> {elseif $parameters['0'] eq
@@ -46,7 +46,7 @@
 					justo.</p>
 				<div>
 					<a class="btn btn-primary btn-block"
-						href="?url=home/quality_management/add" role="button">Dalej
+						href="/home/quality_management/add" role="button">Dalej
 						&raquo;</a>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 					tortor mauris condimentum nibh.</p>
 				<div>
 					<a class="btn btn-default btn-block"
-						href="?url=home/quality_management/review" role="button">Dalej
+						href="/home/quality_management/review" role="button">Dalej
 						&raquo;</a>
 				</div>
 			</div>
@@ -77,7 +77,7 @@ file='./quality_management_view.tpl'} {elseif $parameters['0'] eq
 $parameters['0'] eq 'add' } {include
 file='./quality_management_add.tpl'} {/if}
 
-<script src="../public/js/jquery.js"></script>
-<script src="../public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.js"></script>
+<script src="/public/js/bootstrap.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
 			'step3' or $parameters['1'] === 'step3' or $parameters['1'] ===
 			'summary'} class="btn btn-success col-md-9"
 			{/if}
-			href="?url=home/quality_management/add/step1">Wstęp</a> <span
+			href="/home/quality_management/add/step1">Wstęp</a> <span
 			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
 		<li class="col-md-2"><a {if $parameters['1'] ===
 			'step2' } class="btn btn-primary col-md-9"
@@ -25,7 +25,7 @@
 			{elseif $parameters['1'] === 'step3' or $parameters['1'] ===
 			'summary'} class="btn btn-success col-md-9"
 			{/if}
-			href="?url=home/quality_management/add/step2">Wymiary</a> <span
+			href="/home/quality_management/add/step2">Wymiary</a> <span
 			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
 		<li class="col-md-2"><a {if $parameters['1'] ===
 			'step3' } class="btn btn-primary col-md-9"
@@ -34,15 +34,15 @@
 			{elseif $parameters['1'] ===
 			'summary'} class="btn btn-success col-md-9"
 			{/if}
-			href="?url=home/quality_management/add/step3">Geometria</a>
-			<span class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
+			href="/home/quality_management/add/step3">Geometria</a> <span
+			class="btn disabled col-md-3 glyphicon glyphicon-chevron-right"></span></li>
 		<li class="col-md-2"><a {if $parameters['1'] ===
 			'summary' } class="btn btn-primary col-md-9"
 			{elseif $parameters['1'] === 'step1' or $parameters['1'] ===
 			'step2' or $parameters['1'] ===
 			'step3'} class="btn btn-default col-md-9"
 			{/if}
-			href="?url=home/quality_management/add/summary">Podsumowanie</a></li>
+			href="/home/quality_management/add/summary">Podsumowanie</a></li>
 	</ul>
 </div>
 {/if}
@@ -97,8 +97,7 @@
 	</div>
 	<div class="row">
 		<a class="btn btn-primary btn-block"
-			href="?url=home/quality_management/add/step1">Wykonaj nowe
-			badanie</a>
+			href="/home/quality_management/add/step1">Wykonaj nowe badanie</a>
 	</div>
 </div>
 {elseif $parameters['1'] eq 'step1' }
@@ -118,7 +117,7 @@
 
 	</div>
 	<ul class="list-group">
-		<form action="?url=home/quality_management/add/_step1" method="post"
+		<form action="/home/quality_management/add/_step1" method="post"
 			class="form-horizontal" role="form">
 
 			<li class="list-group-item"><p>Fusce tincidunt tortor eu
@@ -171,11 +170,13 @@
 				</div>
 			</li>
 			<li class="list-group-item">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<button type="button" class="close" data-dismiss="alert"
+					aria-hidden="true">&times;</button>
 				<div class="alert alert-warning alert-dismissable">
-					
+
 					<strong>UWAGA!</strong> Wartości z pól poniżej nie są przekazywane
-					dalej, dlatego możesz to wszystko przymknąć za pomocą tego "x" po prawej stronie ;)
+					dalej, dlatego możesz to wszystko przymknąć za pomocą tego "x" po
+					prawej stronie ;)
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-3" for="inputSuccess3">Dodatkowe
@@ -216,8 +217,8 @@
 				</div>
 			</li>
 			<li class="list-group-item"><a
-				href="?url=home/quality_management/add/step1"
-				class="btn btn-default" role="button">Wyczyść formularz</a>
+				href="/home/quality_management/add/step1" class="btn btn-default"
+				role="button">Wyczyść formularz</a>
 				<button class="btn btn-primary pull-right" type="submit"
 					value="Przejdź do kolejnego kroku">Przejdź do kolejnego
 					kroku</button></li>
@@ -351,7 +352,7 @@
 	</table>
 </div>
 <a class="btn btn-primary btn btn-block"
-	href="?url=home/quality_management/add/step3"> Block level button</a>
+	href="/home/quality_management/add/step3"> Block level button</a>
 {elseif $parameters['1'] eq 'step3' }
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -476,7 +477,7 @@
 	</table>
 </div>
 <a class="btn btn-primary btn btn-block"
-	href="?url=home/quality_management/add/summary"> Block level button</a>
+	href="/home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default"></div>
 <div class=" col-md-12">
@@ -561,19 +562,20 @@
 
 			</table>
 		</div>
-<div class="panel panel-default">
-		<label class="control-label col-sm-3" for="inputSuccess3">Uwagi</label>
-		
-</div>
-<div class="col-sm-4">
+		<div class="panel panel-default">
+			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi</label>
+
+		</div>
+		<div class="col-sm-4">
 			<input class="form-control" data-toggle="tooltip"
 				data-placement="left" title="" name="addt_01" type="text"
 				placeholder="">
 		</div>
 
 
-<div class="col-sm-4">
-	<a class="btn btn-primary btn btn-block"
-		href="?url=home/quality_management"> ZAKOŃCZ</a> 
+		<div class="col-sm-4">
+			<a class="btn btn-primary btn btn-block"
+				href="/home/quality_management"> ZAKOŃCZ</a>
 		</div>
-			</div>{/if}
+	</div>
+	{/if}

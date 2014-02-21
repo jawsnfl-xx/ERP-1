@@ -1,5 +1,5 @@
 <div class="container">
-	<form class="form-signin" role="form" action="?url=users/login"
+	<form class="form-signin" role="form" action="/users/login"
 		method="post">
 		<h2 class="form-signin-heading">Proszę, zaloguj się</h2>
 		<input type="hidden" name="login" value="true" /> <input name="name"
@@ -13,7 +13,7 @@
 	</form>
 </div>
 
-<script src="../public/js/jquery.min.js"></script>
-<script src="../public/js/bootstrap.min.js"></script>
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
 </body>
 </html>

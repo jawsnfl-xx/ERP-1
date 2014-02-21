@@ -20,10 +20,10 @@ namespace Application\Controller {
 	 *         W ten sposób można zapisać podstawę działania kontrolerów.
 	 *         Za pomocą wpisów w komentarzach przez deklaracją
 	 *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-	 *        
+	 *
 	 */
 	class Users extends Controller {
-		
+
 		/**
 		 * @readwrite
 		 */
@@ -32,10 +32,10 @@ namespace Application\Controller {
 		 * @readwrite
 		 */
 		protected $_table = array ();
-		
+
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options) {
 			/**
@@ -48,7 +48,7 @@ namespace Application\Controller {
 			// print 'czosnek';
 			return ($this->_table);
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
@@ -60,7 +60,7 @@ namespace Application\Controller {
 		 */
 		public function init() {
 		}
-		
+
 		/**
 		 * @protected
 		 *
@@ -72,49 +72,49 @@ namespace Application\Controller {
 		 */
 		public function authenticate() {
 			// $session = Registry::get("session");
-			
+
 			// var_dump($session);
 			// var_dump($session->get("user"));
-			
+
 			// if (empty($session->get("user"))) {
-			
+
 			// header("Location: ?url=users/index");
 			// exit();
 			// }
-			
+
 			/**
 			 */
 			// $configuration = Registry::get("configuration");
 			// $database = Registry::get("database");
 			$session = Registry::get ( "session" );
-			
+
 			if ($session->getup ( 'user' )) {
-				
-				header ( "Location: ?url=home/index" );
+
+				header ( "Location: /home/index" );
 				// print 'nie jest zalogowany';
 			} elseif (RequestMethods::get ( url ) === 'users/index') {
 				// nic nie robi
 			} else {
-				
-				header ( "Location: ?url=users/index" );
+
+				header ( "Location: /users/index" );
 			}
 			// var_dump($session);
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 */
 		public function index() {
 		}
-		
+
 		/**
 		 * @before init
 		 * @after notify
@@ -122,17 +122,17 @@ namespace Application\Controller {
 		public function logout() {
 			$session = Registry::get ( "session" );
 			$session->setup ( "user", FALSE );
-			header ( "Location: ?url=users/index" );
+			header ( "Location: /users/index" );
 			exit ();
 		}
-		
+
 		/**
 		 * @before init
 		 * @after notify
 		 */
 		public function login() {
 			if (RequestMethods::post ( "login" )) {
-				
+
 				/**
 				 * @TODO
 				 * - sprawdzić działanie requestmethods
@@ -140,10 +140,10 @@ namespace Application\Controller {
 				 */
 				$name = RequestMethods::post ( "name" );
 				$password = RequestMethods::post ( "password" );
-				
+
 				// var_dump($name);
 				// var_dump($password);
-				
+
 				/**
 				 * @TODO
 				 * - zmienić odwołanie dla view na zgodne z aktualnym
@@ -160,7 +160,7 @@ namespace Application\Controller {
 					$error = true;
 				}
 				if (! $error) {
-					
+
 					/**
 					 * @TODO
 					 * - zbudować zapytanie zgodne z aktualną uproszczoną metodą dostępu
@@ -172,11 +172,11 @@ namespace Application\Controller {
 					// "live = ?" => true,
 					// "deleted = ?" => false
 					// ));
-					
+
 					if ($name === "test" and $password === "test1") {
 						$user = TRUE;
 					}
-					
+
 					/**
 					 * @TODO
 					 * - wyłączyć rejestrację zmiennej
@@ -186,24 +186,24 @@ namespace Application\Controller {
 					if (! empty ( $user )) {
 						$session = Registry::get ( "session" );
 						$session->setup ( "user", TRUE );
-						header ( "Location: ?url=home/index" );
+						header ( "Location: /home/index" );
 						exit ();
 					} else {
-						
+
 						/**
 						 * @TODO
 						 * - obsłużyć błędy logowania
 						 */
 						// $view->set("password_error", "Email address and/or password are incorrect");
-						
-						header ( "Location: ?url=users/index" );
+
+						header ( "Location: /users/index" );
 						exit ();
 					}
 					exit ();
 				}
 			}
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
