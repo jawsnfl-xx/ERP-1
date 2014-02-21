@@ -84,7 +84,7 @@ namespace Application\Controller {
 			$session = Registry::get ( "session" );
 
 			if (! $session->getup ( 'user' )) {
-				header ( "Location: ?url=users/index" );
+				header ( "Location: /users/index" );
 			}
 		}
 
@@ -347,7 +347,7 @@ namespace Application\Controller {
 						 * Po utworzeniu arkusza należy przejść do kroku 2...
 						 * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
 						 */
-						header ( 'Location: ?url=home/quality_management/add/step2' );
+						header ( 'Location: /home/quality_management/add/step2' );
 					}
 				} elseif ($this->_parameters [1] === 'step2') {
 				/**

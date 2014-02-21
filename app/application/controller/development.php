@@ -11,10 +11,10 @@ namespace Application\Controller {
 	/**
 	 *
 	 * @author Marcin
-	 *        
+	 *
 	 */
 	class Development extends Controller {
-		
+
 		/**
 		 * @readwrite
 		 */
@@ -23,7 +23,7 @@ namespace Application\Controller {
 		 * @readwrite
 		 */
 		protected $_table = array ();
-		
+
 		/**
 		 * @readwrite
 		 */
@@ -34,7 +34,7 @@ namespace Application\Controller {
 		public function givmetable() {
 			return ($this->_table);
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
@@ -43,30 +43,30 @@ namespace Application\Controller {
 			// $request = new Request ();
 			// var_dump ( $request );
 		}
-		
+
 		/**
 		 * @protected
 		 */
 		public function authenticate() {
-			
+
 			/**
 			 */
 			// $configuration = Registry::get("configuration");
 			// $database = Registry::get("database");
 			$session = Registry::get ( "session" );
-			
+
 			if (! $session->getup ( 'user' )) {
-				header ( "Location: ?url=users/index" );
+				header ( "Location: users/index" );
 			}
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
