@@ -141,6 +141,6 @@
 	</div>
 	<script src="/public/js/jquery.js"></script>
 	<script src="/public/js/bootstrap.js"></script>
-	<script src="/public/js/app.js"></script>
+	<script src="/public/js/~~app.js"></script>
 </body>
 </html>
