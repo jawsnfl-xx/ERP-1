@@ -1,3 +1,8 @@
+#
+# Uwaga!
+# Nie zmieniać wyrażenia reguralnego!
+#
+
 DirectoryIndex index.php
 
 RewriteEngine On
