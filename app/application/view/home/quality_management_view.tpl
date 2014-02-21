@@ -9,10 +9,7 @@
 				ultricies commodo.</p>
 		</div>
 		<div class="row">
-
 			<div class="col-md-4">
-
-
 				<table class="table table-bordered table-condensed">
 					<tr>
 						<th>WYMIAR</th>
@@ -278,7 +275,5 @@
 					</tr>
 				</table>
 				<button onclick="window.print()">Wydrukuj stronę</button>
-
 			</div>
-
 		</div>

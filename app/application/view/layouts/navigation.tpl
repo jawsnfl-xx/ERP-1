@@ -20,7 +20,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -30,8 +29,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="?url=home/index">Nazwa firmy /
-					logotyp</a>
+				<a class="navbar-brand" href="/home/index">Nazwa firmy / logotyp</a>
 			</div>
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
@@ -50,16 +48,16 @@
 					</a>
 						<ul class="dropdown-menu">
 							<li role="presentation" class="dropdown-header">Ustawienia</li>
-							<li><a href="?url=home/settings/access_permissions">Uprawnienia
+							<li><a href="/home/settings/access_permissions">Uprawnienia
 									dostępu</a></li>
-							<li><a href="?url=home/settings/properties">Właściwości</a></li>
-							<li><a href="?url=home/settings/system_settings">Ustawienia
+							<li><a href="/home/settings/properties">Właściwości</a></li>
+							<li><a href="/home/settings/system_settings">Ustawienia
 									systemowe</a></li>
 							<li class="divider"></li>
 							<li role="presentation" class="dropdown-header">Zarządzanie
 								sesją</li>
 							<li><a href="#">Zapamiętaj sesję na tym urządzeniu</a></li>
-							<li><a href="?url=users/logout">Wyloguj</a></li>
+							<li><a href="/users/logout">Wyloguj</a></li>
 						</ul></li>
 				</ul>
 			</div>
@@ -69,28 +67,27 @@
 		<div class="row">
 			<div class="col-sm-4 col-md-2 sidebar">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="?url=home/index">Tablica</a></li>
+					<li><a href="/home/index">Tablica</a></li>
 				</ul>
 				<hr />
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="?url=home/quality_management">Kontrola
-							jakości</a></li>
+					<li><a href="/home/quality_management">Kontrola jakości</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="?url=home/settings">Ustawienia</a></li>
+					<li><a href="/home/settings">Ustawienia</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="?url=home/product_technology">Produkt i
+					<li><a href="/home/product_technology">Produkt i
 							technologie</a></li>
 					<li>
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="?url=home/product_technology/product">Produkt</a></li>
-							<li><a href="?url=home/product_technology/technology">Technologie</a></li>
+							<li><a href="/home/product_technology/product">Produkt</a></li>
+							<li><a href="/home/product_technology/technology">Technologie</a></li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="?url=development/index">Development</a></li>
+					<li><a href="/development/index">Development</a></li>
 				</ul>
 			</div>
 			<div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 main">

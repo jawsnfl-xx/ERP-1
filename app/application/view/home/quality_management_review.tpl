@@ -21,7 +21,6 @@
 				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
 				vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 				ultricies commodo.</p>
-
 		</div>
 		<div class="row">
 			<div class="col-xs-6">
@@ -202,7 +201,6 @@
 			</div>
 		</div>
 		<div class="row">
-
 			<div class="col-md-4"></div>
 			<ul class="pager">
 				<li class="previous"><a href="#">&larr; Older</a></li>

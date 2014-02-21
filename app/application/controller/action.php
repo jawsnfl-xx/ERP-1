@@ -18,25 +18,25 @@ namespace Application\Controller {
 	 *         W ten sposób można zapisać podstawę działania kontrolerów.
 	 *         Za pomocą wpisów w komentarzach przez deklaracją
 	 *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-	 *        
+	 *
 	 */
 	class Action extends Controller {
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_parameters;
-		
+
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options) {
 			/**
 			 */
 			$this->_parameters = $options ['parameters'];
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
@@ -49,7 +49,7 @@ namespace Application\Controller {
 		 */
 		public function init() {
 		}
-		
+
 		/**
 		 * @protected
 		 */
@@ -62,14 +62,14 @@ namespace Application\Controller {
 		 */
 		public function authenticate() {
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
 		 */
 		public function notify() {
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -77,7 +77,7 @@ namespace Application\Controller {
 		public function index() {
 			print 'index';
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -91,13 +91,13 @@ namespace Application\Controller {
 		public function ref() {
 			print 'ref';
 			if (RequestMethods::get ( "ref" )) {
-				header ( 'Location: ?url=' . RequestMethods::get ( "ref" ) );
+				header ( 'Location: ' . RequestMethods::get ( "ref" ) );
 			} else {
 				return new Exception\Argument ( "Invalid function REF parametrs." );
 				exit ();
 			}
 		}
-		
+
 		/**
 		 * @before init,
 		 * @after notify
