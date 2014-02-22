@@ -86,8 +86,5 @@
 						</ul>
 					</li>
 				</ul>
-				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/development/index">Development</a></li>
-				</ul>
 			</div>
 			<div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 main">
