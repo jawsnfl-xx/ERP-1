@@ -66,13 +66,13 @@ body {
  * Main content
  */
 .main {
-	padding: 5px;
+	padding: 20px;
 }
 
 @media ( min-width : 768px) {
 	.main {
-		padding-left: 10px;
-		padding-right: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }
 
