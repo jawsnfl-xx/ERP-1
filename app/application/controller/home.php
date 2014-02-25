@@ -150,27 +150,28 @@ namespace Application\Controller {
 					$this->_table ['product'] ['listSearch'] = $product->_createListSearch ( $_keywords );
 
 					// var_dump ( $this->_table ['product'] ['listSearch'] );
-				} else {
+				} elseif ($this->_parameters [1] === 'page') {
 
 					/**
 					 * Sprawdzenie poprawności danych
 					 */
-					if (RequestMethods::get ( 'page' ) == NULL) {
+					// var_dump( $this->_parameters);
+
+					if ($this->_parameters [2] === NULL) {
 						$page = 1;
 					} else {
-						$page = RequestMethods::get ( 'page' );
+						$page = $this->_parameters [2];
 					}
 
-					if (RequestMethods::get ( 'limit' ) == NULL) {
+					if ($this->_parameters [3] === NULL) {
 						$limit = 20;
 					} else {
-						$limit = RequestMethods::get ( 'limit' );
+						$limit = $this->_parameters [3];
 					}
 
 					/**
 					 * Wywołanie tabeli z bazy
 					 */
-
 					$this->_table ['product'] ['list'] = $product->_createSoftList ( $page, $limit );
 
 					/**
@@ -194,8 +195,13 @@ namespace Application\Controller {
 						$tmp ['page'] = $i;
 						$tmp ['limit'] = $limit;
 						$pager [] = $tmp;
+
+						// var_dump( $pager );
 					}
+					// var_dump ( $pager );
 					$this->_table ['product'] ['pager'] = $pager;
+				} else {
+					header ( 'Location: /home/product_technology/product/page/1/20' );
 				}
 			} elseif ($this->_parameters [0] === 'technology') {
 
