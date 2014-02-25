@@ -13,6 +13,7 @@
 			<li><a href="#"><span class="glyphicon glyphicon-sort-by-order"></span>
 			<span class="glyphicon glyphicon-sort-by-order-alt"></span>im więcej tym lepiej</a></li>
 		</ul>
+		</div>
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="table-responsive">
@@ -99,4 +100,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	
