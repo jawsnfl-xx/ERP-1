@@ -231,7 +231,8 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-	<table class="table table-bordered">
+	<div class="table-responsive">
+					<table class="table table-bordered">
 		<tr>
 			<th>Wymiary</th>
 			<th>Tolerancja</th>
@@ -338,6 +339,7 @@
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
 	</table>
+	</div>
 </div>
 <a class="btn btn-primary btn btn-block"
 	href="/home/quality_management/add/step3"> Block level button</a>
@@ -353,7 +355,8 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-	<table class="table table-bordered">
+		<div class="table-responsive">
+					<table class="table table-bordered">
 		<tr>
 			<th>Wymiary</th>
 			<th>Tolerancja</th>
@@ -463,6 +466,7 @@
 				placeholder="Email" style="border: 0; box-shadow: none;"></td>
 		</tr>
 	</table>
+	</div>
 </div>
 <a class="btn btn-primary btn btn-block"
 	href="/home/quality_management/add/summary"> Block level button</a>
@@ -480,7 +484,7 @@
 			</div>
 		</div>
 		<div class="table-responsive">
-			<table class="table">
+			<table class="table table-bordered">
 				<tr>
 					<th>Wymiary</th>
 					<th>Tolerancja</th>

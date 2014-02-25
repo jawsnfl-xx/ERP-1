@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="table-responsive">
-					<table class="table">
+					<table class="table table-bordered">
 						<tr>
 							<th>1</th>
 							<th>2</th>
@@ -29,7 +29,7 @@
 			</div>
 			<div class="col-lg-6">
 				<div class="table-responsive">
-					<table class="table">
+					<table class="table table-bordered">
 						<tr>
 							<th>inne 1</th>
 							<th>inne 2</th>
