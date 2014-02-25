@@ -1,8 +1,4 @@
- <?php
-
- /**
-  * Testujemy ustawienia oprogramowania :D
-  */
+<?php
 
 /**
  *
