@@ -1,1 +1,0 @@
-<h1 class="page-header">index 2</h1>

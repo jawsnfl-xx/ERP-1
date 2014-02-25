@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
 include_path=0;/ERP
 org.eclipse.php.core.phpDoc=false
+phpVersion=php5.3
+useShortTags=true

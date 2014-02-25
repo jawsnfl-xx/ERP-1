@@ -2,13 +2,6 @@
 
 /**
  *
- *
- *
- * Testujemy :D
- */
-
-/**
- *
  * @author Marcin
  *
  */
