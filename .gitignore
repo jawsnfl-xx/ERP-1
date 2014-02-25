@@ -2,3 +2,4 @@
 .project
 .settings
 app/cache_cp
+*.buildpath
