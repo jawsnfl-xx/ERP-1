@@ -232,113 +232,113 @@
 			ultricies commodo.</p>
 	</div>
 	<div class="table-responsive">
-					<table class="table table-bordered">
-		<tr>
-			<th>Wymiary</th>
-			<th>Tolerancja</th>
-			<th>1</th>
-			<th>2</th>
-			<th>3</th>
-			<th>5</th>
-			<th>6</th>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-	</table>
+		<table class="table table-bordered">
+			<tr>
+				<th>Wymiary</th>
+				<th>Tolerancja</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+		</table>
 	</div>
 </div>
 <a class="btn btn-primary btn btn-block"
@@ -355,117 +355,117 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-		<div class="table-responsive">
-					<table class="table table-bordered">
-		<tr>
-			<th>Wymiary</th>
-			<th>Tolerancja</th>
-			<th>1</th>
-			<th>2</th>
-			<th>3</th>
-			<th>4</th>
-			<th>5</th>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<tr>
+				<th>Wymiary</th>
+				<th>Tolerancja</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
 
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
 
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
 
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-		<tr>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			<td><input type="email" class="form-control" id="inputEmail3"
-				placeholder="Email" style="border: 0; box-shadow: none;"></td>
-		</tr>
-	</table>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+			<tr>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				<td><input type="email" class="form-control" id="inputEmail3"
+					placeholder="Email" style="border: 0; box-shadow: none;"></td>
+			</tr>
+		</table>
 	</div>
 </div>
 <a class="btn btn-primary btn btn-block"
@@ -551,16 +551,23 @@
 			</table>
 		</div>
 		<div class="panel panel-default">
-			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi</label>
+			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi
+				i zakończenie</label>
 		</div>
-		<div class="col-sm-4">
-			<input class="form-control" data-toggle="tooltip"
-				data-placement="left" title="" name="addt_01" type="text"
-				placeholder="">
+		<div class="row">
+			<div class="col-sm-3">
+				<input class="form-control" data-toggle="tooltip"
+					data-placement="left" title="" name="addt_01" type="text"
+					placeholder="">
+			</div>
+			<div class="col-sm-3">
+				<a class="btn btn-primary btn btn-block"
+					href="javascript:window.print()">DRUKUJ </a>
+			</div>
+
+			<div class="col-sm-2">
+				<a class="btn btn-primary btn btn-block"
+					href="/home/quality_management"> ZAKOŃCZ</a>
+			</div>
 		</div>
-		<div class="col-sm-4">
-			<a class="btn btn-primary btn btn-block"
-				href="/home/quality_management"> ZAKOŃCZ</a>
-		</div>
-	</div>
-{/if}
+		{/if}
