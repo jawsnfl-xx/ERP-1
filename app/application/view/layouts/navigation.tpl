@@ -67,7 +67,7 @@
 		<div class="row">
 			<div class="col-sm-4 col-md-2 sidebar">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/home/index">Tablica</a></li>
+					<li class="active"><a href="/home/index">Tablica</a></li>
 				</ul>
 				<hr />
 				<ul class="nav nav-pills nav-stacked">
