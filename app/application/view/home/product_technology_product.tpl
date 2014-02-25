@@ -1,4 +1,4 @@
-{if $parameters['1'] eq '' }
+{if $parameters['1'] eq 'page' }
 <div class="panel panel-default">
 	<div class="panel-heading">Nunc luctus, lacus id aliquet
 		bibendum, nunc mauris imperdiet urna</div>
@@ -41,7 +41,7 @@
 			<li><a href="#">&laquo;</a></li> {foreach
 			from=$table['product']['pager'] item=pager}
 			<li><a
-				href="/home/product_technology/product&page={$pager.page}&limit={$pager.limit}">{$pager.page}</a></li>
+				href="/home/product_technology/product/page/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
 			{/foreach}
 			<li><a href="#">&raquo;</a></li>
 		</ul>
