@@ -2,6 +2,10 @@
 
 /**
  *
+ * @name ini_configuration
+ * 		@TODO
+ * 		- przenieść wszystkie edytowalne zmienne do pliku default_config
+ *
  */
 function ini_configuration() {
 	$configuration = new Framework\Configuration ( array (
@@ -13,12 +17,14 @@ function ini_configuration() {
 }
 
 /**
- * @TODO:
- * - nawiązać połączenie z bazą danych;
  *
- * @SAMPLE
- * Przykład stosowania połączenia z bazą danych MySQL
- * $data = $database->_mysql->fetch_array('SHOW TABLES');
+ * @name ini_database
+ *       @TODO:
+ *       - nawiązać połączenie z bazą danych;
+ *
+ *       @SAMPLE
+ *       Przykład stosowania połączenia z bazą danych MySQL
+ *       $data = $database->_mysql->fetch_array('SHOW TABLES');
  */
 function ini_database() {
 	$database = new Framework\Database ();
@@ -36,6 +42,8 @@ function ini_database() {
 }
 
 /**
+ *
+ * @name ini_session
  */
 function ini_session() {
 	$session = new Framework\Session ();
@@ -44,11 +52,14 @@ function ini_session() {
 }
 
 /**
- * Inicjalizacja wszystkich funkcji, jakie wymagane są do
- * poprawnej pracy systemu.
  *
- * Wczytanie konfiguracji
- * @TODO przeniesienie wszystkich ustanień do pliku ini
+ * @name ini_bootstrap
+ *
+ *       Inicjalizacja wszystkich funkcji, jakie wymagane są do
+ *       poprawnej pracy systemu.
+ *
+ *       Wczytanie konfiguracji
+ *       @TODO przeniesienie wszystkich ustanień do pliku ini
  */
 function ini_bootstrap() {
 	ini_configuration ();
