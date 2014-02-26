@@ -1,5 +1,13 @@
 <?php
+
+/**
+ * Deklaracja stałych:
+ */
 define ( 'APP_DIR', dirname ( realpath ( __FILE__ ) ) );
+define ( 'DISPLAY_ERRORS', 0 );
+define ( 'MIN_PHP_VERSION', '5.3.7' );
+define ( 'DEVELOP_MODE', 0 );
+define ( 'BOOTSTRAP_FILE', 'bootstrap.php' );
 
 /**
  */
@@ -12,14 +20,14 @@ try {
 	 * @TODO dodanie defaultowych wartości oraz narzędzia kontrolnego
 	 */
 	error_reporting ( E_ERROR | E_WARNING | E_PARSE | E_NOTICE );
-	ini_set ( "display_errors", 0 );
+	ini_set ( "display_errors", DISPLAY_ERRORS );
 
 	/**
 	 * Kontrola wersji
 	 * @TODO podpięcie tych informacji pod konfigurację
 	 */
-	if (version_compare ( PHP_VERSION, '5.3.7', '<' )) {
-		exit ( "PHP version smaller than 5.3.7 !" );
+	if (version_compare ( PHP_VERSION, MIN_PHP_VERSION, '<' )) {
+		exit ( "PHP version smaller than " . MIN_PHP_VERSION . " !" );
 	}
 
 	/**
@@ -52,8 +60,6 @@ try {
 		}
 	}
 
-	/**
-	 */
 	spl_autoload_register ( 'autoload' );
 	spl_autoload_register ( array (
 			'autoloader',
@@ -61,27 +67,11 @@ try {
 	) );
 
 	/**
-	 * Próba zbudowania automatycznego ładowania
-	 * wszystkich modułów.
-	 * Lekko to bez sensu, ale pomyślimy.
-	 */
-	// $path = "./module";
-	// $iterator = new DirectoryIterator($path);
-
-	// foreach ($iterator as $item) {
-	// if (! $item->isDot() && ! $item->isDir()) {
-
-	// include ($path . "/" . $item->getFilename());
-	// }
-	// }
-
-	/**
 	 * Wczytanie bootstrapu z katalogu aplikacji
 	 * a nie z bierzacego dla index.php
 	 */
-	require_once ('bootstrap.php');
+	require_once (BOOTSTRAP_FILE);
 } catch ( Exception $e ) {
-	print 'i tak jest błąd';
 	$exceptions = array (
 			"500" => array (
 					"Framework\Cache\Exception",
@@ -141,8 +131,10 @@ try {
 	);
 
 	$exception = get_class ( $e );
-	print 'jest mega błąd';
+
 	/**
+	 * @TODO sprawdzić działanie stron z błędami i przechwycanych wyjątków
+	 *
 	 * Szybkie renderowanie strony błędy po wyłapaniu aktywnego wyjątku
 	 */
 	foreach ( $exceptions as $template => $classes ) {
