@@ -43,9 +43,6 @@ namespace Application\Controller {
 		 */
 		/**
 		 * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
-		 *
-		 * @TODO
-		 * Włącznie z przekazaniem dalszych danych dla Smatry
 		 */
 		public function init() {
 		}
