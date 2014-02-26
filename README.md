@@ -1,4 +1,6 @@
-﻿Zarządzanie branchami:
+﻿Proszę uważnie podchodzić do uzupełnienia treści w Git świadomie i rozsądnie.
+
+Zarządzanie branchami:
 
 1. Branch powstaje dla rozwiązania problemy, dodania elementu aplikacji lub plików.
 2. Branch jest scalany gdy element osiąga swoją funkcjonalność.
