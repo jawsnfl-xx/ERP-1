@@ -31,8 +31,8 @@
 			<th>{$smarty.foreach.row.iteration}</th>
 			<td><a
 				href="/home/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-			<td>{$row.units_id_units_primary}</td>
-			<td>{$row.units_id_units_secondary}</td>
+			<td>{$row.units_id_units}</td>
+			<td>{$row.units_id_units1}</td>
 		</tr>
 		{/foreach}
 	</table>
