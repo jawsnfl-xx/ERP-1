@@ -26,8 +26,9 @@
 			<div class="col-xs-6">
 				<ul class="list-group">
 
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -38,10 +39,10 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -52,10 +53,9 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -66,10 +66,9 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -80,10 +79,9 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -94,10 +92,10 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -108,13 +106,70 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
 			</div>
 			<div class="col-xs-6">
 				<ul class="list-group">
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -125,10 +180,10 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -139,10 +194,9 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -153,10 +207,9 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -167,10 +220,9 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -181,10 +233,10 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-					<input type="checkbox">
-					<li class="list-group-item">Cras justo odio
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
 						<div class="pull-right">
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-save"></span>
@@ -195,9 +247,63 @@
 							<button type="button" class="btn btn-default">
 								<span class="glyphicon glyphicon-print"></span>
 							</button>
-						</div>
-					</li>
-				</ul>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
+
+					<li class="list-group-item"><input type="checkbox">Cras
+						justo odio
+						<div class="pull-right">
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</div></li>
 			</div>
 		</div>
 		<div class="row">

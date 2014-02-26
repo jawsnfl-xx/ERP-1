@@ -67,7 +67,7 @@
 		<div class="row">
 			<div class="col-sm-4 col-md-2 sidebar">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/home/index">Tablica</a></li>
+					<li class="active"><a href="/home/index">Tablica</a></li>
 				</ul>
 				<hr />
 				<ul class="nav nav-pills nav-stacked">
@@ -79,12 +79,10 @@
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="/home/product_technology">Produkt i
 							technologie</a></li>
-					<li>
-						<ul class="nav nav-pills nav-stacked">
-							<li><a href="/home/product_technology/product">Produkt</a></li>
-							<li><a href="/home/product_technology/technology">Technologie</a></li>
-						</ul>
-					</li>
+					<li><a href="/home/product_technology/product">Produkt</a></li>
+					<li><a href="/home/product_technology/technology">Technologie</a></li>
+
+
 				</ul>
 			</div>
 			<div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 main">
