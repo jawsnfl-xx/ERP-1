@@ -1,85 +1,78 @@
 <?php
 
-// use Framework;
-// use Framework\Registry as Registry;
-// use Framework\Session as Session;
-
 /**
- * Bootstrap
  *
- * !!
- * Ważne
- * Zamykam bootstrap.
+ * @name ini_configuration
+ * 		@TODO
+ * 		- przenieść wszystkie edytowalne zmienne do pliku default_config
  *
- * @version 2
- * @author Marcin Pyrka
+ */
+function ini_configuration() {
+	$configuration = new Framework\Configuration ( array (
+			"type" => "ini"
+	) );
+	$configuration = $configuration->initialize ();
+	$parsed = $configuration->parse ( 'configuration/default_config' );
+	Framework\Registry::set ( "configuration", $parsed );
+}
+
+/**
  *
- *         Włączenie rejestracji obiektów.
- *         Dzięki temu dostępne są z każdego poziomu,
- *         przy czym dostęp do nich może być
- *         ograniczany i monitorowany. Można także logować kożystanie
- *         z rejestrowanych obiektów.
+ * @name ini_database
+ *       @TODO:
+ *       - nawiązać połączenie z bazą danych;
  *
- *         Wczytanie konfiguracji
- *         @TODO przeniesienie wszystkich ustanień do pliku ini
+ *       @SAMPLE
+ *       Przykład stosowania połączenia z bazą danych MySQL
+ *       $data = $database->_mysql->fetch_array('SHOW TABLES');
  */
-$configuration = new Framework\Configuration ( array (
-		"type" => "ini"
-) );
+function ini_database() {
+	$database = new Framework\Database ();
+	$database->_options = array (
+			"options" => array (
+					"host" => "localhost",
+					"username" => "root",
+					"password" => "",
+					"schema" => "test",
+					"port" => "3306"
+			)
+	);
+	$database->initialize ();
+	Framework\Registry::set ( "database", $database );
+}
 
 /**
- */
-$configuration = $configuration->initialize ();
-
-/**
- */
-$parsed = $configuration->parse ( 'configuration/default_config' );
-
-/**
- */
-Framework\Registry::set ( "configuration", $parsed );
-
-/**
- * Manager sesji
- */
-$session = new Framework\Session ();
-$session = $session->initialize ();
-Framework\Registry::set ( "session", $session );
-
-/**
- * @TODO:
- * - nawiązać połączenie z bazą danych;
  *
- * @SAMPLE
- * Przykład stosowania połączenia z bazą danych MySQL
- * $data = $database->_mysql->fetch_array('SHOW TABLES');
+ * @name ini_session
  */
-$database = new Framework\Database ();
+function ini_session() {
+	$session = new Framework\Session ();
+	$session = $session->initialize ();
+	Framework\Registry::set ( "session", $session );
+}
 
 /**
+ *
+ * @name ini_bootstrap
+ *
+ *       Inicjalizacja wszystkich funkcji, jakie wymagane są do
+ *       poprawnej pracy systemu.
+ *
+ *       Wczytanie konfiguracji
+ *       @TODO przeniesienie wszystkich ustanień do pliku ini
  */
-$database->_options = array (
-		"options" => array (
-				"host" => "localhost",
-				"username" => "root",
-				"password" => "",
-				"schema" => "test",
-				"port" => "3306"
-		)
-);
+function ini_bootstrap() {
+	ini_configuration ();
+	ini_database ();
+	ini_session ();
+
+	/**
+	 * Start kontrolera aplikacji
+	 */
+	$controller = new Application\Controller ();
+}
 
 /**
+ * Wywołanie funkcji bootstrap
  */
-
-$database->initialize ();
-// var_dump ( $database );
-
-Framework\Registry::set ( "database", $database );
-
-/**
- * Wywołanie Kontrolera dla Application\Controller
- * To ostatni krok w bootstrap.
- * Pozostałe działania muszą być wykonywane
- * w lokalnym kontrolerze oraz kontrolerach akcji i modułów.
- */
-$controller = new Application\Controller ();
+ini_bootstrap ();

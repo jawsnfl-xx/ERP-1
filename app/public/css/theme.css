@@ -1,5 +1,9 @@
 @CHARSET "UTF-8";
 
+body {
+	overflow-y: scroll;
+}
+
 .btn,.form-control,.panel,.dropdown-menu,.input-group-addon,.pagination,.modal-content
 	{
 	-webkit-border-radius: 2px;

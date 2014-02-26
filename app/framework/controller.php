@@ -116,11 +116,24 @@ namespace Framework {
 				$action = $router->getAction ();
 				$parameters = $router->getParameters ();
 				$table = $router->getTable ();
-				$view = new View ( array (
-						"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
-						"parameters" => $parameters,
-						"table" => $table
-				) );
+
+				/**
+				 * UWAGA!
+				 * Istnieje możliwość wyłączenia treści strony w index.php w stałych.
+				 * ==> DEVELOP_MODE
+				 */
+				if (DEVELOP_MODE === 1) {
+					$view = new View ( array (
+							"parameters" => $parameters,
+							"table" => $table
+					) );
+				} else {
+					$view = new View ( array (
+							"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
+							"parameters" => $parameters,
+							"table" => $table
+					) );
+				}
 
 				/**
 				 */

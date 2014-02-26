@@ -11,7 +11,6 @@ namespace Application {
 	use Framework\Registry as Registry;
 	use Framework\Session as Session;
 	use Framework\Request as Request;
-	use Framework\Request\Response as Response;
 
 	/**
 	 * framework.cache.initialize.before function($type, $options)
@@ -108,51 +107,11 @@ namespace Application {
 		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
+
 			/**
+			 * Wywołanie konstruktora rodzica
 			 */
 			parent::__construct ( $options );
-
-			/**
-			 * WAŻNE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			 * Sprawdzić czy działa to poprawnie i czy popranie przenosi
-			 * wewnętrze informacje.
-			 */
-
-			/**
-			 * object(Framework\Request)[31]
-			 * protected '_request' => null
-			 * public '_willFollow' => boolean true
-			 * protected '_headers' =>
-			 * array (size=0)
-			 * empty
-			 * protected '_options' =>
-			 * array (size=0)
-			 * empty
-			 * protected '_referer' => null
-			 * protected '_agent' => string 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36' (length=109)
-			 * private '_inspector' (Framework\Base) =>
-			 * object(Framework\Inspector)[32]
-			 * protected '_class' =>
-			 * &object(Framework\Request)[31]
-			 * protected '_meta' =>
-			 * array (size=3)
-			 * 'class' =>
-			 * array (size=0)
-			 * ...
-			 * 'properties' =>
-			 * array (size=0)
-			 * ...
-			 * 'methods' =>
-			 * array (size=0)
-			 * ...
-			 * protected '_properties' =>
-			 * array (size=0)
-			 * empty
-			 * protected '_methods' =>
-			 * array (size=0)
-			 * empty
-			 */
-			$request = new Request ();
 		}
 	}
 }
