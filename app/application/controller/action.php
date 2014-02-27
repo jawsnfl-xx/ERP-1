@@ -40,31 +40,36 @@ namespace Application\Controller {
 		/**
 		 * @once
 		 * @protected
-		 */
-		/**
-		 * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
+		 *
+		 * (non-PHPdoc)
+		 *
+		 * @see \Application\Controller::init()
 		 */
 		public function init() {
+			parent::init ();
 		}
 
 		/**
 		 * @protected
-		 */
-		/**
-		 * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
 		 *
-		 * @TODO
-		 * Budowa oddzielnej klasy autentykacji.
-		 * W tym miejscy jedynie jej uruchmienie.
+		 * (non-PHPdoc)
+		 *
+		 * @see \Application\Controller::authenticate()
 		 */
 		public function authenticate() {
+			parent::authenticate ();
 		}
 
 		/**
 		 * @once
 		 * @protected
+		 *
+		 * (non-PHPdoc)
+		 *
+		 * @see \Application\Controller::notify()
 		 */
 		public function notify() {
+			parent::notify ();
 		}
 
 		/**

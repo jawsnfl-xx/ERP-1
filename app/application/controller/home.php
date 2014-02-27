@@ -49,43 +49,32 @@ namespace Application\Controller {
 		 * @once
 		 * @protected
 		 *
-		 *
-		 * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
-		 *
-		 * @TODO
-		 * Włącznie z przekazaniem dalszych danych dla Smatry
+		 * (non-PHPdoc)
+		 * @see \Application\Controller::init()
 		 */
 		public function init() {
+			parent::init ();
 		}
 
 		/**
 		 * @protected
 		 *
-		 *
-		 * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
-		 *
-		 * @TODO
-		 * Budowa oddzielnej klasy autentykacji.
-		 * W tym miejscy jedynie jej uruchmienie.
+		 * (non-PHPdoc)
+		 * @see \Application\Controller::authenticate()
 		 */
 		public function authenticate() {
-
-			/**
-			 */
-			// $configuration = Registry::get("configuration");
-			// $database = Registry::get("database");
-			$session = Registry::get ( "session" );
-
-			if (! $session->getup ( 'user' )) {
-				header ( "Location: /users/index" );
-			}
+			parent::authenticate ();
 		}
 
 		/**
 		 * @once
 		 * @protected
+		 *
+		 * (non-PHPdoc)
+		 * @see \Application\Controller::notify()
 		 */
 		public function notify() {
+			parent::notify ();
 		}
 
 		/**
