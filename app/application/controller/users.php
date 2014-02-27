@@ -205,6 +205,13 @@ namespace Application\Controller {
 		}
 
 		/**
+		 * @before init,
+		 * @after notify
+		 */
+		public function signup() {
+		}
+
+		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 */
