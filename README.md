@@ -35,3 +35,29 @@ TODO III:
   - szlify i dopracowywanie elementów wcześniej wykonanych. 
   - dodatki typowo techniczne (typu: da się szybciej, bardziej uniwersalnie)
   - czas, czas... i więcej trafnych pomysłów. oby przychodziły one szybciej. :)
+  
+TODO IV:
+4.1- Settings
+
+	4.1.1. Przenieść (byle nie usuwać) do jakiegokolwiek schowka wszystkie zbędne panele w settings.
+		-Schowki niech będą prywatne. Totalnie offline. Potem tylko ctrl+c/ctrl+v jeśli coś będzie wypadało reaktywować.	
+	4.1.2. Zapewnić settings podstawową funkcjonalność Settings:
+		-Uprawnienia użytkoników.
+		-Ustawienia systemowe. Podstawowe.
+	
+4.2- Quality Management
+
+	4.2.1. Ogólny przegląd arkuszy kontroli jakości.
+		-Możliwość downloadu lub wydrukowania arkusza / kilku (według zaznaczenia).
+		-Przejście z widoku ogólnego do podglądu.
+	4.2.2. Szczegółowy przegląd arkuszy kontroli jakości.
+		-Przejście z poziomu widoku arkusza do ogólnego.
+		-Druk i download tu musi być.
+		-Przełączanie do poprzedniego lub następnego arkusza, coby nie usztywnić widoku :)
+	4.2.3. Jakieś sugestie?
+4.3- Product
+	4.3.1. 
+4.4- Technology
+	4.4.1. 
+	
+	
