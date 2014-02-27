@@ -27,7 +27,7 @@
 				<div class="row">
 					<div class=" col-sm-4">
 						<div class="input-group">
-							<input class="form-control" placeholder="Filter" type="text"
+							<input class="form-control" placeholder="Search in settings" type="text"
 								aria-controls="dt_basic"> <span
 								class="input-group-addon"><span
 								class="glyphicon glyphicon-search"></span></span>
@@ -51,48 +51,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-				</tbody>
-			</table>
+		
 			<div class="panel-footer">
 				<div class="row">
 					<div class="col-sm-8">
