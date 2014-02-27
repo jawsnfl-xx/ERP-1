@@ -11,6 +11,7 @@ namespace Application {
 	use Framework\Registry as Registry;
 	use Framework\Session as Session;
 	use Framework\Request as Request;
+	use Framework\RequestMethods as RequestMethods;
 
 	/**
 	 * framework.cache.initialize.before function($type, $options)
@@ -112,6 +113,42 @@ namespace Application {
 			 * Wywołanie konstruktora rodzica
 			 */
 			parent::__construct ( $options );
+		}
+
+		/**
+		 * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
+		 *
+		 * @TODO
+		 * Włącznie z przekazaniem dalszych danych dla Smatry
+		 */
+		public function init() {
+		}
+
+		/**
+		 * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
+		 *
+		 * @TODO
+		 * Budowa oddzielnej klasy autentykacji.
+		 * W tym miejscy jedynie jej uruchmienie.
+		 */
+		public function authenticate() {
+			$configuration = Registry::get ( "configuration" );
+			$database = Registry::get ( "database" );
+			$session = Registry::get ( "session" );
+
+			if ($session->getup ( 'user' )) {
+				header ( "Location: /home/index" );
+				// print 'nie jest zalogowany';
+			} elseif (RequestMethods::get ( url ) === 'users/index') {
+				// nic nie robi
+			} else {
+				header ( "Location: /users/index" );
+			}
+		}
+
+		/**
+		 */
+		public function notify() {
 		}
 	}
 }

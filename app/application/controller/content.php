@@ -10,6 +10,8 @@ namespace Application\Controller {
 	use Application\Controller as Controller;
 	use Framework\Registry as Registry;
 	use Framework\RequestMethods as RequestMethods;
+	use Framework\Session\Driver\Server;
+	use Framework\Request;
 
 	/**
 	 *
@@ -20,12 +22,16 @@ namespace Application\Controller {
 	 *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
 	 *
 	 */
-	class Action extends Controller {
+	class Content extends Controller {
 
 		/**
 		 * @readwrite
 		 */
 		protected $_parameters;
+		/**
+		 * @readwrite
+		 */
+		protected $_table = array ();
 
 		/**
 		 *
@@ -35,6 +41,12 @@ namespace Application\Controller {
 			/**
 			 */
 			$this->_parameters = $options ['parameters'];
+			// $database = new Framework\Database();
+			// $database->initialize();
+		}
+		public function givmetable() {
+			// print 'czosnek';
+			return ($this->_table);
 		}
 
 		/**
@@ -73,45 +85,10 @@ namespace Application\Controller {
 		}
 
 		/**
-		 * @before init, authenticate,
+		 * @before init,
 		 * @after notify
 		 */
 		public function index() {
-			print 'index';
-		}
-
-		/**
-		 * @before init, authenticate,
-		 * @after notify
-		 *
-		 * @NOTE
-		 * ref = references
-		 *
-		 * @TODO
-		 * Dodać wartości ref
-		 */
-		public function ref() {
-			print 'ref';
-			if (RequestMethods::get ( "ref" )) {
-				header ( 'Location: ' . RequestMethods::get ( "ref" ) );
-			} else {
-				return new Exception\Argument ( "Invalid function REF parametrs." );
-				exit ();
-			}
-		}
-
-		/**
-		 * @before init,
-		 * @after notify
-		 *
-		 * @NOTE
-		 * rat = retrying
-		 *
-		 * @TODO
-		 * Dodać wartości ret
-		 */
-		public function ret() {
-			print 'ret';
 		}
 	}
 }

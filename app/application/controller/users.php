@@ -53,52 +53,23 @@ namespace Application\Controller {
 		 * @once
 		 * @protected
 		 *
-		 * Wykonywana jest inicjalizacja wszystkiego co może być potrzebne.
+		 * (non-PHPdoc)
 		 *
-		 * @TODO
-		 * Włącznie z przekazaniem dalszych danych dla Smatry
+		 * @see \Application\Controller::init()
 		 */
 		public function init() {
+			parent::init ();
 		}
 
 		/**
 		 * @protected
 		 *
-		 * Wykonywane są wszystkie funkcje związane z kontrolą uwierzytelniania
+		 * (non-PHPdoc)
 		 *
-		 * @TODO
-		 * Budowa oddzielnej klasy autentykacji.
-		 * W tym miejscy jedynie jej uruchmienie.
+		 * @see \Application\Controller::authenticate()
 		 */
 		public function authenticate() {
-			// $session = Registry::get("session");
-
-			// var_dump($session);
-			// var_dump($session->get("user"));
-
-			// if (empty($session->get("user"))) {
-
-			// header("Location: ?url=users/index");
-			// exit();
-			// }
-
-			/**
-			 */
-			// $configuration = Registry::get("configuration");
-			// $database = Registry::get("database");
-			$session = Registry::get ( "session" );
-
-			if ($session->getup ( 'user' )) {
-
-				header ( "Location: /home/index" );
-				// print 'nie jest zalogowany';
-			} elseif (RequestMethods::get ( url ) === 'users/index') {
-				// nic nie robi
-			} else {
-
-				header ( "Location: /users/index" );
-			}
-			// var_dump($session);
+			parent::authenticate ();
 		}
 
 		/**
@@ -106,6 +77,7 @@ namespace Application\Controller {
 		 * @protected
 		 */
 		public function notify() {
+			parent::notify ();
 		}
 
 		/**
@@ -202,6 +174,13 @@ namespace Application\Controller {
 					exit ();
 				}
 			}
+		}
+
+		/**
+		 * @before init,
+		 * @after notify
+		 */
+		public function signup() {
 		}
 
 		/**

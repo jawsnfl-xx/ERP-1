@@ -1,12 +1,13 @@
 <link href="/public/css/signin.css" rel="stylesheet">
+<link href="/public/css/sticky-footer-navbar.css" rel="stylesheet">
 <div class="container-fluid">
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 
 			<p class="navbar-text navbar-right">
-				Potrzebujesz dostępu do aplikacji? <a type="button"
-					class="navbar-link btn btn-default">Złóż zapytanie o założenie
-					konta</a>
+				Potrzebujesz dostępu do aplikacji? <a href="/users/signup"
+					type="button" class="navbar-link btn btn-default">Złóż
+					zapytanie o założenie konta</a>
 			</p>
 		</div>
 	</nav>
@@ -71,6 +72,11 @@
 	</div>
 </div>
 
+<div id="footer">
+	<div class="container">
+		<p class="text-muted">Place sticky footer content here.</p>
+	</div>
+</div>
 <script src="/public/js/jquery.min.js"></script>
 <script src="/public/js/bootstrap.min.js"></script>
 </body>
