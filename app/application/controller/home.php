@@ -228,12 +228,15 @@ namespace Application\Controller {
 			 */
 			if ($this->_parameters [0] === 'review') {
 
-			/**
-			 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
-			 * Dziwnie działa edycja na tablecie.
-			 * :-)
-			 */
+				/**
+				 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
+				 * Dziwnie działa edycja na tablecie.
+				 * :-)
+				 */
 				// print 'review';
+				$this->_table ['quality_management'] ['list'] = $quality_management->_createList();
+
+				// var_dump ( $this->_table ['quality_management'] );
 			} elseif ($this->_parameters [0] === 'view') {
 
 			/**
