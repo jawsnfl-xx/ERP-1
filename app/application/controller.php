@@ -137,11 +137,17 @@ namespace Application {
 			$session = Registry::get ( "session" );
 
 			if ($session->getup ( 'user' )) {
-				header ( "Location: /home/index" );
-				// print 'nie jest zalogowany';
+
+				/**
+				 * Lista stron, na które nie wpuszcza.
+				 */
+				if (RequestMethods::get ( url ) === 'users/index') {
+					header ( "Location: /home/index" );
+				}
 			} elseif (RequestMethods::get ( url ) === 'users/index') {
 				// nic nie robi
 			} else {
+				// print 'asdasd';
 				header ( "Location: /users/index" );
 			}
 		}
