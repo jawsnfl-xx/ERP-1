@@ -45,7 +45,7 @@ namespace Module\Quality_management {
 			$data = NULL;
 
 			$data = $database->_mysql->fetch_array ( 'SELECT * FROM control_measurements LIMIT 100;' );
-			var_dump ( $data );
+			// var_dump ( $data );
 			return $data;
 		}
 	}
