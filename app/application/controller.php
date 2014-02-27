@@ -122,6 +122,11 @@ namespace Application {
 		 * Włącznie z przekazaniem dalszych danych dla Smatry
 		 */
 		public function init() {
+			$configuration = Registry::get ( "configuration" );
+			$database = Registry::get ( "database" );
+			$session = Registry::get ( "session" );
+
+			$request = new Request ();
 		}
 
 		/**
@@ -155,6 +160,9 @@ namespace Application {
 		/**
 		 */
 		public function notify() {
+			$configuration = Registry::get ( "configuration" );
+			$database = Registry::get ( "database" );
+			$session = Registry::get ( "session" );
 		}
 	}
 }

@@ -16,7 +16,8 @@ CREATE TABLE IF NOT EXISTS `test`.`units` (
   `name` VARCHAR(45) NULL,
   `symbol` VARCHAR(45) NULL,
   PRIMARY KEY (`id_units`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Jednostka miary dotycząca produktów i surowców';
 
 
 -- -----------------------------------------------------
@@ -56,6 +57,12 @@ DROP TABLE IF EXISTS `test`.`category` ;
 
 CREATE TABLE IF NOT EXISTS `test`.`category` (
   `id_category` INT NOT NULL,
+  `category_name` VARCHAR(45) NULL,
+  `category_param1` VARCHAR(45) NULL,
+  `category_param2` VARCHAR(45) NULL,
+  `category_param3` VARCHAR(45) NULL,
+  `category_param4` VARCHAR(45) NULL,
+  `category_param5` VARCHAR(45) NULL,
   PRIMARY KEY (`id_category`))
 ENGINE = InnoDB;
 
@@ -94,7 +101,8 @@ DROP TABLE IF EXISTS `test`.`orders` ;
 CREATE TABLE IF NOT EXISTS `test`.`orders` (
   `id_orders` INT NOT NULL,
   PRIMARY KEY (`id_orders`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Zamównienia';
 
 
 -- -----------------------------------------------------
@@ -116,8 +124,11 @@ DROP TABLE IF EXISTS `test`.`type_of_warehouse` ;
 
 CREATE TABLE IF NOT EXISTS `test`.`type_of_warehouse` (
   `id_type_of_warehouse` INT NOT NULL,
+  `type_of_warehouse_name` VARCHAR(45) NULL,
+  `type_of_warehouse_desc` VARCHAR(45) NULL,
   PRIMARY KEY (`id_type_of_warehouse`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Typ magazynu';
 
 
 -- -----------------------------------------------------
@@ -134,7 +145,8 @@ CREATE TABLE IF NOT EXISTS `test`.`warehouse` (
     REFERENCES `test`.`type_of_warehouse` (`id_type_of_warehouse`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Magazyn';
 
 CREATE INDEX `fk_warehouse_type_of_warehouse1_idx` ON `test`.`warehouse` (`type_of_warehouse_id_type_of_warehouse` ASC);
 
@@ -159,7 +171,8 @@ CREATE TABLE IF NOT EXISTS `test`.`packages` (
     REFERENCES `test`.`warehouse` (`id_warehouse`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Paleta, katron, paczka na dostawę';
 
 CREATE INDEX `fk_package_type_of_package1_idx` ON `test`.`packages` (`type_of_packages_id_type_of_packages` ASC);
 
@@ -372,6 +385,8 @@ DROP TABLE IF EXISTS `test`.`permissions` ;
 
 CREATE TABLE IF NOT EXISTS `test`.`permissions` (
   `id_permissions` INT NOT NULL,
+  `permissions_name` VARCHAR(45) NOT NULL,
+  `permissions_value` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id_permissions`))
 ENGINE = InnoDB;
 
@@ -468,7 +483,8 @@ CREATE TABLE IF NOT EXISTS `test`.`squads` (
   `id_squads` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   PRIMARY KEY (`id_squads`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Brygady robocze (w znaczeniu obsady stanowisk pracy, zmiennicy pracujący na tych samych stanowiskach)';
 
 
 -- -----------------------------------------------------
@@ -480,7 +496,8 @@ CREATE TABLE IF NOT EXISTS `test`.`sockets` (
   `id_sockets` INT NOT NULL,
   `name` VARCHAR(45) NULL,
   PRIMARY KEY (`id_sockets`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Gniazda (w znaczeniu stanowiska pracy - wielomaszynowe lub jednomaszynowe)';
 
 
 -- -----------------------------------------------------
@@ -542,7 +559,8 @@ CREATE TABLE IF NOT EXISTS `test`.`contractors` (
   `name` VARCHAR(200) NULL,
   `shortcut` VARCHAR(45) NULL,
   PRIMARY KEY (`id_contractors`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Osbiorcy';
 
 
 -- -----------------------------------------------------
@@ -605,7 +623,8 @@ DROP TABLE IF EXISTS `test`.`dispatch` ;
 CREATE TABLE IF NOT EXISTS `test`.`dispatch` (
   `id_dispatch` INT NOT NULL,
   PRIMARY KEY (`id_dispatch`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+COMMENT = 'Wysyłka';
 
 
 -- -----------------------------------------------------
@@ -742,6 +761,84 @@ CREATE INDEX `fk_io_operations_warehouse2_idx` ON `test`.`io_operations` (`wareh
 CREATE INDEX `fk_io_operations_products1_idx` ON `test`.`io_operations` (`products_id_products` ASC);
 
 
+-- -----------------------------------------------------
+-- Table `test`.`managers_has_permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `test`.`managers_has_permissions` ;
+
+CREATE TABLE IF NOT EXISTS `test`.`managers_has_permissions` (
+  `managers_id_managers` INT NOT NULL,
+  `permissions_id_permissions` INT NOT NULL,
+  PRIMARY KEY (`managers_id_managers`, `permissions_id_permissions`),
+  CONSTRAINT `fk_managers_has_permissions_managers1`
+    FOREIGN KEY (`managers_id_managers`)
+    REFERENCES `test`.`managers` (`id_managers`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_managers_has_permissions_permissions1`
+    FOREIGN KEY (`permissions_id_permissions`)
+    REFERENCES `test`.`permissions` (`id_permissions`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_managers_has_permissions_permissions1_idx` ON `test`.`managers_has_permissions` (`permissions_id_permissions` ASC);
+
+CREATE INDEX `fk_managers_has_permissions_managers1_idx` ON `test`.`managers_has_permissions` (`managers_id_managers` ASC);
+
+
+-- -----------------------------------------------------
+-- Table `test`.`users_has_permissions`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `test`.`users_has_permissions` ;
+
+CREATE TABLE IF NOT EXISTS `test`.`users_has_permissions` (
+  `users_id_users` INT NOT NULL,
+  `permissions_id_permissions` INT NOT NULL,
+  PRIMARY KEY (`users_id_users`, `permissions_id_permissions`),
+  CONSTRAINT `fk_users_has_permissions_users1`
+    FOREIGN KEY (`users_id_users`)
+    REFERENCES `test`.`users` (`id_users`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_users_has_permissions_permissions1`
+    FOREIGN KEY (`permissions_id_permissions`)
+    REFERENCES `test`.`permissions` (`id_permissions`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_users_has_permissions_permissions1_idx` ON `test`.`users_has_permissions` (`permissions_id_permissions` ASC);
+
+CREATE INDEX `fk_users_has_permissions_users1_idx` ON `test`.`users_has_permissions` (`users_id_users` ASC);
+
+
+-- -----------------------------------------------------
+-- Table `test`.`orders_has_products`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `test`.`orders_has_products` ;
+
+CREATE TABLE IF NOT EXISTS `test`.`orders_has_products` (
+  `orders_id_orders` INT NOT NULL,
+  `products_id_products` INT NOT NULL,
+  PRIMARY KEY (`orders_id_orders`, `products_id_products`),
+  CONSTRAINT `fk_orders_has_products_orders1`
+    FOREIGN KEY (`orders_id_orders`)
+    REFERENCES `test`.`orders` (`id_orders`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_orders_has_products_products1`
+    FOREIGN KEY (`products_id_products`)
+    REFERENCES `test`.`products` (`id_products`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+CREATE INDEX `fk_orders_has_products_products1_idx` ON `test`.`orders_has_products` (`products_id_products` ASC);
+
+CREATE INDEX `fk_orders_has_products_orders1_idx` ON `test`.`orders_has_products` (`orders_id_orders` ASC);
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
@@ -768,6 +865,145 @@ INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`,
 INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (2, '7503', 1, 2);
 INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (3, '7773', 1, 2);
 INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (4, '7774', 1, 2);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`category`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (1, '1', '1', '1', '1', '1', '1');
+INSERT INTO `test`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (2, '2', '2', '2', '2', '2', '2');
+INSERT INTO `test`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (3, '3', '3', '3', '3', '3', '3');
+INSERT INTO `test`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (4, '4', '4', '4', '4', '4', '4');
+INSERT INTO `test`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (5, '5', '5', '5', '5', '5', '5');
+INSERT INTO `test`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (6, '6', '6', '6', '6', '6', '6');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`orders`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (1);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (2);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (3);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (4);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (5);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (6);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (7);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (8);
+INSERT INTO `test`.`orders` (`id_orders`) VALUES (9);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`type_of_packages`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (1, '1');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (2, '2');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (3, '3');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (4, '4');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (5, '5');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (6, '6');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (7, '7');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (8, '8');
+INSERT INTO `test`.`type_of_packages` (`id_type_of_packages`, `name`) VALUES (9, '9');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`type_of_warehouse`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`type_of_warehouse` (`id_type_of_warehouse`, `type_of_warehouse_name`, `type_of_warehouse_desc`) VALUES (1, '1', '1');
+INSERT INTO `test`.`type_of_warehouse` (`id_type_of_warehouse`, `type_of_warehouse_name`, `type_of_warehouse_desc`) VALUES (2, '2', '2');
+INSERT INTO `test`.`type_of_warehouse` (`id_type_of_warehouse`, `type_of_warehouse_name`, `type_of_warehouse_desc`) VALUES (3, '3', '3');
+INSERT INTO `test`.`type_of_warehouse` (`id_type_of_warehouse`, `type_of_warehouse_name`, `type_of_warehouse_desc`) VALUES (4, '4', '4');
+INSERT INTO `test`.`type_of_warehouse` (`id_type_of_warehouse`, `type_of_warehouse_name`, `type_of_warehouse_desc`) VALUES (5, '5', '5');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`warehouse`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`warehouse` (`id_warehouse`, `type_of_warehouse_id_type_of_warehouse`) VALUES (1, 1);
+INSERT INTO `test`.`warehouse` (`id_warehouse`, `type_of_warehouse_id_type_of_warehouse`) VALUES (2, 2);
+INSERT INTO `test`.`warehouse` (`id_warehouse`, `type_of_warehouse_id_type_of_warehouse`) VALUES (3, 3);
+INSERT INTO `test`.`warehouse` (`id_warehouse`, `type_of_warehouse_id_type_of_warehouse`) VALUES (4, 1);
+INSERT INTO `test`.`warehouse` (`id_warehouse`, `type_of_warehouse_id_type_of_warehouse`) VALUES (5, 2);
+INSERT INTO `test`.`warehouse` (`id_warehouse`, `type_of_warehouse_id_type_of_warehouse`) VALUES (6, 3);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`packages`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`packages` (`id_packages`, `type_of_packages_id_type_of_packages`, `warehouse_id_warehouse`) VALUES (1, 1, 1);
+INSERT INTO `test`.`packages` (`id_packages`, `type_of_packages_id_type_of_packages`, `warehouse_id_warehouse`) VALUES (2, 2, 2);
+INSERT INTO `test`.`packages` (`id_packages`, `type_of_packages_id_type_of_packages`, `warehouse_id_warehouse`) VALUES (3, 3, 3);
+INSERT INTO `test`.`packages` (`id_packages`, `type_of_packages_id_type_of_packages`, `warehouse_id_warehouse`) VALUES (4, 4, 1);
+INSERT INTO `test`.`packages` (`id_packages`, `type_of_packages_id_type_of_packages`, `warehouse_id_warehouse`) VALUES (5, 5, 2);
+INSERT INTO `test`.`packages` (`id_packages`, `type_of_packages_id_type_of_packages`, `warehouse_id_warehouse`) VALUES (6, 6, 3);
+INSERT INTO `test`.`packages` (`id_packages`, `type_of_packages_id_type_of_packages`, `warehouse_id_warehouse`) VALUES (7, 7, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`type_of_control_measurements`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (1);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (2);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (3);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (4);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (5);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (6);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (7);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (8);
+INSERT INTO `test`.`type_of_control_measurements` (`id_type_of_control_measurements`) VALUES (9);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`control_measurements`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (1, 1, 1, 1, 1, 1, 'NOW()', 'NOW()');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (2, 2, 2, 2, 2, 2, 'NOW()', 'NOW()');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (3, 3, 3, 3, 3, 3, 'NOW()', 'NOW()');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (4, 4, 4, 4, 4, 4, 'NOW()', 'NOW()');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (5, 5, 5, 5, 5, 5, 'NOW()', 'NOW()');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`mensuration`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`mensuration` (`id_mensuration`, `measurement_id_measurement`, `control_measurements_id_control_measurements`, `dimension_id_dimension`, `sample_numer`, `value`) VALUES (1, 1, 1, 1, 1, 1);
+INSERT INTO `test`.`mensuration` (`id_mensuration`, `measurement_id_measurement`, `control_measurements_id_control_measurements`, `dimension_id_dimension`, `sample_numer`, `value`) VALUES (2, 2, 2, 2, 2, 2);
 
 COMMIT;
 
