@@ -50,6 +50,7 @@ namespace Application\Controller {
 		 * @protected
 		 *
 		 * (non-PHPdoc)
+		 *
 		 * @see \Application\Controller::init()
 		 */
 		public function init() {
@@ -60,6 +61,7 @@ namespace Application\Controller {
 		 * @protected
 		 *
 		 * (non-PHPdoc)
+		 *
 		 * @see \Application\Controller::authenticate()
 		 */
 		public function authenticate() {
@@ -71,6 +73,7 @@ namespace Application\Controller {
 		 * @protected
 		 *
 		 * (non-PHPdoc)
+		 *
 		 * @see \Application\Controller::notify()
 		 */
 		public function notify() {
@@ -127,6 +130,16 @@ namespace Application\Controller {
 
 				if ($this->_parameters [1] === 'view') {
 					$this->_table ['product'] ['view'] = $product->_createView ( $this->_parameters [2] );
+				}
+
+				elseif ($this->_parameters [1] === 'add') {
+				/**
+				 * Wyświetla arkusz dodania nowego produktu
+				 */
+				} elseif ($this->_parameters [1] === '_add') {
+				/**
+				 * Sprawdza i dodaje dane z arkusza dodania nowego produktu
+				 */
 				}
 
 				elseif ($this->_parameters [1] === 'search') {
