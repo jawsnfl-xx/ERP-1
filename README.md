@@ -12,13 +12,19 @@ Zarządzanie branchami:
 TODO I:
   - autentykacja i autoryzacja użytkownika: [========--]
     - model + uzupełnienie struktury bazy danych [====------]
-    - kontroler + utrzymanie sesji [=======---]
-    - akcje dotyczące autentykacji i autoryzacji [====------]
-  - obsługa _GET ref oraz ret (do 2014-01-31) [==--------]
+    - ~~kontroler + utrzymanie sesji~~ [==========]
+    - akcje dotyczące autentykacji i autoryzacji [=======---]
+  - obsługa _GET ref oraz ret [==--------] ??
   - ~~przebudowanie Framework\Registry + zmiana zmiennych deklarowanych na rejestrowane (odłożone)~~ <= rejestracja działa, część ważnych zmiennych z bootstrapa jest już rejestrowana; przemyślę, czy to wszystkie
   - przebudowa Framework\Database [==--------]
   - przebudowa Framework\Exception [=---------]
   - ~~dodanie kolejnego kroku dla _GET url oraz jego obsługa w Framework\Controller~~
+  - arkusz pomiaru - moduł:
+    - generowanie czystego arkusza
+    - generowanie uzupełnionego arkusza
+    - dodawanie linii już uzupełnionych
+    - możliwość zapisu rozpoczątego arkusza
+    - możliwość powrotu do rozpoczętego arkusza
 
 TODO II:
   - dodanie szablonów UI
