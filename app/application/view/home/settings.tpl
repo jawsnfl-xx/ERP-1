@@ -27,7 +27,7 @@
 				<div class="row">
 					<div class=" col-sm-4">
 						<div class="input-group">
-							<input class="form-control" placeholder="Filter" type="text"
+							<input class="form-control" placeholder="Search in settings" type="text"
 								aria-controls="dt_basic"> <span
 								class="input-group-addon"><span
 								class="glyphicon glyphicon-search"></span></span>
@@ -51,48 +51,7 @@
 					</div>
 				</div>
 			</div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-				</tbody>
-			</table>
+		
 			<div class="panel-footer">
 				<div class="row">
 					<div class="col-sm-8">
@@ -132,7 +91,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-9">
+	<div class="col-md-4">
 		<div class="alert alert-warning">
 			W razie kłopotów, kilkaj <a href="#" class="alert-link">w taki
 				fajny link do pliku pomocy</a>
@@ -141,52 +100,19 @@
 		<div class="page-header">
 			<h1>Utwórz nowy formularz</h1>
 		</div>
-		<div class="alert alert-success">
-			<span class="glyphicon glyphicon-thumbs-up"></span> Wszystko działa
+		<div class="row">
+		<div class="col-md-4">
+		
 		</div>
-		<div class="alert alert-warning">
-			<span class="glyphicon glyphicon-thumbs-down"></span> Nie zrobiłeś do
-			końca
+				<div class="col-md-4">
+		
 		</div>
-		<div class="alert alert-danger">
-			<span class="glyphicon glyphicon-warning-sign"></span> bul i źle i
-			rzal
+				<div class="col-md-4">
+		
 		</div>
-		<div class="progress progress-striped">
-			<div class="progress-bar progress-bar-success" role="progressbar"
-				aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-				style="width: 40%">
-				<span class="sr-only">40% Complete (success)</span>
-			</div>
-		</div>
-		<div class="progress progress-striped">
-			<div class="progress-bar progress-bar-info" role="progressbar"
-				aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
-				style="width: 20%">
-				<span class="sr-only">20% Complete</span>
-			</div>
-		</div>
-		<div class="progress progress-striped">
-			<div class="progress-bar progress-bar-warning" role="progressbar"
-				aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-				style="width: 60%">
-				<span class="sr-only">60% Complete (warning)</span>
-			</div>
-		</div>
-		<div class="progress progress-striped">
-			<div class="progress-bar progress-bar-danger" role="progressbar"
-				aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-				style="width: 80%">
-				<span class="sr-only">80% Complete (danger)</span>
-			</div>
-		</div>
-		<div class="progress progress-striped active">
-			<div class="progress-bar progress-bar-danger" role="progressbar"
-				aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
-				style="width: 45%">
-				<span class="sr-only">45% Complete</span>
-			</div>
-		</div>
+		
+		
+		
 		{elseif $parameters['0'] eq 'properties'}
 		<ul class="nav nav-tabs">
 			<li
