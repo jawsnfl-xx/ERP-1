@@ -10,41 +10,41 @@ namespace Framework {
 	/**
 	 *
 	 * @author Marcin
-	 *
+	 *        
 	 */
 	class Request extends Base {
-
+		
 		/**
 		 *
 		 * @var unknown
 		 */
 		protected $_request;
-
+		
 		/**
 		 * * @readwrite
 		 */
 		public $_willFollow = true;
-
+		
 		/**
 		 * * @readwrite
 		 */
 		protected $_headers = array ();
-
+		
 		/**
 		 * * @readwrite
 		 */
 		protected $_options = array ();
-
+		
 		/**
 		 * * @readwrite
 		 */
 		protected $_referer;
-
+		
 		/**
 		 * * @readwrite
 		 */
 		protected $_agent;
-
+		
 		/**
 		 * (non-PHPdoc)
 		 *
@@ -53,7 +53,7 @@ namespace Framework {
 		protected function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} not implemented" );
 		}
-
+		
 		/**
 		 *
 		 * @return \Framework\Request\Exception\Argument
@@ -61,29 +61,29 @@ namespace Framework {
 		protected function _getExceptionForArgument() {
 			return new Exception\Argument ( "Invalid argument" );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			parent::__construct ( $options );
 			$this->setAgent ( RequestMethods::server ( "HTTP_USER_AGENT", "Curl/PHP " . PHP_VERSION ) );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $url
-		 * @param unknown $parameters
+		 * @param unknown $url        	
+		 * @param unknown $parameters        	
 		 */
 		public function delete($url, $parameters = array()) {
 			return $this->request ( "DELETE", $url, $parameters );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $url
-		 * @param unknown $parameters
+		 * @param unknown $url        	
+		 * @param unknown $parameters        	
 		 */
 		function get($url, $parameters = array()) {
 			if (! empty ( $parameters )) {
@@ -92,39 +92,39 @@ namespace Framework {
 			}
 			return $this->request ( "GET", $url );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $url
-		 * @param unknown $parameters
+		 * @param unknown $url        	
+		 * @param unknown $parameters        	
 		 */
 		function head($url, $parameters = array()) {
 			return $this->request ( "HEAD", $url, $parameters );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $url
-		 * @param unknown $parameters
+		 * @param unknown $url        	
+		 * @param unknown $parameters        	
 		 */
 		function post($url, $parameters = array()) {
 			return $this->request ( "POST", $url, $parameters );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $url
-		 * @param unknown $parameters
+		 * @param unknown $url        	
+		 * @param unknown $parameters        	
 		 */
 		function put($url, $parameters = array()) {
 			return $this->request ( "PUT", $url, $parameters );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $method
-		 * @param unknown $url
-		 * @param unknown $parameters
+		 * @param unknown $method        	
+		 * @param unknown $url        	
+		 * @param unknown $parameters        	
 		 * @throws Exception\Response
 		 * @return Ambigous <\Framework\Request\Response, mixed>
 		 */
@@ -137,7 +137,7 @@ namespace Framework {
 			$response = curl_exec ( $request );
 			if ($response) {
 				$response = new Request\Response ( array (
-						"response" => $response
+						"response" => $response 
 				) );
 			} else {
 				throw new Exception\Response ( curl_errno ( $request ) . ' - ' . curl_error ( $request ) );
@@ -145,30 +145,30 @@ namespace Framework {
 			curl_close ( $request );
 			return $response;
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $key
-		 * @param unknown $value
+		 * @param unknown $key        	
+		 * @param unknown $value        	
 		 * @return \Framework\Request
 		 */
 		protected function _setOption($key, $value) {
 			curl_setopt ( $this->_request, $key, $value );
 			return $this;
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $key
+		 * @param unknown $key        	
 		 * @return string
 		 */
 		protected function _normalize($key) {
 			return "CURLOPT_" . str_replace ( "CURLOPT_", "", strtoupper ( $key ) );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $method
+		 * @param unknown $method        	
 		 * @return \Framework\Request
 		 */
 		protected function _setRequestMethod($method) {
@@ -188,11 +188,11 @@ namespace Framework {
 			}
 			return $this;
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $url
-		 * @param unknown $parameters
+		 * @param unknown $url        	
+		 * @param unknown $parameters        	
 		 * @return \Framework\Request
 		 */
 		protected function _setRequestOptions($url, $parameters) {
@@ -211,7 +211,7 @@ namespace Framework {
 			}
 			return $this;
 		}
-
+		
 		/**
 		 *
 		 * @return \Framework\Request

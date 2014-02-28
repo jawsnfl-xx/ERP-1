@@ -48,6 +48,8 @@ testing strip tags
 {strip}
 
 	
+	
+	
 	<table border=0>
 	<tr>
 		<td>

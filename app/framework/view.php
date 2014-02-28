@@ -7,22 +7,22 @@ namespace Framework {
 	use Framework\View\Exception as Exception;
 
 	class View extends Base {
-
+		
 		/**
 		 * * @readwrite
 		 */
 		protected $_file;
-
+		
 		/**
 		 * * @readwrite
 		 */
 		protected $_parameters;
-
+		
 		/**
 		 * * @readwrite
 		 */
 		protected $_table;
-
+		
 		/**
 		 * * @read
 		 */
@@ -36,28 +36,28 @@ namespace Framework {
 		}
 		public function __construct($options = array()) {
 			parent::__construct ( $options );
-
+			
 			require_once DIRECTORY_SEPARATOR . 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
-
+			
 			$this->_template = new \Smarty ();
-
+			
 			$this->_template->setTemplateDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_tp' );
 			$this->_template->setCompileDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_cp' );
 			$this->_template->setCacheDir ( APP_DIR . DIRECTORY_SEPARATOR . 'cache_cd' );
-
+			
 			$this->_template->assign ( 'parameters', $options ['parameters'] );
 			$this->_template->assign ( 'table', $options ['table'] );
-
+			
 			// var_dump ( $options );
 		}
 		public function render() {
 			$path = $this->getFile ();
 			$path = APP_DIR . $path;
-
+			
 			if (! file_exists ( $path )) {
 				return "";
 			}
-
+			
 			return $this->_template->fetch ( $path );
 		}
 		public function get($key, $default = "") {

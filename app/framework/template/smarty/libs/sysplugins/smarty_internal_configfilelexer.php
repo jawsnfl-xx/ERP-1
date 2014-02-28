@@ -38,6 +38,8 @@ function __construct($data, $smarty) {
 	$this->data = $data . "\n"; //now all lines are \n-terminated
         $this// now all lines are \n-terminated
 		null->counter = 
+	
+	
 	0;
 	$this->line = 1;
 	$this->smarty = $smarty;

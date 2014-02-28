@@ -14,6 +14,8 @@
  * @ignore
  *
  *
+ *
+ *
  */
 include 'smarty_internal_parsetree.php';
 
