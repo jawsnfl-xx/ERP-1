@@ -10,7 +10,6 @@ namespace Application {
 	use Framework\Events as Events;
 	use Framework\Registry as Registry;
 	use Framework\Session as Session;
-	use Framework\Request as Request;
 	use Framework\RequestMethods as RequestMethods;
 
 	/**
@@ -125,8 +124,6 @@ namespace Application {
 			$configuration = Registry::get ( "configuration" );
 			$database = Registry::get ( "database" );
 			$session = Registry::get ( "session" );
-
-			$request = new Request ();
 		}
 
 		/**
