@@ -865,6 +865,33 @@ INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`,
 INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (2, '7503', 1, 2);
 INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (3, '7773', 1, 2);
 INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (4, '7774', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (5, '9876', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (6, '6548', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (7, '3526', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (8, '3215', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (9, '3211', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (10, '1383', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (11, '0654', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (12, '5162', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (13, '3218', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (14, '5651', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (15, '5166', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (16, '2121', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (17, '1355', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (18, '3843', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (19, '2138', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (20, '3491', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (21, '2166', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (22, '8451', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (23, '2256', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (24, '2241', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (25, '4598', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (26, '6549', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (27, '6542', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (28, '3162', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (29, '3212', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (30, '1080', 1, 2);
+INSERT INTO `test`.`products` (`id_products`, `products_name`, `units_id_units`, `units_id_units1`) VALUES (31, '2016', 1, 2);
 
 COMMIT;
 
@@ -988,11 +1015,36 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `test`;
-INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (1, 1, 1, 1, 1, 1, 'NOW()', 'NOW()');
-INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (2, 2, 2, 2, 2, 2, 'NOW()', 'NOW()');
-INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (3, 3, 3, 3, 3, 3, 'NOW()', 'NOW()');
-INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (4, 4, 4, 4, 4, 4, 'NOW()', 'NOW()');
-INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (5, 5, 5, 5, 5, 5, 'NOW()', 'NOW()');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (1, 1, 1, 1, 1, 1, '2000-01-01 12:00', '2000-01-01 12:00');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (2, 2, 2, 2, 2, 2, '2000-01-01 12:00', '2000-01-01 12:00');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (3, 3, 3, 3, 3, 3, '2000-01-01 12:00', '2000-01-01 12:00');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (4, 4, 4, 4, 4, 4, '2000-01-01 12:00', '2000-01-01 12:00');
+INSERT INTO `test`.`control_measurements` (`id_control_measurements`, `orders_id_orders`, `products_id_products`, `packages_id_packages`, `type_of_control_measurements_id_type_of_control_measurements`, `sample_size`, `date_start`, `date_end`) VALUES (5, 5, 5, 5, 5, 5, '2000-01-01 12:00', '2000-01-01 12:00');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`type_of_dimension`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`type_of_dimension` (`id_type_of_dimension`, `symbol`, `glyph`) VALUES (1, '1', '1');
+INSERT INTO `test`.`type_of_dimension` (`id_type_of_dimension`, `symbol`, `glyph`) VALUES (2, '2', '2');
+INSERT INTO `test`.`type_of_dimension` (`id_type_of_dimension`, `symbol`, `glyph`) VALUES (3, '3', '3');
+INSERT INTO `test`.`type_of_dimension` (`id_type_of_dimension`, `symbol`, `glyph`) VALUES (4, '4', '4');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `test`.`dimension`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `test`;
+INSERT INTO `test`.`dimension` (`id_dimension`, `products_id_products`, `type_of_dimension_id_type_of_dimension`, `value`, `tolerance`, `interval_max`, `interval_min`) VALUES (1, 1, 1, 1, '1', 1, 1);
+INSERT INTO `test`.`dimension` (`id_dimension`, `products_id_products`, `type_of_dimension_id_type_of_dimension`, `value`, `tolerance`, `interval_max`, `interval_min`) VALUES (2, 2, 2, 2, '2', 2, 2);
+INSERT INTO `test`.`dimension` (`id_dimension`, `products_id_products`, `type_of_dimension_id_type_of_dimension`, `value`, `tolerance`, `interval_max`, `interval_min`) VALUES (3, 3, 3, 3, '3', 3, 3);
 
 COMMIT;
 
@@ -1004,6 +1056,7 @@ START TRANSACTION;
 USE `test`;
 INSERT INTO `test`.`mensuration` (`id_mensuration`, `measurement_id_measurement`, `control_measurements_id_control_measurements`, `dimension_id_dimension`, `sample_numer`, `value`) VALUES (1, 1, 1, 1, 1, 1);
 INSERT INTO `test`.`mensuration` (`id_mensuration`, `measurement_id_measurement`, `control_measurements_id_control_measurements`, `dimension_id_dimension`, `sample_numer`, `value`) VALUES (2, 2, 2, 2, 2, 2);
+INSERT INTO `test`.`mensuration` (`id_mensuration`, `measurement_id_measurement`, `control_measurements_id_control_measurements`, `dimension_id_dimension`, `sample_numer`, `value`) VALUES (3, 3, 3, 3, 3, 3);
 
 COMMIT;
 
