@@ -109,6 +109,7 @@ namespace Application {
 		public function __construct($options = array()) {
 
 			/**
+			 *
 			 * Wywołanie konstruktora rodzica
 			 */
 			parent::__construct ( $options );
