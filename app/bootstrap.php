@@ -55,7 +55,6 @@ function ini_session() {
  */
 function ini_request() {
 	$request = new Framework\Request ();
-
 	Framework\Registry::set ( "request", $request );
 }
 /**
