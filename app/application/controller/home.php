@@ -222,31 +222,27 @@ namespace Application\Controller {
 		 * @NOTE
 		 */
 		public function quality_management() {
-			$quality_management = new \Module\Quality_management\Production_quality_management ();
 
 			/**
 			 */
+			$quality_management = new \Module\Quality_management\Production_quality_management ();
+
 			if ($this->_parameters [0] === 'review') {
 
 				/**
 				 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
-				 * Dziwnie działa edycja na tablecie.
-				 * :-)
+				 * @todo
+				 * Lista z podziałem na strony. Podobna jak dla products.
+				 * Dobrze by było, żeby mogła obsłużyć sortowanie po wielu kolumnach oraz filtrowanie treści
 				 */
-				// print 'review';
-				$this->_table ['quality_management'] ['list'] = $quality_management->_createList();
-
-				// var_dump ( $this->_table ['quality_management'] );
+				$this->_table ['quality_management'] ['list'] = $quality_management->_createList ();
 			} elseif ($this->_parameters [0] === 'view') {
 
-			/**
-			 * Wyświetla arkusz kontrolny z badania
-			 */
-				// print 'view';
-			} /**
-			 */
-
-			elseif ($this->_parameters [0] === 'add') {
+				/**
+				 * Wyświetla arkusz kontrolny z badania
+				 */
+				$this->_table ['quality_management'] ['view'] = $quality_management->_createView ( $this->_parameters [1] );
+			} elseif ($this->_parameters [0] === 'add') {
 				/**
 				 * Wyświetla arkusz kontroli pomiaru.
 				 * Na tym etapie musi być podzielony na 3 etapy.

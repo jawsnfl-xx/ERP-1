@@ -1,4 +1,9 @@
-
+<!-- 
+	Dostęp do tabeli masz z tablicy: $table ['quality_management'] ['list']
+	Jeśli robisz już tabelę, w której będziesz umieszczał informacje z tablicy
+		podrzucę tabelę stronicowaną.
+	Ale to później...
+-->
 <div class="container-fluid">
 	<div class="panel panel-default">
 		<div class="panel-heading">

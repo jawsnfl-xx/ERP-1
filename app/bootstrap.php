@@ -52,6 +52,12 @@ function ini_session() {
 }
 
 /**
+ */
+function ini_request() {
+	$request = new Framework\Request ();
+	Framework\Registry::set ( "request", $request );
+}
+/**
  *
  * @name ini_bootstrap
  *
@@ -65,6 +71,7 @@ function ini_bootstrap() {
 	ini_configuration ();
 	ini_database ();
 	ini_session ();
+	ini_request ();
 
 	/**
 	 * Start kontrolera aplikacji

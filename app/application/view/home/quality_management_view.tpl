@@ -1,3 +1,6 @@
+<!-- 
+	Dostęp do tabeli masz z tablicy: $table ['quality_management'] ['view']
+-->
 <div class="container-fluid">
 	<div class="panel panel-default">
 		<div class="panel-heading">Nunc luctus, lacus id aliquet

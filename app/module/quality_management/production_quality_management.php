@@ -45,7 +45,14 @@ namespace Module\Quality_management {
 			$data = NULL;
 
 			$data = $database->_mysql->fetch_array ( 'SELECT * FROM control_measurements LIMIT 100;' );
-			// var_dump ( $data );
+			return $data;
+		}
+		public function _createView($_id) {
+			$database = Registry::get ( "database" );
+			$data = NULL;
+
+			$data = $database->_mysql->fetch_array ( 'SELECT * FROM control_measurements WHERE
+    `id_control_measurements` = ' . $_id . ' LIMIT 1;' );
 			return $data;
 		}
 	}
