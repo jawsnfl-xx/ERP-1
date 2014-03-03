@@ -7,16 +7,16 @@
 <div class="container-fluid">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet urna
+			Przegląd arkuszów kontrolnych
 			<div class="pull-right">
 				<div class="btn-group">
 					<button type="button" class="btn btn-primary">
-						<span class="glyphicon glyphicon-"></span> Left
+						<span class="glyphicon glyphicon-trash"></span> Usuń zaznaczone
 					</button>
 					<button type="button" class="btn btn-primary">
 						<span class="glyphicon glyphicon-save"></span> Pobierz zaznaczone
 					</button>
-					<button type="button" class="btn btn-primary">
+					<button type="button" class="btn btn-primary ">
 						<span class="glyphicon glyphicon-search"></span> Szukaj
 					</button>
 				</div>
@@ -28,130 +28,24 @@
 				vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 				ultricies commodo.</p>
 		</div>
-		<div class="col-md-9">
-			<ul class="list-group">
+		<div class="col-md-12">
+		<div class="table-responsive">
+		<table class="table table-bordered">
 
 
 
-				<li class="list-group-item">nr detalu-- data-- wykonawca
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
+				<tr {foreach
+					from=$table['control_measurements']['list'] item=row name=row}>
 
-				<li class="list-group-item">nr detalu-- data-- wykonawca
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
 
-				<li class="list-group-item">nr detalu-- data-- wykonawca
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
-				<li class="list-group-item">nr detalu-- data-- wykonawca
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
-				<li class="list-group-item">nr detalu-- data-- wykonawca
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
-				<li class="list-group-item">nr detalu-- data-- wykonawca
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
-				<li class="list-group-item list-group-item-warning">nr detalu--
-					data-- wykonawca-- ... niedorobione toto
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
+				<th>	{$smarty.foreach.row.iteration} </th>
+				<th>	href="/home/quality_management/view/{$row.id_control_measurements}">{$row.orders_id_orders}</th>
+				<th>	{$row.products_id_products} {$row.packages_id_packages} </th>
+				<th>	{$row.type_of_control_measurements_id_type_of_control_measurements} </th>
+				<th>	{$row.packages_id_packages} {$row.sample_size} {$row.date_start} </th>
+				<th>	{$row.date_end} </th>{/foreach}
 
-				<li class="list-group-item">nr detalu-- data-- wykonawca
-					<div class="pull-right">
-						<input type="checkbox">
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-save"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-bookmark"></span>
-						</button>
-						<button type="button" class="btn btn-default">
-							<span class="glyphicon glyphicon-print"></span>
-						</button>
-					</div>
-				</li>
 
-				<li class="list-group-item list-group-item-danger">nr detalu--
-					data-- wykonawca-- ale żeś skiepścił ;___;
 					<div class="pull-right">
 						<input type="checkbox">
 						<button type="button" class="btn btn-default">
@@ -164,7 +58,9 @@
 							<span class="glyphicon glyphicon-print"></span>
 						</button>
 					</div>
-				</li>
+				
+
+</table>
 				<ul class="pager">
 					<li class="previous"><a href="#">&larr; Older</a></li>
 					<ul class="pagination pagination-lg">
