@@ -231,9 +231,9 @@ namespace Application\Controller {
 
 				/**
 				 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
-				 * @todo
-				 * Lista z podziałem na strony. Podobna jak dla products.
-				 * Dobrze by było, żeby mogła obsłużyć sortowanie po wielu kolumnach oraz filtrowanie treści
+				 *
+				 * @todo Lista z podziałem na strony. Podobna jak dla products.
+				 *       Dobrze by było, żeby mogła obsłużyć sortowanie po wielu kolumnach oraz filtrowanie treści
 				 */
 				$this->_table ['quality_management'] ['list'] = $quality_management->_createList ();
 			} elseif ($this->_parameters [0] === 'view') {
