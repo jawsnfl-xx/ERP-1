@@ -33,7 +33,7 @@ function ini_database() {
 					"host" => "localhost",
 					"username" => "root",
 					"password" => "",
-					"schema" => "test",
+					"schema" => "test1",
 					"port" => "3306"
 			)
 	);
