@@ -235,7 +235,55 @@ namespace Application\Controller {
 				 * @todo Lista z podziałem na strony. Podobna jak dla products.
 				 *       Dobrze by było, żeby mogła obsłużyć sortowanie po wielu kolumnach oraz filtrowanie treści
 				 */
-				$this->_table ['quality_management'] ['list'] = $quality_management->_createList ();
+				// $this->_table ['quality_management'] ['list'] = $quality_management->_createList ();
+
+				if ($this->_parameters [1] === 'page') {
+
+					/**
+					 * Sprawdzenie poprawności danych
+					 */
+					// var_dump( $this->_parameters);
+
+					if ($this->_parameters [2] === NULL) {
+						$page = 1;
+					} else {
+						$page = $this->_parameters [2];
+					}
+
+					if ($this->_parameters [3] === NULL) {
+						$limit = 20;
+					} else {
+						$limit = $this->_parameters [3];
+					}
+
+					/**
+					 * Wywołanie tabeli z bazy
+					 */
+					$this->_table ['quality_management'] ['list'] = $quality_management->_createSoftList ( $page, $limit );
+
+					$count = $quality_management->_createListCount ();
+
+					/**
+					 * oblicza ile jest stron pełnych lub napoczętych
+					 */
+					$countPage = ceil ( $count / $limit );
+					/**
+					 * Teraz powinnien zbudować tablicę, z wartościami dla poszczególych klocków pagiera ;P
+					 */
+					$pager = array ();
+					for($i = 1; $i <= $countPage; $i ++) {
+						$tmp = array ();
+						$tmp ['page'] = $i;
+						$tmp ['limit'] = $limit;
+						$pager [] = $tmp;
+
+						// var_dump( $pager );
+					}
+					// var_dump ( $pager );
+					$this->_table ['quality_management'] ['pager'] = $pager;
+				} else {
+					header ( 'Location: /home/quality_management/review/page/1/20' );
+				}
 			} elseif ($this->_parameters [0] === 'view') {
 
 				/**
