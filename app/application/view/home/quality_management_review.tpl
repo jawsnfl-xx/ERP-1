@@ -10,9 +10,7 @@
 			Przegląd arkuszów kontrolnych
 			<div class="pull-right">
 				<div class="btn-group">
-					<button type="button" class="btn btn-primary">
-						<span class="glyphicon glyphicon-trash"></span> Usuń zaznaczone
-					</button>
+					
 					<button type="button" class="btn btn-primary">
 						<span class="glyphicon glyphicon-save"></span> Pobierz zaznaczone
 					</button>
@@ -48,10 +46,7 @@
 						<td>{$row.sample_size}</td>
 						<td>{$row.date_start}</td>
 						<td>{$row.date_end}</td>
-					</tr>
-					{/foreach}
-
-					<div class="pull-right">
+						<td>		<div class="pull-right">
 						<input type="checkbox">
 						<button type="button" class="btn btn-default">
 							<span class="glyphicon glyphicon-save"></span>
@@ -62,7 +57,11 @@
 						<button type="button" class="btn btn-default">
 							<span class="glyphicon glyphicon-print"></span>
 						</button>
-					</div>
+					</div></td>
+					</tr>
+					{/foreach}
+
+			
 
 
 				</table>
