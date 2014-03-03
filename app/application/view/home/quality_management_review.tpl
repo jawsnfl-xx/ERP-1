@@ -34,10 +34,10 @@
 
 
 
-					{foreach from=$table ['quality_management'] ['list'] item=row
+					{foreach from=$table['quality_management']['list'] item=row
 					name=row}
 					<tr>
-						{/foreach}
+
 						<td>{$smarty.foreach.row.iteration}</td>
 						<td><a
 							href="/home/quality_management/view/{$row.id_control_measurements}">
@@ -49,6 +49,7 @@
 						<td>{$row.date_start}</td>
 						<td>{$row.date_end}</td>
 					</tr>
+					{/foreach}
 
 					<div class="pull-right">
 						<input type="checkbox">
