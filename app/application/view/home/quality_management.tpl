@@ -19,7 +19,8 @@
 				<h3 class="panel-title">Kontrola jakości</h3>
 			</div>
 			<div class="panel-body">
-				<p>Kontrola jakości pozwala (póki co) na tworzenie, przegląd i edycję arkuszy kontrolnych.</p>
+				<p>Kontrola jakości pozwala (póki co) na tworzenie, przegląd i
+					edycję arkuszy kontrolnych.</p>
 			</div>
 		</div>
 	</div>
@@ -43,7 +44,8 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<h2>Przegląd</h2>
-				<p>Ta opcja pozwala na przegląd dotychczas utworzonych arkuszy, włącznie z ich edycją, drukowaniem i pobraniem.</p>
+				<p>Ta opcja pozwala na przegląd dotychczas utworzonych arkuszy,
+					włącznie z ich edycją, drukowaniem i pobraniem.</p>
 				<div>
 					<a class="btn btn-default btn-block"
 						href="/home/quality_management/review" role="button">Dalej
