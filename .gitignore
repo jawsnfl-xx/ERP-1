@@ -1,7 +1,7 @@
 .buildpath
 .project
 .settings
-php/cache_cp
+cache_cp
 target
 .settings/*
 !.settings/.jsdtscope
