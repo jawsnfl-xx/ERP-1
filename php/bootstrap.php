@@ -1,11 +1,12 @@
 <?php
+use Framework;
 
 /**
  *
  * @name ini_configuration
- * 		@TODO
- * 		- przenieść wszystkie edytowalne zmienne do pliku default_config
- *
+ *       @TODO
+ *       - przenieść wszystkie edytowalne zmienne do pliku default_config
+ *      
  */
 function ini_configuration()
 {
@@ -30,16 +31,19 @@ function ini_configuration()
 function ini_database()
 {
     $database = new Framework\Database();
+    $configuration = Framework\Registry::get('configuration');
+    
     $database->_options = array(
         "options" => array(
-            "host" => "localhost",
-            "username" => "root",
-            "password" => "",
-            "schema" => "test1",
-            "port" => "3306"
+            "host" => (string) $configuration->database->default->host,
+            "username" => (string) $configuration->database->default->username,
+            "password" => (string) $configuration->database->default->password,
+            "schema" => (string) $configuration->database->default->schema,
+            "port" => (string) $configuration->database->default->port
         )
     );
     $database->initialize();
+    
     Framework\Registry::set("database", $database);
 }
 
