@@ -58,6 +58,10 @@ try {
     class Autoloader
     {
 
+        /**
+         * 
+         * @param unknown $class
+         */
         public static function autoload($class)
         {
             autoload($class);
