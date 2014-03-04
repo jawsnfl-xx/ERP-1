@@ -37,7 +37,11 @@ namespace Framework {
 		public function __construct($options = array()) {
 			parent::__construct ( $options );
 
-			require_once DIRECTORY_SEPARATOR . 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
+			$path = DIRECTORY_SEPARATOR . 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php'
+
+
+			var_dump ( $path );
+			require_once $path;
 
 			$this->_template = new \Smarty ();
 
