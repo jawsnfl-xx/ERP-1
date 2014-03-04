@@ -44,6 +44,8 @@ function smarty_modifier_regex_replace($string, $search, $replace) {
  * @ignore
  *
  *
+ *
+ *
  */
 function _smarty_regex_replace_check($search) {
 	// null-byte injection detection

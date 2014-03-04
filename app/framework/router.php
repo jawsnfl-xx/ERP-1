@@ -10,25 +10,25 @@ namespace Framework {
 	/**
 	 *
 	 * @author Marcin Pyrka
-	 *
+	 *        
 	 */
 	class Router extends Base {
-
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_url;
-
+		
 		/**
 		 * @readwrite
 		 */
 		protected $_extension;
-
+		
 		/**
 		 * @read
 		 */
 		protected $_controller;
-
+		
 		/**
 		 * @read
 		 */
@@ -37,18 +37,18 @@ namespace Framework {
 		 * @read
 		 */
 		protected $_table;
-
+		
 		/**
 		 * @read
 		 */
 		protected $_action;
-
+		
 		/**
 		 *
 		 * @var unknown
 		 */
 		protected $_routes = array ();
-
+		
 		/**
 		 * (non-PHPdoc)
 		 *
@@ -57,24 +57,24 @@ namespace Framework {
 		public function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $route
+		 * @param unknown $route        	
 		 * @return \Framework\Router
 		 */
 		public function addRoute($route) {
 			$this->_routes [] = $route;
 			return $this;
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $route
+		 * @param unknown $route        	
 		 * @return \Framework\Router
 		 */
 		public function removeRoute($route) {
-			foreach ( $this->_routes as $i => $stored )
+			foreach ( $this->_routes as $i => $stored ) 
 
 			{
 				if ($stored == $route) {
@@ -83,27 +83,27 @@ namespace Framework {
 			}
 			return $this;
 		}
-
+		
 		/**
 		 *
 		 * @return multitype:string
 		 */
 		public function getRoutes() {
 			$list = array ();
-			foreach ( $this->_routes as $route )
+			foreach ( $this->_routes as $route ) 
 
 			{
 				$list [$route->pattern] = get_class ( $route );
 			}
 			return $list;
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $controller
-		 * @param unknown $action
-		 * @param unknown $parameters
-		 * @param unknown $table
+		 * @param unknown $controller        	
+		 * @param unknown $action        	
+		 * @param unknown $parameters        	
+		 * @param unknown $table        	
 		 * @throws Exception\Controller
 		 * @throws Exception\Action
 		 */
@@ -113,17 +113,17 @@ namespace Framework {
 			$this->_action = $action;
 			$this->_parameters = $parameters;
 			$this->_table = $table;
-
+			
 			/**
 			 */
 			try {
 				$temporary = 'Application\Controller\\' . $name;
 				$instance = new $temporary ( array (
 						"parameters" => $parameters,
-						"table" => $table
+						"table" => $table 
 				) );
 			} catch ( \Exception $e ) {
-
+				
 				throw new Exception\Controller ( "Controller {$name} not
                 found" );
 			}
@@ -153,21 +153,21 @@ namespace Framework {
 				}
 			};
 			$hooks ( $methodMeta, "@before" );
-
+			
 			call_user_func_array ( array (
 					$instance,
-					$action
+					$action 
 			), is_array ( $parameters ) ? $parameters : array () );
 			$hooks ( $methodMeta, "@after" );
 			$this->_table = $instance->givmetable ();
-
+			
 			// var_dump ( $instance );
 		}
-
+		
 		/**
 		 */
 		public function dispatch() {
-
+			
 			// print 'robi dispatch';
 			// var_dump( $this);
 			$url = $this->url;
@@ -175,16 +175,16 @@ namespace Framework {
 			$table = array ();
 			$controller = "home";
 			$action = "index";
-
+			
 			/**
 			 * To nie jest wykonywane
 			 */
 			foreach ( $this->_routes as $route ) {
-
+				
 				// print 'as';
 				// var_dump ( $route );
 				$matches = $route->matches ( $url );
-
+				
 				if ($matches) {
 					$controller = $route->controller;
 					$action = $route->action;
@@ -194,18 +194,18 @@ namespace Framework {
 					return;
 				}
 			}
-
+			
 			$parts = explode ( "/", trim ( $url, "/" ) );
 			if (sizeof ( $parts ) > 0) {
 				$controller = $parts [0];
-				if (sizeof ( $parts ) >= 2)
+				if (sizeof ( $parts ) >= 2) 
 
 				{
 					$action = $parts [1];
 					$parameters = array_slice ( $parts, 2 );
 				}
 			}
-
+			
 			$this->_pass ( $controller, $action, $parameters, $table );
 		}
 	}

@@ -6,23 +6,23 @@ namespace Framework\Request {
 	use Framework\Request\Exception as Exception;
 
 	class Response extends Base {
-
+		
 		/**
 		 *
 		 * @var unknown
 		 */
 		protected $_response;
-
+		
 		/**
 		 * * @read
 		 */
 		protected $_body = null;
-
+		
 		/**
 		 * * @read
 		 */
 		protected $_headers = array ();
-
+		
 		/**
 		 * (non-PHPdoc)
 		 *
@@ -31,7 +31,7 @@ namespace Framework\Request {
 		protected function _getExceptionForImplementation($method) {
 			return new Exception\Implementation ( "{$method} not implemented" );
 		}
-
+		
 		/**
 		 *
 		 * @return \Framework\Request\Exception\Argument
@@ -39,10 +39,10 @@ namespace Framework\Request {
 		protected function _getExceptionForArgument() {
 			return new Exception\Argument ( "Invalid argument" );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		function __construct($options = array()) {
 			if (! empty ( $options ["response"] )) {
@@ -65,17 +65,17 @@ namespace Framework\Request {
 				$this->_headers [$matches [1]] = $matches [2];
 			}
 		}
-
+		
 		/**
 		 */
 		function __toString() {
 			return $this->getBody ();
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $tree
-		 * @param unknown $content
+		 * @param unknown $tree        	
+		 * @param unknown $content        	
 		 * @return string
 		 */
 		protected function _partial($tree, $content) {
@@ -88,10 +88,10 @@ namespace Framework\Request {
 			$response = addslashes ( trim ( $request->get ( $address ) ) );
 			return "\$_text[] =  \"{$response}\";";
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $tree
+		 * @param unknown $tree        	
 		 * @return NULL string
 		 */
 		protected function _getKey($tree) {
@@ -100,11 +100,11 @@ namespace Framework\Request {
 			}
 			return trim ( $tree ["arguments"] ["key"] );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $key
-		 * @param unknown $value
+		 * @param unknown $key        	
+		 * @param unknown $value        	
 		 */
 		protected function _setValue($key, $value) {
 			if (! empty ( $key )) {
@@ -114,10 +114,10 @@ namespace Framework\Request {
 				Registry::set ( $default, $data );
 			}
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $key
+		 * @param unknown $key        	
 		 * @return unknown string
 		 */
 		protected function _getValue($key) {
@@ -127,11 +127,11 @@ namespace Framework\Request {
 			}
 			return "";
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $key
-		 * @param unknown $value
+		 * @param unknown $key        	
+		 * @param unknown $value        	
 		 */
 		public function set($key, $value) {
 			if (StringMethods::indexOf ( $value, "\$_text" ) > 1) {
@@ -144,11 +144,11 @@ namespace Framework\Request {
 			}
 			$this->_setValue ( $key, $value );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $key
-		 * @param unknown $value
+		 * @param unknown $key        	
+		 * @param unknown $value        	
 		 */
 		public function append($key, $value) {
 			if (is_array ( $key )) {
@@ -157,11 +157,11 @@ namespace Framework\Request {
 			$previous = $this->_getValue ( $key );
 			$this->set ( $key, $previous . $value );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $key
-		 * @param unknown $value
+		 * @param unknown $key        	
+		 * @param unknown $value        	
 		 */
 		public function prepend($key, $value) {
 			if (is_array ( $key )) {
@@ -170,11 +170,11 @@ namespace Framework\Request {
 			$previous = $this->_getValue ( $key );
 			$this->set ( $key, $value . $previous );
 		}
-
+		
 		/**
 		 *
-		 * @param unknown $tree
-		 * @param unknown $content
+		 * @param unknown $tree        	
+		 * @param unknown $content        	
 		 * @return string
 		 */
 		public function yield($tree, $content) {

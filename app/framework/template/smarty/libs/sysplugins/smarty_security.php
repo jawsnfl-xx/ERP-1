@@ -18,6 +18,8 @@ class Smarty_Security {
 	/**
 	 * This determines how Smarty handles "<?php .
 	 *
+	 *
+	 *
 	 * .. ?>" tags in templates.
 	 * possible values:
 	 * <ul>

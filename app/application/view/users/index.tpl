@@ -17,14 +17,10 @@
 	<div class="row">
 
 		<div class="container col-md-6">
-			<h1>Pellentesque habitant morbi tristique</h1>
+			<h1><strong>Simple ERP System</strong></h1>
 			<p>Aliquam tincidunt sem et nibh mattis, tincidunt viverra dolor
 				mollis. Integer convallis elementum lorem nec scelerisque.
-				Pellentesque habitant morbi tristique senectus et netus et malesuada
-				fames ac turpis egestas. Nunc hendrerit consectetur mauris aliquet
-				tempus. Praesent in nisl semper risus facilisis semper ac et urna.
-				Sed varius id arcu in luctus. Praesent rutrum dui eu purus semper,
-				in commodo turpis molestie.</p>
+				Pellentesque habitant morbi tristique senectus et netus et malesuada.</p>
 			<div class="row">
 				<div class="col-md-6">
 					<h4>Curabitur id metus sodales</h4>
@@ -49,9 +45,8 @@
 					<h3 class="panel-title">Proszę, zaloguj się</h3>
 				</div>
 				<div class="panel-body">
-					<p>Quisque facilisis lorem eget lacus eleifend, eget lobortis
-						arcu tincidunt. Morbi pellentesque hendrerit consequat.
-						Pellentesque in fermentum est. Donec et faucibus magna.</p>
+					<p>Proszę się zalogować używając swojej nazwy użytkownika oraz swojego hasła.</p>
+					<p>Jeśli nie posiadasz własnego konta, możesz złożyć zapytanie o założenie nowego (prawy górny róg).</p> 
 					<form class="form-signin" role="form" action="/users/login"
 						method="post">
 						<h2 class="form-signin-heading"></h2>
@@ -67,7 +62,6 @@
 					</form>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
