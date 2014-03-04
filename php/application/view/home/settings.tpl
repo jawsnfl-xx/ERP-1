@@ -1,7 +1,7 @@
 {include file='../layouts/navigation.tpl'}
 <ol class="breadcrumb">
-	<li><a href="/home/index"><span>Główna</span></a></li>
-	<li><a href="/home/settings"><span>Ustawienia</span></a></li> {if
+	<li><a href="?url=home/index"><span>Główna</span></a></li>
+	<li><a href="?url=home/settings"><span>Ustawienia</span></a></li> {if
 	$parameters['0'] eq 'access_permissions'}
 	<li class="active"><span>access permissions</span></li> {elseif
 	$parameters['0'] eq 'properties'}
@@ -78,14 +78,14 @@
 	<div class="col-md-3">
 		<div class="panel panel-default">
 			<div class="panel-heading navbar navbar-default">
-				<a href="/home/settings/">Ustawienia ogólne</a>
+				<a href="?url=home/settings/">Ustawienia ogólne</a>
 			</div>
 			<div class="panel-body">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/home/settings/properties">Właściwości</a></li>
-					<li><a href="/home/settings/access_permissions">Uprawnienia
+					<li><a href="?url=home/settings/properties">Właściwości</a></li>
+					<li><a href="?url=home/settings/access_permissions">Uprawnienia
 							dostępu</a></li>
-					<li><a href="/home/settings/system_settings">Ustawienia
+					<li><a href="?url=home/settings/system_settings">Ustawienia
 							systemowe</a></li>
 				</ul>
 			</div>
@@ -117,13 +117,13 @@
 		<ul class="nav nav-tabs">
 			<li
 				{if $parameters['0'] eq 'properties'  and  $parameters['1'] eq ''} class="active"{/if} ><a
-				href="/home/settings/properties">Właściwości</a></li>
+				href="?url=home/settings/properties">Właściwości</a></li>
 			<li
 				{if $parameters['0'] eq 'properties' and  $parameters['1'] eq 'kotki'} class="active"{/if} ><a
-				href="/home/settings/properties/kotki">kotki</a></li>
+				href="?url=home/settings/properties/kotki">kotki</a></li>
 			<li
 				{if $parameters['0'] eq 'properties' and  $parameters['1'] eq 'form'} class="active"{/if} ><a
-				href="/home/settings/properties/form">formularz</a></li>
+				href="?url=home/settings/properties/form">formularz</a></li>
 		</ul>
 		{if $parameters['0'] eq 'properties' and $parameters['1'] eq ''}
 		<div class="container">

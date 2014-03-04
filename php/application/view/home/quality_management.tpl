@@ -1,8 +1,8 @@
 {include file='../layouts/navigation.tpl'}
 <ol class="breadcrumb">
-	<li><a href="/home/index">Główna</a></li>
+	<li><a href="?url=home/index">Główna</a></li>
 	<li class="active">{if $parameters['0'] neq ''} <a
-		href="/home/quality_management"><span>Kontrola jakości</span></a>
+		href="?url=home/quality_management"><span>Kontrola jakości</span></a>
 		{else}<span>Kontrola jakości</span> {/if}
 	</li> {if $parameters['0'] eq 'add'}
 	<li class="active"><span>Dodaj</span></li> {elseif $parameters['0'] eq
@@ -42,7 +42,7 @@
 					justo.</p>
 				<div>
 					<a class="btn btn-primary btn-block"
-						href="/home/quality_management/add" role="button">Dalej
+						href="?url=home/quality_management/add" role="button">Dalej
 						&raquo;</a>
 				</div>
 			</div>
@@ -58,7 +58,7 @@
 					tortor mauris condimentum nibh.</p>
 				<div>
 					<a class="btn btn-default btn-block"
-						href="/home/quality_management/review" role="button">Dalej
+						href="?url=home/quality_management/review" role="button">Dalej
 						&raquo;</a>
 				</div>
 			</div>

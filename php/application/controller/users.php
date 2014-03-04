@@ -94,7 +94,7 @@ namespace Application\Controller {
 		public function logout() {
 			$session = Registry::get ( "session" );
 			$session->setup ( "user", FALSE );
-			header ( "Location: /users/index" );
+			header ( "Location: ?url=users/index" );
 			exit ();
 		}
 
@@ -158,7 +158,7 @@ namespace Application\Controller {
 					if (! empty ( $user )) {
 						$session = Registry::get ( "session" );
 						$session->setup ( "user", TRUE );
-						header ( "Location: /home/index" );
+						header ( "Location: ?url=home/index" );
 						exit ();
 					} else {
 
@@ -168,7 +168,7 @@ namespace Application\Controller {
 						 */
 						// $view->set("password_error", "Email address and/or password are incorrect");
 
-						header ( "Location: /users/index" );
+						header ( "Location: ?url=users/index" );
 						exit ();
 					}
 					exit ();

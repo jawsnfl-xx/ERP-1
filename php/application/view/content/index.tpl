@@ -3,7 +3,7 @@
 		<div class="container">
 
 			<p class="navbar-text navbar-right">
-				Potrzebujesz dostępu do aplikacji? <a href="/users/signup"
+				Potrzebujesz dostępu do aplikacji? <a href="?url=users/signup"
 					type="button" class="navbar-link btn btn-default">Złóż
 					zapytanie o założenie konta</a>
 			</p>

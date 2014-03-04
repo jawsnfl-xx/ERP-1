@@ -203,7 +203,7 @@ namespace Application\Controller {
 					// var_dump ( $pager );
 					$this->_table ['product'] ['pager'] = $pager;
 				} else {
-					header ( 'Location: /home/product_technology/product/page/1/20' );
+					header ( 'Location: ?url=home/product_technology/product/page/1/20' );
 				}
 			} elseif ($this->_parameters [0] === 'technology') {
 
