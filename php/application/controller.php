@@ -139,20 +139,20 @@ namespace Application {
 			$database = Registry::get ( "database" );
 			$session = Registry::get ( "session" );
 
-			if ($session->getup ( 'user' )) {
+// 			if ($session->getup ( 'user' )) {
 
-				/**
-				 * Lista stron, na które nie wpuszcza.
-				 */
-				if (RequestMethods::get ( url ) === 'users/index') {
-					header ( "Location: ?url=home/index" );
-				}
-			} elseif (RequestMethods::get ( url ) === 'users/index') {
-				// nic nie robi
-			} else {
-				// print 'asdasd';
-				header ( "Location: ?url=home/index" );
-			}
+// 				/**
+// 				 * Lista stron, na które nie wpuszcza.
+// 				 */
+// 				if (RequestMethods::get ( url ) === 'users/index') {
+// 					header ( "Location: ?url=home/index" );
+// 				}
+// 			} elseif (RequestMethods::get ( url ) === 'users/index') {
+// 				// nic nie robi
+// 			} else {
+// 				// print 'asdasd';
+// 				header ( "Location: ?url=home/index" );
+// 			}
 		}
 
 		/**
