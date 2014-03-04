@@ -30,7 +30,7 @@ function ini_database() {
 	$database = new Framework\Database ();
 	$database->_options = array (
 			"options" => array (
-					"host" => "localhost",
+					"host" => "127.10.12.2",
 					"username" => "admin5SAB2up",
 					"password" => "nbtNIc8mKg6w",
 					"schema" => "php",
