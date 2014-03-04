@@ -49,6 +49,7 @@ function smarty_modifier_regex_replace($string, $search, $replace)
  *
  *
  *
+ *
  */
 function _smarty_regex_replace_check($search)
 {

@@ -24,6 +24,7 @@
  *
  *
  *
+ *
  */
 class Smarty_Internal_Config
 {

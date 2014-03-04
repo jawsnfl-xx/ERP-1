@@ -43,6 +43,7 @@ function __construct($data, $smarty)
 	
 	
 	
+    
     0;
     $this->line = 1;
     $this->smarty = $smarty;
