@@ -39,7 +39,6 @@ namespace Framework {
 
 			$path = __DIR__ . DIRECTORY_SEPARATOR . 'template' . DIRECTORY_SEPARATOR . 'smarty' . DIRECTORY_SEPARATOR . 'libs' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
 
-			var_dump ( $path );
 			require_once $path;
 
 			$this->_template = new \Smarty ();
@@ -51,7 +50,6 @@ namespace Framework {
 			$this->_template->assign ( 'parameters', $options ['parameters'] );
 			$this->_template->assign ( 'table', $options ['table'] );
 
-			// var_dump ( $options );
 		}
 		public function render() {
 			$path = $this->getFile ();
