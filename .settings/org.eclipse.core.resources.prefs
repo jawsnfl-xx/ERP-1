@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//app/application/view/home/product_technology_technology.tpl=UTF-8
+encoding//app/application/view/home/quality_management.tpl=UTF-8
+encoding//app/application/view/home/quality_management_review.tpl=UTF-8
+encoding//app/application/view/home/quality_management_view.tpl=UTF-8
+encoding//app/application/view/home/settings.tpl=UTF-8
+encoding//app/application/view/users/index.tpl=UTF-8
+encoding//app/application/view/users/signup.tpl=UTF-8
+encoding/<project>=UTF-8
+separateDerivedEncodings=true
