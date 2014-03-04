@@ -1,7 +1,9 @@
-<?php
+﻿<?php
 
 /**
  * Deklaracja stałych:
+ * 
+ * 
  */
 define('APP_DIR', dirname(realpath(__FILE__)));
 define('DISPLAY_ERRORS', 0);
