@@ -4,9 +4,9 @@
  * Deklaracja stałych:
  */
 define('APP_DIR', dirname(realpath(__FILE__)));
-define('DISPLAY_ERRORS', 0);
+define('DISPLAY_ERRORS', 1);
 define('MIN_PHP_VERSION', '5.3.7');
-define('DEVELOP_MODE', 0);
+define('DEVELOP_MODE', 1);
 define('BOOTSTRAP_FILE', 'bootstrap.php');
 
 /**
