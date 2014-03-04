@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.16, created on 2014-03-04 14:47:57
+<?php /* Smarty version Smarty-3.1.16, created on 2014-03-04 15:34:08
          compiled from "C:\Users\Marcin Pyrka\Documents\GitHub\ERP\php\application\view\home\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:296245315e79d54fb34-74421875%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6663911fe5dae2ea682434f51c2eb6cc361cccc6' => 
     array (
       0 => 'C:\\Users\\Marcin Pyrka\\Documents\\GitHub\\ERP\\php\\application\\view\\home\\index.tpl',
-      1 => 1393538074,
+      1 => 1393944764,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.16',
   'unifunc' => 'content_5315e79d55dcc5_12067913',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5315e79d55dcc5_12067913')) {function content_5315e79d55dcc5_12067913($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('../layouts/navigation.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
