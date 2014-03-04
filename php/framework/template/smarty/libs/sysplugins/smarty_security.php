@@ -24,6 +24,7 @@ class Smarty_Security
      *
      *
      *
+     *
      * .. ?>" tags in templates.
      * possible values:
      * <ul>

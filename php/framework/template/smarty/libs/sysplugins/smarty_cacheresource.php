@@ -338,10 +338,10 @@ class Smarty_Template_Cached
         // load resource handler
         //
         $this->handler = $handler = Smarty_CacheResource::load($smarty); // Note: prone to circular references
-                                                                            
+                                                                         
         //
-                                                                            // check if cache is valid
-                                                                            //
+                                                                         // check if cache is valid
+                                                                         //
         if (! ($_template->caching == Smarty::CACHING_LIFETIME_CURRENT || $_template->caching == Smarty::CACHING_LIFETIME_SAVED) || $_template->source->recompiled) {
             $handler->populate($this, $_template);
             
