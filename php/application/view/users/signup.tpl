@@ -45,44 +45,45 @@
 						diam sit amet, accumsan libero. Phasellus convallis libero vitae
 						leo porttitor porta.</p>
 				</div>
-	
-			<div class="col-md-6">
-				<form role="form">
 
-					<div class="form-group">
-						<label for="exampleInputEmail1">Nazwa użytkownika</label> <input
-							type="email" class="form-control" id="exampleInputEmail1"
-							placeholder="Nazwa użytkownika">
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label> <input
-							type="password" class="form-control" id="exampleInputPassword1"
-							placeholder="Password">
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">Password</label> <input
-							type="password" class="form-control" id="exampleInputPassword1"
-							placeholder="Password">
-					</div>
-					<div class="form-group">
-						<p class="help-block">Example block-level help text here.</p>
-					</div>
+				<div class="col-md-6">
+					<form role="form">
 
-					<div class="form-group">
-						<textarea class="form-control" rows="6"></textarea>
-					</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Nazwa użytkownika</label> <input
+								type="email" class="form-control" id="exampleInputEmail1"
+								placeholder="Nazwa użytkownika">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label> <input
+								type="password" class="form-control" id="exampleInputPassword1"
+								placeholder="Password">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label> <input
+								type="password" class="form-control" id="exampleInputPassword1"
+								placeholder="Password">
+						</div>
+						<div class="form-group">
+							<p class="help-block">Example block-level help text here.</p>
+						</div>
 
-					<div class="form-group">
-						<button type="submit" class="btn btn-default">Submit</button>
-					</div>
-				</form>
-				<h4>
-					Można też wrócić do <a href="/users/index">formularza logowania</a>.
-				</h4>
+						<div class="form-group">
+							<textarea class="form-control" rows="6"></textarea>
+						</div>
+
+						<div class="form-group">
+							<button type="submit" class="btn btn-default">Submit</button>
+						</div>
+					</form>
+					<h4>
+						Można też wrócić do <a href="/users/index">formularza
+							logowania</a>.
+					</h4>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </div>
 
 <div id="footer">

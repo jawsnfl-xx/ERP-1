@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty plugin
  *
@@ -20,9 +21,10 @@
  *       (Smarty online manual)
  * @author Uwe Tews
  * @param array $params
- *        	parameters
+ *            parameters
  * @return string with compiled code
  */
-function smarty_modifiercompiler_cat($params, $compiler) {
-	return '(' . implode ( ').(', $params ) . ')';
+function smarty_modifiercompiler_cat($params, $compiler)
+{
+    return '(' . implode(').(', $params) . ')';
 }

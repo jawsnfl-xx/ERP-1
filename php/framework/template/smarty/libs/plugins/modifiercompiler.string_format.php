@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty plugin
  *
@@ -16,9 +17,10 @@
  * @link http://www.smarty.net/manual/en/language.modifier.string.format.php string_format (Smarty online manual)
  * @author Uwe Tews
  * @param array $params
- *        	parameters
+ *            parameters
  * @return string with compiled code
  */
-function smarty_modifiercompiler_string_format($params, $compiler) {
-	return 'sprintf(' . $params [1] . ',' . $params [0] . ')';
+function smarty_modifiercompiler_string_format($params, $compiler)
+{
+    return 'sprintf(' . $params[1] . ',' . $params[0] . ')';
 }

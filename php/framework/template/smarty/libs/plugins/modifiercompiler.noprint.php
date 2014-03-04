@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty plugin
  *
@@ -15,9 +16,10 @@
  *
  * @author Uwe Tews
  * @param array $params
- *        	parameters
+ *            parameters
  * @return string with compiled code
  */
-function smarty_modifiercompiler_noprint($params, $compiler) {
-	return "''";
+function smarty_modifiercompiler_noprint($params, $compiler)
+{
+    return "''";
 }

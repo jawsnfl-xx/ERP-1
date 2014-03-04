@@ -1,22 +1,24 @@
 <?php
+namespace Module
+{
 
-namespace Module {
+    /**
+     *
+     * @author Marcin Pyrka
+     *        
+     */
+    class Product_technology extends Module
+    {
 
-	/**
-	 *
-	 * @author Marcin Pyrka
-	 *        
-	 */
-	class Product_technology extends Module {
-		
-		/**
-		 *
-		 * @param unknown $options        	
-		 */
-		public function __construct($options = array()) {
-			/**
-			 */
-			parent::__construct ( $options );
-		}
-	}
+        /**
+         *
+         * @param unknown $options            
+         */
+        public function __construct($options = array())
+        {
+            /**
+             */
+            parent::__construct($options);
+        }
+    }
 }

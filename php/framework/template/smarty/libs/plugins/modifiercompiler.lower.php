@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Smarty plugin
  * @package Smarty
@@ -16,13 +17,14 @@
  * @author Monte Ohrt <monte at ohrt dot com>
  * @author Uwe Tews
  * @param array $params
- *        	parameters
+ *            parameters
  * @return string with compiled code
  */
-function smarty_modifiercompiler_lower($params, $compiler) {
-	if (Smarty::$_MBSTRING) {
-		return 'mb_strtolower(' . $params [0] . ', \'' . addslashes ( Smarty::$_CHARSET ) . '\')';
-	}
-	// no MBString fallback
-	return 'strtolower(' . $params [0] . ')';
+function smarty_modifiercompiler_lower($params, $compiler)
+{
+    if (Smarty::$_MBSTRING) {
+        return 'mb_strtolower(' . $params[0] . ', \'' . addslashes(Smarty::$_CHARSET) . '\')';
+    }
+    // no MBString fallback
+    return 'strtolower(' . $params[0] . ')';
 }

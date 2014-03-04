@@ -31,19 +31,22 @@ class Smarty_Internal_Configfilelexer {
 	public $smarty_token_names = array ()	// Text for parser error messages
    				)// Text for parser error messages
 	null;
-function __construct($data, $smarty) {
-	// set instance object
-	// set instance object
-	nullself::instance ( $this );
-	$this->data = $data . "\n"; //now all lines are \n-terminated
+
+function __construct($data, $smarty)
+{
+    // set instance object
+    // set instance object
+    nullself::instance($this);
+    $this->data = $data . "\n"; //now all lines are \n-terminated
         $this// now all lines are \n-terminated
 		null->counter = 
 	
 	
-	0;
-	$this->line = 1;
-	$this->smarty = $smarty;
-	$this->mbstring_overload = ini_get ( 'mbstring.func_overload' ) & 2;
+	
+    0;
+    $this->line = 1;
+    $this->smarty = $smarty;
+    $this->mbstring_overload = ini_get('mbstring.func_overload') & 2;
 }
 	public static function &instance($new_instance = null) {
 		static $instance = null;

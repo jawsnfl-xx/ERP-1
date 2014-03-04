@@ -1,11 +1,13 @@
 <?php
+namespace Framework
+{
 
-namespace Framework {
+    use Framework\Base as Base;
 
-	use Framework\Base as Base;
+    class Core extends Base
+    {
 
-	class Core extends Base {
-		public function initialize() {
-		}
-	}
+        public function initialize()
+        {}
+    }
 }

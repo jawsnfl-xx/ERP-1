@@ -50,6 +50,7 @@ testing strip tags
 	
 	
 	
+	
 	<table border=0>
 	<tr>
 		<td>

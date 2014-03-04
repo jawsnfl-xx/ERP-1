@@ -17,10 +17,13 @@
 	<div class="row">
 
 		<div class="container col-md-6">
-			<h1><strong>Simple ERP System</strong></h1>
+			<h1>
+				<strong>Simple ERP System</strong>
+			</h1>
 			<p>Aliquam tincidunt sem et nibh mattis, tincidunt viverra dolor
 				mollis. Integer convallis elementum lorem nec scelerisque.
-				Pellentesque habitant morbi tristique senectus et netus et malesuada.</p>
+				Pellentesque habitant morbi tristique senectus et netus et
+				malesuada.</p>
 			<div class="row">
 				<div class="col-md-6">
 					<h4>Curabitur id metus sodales</h4>
@@ -45,8 +48,10 @@
 					<h3 class="panel-title">Proszę, zaloguj się</h3>
 				</div>
 				<div class="panel-body">
-					<p>Proszę się zalogować używając swojej nazwy użytkownika oraz swojego hasła.</p>
-					<p>Jeśli nie posiadasz własnego konta, możesz złożyć zapytanie o założenie nowego (prawy górny róg).</p> 
+					<p>Proszę się zalogować używając swojej nazwy użytkownika oraz
+						swojego hasła.</p>
+					<p>Jeśli nie posiadasz własnego konta, możesz złożyć zapytanie
+						o założenie nowego (prawy górny róg).</p>
 					<form class="form-signin" role="form" action="/users/login"
 						method="post">
 						<h2 class="form-signin-heading"></h2>
