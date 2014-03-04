@@ -145,13 +145,13 @@ namespace Application {
 				 * Lista stron, na które nie wpuszcza.
 				 */
 				if (RequestMethods::get ( url ) === 'users/index') {
-					header ( "Location: /home/index" );
+					header ( "Location: ?url=home/index" );
 				}
 			} elseif (RequestMethods::get ( url ) === 'users/index') {
 				// nic nie robi
 			} else {
 				// print 'asdasd';
-				header ( "Location: /users/index" );
+				header ( "Location: ?url=home/index" );
 			}
 		}
 
