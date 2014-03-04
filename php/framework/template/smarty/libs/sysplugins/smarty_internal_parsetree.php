@@ -21,6 +21,7 @@
  *
  *
  *
+ *
  */
 abstract class _smarty_parsetree
 {
@@ -53,6 +54,7 @@ abstract class _smarty_parsetree
  * @package Smarty
  * @subpackage Compiler
  * @ignore
+ *
  *
  *
  *
@@ -119,6 +121,7 @@ class _smarty_tag extends _smarty_parsetree
  *
  *
  *
+ *
  */
 class _smarty_code extends _smarty_parsetree
 {
@@ -154,6 +157,7 @@ class _smarty_code extends _smarty_parsetree
  * @package Smarty
  * @subpackage Compiler
  * @ignore
+ *
  *
  *
  *
@@ -245,6 +249,7 @@ class _smarty_doublequoted extends _smarty_parsetree
  *
  *
  *
+ *
  */
 class _smarty_dq_content extends _smarty_parsetree
 {
@@ -280,6 +285,7 @@ class _smarty_dq_content extends _smarty_parsetree
  * @package Smarty
  * @subpackage Compiler
  * @ignore
+ *
  *
  *
  *
@@ -383,6 +389,7 @@ class _smarty_template_buffer extends _smarty_parsetree
  *
  *
  *
+ *
  */
 class _smarty_text extends _smarty_parsetree
 {
@@ -418,6 +425,7 @@ class _smarty_text extends _smarty_parsetree
  * @package Smarty
  * @subpackage Compiler
  * @ignore
+ *
  *
  *
  *
