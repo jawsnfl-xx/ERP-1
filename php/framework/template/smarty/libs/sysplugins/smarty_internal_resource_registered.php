@@ -22,6 +22,7 @@
  *
  *
  *
+ *
  */
 class Smarty_Internal_Resource_Registered extends Smarty_Resource
 {
