@@ -31,9 +31,9 @@ function ini_database() {
 	$database->_options = array (
 			"options" => array (
 					"host" => "localhost",
-					"username" => "root",
-					"password" => "",
-					"schema" => "test",
+					"username" => "admin5SAB2up",
+					"password" => "nbtNIc8mKg6w",
+					"schema" => "php",
 					"port" => "3306"
 			)
 	);
