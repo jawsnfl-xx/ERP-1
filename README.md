@@ -1,4 +1,4 @@
-﻿Proszę uważnie podchodzić do uzupełnienia treści w Git świadomie i rozsądnie.
+﻿Proszę uważnie, świadomie i rozsądnie podchodzić do uzupełnienia treści w Git.
 
 Zarządzanie branchami:
 
