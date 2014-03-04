@@ -69,7 +69,7 @@ function ini_request() {
  */
 function ini_bootstrap() {
 	ini_configuration ();
-	ini_database ();
+	// ini_database ();
 	ini_session ();
 	ini_request ();
 
