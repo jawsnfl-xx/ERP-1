@@ -96,3 +96,7 @@ body {
 	display: inline-block;
 	border-radius: 50%;
 }
+
+.panel>.table-responsive {
+	border-bottom: 1px solid #ddd;
+}

@@ -9,6 +9,91 @@
 	$parameters['0'] eq 'system_settings'}
 	<li class="active"><span>system settings</span></li> {else} {/if}
 </ol>
+
+
+
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Panel heading</div>
+	<div class="panel-body">
+		<p>Fusce luctus in ipsum ut scelerisque. Ut posuere luctus felis,
+			ut pretium metus imperdiet ut. Vivamus id eros at justo consequat
+			suscipit. Mauris sollicitudin magna sit amet justo facilisis congue.
+			Donec non nisl volutpat, eleifend ipsum ut, accumsan ipsum. Nulla
+			condimentum in felis eu imperdiet. Aenean luctus tellus vitae nisi
+			sagittis, nec vestibulum nunc cursus. Quisque tincidunt magna eu orci
+			ornare blandit. Nam sit amet velit aliquam, tincidunt nulla sed,
+			cursus lorem.</p>
+	</div>
+	<table class="table table-bordered table-responsive">
+		<tr>
+			<th colspan="2">POMIAR</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+	</table>
+	<table class="table table-bordered table-responsive">
+		<tr>
+			<th colspan="2">POMIAR</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+		</tr>
+	</table>
+	<ul class="list-group">
+		<li class="list-group-item">Cras justo odio</li>
+		<li class="list-group-item">Dapibus ac facilisis in</li>
+		<li class="list-group-item">Morbi leo risus</li>
+		<li class="list-group-item">Porta ac consectetur ac</li>
+		<li class="list-group-item">Vestibulum at eros</li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
@@ -137,12 +222,9 @@
 			'kotki'}
 			<div id="container" style="margin-top: 10px;">
 				<div class="row">
-					<div class="col-md-4">
-					</div>
-					<div class="col-md-4">
-						</div>
-					<div class="col-md-4">
-						</div>
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
 				</div>
 			</div>
 			{/if} {if $parameters['0'] eq 'properties' and $parameters['1'] eq
