@@ -233,111 +233,113 @@
 	</div>
 	<div class="table-responsive">
 		<table class="table table-bordered">
-			<tr>
-				<th>Wymiary</th>
-				<th>Tolerancja</th>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>5</th>
-				<th>6</th>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
+				<tr>
+					<th>Wymiary</th>
+					<th>Tolerancja</th>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>5</th>
+					<th>6</th>
+				</tr>
+			<tbody>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </div>
@@ -471,103 +473,124 @@
 <a class="btn btn-primary btn btn-block"
 	href="/home/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
-<div class="panel panel-default"></div>
-<div class=" col-md-12">
-	<div class="panel panel-default">
-		<!-- Default panel contents -->
-		<div class="panel-heading">Panel heading</div>
-		<div class="panel-body">
-			<div class="row">
-				<div class=" col-md-3">Z.P.U.H. Rolmech</div>
-				<div class=" col-md-3">detail_name</div>
-				<div class=" col-md-3">date</div>
-			</div>
-		</div>
-		<div class="table-responsive">
-			<table class="table table-bordered">
-				<tr>
-					<th>Wymiary</th>
-					<th>Tolerancja</th>
-					<th>1</th>
-					<th>2</th>
-					<th>3</th>
-					<th>4</th>
-					<th>5</th>
-				</tr>
-				<tr>
-					<td>Row:1 Cell:1</td>
-					<td>Row:1 Cell:2</td>
-					<td>Row:1 Cell:3</td>
-					<td>Row:1 Cell:4</td>
-					<td>Row:1 Cell:5</td>
-					<td>Row:1 Cell:6</td>
-					<td>Row:1 Cell:7</td>
-				</tr>
-				<tr>
-					<td>Row:2 Cell:1</td>
-					<td>Row:2 Cell:2</td>
-					<td>Row:2 Cell:3</td>
-					<td>Row:2 Cell:4</td>
-					<td>Row:2 Cell:5</td>
-					<td>Row:2 Cell:6</td>
-					<td>Row:2 Cell:7</td>
-				</tr>
-				<tr>
-					<td>Row:3 Cell:1</td>
-					<td>Row:3 Cell:2</td>
-					<td>Row:3 Cell:3</td>
-					<td>Row:3 Cell:4</td>
-					<td>Row:3 Cell:5</td>
-					<td>Row:3 Cell:6</td>
-					<td>Row:3 Cell:7</td>
-				</tr>
-				<tr>
-					<td>Row:4 Cell:1</td>
-					<td>Row:4 Cell:2</td>
-					<td>Row:4 Cell:3</td>
-					<td>Row:4 Cell:4</td>
-					<td>Row:4 Cell:5</td>
-					<td>Row:4 Cell:6</td>
-					<td>Row:4 Cell:7</td>
-				</tr>
-				<tr>
-					<td>Row:5 Cell:1</td>
-					<td>Row:5 Cell:2</td>
-					<td>Row:5 Cell:3</td>
-					<td>Row:5 Cell:4</td>
-					<td>Row:5 Cell:5</td>
-					<td>Row:5 Cell:6</td>
-					<td>Row:5 Cell:7</td>
-				</tr>
-				<tr>
-					<td>Row:6 Cell:1</td>
-					<td>Row:6 Cell:2</td>
-					<td>Row:6 Cell:3</td>
-					<td>Row:6 Cell:4</td>
-					<td>Row:6 Cell:5</td>
-					<td>Row:6 Cell:6</td>
-					<td>Row:6 Cell:7</td>
-				</tr>
-			</table>
-		</div>
-		<div class="panel panel-default">
-			<label class="control-label col-sm-3" for="inputSuccess3">Uwagi
-				i zakończenie</label>
-		</div>
+<div class="panel panel-default">
+	<!-- Default panel contents -->
+	<div class="panel-heading">Panel heading</div>
+	<div class="panel-body">
 		<div class="row">
-			<div class="col-sm-3">
-				<input class="form-control" data-toggle="tooltip"
-					data-placement="left" title="" name="addt_01" type="text"
-					placeholder="">
-			</div>
-			<div class="col-sm-3">
-				<a class="btn btn-primary btn btn-block"
-					href="javascript:window.print()">DRUKUJ </a>
-			</div>
-
-			<div class="col-sm-2">
-				<a class="btn btn-primary btn btn-block"
-					href="/home/quality_management"> ZAKOŃCZ</a>
-			</div>
+			<div class=" col-md-3">Z.P.U.H. Rolmech</div>
+			<div class=" col-md-3">detail_name</div>
+			<div class=" col-md-3">date</div>
 		</div>
-		{/if}
+	</div>
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<tr>
+				<th>Wymiary</th>
+				<th>Tolerancja</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+			</tr>
+			<tr>
+				<td>Row:1 Cell:1</td>
+				<td>Row:1 Cell:2</td>
+				<td>Row:1 Cell:3</td>
+				<td>Row:1 Cell:4</td>
+				<td>Row:1 Cell:5</td>
+				<td>Row:1 Cell:6</td>
+				<td>Row:1 Cell:7</td>
+			</tr>
+			<tr>
+				<td>Row:2 Cell:1</td>
+				<td>Row:2 Cell:2</td>
+				<td>Row:2 Cell:3</td>
+				<td>Row:2 Cell:4</td>
+				<td>Row:2 Cell:5</td>
+				<td>Row:2 Cell:6</td>
+				<td>Row:2 Cell:7</td>
+			</tr>
+			<tr>
+				<td>Row:3 Cell:1</td>
+				<td>Row:3 Cell:2</td>
+				<td>Row:3 Cell:3</td>
+				<td>Row:3 Cell:4</td>
+				<td>Row:3 Cell:5</td>
+				<td>Row:3 Cell:6</td>
+				<td>Row:3 Cell:7</td>
+			</tr>
+			<tr>
+				<td>Row:4 Cell:1</td>
+				<td>Row:4 Cell:2</td>
+				<td>Row:4 Cell:3</td>
+				<td>Row:4 Cell:4</td>
+				<td>Row:4 Cell:5</td>
+				<td>Row:4 Cell:6</td>
+				<td>Row:4 Cell:7</td>
+			</tr>
+			<tr>
+				<td>Row:5 Cell:1</td>
+				<td>Row:5 Cell:2</td>
+				<td>Row:5 Cell:3</td>
+				<td>Row:5 Cell:4</td>
+				<td>Row:5 Cell:5</td>
+				<td>Row:5 Cell:6</td>
+				<td>Row:5 Cell:7</td>
+			</tr>
+			<tr>
+				<td>Row:6 Cell:1</td>
+				<td>Row:6 Cell:2</td>
+				<td>Row:6 Cell:3</td>
+				<td>Row:6 Cell:4</td>
+				<td>Row:6 Cell:5</td>
+				<td>Row:6 Cell:6</td>
+				<td>Row:6 Cell:7</td>
+			</tr>
+		</table>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<div class="row">
+				<label class="control-label col-sm-3" for="inputSuccess3">Uwagi
+					i zakończenie</label>
+				<div class="col-sm-3">
+					<input class="form-control" data-toggle="tooltip"
+						data-placement="left" title="" name="addt_01" type="text"
+						placeholder="">
+				</div>
+				<div class="col-sm-3">
+					<a class="btn btn-primary btn btn-block"
+						href="javascript:window.print()">DRUKUJ </a>
+				</div>
+
+				<div class="col-sm-2">
+					<a class="btn btn-primary btn btn-block"
+						href="/home/quality_management"> ZAKOŃCZ</a>
+				</div>
+			</div>
+		</li>
+		<li class="list-group-item">
+			<div class="row">
+				<label class="control-label col-sm-3" for="inputSuccess3">Cośtam</label>
+				<div class="col-sm-3">
+					<input class="form-control" data-toggle="tooltip"
+						data-placement="left" title="" name="addt_01" type="text"
+						placeholder="">
+				</div>
+				<div class="col-sm-3">
+					<a class="btn btn-primary btn btn-block"
+						href="javascript:window.print()">NIE DRUKUJ </a>
+				</div>
+
+				<div class="col-sm-2">
+					<a class="btn btn-primary btn btn-block"
+						href="/home/quality_management">NIE KOŃCZ</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+{/if}
