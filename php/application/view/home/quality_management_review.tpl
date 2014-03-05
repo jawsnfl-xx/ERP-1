@@ -9,7 +9,6 @@
 		Przegląd arkuszów kontrolnych
 		<div class="pull-right">
 			<div class="btn-group">
-
 				<button type="button" class="btn btn-primary">
 					<span class="glyphicon glyphicon-save"></span> Pobierz zaznaczone
 				</button>
@@ -28,17 +27,14 @@
 	<div class="col-md-12">
 		<div class="table-responsive">
 			<table class="table table-bordered">
-
-
-
 				{foreach from=$table['quality_management']['list'] item=row
 				name=row}
 				<tr>
-
 					<td>{$smarty.foreach.row.iteration}</td>
 					<td><a
 						href="/home/quality_management/view/{$row.id_control_measurements}">
-							{$row.orders_id_orders}</a></td>
+							{$row.orders_id_orders} {$row.id_control_measurements} </a><a
+						href="/home/product_technology/product/{$row.products_name}">{$row.products_name}</td>
 					<td>{$row.products_id_products} {$row.packages_id_packages}</td>
 					<td>{$row.type_of_control_measurements_id_type_of_control_measurements}</td>
 					<td>{$row.packages_id_packages}</td>
@@ -61,10 +57,6 @@
 					</td>
 				</tr>
 				{/foreach}
-
-
-
-
 			</table>
 			<ul class="pager">
 				<li class="previous"><a href="#">&larr; Older</a></li>
