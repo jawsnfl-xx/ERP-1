@@ -14,7 +14,7 @@ function ini_configuration()
         "type" => "ini"
     ));
     $configuration = $configuration->initialize();
-    $parsed = $configuration->parse('configuration/default_config');
+    $parsed = $configuration->parse('configuration/config');
     Framework\Registry::set("configuration", $parsed);
 }
 
