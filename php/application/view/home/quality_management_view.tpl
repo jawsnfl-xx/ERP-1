@@ -5,25 +5,22 @@
 	<table class="table table-responsive table-bordered">
 		{foreach from=$table['quality_management']['view'] item=row name=row}
 		<tr>
-			<th rowspan="2" colspan="2"></th>
+			<th colspan="2"></th>
 			<th>nazwa detalu</th>
 			<th>{$row.products_name}</th>
 			<th>data wykonania</th>
 			<th colspan="2">{$row.date_end}</th>
 		</tr>
-		<tr>
 
-			<th colspan="4"><tr>
-			{/foreach}
+		{/foreach}
 
-			<th colspan="2">badany wymiar
-		</th>
+		<th colspan="2">badany wymiar</th>
 
-			<th>1</th>
-			<th>2</th>
-			<th>3</th>
-			<th>4</th>
-			<th>5</th>
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
 		</tr>
 		{foreach from=$table['dimension']['list'] item=row name=row}
 		<tr>
@@ -279,13 +276,13 @@
 
 	</table>
 
-		 <ul class="list-group">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Morbi leo risus</li>
-    <li class="list-group-item">Porta ac consectetur ac</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
+	<ul class="list-group">
+		<li class="list-group-item">Cras justo odio</li>
+		<li class="list-group-item">Dapibus ac facilisis in</li>
+		<li class="list-group-item">Morbi leo risus</li>
+		<li class="list-group-item">Porta ac consectetur ac</li>
+		<li class="list-group-item">Vestibulum at eros</li>
+	</ul>
 
 	<div class="panel-footer">Panelowa stópka</div>
 </div>
