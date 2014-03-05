@@ -137,87 +137,12 @@
 			'kotki'}
 			<div id="container" style="margin-top: 10px;">
 				<div class="row">
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail">
-							<img class="img-thumbnail"
-								src="http://www.bozatomozna.com.pl/fotki/jdtljeqbt.jpg"
-								alt="kotek">
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>Sed lacus ante, ullamcorper at pellentesque ac, accumsan
-									sed felis. Cras ultrices nibh ut eleifend semper. Aliquam
-									mattis vulputate tellus, non auctor sem feugiat non. Nulla
-									congue risus arcu, a aliquam est egestas in. Nunc egestas
-									turpis nec magna ultricies sollicitudin. Fusce pretium bibendum
-									enim sit amet malesuada. Donec et molestie elit. Sed pretium
-									venenatis tempus. Praesent lorem felis, scelerisque ac blandit
-									in, scelerisque non dolor. Morbi non arcu dapibus, tincidunt
-									metus et, malesuada orci. Praesent a quam sed dui accumsan
-									viverra ac eu sapien. Nulla sed mi a mauris imperdiet dictum.
-									Class aptent taciti sociosqu ad litora torquent per conubia
-									nostra, per inceptos himenaeos. Proin ac libero at justo
-									gravida rhoncus.</p>
-								<p>
-									<a href="#" class="btn btn-primary" role="button">lubię</a> <a
-										href="#" class="btn btn-default" role="button">udostępniam</a>
-								</p>
-							</div>
-						</div>
+					<div class="col-md-4">
 					</div>
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail">
-							<img class="img-thumbnail" src="http://kociarze.com.pl/13.jpg"
-								alt="kotek">
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>Sed lacus ante, ullamcorper at pellentesque ac, accumsan
-									sed felis. Cras ultrices nibh ut eleifend semper. Aliquam
-									mattis vulputate tellus, non auctor sem feugiat non. Nulla
-									congue risus arcu, a aliquam est egestas in. Nunc egestas
-									turpis nec magna ultricies sollicitudin. Fusce pretium bibendum
-									enim sit amet malesuada. Donec et molestie elit. Sed pretium
-									venenatis tempus. Praesent lorem felis, scelerisque ac blandit
-									in, scelerisque non dolor. Morbi non arcu dapibus, tincidunt
-									metus et, malesuada orci. Praesent a quam sed dui accumsan
-									viverra ac eu sapien. Nulla sed mi a mauris imperdiet dictum.
-									Class aptent taciti sociosqu ad litora torquent per conubia
-									nostra, per inceptos himenaeos. Proin ac libero at justo
-									gravida rhoncus.</p>
-								<p>
-									<a href="#" class="btn btn-success" role="button"><span
-										class="glyphicon glyphicon-thumbs-up"></span> lubię <span
-										class="badge ">42</span></a> <a href="#" class="btn btn-default"
-										role="button">udostępniam</a>
-								</p>
-							</div>
+					<div class="col-md-4">
 						</div>
-					</div>
-					<div class="col-sm-6 col-md-4">
-						<div class="thumbnail">
-							<img class="img-thumbnail"
-								src="http://www.effendi.pl/koty/rubiniam.jpg" alt="kotek">
-							<div class="caption">
-								<h3>Thumbnail label</h3>
-								<p>Sed lacus ante, ullamcorper at pellentesque ac, accumsan
-									sed felis. Cras ultrices nibh ut eleifend semper. Aliquam
-									mattis vulputate tellus, non auctor sem feugiat non. Nulla
-									congue risus arcu, a aliquam est egestas in. Nunc egestas
-									turpis nec magna ultricies sollicitudin. Fusce pretium bibendum
-									enim sit amet malesuada. Donec et molestie elit. Sed pretium
-									venenatis tempus. Praesent lorem felis, scelerisque ac blandit
-									in, scelerisque non dolor. Morbi non arcu dapibus, tincidunt
-									metus et, malesuada orci. Praesent a quam sed dui accumsan
-									viverra ac eu sapien. Nulla sed mi a mauris imperdiet dictum.
-									Class aptent taciti sociosqu ad litora torquent per conubia
-									nostra, per inceptos himenaeos. Proin ac libero at justo
-									gravida rhoncus.</p>
-								<p>
-									<a href="#" class="btn btn-primary" role="button">lubię</a> <a
-										href="#" class="btn btn-default" role="button">udostępniam</a>
-								</p>
-							</div>
+					<div class="col-md-4">
 						</div>
-					</div>
 				</div>
 			</div>
 			{/if} {if $parameters['0'] eq 'properties' and $parameters['1'] eq
