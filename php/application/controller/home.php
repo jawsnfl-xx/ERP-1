@@ -247,17 +247,14 @@ namespace Application\Controller
                  */
                 // print 'review';
                 $this->_table['quality_management']['list'] = $quality_management->_createList();
-                
                 // var_dump ( $this->_table ['quality_management'] );
             } elseif ($this->_parameters[0] === 'view') {
-                
                 /**
                  * Wyświetla arkusz kontrolny z badania
                  */
                 // print 'view';
                 $this->_table['quality_management']['view'] = $quality_management->_createView($this->_parameters[1]);
-                
-                // var_dump( $this->_table['quality_management']['view']);
+                // var_dump($this->_table['quality_management']['view']);
             } /**
              */
             
