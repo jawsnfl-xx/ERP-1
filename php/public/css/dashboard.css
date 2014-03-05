@@ -100,3 +100,7 @@ body {
 .panel>.table-responsive {
 	border-bottom: 1px solid #ddd;
 }
+
+.table>tbody+tbody {
+	border-top: 1px solid #ddd;
+}

@@ -29,51 +29,55 @@
 		<tr>
 			<th colspan="2">POMIAR</th>
 		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+		</tbody>
 	</table>
 	<table class="table table-bordered table-responsive">
 		<tr>
 			<th colspan="2">POMIAR</th>
 		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+			</tr>
+		</tbody>
 	</table>
 	<ul class="list-group">
 		<li class="list-group-item">Cras justo odio</li>
