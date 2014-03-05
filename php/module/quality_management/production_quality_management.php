@@ -121,7 +121,7 @@ namespace Module\Quality_management
       				left join orders ON control_measurements.orders_id_orders = orders.id_orders
         			left join products ON control_measurements.products_id_products = products.id_products
       				left join packages ON control_measurements.packages_id_packages = packages.id_packages
-					where `control_measurements.id_control_measurements` = ' . $_id . '
+					where id_control_measurements = ' . $_id . '
 					LIMIT 1;');
             return $data;
         }
