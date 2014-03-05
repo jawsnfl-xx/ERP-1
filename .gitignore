@@ -1,8 +1,6 @@
 .buildpath
 .project
 .settings
-cache_cp
-target
 .settings/*
 !.settings/.jsdtscope
 .classpath
