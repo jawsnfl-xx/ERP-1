@@ -84,5 +84,14 @@
 
 
 				</ul>
+				<ul>
+				<div class="alert alert-primary" >
+			W razie kłopotów, kilkaj <a href="/home/help" class="alert-link">w taki
+				fajny link do pliku pomocy</a>
+		</div>
+		
+				</ul>
+				
+				
 			</div>
 			<div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 main">
