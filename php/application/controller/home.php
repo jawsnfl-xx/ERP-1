@@ -250,11 +250,14 @@ namespace Application\Controller
                 
                 // var_dump ( $this->_table ['quality_management'] );
             } elseif ($this->_parameters[0] === 'view') {
-            
-            /**
-             * Wyświetla arkusz kontrolny z badania
-             */
+                
+                /**
+                 * Wyświetla arkusz kontrolny z badania
+                 */
                 // print 'view';
+                $this->_table['quality_management']['view'] = $quality_management->_createView($this->_parameters[1]);
+                
+                // var_dump( $this->_table['quality_management']['view']);
             } /**
              */
             
