@@ -21,14 +21,8 @@
 			<div class="panel-body">
 				<p>Kontrola jakości pozwala (póki co) na tworzenie, przegląd i
 					edycję arkuszy kontrolnych.</p>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="row">
+					<div class="row">
 	<div class="col-lg-4">
-		<div class="panel panel-default">
-			<div class="panel-body">
 				<h2>Utwórz</h2>
 				<h5>Tworzenie nowego arkusza</h5>
 				<p>Tutaj możesz utworzyć nowy arkusz kontroli pomiaru.</p>
@@ -38,11 +32,7 @@
 						&raquo;</a>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="col-lg-8">
-		<div class="panel panel-default">
-			<div class="panel-body">
+	<div class="col-lg-4">
 				<h2>Przegląd</h2>
 				<p>Ta opcja pozwala na przegląd dotychczas utworzonych arkuszy,
 					włącznie z ich edycją, drukowaniem i pobraniem.</p>
@@ -53,6 +43,11 @@
 				</div>
 			</div>
 		</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 
 	</div>
 </div>
