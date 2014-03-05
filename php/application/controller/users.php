@@ -45,13 +45,10 @@ namespace Application\Controller
             /**
              */
             $this->_parameters = $options['parameters'];
-            // $database = new Framework\Database();
-            // $database->initialize();
         }
 
         public function givmetable()
         {
-            // print 'czosnek';
             return ($this->_table);
         }
 
@@ -124,9 +121,6 @@ namespace Application\Controller
                 $name = RequestMethods::post("name");
                 $password = RequestMethods::post("password");
                 
-                // var_dump($name);
-                // var_dump($password);
-                
                 /**
                  * @TODO
                  * - zmienić odwołanie dla view na zgodne z aktualnym
@@ -135,11 +129,9 @@ namespace Application\Controller
                 // $view = $this->getActionView();
                 $error = false;
                 if (empty($name)) {
-                    // $view->set("name", "name not provided");
                     $error = true;
                 }
                 if (empty($password)) {
-                    // $view->set("password_error", "Password not provided");
                     $error = true;
                 }
                 if (! $error) {
@@ -149,12 +141,6 @@ namespace Application\Controller
                      * - zbudować zapytanie zgodne z aktualną uproszczoną metodą dostępu
                      * do bazy danych
                      */
-                    // $user = User::first(array(
-                    // "email = ?" => $name,
-                    // "password = ?" => $password,
-                    // "live = ?" => true,
-                    // "deleted = ?" => false
-                    // ));
                     
                     if ($name === "test" and $password === "test1") {
                         $user = TRUE;
@@ -177,7 +163,6 @@ namespace Application\Controller
                          * @TODO
                          * - obsłużyć błędy logowania
                          */
-                        // $view->set("password_error", "Email address and/or password are incorrect");
                         
                         header("Location: /users/index");
                         exit();

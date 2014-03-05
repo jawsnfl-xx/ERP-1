@@ -110,21 +110,15 @@ namespace Application\Controller
         {
             /**
              */
-            if ($this->_parameters[0] === 'access_permissions') {
-                // print 'access permissions';
-            } 
+            if ($this->_parameters[0] === 'access_permissions') {} 
 
             /**
              */
-            elseif ($this->_parameters[0] === 'properties') {
-                // print 'properties';
-            } 
+            elseif ($this->_parameters[0] === 'properties') {} 
 
             /**
              */
-            elseif ($this->_parameters[0] === 'system settings') {
-                // print 'system_settings';
-            }
+            elseif ($this->_parameters[0] === 'system settings') {}
         }
 
         /**
@@ -161,14 +155,11 @@ namespace Application\Controller
                     $this->_table['product']['search'] = $_keywords;
                     
                     $this->_table['product']['listSearch'] = $product->_createListSearch($_keywords);
-                    
-                    // var_dump ( $this->_table ['product'] ['listSearch'] );
                 } elseif ($this->_parameters[1] === 'page') {
                     
                     /**
                      * Sprawdzenie poprawności danych
                      */
-                    // var_dump( $this->_parameters);
                     
                     if ($this->_parameters[2] === NULL) {
                         $page = 1;
@@ -208,10 +199,7 @@ namespace Application\Controller
                         $tmp['page'] = $i;
                         $tmp['limit'] = $limit;
                         $pager[] = $tmp;
-                        
-                        // var_dump( $pager );
                     }
-                    // var_dump ( $pager );
                     $this->_table['product']['pager'] = $pager;
                 } else {
                     header('Location: /home/product_technology/product/page/1/20');
@@ -222,7 +210,6 @@ namespace Application\Controller
                  * Jakieś tam informacje dla technologii
                  */
                 $data = 0;
-                // nic nie robi
             }
         }
 
@@ -245,16 +232,12 @@ namespace Application\Controller
                  * Dziwnie działa edycja na tablecie.
                  * :-)
                  */
-                // print 'review';
                 $this->_table['quality_management']['list'] = $quality_management->_createList();
-                // var_dump ( $this->_table ['quality_management'] );
             } elseif ($this->_parameters[0] === 'view') {
                 /**
                  * Wyświetla arkusz kontrolny z badania
                  */
-                // print 'view';
                 $this->_table['quality_management']['view'] = $quality_management->_createView($this->_parameters[1]);
-                // var_dump($this->_table['quality_management']['view']);
             } /**
              */
             
@@ -357,8 +340,6 @@ namespace Application\Controller
                          * Poza otworzyć arkusz (sheet) kontroli jakości... :)
                          */
                         
-                        // $quality_management->sheet = new \Module\Quality_management\Sheet ();
-                        
                         /**
                          * Po utworzeniu arkusza należy przejść do kroku 2...
                          * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
@@ -396,10 +377,7 @@ namespace Application\Controller
                  * oraz przejść do review z podkreślonym danym wspisem,
                  * albo do view z danym wpisem.
                  */
-                } else {
-                    // jeśli to zostanie wywołane?
-                    // czy to jest błąd?
-                }
+                } else {}
             } else {
             /**
              * Główna qm? Nie wiem...
@@ -408,7 +386,6 @@ namespace Application\Controller
              *
              * 2. Tutaj chyba nic nie będzie się robić. To póki co głowna
              */
-                // print 'else na qm :D';
             }
         }
     }
