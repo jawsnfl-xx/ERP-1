@@ -38,6 +38,7 @@
  *
  *
  *
+ *
  */
 require (dirname(__FILE__) . '/Smarty.class.php');
 
