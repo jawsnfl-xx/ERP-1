@@ -8,14 +8,7 @@
 	<div class="panel-heading">
 		Przegląd arkuszów kontrolnych
 		<div class="pull-right">
-			<div class="btn-group">
-				<button type="button" class="btn btn-primary">
-					<span class="glyphicon glyphicon-save"></span> Pobierz zaznaczone
-				</button>
-				<button type="button" class="btn btn-primary ">
-					<span class="glyphicon glyphicon-search"></span> Szukaj
-				</button>
-			</div>
+			<a href="#"> cyc</a>
 		</div>
 	</div>
 	<div class="panel-body">
@@ -24,11 +17,10 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-	<div class="col-md-12">
-		<div class="table-responsive">
-			<table class="table table-bordered">
-				{foreach from=$table['quality_management']['list'] item=row
-				name=row}
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			{foreach from=$table['quality_management']['list'] item=row name=row}
+			<tbody>
 				<tr>
 					<td>{$smarty.foreach.row.iteration}</td>
 					<td><a
@@ -57,27 +49,21 @@
 					</td>
 				</tr>
 				{/foreach}
-			</table>
-			<ul class="pager">
-				<li class="previous"><a href="#">&larr; Older</a></li>
-				<ul class="pagination pagination-lg">
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#">6</a></li>
-					<li><a href="#">7</a></li>
-					<li><a href="#">8</a></li>
-					<li><a href="#">9</a></li>
-				</ul>
-				<li class="next"><a href="#">Newer &rarr;</a></li>
+			</tbody>
+		</table>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item">
+			<ul class="pagination">
+				<li><a href="#">&laquo;</a></li> {foreach
+				from=$table['quality_management']['pager'] item=pager}
+				<li><a
+					href="/home/quality_management/review/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
+				{/foreach}
+				<li><a href="#">&raquo;</a></li>
 			</ul>
-		</div>
-		<div class="col-xs-6"></div>
-	</div>
-	<div class="row">
-		<div class="col-md-4"></div>
+		</li>
+	</ul>
+</div>
 
-	</div>
 </div>
