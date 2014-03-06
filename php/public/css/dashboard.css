@@ -104,3 +104,9 @@ body {
 .table>tbody+tbody {
 	border-top: 1px solid #ddd;
 }
+
+.dimension {
+	border: none;
+	margin-left: 0px;
+	margin-right: 0px;
+}

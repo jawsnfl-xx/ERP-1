@@ -113,7 +113,22 @@
 			</tr>
 			<tr>
 				<td><span>89,7</span></td>
-				<td><b>N7</b><span> </span></td>
+				<td>
+					<div class="row dimension">
+						<div class="col-sm-3">
+							<span><br />
+							<strong>N6</strong></span>
+						</div>
+						<div class="col-sm-8 col-sm-offset-1">
+							<div class="row">
+								<span>-0,02</span>
+							</div>
+							<div class="row">
+								<span>-0,06</span>
+							</div>
+						</div>
+					</div>
+				</td>
 				<td><input type="text" class="form-control input-sm"
 					id="exampleInputEmail1" placeholder=""
 					style="magin: 0; border: 0; box-shadow: none;"></td>
