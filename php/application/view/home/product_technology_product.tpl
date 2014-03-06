@@ -68,36 +68,124 @@
 </div>
 {elseif $parameters['1'] eq 'view' and $parameters['2'] neq '' }
 <div class="panel panel-default">
-	<div class="panel-heading">Nunc luctus, lacus id aliquet
-		bibendum, nunc mauris imperdiet urna</div>
+	<div class="panel-heading">Informacje o produkcie</div>
 	<div class="panel-body">
-		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
-			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
-			ultricies commodo.</p>
-		<h4>TODO:</h4>
-		<ul>
-			<li>podział na arkusze:
-				<ul>
-					<li>informacje ogólne,</li>
-					<li>technologia,</li>
-					<li>kontrola</li>
-				</ul>
-			</li>
-			<li>sprawdzanie stanu wypełnienia danych dla produktu</li>
-			<li>w przyszłości: obliczałkę tego, jaki jest poziom
-				uzupełnienia danych dla poszczególnego produktu</li>
-		</ul>
+		<p>lorem enean et nunc pulvinar, ornare nisl nec, tempor elit.
+			Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a
+			accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare
+			nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac ornare nunc.
+			Ut vestibulum sem a accumsan vehicula. Vestibulum nec ultenean et
+			nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat volutpat.
+			Vivamus ac ornare nunc. Ut vestibulum sem a accumsan vehicula.
+			Vestibulu</p>
+		<p>m nec ultenean et nunc pulvinar, ornare nisl nec, tempor elit.
+			Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a
+			accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare
+			nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac</p>
 	</div>
-	<div class="panel-body">
-		<ul>
-			{foreach from=$table['product']['view'] item=row}
-			<li>{$row['id_products']}</li>
-			<li>{$row['products_name']}</li>
-			<li>{$row['units_id_units_primary']}</li>
-			<li>{$row['units_id_units_secondary']}</li> {/foreach}
-		</ul>
-	</div>
+	<ul class="list-group">
+		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam
+				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
+				vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare nisl nec,
+				tempor elit. Aliquam erat vol</p></li>
+		<li class="list-group-item list-group-item-header"><span>Kontrola
+				jakości</span></li>
+		<li class="list-group-item">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="alert alert-success">
+						<h4>Arkusz jest poprawny</h4>
+						<p>lorem enean et nunc pulvinar, ornare nisl nec, tempor elit.
+							Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem
+							a accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar,
+							ornare nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac
+							ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulum
+							nec ultenean et nunc pulvinar, ornare nisl nec, tempor elit.
+							Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem
+							a accumsan vehicula. Vestibulu</p>
+					</div>
+					<div class="alert alert-warning">
+						<h4>Istniejący arkusz kontroli jakości jest niekompletny lub
+							nieaktualny</h4>
+						<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+							vestibulum sem a accumsan vehicula. Vestibulum nec ultenean et
+							nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat
+							volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
+							vehicula. Vestibulu</p>
+						<a href="#" class="btn btn-warning">format</a>
+					</div>
+					<div class="alert alert-danger">
+						<h4>Brak arkusza kontroli jakości</h4>
+						<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+							vestibulum sem a accumsan vehicula. Vestibulu</p>
+						<a href="#" class="btn btn-danger">zrób coś</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="panel panel-default">
+					<div class="panel-heading">Ostatnio wykonane badania</div>
+					<div class="panel-body">
+						<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+							vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut vestibulum
+							sem a accumsan vehicula. Vestibulu</p>
+					</div>
+					<table class="table">
+						<tr>
+							<th>L.p.</th>
+							<th>Data wykonania</th>
+							<th>Pracownik</th>
+							<th>Nr wysyłki</th>
+							<th>Nr skrzyni</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td><a href="#">2000-01-01 12:00:00</a></td>
+								<td>Lorem Nowak</td>
+								<td>666870</td>
+								<td>123213</td>
+							</tr>
+							<tr>
+								<td>2</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+								<td>Lorem Nowak</td>
+								<td>566870</td>
+								<td>123213</td>
+							</tr>
+							<tr>
+								<td>3</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+								<td>Lorem Nowak</td>
+								<td>166870</td>
+								<td>723213</td>
+							</tr>
+							<tr>
+								<td>4</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+								<td>Lorem Nowak</td>
+								<td>966870</td>
+								<td>923213</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td><a href="#">2000-01-01 12:00:00</a></td>
+								<td>Lorem Nowak</td>
+								<td>766870</td>
+								<td>823213</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</li>
+		<li class="list-group-item list-group-item-header"><span>Technologia</span></li>
+		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam
+				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
+				vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare nisl nec,
+				tempor elit. Aliquam erat vol</p></li>
+	</ul>
+
 	<div class="panel-footer">Nunc luctus, lacus id aliquet bibendum,
 		nunc mauris imperdiet urna</div>
 </div>

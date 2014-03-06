@@ -10,7 +10,6 @@
 	<div class="panel-body"></div>
 	<table class="table table-responsive table-bordered">
 		{foreach from=$table['quality_management']['view'] item=row name=row}
-
 		<tr>
 			<th colspan="2"></th>
 			<th>nazwa detalu</th>
@@ -18,18 +17,14 @@
 			<th>data wykonania</th>
 			<th colspan="2">{$row.date_end}</th>
 		</tr>
-
 		{/foreach}
-
 		<th colspan="2">badany wymiar</th>
-
 		<th>1</th>
 		<th>2</th>
 		<th>3</th>
 		<th>4</th>
 		<th>5</th>
 		</tr>
-
 		<tbody>
 			{foreach from=$table['dimension']['list'] item=row name=row}
 			<tr>
@@ -116,8 +111,7 @@
 				<td>
 					<div class="row dimension">
 						<div class="col-sm-3">
-							<span><br />
-							<strong>N6</strong></span>
+							<span><br /> <strong>N6</strong></span>
 						</div>
 						<div class="col-sm-8 col-sm-offset-1">
 							<div class="row">
@@ -308,7 +302,6 @@
 			</tr>
 		</tbody>
 	</table>
-
 	<ul class="list-group">
 		<li class="list-group-item">Cras justo odio</li>
 		<li class="list-group-item">Dapibus ac facilisis in</li>
@@ -316,6 +309,7 @@
 		<li class="list-group-item">Porta ac consectetur ac</li>
 		<li class="list-group-item">Vestibulum at eros</li>
 	</ul>
+	<div class="panel-footer">
+	<h3>cyceki</h3></div>
 
-	<div class="panel-footer">Panelowa stópka</div>
 </div>
