@@ -17,7 +17,7 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-	<div class="table-responsive">
+	
 		<table class="table table-bordered">
 			{foreach from=$table['quality_management']['list'] item=row name=row}
 			<tbody>
@@ -35,16 +35,11 @@
 					<td>{$row.date_end}</td>
 					<td>
 						<div class="pull-right">
-							<input type="checkbox">
-							<button type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-save"></span>
-							</button>
-							<button type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-bookmark"></span>
-							</button>
-							<button type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-print"></span>
-							</button>
+							<input type="checkbox"> <a
+								href="javascript:window.print()" type="button"
+								class="btn btn-default"> <span
+								class="glyphicon glyphicon-print"></span>
+							</a>
 						</div>
 					</td>
 				</tr>
