@@ -6,6 +6,7 @@
 		{else} <span>Produkt i technologia</span> {/if} {if $parameters['0']
 		eq 'product'}
 	</li>
+
 	<li class="active">{if $parameters['1'] neq ''} <a
 		href="/home/product_technology/product">Produkt</a> {else} <span>Produkt</span>
 		{/if}
@@ -18,10 +19,15 @@
 file='./product_technology_product.tpl'} {elseif $parameters['0'] eq
 'technology'} {include file='./product_technology_technology.tpl'}
 {else}
-<ul>
-	<li><a href="/home/product_technology/product">Produkt</a></li>
-	<li><a href="/home/product_technology/technology">Technologia</a></li>
-</ul>
+<div class="col-md-3">
+	<div class="list-group">
+		<a href="/home/product_technology/product" class="list-group-item">Produkt
+			<span class="badge pull-right">666</span>
+		</a> <a href="/home/product_technology/technology" class="list-group-item">Technologia
+			<span class="badge pull-right">23</span>
+		</a>
+	</div>
+</div>
 {/if}
 <script src="/public/js/jquery.js"></script>
 <script src="/public/js/bootstrap.js"></script>

@@ -233,15 +233,15 @@
 	</div>
 	<div class="table-responsive">
 		<table class="table table-bordered">
-				<tr>
-					<th>Wymiary</th>
-					<th>Tolerancja</th>
-					<th>1</th>
-					<th>2</th>
-					<th>3</th>
-					<th>5</th>
-					<th>6</th>
-				</tr>
+			<tr>
+				<th>Wymiary</th>
+				<th>Tolerancja</th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>5</th>
+				<th>6</th>
+			</tr>
 			<tbody>
 				<tr>
 					<td><input type="email" class="form-control" id="inputEmail3"
