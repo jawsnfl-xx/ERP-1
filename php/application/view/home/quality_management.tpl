@@ -12,30 +12,30 @@
 	<li class="active"><span>Szczegóły</span></li> {else} {/if}
 </ol>
 {if $parameters['0'] eq '' }
-<div class="row">
-	<div class="col-lg-12">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">Kontrola jakości</h3>
-			</div>
-			<div class="panel-body">
-				<p>Kontrola jakości pozwala (póki co) na tworzenie, przegląd i
-					edycję arkuszy kontrolnych.</p>
-					<div class="row">
-	<div class="col-lg-4">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Kontrola jakości</h3>
+		<p>Kontrola jakości pozwala (póki co) na tworzenie, przegląd i
+			edycję arkuszy kontrolnych.</p>
+	</div>
+	<div class="panel-body">
+
+		<div class="row">
+			<div class="col-md-6">
 				<h2>Utwórz</h2>
-				<h5>Tworzenie nowego arkusza</h5>
-				<p>Tutaj możesz utworzyć nowy arkusz kontroli pomiaru.</p>
+				<h5>Tworzenie nowego arkusza.</h5>
+				<h5>Tutaj możesz utworzyć nowy arkusz kontroli pomiaru.</h5>
 				<div>
 					<a class="btn btn-primary btn-block"
 						href="/home/quality_management/add" role="button">Dalej
 						&raquo;</a>
 				</div>
 			</div>
-	<div class="col-lg-4">
+			<div class="col-md-6">
 				<h2>Przegląd</h2>
-				<p>Ta opcja pozwala na przegląd dotychczas utworzonych arkuszy,
-					włącznie z ich edycją, drukowaniem i pobraniem.</p>
+				<h5>Ta opcja pozwala na przegląd dotychczas utworzonych
+					arkuszy.</h5>
+				<h5>Umożliwia również ich edycję, wydruk i pobranie.</h5>
 				<div>
 					<a class="btn btn-default btn-block"
 						href="/home/quality_management/review" role="button">Dalej
@@ -43,13 +43,13 @@
 				</div>
 			</div>
 		</div>
-			</div>
-		</div>
 	</div>
+</div>
+</div>
 </div>
 
 
-	</div>
+</div>
 </div>
 {elseif $parameters['0'] eq 'view' } {include
 file='./quality_management_view.tpl'} {elseif $parameters['0'] eq
