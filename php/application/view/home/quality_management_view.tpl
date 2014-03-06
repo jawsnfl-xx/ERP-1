@@ -1,6 +1,12 @@
 <div class="panel panel-default">
-	<div class="panel-heading">Nunc luctus, lacus id aliquet
-		bibendum, nunc mauris imperdiet urna</div>
+	<div class="panel-heading">
+		Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet urna
+		<div class="pull-right">
+			<a href="javascript:window.print()" type="button"
+				class="btn btn-default"> <span class="glyphicon glyphicon-print"></span>
+			</a>
+		</div>
+	</div>
 	<div class="panel-body"></div>
 	<table class="table table-responsive table-bordered">
 		{foreach from=$table['quality_management']['view'] item=row name=row}
