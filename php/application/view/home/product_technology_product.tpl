@@ -122,60 +122,150 @@
 					</div>
 				</div>
 			</div>
-			<div class="container-fluid">
-				<div class="panel panel-default">
-					<div class="panel-heading">Ostatnio wykonane badania</div>
-					<div class="panel-body">
-						<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-							vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut vestibulum
-							sem a accumsan vehicula. Vestibulu</p>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">Ostatnio wykonane badania</div>
+						<div class="panel-body">
+							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+								vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut vestibulum
+								sem a accumsan vehicula. Vestibulu</p>
+						</div>
+						<table class="table table-condensed table-hover">
+							<tr>
+								<th>L.p.</th>
+								<th>Data wykonania</th>
+								<th>Pracownik</th>
+								<th>Nr wysyłki</th>
+								<th>Nr skrzyni</th>
+							</tr>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+									<td>Lorem Nowak</td>
+									<td>666870</td>
+									<td>123213</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+									<td>Lorem Nowak</td>
+									<td>566870</td>
+									<td>123213</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+									<td>Lorem Nowak</td>
+									<td>166870</td>
+									<td>723213</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+									<td>Lorem Nowak</td>
+									<td>966870</td>
+									<td>923213</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td><a href="#">2000-01-01 12:00:00</a></td>
+									<td>Lorem Nowak</td>
+									<td>766870</td>
+									<td>823213</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
-					<table class="table">
-						<tr>
-							<th>L.p.</th>
-							<th>Data wykonania</th>
-							<th>Pracownik</th>
-							<th>Nr wysyłki</th>
-							<th>Nr skrzyni</th>
-						</tr>
-						<tbody>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">Partie produktu z niekompletnym
+							badaniem</div>
+						<div class="panel-body">
+							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+								vestibulum sem t volutpat. </p>
+						</div>
+						<table class="table table-condensed table-hover">
 							<tr>
-								<td>1</td>
-								<td><a href="#">2000-01-01 12:00:00</a></td>
-								<td>Lorem Nowak</td>
-								<td>666870</td>
-								<td>123213</td>
+								<th>L.p.</th>
+
+								<th>Nr wysyłki</th>
+								<th>Nr skrzyni</th>
 							</tr>
+							<tbody>
+								<tr>
+									<td>1</td>
+
+
+									<td>666870</td>
+									<td>123213</td>
+								</tr>
+								<tr>
+									<td>2</td>
+
+									<td>566870</td>
+									<td>123213</td>
+								</tr>
+								<tr>
+									<td>3</td>
+
+
+									<td>166870</td>
+									<td>723213</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">Partie produktu bez
+							przeprowadzonego badania</div>
+						<div class="panel-body">
+							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+								vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut vestibulum
+								sem a accumsan vehicula. Vestibulu</p>
+						</div>
+						<table class="table table-condensed table-hover">
 							<tr>
-								<td>2</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
-								<td>Lorem Nowak</td>
-								<td>566870</td>
-								<td>123213</td>
+								<th>L.p.</th>
+
+								<th>Nr wysyłki</th>
+								<th>Nr skrzyni</th>
 							</tr>
-							<tr>
-								<td>3</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
-								<td>Lorem Nowak</td>
-								<td>166870</td>
-								<td>723213</td>
-							</tr>
-							<tr>
-								<td>4</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
-								<td>Lorem Nowak</td>
-								<td>966870</td>
-								<td>923213</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td><a href="#">2000-01-01 12:00:00</a></td>
-								<td>Lorem Nowak</td>
-								<td>766870</td>
-								<td>823213</td>
-							</tr>
-						</tbody>
-					</table>
+							<tbody>
+								<tr>
+									<td>1</td>
+
+
+									<td>666870</td>
+									<td>123213</td>
+								</tr>
+								<tr>
+									<td>2</td>
+
+									<td>566870</td>
+									<td>123213</td>
+								</tr>
+								<tr>
+									<td>3</td>
+
+
+									<td>166870</td>
+									<td>723213</td>
+								</tr>
+								<tr>
+									<td>4</td>
+
+									<td>966870</td>
+									<td>923213</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</li>
