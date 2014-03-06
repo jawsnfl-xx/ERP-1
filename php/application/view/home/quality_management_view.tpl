@@ -74,7 +74,7 @@
 			{/foreach}
 			<tr>
 				<td><span>&#8960; 56</span></td>
-				<td><span></span></td>
+				<td><span>&plusmn; 0,2</span></td>
 				<td><input type="text" class="form-control input-sm"
 					id="exampleInputEmail1" placeholder=""
 					style="magin: 0; border: 0; box-shadow: none;"></td>
@@ -93,7 +93,7 @@
 			</tr>
 			<tr>
 				<td><span>&#8960; 257</span></td>
-				<td><span>0,2<br />0
+				<td><span>+0,2<br />-0,5
 				</span></td>
 				<td><input type="text" class="form-control input-sm"
 					id="exampleInputEmail1" placeholder=""
@@ -113,7 +113,7 @@
 			</tr>
 			<tr>
 				<td><span>89,7</span></td>
-				<td><span>34</span></td>
+				<td><b>N7</b><span> </span></td>
 				<td><input type="text" class="form-control input-sm"
 					id="exampleInputEmail1" placeholder=""
 					style="magin: 0; border: 0; box-shadow: none;"></td>
@@ -132,7 +132,16 @@
 			</tr>
 			<tr>
 				<td><span>&#8960; 56</span></td>
-				<td><span></span></td>
+				<td>
+					<div class="media">
+						<div class="pull-left">
+							<img class="media-object"
+								src="http://cdn.scratch.mit.edu/static/site/projects/thumbnails/211/3049.png"
+								alt="..." width="55" height="55">
+						</div>
+						<span>0,05A</span>
+					</div>
+				</td>
 				<td><input type="text" class="form-control input-sm"
 					id="exampleInputEmail1" placeholder=""
 					style="magin: 0; border: 0; box-shadow: none;"></td>
