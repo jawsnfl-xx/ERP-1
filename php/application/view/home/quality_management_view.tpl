@@ -1,23 +1,37 @@
 <div class="panel panel-default">
-	<div class="panel-heading">Nunc luctus, lacus id aliquet
-		bibendum, nunc mauris imperdiet urna</div>
-	<div class="panel-body">
-		<div class="col-md-2">Nazwa detalu</div>
-		<div class="col-md-2"></div>
+	<div class="panel-heading">
+		Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet urna
+		<div class="pull-right">
+			<a href="javascript:window.print()" type="button"
+				class="btn btn-default"> <span class="glyphicon glyphicon-print"></span>
+			</a>
+		</div>
 	</div>
-	<div class="table-responsive">
-		<table class="table table-bordered">
-			<tr>
-				<th>WYMIAR</th>
-				<th>TOLERANCJA</th>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-				<th>4</th>
-				<th>5</th>
-			</tr>
-					{foreach from=$table['dimension']['list'] item=row name=row}	
-	
+	<div class="panel-body"></div>
+	<table class="table table-responsive table-bordered">
+		{foreach from=$table['quality_management']['view'] item=row name=row}
+
+		<tr>
+			<th colspan="2"></th>
+			<th>nazwa detalu</th>
+			<th>{$row.products_name}</th>
+			<th>data wykonania</th>
+			<th colspan="2">{$row.date_end}</th>
+		</tr>
+
+		{/foreach}
+
+		<th colspan="2">badany wymiar</th>
+
+		<th>1</th>
+		<th>2</th>
+		<th>3</th>
+		<th>4</th>
+		<th>5</th>
+		</tr>
+
+		<tbody>
+			{foreach from=$table['dimension']['list'] item=row name=row}
 			<tr>
 				<td><h3>{$row.value}</h3></td>
 				<td>
@@ -268,7 +282,16 @@
 					id="exampleInputEmail1" placeholder=""
 					style="magin: 0; border: 0; box-shadow: none;"></td>
 			</tr>
-		</table>
-	</div>
+		</tbody>
+	</table>
+
+	<ul class="list-group">
+		<li class="list-group-item">Cras justo odio</li>
+		<li class="list-group-item">Dapibus ac facilisis in</li>
+		<li class="list-group-item">Morbi leo risus</li>
+		<li class="list-group-item">Porta ac consectetur ac</li>
+		<li class="list-group-item">Vestibulum at eros</li>
+	</ul>
+
 	<div class="panel-footer">Panelowa stópka</div>
 </div>

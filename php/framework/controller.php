@@ -7,8 +7,7 @@ namespace Framework
     use Framework\Registry as Registry;
     use Framework\Template as Template;
     use Framework\Controller\Exception as Exception;
-    // use Framework\Events as Events;
-    
+
     /**
      *
      * @author Marcin Pyrka

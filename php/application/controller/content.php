@@ -99,5 +99,12 @@ namespace Application\Controller
          */
         public function index()
         {}
+
+        /**
+         * @before init,
+         * @after notify
+         */
+        public function help()
+        {}
     }
 }

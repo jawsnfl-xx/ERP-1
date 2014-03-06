@@ -61,8 +61,8 @@ try {
     {
 
         /**
-         * 
-         * @param unknown $class
+         *
+         * @param unknown $class            
          */
         public static function autoload($class)
         {

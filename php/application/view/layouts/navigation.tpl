@@ -85,9 +85,11 @@
 
 				</ul>
 				<ul>
-				<div class="alert alert-primary" >
+				<button type="button" class="close" data-dismiss="alert"
+					aria-hidden="true">&times;</button>
+				<div class="alert alert-primary alert-dismissable">
 			W razie kłopotów, kilkaj <a href="/home/help" class="alert-link">w taki
-				fajny link do pliku pomocy</a>
+				fajny link do strony pomocy</a>
 		</div>
 		
 				</ul>

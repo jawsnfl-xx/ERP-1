@@ -1,5 +1,12 @@
 <?php
 
+
+/**
+ * UWAGA!
+ * Nastąpi przeniesienie kontrolerów jako moduły.
+ * 
+ */
+
 /**
  *
  * @author Marcin
@@ -154,10 +161,7 @@ namespace Application
                 if (RequestMethods::get(url) === 'users/index') {
                     header("Location: /home/index");
                 }
-            } elseif (RequestMethods::get(url) === 'users/index') {
-                // nic nie robi
-            } else {
-                // print 'asdasd';
+            } elseif (RequestMethods::get(url) === 'users/index') {} else {
                 header("Location: /users/index");
             }
         }
