@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+@media
+print
+{
+* {
+	font-size: 12px;
+}
+}
