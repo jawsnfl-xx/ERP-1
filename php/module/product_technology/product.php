@@ -33,9 +33,11 @@ namespace Module\Product_technology
             $database = Registry::get("database");
             $data = NULL;
             
-            // var_dump ( $database );
-            $data = $database->_mysql->fetch_array('SELECT * FROM products LIMIT 100;');
-            // var_dump ( $data );
+            $data = $database->_mysql->fetch_array('SELECT * FROM products 
+                	left join units on units.id_units = products.units_id_units
+                	left join category_product on category_product.product_id_product = products.id_products
+                	left join category on category.id_category = category_product.category_id_category
+                    LIMIT 100;');
             return $data;
         }
 
@@ -48,9 +50,11 @@ namespace Module\Product_technology
             $database = Registry::get("database");
             $data = NULL;
             
-            // var_dump ( $database );
-            $data = $database->_mysql->fetch_array('SELECT * FROM products WHERE `products_name` LIKE \'%' . $_keywords . '%\' LIMIT 100;');
-            // var_dump ( $data );
+            $data = $database->_mysql->fetch_array('SELECT * FROM products
+                	left join units on units.id_units = products.units_id_units
+                	left join category_product on category_product.product_id_product = products.id_products
+                	left join category on category.id_category = category_product.category_id_category
+                    WHERE `products_name` LIKE \'%' . $_keywords . '%\' LIMIT 100;');
             return $data;
         }
 
@@ -103,7 +107,11 @@ namespace Module\Product_technology
              * PAMIĘTAJ!!!
              * limit działa przyrostowo!
              */
-            $data = $database->_mysql->fetch_array('SELECT * FROM products ORDER BY `products_name` ASC LIMIT ' . $limit_down . ' , ' . $limit_up . ';');
+            $data = $database->_mysql->fetch_array('SELECT * FROM products
+                	left join units on units.id_units = products.units_id_units
+                	left join category_product on category_product.product_id_product = products.id_products
+                	left join category on category.id_category = category_product.category_id_category
+                    ORDER BY `products_name` ASC LIMIT ' . $limit_down . ' , ' . $limit_up . ';');
             return $data;
         }
 
@@ -116,10 +124,11 @@ namespace Module\Product_technology
             $database = Registry::get("database");
             $data = NULL;
             
-            // var_dump ( $database );
-            $data = $database->_mysql->fetch_array('SELECT * FROM products WHERE
-    `id_products` = ' . $_id . ' LIMIT 1;');
-            // var_dump ( $data );
+            $data = $database->_mysql->fetch_array('SELECT * FROM products
+                	left join units on units.id_units = products.units_id_units
+                	left join category_product on category_product.product_id_product = products.id_products
+                	left join category on category.id_category = category_product.category_id_category
+                    WHERE `id_products` = ' . $_id . ' LIMIT 1;');
             return $data;
         }
     }
