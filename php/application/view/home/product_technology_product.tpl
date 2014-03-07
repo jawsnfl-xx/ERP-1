@@ -29,8 +29,9 @@
 		<tr>
 			<th>L.p.</th>
 			<th>Nazwa</th>
-			<th></th>
-			<th></th>
+			<th>id units</th>
+			<th>id units1</th>
+<th></th>
 		</tr>
 		{foreach from=$table['product']['list'] item=row name=row}
 
