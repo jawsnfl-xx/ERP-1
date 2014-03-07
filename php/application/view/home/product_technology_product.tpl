@@ -203,7 +203,7 @@
 							<tbody>
 										{foreach from=$table['packages']['list'] item=row name=row}
 								<tr>
-									<td>1</td>
+									<td>{$smarty.foreach.row.iteration}</td>
 									<td>{$row.id_packages}</td>
 									<td>{$row.packages_number}</td>
 									<td>{$row.warehouse_id_warehouse}</td>
@@ -233,7 +233,7 @@
 							<tbody>
 								{foreach from=$table['packages']['list'] item=row name=row}
 								<tr>
-									<td>1</td>
+									<td>{$smarty.foreach.row.iteration}</td>
 									<td>{$row.id_packages}</td>
 									<td>{$row.packages_number}</td>
 									<td>{$row.warehouse_id_warehouse}</td>
