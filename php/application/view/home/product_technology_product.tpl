@@ -185,7 +185,7 @@
 							badaniem</div>
 						<div class="panel-body">
 							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-								vestibulum sem t volutpat. </p>
+								vestibulum sem t volutpat.</p>
 						</div>
 						<table class="table table-condensed table-hover">
 							<tr>
@@ -240,26 +240,21 @@
 								<tr>
 									<td>1</td>
 
-
 									<td>666870</td>
 									<td>123213</td>
 								</tr>
 								<tr>
 									<td>2</td>
-
 									<td>566870</td>
 									<td>123213</td>
 								</tr>
 								<tr>
 									<td>3</td>
-
-
 									<td>166870</td>
 									<td>723213</td>
 								</tr>
 								<tr>
 									<td>4</td>
-
 									<td>966870</td>
 									<td>923213</td>
 								</tr>
@@ -270,14 +265,87 @@
 			</div>
 		</li>
 		<li class="list-group-item list-group-item-header"><span>Technologia</span></li>
-		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam
-				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-				vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare nisl nec,
-				tempor elit. Aliquam erat vol</p></li>
-	</ul>
+		<li class="list-group-item">
+			<table class="table table-bordered table-hover">
+				<tr>
+					<th>L.p.</th>
+					<th>Nazwa</th>
+					<th>Dział</th>
+					<th>Numer technologii</th>
+					<th>Data wdrożenia</th>
+					<th>Stanowisko</th>
+					<th>Technolog</th>
+					<th>Sprawdzający</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td><a href="/home/product_technology/view/1">534212</a></td>
+					<td>produkcja</td>
+					<td>10</td>
+					<td></td>
+					<td></td>
+					<td>Imperdiet Kowalski</td>
+					<td>Jan Bibendum</td>
 
-	<div class="panel-footer">Nunc luctus, lacus id aliquet bibendum,
-		nunc mauris imperdiet urna</div>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><a href="/home/product_technology/view/2">651232</a></td>
+					<td>produkcja</td>
+					<td>23</td>
+					<td></td>
+					<td></td>
+					<td>Imperdiet Kowalski</td>
+					<td>Jan Bibendum</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><a href="/home/product_technology/view/3">123512</a></td>
+					<td>produkcja</td>
+					<td>14</td>
+					<td></td>
+					<td></td>
+					<td>Imperdiet Kowalski</td>
+					<td>Jan Bibendum</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td><a href="/home/product_technology/view/4">900212</a></td>
+					<td>produkcja</td>
+					<td>13</td>
+					<td></td>
+					<td></td>
+					<td>Imperdiet Kowalski</td>
+					<td>Jan Bibendum</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td><a href="/home/product_technology/view/5">587212</a></td>
+					<td>produkcja</td>
+					<td>11</td>
+					<td></td>
+					<td></td>
+					<td>Imperdiet Kowalski</td>
+					<td>Jan Bibendum</td>
+				</tr>
+				</tbody>
+			</table>
+</div>
+
+
+
+<div class="col-md-4">
+	<table class="table table-bordered table-hover">
+
+		</tbody>
+	</table>
+</div>
+
+</div>
+</ul>
+
+<div class="panel-footer">Nunc luctus, lacus id aliquet bibendum,
+	nunc mauris imperdiet urna</div>
 </div>
 {elseif $parameters['1'] eq 'search' }
 <h3>Wpisano w pole szukania:</h3>
