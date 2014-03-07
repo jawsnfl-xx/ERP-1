@@ -129,7 +129,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-sm-12 col-md-12 col-lg-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">Ostatnio wykonane badania</div>
 						<div class="panel-body">
@@ -159,63 +159,67 @@
 						</table>
 					</div>
 				</div>
-				<div class="col-md-3">
-					<div class="panel panel-default">
-						<div class="panel-heading">Partie produktu z niekompletnym
-							badaniem</div>
-						<div class="panel-body">
-							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-								vestibulum sem t volutpat.</p>
-						</div>
-						<table class="table table-condensed table-hover">
-							<tr>
-								<th>L.p.</th>
-								<th>Nr wysyłki</th>
-								<th>Nr skrzyni</th>
-								<th>Magazyn</th>
-							</tr>
-							<tbody>
-								{foreach from=$table['packages']['list'] item=row name=row}
-								<tr>
-									<td>{$smarty.foreach.row.iteration}</td>
-									<td>{$row.id_packages}</td>
-									<td>{$row.packages_number}</td>
-									<td>{$row.warehouse_id_warehouse}</td>
-								</tr>
-								{/foreach}
+				<div class="col-sm-12 col-md-12 col-lg-6">
+					<div class="row">
+						<div class="col-sm-12 col-md-6 col-lg-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">Partie produktu z niekompletnym
+									badaniem</div>
+								<div class="panel-body">
+									<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+										vestibulum sem t volutpat.</p>
+								</div>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<th>L.p.</th>
+										<th>Nr wysyłki</th>
+										<th>Nr skrzyni</th>
+										<th>Magazyn</th>
+									</tr>
+									<tbody>
+										{foreach from=$table['packages']['list'] item=row name=row}
+										<tr>
+											<td>{$smarty.foreach.row.iteration}</td>
+											<td>{$row.id_packages}</td>
+											<td>{$row.packages_number}</td>
+											<td>{$row.warehouse_id_warehouse}</td>
+										</tr>
+										{/foreach}
 
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="panel panel-default">
-						<div class="panel-heading">Partie produktu bez
-							przeprowadzonego badania</div>
-						<div class="panel-body">
-							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-								vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut vestibulum
-								sem a accumsan vehicula. Vestibulu</p>
+									</tbody>
+								</table>
+							</div>
 						</div>
-						<table class="table table-condensed table-hover">
-							<tr>
-								<th>L.p.</th>
-								<th>Nr wysyłki</th>
-								<th>Nr skrzyni</th>
-								<th>Magazyn</th>
-							</tr>
-							<tbody>
-								{foreach from=$table['packages']['list'] item=row name=row}
-								<tr>
-									<td>{$smarty.foreach.row.iteration}</td>
-									<td>{$row.id_packages}</td>
-									<td>{$row.packages_number}</td>
-									<td>{$row.warehouse_id_warehouse}</td>
-								</tr>
-								{/foreach}
+						<div class="col-sm-12 col-md-6 col-lg-6">
+							<div class="panel panel-default">
+								<div class="panel-heading">Partie produktu bez
+									przeprowadzonego badania</div>
+								<div class="panel-body">
+									<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
+										vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut
+										vestibulum sem a accumsan vehicula. Vestibulu</p>
+								</div>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<th>L.p.</th>
+										<th>Nr wysyłki</th>
+										<th>Nr skrzyni</th>
+										<th>Magazyn</th>
+									</tr>
+									<tbody>
+										{foreach from=$table['packages']['list'] item=row name=row}
+										<tr>
+											<td>{$smarty.foreach.row.iteration}</td>
+											<td>{$row.id_packages}</td>
+											<td>{$row.packages_number}</td>
+											<td>{$row.warehouse_id_warehouse}</td>
+										</tr>
+										{/foreach}
 
-							</tbody>
-						</table>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
