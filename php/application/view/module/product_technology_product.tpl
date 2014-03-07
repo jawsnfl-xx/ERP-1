@@ -10,7 +10,7 @@
 		<p>Zawsze istnieje możliwość wyszukania nazwy produktu</p>
 		<div class="col-lg-6">
 			<form role="form" method="post"
-				action="/home/product_technology/product/search">
+				action="/module/product_technology/product/search">
 				<div class="input-group">
 					<input type="text" class="form-control" id="number"
 						placeholder="Wprowadź numer" name="number"> <span
@@ -21,7 +21,7 @@
 			</form>
 		</div>
 		<div class="col-lg-6">
-			<a href="/home/product_technology/product/add"
+			<a href="/module/product_technology/product/add"
 				class="btn btn-default">Dodaj ...</a>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 
 		<th>{$smarty.foreach.row.iteration}</th>
 		<td><a
-			href="/home/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
+			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
 		<td>{$row.units_id_units}</td>
 		<td>{$row.units_id_units1}</td>
 		</tr>
@@ -48,7 +48,7 @@
 			<li><a href="#">&laquo;</a></li> {foreach
 			from=$table['product']['pager'] item=pager}
 			<li><a
-				href="/home/product_technology/product/page/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
+				href="/module/product_technology/product/page/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
 			{/foreach}
 			<li><a href="#">&raquo;</a></li>
 		</ul>
@@ -62,7 +62,7 @@
 		<p>jksdf hgksjdhf gkshdgk jhsdfkjg hsdkjfhg ksjdfhg kjsdfhg
 			lkjafdhgl ksjdfhglk jsdhf glkjshdlkfjgh sdlkfj hg</p>
 		<form role="form" method="post"
-			action="/home/product_technology/product/_add">
+			action="/module/product_technology/product/_add">
 			<div class="input-group">
 				<input type="text" class="form-control" id="number"
 					placeholder="Wprowadź numer" name="number"> <span
@@ -242,7 +242,7 @@
 
 				<tr>
 					<td>1</td>
-					<td><a href="/home/product_technology/view/1"></a></td>
+					<td><a href="/module/product_technology/view/1"></a></td>
 					<td></td>
 					<td></td>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
@@ -254,7 +254,7 @@
 
 				<tr>
 					<td>2</td>
-					<td><a href="/home/product_technology/view/2">651232</a></td>
+					<td><a href="/module/product_technology/view/2">651232</a></td>
 					<td>produkcja</td>
 					<td>23</td>
 					<td></td>
@@ -264,7 +264,7 @@
 				</tr>
 				<tr>
 					<td>3</td>
-					<td><a href="/home/product_technology/view/3">123512</a></td>
+					<td><a href="/module/product_technology/view/3">123512</a></td>
 					<td>produkcja</td>
 					<td>14</td>
 					<td></td>
@@ -274,7 +274,7 @@
 				</tr>
 				<tr>
 					<td>4</td>
-					<td><a href="/home/product_technology/view/4">900212</a></td>
+					<td><a href="/module/product_technology/view/4">900212</a></td>
 					<td>produkcja</td>
 					<td>13</td>
 					<td></td>
@@ -284,7 +284,7 @@
 				</tr>
 				<tr>
 					<td>5</td>
-					<td><a href="/home/product_technology/view/5">587212</a></td>
+					<td><a href="/module/product_technology/view/5">587212</a></td>
 					<td>produkcja</td>
 					<td>11</td>
 					<td></td>
@@ -319,7 +319,7 @@
 	<tr>
 		<th>{$smarty.foreach.row.iteration}</th>
 		<td><a
-			href="/home/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
+			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
 		<td>{$row.units_id_units_primary}</td>
 		<td>{$row.units_id_units_secondary}</td>
 	</tr>

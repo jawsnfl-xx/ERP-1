@@ -37,9 +37,9 @@
 		<tbody>
 			<tr>
 				<td>{$smarty.foreach.row.iteration}</td>
-				<td><a	href="/home/quality_management/view/{$row.id_control_measurements}">
+				<td><a	href="/module/quality_management/view/{$row.id_control_measurements}">
 						{$row.id_control_measurements} </a> </td>
-						<td><a href="/home/product_technology/product/view/{$row.products_name}">{$row.products_name}</a></td>
+						<td><a href="/module/product_technology/product/view/{$row.products_name}">{$row.products_name}</a></td>
 						<td>{$row.products_id_products}</td>
 						<td>{$row.type_of_control_measurements_id_type_of_control_measurements}</td>
 						<td>{$row.packages_id_packages}</td>
@@ -62,7 +62,7 @@
 			<li><a href="#">&laquo;</a></li> {foreach
 			from=$table['quality_management']['pager'] item=pager}
 			<li><a
-				href="/home/quality_management/review/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
+				href="/module/quality_management/review/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
 			{/foreach}
 			<li><a href="#">&raquo;</a></li>
 		</ul>

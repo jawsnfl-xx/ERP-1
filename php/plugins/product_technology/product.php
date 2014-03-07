@@ -1,8 +1,8 @@
 <?php
-namespace Module\Product_technology
+namespace Plugins\Product_technology
 {
 
-    use Module\Product_technology as Product_technology;
+    use Plugins\Product_technology as Product_technology;
     use Framework\Registry as Registry;
 
     /**

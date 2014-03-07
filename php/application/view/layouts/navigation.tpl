@@ -71,16 +71,16 @@
 				</ul>
 				<hr />
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/home/quality_management">Kontrola jakości</a></li>
+					<li><a href="/module/quality_management">Kontrola jakości</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="/home/settings">Ustawienia</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/home/product_technology">Produkt i
+					<li><a href="/module/product_technology">Produkt i
 							technologie</a></li>
-					<li><a href="/home/product_technology/product">Produkt</a></li>
-					<li><a href="/home/product_technology/technology">Technologie</a></li>
+					<li><a href="/module/product_technology/product">Produkt</a></li>
+					<li><a href="/module/product_technology/technology">Technologie</a></li>
 
 
 				</ul>
@@ -88,7 +88,7 @@
 				<button type="button" class="close" data-dismiss="alert"
 					aria-hidden="true">&times;</button>
 				<div class="alert alert-primary alert-dismissable">
-			W razie kłopotów, kilkaj <a href="/home/help" class="alert-link">w taki
+			W razie kłopotów, kilkaj <a href="/content/help" class="alert-link">w taki
 				fajny link do strony pomocy</a>
 		</div>
 		

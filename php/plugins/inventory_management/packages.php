@@ -1,8 +1,8 @@
 <?php
-namespace Module\Inventory_management
+namespace Plugins\Inventory_management
 {
 
-    use Module\Sales_management as Inventory_management;
+    use Plugins\Sales_management as Inventory_management;
     use Framework\Registry as Registry;
 
     /**
