@@ -2,13 +2,13 @@
 <ol class="breadcrumb">
 	<li><a href="/home/index"><span>Główna</span></a></li>
 	<li>{if $parameters['0'] neq ''} <a
-		href="/home/product_technology"><span>Produkt i technologia</span></a>
+		href="/module/product_technology"><span>Produkt i technologia</span></a>
 		{else} <span>Produkt i technologia</span> {/if} {if $parameters['0']
 		eq 'product'}
 	</li>
 
 	<li class="active">{if $parameters['1'] neq ''} <a
-		href="/home/product_technology/product">Produkt</a> {else} <span>Produkt</span>
+		href="/module/product_technology/product">Produkt</a> {else} <span>Produkt</span>
 		{/if}
 	</li> {elseif $parameters['0'] eq 'technology'}
 	<li class="active"><span>Technologia</span></li> {else} {/if} {if
@@ -19,11 +19,12 @@
 file='./product_technology_product.tpl'} {elseif $parameters['0'] eq
 'technology'} {include file='./product_technology_technology.tpl'}
 {else}
+<!-- i tu by można było zrobić dodatkowo ilość aktualizacji w danym miesiącu (badges) -->
 <div class="col-md-3">
 	<div class="list-group">
-		<a href="/home/product_technology/product" class="list-group-item">Produkt
-			<span class="badge pull-right">666</span>
-		</a> <a href="/home/product_technology/technology" class="list-group-item">Technologia
+		<a href="/module/product_technology/product" class="list-group-item">Produkt
+			<span class="badge pull-right">15</span>
+		</a> <a href="/module/product_technology/technology" class="list-group-item">Technologia
 			<span class="badge pull-right">23</span>
 		</a>
 	</div>
