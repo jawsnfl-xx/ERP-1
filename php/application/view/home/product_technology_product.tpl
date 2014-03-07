@@ -146,41 +146,15 @@
 								<th>Nr skrzyni</th>
 							</tr>
 							<tbody>
+								{foreach from=$table['packages']['list'] item=row name=row}
 								<tr>
-									<td>1</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
+									<td>{$smarty.foreach.row.iteration}</td>
+									<td><a href="#"></a></td>
 									<td>Lorem Nowak</td>
-									<td>666870</td>
-									<td>123213</td>
+									<td>{$row.id_packages}</td>
+									<td>{$row.packages_number}</td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
-									<td>Lorem Nowak</td>
-									<td>566870</td>
-									<td>123213</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
-									<td>Lorem Nowak</td>
-									<td>166870</td>
-									<td>723213</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
-									<td>Lorem Nowak</td>
-									<td>966870</td>
-									<td>923213</td>
-								</tr>
-								<tr>
-									<td>5</td>
-									<td><a href="#">2000-01-01 12:00:00</a></td>
-									<td>Lorem Nowak</td>
-									<td>766870</td>
-									<td>823213</td>
-								</tr>
+								{/foreach}
 							</tbody>
 						</table>
 					</div>
@@ -196,12 +170,12 @@
 						<table class="table table-condensed table-hover">
 							<tr>
 								<th>L.p.</th>
-
 								<th>Nr wysyłki</th>
 								<th>Nr skrzyni</th>
+								<th>Magazyn</th>
 							</tr>
 							<tbody>
-										{foreach from=$table['packages']['list'] item=row name=row}
+								{foreach from=$table['packages']['list'] item=row name=row}
 								<tr>
 									<td>{$smarty.foreach.row.iteration}</td>
 									<td>{$row.id_packages}</td>
@@ -226,9 +200,9 @@
 						<table class="table table-condensed table-hover">
 							<tr>
 								<th>L.p.</th>
-
 								<th>Nr wysyłki</th>
 								<th>Nr skrzyni</th>
+								<th>Magazyn</th>
 							</tr>
 							<tbody>
 								{foreach from=$table['packages']['list'] item=row name=row}
@@ -326,7 +300,6 @@
 	</table>
 </div>
 
-</div>
 </ul>
 
 <div class="panel-footer">Nunc luctus, lacus id aliquet bibendum,
