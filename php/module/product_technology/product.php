@@ -26,15 +26,6 @@ namespace Module\Product_technology
 
         /**
          *
-         * @param unknown $_id            
-         */
-        public function _isExists($_id)
-        {
-            $database = Registry::get("database");
-        }
-
-        /**
-         *
          * @return unknown
          */
         public function _createList()
