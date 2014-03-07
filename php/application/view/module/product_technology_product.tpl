@@ -31,7 +31,7 @@
 			<th>Nazwa</th>
 			<th>id units</th>
 			<th>id units1</th>
-			<th></th>
+<th></th>
 		</tr>
 		{foreach from=$table['product']['list'] item=row name=row}
 
@@ -150,7 +150,7 @@
 								{foreach from=$table['packages']['list'] item=row name=row}
 								<tr>
 									<td>{$smarty.foreach.row.iteration}</td>
-									<td><a href="#"></a>2000-01-01 12:00:00</td>
+									<td><a href="#"></a></td>
 									<td>Lorem Nowak</td>
 									<td>{$row.id_packages}</td>
 									<td>{$row.packages_number}</td>

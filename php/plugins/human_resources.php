@@ -1,5 +1,5 @@
 <?php
-namespace Module
+namespace Plugins
 {
 
     /**
@@ -7,7 +7,7 @@ namespace Module
      * @author Marcin Pyrka
      *        
      */
-    class Module extends \Framework\Base
+    class Human_resources extends Plugins
     {
 
         /**

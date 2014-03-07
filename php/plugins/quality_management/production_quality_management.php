@@ -5,16 +5,15 @@
  * @author Marcin
  *
  */
-namespace Module\Quality_management
+namespace Plugins\Quality_management
 {
 
     /**
      */
-    use Module as Module;
     use Framework\Registry as Registry;
-    use Module\Quality_management as Quality_management;
-    use Module\Product_technology as Product_technology;
-    use Module\Product_technology\Product as Product;
+    use Plugins\Quality_management as Quality_management;
+    use Plugins\Product_technology as Product_technology;
+    use Plugins\Product_technology\Product as Product;
 
     /**
      *

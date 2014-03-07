@@ -1,8 +1,8 @@
 <?php
-namespace Module\Sales_management
+namespace Plugins\Sales_management
 {
 
-    use Module\Sales_management as Sales_management;
+    use Plugins\Sales_management as Sales_management;
     use Framework\Registry as Registry;
 
     /**

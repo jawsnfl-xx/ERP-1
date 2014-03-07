@@ -11,14 +11,12 @@ namespace Application\Controller
     use Application\Controller as Controller;
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
+    use Framework\View;
+    use Framework\Request;
 
     /**
      *
      * @author Marcin
-     *         @NOTE
-     *         W ten sposób można zapisać podstawę działania kontrolerów.
-     *         Za pomocą wpisów w komentarzach przez deklaracją
-     *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
      *        
      */
     class Module extends Controller
@@ -30,14 +28,27 @@ namespace Application\Controller
         protected $_parameters;
 
         /**
+         * @readwrite
+         */
+        protected $_table = array();
+
+        /**
+         * @readwrite
+         */
+        protected $_options;
+
+        /**
          *
          * @param unknown $options            
          */
-        public function __construct($options)
+        public function __construct($options = array())
         {
-            /**
-             */
             $this->_parameters = $options['parameters'];
+        }
+
+        public function givmetable()
+        {
+            return ($this->_table);
         }
 
         /**
@@ -81,15 +92,47 @@ namespace Application\Controller
         /**
          * @before init, authenticate,
          * @after notify
+         */
+        public function index()
+        {}
+
+        /**
+         * @before init, authenticate,
+         * @after notify
+         *
+         * @NOTE
+         * Podstrony możliwe dla settings:
+         * - access permissions
+         * - properties
+         * - system settings
+         */
+        public function settings()
+        {
+            /**
+             */
+            if ($this->_parameters[0] === 'access_permissions') {} 
+
+            /**
+             */
+            elseif ($this->_parameters[0] === 'properties') {} 
+
+            /**
+             */
+            elseif ($this->_parameters[0] === 'system settings') {}
+        }
+
+        /**
+         * @before init, authenticate,
+         * @after notify
          *
          * @NOTE
          */
         public function product_technology()
         {
-            $product = new \Module\Product_technology\Product();
-            $orders = new \Module\Sales_management\Orders();
-            $packages = new \Module\Inventory_management\Packages();
-            $quality_management = new \Module\Quality_management\Production_quality_management();
+            $product = new \Plugins\Product_technology\Product();
+            $orders = new \Plugins\Sales_management\Orders();
+            $packages = new \Plugins\Inventory_management\Packages();
+            $quality_management = new \Plugins\Quality_management\Production_quality_management();
             
             if ($this->_parameters[0] === 'product') {
                 
@@ -184,7 +227,7 @@ namespace Application\Controller
          */
         public function quality_management()
         {
-            $quality_management = new \Module\Quality_management\Production_quality_management();
+            $quality_management = new \Plugins\Quality_management\Production_quality_management();
             
             /**
              */

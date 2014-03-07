@@ -1,5 +1,5 @@
 <?php
-namespace Module
+namespace Plugins
 {
 
     /**
@@ -7,7 +7,7 @@ namespace Module
      * @author Marcin Pyrka
      *        
      */
-    class Inventory_management extends Module
+    class Quality_management extends Plugins
     {
 
         /**

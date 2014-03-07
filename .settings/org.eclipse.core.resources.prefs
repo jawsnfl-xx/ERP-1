@@ -1,11 +1,4 @@
 eclipse.preferences.version=1
-encoding//php/application/view/home/product_technology.tpl=UTF-8
-encoding//php/application/view/home/product_technology_product.tpl=UTF-8
-encoding//php/application/view/home/product_technology_technology.tpl=UTF-8
-encoding//php/application/view/home/quality_management.tpl=UTF-8
-encoding//php/application/view/home/quality_management_add.tpl=UTF-8
-encoding//php/application/view/home/quality_management_review.tpl=UTF-8
-encoding//php/application/view/home/quality_management_view.tpl=UTF-8
 encoding//php/application/view/home/settings.tpl=UTF-8
 encoding//php/application/view/layouts/navigation.tpl=UTF-8
 encoding//php/application/view/users/index.tpl=UTF-8

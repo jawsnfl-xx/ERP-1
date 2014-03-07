@@ -1,13 +1,16 @@
 <?php
-namespace Module
+namespace Plugins\Product_technology
 {
+
+    use Plugins\Product_technology as Product_technology;
+    use Framework\Registry as Registry;
 
     /**
      *
      * @author Marcin Pyrka
      *        
      */
-    class Quality_management extends Module
+    class Technology extends Product_technology
     {
 
         /**

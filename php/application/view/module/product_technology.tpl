@@ -19,11 +19,10 @@
 file='./product_technology_product.tpl'} {elseif $parameters['0'] eq
 'technology'} {include file='./product_technology_technology.tpl'}
 {else}
-<!-- i tu by można było zrobić dodatkowo ilość aktualizacji w danym miesiącu (badges) -->
 <div class="col-md-3">
 	<div class="list-group">
 		<a href="/module/product_technology/product" class="list-group-item">Produkt
-			<span class="badge pull-right">15</span>
+			<span class="badge pull-right">666</span>
 		</a> <a href="/module/product_technology/technology" class="list-group-item">Technologia
 			<span class="badge pull-right">23</span>
 		</a>

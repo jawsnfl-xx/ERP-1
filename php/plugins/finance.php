@@ -1,16 +1,13 @@
 <?php
-namespace Module\Product_technology
+namespace Plugins
 {
-
-    use Module\Product_technology as Product_technology;
-    use Framework\Registry as Registry;
 
     /**
      *
      * @author Marcin Pyrka
      *        
      */
-    class Technology extends Product_technology
+    class Finance extends Plugins
     {
 
         /**
