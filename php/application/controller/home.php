@@ -130,11 +130,17 @@ namespace Application\Controller
         public function product_technology()
         {
             $product = new \Module\Product_technology\Product();
+            $orders = new \Module\Sales_management\Orders();
+            $packages = new \Module\Inventory_management\Packages();
+            $quality_management = new \Module\Quality_management\Production_quality_management();
             
             if ($this->_parameters[0] === 'product') {
                 
                 if ($this->_parameters[1] === 'view') {
                     $this->_table['product']['view'] = $product->_createView($this->_parameters[2]);
+                    $this->_table['orders']['list'] = $orders->_createListLimit(5);
+                    $this->_table['packages']['list'] = $packages->_createListLimit(5);
+                    $this->_table['quality_management']['list'] = $quality_management->_createListLimit(5);
                 } 
 
                 elseif ($this->_parameters[1] === 'add') {
@@ -228,11 +234,49 @@ namespace Application\Controller
             if ($this->_parameters[0] === 'review') {
                 
                 /**
-                 * Wyświetla listę wszystkich rozpoczętych do tej pory arkuszy kontrolnych
-                 * Dziwnie działa edycja na tablecie.
-                 * :-)
+                 * Sprawdzenie poprawności danych
                  */
-                $this->_table['quality_management']['list'] = $quality_management->_createList();
+                
+                if ($this->_parameters[1] === NULL) {
+                    $page = 1;
+                } else {
+                    $page = $this->_parameters[1];
+                }
+                
+                if ($this->_parameters[2] === NULL) {
+                    $limit = 20;
+                } else {
+                    $limit = $this->_parameters[2];
+                }
+                
+                /**
+                 * Wywołanie tabeli z bazy
+                 */
+                $this->_table['quality_management']['list'] = $quality_management->_createSoftList($page, $limit);
+                
+                /**
+                 * Budowa pagera
+                 *
+                 * UWAGA!
+                 * Napisać na szybko, później przenieść jako uniwersalny element...
+                 */
+                $count = $quality_management->_createListCount();
+                
+                /**
+                 * oblicza ile jest stron pełnych lub napoczętych
+                 */
+                $countPage = ceil($count / $limit);
+                /**
+                 * Teraz powinnien zbudować tablicę, z wartościami dla poszczególych klocków pagiera ;P
+                 */
+                $pager = array();
+                for ($i = 1; $i <= $countPage; $i ++) {
+                    $tmp = array();
+                    $tmp['page'] = $i;
+                    $tmp['limit'] = $limit;
+                    $pager[] = $tmp;
+                }
+                $this->_table['quality_management']['pager'] = $pager;
             } elseif ($this->_parameters[0] === 'view') {
                 /**
                  * Wyświetla arkusz kontrolny z badania

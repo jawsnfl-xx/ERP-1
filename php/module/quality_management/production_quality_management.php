@@ -79,6 +79,27 @@ namespace Module\Quality_management
 
         /**
          *
+         * @return unknown
+         */
+        public function _createListLimit($_limit)
+        {
+            $database = Registry::get("database");
+            
+            /**
+             * Wyzerowanie zmiennych
+             */
+            $data = NULL;
+            
+            $data = $database->_mysql->fetch_array('select * from control_measurements
+					left join orders ON control_measurements.orders_id_orders = orders.id_orders
+        			left join products ON control_measurements.products_id_products = products.id_products
+        			left join packages ON control_measurements.packages_id_packages = packages.id_packages
+					LIMIT  ' . $_limit . ' ;');
+            return $data;
+        }
+
+        /**
+         *
          * @param number $_pageNumber            
          * @param number $_limitAtPage            
          * @return unknown
@@ -108,7 +129,8 @@ namespace Module\Quality_management
 					left join orders ON control_measurements.orders_id_orders = orders.id_orders
         			left join products ON control_measurements.products_id_products = products.id_products
       				left join packages ON control_measurements.packages_id_packages = packages.id_packages
-					ORDER BY `products_name` ASC LIMIT ' . $limit_down . ' , ' . $limit_up . ';');
+					ORDER BY products_name ASC
+                    LIMIT ' . $limit_down . ' , ' . $limit_up . ';');
             return $data;
         }
 
