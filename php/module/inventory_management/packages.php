@@ -37,7 +37,11 @@ namespace Module\Inventory_management
              */
             $data = NULL;
             
-            $data = $database->_mysql->fetch_array('SELECT * FROM packages LIMIT 100;');
+            $data = $database->_mysql->fetch_array('SELECT * FROM packages
+                    left join type_of_packages on type_of_packages.id_type_of_packages = packages.type_of_packages_id_type_of_packages
+                	left join warehouse on warehouse.id_warehouse = packages.type_of_packages_id_type_of_packages
+                	left join type_of_warehouse on type_of_warehouse.id_type_of_warehouse = warehouse.type_of_warehouse_id_type_of_warehouse
+                    LIMIT 100;');
             return $data;
         }
 
@@ -54,7 +58,11 @@ namespace Module\Inventory_management
              */
             $data = NULL;
             
-            $data = $database->_mysql->fetch_array('SELECT * FROM packages LIMIT ' . $_limit . ' ;');
+            $data = $database->_mysql->fetch_array('SELECT * FROM packages
+                    left join type_of_packages on type_of_packages.id_type_of_packages = packages.type_of_packages_id_type_of_packages
+                	left join warehouse on warehouse.id_warehouse = packages.type_of_packages_id_type_of_packages
+                	left join type_of_warehouse on type_of_warehouse.id_type_of_warehouse = warehouse.type_of_warehouse_id_type_of_warehouse
+                    LIMIT ' . $_limit . ' ;');
             return $data;
         }
     }

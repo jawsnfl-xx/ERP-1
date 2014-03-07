@@ -132,6 +132,7 @@ namespace Application\Controller
             $product = new \Module\Product_technology\Product();
             $orders = new \Module\Sales_management\Orders();
             $packages = new \Module\Inventory_management\Packages();
+            $quality_management = new \Module\Quality_management\Production_quality_management();
             
             if ($this->_parameters[0] === 'product') {
                 
@@ -139,6 +140,7 @@ namespace Application\Controller
                     $this->_table['product']['view'] = $product->_createView($this->_parameters[2]);
                     $this->_table['orders']['list'] = $orders->_createListLimit(5);
                     $this->_table['packages']['list'] = $packages->_createListLimit(5);
+                    $this->_table['quality_management']['list'] = $quality_management->_createListLimit(5);
                 } 
 
                 elseif ($this->_parameters[1] === 'add') {
