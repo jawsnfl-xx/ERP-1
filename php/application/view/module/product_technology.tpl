@@ -16,8 +16,8 @@
 	<li class="active"><span>Szczegóły</span></li> {else} {/if}
 </ol>
 {if $parameters['0'] eq 'product' } {include
-file='./product_technology_product.tpl'} {elseif $parameters['0'] eq
-'technology'} {include file='./product_technology_technology.tpl'}
+file='./product_technology/product.tpl'} {elseif $parameters['0'] eq
+'technology'} {include file='./product_technology/technology.tpl'}
 {else}
 <div class="col-md-3">
 	<div class="list-group">
