@@ -26,13 +26,19 @@
 		</div>
 	</div>
 	<table class="table table-bordered">
-		{foreach from=$table['product']['list'] item=row name=row}
 		<tr>
-			<th>{$smarty.foreach.row.iteration}</th>
-			<td><a
-				href="/home/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-			<td>{$row.units_id_units}</td>
-			<td>{$row.units_id_units1}</td>
+			<th>L.p.</th>
+			<th>Nazwa</th>
+			<th></th>
+			<th></th>
+		</tr>
+		{foreach from=$table['product']['list'] item=row name=row}
+
+		<th>{$smarty.foreach.row.iteration}</th>
+		<td><a
+			href="/home/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
+		<td>{$row.units_id_units}</td>
+		<td>{$row.units_id_units1}</td>
 		</tr>
 		{/foreach}
 	</table>
@@ -195,26 +201,14 @@
 								<th>Nr skrzyni</th>
 							</tr>
 							<tbody>
+										{foreach from=$table['packages']['list'] item=row name=row}
 								<tr>
 									<td>1</td>
-
-
-									<td>666870</td>
-									<td>123213</td>
+									<td>{$row.id_packages}</td>
+									<td>{$row.packages_number}</td>
+									<td>{$row.warehouse_id_warehouse}</td>
 								</tr>
-								<tr>
-									<td>2</td>
-
-									<td>566870</td>
-									<td>123213</td>
-								</tr>
-								<tr>
-									<td>3</td>
-
-
-									<td>166870</td>
-									<td>723213</td>
-								</tr>
+								{/foreach}
 
 							</tbody>
 						</table>
@@ -237,27 +231,15 @@
 								<th>Nr skrzyni</th>
 							</tr>
 							<tbody>
+								{foreach from=$table['packages']['list'] item=row name=row}
 								<tr>
 									<td>1</td>
+									<td>{$row.id_packages}</td>
+									<td>{$row.packages_number}</td>
+									<td>{$row.warehouse_id_warehouse}</td>
+								</tr>
+								{/foreach}
 
-									<td>666870</td>
-									<td>123213</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>566870</td>
-									<td>123213</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>166870</td>
-									<td>723213</td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>966870</td>
-									<td>923213</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -266,6 +248,7 @@
 		</li>
 		<li class="list-group-item list-group-item-header"><span>Technologia</span></li>
 		<li class="list-group-item">
+
 			<table class="table table-bordered table-hover">
 				<tr>
 					<th>L.p.</th>
@@ -277,17 +260,19 @@
 					<th>Technolog</th>
 					<th>Sprawdzający</th>
 				</tr>
+
 				<tr>
 					<td>1</td>
-					<td><a href="/home/product_technology/view/1">534212</a></td>
-					<td>produkcja</td>
-					<td>10</td>
+					<td><a href="/home/product_technology/view/1"></a></td>
 					<td></td>
+					<td></td>
+					<td><a href="#">2000-01-01 12:00:00</a></td>
 					<td></td>
 					<td>Imperdiet Kowalski</td>
 					<td>Jan Bibendum</td>
 
 				</tr>
+
 				<tr>
 					<td>2</td>
 					<td><a href="/home/product_technology/view/2">651232</a></td>
