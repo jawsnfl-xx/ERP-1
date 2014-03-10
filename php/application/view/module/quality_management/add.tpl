@@ -476,8 +476,10 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class=" col-md-3">Z.P.U.H. Rolmech</div>
-			<div class=" col-md-3">detail_name</div>
-			<div class=" col-md-3">date</div>
+			<div class=" col-md-3">652953</div>
+			<div class=" col-md-3">
+				<a href="#">2000-01-01 12:00:00</a>
+			</div>
 		</div>
 	</div>
 	<div class="table-responsive">
@@ -570,19 +572,13 @@
 		</li>
 		<li class="list-group-item">
 			<div class="row">
-				<label class="control-label col-sm-3" for="inputSuccess3">Coś
-					tam</label>
+				<label class="control-label col-sm-3" for="inputSuccess3">Kontroler</label>
 				<div class="col-sm-3">
 					<input class="form-control" data-toggle="tooltip"
 						data-placement="left" title="" name="addt_01" type="text"
 						placeholder="">
 				</div>
-				<div class="col-sm-3">
-					<a class="btn btn-primary btn btn-block"
-						href="javascript:window.print()">NIE DRUKUJ </a>
-				</div>
-
-				<div class="col-sm-2">
+				<div class="col-sm-5">
 					<a class="btn btn-primary btn btn-block"
 						href="/module/quality_management">NIE KOŃCZ</a>
 				</div>
