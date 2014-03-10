@@ -65,7 +65,9 @@ namespace Framework
             $path = APP_DIR . $path;
             
             if (! file_exists($path)) {
-                return "";
+                
+                // return "";
+                return $path;
             }
             
             return $this->_template->fetch($path);

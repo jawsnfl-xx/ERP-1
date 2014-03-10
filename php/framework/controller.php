@@ -59,7 +59,7 @@ namespace Framework
         /**
          * * @readwrite
          */
-        protected $_defaultLayout = "layouts\\standard";
+        public $_defaultLayout = "layouts\\standard";
 
         /**
          * * @readwrite
@@ -199,6 +199,10 @@ namespace Framework
                     $results = $view->render();
                     header("Content-type: {$defaultContentType}");
                     echo $results;
+                    
+                    $closer = $this->_layoutView;
+                    $closer->__set("file", "\application\\view\\layouts\\closer.tpl");
+                    echo $closer->render();
                 } else {
                     header("Content-type: {$defaultContentType}");
                     echo $results;
