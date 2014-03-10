@@ -104,6 +104,27 @@
 		<strong>Utwórz nowy formularz</strong>
 	</div>
 	<div class="panel-body">
+		<div class="alert alert-warning">
+			<h5>Rozważania...</h5>
+			<p>Aby dodać badanie kontrolne należy posiadać określone
+				informacje:</p>
+			<ul>
+				<li>Przy założeniu przechowywana w bazie danych informacji o
+					magazynie (bieżących):</li>
+				<ol>
+					<li>nazwę produktu / detalu</li>
+					<li>numeru zlecenia</li>
+				</ol>
+				<li>Przy założeniu nie prowadzenia magazynu oraz nie posiadania informacji o detalach, zleceniach itp.</li>
+				<ol>
+					<li>nazwę produktu / detalu</li>
+					<li>numeru zlecenia</li>
+					<li>ilość sztuk w zleceniu</li>
+					<li>ilość sztuk w skrzyni</li>
+				</ol>
+			</ul>
+		</div>
+
 		<p>Integer condimentum, turpis sed interdum pretium, ante libero
 			posuere dui, at ornare magna urna sed augue. Lorem ipsum dolor sit
 			amet, consectetur adipiscing elit. Cras scelerisque est non massa
@@ -134,7 +155,9 @@
 							data-placement="left" title="Wpisz nazwe produktu" name="name"
 							type="text"
 							placeholder="Wpisz nazwę detalu lub numer pod który występuje"
-							{if $table['form_name'] }value="{$table['form_name']}"{/if}>
+							{if $table['form_name'] }value="{$table['form_name']}"
+							{/if}
+							required>
 					</div>
 				</div>
 				<div
@@ -146,7 +169,9 @@
 							data-placement="left" title="Wpisz ilość elementów w partii"
 							name="amount" type="text"
 							placeholder="Wpisz ilość detali w partii"
-							{if $table['form_amount'] }value="{$table['form_amount']}"{/if}>
+							{if $table['form_amount'] }value="{$table['form_amount']}"
+							{/if}
+							required>
 					</div>
 				</div>
 
@@ -158,7 +183,9 @@
 						<input class="form-control " data-toggle="tooltip"
 							data-placement="left" title="Ile sztuk zamówiono" name="quan"
 							type="text" placeholder="Ilość w zamówieniu"
-							{if $table['form_quan'] }value="{$table['form_quan']}"{/if}>
+							{if $table['form_quan'] }value="{$table['form_quan']}"
+							{/if}
+							required>
 					</div>
 				</div>
 			</li>
