@@ -6,7 +6,7 @@
 -->
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Przegl¹d arkuszów kontrolnych
+		PrzeglÄ…d arkuszÃ³w kontrolnych
 		<div class="pull-right">
 			<a href="javascript:window.print()" type="button"
 				class="btn btn-default"> <span class="glyphicon glyphicon-print"></span>
@@ -27,7 +27,7 @@
 			<th>Nr pomiaru</th>
 			<th>Nr skrzynki</th>
 			<th>sample size(?)</th>
-			<th>zamówienie</th>
+			<th>zamÃ³wienie</th>
 			<th>data</th>
 			<th>inna data</th>
 			<th>zaznacz</th>

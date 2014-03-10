@@ -1,7 +1,7 @@
 {if $parameters['1'] neq '' }
 <!--
 	GĂłrny pasek z wykazaniem podstrony przy dodawaniu raportu
-	W przyszĹ‚oĹ›ci wykazujÄ…cy rĂłwnieĹĽ statusy i informacje o nieĹ›cisĹ‚oĹ›ciach i bĹ‚Ä™dach (byÄ‡ moĹĽe? )
+	W przyszłości wykazujący również statusy i informacje o nieścisłościach i błędach (być może? )
 
  -->
 
