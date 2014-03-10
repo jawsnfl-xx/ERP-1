@@ -1,3 +1,4 @@
+
 <div class="panel panel-default">
 	<div class="panel-heading">
 		Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet urna
@@ -310,6 +311,6 @@
 		<li class="list-group-item">Vestibulum at eros</li>
 	</ul>
 	<div class="panel-footer">
-	<h3>cyceki</h3></div>
+	<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper nulla at rhoncus tincidunt.</h3></div>
 
 </div>

@@ -17,8 +17,3 @@
 		<div class="container col-md-12"></div>
 	</div>
 </div>
-
-<script src="/public/js/jquery.min.js"></script>
-<script src="/public/js/bootstrap.min.js"></script>
-</body>
-</html>

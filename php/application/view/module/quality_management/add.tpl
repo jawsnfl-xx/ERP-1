@@ -1,6 +1,6 @@
 {if $parameters['1'] neq '' }
 <!--
-	Górny pasek z wykazaniem podstrony przy dodawaniu raportu
+	GĂłrny pasek z wykazaniem podstrony przy dodawaniu raportu
 	W przyszłości wykazujący również statusy i informacje o nieścisłościach i błędach (być może? )
 
  -->
@@ -46,7 +46,7 @@
 	</ul>
 </div>
 {/if}
-<!--  TREŚĆ  -->
+<!--  TREĹšÄ†  -->
 {if $parameters['1'] eq '' }
 <div class="container-liquid">
 	<div class="row">
@@ -104,6 +104,27 @@
 		<strong>Utwórz nowy formularz</strong>
 	</div>
 	<div class="panel-body">
+		<div class="alert alert-warning">
+			<h5>Rozważania...</h5>
+			<p>Aby dodać badanie kontrolne należy posiadać określone
+				informacje:</p>
+			<ul>
+				<li>Przy założeniu przechowywana w bazie danych informacji o
+					magazynie (bieżących):</li>
+				<ol>
+					<li>nazwę produktu / detalu</li>
+					<li>numeru zlecenia</li>
+				</ol>
+				<li>Przy założeniu nie prowadzenia magazynu oraz nie posiadania informacji o detalach, zleceniach itp.</li>
+				<ol>
+					<li>nazwę produktu / detalu</li>
+					<li>numeru zlecenia</li>
+					<li>ilość sztuk w zleceniu</li>
+					<li>ilość sztuk w skrzyni</li>
+				</ol>
+			</ul>
+		</div>
+
 		<p>Integer condimentum, turpis sed interdum pretium, ante libero
 			posuere dui, at ornare magna urna sed augue. Lorem ipsum dolor sit
 			amet, consectetur adipiscing elit. Cras scelerisque est non massa
@@ -113,7 +134,6 @@
 	<ul class="list-group">
 		<form action="/module/quality_management/add/_step1" method="post"
 			class="form-horizontal" role="form">
-
 			<li class="list-group-item"><p>Fusce tincidunt tortor eu
 					nibh consectetur, sed bibendum erat elementum. Nam condimentum
 					augue nec urna bibendum rhoncus. Proin in nunc nisi. Sed ut
@@ -135,7 +155,9 @@
 							data-placement="left" title="Wpisz nazwe produktu" name="name"
 							type="text"
 							placeholder="Wpisz nazwę detalu lub numer pod który występuje"
-							{if $table['form_name'] }value="{$table['form_name']}"{/if}>
+							{if $table['form_name'] }value="{$table['form_name']}"
+							{/if}
+							required>
 					</div>
 				</div>
 				<div
@@ -144,10 +166,12 @@
 						sztuk w skrzyni</label>
 					<div class="col-sm-9">
 						<input class="form-control" data-toggle="tooltip"
-							data-placement="left" title="Wpisz ilosc elementow w partii"
+							data-placement="left" title="Wpisz ilość elementów w partii"
 							name="amount" type="text"
 							placeholder="Wpisz ilość detali w partii"
-							{if $table['form_amount'] }value="{$table['form_amount']}"{/if}>
+							{if $table['form_amount'] }value="{$table['form_amount']}"
+							{/if}
+							required>
 					</div>
 				</div>
 
@@ -157,9 +181,11 @@
 						sztuk w zamównieniu</label>
 					<div class="col-sm-9">
 						<input class="form-control " data-toggle="tooltip"
-							data-placement="left" title="Ile sztuk zamowiono" name="quan"
+							data-placement="left" title="Ile sztuk zamówiono" name="quan"
 							type="text" placeholder="Ilość w zamówieniu"
-							{if $table['form_quan'] }value="{$table['form_quan']}"{/if}>
+							{if $table['form_quan'] }value="{$table['form_quan']}"
+							{/if}
+							required>
 					</div>
 				</div>
 			</li>
@@ -167,7 +193,6 @@
 				<button type="button" class="close" data-dismiss="alert"
 					aria-hidden="true">&times;</button>
 				<div class="alert alert-warning alert-dismissable">
-
 					<strong>UWAGA!</strong> Wartości z pól poniżej nie są przekazywane
 					dalej, dlatego możesz to wszystko przymknąć za pomocą tego "x" po
 					prawej stronie ;)
@@ -245,99 +270,99 @@
 			<tbody>
 				<tr>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 				</tr>
 				<tr>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 				</tr>
 				<tr>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 				</tr>
 				<tr>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 				</tr>
 				<tr>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 				</tr>
 				<tr>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 					<td><input type="email" class="form-control" id="inputEmail3"
-						placeholder="Email" style="border: 0; box-shadow: none;"></td>
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -365,108 +390,107 @@
 				<th>1</th>
 				<th>2</th>
 				<th>3</th>
-				<th>4</th>
 				<th>5</th>
+				<th>6</th>
 			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
-			<tr>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-				<td><input type="email" class="form-control" id="inputEmail3"
-					placeholder="Email" style="border: 0; box-shadow: none;"></td>
-			</tr>
+			<tbody>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+				</tr>
+				<tr>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Wymiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Tolerancja" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+					<td><input type="email" class="form-control" id="inputEmail3"
+						placeholder="Pomiar" style="border: 0; box-shadow: none;"></td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </div>
@@ -479,8 +503,10 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class=" col-md-3">Z.P.U.H. Rolmech</div>
-			<div class=" col-md-3">detail_name</div>
-			<div class=" col-md-3">date</div>
+			<div class=" col-md-3">652953</div>
+			<div class=" col-md-3">
+				<a href="#">2000-01-01 12:00:00</a>
+			</div>
 		</div>
 	</div>
 	<div class="table-responsive">
@@ -573,18 +599,13 @@
 		</li>
 		<li class="list-group-item">
 			<div class="row">
-				<label class="control-label col-sm-3" for="inputSuccess3">Cośtam</label>
+				<label class="control-label col-sm-3" for="inputSuccess3">Kontroler</label>
 				<div class="col-sm-3">
 					<input class="form-control" data-toggle="tooltip"
 						data-placement="left" title="" name="addt_01" type="text"
 						placeholder="">
 				</div>
-				<div class="col-sm-3">
-					<a class="btn btn-primary btn btn-block"
-						href="javascript:window.print()">NIE DRUKUJ </a>
-				</div>
-
-				<div class="col-sm-2">
+				<div class="col-sm-5">
 					<a class="btn btn-primary btn btn-block"
 						href="/module/quality_management">NIE KOŃCZ</a>
 				</div>

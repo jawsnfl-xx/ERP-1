@@ -19,7 +19,6 @@
 			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
 			ultricies commodo.</p>
 	</div>
-
 	<table class="table table-bordered">
 		<tr>
 			<th>L.p.</th>
@@ -37,20 +36,22 @@
 		<tbody>
 			<tr>
 				<td>{$smarty.foreach.row.iteration}</td>
-				<td><a	href="/module/quality_management/view/{$row.id_control_measurements}">
-						{$row.id_control_measurements} </a> </td>
-						<td><a href="/module/product_technology/product/view/{$row.products_name}">{$row.products_name}</a></td>
-						<td>{$row.products_id_products}</td>
-						<td>{$row.type_of_control_measurements_id_type_of_control_measurements}</td>
-						<td>{$row.packages_id_packages}</td>
-						<td>{$row.sample_size}</td>
-						<td>{$row.date_start}</td>
-						<td>{$row.date_end}</td>
-						<td>
-							<div class="pull-right">
-								<input type="checkbox">
-							</div>
-					</td>
+				<td><a
+					href="/module/quality_management/view/{$row.id_control_measurements}">
+						{$row.id_control_measurements} </a></td>
+				<td><a
+					href="/module/product_technology/product/view/{$row.products_name}">{$row.products_name}</a></td>
+				<td>{$row.products_id_products}</td>
+				<td>{$row.type_of_control_measurements_id_type_of_control_measurements}</td>
+				<td>{$row.packages_id_packages}</td>
+				<td>{$row.sample_size}</td>
+				<td>{$row.date_start}</td>
+				<td>{$row.date_end}</td>
+				<td>
+					<div class="pull-right">
+						<input type="checkbox">
+					</div>
+				</td>
 			</tr>
 			{/foreach}
 		</tbody>
