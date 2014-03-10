@@ -106,5 +106,7 @@ namespace Application\Controller
          */
         public function help()
         {}
+        public function about()
+        {}
     }
 }

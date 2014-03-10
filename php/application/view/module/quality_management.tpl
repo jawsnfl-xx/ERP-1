@@ -50,7 +50,3 @@ file='./quality_management/view.tpl'} {elseif $parameters['0'] eq
 'review' } {include file='./quality_management/review.tpl'} {elseif
 $parameters['0'] eq 'add' } {include
 file='./quality_management/add.tpl'} {/if}
-<script src="/public/js/jquery.js"></script>
-<script src="/public/js/bootstrap.js"></script>
-</body>
-</html>

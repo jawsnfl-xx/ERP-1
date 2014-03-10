@@ -32,7 +32,3 @@ file='./product_technology/product.tpl'} {elseif $parameters['0'] eq
 	</div>
 </div>
 {/if}
-<script src="/public/js/jquery.js"></script>
-<script src="/public/js/bootstrap.js"></script>
-</body>
-</html>
