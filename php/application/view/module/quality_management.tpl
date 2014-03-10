@@ -45,12 +45,6 @@
 		</div>
 	</div>
 </div>
-</div>
-</div>
-
-
-</div>
-</div>
 {elseif $parameters['0'] eq 'view' } {include
 file='./quality_management/view.tpl'} {elseif $parameters['0'] eq
 'review' } {include file='./quality_management/review.tpl'} {elseif
