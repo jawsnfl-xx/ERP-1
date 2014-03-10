@@ -244,5 +244,24 @@ namespace Framework
             }
             return $result;
         }
+
+        /**
+         *
+         * @param unknown $string            
+         * @return mixed
+         */
+        function clearWhiteChar($string)
+        {
+            $string = preg_replace(array(
+                "/\t/",
+                "/\s{2,}/",
+                "/\n/"
+            ), array(
+                "",
+                " ",
+                ""
+            ), $string);
+            return $string;
+        }
     }
 }

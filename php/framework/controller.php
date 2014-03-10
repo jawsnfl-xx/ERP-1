@@ -7,6 +7,7 @@ namespace Framework
     use Framework\Registry as Registry;
     use Framework\Template as Template;
     use Framework\Controller\Exception as Exception;
+    use Framework\StringMethods as StringMethods;
 
     /**
      *
@@ -59,7 +60,7 @@ namespace Framework
         /**
          * * @readwrite
          */
-        protected $_defaultLayout = "layouts\\standard";
+        public $_defaultLayout = "layouts\\standard";
 
         /**
          * * @readwrite
@@ -188,6 +189,7 @@ namespace Framework
                     $view = $this->_layoutView;
                     $view->set("template", $results);
                     $results = $view->render();
+                    $results = StringMethods::clearWhiteChar($results);
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                 }
@@ -197,10 +199,18 @@ namespace Framework
                 if ($doAction) {
                     $view = $this->_actionView;
                     $results = $view->render();
+                    $results = StringMethods::clearWhiteChar($results);
                     header("Content-type: {$defaultContentType}");
+                    echo $results;
+                    
+                    $closer = $this->_layoutView;
+                    $closer->__set("file", "\application\\view\\layouts\\closer.tpl");
+                    $results = $closer->render();
+                    $results = StringMethods::clearWhiteChar($results);
                     echo $results;
                 } else {
                     header("Content-type: {$defaultContentType}");
+                    
                     echo $results;
                     $this->_willRenderLayoutView = FALSE;
                     $this->_willRenderActionView = FALSE;

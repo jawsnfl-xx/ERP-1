@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * UWAGA!
  * Nastąpi przeniesienie kontrolerów jako moduły.
@@ -10,7 +9,7 @@
 /**
  *
  * @author Marcin
- *
+ *        
  */
 namespace Application
 {

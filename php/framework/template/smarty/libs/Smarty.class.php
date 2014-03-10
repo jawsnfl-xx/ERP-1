@@ -162,6 +162,7 @@ class Smarty extends Smarty_Internal_TemplateBase
      *
      *
      *
+     *
      * .. ?>" tags in templates.
      */
     const PHP_PASSTHRU = 0; // -> print tags as plain text
