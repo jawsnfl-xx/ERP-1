@@ -55,8 +55,6 @@ namespace Framework
             
             $this->_template->assign('parameters', $options['parameters']);
             $this->_template->assign('table', $options['table']);
-            
-            // var_dump ( $options );
         }
 
         public function render()
@@ -66,8 +64,8 @@ namespace Framework
             
             if (! file_exists($path)) {
                 
-                // return "";
-                return $path;
+                return "";
+                // return $path;
             }
             
             return $this->_template->fetch($path);
