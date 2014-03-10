@@ -106,6 +106,11 @@ namespace Application\Controller
          */
         public function help()
         {}
+
+        /**
+         * @before init,
+         * @after notify
+         */
         public function about()
         {}
     }
