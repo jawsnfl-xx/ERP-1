@@ -14,9 +14,9 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Główna</a></li>
-					<li><a href="#">Moduły</a></li>
-					<li><a href="#">FAQ</a></li>
+					<li><a href="/content/about">Główna</a></li>
+					<li><a href="/content/about_modules">Moduły</a></li>
+					<li><a href="/content/about_faq">FAQ</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<form class="navbar-form navbar-left" role="search">
@@ -35,13 +35,12 @@
 					</form>
 				</ul>
 			</div>
-		</div>
-	</nav>
+		</nav>
 	<div class="row">
 		<div class="col-md-2">
 			<div class="container-fluid">
-				<div class="sidebar-module">
-					<h4>Kategorie</h4>
+					<div class="col-sm-4 col-md-2 sidebar">
+					<h3>Artykuły</h3>
 					<ol class="list-unstyled">
 						<li><a href="#">January 2014</a></li>
 						<li><a href="#">December 2013</a></li>
@@ -59,10 +58,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-2 pull-right">
+		<div class="col-md-2  pull-right"> 
 			<div class="container-fluid">
 				<div class="sidebar-module">
-					<h4>Najnowsze</h4>
+					<h3>Najnowsze</h3>
 					<ol class="list-unstyled">
 						<li><a href="#">January 2014</a></li>
 						<li><a href="#">December 2013</a></li>
