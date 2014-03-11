@@ -113,5 +113,9 @@ namespace Application\Controller
          */
         public function about()
         {}
+        public function about_modules()
+        {}
+        public function about_faq()
+        {}
     }
 }
