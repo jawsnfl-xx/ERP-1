@@ -35,11 +35,11 @@
 					</form>
 				</ul>
 			</div>
-		</nav>
+	</nav>
 	<div class="row">
 		<div class="col-md-2">
 			<div class="container-fluid">
-					<div class="col-sm-4 col-md-2 sidebar">
+				<div class="col-sm-4 col-md-2 sidebar">
 					<h3>Artykuły</h3>
 					<ol class="list-unstyled">
 						<li><a href="#">January 2014</a></li>
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-2  pull-right"> 
+		<div class="col-md-2  pull-right">
 			<div class="container-fluid">
 				<div class="sidebar-module">
 					<h3>Najnowsze</h3>

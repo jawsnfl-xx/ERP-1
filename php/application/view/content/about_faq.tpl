@@ -7,7 +7,11 @@
 	<!-- 1 -->
 	<div class="panel-heading">
 		<h3>FAQ- Frequently Asked Questions</h3>
+			
+			
 	</div>
+
+	
 
 	<div class="panel-body">
 		
@@ -16,6 +20,13 @@
 					opis opis opis opis opis opis opis opis opis opis opis opis opis
 					opis opis opis opis opis opis opis opis opis opis opis opis opis
 					opis opis</h4>
+					<select class="form-control">
+								<option>Kategorie pytañ</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+							</select>
 			</div>
 		</div>
 		<p>Nam est nisi, ullamcorper sed iaculis a, laoreet vitae neque.
