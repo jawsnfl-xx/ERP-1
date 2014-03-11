@@ -1,6 +1,11 @@
 ﻿<?php
 
 /**
+ * 
+ * test
+ */
+
+/**
  * Deklaracja stałych:
  * 
  * 
