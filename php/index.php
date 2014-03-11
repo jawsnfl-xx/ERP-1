@@ -2,6 +2,11 @@
 
 
 /**
+ * 
+ * test
+ */
+
+/**
  * Deklaracja stałych:
  * 
  * 
