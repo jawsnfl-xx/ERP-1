@@ -6,3 +6,5 @@ I. MARCIN
   3. Przebudowa klas bazy danych na PDO / własne
 
 II. FILIP
+  1. Uzupełnienie kontroli jakości tekstem.
+  2. Ujednolicenie formy graficznej w kategoriach produkt-technologia.
