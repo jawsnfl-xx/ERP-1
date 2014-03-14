@@ -1,5 +1,4 @@
 ﻿<?php
-use Framework;
 
 /**
  *
@@ -14,7 +13,7 @@ function ini_configuration()
         "type" => "ini"
     ));
     $configuration = $configuration->initialize();
-    $parsed = $configuration->parse('configuration/config');
+    $parsed = $configuration->parse('configuration/default_config');
     Framework\Registry::set("configuration", $parsed);
 }
 
@@ -24,7 +23,7 @@ function ini_configuration()
  *       @TODO:
  *       - nawiązać połączenie z bazą danych;
  *      
- * 
+ *      
  *       @SAMPLE
  *       Przykład stosowania połączenia z bazą danych MySQL
  *       $data = $database->_mysql->fetch_array('SHOW TABLES');

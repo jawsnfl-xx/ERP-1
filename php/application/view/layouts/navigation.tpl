@@ -1,4 +1,3 @@
-<!-- navigation.tpl -->
 <body data-spy="scroll" data-target="">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
@@ -71,29 +70,20 @@
 				</ul>
 				<hr />
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/home/quality_management">Kontrola jakości</a></li>
+					<li><a href="/module/quality_management">Kontrola jakości</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="/home/settings">Ustawienia</a></li>
 				</ul>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="/home/product_technology">Produkt i
-							technologie</a></li>
-					<li><a href="/home/product_technology/product">Produkt</a></li>
-					<li><a href="/home/product_technology/technology">Technologie</a></li>
-
-
+					<li><a href="/module/product_technology/product">Produkt</a></li>
+					<li><a href="/module/product_technology/technology">Technologie</a></li>
 				</ul>
 				<ul>
-				<button type="button" class="close" data-dismiss="alert"
-					aria-hidden="true">&times;</button>
-				<div class="alert alert-primary alert-dismissable">
-			W razie kłopotów, kilkaj <a href="/home/help" class="alert-link">w taki
-				fajny link do strony pomocy</a>
-		</div>
-		
+					<div class="alert alert-primary alert-dismissable">
+						W razie kłopotów, kilkaj <a href="/content/about"
+							class="alert-link">w taki fajny link do strony pomocy</a>
+					</div>
 				</ul>
-				
-				
 			</div>
 			<div class="col-sm-8 col-sm-offset-4 col-md-10 col-md-offset-2 main">

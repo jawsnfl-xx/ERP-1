@@ -21,6 +21,7 @@ namespace Framework\Router\Route
         public function matches($url)
         {
             $pattern = $this->pattern;
+            
             preg_match_all("#:([a-zA-Z0-9]+)#", $pattern, $keys);
             if (sizeof($keys) && sizeof($keys[0]) && sizeof($keys[1])) {
                 $keys = $keys[1];

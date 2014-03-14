@@ -6,7 +6,9 @@ namespace Framework
     use Framework\View as View;
     use Framework\Registry as Registry;
     use Framework\Template as Template;
+    use Framework\Router as Router;
     use Framework\Controller\Exception as Exception;
+    use Framework\StringMethods as StringMethods;
 
     /**
      *
@@ -59,7 +61,7 @@ namespace Framework
         /**
          * * @readwrite
          */
-        protected $_defaultLayout = "layouts\\standard";
+        public $_defaultLayout = "layouts\\standard";
 
         /**
          * * @readwrite
@@ -106,11 +108,62 @@ namespace Framework
              */
             if ($this->getWillRenderActionView()) {
                 
-                $router = new \Framework\Router(array(
+                $router = new Router(array(
                     "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
                     "extension" => isset($_GET["extension"]) ? $_GET["extension"] : "html"
                 ));
                 
+                Registry::set("router", $router);
+                
+                $routes = array(
+                    array(
+                        "pattern" => "login",
+                        "controller" => "users",
+                        "action" => "login"
+                    ),
+                    array(
+                        "pattern" => "index",
+                        "controller" => "users",
+                        "action" => "index"
+                    ),
+                    array(
+                        "pattern" => "logout",
+                        "controller" => "users",
+                        "action" => "logout"
+                    ),
+                    array(
+                        "pattern" => "signup",
+                        "controller" => "users",
+                        "action" => "signup"
+                    ),
+                    array(
+                        "pattern" => "home/index",
+                        "controller" => "home",
+                        "action" => "index"
+                    ),
+                    array(
+                        "pattern" => "settings",
+                        "controller" => "home",
+                        "action" => "settings"
+                    ),
+                    array(
+                        "pattern" => "quality_management",
+                        "controller" => "module",
+                        "action" => "quality_management"
+                    ),
+                    array(
+                        "pattern" => "product_technology",
+                        "controller" => "module",
+                        "action" => "product_technology"
+                    )
+                );
+                
+                /**
+                 */
+                foreach ($routes as $route) {
+                    $router->addRoute(new Router\Route\Regex($route));
+                }
+                unset($routes);
                 $router->dispatch();
                 
                 $controller = $router->getController();
@@ -188,6 +241,7 @@ namespace Framework
                     $view = $this->_layoutView;
                     $view->set("template", $results);
                     $results = $view->render();
+                    $results = StringMethods::clearWhiteChar($results);
                     header("Content-type: {$defaultContentType}");
                     echo $results;
                 }
@@ -197,10 +251,18 @@ namespace Framework
                 if ($doAction) {
                     $view = $this->_actionView;
                     $results = $view->render();
+                    $results = StringMethods::clearWhiteChar($results);
                     header("Content-type: {$defaultContentType}");
+                    echo $results;
+                    
+                    $closer = $this->_layoutView;
+                    $closer->__set("file", "\application\\view\\layouts\\closer.tpl");
+                    $results = $closer->render();
+                    $results = StringMethods::clearWhiteChar($results);
                     echo $results;
                 } else {
                     header("Content-type: {$defaultContentType}");
+                    
                     echo $results;
                     $this->_willRenderLayoutView = FALSE;
                     $this->_willRenderActionView = FALSE;

@@ -36,22 +36,17 @@
 							type="email" class="form-control" id="exampleInputEmail1"
 							placeholder="Enter email">
 					</div>
-					<h4>Opis</h4>
-					<p>Nullam interdum nisl purus, at elementum turpis vulputate
-						vitae. Fusce id urna non mi euismod egestas. Sed consequat
-						convallis metus, quis fermentum urna viverra vitae. Vestibulum sed
-						felis vel libero tempor fringilla. Phasellus pretium ante dolor,
-						non egestas metus viverra ullamcorper. Ut ac erat eleifend, luctus
-						diam sit amet, accumsan libero. Phasellus convallis libero vitae
-						leo porttitor porta.</p>
+					<h4>Typ konta</h4>
+					<select class="form-control">
+						<option>1</option>
+						<option>2</option>
+					</select>
 				</div>
-
 				<div class="col-md-6">
 					<form role="form">
-
 						<div class="form-group">
 							<label for="exampleInputEmail1">Nazwa użytkownika</label> <input
-								type="email" class="form-control" id="exampleInputEmail1"
+								type="email" class="form-control " id="exampleInputEmail1"
 								placeholder="Nazwa użytkownika">
 						</div>
 						<div class="form-group">
@@ -77,8 +72,7 @@
 						</div>
 					</form>
 					<h4>
-						Można też wrócić do <a href="/users/index">formularza
-							logowania</a>.
+						Można też wrócić do <a href="/users/index">ekranu logowania</a>.
 					</h4>
 				</div>
 			</div>
@@ -91,7 +85,3 @@
 		<p class="text-muted">Place sticky footer content here.</p>
 	</div>
 </div>
-<script src="/public/js/jquery.min.js"></script>
-<script src="/public/js/bootstrap.min.js"></script>
-</body>
-</html>

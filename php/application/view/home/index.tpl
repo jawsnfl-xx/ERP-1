@@ -8,7 +8,7 @@
 			leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
 			commodo cursus magna.</p>
 		<p>
-			<a class="btn btn-default" href="/home/quality_management"
+			<a class="btn btn-default" href="/module/quality_management"
 				role="button">View details &raquo;</a>
 		</p>
 	</div>
@@ -19,12 +19,8 @@
 			leo risus, porta ac consectetur ac, vestibulum at eros. Praesent
 			commodo cursus magna.</p>
 		<p>
-			<a class="btn btn-default" href="/home/product_technology"
+			<a class="btn btn-default" href="/module/product_technology"
 				role="button">Pokaż szczegóły &raquo;</a>
 		</p>
 	</div>
 </div>
-<script src="/public/js/jquery.js"></script>
-<script src="/public/js/bootstrap.js"></script>
-</body>
-</html>
