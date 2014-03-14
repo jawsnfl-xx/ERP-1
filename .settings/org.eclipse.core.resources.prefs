@@ -12,4 +12,5 @@ encoding//php/application/view/module/quality_management/review.tpl=UTF-8
 encoding//php/application/view/module/quality_management/view.tpl=UTF-8
 encoding//php/application/view/users/index.tpl=UTF-8
 encoding//php/application/view/users/signup.tpl=UTF-8
+encoding/README.md=UTF-8
 separateDerivedEncodings=false

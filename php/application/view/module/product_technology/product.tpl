@@ -32,8 +32,8 @@
 			<th>L.p.</th>
 			<th>Nazwa</th>
 			<th>id units</th>
+
 			<th>id units1</th>
-			<th></th>
 		</tr>
 		{foreach from=$table['product']['list'] item=row name=row}
 
@@ -79,18 +79,14 @@
 <div class="panel panel-default">
 	<div class="panel-heading">Informacje o produkcie</div>
 	<div class="panel-body">
-		<p>lorem enean et nunc pulvinar, ornare nisl nec, tempor elit.
-			Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a
-			accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare
-			nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac ornare nunc.
-			Ut vestibulum sem a accumsan vehicula. Vestibulum nec ultenean et
-			nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat volutpat.
-			Vivamus ac ornare nunc. Ut vestibulum sem a accumsan vehicula.
-			Vestibulu</p>
-		<p>m nec ultenean et nunc pulvinar, ornare nisl nec, tempor elit.
-			Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a
-			accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare
-			nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac</p>
+	<!--  MOJA TABELKA. NIE RUCHAĆ.
+		<table class="table-bordered table-responsive">
+		<tr>
+		<th>Nazwa produktu</th>
+		<th>Specyfikacja</th>
+		<th></th>
+		</table>
+		 -->
 	</div>
 	<ul class="list-group">
 		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam
@@ -133,7 +129,7 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-12 col-md-12 col-lg-6">
-					<div class="panel panel-default">
+					<div class="panel panel-success">
 						<div class="panel-heading">Ostatnio wykonane badania</div>
 						<div class="panel-body">
 							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
@@ -165,7 +161,7 @@
 				<div class="col-sm-12 col-md-12 col-lg-6">
 					<div class="row">
 						<div class="col-sm-12 col-md-6 col-lg-6">
-							<div class="panel panel-default">
+							<div class="panel panel-warning">
 								<div class="panel-heading">Partie produktu z niekompletnym
 									badaniem</div>
 								<div class="panel-body">
@@ -194,7 +190,7 @@
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-6 col-lg-6">
-							<div class="panel panel-default">
+							<div class="panel panel-danger">
 								<div class="panel-heading">Partie produktu bez
 									przeprowadzonego badania</div>
 								<div class="panel-body">
@@ -241,7 +237,6 @@
 					<th>Technolog</th>
 					<th>Sprawdzający</th>
 				</tr>
-
 				<tr>
 					<td>1</td>
 					<td><a href="/module/product_technology/view/1"></a></td>
@@ -251,9 +246,7 @@
 					<td></td>
 					<td>Imperdiet Kowalski</td>
 					<td>Jan Bibendum</td>
-
 				</tr>
-
 				<tr>
 					<td>2</td>
 					<td><a href="/module/product_technology/view/2">651232</a></td>
@@ -297,18 +290,13 @@
 				</tbody>
 			</table>
 </div>
-
-
-
 <div class="col-md-4">
 	<table class="table table-bordered table-hover">
 
 		</tbody>
 	</table>
 </div>
-
 </ul>
-
 <div class="panel-footer">Nunc luctus, lacus id aliquet bibendum,
 	nunc mauris imperdiet urna</div>
 </div>
