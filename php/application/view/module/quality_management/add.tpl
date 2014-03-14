@@ -54,22 +54,26 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Przygotowanie informacji:</div>
 				<div class="panel-body">
-					<p>Duis tincidunt eget lacus vel molestie. Suspendisse a dolor
-						tempus, rhoncus velit sit amet, vehicula odio. Aenean vel
-						ultricies lacus, ac semper elit. Ut pellentesque suscipit
-						ultrices. Integer venenatis mi sit amet sapien bibendum convallis.
-						Donec quis mollis nibh. Proin libero tortor, lobortis id tempor
-						nec, sagittis sed lorem. Sed sed arcu nec nunc pretium laoreet.
-						Proin felis massa, iaculis eget suscipit faucibus, scelerisque ac
-						odio.</p>
-					<p>Maecenas vestibulum est non tortor ornare gravida. In leo
-						nunc, vestibulum eget gravida vitae, varius non erat. Fusce
-						pharetra, diam vitae blandit adipiscing, quam est molestie tortor,
-						vitae sagittis ante risus quis enim. Phasellus luctus ante ante,
-						in aliquet risus elementum feugiat. Sed tincidunt risus nec
-						blandit rutrum. Suspendisse at diam nec erat sollicitudin
-						ultrices. Class aptent taciti sociosqu ad litora torquent per
-						conubia nostra, per inceptos himenaeos.</p>
+					<p>Proces dodawania badania kontrolnego wymaga posiadania
+						określonych informacji:</p>
+					<ul>
+						<li>Przy założeniu przechowywana w bazie danych informacji o
+							magazynie (bieżących):</li>
+						<ol>
+							<li>nazwę produktu / detalu</li>
+							<li>numeru zlecenia</li>
+						</ol>
+						<li>Przy założeniu nie prowadzenia magazynu oraz nie
+							posiadania informacji o detalach, zleceniach itp.</li>
+						<ol>
+							<li>nazwę produktu / detalu</li>
+							<li>numeru zlecenia</li>
+							<li>ilość sztuk w zleceniu</li>
+							<li>ilość sztuk w skrzyni</li>
+						</ol>
+					</ul>
+					<p>Niektóre informacje można dodać korzystając z możliwości
+						edytowania istniejących arkuszy. :D</p>
 				</div>
 			</div>
 		</div>
@@ -77,18 +81,15 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">Przygotowanie narzędzi pomiarowych:</div>
 				<div class="panel-body">
-					<p>Maecenas aliquam quis sapien vitae pharetra. Phasellus sit
-						amet condimentum leo, nec luctus diam. Suspendisse sit amet
-						vestibulum felis. Vivamus nec nisl convallis, aliquam quam eu,
-						tempor est. Sed placerat congue nisi at sodales. Aenean dictum
-						mollis elit, sit amet accumsan ipsum rutrum pretium. Praesent
-						sollicitudin urna ante, venenatis tristique neque blandit non.</p>
-					<img
-						src="http://www.stalco.pl/produkt/suwmiarka_elektroniczna_s11215.jpg"
-						alt="..." class="img-rounded img-responsive">
+					<p>Przed rozpoczęciem wykonywania kontroli jakości produktu,
+						należy przygotować niezbędne narzędzia i przyrządy.</p>
 					<p>Mauris vehicula, orci luctus porttitor dignissim, purus
 						dolor tincidunt ligula, eu varius ipsum libero ac nunc. Morbi
 						pellentesque enim arcu, quis consectetur nisi gravida vitae.</p>
+					<img
+						src="http://www.stalco.pl/produkt/suwmiarka_elektroniczna_s11215.jpg"
+						alt="..." class="img-rounded img-responsive">
+
 				</div>
 			</div>
 		</div>
@@ -104,26 +105,6 @@
 		<strong>Utwórz nowy formularz</strong>
 	</div>
 	<div class="panel-body">
-		<div class="alert alert-warning">
-			<h5>Rozważania...</h5>
-			<p>Aby dodać badanie kontrolne należy posiadać określone
-				informacje:</p>
-			<ul>
-				<li>Przy założeniu przechowywana w bazie danych informacji o
-					magazynie (bieżących):</li>
-				<ol>
-					<li>nazwę produktu / detalu</li>
-					<li>numeru zlecenia</li>
-				</ol>
-				<li>Przy założeniu nie prowadzenia magazynu oraz nie posiadania informacji o detalach, zleceniach itp.</li>
-				<ol>
-					<li>nazwę produktu / detalu</li>
-					<li>numeru zlecenia</li>
-					<li>ilość sztuk w zleceniu</li>
-					<li>ilość sztuk w skrzyni</li>
-				</ol>
-			</ul>
-		</div>
 
 		<p>Integer condimentum, turpis sed interdum pretium, ante libero
 			posuere dui, at ornare magna urna sed augue. Lorem ipsum dolor sit
@@ -247,14 +228,12 @@
 {elseif $parameters['1'] eq 'step2' }
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<strong>Nunc luctus, lacus id aliquet bibendum, nunc mauris
-			imperdiet urna</strong>
+		<strong>Kontrola wymiarów</strong>
 	</div>
 	<div class="panel-body">
-		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
-			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
-			ultricies commodo.</p>
+		<p>     
+		
+		</p>
 	</div>
 	<div class="table-responsive">
 		<table class="table table-bordered">
@@ -373,8 +352,7 @@
 {elseif $parameters['1'] eq 'step3' }
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<strong>Nunc luctus, lacus id aliquet bibendum, nunc mauris
-			imperdiet urna</strong>
+		<strong>Kontrola geometrii</strong>
 	</div>
 	<div class="panel-body">
 		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
