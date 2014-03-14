@@ -80,8 +80,6 @@
 					<li><a href="/module/product_technology/technology">Technologie</a></li>
 				</ul>
 				<ul>
-					<button type="button" class="close" data-dismiss="alert"
-						aria-hidden="true">&times;</button>
 					<div class="alert alert-primary alert-dismissable">
 						W razie kłopotów, kilkaj <a href="/content/about"
 							class="alert-link">w taki fajny link do strony pomocy</a>

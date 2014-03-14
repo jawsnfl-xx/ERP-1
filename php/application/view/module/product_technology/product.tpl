@@ -1,7 +1,9 @@
 {if $parameters['1'] eq 'page' }
 <div class="panel panel-default">
-	<div class="panel-heading">Nunc luctus, lacus id aliquet
-		bibendum, nunc mauris imperdiet urna</div>
+	<div class="panel-heading">
+		<p>Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet
+			urna</p>
+	</div>
 	<div class="panel-body">
 		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
 			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
@@ -31,7 +33,7 @@
 			<th>Nazwa</th>
 			<th>id units</th>
 			<th>id units1</th>
-<th></th>
+			<th></th>
 		</tr>
 		{foreach from=$table['product']['list'] item=row name=row}
 
