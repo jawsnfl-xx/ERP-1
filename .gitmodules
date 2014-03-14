@@ -1,5 +1,4 @@
 [submodule "php\\\\framework\\\\template\\\\smarty"]
 	path = php\\\\framework\\\\template\\\\smarty
-
 	url = https://github.com/opensolutions/smarty
 
