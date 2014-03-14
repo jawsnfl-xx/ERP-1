@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-/develop_database
-=======
 target
 .settings/*
 !.settings/.jsdtscope
 .project
 .classpath
->>>>>>> origin/master
