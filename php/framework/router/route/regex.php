@@ -26,7 +26,6 @@ namespace Framework\Router\Route
         {
             $pattern = $this->pattern;
             
-            var_dump($pattern);
             preg_match_all("#^{$pattern}$#", $url, $values);
             if (sizeof($values) && sizeof($values[0]) && sizeof($values[1])) {
                 $derived = array_combine($this->keys, $values[1]);
