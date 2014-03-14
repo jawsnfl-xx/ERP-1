@@ -1,5 +1,4 @@
 ﻿<?php
-use Framework;
 
 /**
  *
@@ -24,7 +23,7 @@ function ini_configuration()
  *       @TODO:
  *       - nawiązać połączenie z bazą danych;
  *      
- * 
+ *      
  *       @SAMPLE
  *       Przykład stosowania połączenia z bazą danych MySQL
  *       $data = $database->_mysql->fetch_array('SHOW TABLES');
@@ -68,6 +67,22 @@ function ini_request()
 }
 
 /**
+ */
+function ini_router()
+{
+    $router = new Framework\Router(array(
+        "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
+        "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
+    ));
+    Framework\Registry::set("router", $router);
+    
+  //  include ("./routes.php");
+    $router->dispatch();
+    
+    // var_dump($router);
+}
+
+/**
  *
  * @name ini_bootstrap
  *      
@@ -83,6 +98,7 @@ function ini_bootstrap()
     ini_database();
     ini_session();
     ini_request();
+    ini_router();
     
     /**
      * Start kontrolera aplikacji
