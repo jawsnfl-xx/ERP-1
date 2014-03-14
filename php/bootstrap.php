@@ -67,73 +67,6 @@ function ini_request()
 }
 
 /**
- */
-function ini_router()
-{
-    $router = new Framework\Router(array(
-        "url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
-        "extension" => isset($_GET["url"]) ? $_GET["url"] : "html"
-    ));
-    Framework\Registry::set("router", $router);
-    
-    /**
-     */
-    $routes = array(
-        array(
-            "pattern" => "login",
-            "controller" => "users",
-            "action" => "login"
-        ),
-        array(
-            "pattern" => "index",
-            "controller" => "users",
-            "action" => "index"
-        ),
-        array(
-            "pattern" => "logout",
-            "controller" => "users",
-            "action" => "logout"
-        ),
-        array(
-            "pattern" => "signup",
-            "controller" => "users",
-            "action" => "signup"
-        ),
-        array(
-            "pattern" => "home/index",
-            "controller" => "home",
-            "action" => "index"
-        ),
-        array(
-            "pattern" => "settings",
-            "controller" => "home",
-            "action" => "settings"
-        ),
-        array(
-            "pattern" => "quality_management",
-            "controller" => "module",
-            "action" => "quality_management"
-        ),
-        array(
-            "pattern" => "product_technology",
-            "controller" => "module",
-            "action" => "product_technology"
-        )
-    );
-    
-    /**
-     */
-    foreach ($routes as $route) {
-        $router->addRoute(new Framework\Router\Route\Regex($route));
-    }
-    unset($routes);
-    
-    $router->dispatch();
-    
-    // var_dump($router);
-}
-
-/**
  *
  * @name ini_bootstrap
  *      
@@ -149,7 +82,6 @@ function ini_bootstrap()
     ini_database();
     ini_session();
     ini_request();
-    ini_router();
     
     /**
      * Start kontrolera aplikacji
