@@ -1,11 +1,6 @@
 ﻿<?php
 
 /**
- * 
- * test
- */
-
-/**
  * Deklaracja stałych:
  */
 define('APP_DIR', dirname(realpath(__FILE__)));
