@@ -23,7 +23,7 @@
 			</form>
 		</div>
 		<div class="col-lg-6">
-			<a href="/module/product_technology/product/add"
+			<a href="/module/product_technology/product/add/1"
 				class="btn btn-default">Dodaj ...</a>
 		</div>
 	</div>
@@ -56,15 +56,32 @@
 		</ul>
 	</div>
 </div>
-{elseif $parameters['1'] eq 'add' }
+{elseif $parameters['1'] eq 'add' } {if $parameters['2'] eq '1' }
 <div class="panel panel-default">
-	<div class="panel-heading">Nunc luctus, lacus id aliquet
-		bibendum, nunc mauris imperdiet urna</div>
+	<div class="panel-heading">Dodawanie nowego produktu</div>
 	<div class="panel-body">
-		<p>jksdf hgksjdhf gkshdgk jhsdfkjg hsdkjfhg ksjdfhg kjsdfhg
-			lkjafdhgl ksjdfhglk jsdhf glkjshdlkfjgh sdlkfj hg</p>
+		<p>Aby dodać do systemu nowy produkt, w pierwszym kroku wprowadź
+			jego unikalny numer identyfikacyjny:</p>
+
+		{if $table['product']['error'] eq 'idIsExists' }
+		<div class="alert alert-warning">
+			<h4>Jest już taki produkt</h4>
+			<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum
+				sem a accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar,
+				ornare nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac
+				ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulu</p>
+		</div>
+
+		{elseif $table['product']['error'] eq 'emptyValueName' }
+		<div class="alert alert-danger">
+			<h4>Nic nie wpisano</h4>
+			<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum
+				sem a accumsan vehicula. Vestibulu</p>
+		</div>
+		{/if}
+
 		<form role="form" method="post"
-			action="/module/product_technology/product/_add">
+			action="/module/product_technology/product/_add/1">
 			<div class="input-group">
 				<input type="text" class="form-control" id="number"
 					placeholder="Wprowadź numer" name="number"> <span
@@ -75,7 +92,7 @@
 		</form>
 	</div>
 </div>
-{elseif $parameters['1'] eq 'view' and $parameters['2'] neq '' }
+{/if} {elseif $parameters['1'] eq 'view' and $parameters['2'] neq '' }
 <div class="panel panel-default">
 	<div class="panel-heading">Informacje o produkcie</div>
 	<div class="panel-body">

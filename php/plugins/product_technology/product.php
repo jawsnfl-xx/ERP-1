@@ -174,5 +174,32 @@ namespace Plugins\Product_technology
             
             return $data;
         }
+
+        /**
+         *
+         * @return unknown
+         */
+        public function _isExists($_name)
+        {
+            $database = Registry::get("database");
+            
+            $queryBuilder = $database->_orm->_conn->createQueryBuilder();
+            
+            $queryBuilder->select('*')
+                ->from('products', 'products')
+                ->where($queryBuilder->expr()
+                ->eq("products.products_name", $_name))
+                ->setMaxResults(1);
+            
+            $stmt = $database->_orm->_conn->query($queryBuilder);
+            
+            $data = array();
+            
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            return $data;
+        }
     }
 }

@@ -147,13 +147,74 @@ namespace Application\Controller
                 } 
 
                 elseif ($this->_parameters[1] === 'add') {
-                /**
-                 * Wyświetla arkusz dodania nowego produktu
-                 */
+                    /**
+                     * Wyświetla arkusz dodania nowego produktu
+                     */
+                    if ($this->_parameters[2] === '1') {
+                        /**
+                         * Sprawdza istnienie danego produktu w bazie...
+                         */
+                        $session = Registry::get("session");
+                        
+                        // var_dump($session->getup("product/add/error"));
+                        
+                        if ($session->getup("product/add/error") === 'idIsExists') {
+                            $this->_table['product']['error'] = 'idIsExists';
+                            $this->_table['product']['link'] = $session->getup("product/add/return_value");
+                            $session->erase("product/add/error");
+                        } elseif ($session->getup("product/add/error") === 'emptyValueName') {
+                            $this->_table['product']['error'] = 'emptyValueName';
+                            $session->erase("product/add/error");
+                        } else {
+                            // print 'nic';
+                        }
+                    }
                 } elseif ($this->_parameters[1] === '_add') {
-                /**
-                 * Sprawdza i dodaje dane z arkusza dodania nowego produktu
-                 */
+                    /**
+                     * Sprawdza i dodaje dane z arkusza dodania nowego produktu
+                     */
+                    
+                    if ($this->_parameters[2] === '1') {
+                        /**
+                         * Sprawdza istnienie danego produktu w bazie...
+                         */
+                        $_keywords = RequestMethods::post('number');
+                        
+                        if (! empty($_keywords)) {
+                            // print 'mamy wartość';
+                            $this->_table['product']['exists'] = $product->_isExists($_keywords);
+                            // var_dump($this->_table['product']['exists']);
+                            if (! empty($this->_table['product']['exists'])) {
+                                /**
+                                 * Istnieje jakiś produkt to takim identyfikatorze.
+                                 * Należy się cofnąć i zaproponować przejście do p/view oraz zmianę identyfikatora
+                                 */
+                                $session = Registry::get("session");
+                                $session->setup("product/add/error", "idIsExists");
+                                $session->setup("product/add/return_value", (string) $this->_table['product']['exists']);
+                                header("Location: /module/product_technology/product/add/1");
+                            } else {
+                                /**
+                                 * Nie ma w bazie takiego produktu,
+                                 * można rozpocząć dodawanie.
+                                 */
+                                $session = Registry::get("session");
+                                $session->setup("product/add/name_value", $_keywords);
+                                header("Location: /module/product_technology/product/add/2");
+                            }
+                        } else {
+                            
+                            /**
+                             * Wpisana wartość nie jest liczbą.
+                             * Wracamy...
+                             */
+                            // print "?";
+                            // print 'jest puste';
+                            $session = Registry::get("session");
+                            $session->setup("product/add/error", "emptyValueName");
+                            header("Location: /module/product_technology/product/add/1");
+                        }
+                    }
                 } 
 
                 elseif ($this->_parameters[1] === 'search') {
