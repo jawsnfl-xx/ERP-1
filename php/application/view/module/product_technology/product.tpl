@@ -79,15 +79,23 @@
 <div class="panel panel-default">
 	<div class="panel-heading">Informacje o produkcie</div>
 	<div class="panel-body">
-	<!--  MOJA TABELKA. NIE RUCHAĆ.
-		<table class="table-bordered table-responsive">
-		<tr>
-		<th>Nazwa produktu</th>
-		<th>Specyfikacja</th>
-		<th></th>
-		</table>
-		 -->
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tr>
+					<th>nazwa</th>
+					<th colspan="2">specyfikacja</th>
+					<th>coś tu się wsadzi <!-- serio. można znaleźć jakąś informację. ja póki co nie mam pomysłu --></th>
+				</tr>
+				<tr>
+					<td>485729</td>
+					<td>Parametr 1</td>
+					<td>Wartość parametru</td>
+					<td>@up <!-- czyli jakaś potencjalnie przydatna informacja --></td>
+				</tr>
+			</table>
+		</div>
 	</div>
+
 	<ul class="list-group">
 		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam
 				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan

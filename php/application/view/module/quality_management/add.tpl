@@ -4,7 +4,6 @@
 	W przyszłości wykazujący również statusy i informacje o nieścisłościach i błędach (być może? )
 
  -->
-
 <div class="container-liquid">
 	<ul class="list-inline row">
 		<li class="col-md-2 col-md-offset-1"><a
@@ -89,14 +88,14 @@
 					<img
 						src="http://www.stalco.pl/produkt/suwmiarka_elektroniczna_s11215.jpg"
 						alt="..." class="img-rounded img-responsive">
-
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<a class="btn btn-primary btn-block"
-			href="/module/quality_management/add/step1" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Wykonaj nowe badanie</a>
+			href="/module/quality_management/add/step1" data-toggle="tooltip"
+			data-placement="top" title="Tooltip on top">Wykonaj nowe badanie</a>
 	</div>
 </div>
 {elseif $parameters['1'] eq 'step1' }
@@ -128,7 +127,6 @@
 			<li class="list-group-item">
 				<div
 					class="form-group {if in_array( 'name', $table['form_err']) } has-error has-feedback{/if}">
-
 					<label class="control-label col-sm-3" for="inputSuccess3">Nazwa
 						/ numer</label>
 					<div class="col-sm-9">
@@ -155,7 +153,6 @@
 							required>
 					</div>
 				</div>
-
 				<div
 					class="form-group {if in_array( 'quan', $table['form_err']) } has-error has-feedback{/if}">
 					<label class="control-label col-sm-3" for="inputSuccess3">Ilość
@@ -348,6 +345,7 @@
 <a class="btn btn-primary btn btn-block"
 	href="/module/quality_management/add/step3"> Block level button</a>
 {elseif $parameters['1'] eq 'step3' }
+
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<strong>Kontrola geometrii</strong>
@@ -474,6 +472,26 @@
 	href="/module/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					Możesz teraz zeskanować kod <input type="text" class="form-control"
+						placeholder="Text input">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Default panel contents -->
 	<div class="panel-heading">Panel heading</div>
 	<div class="panel-body">
@@ -569,7 +587,7 @@
 
 				<div class="col-sm-2">
 					<a class="btn btn-primary btn btn-block"
-						href="/module/quality_management"> ZAKOŃCZ</a>
+						href="/module/quality_management">NIE KOŃCZ</a>
 				</div>
 			</div>
 		</li>
@@ -583,7 +601,7 @@
 				</div>
 				<div class="col-sm-5">
 					<a class="btn btn-primary btn btn-block"
-						href="/module/quality_management">NIE KOŃCZ</a>
+						href="/module/quality_management">ZAKOŃCZ</a>
 				</div>
 			</div>
 		</li>
