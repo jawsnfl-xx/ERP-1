@@ -12,19 +12,49 @@
 	<table class="table table-responsive table-bordered">
 		{foreach from=$table['quality_management']['view'] item=row name=row}
 		<tr>
-			<th colspan="2"></th>
-			<th>nazwa detalu</th>
-			<th>{$row.products_name}</th>
-			<th>data wykonania</th>
-			<th colspan="2">{$row.date_end}</th>
+			<th colspan="2" rowspan="3"></th>
+			<th>nr koła</th>
+			<td>{$row.products_name}</td>
+			<th>kontroler</th>
+			<td>lorem ipsum</td>
+			<th>pakowacz</th>
+			<td>twój stary</td>
+
+		</tr>
+		<tr>
+
+			<th>nr zlecenia</th>
+			<td>795666</td>
+			<th>szt w zleceniu</th>
+			<td>36</td>
+			<th>data wysyłki</th>
+			<td>{$row.date_end|truncate:10:""}</td>
+
+		</tr>
+		<tr>
+			<th>data pomiaru</th>
+			<td>{$row.date_end|truncate:10:""}</td>
+			<th>szt w palecie</th>
+			<td>36</td>
+			<th>nr palety</th>
+			<td>666999</td>
 		</tr>
 		{/foreach}
-		<th colspan="2">badany wymiar</th>
+		<tr></tr>
+		<tr>
+			<th>badane sztuki</th>
+			<th>5</th>
+			<th colspan="6">Numer próbki</th>
+		</tr>
+
+		<th>badany wymiar</th>
+		<th>Tolerancja</th>
 		<th>1</th>
 		<th>2</th>
 		<th>3</th>
 		<th>4</th>
 		<th>5</th>
+		<th></th>
 		</tr>
 		<tbody>
 			{foreach from=$table['dimension']['list'] item=row name=row}
@@ -54,58 +84,33 @@
 				<td><input type="text" class="form-control input-sm"
 					id="exampleInputEmail1" placeholder=""
 					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
 			</tr>
 			{/foreach}
 			<tr>
 				<td><span>&#8960; 56</span></td>
 				<td><span>&plusmn; 0,2</span></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><span>&#8960; 257</span></td>
 				<td><span>+0,2<br />-0,5
 				</span></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><span>89,7</span></td>
@@ -124,21 +129,11 @@
 						</div>
 					</div>
 				</td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><span>&#8960; 56</span></td>
@@ -152,97 +147,49 @@
 						<span>0,05A</span>
 					</div>
 				</td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+
 			</tr>
 			<tr>
 				<td><span>&#8960; 56</span></td>
 				<td><span></span></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><span>&#8960; 56</span></td>
 				<td><span></span></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><span>&#8960; 56</span></td>
 				<td><span></span></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><span>&#8960; 56</span></td>
 				<td><span></span></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
-				<td><input type="text" class="form-control input-sm"
-					id="exampleInputEmail1" placeholder=""
-					style="magin: 0; border: 0; box-shadow: none;"></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
 				<td><span>&#8960; 56</span></td>
@@ -311,6 +258,8 @@
 		<li class="list-group-item">Vestibulum at eros</li>
 	</ul>
 	<div class="panel-footer">
-	<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque semper nulla at rhoncus tincidunt.</h3></div>
+		<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+			Quisque semper nulla at rhoncus tincidunt.</h3>
+	</div>
 
 </div>
