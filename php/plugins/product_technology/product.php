@@ -91,6 +91,8 @@ namespace Plugins\Product_technology
         {
             $database = Registry::get("database");
             
+            $queryBuilder = $database->_orm->_conn->createQueryBuilder();
+            
             /**
              * Wyzerowanie zmienynch
              */
@@ -108,11 +110,31 @@ namespace Plugins\Product_technology
              * PAMIĘTAJ!!!
              * limit działa przyrostowo!
              */
-            $data = $database->_mysql->fetch_array('SELECT * FROM products
-                	left join units on units.id_units = products.units_id_units
-                	left join category_product on category_product.product_id_product = products.id_products
-                	left join category on category.id_category = category_product.category_id_category
-                    ORDER BY `products_name` ASC LIMIT ' . $limit_down . ' , ' . $limit_up . ';');
+            
+            $queryBuilder->select('*')
+                ->from('products', 'products')
+                ->leftJoin("products", "units", "units", "units.id_units = products.units_id_units")
+                ->leftJoin("products", "category_product", "category_product", "category_product.product_id_product = products.id_products")
+                ->leftJoin("products", "category", "category", "category.id_category = category_product.category_id_category")
+                ->orderBy('products.products_name', 'ASC')
+                ->setFirstResult($limit_down)
+                ->setMaxResults($limit_up);
+            
+            $stmt = $database->_orm->_conn->query($queryBuilder);
+            // var_dump($stmt);
+            
+            $data = array();
+            
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            // $data = $database->_mysql->fetch_array('SELECT * FROM products
+            // left join units on units.id_units = products.units_id_units
+            // left join category_product on category_product.product_id_product = products.id_products
+            // left join category on category.id_category = category_product.category_id_category
+            // ORDER BY `products_name` ASC LIMIT ' . $limit_down . ' , ' . $limit_up . ';');
+            
             return $data;
         }
 
@@ -132,12 +154,10 @@ namespace Plugins\Product_technology
                 ->leftJoin("products", "category_product", "category_product", "category_product.product_id_product = products.id_products")
                 ->leftJoin("products", "category", "category", "category.id_category = category_product.category_id_category")
                 ->where($queryBuilder->expr()
-                ->eq("products.id_products", $_id));
-            
-            // var_dump($queryBuilder);
+                ->eq("products.id_products", $_id))
+                ->setMaxResults(1);
             
             $stmt = $database->_orm->_conn->query($queryBuilder);
-            // var_dump($stmt);
             
             $data = array();
             
