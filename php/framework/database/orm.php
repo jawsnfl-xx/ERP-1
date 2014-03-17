@@ -17,53 +17,52 @@ namespace Framework\Database
     class ORM extends Database
     {
 
+        /**
+         * @readwrite
+         */
+        public $_config;
+
+        /**
+         * @readwrite
+         */
+        protected $_connectionParams;
+
+        /**
+         * @readwrite
+         */
+        public $_conn;
+
         public function __construct()
         {
-            // $isDevMode = TRUE;
-            // $config = Doctrine\ORM\Tools\Setup::createXMLMetadataConfiguration(array(
-            // '../../php/configuration/xml'
-            // ), $isDevMode);
+            $this->_config = new \Doctrine\DBAL\Configuration();
             
-            // var_dump( $config);
-            
-            // $connectionOptions = array(
-            // 'driver' => 'pdo_mysql',
-            // 'host' => '127.0.0.1',
-            // 'dbname' => 'test1',
-            // 'user' => 'root',
-            // 'password' => ''
-            // );
-            
-            // $em = Doctrine\ORM\EntityManager::create($connectionOptions, $config);
-            $config = new \Doctrine\DBAL\Configuration();
-            
-            $connectionParams = array(
+            $this->_connectionParams = array(
                 'driver' => 'pdo_mysql',
                 'host' => '127.0.0.1',
                 'dbname' => 'test1',
                 'user' => 'root',
                 'password' => ''
             );
-            $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
+            $this->_conn = \Doctrine\DBAL\DriverManager::getConnection($this->_connectionParams, $this->_config);
             
-            var_dump($config);
-            var_dump($conn);
+            // var_dump($config);
+            // var_dump($conn);
             
-            $queryBuilder = $conn->createQueryBuilder();
+            // $queryBuilder = $conn->createQueryBuilder();
             
-            $queryBuilder->select('*')
-                ->from('products', 'products')
-                ->setFirstResult(5)
-                ->setMaxResults(5);
+            // $queryBuilder->select('*')
+            // ->from('products', 'products')
+            // ->setFirstResult(5)
+            // ->setMaxResults(5);
             
-            var_dump($queryBuilder);
+            // var_dump($queryBuilder);
             
-            $stmt = $conn->query($queryBuilder);
+            // $stmt = $conn->query($queryBuilder);
             
-            var_dump($stmt);
-            while ($row = $stmt->fetch()) {
-                var_dump($row);
-            }
+            // var_dump($stmt);
+            // while ($row = $stmt->fetch()) {
+            // var_dump($row);
+            // }
             
             // $sql = "SELECT * FROM products";
             // $stmt = $conn->query($sql);
@@ -73,6 +72,8 @@ namespace Framework\Database
             // while ($row = $stmt->fetch()) {
             // var_dump($row);
             // }
+            
+            return $this->_conn;
         }
     }
 }

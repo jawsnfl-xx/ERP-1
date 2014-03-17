@@ -31,6 +31,7 @@ namespace Plugins\Product_technology
         public function _createList()
         {
             $database = Registry::get("database");
+            
             $data = NULL;
             
             $data = $database->_mysql->fetch_array('SELECT * FROM products 
@@ -122,13 +123,42 @@ namespace Plugins\Product_technology
         public function _createView($_id)
         {
             $database = Registry::get("database");
-            $data = NULL;
             
-            $data = $database->_mysql->fetch_array('SELECT * FROM products
-                	left join units on units.id_units = products.units_id_units
-                	left join category_product on category_product.product_id_product = products.id_products
-                	left join category on category.id_category = category_product.category_id_category
-                    WHERE `id_products` = ' . $_id . ' LIMIT 1;');
+            // var_dump($database);
+            // $queryBuilder = $database->_orm->createQueryBuilder();
+            
+            $queryBuilder = $database->_orm->_conn->createQueryBuilder();
+            
+            $queryBuilder->select('*')
+                ->from('products', 'products')
+                ->leftJoin("products", "units", "units", "units.id_units = products.units_id_units")
+                ->leftJoin("products", "category_product", "category_product", "category_product.product_id_product = products.id_products")
+                ->leftJoin("products", "category", "category", "category.id_category = category_product.category_id_category")
+                ->where("products.id_products = " . $_id);
+            
+            // var_dump($queryBuilder);
+            
+            $stmt = $database->_orm->_conn->query($queryBuilder);
+            // var_dump($stmt);
+            
+            $data = array();
+            
+            // var_dump($stmt);
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            // var_dump($queryBuilder);
+            
+            // $data = NULL;
+            
+            // $data = $database->_mysql->fetch_array('SELECT * FROM products
+            // left join units on units.id_units = products.units_id_units
+            // left join category_product on category_product.product_id_product = products.id_products
+            // left join category on category.id_category = category_product.category_id_category
+            // WHERE `id_products` = ' . $_id . ' LIMIT 1;');
+            
+            // var_dump( $data);
             return $data;
         }
     }

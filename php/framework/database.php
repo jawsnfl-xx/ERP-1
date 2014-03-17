@@ -58,9 +58,9 @@ namespace Framework
             // var_dump( $this->_mysql );
             // $this->_mysql->query();
             // return $dupa;
-        
-        /**
-         */
+            
+            /**
+             */
             
             // $this->_pdo = new Database\PDO();
             // $this->_pdo->connect($this->_options);
@@ -73,7 +73,11 @@ namespace Framework
             
             // var_dump($stmt);
             
-            // $this->_orm = new Database\ORM();
+            /**
+             */
+            $this->_orm = new Database\ORM($this->_options);
+            
+            // var_dump($this);
         }
     }
 }
