@@ -66,13 +66,20 @@ namespace Plugins\Product_technology
         public function _createListCount()
         {
             $database = Registry::get("database");
-            /**
-             * Wyzerowanie zmienynch
-             */
-            $count = NULL;
             
-            $count = $database->_mysql->fetch_array('SELECT COUNT(`id_products`) FROM products;');
-            return $count['0']['COUNT(`id_products`)'];
+            $data = array();
+            
+            $sql = "SELECT COUNT(`id_products`) FROM products";
+            $stmt = $database->_orm->_conn->query($sql);
+            
+            // var_dump($stmt);
+            
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            return $data['0']['COUNT(`id_products`)'];
+            ;
         }
 
         /**
