@@ -44,6 +44,8 @@ function ini_database()
     );
     $database->initialize();
     
+    // var_dump($database);
+    
     Framework\Registry::set("database", $database);
 }
 
