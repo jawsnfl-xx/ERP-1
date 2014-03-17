@@ -96,7 +96,7 @@
 	</div>
 	<div class="row">
 		<a class="btn btn-primary btn-block"
-			href="/module/quality_management/add/step1">Wykonaj nowe badanie</a>
+			href="/module/quality_management/add/step1" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Wykonaj nowe badanie</a>
 	</div>
 </div>
 {elseif $parameters['1'] eq 'step1' }
@@ -231,9 +231,7 @@
 		<strong>Kontrola wymiarów</strong>
 	</div>
 	<div class="panel-body">
-		<p>     
-		
-		</p>
+		<p></p>
 	</div>
 	<div class="table-responsive">
 		<table class="table table-bordered">
