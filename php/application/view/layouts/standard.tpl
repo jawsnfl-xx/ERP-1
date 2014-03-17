@@ -8,9 +8,6 @@
 <!-- Bootstrap -->
 <link href="/public/css/bootstrap.css" rel="stylesheet">
 <link href="/public/css/bootstrap-theme.css" rel="stylesheet">
-<link href="/public/css/theme.css" rel="stylesheet">
-<link href="/public/css/dashboard.css" rel="stylesheet">
-<link href="/public/css/print.css" rel="stylesheet" media="print">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>

@@ -13,7 +13,7 @@
 		</p>
 	</div>
 	<div class="col-lg-4">
-		<h2>Produkcja i technologia</h2>
+		<h2>Produkty i technologia</h2>
 		<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
 			euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi
 			leo risus, porta ac consectetur ac, vestibulum at eros. Praesent

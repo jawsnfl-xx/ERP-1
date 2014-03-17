@@ -1,3 +1,6 @@
+<link href="/public/css/theme.css" rel="stylesheet">
+<link href="/public/css/dashboard.css" rel="stylesheet">
+<link href="/public/css/print.css" rel="stylesheet" media="print">
 <body data-spy="scroll" data-target="">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
