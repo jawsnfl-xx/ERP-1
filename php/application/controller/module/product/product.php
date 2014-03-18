@@ -22,5 +22,11 @@ if ($this->_parameters[1] === 'view') {
 } elseif ($this->_parameters[1] === 'page') {
     include_once 'page/page.php';
 } else {
+    /**
+     * W wypadku wyświetlenia dowolnej ze stron
+     * pt/product wyświerla listę stron z defaultową
+     * pierwszą stroną.
+     * Zawiera ona 20 wyników.
+     */
     header('Location: /module/product_technology/product/page/1/20');
 }
