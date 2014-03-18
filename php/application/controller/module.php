@@ -164,12 +164,44 @@ namespace Application\Controller
                             
                             // var_dump( $this->_table['product']['link']);
                             $session->erase("product/add/error");
+                            $session->erase("product/add/name_value");
                         } elseif ($session->getup("product/add/error") === 'emptyValueName') {
                             $this->_table['product']['error'] = 'emptyValueName';
                             $session->erase("product/add/error");
+                            $session->erase("product/add/name_value");
                         } else {
                             // print 'nic';
                         }
+                    } elseif ($this->_parameters[2] === '2') {
+                        
+                        $session = Registry::get("session");
+                        
+                        if ($session->getup("product/add/name_value")) {
+                        /**
+                         * Mamy wartość !
+                         * To znaczy, że prawidłowo prześliśmy do kroku 2...
+                         */
+                        /**
+                         * Możemy wyświetlić pola do wpisania informacji...
+                         */
+                            
+                            /**
+                             * Obsłuda błędów
+                             */
+                        } else {
+                            /**
+                             * Nic nie wiemy o detalu, jaki dodajemy...
+                             * Źle.
+                             * Cofamy się do kroku 1.
+                             */
+                            header("Location: /module/product_technology/product/add/1");
+                        }
+                    } else {
+                        /**
+                         * Nie wpisano numeru kroku w pasek adresu
+                         * Przechodzimy do kroku 1
+                         */
+                        header("Location: /module/product_technology/product/add/1");
                     }
                 } elseif ($this->_parameters[1] === '_add') {
                     /**

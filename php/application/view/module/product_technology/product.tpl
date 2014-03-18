@@ -56,10 +56,11 @@
 		</ul>
 	</div>
 </div>
-{elseif $parameters['1'] eq 'add' } {if $parameters['2'] eq '1' }
+{elseif $parameters['1'] eq 'add' }
 <div class="panel panel-default">
 	<div class="panel-heading">Dodawanie nowego produktu</div>
 	<div class="panel-body">
+		{if $parameters['2'] eq '1' }
 		<p>Aby dodać do systemu nowy produkt, w pierwszym kroku wprowadź
 			jego unikalny numer identyfikacyjny:</p>
 
@@ -85,6 +86,7 @@
 			<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum
 				sem a accumsan vehicula. Vestibulu</p>
 		</div>
+
 		{/if}
 
 		<form role="form" method="post"
@@ -97,9 +99,12 @@
 				</span>
 			</div>
 		</form>
+		{elseif $parameters['2'] eq '2' }
+		<h4>krok 2...</h4>
+		{/if}
 	</div>
 </div>
-{/if} {elseif $parameters['1'] eq 'view' and $parameters['2'] neq '' }
+{elseif $parameters['1'] eq 'view' and $parameters['2'] neq '' }
 <div class="panel panel-default">
 	<div class="panel-heading">Informacje o produkcie</div>
 	<div class="panel-body">
