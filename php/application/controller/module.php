@@ -111,10 +111,10 @@ namespace Application\Controller
             
             if ($this->_parameters[0] === 'product') {
                 
-                include_once 'product/product.php';
+                include_once 'module/product/product.php';
             } elseif ($this->_parameters[0] === 'technology') {
                 
-                include_once 'technology/technology.php';
+                include_once 'module/technology/technology.php';
             }
         }
 
@@ -129,14 +129,14 @@ namespace Application\Controller
             $quality_management = new \Plugins\Quality_management\Production_quality_management();
             if ($this->_parameters[0] === 'review') {
                 
-                include_once 'quality_management/review/review.php';
+                include_once 'module/quality_management/review/review.php';
             } elseif ($this->_parameters[0] === 'view') {
-                include_once 'quality_management/view/view.php';
+                include_once 'module/quality_management/view/view.php';
             } 
 
             elseif ($this->_parameters[0] === 'add') {
                 
-                include_once 'quality_management/add/add.php';
+                include_once 'module/quality_management/add/add.php';
             } else {}
         }
     }
