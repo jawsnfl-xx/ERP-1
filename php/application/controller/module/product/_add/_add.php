@@ -31,7 +31,7 @@ if ($this->_parameters[2] === '1') {
              * można rozpocząć dodawanie.
              */
             $session = Registry::get("session");
-            $session->setup("product/add/name_value", $_keywords);
+            $session->setup("product/add/value/names", $_keywords);
             header("Location: /module/product_technology/product/add/2");
         }
     } else {
@@ -58,7 +58,7 @@ if ($this->_parameters[2] === '1') {
         $session->setup("product/add/error/units", "emptyValueUnits");
     } else {
         $session = Registry::get("session");
-        $session->setup("product/add/name_valueUnits", $_units_id_units);
+        $session->setup("product/add/value/namesUnits", $_units_id_units);
     }
     if (empty($_category_product) or $_category_product === '--') {
         $session = Registry::get("session");
@@ -66,18 +66,18 @@ if ($this->_parameters[2] === '1') {
         $session->setup("product/add/error/category", "emptyValueCategory");
     } else {
         $session = Registry::get("session");
-        $session->setup("product/add/name_valueCategory", $_category_product);
+        $session->setup("product/add/value/namesCategory", $_category_product);
     }
     if ($session->getup("product/add/error") === "emptyValue") {
         var_dump($session->getup("product/add/error"));
-        var_dump($session->getup("product/add/name_valueUnits"));
-        var_dump($session->getup("product/add/name_valueCategory"));
+        var_dump($session->getup("product/add/value/namesUnits"));
+        var_dump($session->getup("product/add/value/namesCategory"));
         // print '2';
         header("Location: /module/product_technology/product/add/2");
     } else {
         var_dump($session->getup("product/add/error"));
-        var_dump($session->getup("product/add/name_valueUnits"));
-        var_dump($session->getup("product/add/name_valueCategory"));
+        var_dump($session->getup("product/add/value/namesUnits"));
+        var_dump($session->getup("product/add/value/namesCategory"));
         header("Location: /module/product_technology/product/add/3");
     }
 } elseif ($this->_parameters[2] === '3') {
