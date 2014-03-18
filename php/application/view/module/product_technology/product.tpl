@@ -65,11 +65,18 @@
 
 		{if $table['product']['error'] eq 'idIsExists' }
 		<div class="alert alert-warning">
-			<h4>Jest już taki produkt</h4>
-			<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum
-				sem a accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar,
-				ornare nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac
-				ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulu</p>
+			{foreach from=$table['product']['link'] item=row name=row}
+			<h4>Uwaga!</h4>
+			<p>
+				Produkt o identyfikatorze <strong>{$row.products_name}</strong>
+				znajduje się już w bazie danych.
+			</p>
+			<p>
+				Możesz zobaczyć szczegóły dotyczące tego produktu <a
+					class="alert-link"
+					href="/module/product_technology/product/view/{$row.id_products}">tutaj</a>.
+			</p>
+			{/foreach}
 		</div>
 
 		{elseif $table['product']['error'] eq 'emptyValueName' }

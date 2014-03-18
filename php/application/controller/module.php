@@ -161,6 +161,8 @@ namespace Application\Controller
                         if ($session->getup("product/add/error") === 'idIsExists') {
                             $this->_table['product']['error'] = 'idIsExists';
                             $this->_table['product']['link'] = $session->getup("product/add/return_value");
+                            
+                            // var_dump( $this->_table['product']['link']);
                             $session->erase("product/add/error");
                         } elseif ($session->getup("product/add/error") === 'emptyValueName') {
                             $this->_table['product']['error'] = 'emptyValueName';
@@ -191,7 +193,7 @@ namespace Application\Controller
                                  */
                                 $session = Registry::get("session");
                                 $session->setup("product/add/error", "idIsExists");
-                                $session->setup("product/add/return_value", (string) $this->_table['product']['exists']);
+                                $session->setup("product/add/return_value", $this->_table['product']['exists']);
                                 header("Location: /module/product_technology/product/add/1");
                             } else {
                                 /**
