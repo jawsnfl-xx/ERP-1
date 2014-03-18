@@ -216,11 +216,10 @@ namespace Application\Controller
                          * Krok 3 - podsumowanie dodawania
                          */
                         $session = Registry::get("session");
+                        
                         $this->_table['product']['view'] = $session->getup("product/add/return_value");
                         $this->_table['product']['units'] = $session->getup("product/add/name_valueUnits");
                         $this->_table['product']['category'] = $session->getup("product/add/name_valueCategory");
-                        
-                        var_dump($this->_table['product']['view']);
                     } else {
                         /**
                          * Nie wpisano numeru kroku w pasek adresu
