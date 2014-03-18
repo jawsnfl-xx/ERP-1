@@ -103,8 +103,6 @@
 		<p>Aby kontynuować proces dodania produktu do bazy danych, proszę
 			uzupełnić poniższe informacje.</p>
 
-<h1>{$table['product']['unitsSelect']}</h1>
-
 		<form role="form" method="post"
 			action="/module/product_technology/product/_add/2">
 			<ul class="list-group">
@@ -113,7 +111,7 @@
 						<!--  dodać foreach z jednostkami miary -->
 						<option>--</option>{foreach from=$table['product']['units']
 						item=row name=row}
-						<option {if $row.name eq $table['product']['unitsSelect']} selected {/if}>{$row.name}</option> {/foreach}
+						<option>{$row.name}</option> {/foreach}
 				</select></li>
 				<li class="list-group-item"><h4>Kategoria produktu:</h4> <select
 					class="form-control" name="category_product">

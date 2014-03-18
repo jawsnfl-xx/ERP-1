@@ -194,7 +194,7 @@ namespace Application\Controller
                             if ($session->getup("product/add/error")) {
                                 $this->_table['product']['error'] = TRUE;
                                 
-                                if ($session->getup("product/add/error/units")) {} else {
+                                if ($session->getup("product/add/error/units") === "") {} else {
                                     
                                     $this->_table['product']['unitsSelect'] = $session->getup("product/add/name_valueUnits");
                                 }
