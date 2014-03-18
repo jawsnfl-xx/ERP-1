@@ -1,4 +1,4 @@
-
+<!-- jedna zmiana w pliku -->
 <div class="panel panel-default">
 	<div class="panel-heading">
 		metryczka produktu
