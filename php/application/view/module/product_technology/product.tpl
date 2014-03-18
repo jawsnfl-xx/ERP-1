@@ -123,6 +123,8 @@
 			</ul>
 			<button class="btn btn-default" type="submit">Dodaj</button>
 		</form>
+		{elseif $parameters['2'] eq '3' }
+		<p>Można już to podsumować...</p>
 		{/if}
 	</div>
 </div>
