@@ -19,7 +19,7 @@ try {
      * @TODO podpięcie tych informacji pod konfigurację
      * @TODO dodanie defaultowych wartości oraz narzędzia kontrolnego
      */
-    error_reporting(E_ERROR | E_WARNING | E_PARSE);
+    error_reporting(E_ERROR | E_PARSE);
     ini_set("display_errors", DISPLAY_ERRORS);
     
     /**

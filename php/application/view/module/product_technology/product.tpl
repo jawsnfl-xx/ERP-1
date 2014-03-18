@@ -125,6 +125,10 @@
 		</form>
 		{elseif $parameters['2'] eq '3' }
 		<p>Można już to podsumować...</p>
+
+		<ul>
+			<li>{$table['product']['view']}</li>
+		</ul>
 		{/if}
 	</div>
 </div>
