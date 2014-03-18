@@ -109,20 +109,16 @@
 				<li class="list-group-item"><h4>Jednostka miary:</h4> <select
 					class="form-control" name="units_id_units">
 						<!--  dodać foreach z jednostkami miary -->
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
+						<option>--</option>{foreach from=$table['product']['units']
+						item=row name=row}
+						<option>{$row.name}</option> {/foreach}
 				</select></li>
 				<li class="list-group-item"><h4>Kategoria produktu:</h4> <select
 					class="form-control" name="category_product">
 						<!--  dodać foreach z kategormiami produktu -->
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
+						<option>--</option>{foreach from=$table['product']['category']
+						item=row name=row}
+						<option>{$row.category_name}</option> {/foreach}
 				</select></li>
 			</ul>
 			<button class="btn btn-default" type="submit">Dodaj</button>

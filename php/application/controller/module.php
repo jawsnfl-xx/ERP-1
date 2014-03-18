@@ -177,13 +177,15 @@ namespace Application\Controller
                         $session = Registry::get("session");
                         
                         if ($session->getup("product/add/name_value")) {
-                        /**
-                         * Mamy wartość !
-                         * To znaczy, że prawidłowo prześliśmy do kroku 2...
-                         */
-                        /**
-                         * Możemy wyświetlić pola do wpisania informacji...
-                         */
+                            /**
+                             * Mamy wartość !
+                             * To znaczy, że prawidłowo prześliśmy do kroku 2...
+                             */
+                            /**
+                             * Możemy wyświetlić pola do wpisania informacji...
+                             */
+                            $this->_table['product']['units'] = $product->_createListUnits();
+                            $this->_table['product']['category'] = $product->_createListCategory();
                         
                         /**
                          * Obsłuda błędów

@@ -201,5 +201,55 @@ namespace Plugins\Product_technology
             
             return $data;
         }
+
+        /**
+         *
+         * @return unknown
+         */
+        public function _createListUnits()
+        {
+            $database = Registry::get("database");
+            
+            $queryBuilder = $database->_orm->_conn->createQueryBuilder();
+            
+            $queryBuilder->select('*')
+                ->from('units', 'units')
+                ->setMaxResults(100);
+            
+            $stmt = $database->_orm->_conn->query($queryBuilder);
+            
+            $data = array();
+            
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            return $data;
+        }
+
+        /**
+         *
+         * @return unknown
+         */
+        public function _createListCategory()
+        {
+            $database = Registry::get("database");
+            
+            $queryBuilder = $database->_orm->_conn->createQueryBuilder();
+            
+            $queryBuilder->select('*')
+                ->from('category', 'category')
+                ->setMaxResults(100);
+            
+            $stmt = $database->_orm->_conn->query($queryBuilder);
+            
+            $data = array();
+            
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            return $data;
+        }
     }
 }
