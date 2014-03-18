@@ -184,10 +184,10 @@ namespace Application\Controller
                         /**
                          * Możemy wyświetlić pola do wpisania informacji...
                          */
-                            
-                            /**
-                             * Obsłuda błędów
-                             */
+                        
+                        /**
+                         * Obsłuda błędów
+                         */
                         } else {
                             /**
                              * Nic nie wiemy o detalu, jaki dodajemy...

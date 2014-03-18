@@ -83,8 +83,8 @@
 		{elseif $table['product']['error'] eq 'emptyValueName' }
 		<div class="alert alert-danger">
 			<h4>Nic nie wpisano</h4>
-			<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum
-				sem a accumsan vehicula. Vestibulu</p>
+			<p>Aby prawidłowo dodać produkt do bazy danych należy wprowadzić
+				jego numer identyfikacyjny.</p>
 		</div>
 
 		{/if}
@@ -100,7 +100,33 @@
 			</div>
 		</form>
 		{elseif $parameters['2'] eq '2' }
-		<h4>krok 2...</h4>
+		<p>Aby kontynuować proces dodania produktu do bazy danych, proszę
+			uzupełnić poniższe informacje.</p>
+
+		<form role="form" method="post"
+			action="/module/product_technology/product/_add/2">
+			<ul class="list-group">
+				<li class="list-group-item"><h4>Jednostka miary:</h4> <select
+					class="form-control" name="units_id_units">
+						<!--  dodać foreach z jednostkami miary -->
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+				</select></li>
+				<li class="list-group-item"><h4>Kategoria produktu:</h4> <select
+					class="form-control" name="category_product">
+						<!--  dodać foreach z kategormiami produktu -->
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+				</select></li>
+			</ul>
+			<button class="btn btn-default" type="submit">Dodaj</button>
+		</form>
 		{/if}
 	</div>
 </div>
