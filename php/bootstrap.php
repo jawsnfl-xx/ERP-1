@@ -1,5 +1,4 @@
 ﻿<?php
-use Framework;
 
 /**
  *
@@ -24,7 +23,7 @@ function ini_configuration()
  *       @TODO:
  *       - nawiązać połączenie z bazą danych;
  *      
- * 
+ *      
  *       @SAMPLE
  *       Przykład stosowania połączenia z bazą danych MySQL
  *       $data = $database->_mysql->fetch_array('SHOW TABLES');
@@ -44,6 +43,8 @@ function ini_database()
         )
     );
     $database->initialize();
+    
+    // var_dump($database);
     
     Framework\Registry::set("database", $database);
 }

@@ -25,6 +25,7 @@ namespace Framework\Router\Route
         public function matches($url)
         {
             $pattern = $this->pattern;
+            
             preg_match_all("#^{$pattern}$#", $url, $values);
             if (sizeof($values) && sizeof($values[0]) && sizeof($values[1])) {
                 $derived = array_combine($this->keys, $values[1]);

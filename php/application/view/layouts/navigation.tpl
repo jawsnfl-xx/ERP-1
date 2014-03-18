@@ -1,3 +1,6 @@
+<link href="/public/css/theme.css" rel="stylesheet">
+<link href="/public/css/dashboard.css" rel="stylesheet">
+<link href="/public/css/print.css" rel="stylesheet" media="print">
 <body data-spy="scroll" data-target="">
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
@@ -80,8 +83,6 @@
 					<li><a href="/module/product_technology/technology">Technologie</a></li>
 				</ul>
 				<ul>
-					<button type="button" class="close" data-dismiss="alert"
-						aria-hidden="true">&times;</button>
 					<div class="alert alert-primary alert-dismissable">
 						W razie kłopotów, kilkaj <a href="/content/about"
 							class="alert-link">w taki fajny link do strony pomocy</a>

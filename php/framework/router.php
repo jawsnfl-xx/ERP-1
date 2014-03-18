@@ -185,25 +185,6 @@ namespace Framework
             $controller = "home";
             $action = "index";
             
-            /**
-             * To nie jest wykonywane
-             */
-            foreach ($this->_routes as $route) {
-                
-                // print 'as';
-                // var_dump ( $route );
-                $matches = $route->matches($url);
-                
-                if ($matches) {
-                    $controller = $route->controller;
-                    $action = $route->action;
-                    $parameters = $route->parameters;
-                    $table = $route->table;
-                    $this->_pass($controller, $action, $parameters, $table);
-                    return;
-                }
-            }
-            
             $parts = explode("/", trim($url, "/"));
             if (sizeof($parts) > 0) {
                 $controller = $parts[0];
@@ -212,6 +193,34 @@ namespace Framework
                 {
                     $action = $parts[1];
                     $parameters = array_slice($parts, 2);
+                }
+            }
+            
+            /**
+             * To nie jest wykonywane
+             */
+            
+            // var_dump($this);
+            
+            foreach ($this->_routes as $route) {
+                
+                // print 'as';
+                // var_dump ( $route );
+                $matches = $route->matches($url);
+                
+                // var_dump($route->getController());
+                // var_dump($matches);
+                
+                if ($matches) {
+                    
+                    // var_dump($matches);
+                    // var_dump($route);
+                    $controller = $route->getController();
+                    $action = $route->getAction();
+                    $parameters = $route->getParameters();
+                    // $table = $route->getTable();
+                    $this->_pass($controller, $action, $parameters, $table);
+                    return;
                 }
             }
             
