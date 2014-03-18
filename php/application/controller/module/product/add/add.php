@@ -14,22 +14,24 @@ if ($this->_parameters[2] === '1') {
      */
     $session = Registry::get("session");
     
-    // var_dump($session->getup("product/add/error"));
-    
     if ($session->getup("product/add/error") === 'idIsExists') {
-        $this->_table['product']['error'] = 'idIsExists';
-        $this->_table['product']['link'] = $session->getup("product/add/return_value");
+        $this->_table['product']['add']['error'] = 'idIsExists';
+        $this->_table['product']['add']['value']['numer'] = $session->getup("product/add/value/numer");
         
-        // var_dump( $this->_table['product']['link']);
+        /**
+         * Wyczyszczenie informacji w sesji
+         */
         $session->erase("product/add/error");
-        $session->erase("product/add/name_value");
+        $session->erase("product/add/value/numer");
     } elseif ($session->getup("product/add/error") === 'emptyValueName') {
-        $this->_table['product']['error'] = 'emptyValueName';
+        $this->_table['product']['add']['error'] = 'emptyValueName';
+        
+        /**
+         * Wyczyszczenie informacji w sesji
+         */
         $session->erase("product/add/error");
-        $session->erase("product/add/name_value");
-    } else {
-        // print 'nic';
-    }
+        $session->erase("product/add/value/numer");
+    } else {}
 } elseif ($this->_parameters[2] === '2') {
     
     $session = Registry::get("session");

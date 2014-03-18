@@ -8,7 +8,6 @@ use Framework\Request;
 /**
  * Sprawdza i dodaje dane z arkusza dodania nowego produktu
  */
-
 if ($this->_parameters[2] === '1') {
     /**
      * Sprawdza istnienie danego produktu w bazie...
@@ -16,9 +15,7 @@ if ($this->_parameters[2] === '1') {
     $_keywords = RequestMethods::post('number');
     
     if (! empty($_keywords)) {
-        // print 'mamy wartość';
         $this->_table['product']['exists'] = $product->_isExists($_keywords);
-        // var_dump($this->_table['product']['exists']);
         if (! empty($this->_table['product']['exists'])) {
             /**
              * Istnieje jakiś produkt to takim identyfikatorze.
@@ -43,8 +40,6 @@ if ($this->_parameters[2] === '1') {
          * Wpisana wartość nie jest liczbą.
          * Wracamy...
          */
-        // print "?";
-        // print 'jest puste';
         $session = Registry::get("session");
         $session->setup("product/add/error", "emptyValueName");
         header("Location: /module/product_technology/product/add/1");
@@ -56,9 +51,6 @@ if ($this->_parameters[2] === '1') {
      */
     $_units_id_units = RequestMethods::post('units_id_units');
     $_category_product = RequestMethods::post('category_product');
-    
-    // var_dump($_units_id_units);
-    // var_dump($_category_product);
     
     if (empty($_units_id_units) or $_units_id_units === '--') {
         $session = Registry::get("session");
@@ -76,7 +68,6 @@ if ($this->_parameters[2] === '1') {
         $session = Registry::get("session");
         $session->setup("product/add/name_valueCategory", $_category_product);
     }
-    // var_dump($session->getup("product/add/error"));
     if ($session->getup("product/add/error") === "emptyValue") {
         var_dump($session->getup("product/add/error"));
         var_dump($session->getup("product/add/name_valueUnits"));
@@ -87,7 +78,6 @@ if ($this->_parameters[2] === '1') {
         var_dump($session->getup("product/add/error"));
         var_dump($session->getup("product/add/name_valueUnits"));
         var_dump($session->getup("product/add/name_valueCategory"));
-        // print '3';
         header("Location: /module/product_technology/product/add/3");
     }
 } elseif ($this->_parameters[2] === '3') {
