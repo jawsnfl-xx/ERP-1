@@ -186,10 +186,22 @@ namespace Application\Controller
                              */
                             $this->_table['product']['units'] = $product->_createListUnits();
                             $this->_table['product']['category'] = $product->_createListCategory();
-                        
-                        /**
-                         * Obsłuda błędów
-                         */
+                            
+                            /**
+                             * Obsłuda błędów
+                             */
+                            $session = Registry::get("session");
+                            if ($session->getup("product/add/error")) {
+                                $this->_table['product']['error'] = TRUE;
+                                
+                                if ($session->getup("product/add/error/units")) {} else {
+                                    
+                                    $this->_table['product']['unitsSelect'] = $session->getup("product/add/name_valueUnits");
+                                }
+                                if ($session->getup("product/add/error/category")) {} else {}
+                                
+                                $session->erase("product/add/error");
+                            }
                         } else {
                             /**
                              * Nic nie wiemy o detalu, jaki dodajemy...
@@ -198,6 +210,14 @@ namespace Application\Controller
                              */
                             header("Location: /module/product_technology/product/add/1");
                         }
+                    } elseif ($this->_parameters[2] === '3') {
+                        /**
+                         * Krok 3 - podsumowanie dodawania
+                         */
+                        $session = Registry::get("session");
+                        $session->getup("product/add/return_value");
+                        $session->getup("product/add/name_valueUnits");
+                        $session->getup("product/add/name_valueCategory");
                     } else {
                         /**
                          * Nie wpisano numeru kroku w pasek adresu
@@ -250,6 +270,52 @@ namespace Application\Controller
                             $session->setup("product/add/error", "emptyValueName");
                             header("Location: /module/product_technology/product/add/1");
                         }
+                    } elseif ($this->_parameters[2] === '2') {
+                        
+                        /**
+                         * No to kontrolujemy stronę 2 dodawania nowego produktu
+                         */
+                        $_units_id_units = RequestMethods::post('units_id_units');
+                        $_category_product = RequestMethods::post('category_product');
+                        
+                        // var_dump($_units_id_units);
+                        // var_dump($_category_product);
+                        
+                        if (empty($_units_id_units) or $_units_id_units === '--') {
+                            $session = Registry::get("session");
+                            $session->setup("product/add/error", "emptyValue");
+                            $session->setup("product/add/error/units", "emptyValueUnits");
+                        } else {
+                            $session = Registry::get("session");
+                            $session->setup("product/add/name_valueUnits", $_units_id_units);
+                        }
+                        if (empty($_category_product) or $_category_product === '--') {
+                            $session = Registry::get("session");
+                            $session->setup("product/add/error", "emptyValue");
+                            $session->setup("product/add/error/category", "emptyValueCategory");
+                        } else {
+                            $session = Registry::get("session");
+                            $session->setup("product/add/name_valueCategory", $_category_product);
+                        }
+                        // var_dump($session->getup("product/add/error"));
+                        if ($session->getup("product/add/error") === "emptyValue") {
+                            var_dump($session->getup("product/add/error"));
+                            var_dump($session->getup("product/add/name_valueUnits"));
+                            var_dump($session->getup("product/add/name_valueCategory"));
+                            // print '2';
+                            header("Location: /module/product_technology/product/add/2");
+                        } else {
+                            var_dump($session->getup("product/add/error"));
+                            var_dump($session->getup("product/add/name_valueUnits"));
+                            var_dump($session->getup("product/add/name_valueCategory"));
+                            // print '3';
+                            header("Location: /module/product_technology/product/add/3");
+                        }
+                    } elseif ($this->_parameters[2] === '3') {
+                    
+                    /**
+                     * No to mamy krok 3 - podsumowanie
+                     */
                     }
                 } 
 
