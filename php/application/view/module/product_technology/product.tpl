@@ -127,7 +127,10 @@
 		<p>Można już to podsumować...</p>
 
 		<ul>
-			<li>{$table['product']['view']}</li>
+			<li>{foreach from=$table['product']['view'][0] item=view
+				name=view}
+				<p>{$view} {/foreach}
+			</li>
 		</ul>
 		{/if}
 	</div>
