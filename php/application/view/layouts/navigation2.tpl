@@ -1,3 +1,7 @@
+<link href="/public/css/theme.css" rel="stylesheet">
+<link href="/public/css/dashboard.css" rel="stylesheet">
+<link href="/public/css/print.css" rel="stylesheet" media="print">
+
 <body data-spy="scroll" data-target="">
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">

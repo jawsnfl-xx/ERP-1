@@ -6,7 +6,6 @@
 				technologia</span></a> {else} <span>Produkt i technologia</span> {/if} {if
 		$parameters['0'] eq 'product'}
 	</li>
-
 	<li class="active">{if $parameters['1'] neq ''} <a
 		href="/module/product_technology/product">Produkt</a> {else} <span>Produkt</span>
 		{/if}

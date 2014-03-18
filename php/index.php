@@ -4,7 +4,7 @@
  * Deklaracja stałych:
  */
 define('APP_DIR', dirname(realpath(__FILE__)));
-define('DISPLAY_ERRORS', 0);
+define('DISPLAY_ERRORS', 1);
 define('MIN_PHP_VERSION', '5.3.7');
 define('DEVELOP_MODE', 0);
 define('BOOTSTRAP_FILE', 'bootstrap.php');
@@ -19,7 +19,7 @@ try {
      * @TODO podpięcie tych informacji pod konfigurację
      * @TODO dodanie defaultowych wartości oraz narzędzia kontrolnego
      */
-    error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+    error_reporting(E_ERROR | E_PARSE);
     ini_set("display_errors", DISPLAY_ERRORS);
     
     /**

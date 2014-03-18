@@ -4,7 +4,12 @@
 			<p>Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet
 				urna</p>
 		</div>
-		<div class="panel-body"></div>
+		<div class="panel-body">
+			<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
+				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
+				vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
+				ultricies commodo.</p>
+		</div>
 		<table class="table-responsive table table-bordered">
 			<tr>
 				<th>L.p.</th>
@@ -17,7 +22,7 @@
 			</tr>
 			<tbody>
 				<tr>
-					<td>1</td>
+					<th>1</th>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
 					<td>1.2</td>
 					<td>1.3</td>
@@ -26,7 +31,7 @@
 					<td>1.3</td>
 				</tr>
 				<tr>
-					<td>2</td>
+					<th>2</th>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
 					<td>2.2</td>
 					<td>2.3</td>
@@ -35,7 +40,7 @@
 					<td>2.3</td>
 				</tr>
 				<tr>
-					<td>3</td>
+					<th>3</th>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
 					<td>2.2</td>
 					<td>2.3</td>
@@ -44,7 +49,7 @@
 					<td>2.3</td>
 				</tr>
 				<tr>
-					<td>4</td>
+					<th>4</th>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
 					<td>2.2</td>
 					<td>2.3</td>
@@ -53,7 +58,7 @@
 					<td>2.3</td>
 				</tr>
 				<tr>
-					<td>5</td>
+					<th>5</th>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
 					<td>2.2</td>
 					<td>2.3</td>
@@ -62,7 +67,7 @@
 					<td>2.3</td>
 				</tr>
 				<tr>
-					<td>6</td>
+					<th>6</th>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
 					<td>2.2</td>
 					<td>2.3</td>
