@@ -23,7 +23,7 @@ if ($this->_parameters[2] === '1') {
              */
             $session = Registry::get("session");
             $session->setup("product/add/error", "idIsExists");
-            $session->setup("product/add/return_value", $this->_table['product']['exists']);
+            $session->setup("product/add/return_value", $this->_table['product']['add']['exists']);
             header("Location: /module/product_technology/product/add/1");
         } else {
             /**
