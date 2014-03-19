@@ -1,6 +1,4 @@
 <?php
-
-
 use Application\Controller as Controller;
 use Framework\Registry as Registry;
 use Framework\RequestMethods as RequestMethods;
