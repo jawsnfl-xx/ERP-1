@@ -64,9 +64,9 @@
 		<p>Aby dodać do systemu nowy produkt, w pierwszym kroku wprowadź
 			jego unikalny numer identyfikacyjny:</p>
 
-		{if $table['product']['error'] eq 'idIsExists' }
+		{if $table['product']['add']['error'] eq 'idIsExists' }
 		<div class="alert alert-warning">
-			{foreach from=$table['product']['link'] item=row name=row}
+			{foreach from=$table['product']['add']['value']['numer'] item=row name=row}
 			<h4>Uwaga!</h4>
 			<p>
 				Produkt o identyfikatorze <strong>{$row.products_name}</strong>
@@ -80,7 +80,7 @@
 			{/foreach}
 		</div>
 
-		{elseif $table['product']['error'] eq 'emptyValueName' }
+		{elseif $table['product']['add']['error'] eq 'emptyValueName' }
 		<div class="alert alert-danger">
 			<h4>Nic nie wpisano</h4>
 			<p>Aby prawidłowo dodać produkt do bazy danych należy wprowadzić

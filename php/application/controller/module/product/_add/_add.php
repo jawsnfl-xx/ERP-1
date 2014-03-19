@@ -15,15 +15,15 @@ if ($this->_parameters[2] === '1') {
     $_keywords = RequestMethods::post('number');
     
     if (! empty($_keywords)) {
-        $this->_table['product']['exists'] = $product->_isExists($_keywords);
-        if (! empty($this->_table['product']['exists'])) {
+        $_productExists = $product->_isExists($_keywords);
+        if (! empty($_productExists)) {
             /**
              * Istnieje jakiś produkt to takim identyfikatorze.
              * Należy się cofnąć i zaproponować przejście do p/view oraz zmianę identyfikatora
              */
             $session = Registry::get("session");
             $session->setup("product/add/error", "idIsExists");
-            $session->setup("product/add/return_value", $this->_table['product']['add']['exists']);
+            $session->setup("product/add/value/numer", $_productExists);
             header("Location: /module/product_technology/product/add/1");
         } else {
             /**
@@ -31,7 +31,7 @@ if ($this->_parameters[2] === '1') {
              * można rozpocząć dodawanie.
              */
             $session = Registry::get("session");
-            $session->setup("product/add/value/names", $_keywords);
+            $session->setup("product/add/value/numer", $_keywords);
             header("Location: /module/product_technology/product/add/2");
         }
     } else {
@@ -42,7 +42,7 @@ if ($this->_parameters[2] === '1') {
          */
         $session = Registry::get("session");
         $session->setup("product/add/error", "emptyValueName");
-        header("Location: /module/product_technology/product/add/1");
+       // header("Location: /module/product_technology/product/add/1");
     }
 } elseif ($this->_parameters[2] === '2') {
     
