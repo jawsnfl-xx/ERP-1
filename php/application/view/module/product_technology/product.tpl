@@ -66,7 +66,8 @@
 
 		{if $table['product']['add']['error'] eq 'idIsExists' }
 		<div class="alert alert-warning">
-			{foreach from=$table['product']['add']['value']['numer'] item=row name=row}
+			{foreach from=$table['product']['add']['value']['numer'] item=row
+			name=row}
 			<h4>Uwaga!</h4>
 			<p>
 				Produkt o identyfikatorze <strong>{$row.products_name}</strong>

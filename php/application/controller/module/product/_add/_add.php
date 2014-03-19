@@ -42,7 +42,7 @@ if ($this->_parameters[2] === '1') {
          */
         $session = Registry::get("session");
         $session->setup("product/add/error", "emptyValueName");
-       // header("Location: /module/product_technology/product/add/1");
+        header("Location: /module/product_technology/product/add/1");
     }
 } elseif ($this->_parameters[2] === '2') {
     
