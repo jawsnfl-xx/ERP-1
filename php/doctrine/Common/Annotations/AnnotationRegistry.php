@@ -1,7 +1,22 @@
 <?php
 /*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. This software consists of voluntary contributions made by many individuals and is licensed under the MIT license. For more information, see <http://www.doctrine-project.org>.
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * and is licensed under the MIT license. For more information, see
+ * <http://www.doctrine-project.org>.
  */
+
 namespace Doctrine\Common\Annotations;
 
 /**
@@ -9,7 +24,6 @@ namespace Doctrine\Common\Annotations;
  */
 final class AnnotationRegistry
 {
-
     /**
      * A map of namespaces to use for autoloading purposes based on a PSR-0 convention.
      *
@@ -20,14 +34,14 @@ final class AnnotationRegistry
      *
      * @var array
      */
-    private static $autoloadNamespaces = array();
+    static private $autoloadNamespaces = array();
 
     /**
      * A map of autoloader callables.
      *
      * @var array
      */
-    private static $loaders = array();
+    static private $loaders = array();
 
     static public function reset()
     {
@@ -38,7 +52,7 @@ final class AnnotationRegistry
     /**
      * Register file
      *
-     * @param string $file            
+     * @param string $file
      */
     static public function registerFile($file)
     {
@@ -50,8 +64,8 @@ final class AnnotationRegistry
      *
      * Loading of this namespaces will be done with a PSR-0 namespace loading algorithm.
      *
-     * @param string $namespace            
-     * @param string|array|null $dirs            
+     * @param string $namespace
+     * @param string|array|null $dirs
      */
     static public function registerAutoloadNamespace($namespace, $dirs = null)
     {
@@ -63,7 +77,7 @@ final class AnnotationRegistry
      *
      * Loading of this namespaces will be done with a PSR-0 namespace loading algorithm.
      *
-     * @param array $namespaces            
+     * @param array $namespaces
      */
     static public function registerAutoloadNamespaces(array $namespaces)
     {
@@ -76,13 +90,13 @@ final class AnnotationRegistry
      * NOTE: These class loaders HAVE to be silent when a class was not found!
      * IMPORTANT: Loaders have to return true if they loaded a class that could contain the searched annotation class.
      *
-     * @param callable $callable            
+     * @param callable $callable
      *
      * @throws \InvalidArgumentException
      */
     static public function registerLoader($callable)
     {
-        if (! is_callable($callable)) {
+        if (!is_callable($callable)) {
             throw new \InvalidArgumentException("A callable is expected in AnnotationRegistry::registerLoader().");
         }
         self::$loaders[] = $callable;
@@ -91,12 +105,12 @@ final class AnnotationRegistry
     /**
      * Autoload an annotation class silently.
      *
-     * @param string $class            
+     * @param string $class
      * @return boolean
      */
     static public function loadAnnotationClass($class)
     {
-        foreach (self::$autoloadNamespaces as $namespace => $dirs) {
+        foreach (self::$autoloadNamespaces AS $namespace => $dirs) {
             if (strpos($class, $namespace) === 0) {
                 $file = str_replace("\\", DIRECTORY_SEPARATOR, $class) . ".php";
                 if ($dirs === null) {
@@ -105,7 +119,7 @@ final class AnnotationRegistry
                         return true;
                     }
                 } else {
-                    foreach ((array) $dirs as $dir) {
+                    foreach((array)$dirs AS $dir) {
                         if (file_exists($dir . DIRECTORY_SEPARATOR . $file)) {
                             require $dir . DIRECTORY_SEPARATOR . $file;
                             return true;
@@ -114,8 +128,8 @@ final class AnnotationRegistry
                 }
             }
         }
-        
-        foreach (self::$loaders as $loader) {
+
+        foreach (self::$loaders AS $loader) {
             if (call_user_func($loader, $class) === true) {
                 return true;
             }

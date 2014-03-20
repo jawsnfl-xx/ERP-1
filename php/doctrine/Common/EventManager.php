@@ -1,7 +1,24 @@
 <?php
 /*
- * $Id$ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. This software consists of voluntary contributions made by many individuals and is licensed under the MIT license. For more information, see <http://www.doctrine-project.org>.
+ *  $Id$
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * and is licensed under the MIT license. For more information, see
+ * <http://www.doctrine-project.org>.
  */
+
 namespace Doctrine\Common;
 
 /**
@@ -10,16 +27,15 @@ namespace Doctrine\Common;
  * manager.
  *
  * @license http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @link www.doctrine-project.org
- * @since 2.0
+ * @link    www.doctrine-project.org
+ * @since   2.0
  * @version $Revision: 3938 $
- * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
- * @author Jonathan Wage <jonwage@gmail.com>
- * @author Roman Borschel <roman@code-factory.org>
+ * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author  Jonathan Wage <jonwage@gmail.com>
+ * @author  Roman Borschel <roman@code-factory.org>
  */
 class EventManager
 {
-
     /**
      * Map of registered listeners.
      * <event> => <listeners>
@@ -31,19 +47,17 @@ class EventManager
     /**
      * Dispatches an event to all registered listeners.
      *
-     * @param string $eventName
-     *            The name of the event to dispatch. The name of the event is
-     *            the name of the method that is invoked on listeners.
-     * @param EventArgs $eventArgs
-     *            The event arguments to pass to the event handlers/listeners.
-     *            If not supplied, the single empty EventArgs instance is used.
+     * @param string $eventName The name of the event to dispatch. The name of the event is
+     *                          the name of the method that is invoked on listeners.
+     * @param EventArgs $eventArgs The event arguments to pass to the event handlers/listeners.
+     *                             If not supplied, the single empty EventArgs instance is used.
      * @return boolean
      */
     public function dispatchEvent($eventName, EventArgs $eventArgs = null)
     {
         if (isset($this->_listeners[$eventName])) {
             $eventArgs = $eventArgs === null ? EventArgs::getEmptyInstance() : $eventArgs;
-            
+
             foreach ($this->_listeners[$eventName] as $listener) {
                 $listener->$eventName($eventArgs);
             }
@@ -53,8 +67,7 @@ class EventManager
     /**
      * Gets the listeners of a specific event or all listeners.
      *
-     * @param string $event
-     *            The name of the event.
+     * @param string $event The name of the event.
      * @return array The event listeners for the specified event, or all event listeners.
      */
     public function getListeners($event = null)
@@ -65,7 +78,7 @@ class EventManager
     /**
      * Checks whether an event has any registered listeners.
      *
-     * @param string $event            
+     * @param string $event
      * @return boolean TRUE if the specified event has any listeners, FALSE otherwise.
      */
     public function hasListeners($event)
@@ -76,16 +89,14 @@ class EventManager
     /**
      * Adds an event listener that listens on the specified events.
      *
-     * @param string|array $events
-     *            The event(s) to listen on.
-     * @param object $listener
-     *            The listener object.
+     * @param string|array $events The event(s) to listen on.
+     * @param object $listener The listener object.
      */
     public function addEventListener($events, $listener)
     {
         // Picks the hash code related to that listener
         $hash = spl_object_hash($listener);
-        
+
         foreach ((array) $events as $event) {
             // Overrides listener if a previous one was associated already
             // Prevents duplicate listeners on same event (same instance only)
@@ -96,14 +107,14 @@ class EventManager
     /**
      * Removes an event listener from the specified events.
      *
-     * @param string|array $events            
-     * @param object $listener            
+     * @param string|array $events
+     * @param object $listener
      */
     public function removeEventListener($events, $listener)
     {
         // Picks the hash code related to that listener
         $hash = spl_object_hash($listener);
-        
+
         foreach ((array) $events as $event) {
             // Check if actually have this listener associated
             if (isset($this->_listeners[$event][$hash])) {
@@ -113,28 +124,24 @@ class EventManager
     }
 
     /**
-     * Adds an EventSubscriber.
-     * The subscriber is asked for all the events he is
+     * Adds an EventSubscriber. The subscriber is asked for all the events he is
      * interested in and added as a listener for these events.
      *
-     * @param \Doctrine\Common\EventSubscriber $subscriber
-     *            The subscriber.
+     * @param \Doctrine\Common\EventSubscriber $subscriber The subscriber.
      */
     public function addEventSubscriber(EventSubscriber $subscriber)
     {
         $this->addEventListener($subscriber->getSubscribedEvents(), $subscriber);
     }
-
+	
     /**
-     * Removes an EventSubscriber.
-     * The subscriber is asked for all the events it is
+     * Removes an EventSubscriber. The subscriber is asked for all the events it is
      * interested in and removed as a listener for these events.
      *
-     * @param \Doctrine\Common\EventSubscriber $subscriber
-     *            The subscriber.
+     * @param \Doctrine\Common\EventSubscriber $subscriber The subscriber.
      */
     public function removeEventSubscriber(EventSubscriber $subscriber)
     {
         $this->removeEventListener($subscriber->getSubscribedEvents(), $subscriber);
-    }
+    } 	
 }

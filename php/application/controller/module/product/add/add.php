@@ -15,10 +15,6 @@ if ($this->_parameters[2] === '1') {
     $session = Registry::get("session");
     
     if ($session->getup("product/add/error") === 'idIsExists') {
-        /**
-         * Przekazano informację o błędzie:
-         * znaleziono produkt w bazie danych
-         */
         $this->_table['product']['add']['error'] = 'idIsExists';
         $this->_table['product']['add']['value']['numer'] = $session->getup("product/add/value/numer");
         
@@ -28,10 +24,6 @@ if ($this->_parameters[2] === '1') {
         $session->erase("product/add/error");
         $session->erase("product/add/value/numer");
     } elseif ($session->getup("product/add/error") === 'emptyValueName') {
-        /**
-         * Przekazano informację o błędzie:
-         * Nie wpisano wartości w pole
-         */
         $this->_table['product']['add']['error'] = 'emptyValueName';
         
         /**

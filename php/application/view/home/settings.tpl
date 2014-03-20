@@ -103,12 +103,12 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="container-fluid">
-					<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-save"></span>
-					</button>
-					<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-bookmark"></span>
-					</button>
+	<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-save"></span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-bookmark"></span>
+							</button>
 					<div class="panel-title col-sm-4">Panel heading with title</div>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">x</a></li>

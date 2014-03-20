@@ -1,7 +1,22 @@
 <?php
 /*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. This software consists of voluntary contributions made by many individuals and is licensed under the MIT license. For more information, see <http://www.doctrine-project.org>.
- */
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * This software consists of voluntary contributions made by many individuals
+ * and is licensed under the MIT license. For more information, see
+ * <http://www.doctrine-project.org>.
+*/
+
 namespace Doctrine\Common\Persistence\Mapping\Driver;
 
 use Doctrine\Common\Persistence\Mapping\MappingException;
@@ -17,7 +32,6 @@ use Doctrine\Common\Persistence\Mapping\MappingException;
  */
 class DefaultFileLocator implements FileLocator
 {
-
     /**
      * The paths where to look for mapping files.
      *
@@ -36,9 +50,8 @@ class DefaultFileLocator implements FileLocator
      * Initializes a new FileDriver that looks in the given path(s) for mapping
      * documents and operates in the specified operating mode.
      *
-     * @param string|array $paths
-     *            One or multiple paths where mapping documents can be found.
-     * @param string|null $fileExtension            
+     * @param string|array $paths One or multiple paths where mapping documents can be found.
+     * @param string|null $fileExtension
      */
     public function __construct($paths, $fileExtension = null)
     {
@@ -49,7 +62,7 @@ class DefaultFileLocator implements FileLocator
     /**
      * Append lookup paths to metadata driver.
      *
-     * @param array $paths            
+     * @param array $paths
      */
     public function addPaths(array $paths)
     {
@@ -79,8 +92,7 @@ class DefaultFileLocator implements FileLocator
     /**
      * Set the file extension used to look for mapping files under
      *
-     * @param string $fileExtension
-     *            The file extension to set
+     * @param string $fileExtension The file extension to set
      * @return void
      */
     public function setFileExtension($fileExtension)
@@ -94,14 +106,14 @@ class DefaultFileLocator implements FileLocator
     public function findMappingFile($className)
     {
         $fileName = str_replace('\\', '.', $className) . $this->fileExtension;
-        
+
         // Check whether file exists
         foreach ($this->paths as $path) {
             if (file_exists($path . DIRECTORY_SEPARATOR . $fileName)) {
                 return $path . DIRECTORY_SEPARATOR . $fileName;
             }
         }
-        
+
         throw MappingException::mappingFileNotFound($className, $fileName);
     }
 
@@ -111,28 +123,31 @@ class DefaultFileLocator implements FileLocator
     public function getAllClassNames($globalBasename)
     {
         $classes = array();
-        
+
         if ($this->paths) {
             foreach ($this->paths as $path) {
-                if (! is_dir($path)) {
+                if ( ! is_dir($path)) {
                     throw MappingException::fileMappingDriversRequireConfiguredDirectoryPath($path);
                 }
-                
-                $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path), \RecursiveIteratorIterator::LEAVES_ONLY);
-                
+
+                $iterator = new \RecursiveIteratorIterator(
+                    new \RecursiveDirectoryIterator($path),
+                    \RecursiveIteratorIterator::LEAVES_ONLY
+                );
+
                 foreach ($iterator as $file) {
                     $fileName = $file->getBasename($this->fileExtension);
-                    
+
                     if ($fileName == $file->getBasename() || $fileName == $globalBasename) {
                         continue;
                     }
-                    
+
                     // NOTE: All files found here means classes are not transient!
                     $classes[] = str_replace('.', '\\', $fileName);
                 }
             }
         }
-        
+
         return $classes;
     }
 
@@ -142,14 +157,14 @@ class DefaultFileLocator implements FileLocator
     public function fileExists($className)
     {
         $fileName = str_replace('\\', '.', $className) . $this->fileExtension;
-        
+
         // Check whether file exists
         foreach ((array) $this->paths as $path) {
             if (file_exists($path . DIRECTORY_SEPARATOR . $fileName)) {
                 return true;
             }
         }
-        
+
         return false;
     }
 }
