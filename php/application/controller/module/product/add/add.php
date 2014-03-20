@@ -55,7 +55,7 @@ if ($this->_parameters[2] === '1') {
             $this->_table['product']['add']['error'] = TRUE;
             
             if ($session->getup("product/add/error/units")) {} else {
-                $this->_table['product']['add']['units'] = $session->getup("product/add/value/units");
+                $this->_table['product']['add']['select']['units'] = $session->getup("product/add/value/units");
             }
             if ($session->getup("product/add/error/category")) {} else {
                 $this->_table['product']['add']['select']['category'] = $session->getup("product/add/value/category");
@@ -77,9 +77,15 @@ if ($this->_parameters[2] === '1') {
      */
     $session = Registry::get("session");
     
-    $this->_table['product']['add']['view'] = $session->getup("product/add/return_value");
-    $this->_table['product']['add']['select']['units'] = $session->getup("product/add/value/numberUnits");
-    $this->_table['product']['add']['select']['category'] = $session->getup("product/add/value/numberCategory");
+    if ($session->getup("product/add/value/number")) {
+        
+        $this->_table['product']['add']['value']['number'] = $session->getup("product/add/value/number");
+        $this->_table['product']['add']['select']['units'] = $session->getup("product/add/value/units");
+        $this->_table['product']['add']['select']['category'] = $session->getup("product/add/value/category");
+    } else {
+        header("Location: /module/product_technology/product/add/1");
+    }
+    // var_dump($this->_table['product']['add']);
 } else {
     /**
      * Nie wpisano numeru kroku w pasek adresu
