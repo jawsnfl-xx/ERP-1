@@ -1,36 +1,22 @@
 <?php
 /*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license. For more information, see
- * <http://www.doctrine-project.org>.
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. This software consists of voluntary contributions made by many individuals and is licensed under the MIT license. For more information, see <http://www.doctrine-project.org>.
  */
-
 namespace Doctrine\Common\Persistence;
 
 /**
  * Contract covering object managers for a Doctrine persistence layer ManagerRegistry class to implement.
  *
  * @license http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @link    www.doctrine-project.org
- * @since   2.2
- * @author  Fabien Potencier <fabien@symfony.com>
- * @author  Benjamin Eberlei <kontakt@beberlei.de>
- * @author  Lukas Kahwe Smith <smith@pooteeweet.org>
+ * @link www.doctrine-project.org
+ * @since 2.2
+ * @author Fabien Potencier <fabien@symfony.com>
+ * @author Benjamin Eberlei <kontakt@beberlei.de>
+ * @author Lukas Kahwe Smith <smith@pooteeweet.org>
  */
 interface ManagerRegistry extends ConnectionRegistry
 {
+
     /**
      * Gets the default object manager name.
      *
@@ -41,8 +27,9 @@ interface ManagerRegistry extends ConnectionRegistry
     /**
      * Gets a named object manager.
      *
-     * @param string $name The object manager name (null for the default one)
-     *
+     * @param string $name
+     *            The object manager name (null for the default one)
+     *            
      * @return \Doctrine\Common\Persistence\ObjectManager
      */
     function getManager($name = null);
@@ -67,8 +54,9 @@ interface ManagerRegistry extends ConnectionRegistry
      * hold an obsolete reference. You can inject the registry instead
      * to avoid this problem.
      *
-     * @param string $name The object manager name (null for the default one)
-     *
+     * @param string $name
+     *            The object manager name (null for the default one)
+     *            
      * @return \Doctrine\Common\Persistence\ObjectManager
      */
     function resetManager($name = null);
@@ -78,8 +66,9 @@ interface ManagerRegistry extends ConnectionRegistry
      *
      * This method looks for the alias in all registered object managers.
      *
-     * @param string $alias The alias
-     *
+     * @param string $alias
+     *            The alias
+     *            
      * @return string The full namespace
      */
     function getAliasNamespace($alias);
@@ -94,9 +83,11 @@ interface ManagerRegistry extends ConnectionRegistry
     /**
      * Gets the ObjectRepository for an persistent object.
      *
-     * @param string $persistentObject        The name of the persistent object.
-     * @param string $persistentManagerName The object manager name (null for the default one)
-     *
+     * @param string $persistentObject
+     *            The name of the persistent object.
+     * @param string $persistentManagerName
+     *            The object manager name (null for the default one)
+     *            
      * @return \Doctrine\Common\Persistence\ObjectRepository
      */
     function getRepository($persistentObject, $persistentManagerName = null);
@@ -104,9 +95,10 @@ interface ManagerRegistry extends ConnectionRegistry
     /**
      * Gets the object manager associated with a given class.
      *
-     * @param string $class A persistent object class name
-     *
-     * @return \Doctrine\Common\Persistence\ObjectManager|null
+     * @param string $class
+     *            A persistent object class name
+     *            
+     * @return \Doctrine\Common\Persistence\ObjectManager null
      */
     function getManagerForClass($class);
 }

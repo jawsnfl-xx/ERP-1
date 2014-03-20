@@ -2,31 +2,32 @@
 
 <div class="col-md-8">
 
-	<!-- sekcje do w³¹czenia do about -->
-	<!-- pierwsze to info o aplikacji, drugie o modu³ach, a trzecie-FAQ -->
+	<!-- sekcje do wï¿½ï¿½czenia do about -->
+	<!-- pierwsze to info o aplikacji, drugie o moduï¿½ach, a trzecie-FAQ -->
 	<!-- 1 -->
 	<div class="panel-heading">
 		<h3>FAQ- Frequently Asked Questions</h3>
-			
-			
+
+
 	</div>
 
-	
+
 
 	<div class="panel-body">
-		
-			<div class="col-md-4">
-			<div class="well">	<h4>opis opis opis opis opis opis opis opis opis opis opis opis
+
+		<div class="col-md-4">
+			<div class="well">
+				<h4>opis opis opis opis opis opis opis opis opis opis opis opis
 					opis opis opis opis opis opis opis opis opis opis opis opis opis
 					opis opis opis opis opis opis opis opis opis opis opis opis opis
 					opis opis</h4>
-					<select class="form-control">
-								<option>Kategorie pytañ</option>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-							</select>
+				<select class="form-control">
+					<option>Kategorie pytaï¿½</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select>
 			</div>
 		</div>
 		<p>Nam est nisi, ullamcorper sed iaculis a, laoreet vitae neque.

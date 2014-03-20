@@ -1,22 +1,7 @@
 <?php
 /*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license. For more information, see
- * <http://www.doctrine-project.org>.
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. This software consists of voluntary contributions made by many individuals and is licensed under the MIT license. For more information, see <http://www.doctrine-project.org>.
  */
-
 namespace Doctrine\Common\Collections;
 
 use Closure, ArrayIterator;
@@ -26,13 +11,14 @@ use Doctrine\Common\Collections\Expr\ClosureExpressionVisitor;
 /**
  * An ArrayCollection is a Collection implementation that wraps a regular PHP array.
  *
- * @since   2.0
- * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
- * @author  Jonathan Wage <jonwage@gmail.com>
- * @author  Roman Borschel <roman@code-factory.org>
+ * @since 2.0
+ * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author Jonathan Wage <jonwage@gmail.com>
+ * @author Roman Borschel <roman@code-factory.org>
  */
 class ArrayCollection implements Collection, Selectable
 {
+
     /**
      * An array containing the entries of this collection.
      *
@@ -43,7 +29,7 @@ class ArrayCollection implements Collection, Selectable
     /**
      * Initializes a new ArrayCollection.
      *
-     * @param array $elements
+     * @param array $elements            
      */
     public function __construct(array $elements = array())
     {
@@ -115,7 +101,7 @@ class ArrayCollection implements Collection, Selectable
     /**
      * Removes an element with a specific key/index from the collection.
      *
-     * @param mixed $key
+     * @param mixed $key            
      * @return mixed The removed element or NULL, if no element exists for the given key.
      */
     public function remove($key)
@@ -123,29 +109,30 @@ class ArrayCollection implements Collection, Selectable
         if (isset($this->_elements[$key])) {
             $removed = $this->_elements[$key];
             unset($this->_elements[$key]);
-
+            
             return $removed;
         }
-
+        
         return null;
     }
 
     /**
      * Removes the specified element from the collection, if it is found.
      *
-     * @param mixed $element The element to remove.
+     * @param mixed $element
+     *            The element to remove.
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
     public function removeElement($element)
     {
         $key = array_search($element, $this->_elements, true);
-
+        
         if ($key !== false) {
             unset($this->_elements[$key]);
-
+            
             return true;
         }
-
+        
         return false;
     }
 
@@ -154,7 +141,7 @@ class ArrayCollection implements Collection, Selectable
      *
      * @see containsKey()
      *
-     * @param mixed $offset
+     * @param mixed $offset            
      * @return bool
      */
     public function offsetExists($offset)
@@ -167,7 +154,7 @@ class ArrayCollection implements Collection, Selectable
      *
      * @see get()
      *
-     * @param mixed $offset
+     * @param mixed $offset            
      * @return mixed
      */
     public function offsetGet($offset)
@@ -181,13 +168,13 @@ class ArrayCollection implements Collection, Selectable
      * @see add()
      * @see set()
      *
-     * @param mixed $offset
-     * @param mixed $value
+     * @param mixed $offset            
+     * @param mixed $value            
      * @return bool
      */
     public function offsetSet($offset, $value)
     {
-        if ( ! isset($offset)) {
+        if (! isset($offset)) {
             return $this->add($value);
         }
         return $this->set($offset, $value);
@@ -198,7 +185,7 @@ class ArrayCollection implements Collection, Selectable
      *
      * @see remove()
      *
-     * @param mixed $offset
+     * @param mixed $offset            
      * @return mixed
      */
     public function offsetUnset($offset)
@@ -209,7 +196,8 @@ class ArrayCollection implements Collection, Selectable
     /**
      * Checks whether the collection contains a specific key/index.
      *
-     * @param mixed $key The key to check for.
+     * @param mixed $key
+     *            The key to check for.
      * @return boolean TRUE if the given key/index exists, FALSE otherwise.
      */
     public function containsKey($key)
@@ -223,9 +211,9 @@ class ArrayCollection implements Collection, Selectable
      * is strict, that means not only the value but also the type must match.
      * For objects this means reference equality.
      *
-     * @param mixed $element
+     * @param mixed $element            
      * @return boolean TRUE if the given element is contained in the collection,
-     *          FALSE otherwise.
+     *         FALSE otherwise.
      */
     public function contains($element)
     {
@@ -234,14 +222,15 @@ class ArrayCollection implements Collection, Selectable
                 return true;
             }
         }
-
+        
         return false;
     }
 
     /**
      * Tests for the existence of an element that satisfies the given predicate.
      *
-     * @param Closure $p The predicate.
+     * @param Closure $p
+     *            The predicate.
      * @return boolean TRUE if the predicate is TRUE for at least one element, FALSE otherwise.
      */
     public function exists(Closure $p)
@@ -256,11 +245,13 @@ class ArrayCollection implements Collection, Selectable
 
     /**
      * Searches for a given element and, if found, returns the corresponding key/index
-     * of that element. The comparison of two elements is strict, that means not
+     * of that element.
+     * The comparison of two elements is strict, that means not
      * only the value but also the type must match.
      * For objects this means reference equality.
      *
-     * @param mixed $element The element to search for.
+     * @param mixed $element
+     *            The element to search for.
      * @return mixed The key/index of the element or FALSE if the element was not found.
      */
     public function indexOf($element)
@@ -271,7 +262,8 @@ class ArrayCollection implements Collection, Selectable
     /**
      * Gets the element with the given key/index.
      *
-     * @param mixed $key The key.
+     * @param mixed $key
+     *            The key.
      * @return mixed The element or NULL, if no element exists for the given key.
      */
     public function get($key)
@@ -320,8 +312,8 @@ class ArrayCollection implements Collection, Selectable
      * When the collection is a Map this is like put(key,value)/add(key,value).
      * When the collection is a List this is like add(position,value).
      *
-     * @param mixed $key
-     * @param mixed $value
+     * @param mixed $key            
+     * @param mixed $value            
      */
     public function set($key, $value)
     {
@@ -331,7 +323,7 @@ class ArrayCollection implements Collection, Selectable
     /**
      * Adds an element to the collection.
      *
-     * @param mixed $value
+     * @param mixed $value            
      * @return boolean Always TRUE.
      */
     public function add($value)
@@ -366,7 +358,7 @@ class ArrayCollection implements Collection, Selectable
      * Applies the given function to each element in the collection and returns
      * a new collection with the elements returned by the function.
      *
-     * @param Closure $func
+     * @param Closure $func            
      * @return Collection
      */
     public function map(Closure $func)
@@ -378,7 +370,8 @@ class ArrayCollection implements Collection, Selectable
      * Returns all the elements of this collection that satisfy the predicate p.
      * The order of the elements is preserved.
      *
-     * @param Closure $p The predicate used for filtering.
+     * @param Closure $p
+     *            The predicate used for filtering.
      * @return Collection A collection with the results of the filter operation.
      */
     public function filter(Closure $p)
@@ -390,17 +383,18 @@ class ArrayCollection implements Collection, Selectable
      * Applies the given predicate p to all elements of this collection,
      * returning true, if the predicate yields true for all elements.
      *
-     * @param Closure $p The predicate.
+     * @param Closure $p
+     *            The predicate.
      * @return boolean TRUE, if the predicate yields TRUE for all elements, FALSE otherwise.
      */
     public function forAll(Closure $p)
     {
         foreach ($this->_elements as $key => $element) {
-            if ( ! $p($key, $element)) {
+            if (! $p($key, $element)) {
                 return false;
             }
         }
-
+        
         return true;
     }
 
@@ -408,10 +402,11 @@ class ArrayCollection implements Collection, Selectable
      * Partitions this collection in two collections according to a predicate.
      * Keys are preserved in the resulting collections.
      *
-     * @param Closure $p The predicate on which to partition.
+     * @param Closure $p
+     *            The predicate on which to partition.
      * @return array An array with two elements. The first element contains the collection
-     *               of elements where the predicate returned TRUE, the second element
-     *               contains the collection of elements where the predicate returned FALSE.
+     *         of elements where the predicate returned TRUE, the second element
+     *         contains the collection of elements where the predicate returned FALSE.
      */
     public function partition(Closure $p)
     {
@@ -423,7 +418,10 @@ class ArrayCollection implements Collection, Selectable
                 $coll2[$key] = $element;
             }
         }
-        return array(new static($coll1), new static($coll2));
+        return array(
+            new static($coll1),
+            new static($coll2)
+        );
     }
 
     /**
@@ -451,8 +449,8 @@ class ArrayCollection implements Collection, Selectable
      * Keys have to be preserved by this method. Calling this method will only return the
      * selected slice and NOT change the elements contained in the collection slice is called on.
      *
-     * @param int $offset
-     * @param int $length
+     * @param int $offset            
+     * @param int $length            
      * @return array
      */
     public function slice($offset, $length = null)
@@ -464,36 +462,36 @@ class ArrayCollection implements Collection, Selectable
      * Select all elements from a selectable that match the criteria and
      * return a new collection containing these elements.
      *
-     * @param  Criteria $criteria
+     * @param Criteria $criteria            
      * @return Collection
      */
     public function matching(Criteria $criteria)
     {
-        $expr     = $criteria->getWhereExpression();
+        $expr = $criteria->getWhereExpression();
         $filtered = $this->_elements;
-
+        
         if ($expr) {
-            $visitor  = new ClosureExpressionVisitor();
-            $filter   = $visitor->dispatch($expr);
+            $visitor = new ClosureExpressionVisitor();
+            $filter = $visitor->dispatch($expr);
             $filtered = array_filter($filtered, $filter);
         }
-
+        
         if ($orderings = $criteria->getOrderings()) {
             $next = null;
             foreach (array_reverse($orderings) as $field => $ordering) {
-                $next = ClosureExpressionVisitor::sortByField($field, $ordering == 'DESC' ? -1 : 1, $next);
+                $next = ClosureExpressionVisitor::sortByField($field, $ordering == 'DESC' ? - 1 : 1, $next);
             }
-
+            
             usort($filtered, $next);
         }
-
+        
         $offset = $criteria->getFirstResult();
         $length = $criteria->getMaxResults();
-
+        
         if ($offset || $length) {
-            $filtered = array_slice($filtered, (int)$offset, $length);
+            $filtered = array_slice($filtered, (int) $offset, $length);
         }
-
+        
         return new static($filtered);
     }
 }

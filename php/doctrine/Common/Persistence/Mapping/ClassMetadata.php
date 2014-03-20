@@ -1,35 +1,21 @@
 <?php
 /*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license. For more information, see
- * <http://www.doctrine-project.org>.
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. This software consists of voluntary contributions made by many individuals and is licensed under the MIT license. For more information, see <http://www.doctrine-project.org>.
  */
-
 namespace Doctrine\Common\Persistence\Mapping;
 
 /**
  * Contract for a Doctrine persistence layer ClassMetadata class to implement.
  *
  * @license http://www.opensource.org/licenses/lgpl-license.php LGPL
- * @link    www.doctrine-project.org
- * @since   2.1
- * @author  Benjamin Eberlei <kontakt@beberlei.de>
- * @author  Jonathan Wage <jonwage@gmail.com>
+ * @link www.doctrine-project.org
+ * @since 2.1
+ * @author Benjamin Eberlei <kontakt@beberlei.de>
+ * @author Jonathan Wage <jonwage@gmail.com>
  */
 interface ClassMetadata
 {
+
     /**
      * Get fully-qualified class name of this persistent class.
      *
@@ -56,7 +42,7 @@ interface ClassMetadata
     /**
      * Checks if the given field name is a mapped identifier for this class.
      *
-     * @param string $fieldName
+     * @param string $fieldName            
      * @return boolean
      */
     function isIdentifier($fieldName);
@@ -64,7 +50,7 @@ interface ClassMetadata
     /**
      * Checks if the given field is a mapped property for this class.
      *
-     * @param string $fieldName
+     * @param string $fieldName            
      * @return boolean
      */
     function hasField($fieldName);
@@ -72,7 +58,7 @@ interface ClassMetadata
     /**
      * Checks if the given field is a mapped association for this class.
      *
-     * @param string $fieldName
+     * @param string $fieldName            
      * @return boolean
      */
     function hasAssociation($fieldName);
@@ -80,7 +66,7 @@ interface ClassMetadata
     /**
      * Checks if the given field is a mapped single valued association for this class.
      *
-     * @param string $fieldName
+     * @param string $fieldName            
      * @return boolean
      */
     function isSingleValuedAssociation($fieldName);
@@ -88,7 +74,7 @@ interface ClassMetadata
     /**
      * Checks if the given field is a mapped collection valued association for this class.
      *
-     * @param string $fieldName
+     * @param string $fieldName            
      * @return boolean
      */
     function isCollectionValuedAssociation($fieldName);
@@ -124,7 +110,7 @@ interface ClassMetadata
      * This type names can be implementation specific but should at least include the php types:
      * integer, string, boolean, float/double, datetime.
      *
-     * @param string $fieldName
+     * @param string $fieldName            
      * @return string
      */
     function getTypeOfField($fieldName);
@@ -132,7 +118,7 @@ interface ClassMetadata
     /**
      * Returns the target class name of the given association.
      *
-     * @param string $assocName
+     * @param string $assocName            
      * @return string
      */
     function getAssociationTargetClass($assocName);
@@ -140,7 +126,7 @@ interface ClassMetadata
     /**
      * Checks if the association is the inverse side of a bidirectional association
      *
-     * @param string $assocName
+     * @param string $assocName            
      * @return boolean
      */
     function isAssociationInverseSide($assocName);
@@ -148,7 +134,7 @@ interface ClassMetadata
     /**
      * Returns the target field of the owning side of the association
      *
-     * @param string $assocName
+     * @param string $assocName            
      * @return string
      */
     function getAssociationMappedByTargetField($assocName);
@@ -158,7 +144,7 @@ interface ClassMetadata
      *
      * Has to return an empty array if no identifier isset.
      *
-     * @param object $object
+     * @param object $object            
      * @return array
      */
     function getIdentifierValues($object);
