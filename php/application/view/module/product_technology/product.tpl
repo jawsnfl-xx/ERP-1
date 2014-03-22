@@ -77,7 +77,6 @@
 			</table>
 		</div>
 	</div>
-
 	<ul class="list-group">
 		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam
 				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
