@@ -79,7 +79,6 @@ namespace Plugins\Product_technology
             }
             
             return $data['0']['COUNT(`id_products`)'];
-            ;
         }
 
         /**
@@ -250,6 +249,86 @@ namespace Plugins\Product_technology
             }
             
             return $data;
+        }
+
+        public function _getUnitsID($_name)
+        {
+            $database = Registry::get("database");
+            
+            $data = array();
+            
+            $sql = 'select id_units from units WHERE units.name = \'' . $_name . '\' LIMIT 1';
+            // var_dump($sql);
+            $stmt = $database->_orm->_conn->query($sql);
+            
+            // var_dump($stmt);
+            
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            return $data[0]['id_units'];
+        }
+
+        public function _getCategoryID($_category)
+        {
+            $database = Registry::get("database");
+            
+            $data = array();
+            
+            $sql = 'select id_category from category WHERE category.category_name = \'' . $_category . '\' LIMIT 1';
+            // var_dump($sql);
+            $stmt = $database->_orm->_conn->query($sql);
+            
+            // var_dump($stmt);
+            
+            while ($row = $stmt->fetch()) {
+                $data[] = $row;
+            }
+            
+            return $data[0]['id_category'];
+        }
+
+        /**
+         *
+         * @param unknown $array            
+         */
+        public function _addSingleProduct($_number, $_units, $_category)
+        {
+            // $database = Registry::get("database");
+            
+            // $queryBuilder = $database->_orm->_conn->createQueryBuilder();
+            
+            // $sql = 'INSERT INTO products (products_name, units_id_units) VALUES (' . rand() . ', 1)';
+            
+            // $queryBuilder->insert('products')->values(array(
+            // 'products_name' => rand(),
+            // 'units_id_units' => $_units
+            // ));
+            // var_dump($sql);
+            $database = Registry::get("database");
+            
+            $_units = $this->_getUnitsID($_units);
+            $_category = $this->_getCategoryID($_category);
+            
+            $data = array();
+            $sql = 'INSERT INTO products (products_name, units_id_units) VALUES (\'' . $_number . '\', \'' . $_units . '\')';
+            $stmt = $database->_orm->_conn->query($sql);
+            $_lastID = $database->_orm->_conn->lastInsertId();
+            
+            $sql = 'INSERT INTO category_product (category_id_category, product_id_product) VALUES (' . $_category . ', \'' . $_lastID . '\')';
+            
+            // var_dump($stmt);
+            
+            // $sql = 'INSERT INTO products (products_name, units_id_units) VALUES (' . rand() . ', 1)';
+            
+            // var_dump($stmt);
+            
+            // while ($row = $stmt->fetch()) {
+            // $data[] = $row;
+            // }
+            
+            return $_lastID;
         }
     }
 }

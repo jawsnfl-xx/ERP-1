@@ -101,15 +101,25 @@ if ($this->_parameters[2] === '1') {
     $session->erase("product/add/value/units");
     $session->erase("product/add/value/category");
     header("Location: /module/product_technology/product/page");
-} elseif ($this->_parameters[2] === '4') {
+} elseif ($this->_parameters[2] === '5') {
     
     $session = Registry::get("session");
-    $session->getup("product/add/value/number");
-    $session->getup("product/add/value/units");
-    $session->getup("product/add/value/category");
-    // $session->erase("product/add/error");
-    // $session->erase("product/add/value/number");
-    // $session->erase("product/add/value/units");
-    // $session->erase("product/add/value/category");
-    // header("Location: /module/product_technology/product/page");
+    
+    $_checkin = ($session->getup("product/add/value/number") ? TRUE : FALSE);
+    $_checkin = ($session->getup("product/add/value/units") ? TRUE : FALSE);
+    $_checkin = ($session->getup("product/add/value/category") ? TRUE : FALSE);
+    
+    // var_dump($session->getup("product/add/value/number"));
+    // var_dump($session->getup("product/add/value/units"));
+    // var_dump($session->getup("product/add/value/category"));
+    
+    // var_dump($_checkin);
+    
+    $_returnID = $product->_addSingleProduct($session->getup("product/add/value/number"), $session->getup("product/add/value/units"), $session->getup("product/add/value/category"));
+    
+    $session->erase("product/add/error");
+    $session->erase("product/add/value/number");
+    $session->erase("product/add/value/units");
+    $session->erase("product/add/value/category");
+    header("Location: /module/product_technology/product/view/" . $_returnID);
 }
