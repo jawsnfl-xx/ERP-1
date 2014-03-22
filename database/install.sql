@@ -3,7 +3,7 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 DROP SCHEMA IF EXISTS `test1` ;
-CREATE SCHEMA IF NOT EXISTS `test1` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+CREATE SCHEMA IF NOT EXISTS `test1` DEFAULT CHARACTER SET utf8 COLLATE utf8_polish_ci ;
 USE `test1` ;
 
 -- -----------------------------------------------------
@@ -12,7 +12,7 @@ USE `test1` ;
 DROP TABLE IF EXISTS `test1`.`units` ;
 
 CREATE TABLE IF NOT EXISTS `test1`.`units` (
-  `id_units` INT NOT NULL,
+  `id_units` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `symbol` VARCHAR(45) NULL,
   PRIMARY KEY (`id_units`))
@@ -49,7 +49,7 @@ CREATE UNIQUE INDEX `products_name_UNIQUE` ON `test1`.`products` (`products_name
 DROP TABLE IF EXISTS `test1`.`category` ;
 
 CREATE TABLE IF NOT EXISTS `test1`.`category` (
-  `id_category` INT NOT NULL,
+  `id_category` INT NOT NULL AUTO_INCREMENT,
   `category_name` VARCHAR(45) NULL,
   `category_param1` VARCHAR(45) NULL,
   `category_param2` VARCHAR(45) NULL,
@@ -92,8 +92,8 @@ CREATE INDEX `fk_category_product_category_idx` ON `test1`.`category_product` (`
 DROP TABLE IF EXISTS `test1`.`contractors` ;
 
 CREATE TABLE IF NOT EXISTS `test1`.`contractors` (
-  `id_contractors` INT NOT NULL,
-  `name` VARCHAR(200) NULL,
+  `id_contractors` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(200) NOT NULL,
   `shortcut` VARCHAR(45) NULL,
   PRIMARY KEY (`id_contractors`))
 ENGINE = InnoDB
@@ -174,7 +174,7 @@ CREATE INDEX `fk_warehouse_type_of_warehouse1_idx` ON `test1`.`warehouse` (`type
 DROP TABLE IF EXISTS `test1`.`packages` ;
 
 CREATE TABLE IF NOT EXISTS `test1`.`packages` (
-  `id_packages` INT NOT NULL,
+  `id_packages` INT NOT NULL AUTO_INCREMENT,
   `type_of_packages_id_type_of_packages` INT NOT NULL,
   `warehouse_id_warehouse` INT NOT NULL,
   `packages_number` INT NULL,
@@ -214,7 +214,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `test1`.`control_measurements` ;
 
 CREATE TABLE IF NOT EXISTS `test1`.`control_measurements` (
-  `id_control_measurements` INT NOT NULL,
+  `id_control_measurements` INT NOT NULL AUTO_INCREMENT,
   `orders_id_orders` INT NOT NULL,
   `products_id_products` INT NOT NULL,
   `packages_id_packages` INT NOT NULL,
@@ -906,12 +906,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `test1`;
-INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (1, '1', '1', '1', '1', '1', '1');
-INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (2, '2', '2', '2', '2', '2', '2');
-INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (3, '3', '3', '3', '3', '3', '3');
-INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (4, '4', '4', '4', '4', '4', '4');
-INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (5, '5', '5', '5', '5', '5', '5');
-INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (6, '6', '6', '6', '6', '6', '6');
+INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (1, 'detal gotowy', '1', '1', '1', '1', '1');
+INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (2, 'odlew', '2', '2', '2', '2', '2');
+INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (3, 'materiał surowy', '3', '3', '3', '3', '3');
+INSERT INTO `test1`.`category` (`id_category`, `category_name`, `category_param1`, `category_param2`, `category_param3`, `category_param4`, `category_param5`) VALUES (4, 'brak', '4', '4', '4', '4', '4');
 
 COMMIT;
 
