@@ -13,8 +13,6 @@ define('BOOTSTRAP_FILE', 'bootstrap.php');
  */
 try {
 
-    require_once ('./librays/php-console-master/src/PhpConsole/__autoload.php');
-
     /**
      * Włączenie raportowania błędów na ekran.
      *
