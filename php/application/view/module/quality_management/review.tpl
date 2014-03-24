@@ -14,10 +14,10 @@
 		</div>
 	</div>
 	<div class="panel-body">
-		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
-			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
-			ultricies commodo.</p>
+		<p>Poniższa lista obejmuje wszystkie istniejące arkusze kontrolne.</p>
+		<p>
+			Jeśli istnieje taka potrzeba, możesz <a
+				href="/module/quality_management/add">dodać nowy arkusz</a>
 	</div>
 	<table class="table table-bordered">
 		<tr>

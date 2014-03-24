@@ -89,30 +89,23 @@
 				<div class="row">
 					<div class="alert alert-success">
 						<h4>Arkusz jest poprawny</h4>
-						<p>lorem enean et nunc pulvinar, ornare nisl nec, tempor elit.
-							Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem
-							a accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar,
-							ornare nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac
-							ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulum
-							nec ultenean et nunc pulvinar, ornare nisl nec, tempor elit.
-							Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem
-							a accumsan vehicula. Vestibulu</p>
+						<p>Wszystko zostało wykonane poprawnie. Arkusz nie zawiera
+							błędów i jest kompletny.</p>
 					</div>
 					<div class="alert alert-warning">
 						<h4>Istniejący arkusz kontroli jakości jest niekompletny lub
 							nieaktualny</h4>
-						<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-							vestibulum sem a accumsan vehicula. Vestibulum nec ultenean et
-							nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat
-							volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-							vehicula. Vestibulu</p>
+						<p>Należy poprawić istniejące błędy lub uzupełnić braki. W
+							przypadku nieaktualnego arkusza, należy poprawić dane na zgodne
+							ze stanem faktycznym.</p>
 						<a href="#" class="btn btn-warning">format</a>
 					</div>
 					<div class="alert alert-danger">
 						<h4>Brak arkusza kontroli jakości</h4>
-						<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-							vestibulum sem a accumsan vehicula. Vestibulu</p>
-						<a href="#" class="btn btn-danger">zrób coś</a>
+						<p>Arkusz nie istnieje. W celu utworzenia arkusza, należy
+							kliknąć w poniższy przycisk.</p>
+						<a href="/module/quality_management/add" class="btn btn-danger">Tworzenie
+							arkusza</a>
 					</div>
 				</div>
 			</div>
