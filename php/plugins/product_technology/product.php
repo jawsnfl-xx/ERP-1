@@ -34,6 +34,8 @@ namespace Plugins\Product_technology
             
             $data = NULL;
             
+            /**
+             */
             $data = $database->_mysql->fetch_array('SELECT * FROM products
                 	left join units on units.id_units = products.units_id_units
                 	left join category_product on category_product.product_id_product = products.id_products
@@ -44,7 +46,8 @@ namespace Plugins\Product_technology
 
         /**
          *
-         * @return unknown
+         * @param unknown $_keywords            
+         * @return Ambiguous
          */
         public function _createListSearch($_keywords)
         {
@@ -69,8 +72,6 @@ namespace Plugins\Product_technology
             
             $sql = "SELECT COUNT(`id_products`) FROM products";
             $stmt = $database->_orm->_conn->query($sql);
-            
-            // var_dump($stmt);
             
             while ($row = $stmt->fetch()) {
                 $data[] = $row;
@@ -123,21 +124,14 @@ namespace Plugins\Product_technology
                 ->setFirstResult($limit_down)
                 ->setMaxResults($limit_up);
             
+            /**
+             */
             $stmt = $database->_orm->_conn->query($queryBuilder);
-            // var_dump($stmt);
-            
             $data = array();
             
             while ($row = $stmt->fetch()) {
                 $data[] = $row;
             }
-            
-            // $data = $database->_mysql->fetch_array('SELECT * FROM products
-            // left join units on units.id_units = products.units_id_units
-            // left join category_product on category_product.product_id_product = products.id_products
-            // left join category on category.id_category = category_product.category_id_category
-            // ORDER BY `products_name` ASC LIMIT ' . $limit_down . ' , ' . $limit_up . ';');
-            
             return $data;
         }
 
@@ -161,6 +155,8 @@ namespace Plugins\Product_technology
                 ->eq("products.id_products", $_id))
                 ->setMaxResults(1);
             
+            /**
+             */
             $stmt = $database->_orm->_conn->query($queryBuilder);
             
             $data = array();
@@ -236,6 +232,8 @@ namespace Plugins\Product_technology
         {
             $database = Registry::get("database");
             
+            /**
+             */
             $queryBuilder = $database->_orm->_conn->createQueryBuilder();
             
             $queryBuilder->select('*')
@@ -259,8 +257,12 @@ namespace Plugins\Product_technology
          */
         public function _createListCategory()
         {
+            /**
+             */
             $database = Registry::get("database");
             
+            /**
+             */
             $queryBuilder = $database->_orm->_conn->createQueryBuilder();
             
             $queryBuilder->select('*')
@@ -278,6 +280,10 @@ namespace Plugins\Product_technology
             return $data;
         }
 
+        /**
+         *
+         * @param unknown $_name            
+         */
         public function _getUnitsID($_name)
         {
             $database = Registry::get("database");
@@ -285,10 +291,7 @@ namespace Plugins\Product_technology
             $data = array();
             
             $sql = 'select id_units from units WHERE units.name = \'' . $_name . '\' LIMIT 1';
-            // var_dump($sql);
             $stmt = $database->_orm->_conn->query($sql);
-            
-            // var_dump($stmt);
             
             while ($row = $stmt->fetch()) {
                 $data[] = $row;
@@ -303,15 +306,20 @@ namespace Plugins\Product_technology
          */
         public function _getCategoryID($_category)
         {
+            /**
+             */
             $database = Registry::get("database");
             
+            /**
+             */
+            /**
+             *
+             * @var unknown
+             */
             $data = array();
             
             $sql = 'select id_category from category WHERE category.category_name = \'' . $_category . '\' LIMIT 1';
-            // var_dump($sql);
             $stmt = $database->_orm->_conn->query($sql);
-            
-            // var_dump($stmt);
             
             while ($row = $stmt->fetch()) {
                 $data[] = $row;
@@ -326,38 +334,31 @@ namespace Plugins\Product_technology
          */
         public function _addSingleProduct($_number, $_units, $_category)
         {
-            // $database = Registry::get("database");
-            
-            // $queryBuilder = $database->_orm->_conn->createQueryBuilder();
-            
-            // $sql = 'INSERT INTO products (products_name, units_id_units) VALUES (' . rand() . ', 1)';
-            
-            // $queryBuilder->insert('products')->values(array(
-            // 'products_name' => rand(),
-            // 'units_id_units' => $_units
-            // ));
-            // var_dump($sql);
+            /**
+             */
             $database = Registry::get("database");
             
+            /**
+             */
             $_units = $this->_getUnitsID($_units);
+            /**
+             */
             $_category = $this->_getCategoryID($_category);
             
+            /**
+             */
             $data = array();
+            /**
+             */
             $sql = 'INSERT INTO products (products_name, units_id_units) VALUES (\'' . $_number . '\', \'' . $_units . '\')';
             $stmt = $database->_orm->_conn->query($sql);
+            /**
+             */
             $_lastID = $database->_orm->_conn->lastInsertId();
             
+            /**
+             */
             $sql = 'INSERT INTO category_product (category_id_category, product_id_product) VALUES (' . $_category . ', \'' . $_lastID . '\')';
-            
-            // var_dump($stmt);
-            
-            // $sql = 'INSERT INTO products (products_name, units_id_units) VALUES (' . rand() . ', 1)';
-            
-            // var_dump($stmt);
-            
-            // while ($row = $stmt->fetch()) {
-            // $data[] = $row;
-            // }
             
             return $_lastID;
         }
@@ -368,19 +369,20 @@ namespace Plugins\Product_technology
          */
         public function _statusDeleteSingle($_id)
         {
+            /**
+             */
             $database = Registry::get("database");
             
+            /**
+             */
             $data = array();
             
+            /**
+             */
             $sql = 'DELETE FROM products WHERE id_products = ' . $_id;
-            // var_dump($sql);
+            /**
+             */
             $stmt = $database->_orm->_conn->query($sql);
-            
-            var_dump($stmt);
-            
-            // while ($row = $stmt->fetch()) {
-            // $data[] = $row;
-            // }
             
             return TRUE;
         }
