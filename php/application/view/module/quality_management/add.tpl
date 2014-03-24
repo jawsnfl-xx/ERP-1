@@ -75,16 +75,19 @@
 						edytowania istniejących arkuszy. :D</p>
 				</div>
 			</div>
+			<!-- jednak będę musiał coś tu ciekawego napisać odnośnie tych modułów. a na pewno coś o quality management -->
+			<div class="alert alert-info">
+				W razie wątpliwości, tu jest link do <a
+					href="/content/about_modules" class="alert-link">informacji o
+					modułach</a> ,takich jak kontrola jakości.
+			</div>
 		</div>
 		<div class=" col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">Przygotowanie narzędzi pomiarowych:</div>
 				<div class="panel-body">
 					<p>Przed rozpoczęciem wykonywania kontroli jakości produktu,
-						należy przygotować niezbędne narzędzia i przyrządy.</p>
-					<p>Mauris vehicula, orci luctus porttitor dignissim, purus
-						dolor tincidunt ligula, eu varius ipsum libero ac nunc. Morbi
-						pellentesque enim arcu, quis consectetur nisi gravida vitae.</p>
+						należy przygotować niezbędne narzędzia i przyrządy pomiarowe.</p>
 					<img
 						src="http://www.stalco.pl/produkt/suwmiarka_elektroniczna_s11215.jpg"
 						alt="..." class="img-rounded img-responsive">
@@ -105,25 +108,15 @@
 	</div>
 	<div class="panel-body">
 
-		<p>Integer condimentum, turpis sed interdum pretium, ante libero
-			posuere dui, at ornare magna urna sed augue. Lorem ipsum dolor sit
-			amet, consectetur adipiscing elit. Cras scelerisque est non massa
-			dictum varius. Integer auctor massa nec sapien faucibus, non
-			adipiscing lectus tristique.</p>
+		<p>W poniższych polach należy podać podstawowe informacje o
+			produkcie, którego pomiary będą przeprowadzane.</p>
 	</div>
 	<ul class="list-group">
 		<form action="/module/quality_management/add/_step1" method="post"
 			class="form-horizontal" role="form">
-			<li class="list-group-item"><p>Fusce tincidunt tortor eu
-					nibh consectetur, sed bibendum erat elementum. Nam condimentum
-					augue nec urna bibendum rhoncus. Proin in nunc nisi. Sed ut
-					elementum tellus. Praesent vulputate sem nisi. Proin tristique
-					purus eget cursus congue. Proin a odio et urna egestas molestie.
-					Pellentesque porttitor ultricies dui. Sed venenatis porttitor enim,
-					sed ultrices arcu. Sed in scelerisque tellus, ut semper metus.
-					Etiam vel risus enim. Duis pellentesque, nulla ut sollicitudin
-					posuere, felis arcu laoreet nulla, nec aliquet tellus dolor at
-					dolor.</p></li>
+			<li class="list-group-item"><p>
+					<!-- coś ważnego o czym user ma wiedzieć w tym kroku -->
+				</p></li>
 			<li class="list-group-item">
 				<div
 					class="form-group {if in_array( 'name', $table['form_err']) } has-error has-feedback{/if}">
@@ -472,26 +465,6 @@
 	href="/module/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				</div>
-				<div class="modal-body">
-					Możesz teraz zeskanować kod <input type="text" class="form-control"
-						placeholder="Text input">
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Submit</button>
-				</div>
-			</div>
-		</div>
-	</div>
 	<!-- Default panel contents -->
 	<div class="panel-heading">Panel heading</div>
 	<div class="panel-body">
