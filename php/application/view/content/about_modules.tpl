@@ -2,11 +2,11 @@
 
 <div class="col-md-8">
 
-	<!-- sekcje do w≥πczenia do about -->
-	<!-- pierwsze to info o aplikacji, drugie o modu≥ach, a trzecie-FAQ -->
+	<!-- sekcje do wÔøΩÔøΩczenia do about -->
+	<!-- pierwsze to info o aplikacji, drugie o moduÔøΩach, a trzecie-FAQ -->
 	<!-- 1 -->
 	<div class="panel-heading">
-		<h3>O modu≥ach</h3>
+		<h3>O modu≈Çach</h3>
 		<div class="col-md-4 pull-right">
 			<select class="form-control">
 				<option>Kategorie</option>
@@ -17,7 +17,7 @@
 		</div>
 	</div>
 	<div class="panel-body">
-		<h3>Kontrola jakoúci</h3>
+		<h3>Kontrola jako≈õci</h3>
 		<p>Nam est nisi, ullamcorper sed iaculis a, laoreet vitae neque.
 			Nulla egestas vestibulum nulla eu commodo. Praesent pharetra risus
 			ligula, feugiat tristique mi scelerisque eu. Etiam condimentum

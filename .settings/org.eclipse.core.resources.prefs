@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//php/application/view/content/about_faq.tpl=UTF-8
+encoding//php/application/view/content/about_modules.tpl=UTF-8
 encoding//php/application/view/home/settings.tpl=UTF-8
 encoding//php/application/view/layouts/navigation.tpl=UTF-8
 encoding//php/application/view/layouts/navigation2.tpl=UTF-8
