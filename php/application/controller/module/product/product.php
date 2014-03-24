@@ -11,8 +11,6 @@ if ($this->_parameters[1] === 'view') {
     $this->_table['orders']['list'] = $orders->_createListLimit(5);
     $this->_table['packages']['list'] = $packages->_createListLimit(5);
     $this->_table['quality_management']['list'] = $quality_management->_createListLimit(5);
-    
-    // var_dump( $this->_table['product']);
 } elseif ($this->_parameters[1] === 'add') {
     /**
      * Wyświetla arkusz dodania nowego produktu
@@ -94,7 +92,6 @@ if ($this->_parameters[1] === 'view') {
         } else {
             header("Location: /module/product_technology/product/add/1");
         }
-        // var_dump($this->_table['product']['add']);
     } else {
         /**
          * Nie wpisano numeru kroku w pasek adresu
@@ -169,15 +166,8 @@ if ($this->_parameters[1] === 'view') {
             $session->setup("product/add/value/category", $_category_product);
         }
         if ($session->getup("product/add/error") === "emptyValue") {
-            // var_dump($session->getup("product/add/error"));
-            // var_dump($session->getup("product/add/value/units"));
-            // var_dump($session->getup("product/add/value/category"));
-            // print '2';
             header("Location: /module/product_technology/product/add/2");
         } else {
-            // var_dump($session->getup("product/add/error"));
-            // var_dump($session->getup("product/add/value/units"));
-            // var_dump($session->getup("product/add/value/category"));
             $session = Registry::get("session");
             $session->setup("product/add/value/units", $_units_id_units);
             $session->setup("product/add/value/category", $_category_product);
@@ -207,12 +197,6 @@ if ($this->_parameters[1] === 'view') {
         $_checkin = ($session->getup("product/add/value/number") ? TRUE : FALSE);
         $_checkin = ($session->getup("product/add/value/units") ? TRUE : FALSE);
         $_checkin = ($session->getup("product/add/value/category") ? TRUE : FALSE);
-        
-        // var_dump($session->getup("product/add/value/number"));
-        // var_dump($session->getup("product/add/value/units"));
-        // var_dump($session->getup("product/add/value/category"));
-        
-        // var_dump($_checkin);
         
         $_returnID = $product->_addSingleProduct($session->getup("product/add/value/number"), $session->getup("product/add/value/units"), $session->getup("product/add/value/category"));
         
@@ -250,7 +234,6 @@ if ($this->_parameters[1] === 'view') {
      * Wywołanie tabeli z bazy
      */
     $this->_table['product']['list'] = $product->_createSoftList($page, $limit);
-    // var_dump($this->_table['product']['list']);
     
     /**
      * Budowa pagera
