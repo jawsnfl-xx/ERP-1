@@ -12,7 +12,7 @@ namespace Application\Controller
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Home extends Controller
     {
@@ -34,7 +34,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {
@@ -112,11 +112,11 @@ namespace Application\Controller
         {
             /**
              */
-            if ($this->_parameters[0] === 'access_permissions') {}
+            if ($this->_parameters[0] === 'access_permissions') {} 
 
             /**
              */
-            elseif ($this->_parameters[0] === 'properties') {}
+            elseif ($this->_parameters[0] === 'properties') {} 
 
             /**
              */

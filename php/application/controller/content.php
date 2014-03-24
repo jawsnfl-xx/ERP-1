@@ -14,6 +14,7 @@ namespace Application\Controller
      *
      *
      *
+     *
      * @NOTE
      * W ten sposób można zapisać podstawę działania kontrolerów.
      * Za pomocą wpisów w komentarzach przez deklaracją
@@ -21,7 +22,7 @@ namespace Application\Controller
      *
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Content extends Controller
     {
@@ -38,7 +39,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options)
         {
