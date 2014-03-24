@@ -20,7 +20,7 @@ file='./product_technology/product.tpl'} {elseif $parameters['0'] eq
 {else}
 
 <!-- poniżej można w miejsce badgesów dać informacje o dodanych pozycjach w ostatnim miesiącu -->
-<div class="col-md-3">
+<div class="col-md-3 col-xs-6">
 	<div class="list-group">
 		<a href="/module/product_technology/product" class="list-group-item">Produkt
 			<span class="badge pull-right">14</span>

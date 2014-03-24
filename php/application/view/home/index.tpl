@@ -9,7 +9,7 @@
 			commodo cursus magna.</p>
 		<p>
 			<a class="btn btn-default" href="/module/quality_management"
-				role="button">View details &raquo;</a>
+				role="button">Pokaż szczegóły &raquo;</a>
 		</p>
 	</div>
 	<div class="col-lg-4">
