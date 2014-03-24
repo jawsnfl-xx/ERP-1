@@ -5,6 +5,8 @@ use Framework\RequestMethods as RequestMethods;
 use Framework\View;
 use Framework\Request;
 
+/**
+ */
 if ($this->_parameters[1] === 'view') {
     
     $this->_table['product']['view'] = $product->_createView($this->_parameters[2]);
@@ -21,6 +23,8 @@ if ($this->_parameters[1] === 'view') {
          */
         $session = Registry::get("session");
         
+        /**
+         */
         if ($session->getup("product/add/error") === 'idIsExists') {
             $this->_table['product']['add']['error'] = 'idIsExists';
             $this->_table['product']['add']['value']['numer'] = $session->getup("product/add/value/numer");
@@ -84,6 +88,8 @@ if ($this->_parameters[1] === 'view') {
          */
         $session = Registry::get("session");
         
+        /**
+         */
         if ($session->getup("product/add/value/number")) {
             
             $this->_table['product']['add']['value']['number'] = $session->getup("product/add/value/number");
@@ -149,6 +155,8 @@ if ($this->_parameters[1] === 'view') {
         $_units_id_units = RequestMethods::post('units_id_units');
         $_category_product = RequestMethods::post('category_product');
         
+        /**
+         */
         if (empty($_units_id_units) or $_units_id_units === '--') {
             $session = Registry::get("session");
             $session->setup("product/add/error", "emptyValue");
@@ -157,6 +165,9 @@ if ($this->_parameters[1] === 'view') {
             $session = Registry::get("session");
             $session->setup("product/add/value/units", $_units_id_units);
         }
+        
+        /**
+         */
         if (empty($_category_product) or $_category_product === '--') {
             $session = Registry::get("session");
             $session->setup("product/add/error", "emptyValue");
@@ -165,6 +176,9 @@ if ($this->_parameters[1] === 'view') {
             $session = Registry::get("session");
             $session->setup("product/add/value/category", $_category_product);
         }
+        
+        /**
+         */
         if ($session->getup("product/add/error") === "emptyValue") {
             header("Location: /module/product_technology/product/add/2");
         } else {
@@ -198,6 +212,8 @@ if ($this->_parameters[1] === 'view') {
         $_checkin = ($session->getup("product/add/value/units") ? TRUE : FALSE);
         $_checkin = ($session->getup("product/add/value/category") ? TRUE : FALSE);
         
+        /**
+         */
         $_returnID = $product->_addSingleProduct($session->getup("product/add/value/number"), $session->getup("product/add/value/units"), $session->getup("product/add/value/category"));
         
         $session->erase("product/add/error");
@@ -217,13 +233,14 @@ if ($this->_parameters[1] === 'view') {
     /**
      * Sprawdzenie poprawności danych
      */
-    
     if ($this->_parameters[2] === NULL) {
         $page = 1;
     } else {
         $page = $this->_parameters[2];
     }
     
+    /**
+     */
     if ($this->_parameters[3] === NULL) {
         $limit = 20;
     } else {
