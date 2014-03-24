@@ -18,7 +18,7 @@ namespace Application\Controller
      *         W ten sposób można zapisać podstawę działania kontrolerów.
      *         Za pomocą wpisów w komentarzach przez deklaracją
      *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-     *
+     *        
      */
     class Users extends Controller
     {
@@ -35,7 +35,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options)
         {
@@ -120,7 +120,7 @@ namespace Application\Controller
         public function login()
         {
             if (RequestMethods::post("login")) {
-
+                
                 /**
                  * @TODO
                  * - sprawdzić działanie requestmethods
@@ -128,7 +128,7 @@ namespace Application\Controller
                  */
                 $name = RequestMethods::post("name");
                 $password = RequestMethods::post("password");
-
+                
                 /**
                  * @TODO
                  * - zmienić odwołanie dla view na zgodne z aktualnym
@@ -143,17 +143,17 @@ namespace Application\Controller
                     $error = true;
                 }
                 if (! $error) {
-
+                    
                     /**
                      * @TODO
                      * - zbudować zapytanie zgodne z aktualną uproszczoną metodą dostępu
                      * do bazy danych
                      */
-
+                    
                     if ($name === "test" and $password === "test1") {
                         $user = TRUE;
                     }
-
+                    
                     /**
                      * @TODO
                      * - wyłączyć rejestrację zmiennej
@@ -166,12 +166,12 @@ namespace Application\Controller
                         header("Location: /home/index");
                         exit();
                     } else {
-
+                        
                         /**
                          * @TODO
                          * - obsłużyć błędy logowania
                          */
-
+                        
                         header("Location: /users/index");
                         exit();
                     }

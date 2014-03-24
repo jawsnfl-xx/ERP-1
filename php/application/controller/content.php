@@ -15,6 +15,7 @@ namespace Application\Controller
      *
      *
      *
+     *
      * @NOTE
      * W ten sposób można zapisać podstawę działania kontrolerów.
      * Za pomocą wpisów w komentarzach przez deklaracją
