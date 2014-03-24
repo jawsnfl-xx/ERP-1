@@ -1,10 +1,4 @@
 <?php
-
-/**
- *
- * @author Marcin
- *
- */
 namespace Application\Controller
 {
 
@@ -16,8 +10,8 @@ namespace Application\Controller
 
     /**
      *
-     * @author Marcin
-     *        
+     * @author Marcin Pyrka
+     *
      */
     class Home extends Controller
     {
@@ -39,13 +33,17 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options = array())
         {
             $this->_parameters = $options['parameters'];
         }
 
+        /**
+         *
+         * @return multitype:
+         */
         public function givmetable()
         {
             return ($this->_table);
@@ -110,11 +108,11 @@ namespace Application\Controller
         {
             /**
              */
-            if ($this->_parameters[0] === 'access_permissions') {} 
+            if ($this->_parameters[0] === 'access_permissions') {}
 
             /**
              */
-            elseif ($this->_parameters[0] === 'properties') {} 
+            elseif ($this->_parameters[0] === 'properties') {}
 
             /**
              */

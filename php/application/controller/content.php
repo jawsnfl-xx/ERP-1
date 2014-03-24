@@ -1,10 +1,4 @@
 <?php
-
-/**
- *
- * @author Marcin
- *
- */
 namespace Application\Controller
 {
 
@@ -16,12 +10,18 @@ namespace Application\Controller
 
     /**
      *
-     * @author Marcin
-     *         @NOTE
-     *         W ten sposób można zapisać podstawę działania kontrolerów.
-     *         Za pomocą wpisów w komentarzach przez deklaracją
-     *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-     *        
+     *
+     *
+     *
+     *
+     * @NOTE
+     * W ten sposób można zapisać podstawę działania kontrolerów.
+     * Za pomocą wpisów w komentarzach przez deklaracją
+     * można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
+     *
+     *
+     * @author Marcin Pyrka
+     *
      */
     class Content extends Controller
     {
@@ -38,7 +38,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options)
         {
@@ -49,6 +49,10 @@ namespace Application\Controller
             // $database->initialize();
         }
 
+        /**
+         *
+         * @return multitype:
+         */
         public function givmetable()
         {
             // print 'czosnek';
@@ -114,9 +118,17 @@ namespace Application\Controller
         public function about()
         {}
 
+        /**
+         * @before init,
+         * @after notify
+         */
         public function about_modules()
         {}
 
+        /**
+         * @before init,
+         * @after notify
+         */
         public function about_faq()
         {}
     }
