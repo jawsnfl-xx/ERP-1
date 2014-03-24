@@ -7,6 +7,7 @@ namespace Application\Controller
     use Framework\RequestMethods as RequestMethods;
     use Framework\View;
     use Framework\Request;
+    use Framework\Events as Events;
 
     /**
      *
@@ -60,6 +61,9 @@ namespace Application\Controller
         public function init()
         {
             parent::init();
+            Events::fire("framework.controller.construct.before", array(
+                $this->name
+            ));
         }
 
         /**

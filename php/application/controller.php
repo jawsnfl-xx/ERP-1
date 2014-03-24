@@ -142,7 +142,8 @@ namespace Application
             if ($session->getup('user')) {
 
                 /**
-                 * Lista stron, na które nie wpuszcza.
+                 * Lista stron, na które nie wpuszcza bez ważnej autentykacji
+                 * poza kontrolerami, które wymagają authenticate.
                  */
                 if (RequestMethods::get(url) === 'users/index') {
                     header("Location: /home/index");
