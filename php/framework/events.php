@@ -5,7 +5,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      */
     class Events
     {
@@ -17,23 +17,27 @@ namespace Framework
         private static $_callbacks = array();
 
         /**
+         *
+         * @return number
          */
         private function __construct()
         {
-            // do nothing
-        }
-
-        /**
-         */
-        private function __clone()
-        {
-            // do nothing
+            return 0;
         }
 
         /**
          *
-         * @param unknown $type            
-         * @param unknown $callback            
+         * @return number
+         */
+        private function __clone()
+        {
+            return 0;
+        }
+
+        /**
+         *
+         * @param unknown $type
+         * @param unknown $callback
          */
         public static function add($type, $callback)
         {
@@ -45,8 +49,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $type            
-         * @param string $parameters            
+         * @param unknown $type
+         * @param string $parameters
          */
         public static function fire($type, $parameters = null)
         {
@@ -59,8 +63,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $type            
-         * @param unknown $callback            
+         * @param unknown $type
+         * @param unknown $callback
          */
         public static function remove($type, $callback)
         {
