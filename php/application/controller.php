@@ -124,8 +124,6 @@ namespace Application
             $session = Registry::get("session");
 
             $request = new Request();
-
-            $connector = \PhpConsole\Connector::getInstance();
         }
 
         /**
