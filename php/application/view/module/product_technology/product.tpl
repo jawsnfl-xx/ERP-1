@@ -24,7 +24,7 @@
 		</div>
 		<div class="col-lg-6">
 			<a href="/module/product_technology/product/add/1"
-				class="btn btn-default">Dodaj ...</a>
+				class="btn btn-primary">Dodaj ...</a>
 		</div>
 	</div>
 	<table class="table table-bordered">
@@ -32,16 +32,47 @@
 			<th>L.p.</th>
 			<th>Nazwa</th>
 			<th>id units</th>
-
-			<th>id units1</th>
+			<th>Kategoria</th>
+			<th></th>
 		</tr>
 		{foreach from=$table['product']['list'] item=row name=row}
 
 		<th>{$smarty.foreach.row.iteration}</th>
 		<td><a
 			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-		<td>{$row.units_id_units}</td>
-		<td>{$row.units_id_units1}</td>
+		<td>{$row.symbol}</td>
+		<td>{$row.category_name}</td>
+		<td><div
+				class="modal fade bs-example-modal-sm-{$row.id_products}"
+				tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-body">
+
+							<div class="modal-header">
+								<h4 class="modal-title" id="myModalLabel">Czy chcesz usunąć
+									produkt?</h4>
+							</div>
+							<div class="modal-body">
+								<p>Zalecane tylko w przypaku nieprawidłowego wprowadzenia
+									produktu do bazy danych.</p>
+								<div class="row">
+									<div class="col-sm-6">
+										<button type="button" class="btn btn-success btn-block"
+											data-dismiss="modal">Anuluj</button>
+									</div>
+									<div class="col-sm-6">
+										<a href="#" class="btn btn-danger btn-block">Tak, skasuj</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-danger" data-toggle="modal"
+				data-target=".bs-example-modal-sm-{$row.id_products}">Kasuj</button></td>
 		</tr>
 		{/foreach}
 	</table>

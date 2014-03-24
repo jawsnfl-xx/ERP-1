@@ -25,6 +25,7 @@ if ($this->_parameters[3] === NULL) {
  * Wywołanie tabeli z bazy
  */
 $this->_table['product']['list'] = $product->_createSoftList($page, $limit);
+// var_dump($this->_table['product']['list']);
 
 /**
  * Budowa pagera

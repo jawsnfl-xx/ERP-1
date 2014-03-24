@@ -6,12 +6,12 @@ use Framework\View;
 use Framework\Request;
 
 if ($this->_parameters[1] === 'view') {
-    
+
     $this->_table['product']['view'] = $product->_createView($this->_parameters[2]);
     $this->_table['orders']['list'] = $orders->_createListLimit(5);
     $this->_table['packages']['list'] = $packages->_createListLimit(5);
     $this->_table['quality_management']['list'] = $quality_management->_createListLimit(5);
-    
+
     // var_dump( $this->_table['product']);
 } elseif ($this->_parameters[1] === 'add') {
     include_once 'add/add.php';
