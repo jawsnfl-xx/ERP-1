@@ -9,7 +9,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class View extends Base
     {
@@ -61,20 +61,20 @@ namespace Framework
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {
             parent::__construct($options);
-
+            
             require_once '..' . DIRECTORY_SEPARATOR . 'php' . DIRECTORY_SEPARATOR . 'librays' . DIRECTORY_SEPARATOR . 'smarty-master' . DIRECTORY_SEPARATOR . 'Smarty.class.php';
-
+            
             $this->_template = new \Smarty();
-
+            
             $this->_template->setTemplateDir(APP_DIR . DIRECTORY_SEPARATOR . 'cache_tp');
             $this->_template->setCompileDir(APP_DIR . DIRECTORY_SEPARATOR . 'cache_cp');
             $this->_template->setCacheDir(APP_DIR . DIRECTORY_SEPARATOR . 'cache_cd');
-
+            
             $this->_template->assign('parameters', $options['parameters']);
             $this->_template->assign('table', $options['table']);
         }
@@ -87,20 +87,20 @@ namespace Framework
         {
             $path = $this->getFile();
             $path = APP_DIR . $path;
-
+            
             if (! file_exists($path)) {
-
+                
                 return "";
                 // return $path;
             }
-
+            
             return $this->_template->fetch($path);
         }
 
         /**
          *
-         * @param unknown $key
-         * @param string $default
+         * @param unknown $key            
+         * @param string $default            
          * @return \Framework\unknown string
          */
         public function get($key, $default = "")
@@ -113,8 +113,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key
-         * @param unknown $value
+         * @param unknown $key            
+         * @param unknown $value            
          * @throws Exception\Data
          */
         protected function _set($key, $value)
@@ -127,8 +127,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key
-         * @param string $value
+         * @param unknown $key            
+         * @param string $value            
          * @return \Framework\View
          */
         public function set($key, $value = null)
@@ -145,7 +145,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key
+         * @param unknown $key            
          * @return \Framework\View
          */
         public function erase($key)

@@ -7,7 +7,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Core extends Base
     {

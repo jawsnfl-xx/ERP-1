@@ -7,7 +7,7 @@ namespace Framework\Session\Driver
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Server extends Session\Driver
     {
@@ -19,7 +19,7 @@ namespace Framework\Session\Driver
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {
@@ -30,8 +30,8 @@ namespace Framework\Session\Driver
 
         /**
          *
-         * @param unknown $key
-         * @param string $default
+         * @param unknown $key            
+         * @param string $default            
          * @return unknown string
          */
         public function getup($key, $default = null)
@@ -45,8 +45,8 @@ namespace Framework\Session\Driver
 
         /**
          *
-         * @param unknown $key
-         * @param unknown $value
+         * @param unknown $key            
+         * @param unknown $value            
          * @return \Framework\Session\Driver\Server
          */
         public function setup($key, $value)
@@ -58,7 +58,7 @@ namespace Framework\Session\Driver
 
         /**
          *
-         * @param unknown $key
+         * @param unknown $key            
          * @return \Framework\Session\Driver\Server
          */
         public function erase($key)

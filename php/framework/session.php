@@ -9,7 +9,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Session extends Base
     {
@@ -44,8 +44,9 @@ namespace Framework
         }
 
         /**
-         * @todo Sprawdzić działanie
          *
+         * @todo Sprawdzić działanie
+         *      
          * @throws Exception\Argument
          * @return \Framework\Session\Driver\Server
          */
@@ -66,7 +67,7 @@ namespace Framework
                 // ));
                 // }
                 // }
-
+                
                 /**
                  * tymczasowe
                  */

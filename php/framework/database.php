@@ -10,7 +10,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Database extends Base
     {
@@ -37,13 +37,13 @@ namespace Framework
          */
         public function initialize()
         {
-
+            
             /**
              * Inicjowanie połączenia z bazą MySQL przez MySQLi
              */
             $this->_mysql = new Database\Mysql();
             $this->_mysql->connect($this->_options);
-
+            
             /**
              * Inicjowanie połączenia z bazą MySQL przez DBAL
              */

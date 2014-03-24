@@ -8,11 +8,11 @@ namespace Framework\Database
     // use Doctrine as Doctrine;
     // use Doctrine\ORM\Tools\Setup;
     // use Doctrine\ORM\EntityManager;
-
+    
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class ORM extends Database
     {
@@ -35,7 +35,7 @@ namespace Framework\Database
         public function __construct()
         {
             $this->_config = new \Doctrine\DBAL\Configuration();
-
+            
             $this->_connectionParams = array(
                 'driver' => 'pdo_mysql',
                 'host' => '127.0.0.1',
@@ -48,7 +48,7 @@ namespace Framework\Database
                 )
             );
             $this->_conn = \Doctrine\DBAL\DriverManager::getConnection($this->_connectionParams, $this->_config);
-
+            
             return $this->_conn;
         }
     }

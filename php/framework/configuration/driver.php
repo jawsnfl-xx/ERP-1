@@ -8,7 +8,7 @@ namespace Framework\Configuration
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Driver extends Base
     {

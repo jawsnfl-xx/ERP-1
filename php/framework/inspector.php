@@ -8,7 +8,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Inspector
     {
@@ -43,7 +43,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $class
+         * @param unknown $class            
          */
         public function __construct($class)
         {
@@ -82,7 +82,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $property
+         * @param unknown $property            
          * @return string
          */
         protected function _getPropertyComment($property)
@@ -93,7 +93,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $method
+         * @param unknown $method            
          * @return string
          */
         protected function _getMethodComment($method)
@@ -104,7 +104,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $comment
+         * @param unknown $comment            
          * @return multitype:boolean Ambigous <\Framework\multitype:, boolean,
          *         multitype:>
          */
@@ -175,7 +175,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $property
+         * @param unknown $property            
          */
         public function getPropertyMeta($property)
         {
@@ -192,7 +192,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $method
+         * @param unknown $method            
          */
         public function getMethodMeta($method)
         {

@@ -5,7 +5,7 @@ namespace Framework
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class ArrayMethods
     {
@@ -22,7 +22,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $array
+         * @param unknown $array            
          * @return multitype: boolean
          */
         public static function clean($array)
@@ -35,7 +35,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $array
+         * @param unknown $array            
          * @return multitype: string
          */
         public static function trim($array)
@@ -48,8 +48,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $array
-         * @param unknown $return
+         * @param unknown $array            
+         * @param unknown $return            
          * @return unknown
          */
         public static function flatten($array, $return = array())
@@ -67,8 +67,8 @@ namespace Framework
         /**
          * KONIECZNIE NALEŻY DOPISAĆ TĘ METODĘ...
          *
-         * @param unknown $array
-         * @param unknown $return
+         * @param unknown $array            
+         * @param unknown $return            
          * @return unknown
          */
         public static function last($array, $return = array())
@@ -78,7 +78,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $array
+         * @param unknown $array            
          * @return \stdClass
          */
         public static function toObject($array)

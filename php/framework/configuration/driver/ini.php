@@ -9,16 +9,16 @@ namespace Framework\Configuration\Driver
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Ini extends Configuration\Driver
     {
 
         /**
          *
-         * @param unknown $config
-         * @param unknown $key
-         * @param unknown $value
+         * @param unknown $config            
+         * @param unknown $key            
+         * @param unknown $value            
          * @return unknown
          */
         protected function _pair($config, $key, $value)
@@ -32,7 +32,7 @@ namespace Framework\Configuration\Driver
             } else {
                 $config[$key] = $value;
             }
-
+            
             /**
              */
             return $config;
@@ -40,7 +40,7 @@ namespace Framework\Configuration\Driver
 
         /**
          *
-         * @param unknown $path
+         * @param unknown $path            
          * @throws Exception\Argument
          * @throws Exception\Syntax
          */
