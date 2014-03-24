@@ -18,7 +18,7 @@ namespace Plugins\Quality_management
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Production_quality_management extends Quality_management
     {
@@ -30,7 +30,7 @@ namespace Plugins\Quality_management
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {
@@ -50,7 +50,7 @@ namespace Plugins\Quality_management
              * Wyzerowanie zmienynch
              */
             $count = NULL;
-
+            
             $count = $database->_mysql->fetch_array('SELECT COUNT(`orders_id_orders`) FROM control_measurements;');
             return $count['0']['COUNT(`orders_id_orders`)'];
         }
@@ -62,12 +62,12 @@ namespace Plugins\Quality_management
         public function _createList()
         {
             $database = Registry::get("database");
-
+            
             /**
              * Wyzerowanie zmiennych
              */
             $data = NULL;
-
+            
             $data = $database->_mysql->fetch_array('select * from control_measurements
 					left join orders ON control_measurements.orders_id_orders = orders.id_orders
         			left join products ON control_measurements.products_id_products = products.id_products
@@ -83,12 +83,12 @@ namespace Plugins\Quality_management
         public function _createListLimit($_limit)
         {
             $database = Registry::get("database");
-
+            
             /**
              * Wyzerowanie zmiennych
              */
             $data = NULL;
-
+            
             $data = $database->_mysql->fetch_array('select * from control_measurements
 					left join orders ON control_measurements.orders_id_orders = orders.id_orders
         			left join products ON control_measurements.products_id_products = products.id_products
@@ -99,27 +99,27 @@ namespace Plugins\Quality_management
 
         /**
          *
-         * @param number $_pageNumber
-         * @param number $_limitAtPage
+         * @param number $_pageNumber            
+         * @param number $_limitAtPage            
          * @return unknown
          */
         public function _createSoftList($_pageNumber = 1, $_limitAtPage = 20)
         {
             $database = Registry::get("database");
-
+            
             /**
              * Wyzerowanie zmienynch
              */
             $data = NULL;
             $limit_down = NULL;
             $limit_up = NULL;
-
+            
             /**
              * Obliczenia
              */
             $limit_down = $_limitAtPage * ($_pageNumber - 1);
             $limit_up = $_limitAtPage;
-
+            
             /**
              * PAMIĘTAJ!!!
              * limit działa przyrostowo!
@@ -135,14 +135,14 @@ namespace Plugins\Quality_management
 
         /**
          *
-         * @param unknown $_id
+         * @param unknown $_id            
          * @return unknown
          */
         public function _createView($_id)
         {
             $database = Registry::get("database");
             $data = NULL;
-
+            
             $data = $database->_mysql->fetch_array('select * from control_measurements
       				left join orders ON control_measurements.orders_id_orders = orders.id_orders
         			left join products ON control_measurements.products_id_products = products.id_products
