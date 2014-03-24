@@ -89,22 +89,22 @@ namespace Application
      * framework.view.render.before function($file)
      * $file—The template file that should be rendered
      */
-
+    
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      */
     class Controller extends \Framework\Controller
     {
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {
-
+            
             /**
              * Wywołanie konstruktora rodzica
              */
@@ -119,10 +119,18 @@ namespace Application
          */
         public function init()
         {
+            /**
+             */
             $configuration = Registry::get("configuration");
+            /**
+             */
             $database = Registry::get("database");
+            /**
+             */
             $session = Registry::get("session");
-
+            
+            /**
+             */
             $request = new Request();
         }
 
@@ -138,9 +146,9 @@ namespace Application
             $configuration = Registry::get("configuration");
             $database = Registry::get("database");
             $session = Registry::get("session");
-
+            
             if ($session->getup('user')) {
-
+                
                 /**
                  * Lista stron, na które nie wpuszcza bez ważnej autentykacji
                  * poza kontrolerami, które wymagają authenticate.
@@ -157,8 +165,14 @@ namespace Application
          */
         public function notify()
         {
+            /**
+             */
             $configuration = Registry::get("configuration");
+            /**
+             */
             $database = Registry::get("database");
+            /**
+             */
             $session = Registry::get("session");
         }
     }
