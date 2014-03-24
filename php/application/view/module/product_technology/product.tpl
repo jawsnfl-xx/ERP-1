@@ -63,7 +63,9 @@
 											data-dismiss="modal">Anuluj</button>
 									</div>
 									<div class="col-sm-6">
-										<a href="#" class="btn btn-danger btn-block">Tak, skasuj</a>
+										<a
+											href="/module/product_technology/product/delete/{$row.id_products}"
+											class="btn btn-danger btn-block">Tak, skasuj</a>
 									</div>
 								</div>
 							</div>
