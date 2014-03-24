@@ -9,8 +9,8 @@ namespace Framework
 
     /**
      *
-     * @author Jet
-     *        
+     * @author Marcin Pyrka
+     *
      */
     class Base
     {
@@ -23,7 +23,7 @@ namespace Framework
 
         /**
          *
-         * @param array $options            
+         * @param array $options
          */
         public function __construct($options = array())
         {
@@ -39,8 +39,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $name            
-         * @param unknown $arguments            
+         * @param unknown $name
+         * @param unknown $arguments
          * @throws Exception
          * @return NULL \Framework\Base
          */
@@ -49,7 +49,7 @@ namespace Framework
             if (empty($this->_inspector)) {
                 throw new Exception("Call parent::__construct!");
             }
-            
+
             /**
              * @TODO:
              * - opisać działanie $getMatches
@@ -88,7 +88,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $name            
+         * @param unknown $name
          */
         public function __get($name)
         {
@@ -98,8 +98,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $name            
-         * @param unknown $value            
+         * @param unknown $name
+         * @param unknown $value
          */
         public function __set($name, $value)
         {
@@ -109,7 +109,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $property            
+         * @param unknown $property
          * @return \Framework\Core\Exception\ReadOnly
          */
         protected function _getExceptionForReadonly($property)
@@ -119,7 +119,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $property            
+         * @param unknown $property
          * @return \Framework\Core\Exception\WriteOnly
          */
         protected function _getExceptionForWriteonly($property)
@@ -138,7 +138,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $method            
+         * @param unknown $method
          * @return \Framework\Core\Exception\Argument
          */
         protected function _getExceptionForImplementation($method)

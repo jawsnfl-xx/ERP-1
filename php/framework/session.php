@@ -4,13 +4,12 @@ namespace Framework
 
     use Framework\Base as Base;
     use Framework\Registry as Registry;
-    // use Framework\Session as Session;
     use Framework\Session\Exception as Exception;
 
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      */
     class Session extends Base
     {
@@ -45,13 +44,13 @@ namespace Framework
         }
 
         /**
+         * @todo Sprawdzić działanie
          *
          * @throws Exception\Argument
          * @return \Framework\Session\Driver\Server
          */
         public function initialize()
         {
-            // print 'public function initialize()';
             $type = $this->getType();
             if (empty($type)) {
                 // $configuration = Registry::get("configuration");
@@ -67,7 +66,7 @@ namespace Framework
                 // ));
                 // }
                 // }
-                
+
                 /**
                  * tymczasowe
                  */

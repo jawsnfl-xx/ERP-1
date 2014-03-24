@@ -4,8 +4,8 @@ namespace Framework
 
     /**
      *
-     * @author Jet
-     *        
+     * @author Marcin Pyrka
+     *
      */
     class StringMethods
     {
@@ -32,7 +32,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $pattern            
+         * @param unknown $pattern
          * @return string
          */
         private static function _normalize($pattern)
@@ -51,7 +51,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $delimiter            
+         * @param unknown $delimiter
          */
         public static function setDelimiter($delimiter)
         {
@@ -60,8 +60,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
-         * @param unknown $pattern            
+         * @param unknown $string
+         * @param unknown $pattern
          * @return unknown NULL
          */
         public static function match($string, $pattern)
@@ -78,9 +78,9 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
-         * @param unknown $pattern            
-         * @param string $limit            
+         * @param unknown $string
+         * @param unknown $pattern
+         * @param string $limit
          * @return multitype:
          */
         public static function split($string, $pattern, $limit = null)
@@ -91,18 +91,18 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
-         * @param unknown $mask            
+         * @param unknown $string
+         * @param unknown $mask
          * @return unknown mixed
          */
         public static function sanitize($string, $mask)
         {
             if (is_array($mask)) {
                 $parts = $mask;
-            } else 
+            } else
                 if (is_string($mask)) {
                     $parts = str_split($mask);
-                } 
+                }
 
                 else {
                     return $string;
@@ -116,7 +116,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
+         * @param unknown $string
          * @return Ambigous <string, unknown>
          */
         public static function unique($string)
@@ -133,9 +133,9 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
-         * @param unknown $substring            
-         * @param string $offset            
+         * @param unknown $string
+         * @param unknown $substring
+         * @param string $offset
          * @return number
          */
         public static function indexOf($string, $substring, $offset = null)
@@ -210,7 +210,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
+         * @param unknown $string
          * @return Ambigous <unknown, mixed>
          */
         public static function singular($string)
@@ -218,7 +218,7 @@ namespace Framework
             $result = $string;
             foreach (self::$_singular as $rule => $replacement) {
                 $rule = self::_normalize($rule);
-                
+
                 if (preg_match($rule, $string)) {
                     $result = preg_replace($rule, $replacement, $string);
                     break;
@@ -229,7 +229,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
+         * @param unknown $string
          * @return Ambigous <unknown, mixed>
          */
         function plural($string)
@@ -247,7 +247,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $string            
+         * @param unknown $string
          * @return mixed
          */
         function clearWhiteChar($string)

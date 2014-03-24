@@ -6,9 +6,21 @@ namespace Framework\Configuration\Driver
     use Framework\Configuration as Configuration;
     use Framework\Configuration\Exception as Exception;
 
+    /**
+     *
+     * @author Marcin Pyrka
+     *
+     */
     class Ini extends Configuration\Driver
     {
 
+        /**
+         *
+         * @param unknown $config
+         * @param unknown $key
+         * @param unknown $value
+         * @return unknown
+         */
         protected function _pair($config, $key, $value)
         {
             if (strstr($key, ".")) {
@@ -20,9 +32,18 @@ namespace Framework\Configuration\Driver
             } else {
                 $config[$key] = $value;
             }
+
+            /**
+             */
             return $config;
         }
 
+        /**
+         *
+         * @param unknown $path
+         * @throws Exception\Argument
+         * @throws Exception\Syntax
+         */
         public function parse($path)
         {
             if (empty($path)) {
@@ -43,6 +64,8 @@ namespace Framework\Configuration\Driver
                 }
                 $this->_parsed[$path] = ArrayMethods::toObject($config);
             }
+            /**
+             */
             return $this->_parsed[$path];
         }
     }

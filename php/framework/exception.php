@@ -6,8 +6,8 @@ namespace Framework
 
     /**
      *
-     * @author Jet
-     *        
+     * @author Marcin Pyrka
+     *
      */
     class Exception
     {
