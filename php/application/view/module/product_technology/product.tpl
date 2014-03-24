@@ -30,13 +30,12 @@
 	<table class="table table-bordered">
 		<tr>
 			<th>L.p.</th>
-			<th>Nazwa</th>
-			<th>id units</th>
+			<th>Nazwa produktu</th>
+			<th>Jednostka miary</th>
 			<th>Kategoria</th>
 			<th></th>
 		</tr>
 		{foreach from=$table['product']['list'] item=row name=row}
-
 		<th>{$smarty.foreach.row.iteration}</th>
 		<td><a
 			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
@@ -49,7 +48,6 @@
 				<div class="modal-dialog modal-md">
 					<div class="modal-content">
 						<div class="modal-body">
-
 							<div class="modal-header">
 								<h4 class="modal-title" id="myModalLabel">Czy chcesz usunąć
 									produkt?</h4>
