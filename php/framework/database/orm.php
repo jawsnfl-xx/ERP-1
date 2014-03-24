@@ -49,34 +49,6 @@ namespace Framework\Database
             );
             $this->_conn = \Doctrine\DBAL\DriverManager::getConnection($this->_connectionParams, $this->_config);
 
-            // var_dump($config);
-            // var_dump($conn);
-
-            // $queryBuilder = $conn->createQueryBuilder();
-
-            // $queryBuilder->select('*')
-            // ->from('products', 'products')
-            // ->setFirstResult(5)
-            // ->setMaxResults(5);
-
-            // var_dump($queryBuilder);
-
-            // $stmt = $conn->query($queryBuilder);
-
-            // var_dump($stmt);
-            // while ($row = $stmt->fetch()) {
-            // var_dump($row);
-            // }
-
-            // $sql = "SELECT * FROM products";
-            // $stmt = $conn->query($sql);
-
-            // var_dump($stmt);
-
-            // while ($row = $stmt->fetch()) {
-            // var_dump($row);
-            // }
-
             return $this->_conn;
         }
     }
