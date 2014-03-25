@@ -128,7 +128,7 @@ namespace Application\Controller
         public function quality_management()
         {
             $quality_management = new \Plugins\Quality_management\Production_quality_management();
-            $controlSheet = new \Plugins\Quality_management\QualityInspection\ControlMeasurements\ControlSheet();
+            // $controlSheet = new \Plugins\Quality_management\QualityInspection\ControlMeasurements\ControlSheet();
             if ($this->_parameters[0] === 'review') {
 
                 include_once 'module/quality_management/review/review.php';
