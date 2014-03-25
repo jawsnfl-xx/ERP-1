@@ -9,3 +9,10 @@ use Framework\Request;
  * Wyświetla arkusz kontrolny z badania
  */
 $this->_table['quality_management']['view'] = $quality_management->_createView($this->_parameters[1]);
+
+/**
+ * Tymczasowo ładowany widok ControlSheet.
+ * Do rozbudowy.
+ */
+$controlSheet = new \Plugins\Quality_management\QualityInspection\ControlMeasurements\ControlSheet();
+// var_dump($controlSheet);

@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  */
 namespace Application\Controller
 {
@@ -10,11 +10,12 @@ namespace Application\Controller
     use Framework\RequestMethods as RequestMethods;
     use Framework\View;
     use Framework\Request;
+    use Plugins as Plugins;
 
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      */
     class Module extends Controller
     {
@@ -36,7 +37,7 @@ namespace Application\Controller
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options = array())
         {
@@ -109,12 +110,12 @@ namespace Application\Controller
             $orders = new \Plugins\Sales_management\Orders();
             $packages = new \Plugins\Inventory_management\Packages();
             $quality_management = new \Plugins\Quality_management\Production_quality_management();
-            
+
             if ($this->_parameters[0] === 'product') {
-                
+
                 include_once 'module/product/product.php';
             } elseif ($this->_parameters[0] === 'technology') {
-                
+
                 include_once 'module/technology/technology.php';
             }
         }
@@ -128,15 +129,18 @@ namespace Application\Controller
         public function quality_management()
         {
             $quality_management = new \Plugins\Quality_management\Production_quality_management();
+            // $controlSheet = new \Plugins();
+
+            // var_dump($controlSheet);
             if ($this->_parameters[0] === 'review') {
-                
+
                 include_once 'module/quality_management/review/review.php';
             } elseif ($this->_parameters[0] === 'view') {
                 include_once 'module/quality_management/view/view.php';
-            } 
+            }
 
             elseif ($this->_parameters[0] === 'add') {
-                
+
                 include_once 'module/quality_management/add/add.php';
             } else {}
         }

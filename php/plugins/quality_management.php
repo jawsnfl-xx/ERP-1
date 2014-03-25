@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Plugins
 {
 
@@ -14,7 +19,9 @@ namespace Plugins
          *
          * @param unknown $options            
          */
-        public function __construct($options = array())
+        public 
+
+        function __construct($options = array())
         {
             /**
              */
