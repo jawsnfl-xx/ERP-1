@@ -28,89 +28,75 @@
 		<div class="container-fluid">
 
 			<div class="col-md-6">
-				<h2>Kalendarz</h2>
-				<!-- póki co jest to koncept  -->
+				<h2>Kalendarz  <small>Marzec 2014</small></h2>
+				<!-- 		póki co jest to koncept -->
 				<div class="table-responsive">
-					<ul class="pager">
-						<li class="previous"><a href="#">&larr;</a></li>
-						<li><strong>Marzec 2014</strong></li>
-						<li class="next"><a href="#"> &rarr;</a></li>
-					</ul>
 					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th>Poniedziałek</th>
-								<th>Wtorek</th>
-								<th>Środa</th>
-								<th>Czwartek</th>
-								<th>Piątek</th>
-								<th>Sobota</th>
-								<th>Niedziela</th>
+								<th>Pon</th>
+								<th>Wt</th>
+								<th>Śr</th>
+								<th>Czw</th>
+								<th>Pt</th>
+								<th>Sob</th>
+								<th>Niedz</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td><h6>24</h6></td>
+								<td><h6>25</h6></td>
+								<td><h6>26</h6></td>
+								<td><h6>27</h6></td>
+								<td><h6>28</h6></td>
+								<td>1</td>
+								<td>2</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+								<td>8</td>
+								<td>9</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>10</td>
+								<td>11</td>
+								<td>12</td>
+								<td>13</td>
+								<td>14</td>
+								<td>15</td>
+								<td>16</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>17</td>
+								<td>18</td>
+								<td>19</td>
+								<td>20</td>
+								<td>21</td>
+								<td>22</td>
+								<td>23</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>24</td>
+								<td>25</td>
+								<td>26</td>
+								<td>27</td>
+								<td>28</td>
+								<td>29</td>
+								<td>30</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
+								<td>31</td>
+								<td><h6>1</h6></td>
+								<td><h6>2</h6></td>
+								<td><h6>3</h6></td>
+								<td><h6>4</h6></td>
+								<td><h6>5</h6></td>
+								<td><h6>6</h6></td>
 							</tr>
 						</tbody>
 					</table>
@@ -180,17 +166,4 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 	</div>

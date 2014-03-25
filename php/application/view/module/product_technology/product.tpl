@@ -1,8 +1,7 @@
 {if $parameters['1'] eq 'page' }
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<p>Nunc luctus, lacus id aliquet bibendum, nunc mauris imperdiet
-			urna</p>
+		<h3 class="panel-title">Produkt...</h3>
 	</div>
 	<div class="panel-body">
 		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
