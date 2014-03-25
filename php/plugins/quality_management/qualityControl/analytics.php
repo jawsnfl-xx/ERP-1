@@ -1,9 +1,4 @@
 <?php
-
-/**
- * @author Marcin Pyrka
- *
- */
 namespace Plugins\Quality_management\QualityControl
 {
 
@@ -12,8 +7,9 @@ namespace Plugins\Quality_management\QualityControl
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
      * @name ControlMeasurements
      * @namespace QualityInspection
      *           

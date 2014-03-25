@@ -1,10 +1,4 @@
 <?php
-
-/**
- *
- * @author Marcin
- *
- */
 namespace Plugins\Quality_management
 {
 
@@ -12,13 +6,19 @@ namespace Plugins\Quality_management
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
      * @name QualityControl
-     * @namespace Quality_management
+     * @namespace Plugins\Quality_management
      *           
-     *            Sterowanie jakością
-     *           
+     * @version 1
+     *         
+     * @uses Plugins\Quality_management
+     *      
+     *       @note
+     *       Sterowanie jakością
+     *      
      */
     class QualityControl extends Quality_management
     {
