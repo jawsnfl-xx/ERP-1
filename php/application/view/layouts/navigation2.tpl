@@ -1,12 +1,11 @@
 <link href="/public/css/theme.css" rel="stylesheet">
 <link href="/public/css/dashboard.css" rel="stylesheet">
 <link href="/public/css/print.css" rel="stylesheet" media="print">
-
 <body data-spy="scroll" data-target="">
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span

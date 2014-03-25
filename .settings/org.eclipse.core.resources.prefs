@@ -8,6 +8,7 @@ encoding//php/application/view/layouts/navigation2.tpl=UTF-8
 encoding//php/application/view/module=UTF-8
 encoding//php/application/view/module/product_technology.tpl=UTF-8
 encoding//php/application/view/module/product_technology/product.tpl=UTF-8
+encoding//php/application/view/module/product_technology/product/add.tpl=UTF-8
 encoding//php/application/view/module/product_technology/technology.tpl=UTF-8
 encoding//php/application/view/module/quality_management.tpl=UTF-8
 encoding//php/application/view/module/quality_management/add.tpl=UTF-8
