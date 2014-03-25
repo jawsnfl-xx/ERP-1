@@ -7,8 +7,17 @@ namespace Plugins\Sales_management
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
+     * @name Orders
+     * @namespace Plugins\Sales_managements
+     *           
+     * @uses Plugins\Sales_management
+     * @uses Framework\Registry
+     *      
+     * @version 1
+     *         
      */
     class Orders extends Sales_management
     {

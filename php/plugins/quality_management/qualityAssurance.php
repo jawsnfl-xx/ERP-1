@@ -1,10 +1,5 @@
 <?php
 
-/**
- *
- * @author Marcin
- *
- */
 namespace Plugins\Quality_management
 {
 
@@ -12,7 +7,8 @@ namespace Plugins\Quality_management
 
     /**
      *
-     * @author Marcin Pyrka
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
      *        
      * @name QualityAssurance
      * @namespace Quality_management

@@ -1,9 +1,4 @@
 <?php
-
-/**
- * @author Marcin Pyrka
- *
- */
 namespace Plugins\Quality_management
 {
 
@@ -11,13 +6,19 @@ namespace Plugins\Quality_management
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
      * @name QualityInspection
-     * @namespace Quality_management
+     * @namespace Plugins\Quality_management
      *           
-     *            Inspekcja jakości
-     *           
+     * @version 1
+     *         
+     * @uses Plugins\Quality_management
+     *      
+     *       @note
+     *       Inspekcja jakości
+     *      
      */
     class QualityInspection extends Quality_management
     {

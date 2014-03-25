@@ -12,8 +12,9 @@ namespace Framework
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
      */
     class Controller extends Base
     {

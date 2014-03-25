@@ -4,8 +4,14 @@ namespace Plugins
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
+     * @name Product_technology
+     * @namespace Plugins
+     *           
+     * @version 1
+     *         
      */
     class Product_technology extends Plugins
     {
