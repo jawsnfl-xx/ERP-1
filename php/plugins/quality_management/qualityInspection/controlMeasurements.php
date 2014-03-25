@@ -8,6 +8,7 @@ namespace Plugins\Quality_management\QualityInspection
 {
 
     use Plugins\Quality_management\QualityInspection as QualityInspection;
+    use Plugins\Product_technology\Product as Product;
 
     /**
      *
@@ -16,8 +17,8 @@ namespace Plugins\Quality_management\QualityInspection
      * @name ControlMeasurements
      * @namespace QualityInspection
      *
-     * @uses Quality_management
      * @uses QualityInspection
+     * @uses Product
      *
      *
      */
