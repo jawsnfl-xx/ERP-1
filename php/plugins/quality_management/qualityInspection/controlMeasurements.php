@@ -13,14 +13,14 @@ namespace Plugins\Quality_management\QualityInspection
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      * @name ControlMeasurements
      * @namespace QualityInspection
-     *           
+     *
      * @uses QualityInspection
      * @uses Product
-     *      
-     *      
+     *
+     *
      */
     class ControlMeasurements extends QualityInspection
     {
@@ -32,7 +32,7 @@ namespace Plugins\Quality_management\QualityInspection
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options = array())
         {
