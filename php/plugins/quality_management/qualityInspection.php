@@ -12,25 +12,25 @@ namespace Plugins\Quality_management
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      * @name QualityInspection
      * @namespace Quality_management
-     *
+     *           
      *            Inspekcja jakości
-     *
+     *           
      */
     class QualityInspection extends Quality_management
     {
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          * @return number
          */
         public function __construct($options = array())
         {
             parent::__construct($options);
-
+            
             if ($options['']) {
                 return 1;
             } else {
