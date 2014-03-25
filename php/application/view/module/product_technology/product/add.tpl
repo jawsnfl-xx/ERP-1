@@ -4,7 +4,6 @@
 		{if $parameters['2'] eq '1' }
 		<p>Aby dodać do systemu nowy produkt, w pierwszym kroku wprowadź
 			jego unikalny numer identyfikacyjny:</p>
-
 		{if $table['product']['add']['error'] eq 'idIsExists' }
 		<div class="alert alert-warning">
 			{foreach from=$table['product']['add']['value']['numer'] item=row
@@ -47,24 +46,33 @@
 
 		<form role="form" method="post"
 			action="/module/product_technology/product/_add/2">
-			<ul class="list-group">
-				<li class="list-group-item"><h4>Jednostka miary:</h4> <select
-					class="form-control" name="units_id_units">
+			<div class="row">
+				<div class="col-md-3">
+					<h4>Jednostka miary:</h4>
+					<select class="form-control" name="units_id_units">
 						<!--  dodać foreach z jednostkami miary -->
 						<option>--</option>{foreach
 						from=$table['product']['add']['value']['units'] item=row name=row}
 						<option>{$row.name}</option> {/foreach}
-				</select></li>
-				<li class="list-group-item"><h4>Kategoria produktu:</h4> <select
-					class="form-control" name="category_product">
+					</select>
+				</div>
+				<div class="col-md-3">
+					<h4>Kategoria produktu:</h4>
+					<select class="form-control" name="category_product">
 						<!--  dodać foreach z kategormiami produktu -->
 						<option>--</option>{foreach
 						from=$table['product']['add']['value']['category'] item=row
 						name=row}
 						<option>{$row.category_name}</option> {/foreach}
-				</select></li>
-			</ul>
-			<button class="btn btn-default" type="submit">Dodaj</button>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<button class="btn btn-primary btn btn-block" type="submit">Dodaj</button>
+				</div>
+			</div>
+
 		</form>
 		{elseif $parameters['2'] eq '3' }
 		<p>Można już to podsumować...</p>
@@ -103,7 +111,6 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-2 col-md-offset-8">
 				<button class="btn btn-danger btn-block" data-toggle="modal"
