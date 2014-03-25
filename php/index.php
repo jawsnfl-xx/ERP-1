@@ -6,13 +6,13 @@
 define('APP_DIR', dirname(realpath(__FILE__)));
 define('DISPLAY_ERRORS', 1);
 define('MIN_PHP_VERSION', '5.3.7');
-define('DEVELOP_MODE', 0);
+define('DEVELOP_MODE', 1);
 define('BOOTSTRAP_FILE', 'bootstrap.php');
 
 /**
  */
 try {
-    
+
     /**
      * Włączenie raportowania błędów na ekran.
      *
@@ -21,7 +21,7 @@ try {
      */
     error_reporting(E_ERROR | E_PARSE);
     ini_set("display_errors", DISPLAY_ERRORS);
-    
+
     /**
      * Kontrola wersji
      * @TODO podpięcie tych informacji pod konfigurację
@@ -32,7 +32,7 @@ try {
 
     /**
      *
-     * @param unknown $class            
+     * @param unknown $class
      * @throws Exception
      */
     function autoload($class)
@@ -53,27 +53,27 @@ try {
     /**
      *
      * @author Marcin Pyrka
-     *        
+     *
      */
     class Autoloader
     {
 
         /**
          *
-         * @param unknown $class            
+         * @param unknown $class
          */
         public static function autoload($class)
         {
             autoload($class);
         }
     }
-    
+
     spl_autoload_register('autoload');
     spl_autoload_register(array(
         'autoloader',
         'autoload'
     ));
-    
+
     /**
      * Wczytanie bootstrapu z katalogu aplikacji
      * a nie z bierzacego dla index.php
@@ -137,9 +137,9 @@ try {
             "Framework\Router\Exception\Controller"
         )
     );
-    
+
     $exception = get_class($e);
-    
+
     /**
      * @TODO sprawdzić działanie stron z błędami i przechwycanych wyjątków
      *
@@ -154,7 +154,7 @@ try {
             }
         }
     }
-    
+
     /**
      * Wywołanie stroy błedu bez wyłapania wyjątku.
      */
