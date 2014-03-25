@@ -1,25 +1,22 @@
 <?php
 
 /**
- *
- * @author Marcin
+ * @author Marcin Pyrka
  *
  */
 namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
 {
 
-    use Quality_management as Quality_management;
-    use Quality_management\QualityInspection as QualityInspection;
-    use Quality_management\QualityInspection\ControlMeasurements as ControlMeasurements;
+    use Plugins\Quality_management\QualityInspection\ControlMeasurements as ControlMeasurements;
 
     /**
      *
      * @author Marcin Pyrka
-     *
+     *        
      * @name ControlSheet
      * @namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
-     *
-     *
+     *           
+     *           
      */
     class ControlSheet extends ControlMeasurements
     {
@@ -41,7 +38,7 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {

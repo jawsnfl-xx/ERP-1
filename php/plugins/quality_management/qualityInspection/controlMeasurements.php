@@ -1,15 +1,13 @@
 <?php
 
 /**
- *
- * @author Marcin
+ * @author Marcin Pyrka
  *
  */
 namespace Plugins\Quality_management\QualityInspection
 {
 
-    use Quality_management as Quality_management;
-    use Quality_management\QualityInspection as QualityInspection;
+    use Plugins\Quality_management\QualityInspection as QualityInspection;
 
     /**
      *
