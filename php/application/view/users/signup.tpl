@@ -4,10 +4,8 @@
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 
-			<p class="navbar-text navbar-right">
-				Potrzebujesz dostępu do aplikacji? <a type="button"
-					class="navbar-link btn btn-default">Złóż zapytanie o założenie
-					konta</a>
+			<p class="navbar-text navbar-right"><a href="/users/index" type="button"
+					class="navbar-link btn btn-default">Odrzuć zmiany i wróć do ekranu logowania</a>
 			</p>
 		</div>
 	</nav>
@@ -71,9 +69,6 @@
 							<button type="submit" class="btn btn-default">Submit</button>
 						</div>
 					</form>
-					<h4>
-						Można też wrócić do <a href="/users/index">ekranu logowania</a>.
-					</h4>
 				</div>
 			</div>
 		</div>
