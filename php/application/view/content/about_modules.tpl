@@ -2,9 +2,6 @@
 
 <div class="col-md-8">
 
-	<!-- sekcje do w��czenia do about -->
-	<!-- pierwsze to info o aplikacji, drugie o modu�ach, a trzecie-FAQ -->
-	<!-- 1 -->
 	<div class="panel-heading">
 		<h3>O modułach</h3>
 		<div class="col-md-4 pull-right">
@@ -108,11 +105,8 @@
 
 	</div>
 </div>
-<!-- 2 -->
 </div>
-<div class="panel panel-default">
-	<!-- 3 -->
-</div>
+<div class="panel panel-default"></div>
 </div>
 <div class="panel-footer"></div>
 </div>

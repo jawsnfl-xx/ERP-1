@@ -24,7 +24,6 @@
 				<ul class="nav navbar-nav navbar-right">
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<!--szukanie wg kategorii. jeśli uważasz że jest to nietrafione/niepotrzebne teraz- zarzuć całość do komentarza. -->
 							<select class="form-control">
 								<option>Kategorie</option>
 								<option>1</option>
