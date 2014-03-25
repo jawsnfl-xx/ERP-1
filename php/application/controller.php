@@ -122,9 +122,11 @@ namespace Application
             /**
              */
             $configuration = Registry::get("configuration");
+            
             /**
              */
             $database = Registry::get("database");
+            
             /**
              */
             $session = Registry::get("session");
@@ -143,8 +145,18 @@ namespace Application
          */
         public function authenticate()
         {
+            /**
+             *
+             */
             $configuration = Registry::get("configuration");
+            
+            /**
+             *
+             */
             $database = Registry::get("database");
+            
+            /**
+             */
             $session = Registry::get("session");
             
             if ($session->getup('user')) {

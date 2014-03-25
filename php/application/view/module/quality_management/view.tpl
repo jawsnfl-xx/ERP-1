@@ -1,4 +1,3 @@
-<!-- jedna zmiana w pliku -->
 <div class="panel panel-default">
 	<div class="panel-heading">
 		Metryczka produktu
@@ -8,58 +7,6 @@
 			</a>
 		</div>
 	</div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<div class="panel-body">
-		<ul class="list-group">
-			<div class="row">
-				<div class="col-md-6">
-					<table class="table table-responsive">
-						<tr>
-							<th rowspan="3">Z.P.U.H. Rolmech</th>
-							<th>Nr Koła</th>
-							<td>7839.xlsx.xlsm</td>
-						</tr>
-						<tr>
-							<th>Nr zlecenia</th>
-							<td>666999</td>
-						</tr>
-						<tr>
-							<th>Data pomiaru</th>
-							<td>2000-01-01</td>
-						</tr>
-					</table>
-				</div>
-				<div class="col-md-6">
-					<table class="table table-responsive">
-						<tr>
-							<th>Kontroler</th>
-							<td>Lorem ipsum</td>
-							<th>Pakowacz</th>
-							<td>Inny Lorem ipsum</td>
-						</tr>
-						<tr>
-							<th>Szt. w zleceniu</th>
-							<td>12</td>
-							<th>Data wysyłki</th>
-							<td>2000-01-01</td>
-						</tr>
-						<tr>
-							<th>Szt. w palecie</th>
-							<td>12</td>
-							<th>nr palety</th>
-							<td>678998</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-	</div>
-	<!-- jak coś to sprawdzę czy da się udoskonalić tabelkę, coby nie było takiego dużego bordera :/ -->
-		<div class="panel-heading">
-			<span>karta pomiaru</span>
-		</div>
-			<table class="table table-bordered">
-=======
 	<ul class="list-group">
 		<div class="row">
 			<div class="col-md-6">
@@ -103,66 +50,18 @@
 			</div>
 		</div>
 		</li>
-		<!-- jak coś to sprawdzę czy da się udoskonalić tabelkę, coby nie było takiego dużego bordera :/ -->
-=======
-	<div class="panel-body">
->>>>>>> b118906bda04acee52ba26b3b2ef94fb8adb3fde
-		<ul class="list-group">
-			<div class="row">
-				<div class="col-md-6">
-					<table class="table table-responsive">
-						<tr>
-							<th rowspan="3">Z.P.U.H. Rolmech</th>
-							<th>Nr Koła</th>
-							<td>7839.xlsx.xlsm</td>
-						</tr>
-						<tr>
-							<th>Nr zlecenia</th>
-							<td>666999</td>
-						</tr>
-						<tr>
-							<th>Data pomiaru</th>
-							<td>2000-01-01</td>
-						</tr>
-					</table>
-				</div>
-				<div class="col-md-6">
-					<table class="table table-responsive">
-						<tr>
-							<th>Kontroler</th>
-							<td>Lorem ipsum</td>
-							<th>Pakowacz</th>
-							<td>Inny Lorem ipsum</td>
-						</tr>
-						<tr>
-							<th>Szt. w zleceniu</th>
-							<td>12</td>
-							<th>Data wysyłki</th>
-							<td>2000-01-01</td>
-						</tr>
-						<tr>
-							<th>Szt. w palecie</th>
-							<td>12</td>
-							<th>nr palety</th>
-							<td>678998</td>
-						</tr>
-					</table>
-				</div>
-<<<<<<< HEAD
-			</li>
-			<li class="list-group-item list-group-item-header"><span>karta
-					pomiaru</span></li>
-			<table class="table table-bordered table-responsive ">
->>>>>>> master
-=======
+
+		</li>
+		<li class="list-group-item list-group-item-header"><span>karta
+				pomiaru</span></li>
+		<table class="table table-bordered table-responsive ">
 			</div>
-	</div>
-	<!-- jak coś to sprawdzę czy da się udoskonalić tabelkę, coby nie było takiego dużego bordera :/ -->
-		<div class="panel-heading">
-			<span>karta pomiaru</span>
-		</div>
+			</div>
+			<!-- jak coś to sprawdzę czy da się udoskonalić tabelkę, coby nie było takiego dużego bordera :/ -->
+			<div class="panel-heading">
+				<span>karta pomiaru</span>
+			</div>
 			<table class="table table-bordered">
->>>>>>> b118906bda04acee52ba26b3b2ef94fb8adb3fde
 				<tbody>
 					<tr>
 						<th>Badane sztuki</th>
@@ -216,15 +115,8 @@
 					</tr>
 				</tbody>
 			</table>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-	</div>
-=======
-		</ul>
+
+			</div>
+			</ul>
 		</table>
->>>>>>> master
-=======
-	
-	</div>
->>>>>>> b118906bda04acee52ba26b3b2ef94fb8adb3fde
+</div>

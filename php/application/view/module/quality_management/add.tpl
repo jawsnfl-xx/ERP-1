@@ -1,9 +1,4 @@
 {if $parameters['1'] neq '' }
-<!--
-	GĂłrny pasek z wykazaniem podstrony przy dodawaniu raportu
-	W przyszłości wykazujący również statusy i informacje o nieścisłościach i błędach (być może? )
-
- -->
 <div class="container-liquid">
 	<ul class="list-inline row">
 		<li class="col-md-2 col-md-offset-1"><a
@@ -44,9 +39,7 @@
 			href="/module/quality_management/add/summary">Podsumowanie</a></li>
 	</ul>
 </div>
-{/if}
-<!--  TREĹšÄ†  -->
-{if $parameters['1'] eq '' }
+{/if} {if $parameters['1'] eq '' }
 <div class="container-liquid">
 	<div class="row">
 		<div class=" col-md-6">
@@ -75,7 +68,6 @@
 						edytowania istniejących arkuszy. :D</p>
 				</div>
 			</div>
-			<!-- jednak będę musiał coś tu ciekawego napisać odnośnie tych modułów. a na pewno coś o quality management -->
 			<div class="alert alert-info">
 				W razie wątpliwości, tu jest link do <a
 					href="/content/about_modules" class="alert-link">informacji o
@@ -114,9 +106,7 @@
 	<ul class="list-group">
 		<form action="/module/quality_management/add/_step1" method="post"
 			class="form-horizontal" role="form">
-			<li class="list-group-item"><p>
-					<!-- coś ważnego o czym user ma wiedzieć w tym kroku -->
-				</p></li>
+			<li class="list-group-item"><p></p></li>
 			<li class="list-group-item">
 				<div
 					class="form-group {if in_array( 'name', $table['form_err']) } has-error has-feedback{/if}">
@@ -343,9 +333,7 @@
 	<div class="panel-heading">
 		<strong>Kontrola geometrii</strong>
 	</div>
-	<div class="panel-body">
-<!-- hint -->
-	</div>
+	<div class="panel-body"></div>
 	<div class="table-responsive">
 		<table class="table table-bordered">
 			<tr>
@@ -462,8 +450,9 @@
 	href="/module/quality_management/add/summary"> Block level button</a>
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
-	<!-- Default panel contents -->
-	<div class="panel-heading"><strong>Podsumowanie kontroli jakości</strong></div>
+	<div class="panel-heading">
+		<strong>Podsumowanie kontroli jakości</strong>
+	</div>
 	<div class="panel-body">
 		<div class="row">
 			<div class=" col-md-3">Z.P.U.H. Rolmech</div>

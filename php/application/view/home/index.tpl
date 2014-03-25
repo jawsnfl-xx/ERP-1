@@ -29,7 +29,6 @@
 
 			<div class="col-md-6">
 				<h2>Kalendarz  <small>Marzec 2014</small></h2>
-				<!-- 		póki co jest to koncept -->
 				<div class="table-responsive">
 					<table class="table table-bordered">
 						<thead>

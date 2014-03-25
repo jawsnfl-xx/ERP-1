@@ -50,7 +50,6 @@
 				<div class="col-md-3">
 					<h4>Jednostka miary:</h4>
 					<select class="form-control" name="units_id_units">
-						<!--  dodać foreach z jednostkami miary -->
 						<option>--</option>{foreach
 						from=$table['product']['add']['value']['units'] item=row name=row}
 						<option>{$row.name}</option> {/foreach}
@@ -59,7 +58,6 @@
 				<div class="col-md-3">
 					<h4>Kategoria produktu:</h4>
 					<select class="form-control" name="category_product">
-						<!--  dodać foreach z kategormiami produktu -->
 						<option>--</option>{foreach
 						from=$table['product']['add']['value']['category'] item=row
 						name=row}

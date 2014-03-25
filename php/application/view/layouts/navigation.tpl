@@ -38,7 +38,6 @@
 				<ul class="nav navbar-nav navbar-right">
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
-							<!-- Button trigger modal -->
 							<button class="btn btn-primary " data-toggle="modal"
 								data-target="#myModal">skanuj kod</button>
 							<input type="text" class="form-control" placeholder="Wpisz kod">

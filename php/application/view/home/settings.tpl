@@ -13,7 +13,6 @@
 
 
 <div class="panel panel-default">
-	<!-- Default panel contents -->
 	<div class="panel-heading">Panel heading</div>
 	<div class="panel-body">
 		<p>Fusce luctus in ipsum ut scelerisque. Ut posuere luctus felis,
@@ -88,27 +87,17 @@
 	</ul>
 </div>
 
-
-
-
-
-
-
-
-
-
-
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="container-fluid">
-	<button type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-save"></span>
-							</button>
-							<button type="button" class="btn btn-default">
-								<span class="glyphicon glyphicon-bookmark"></span>
-							</button>
+					<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-save"></span>
+					</button>
+					<button type="button" class="btn btn-default">
+						<span class="glyphicon glyphicon-bookmark"></span>
+					</button>
 					<div class="panel-title col-sm-4">Panel heading with title</div>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#">x</a></li>
