@@ -8,7 +8,7 @@ use Framework\Request;
 /**
  */
 if ($this->_parameters[1] === 'view') {
-    
+
     $this->_table['product']['view'] = $product->_createView($this->_parameters[2]);
     $this->_table['orders']['list'] = $orders->_createListLimit(5);
     $this->_table['packages']['list'] = $packages->_createListLimit(5);
@@ -22,13 +22,13 @@ if ($this->_parameters[1] === 'view') {
          * Sprawdza istnienie danego produktu w bazie...
          */
         $session = Registry::get("session");
-        
+
         /**
          */
         if ($session->getup("product/add/error") === 'idIsExists') {
             $this->_table['product']['add']['error'] = 'idIsExists';
             $this->_table['product']['add']['value']['numer'] = $session->getup("product/add/value/numer");
-            
+
             /**
              * Wyczyszczenie informacji w sesji
              */
@@ -36,7 +36,7 @@ if ($this->_parameters[1] === 'view') {
             $session->erase("product/add/value/numer");
         } elseif ($session->getup("product/add/error") === 'emptyValueName') {
             $this->_table['product']['add']['error'] = 'emptyValueName';
-            
+
             /**
              * Wyczyszczenie informacji w sesji
              */
@@ -44,9 +44,9 @@ if ($this->_parameters[1] === 'view') {
             $session->erase("product/add/value/numer");
         } else {}
     } elseif ($this->_parameters[2] === '2') {
-        
+
         $session = Registry::get("session");
-        
+
         if ($session->getup("product/add/value/number")) {
             /**
              * Mamy wartość !
@@ -57,21 +57,21 @@ if ($this->_parameters[1] === 'view') {
              */
             $this->_table['product']['add']['value']['units'] = $product->_createListUnits();
             $this->_table['product']['add']['value']['category'] = $product->_createListCategory();
-            
+
             /**
              * Obsłuda błędów
              */
             $session = Registry::get("session");
             if ($session->getup("product/add/error")) {
                 $this->_table['product']['add']['error'] = TRUE;
-                
+
                 if ($session->getup("product/add/error/units")) {} else {
                     $this->_table['product']['add']['select']['units'] = $session->getup("product/add/value/units");
                 }
                 if ($session->getup("product/add/error/category")) {} else {
                     $this->_table['product']['add']['select']['category'] = $session->getup("product/add/value/category");
                 }
-                
+
                 $session->erase("product/add/error");
             }
         } else {
@@ -87,11 +87,11 @@ if ($this->_parameters[1] === 'view') {
          * Krok 3 - podsumowanie dodawania
          */
         $session = Registry::get("session");
-        
+
         /**
          */
         if ($session->getup("product/add/value/number")) {
-            
+
             $this->_table['product']['add']['value']['number'] = $session->getup("product/add/value/number");
             $this->_table['product']['add']['select']['units'] = $session->getup("product/add/value/units");
             $this->_table['product']['add']['select']['category'] = $session->getup("product/add/value/category");
@@ -106,7 +106,7 @@ if ($this->_parameters[1] === 'view') {
         header("Location: /module/product_technology/product/add/1");
     }
 } elseif ($this->_parameters[1] === '_add') {
-    
+
     /**
      * Sprawdza i dodaje dane z arkusza dodania nowego produktu
      */
@@ -115,9 +115,9 @@ if ($this->_parameters[1] === 'view') {
          * Sprawdza istnienie danego produktu w bazie...
          */
         $_keywords = RequestMethods::post('number');
-        
+
         if (! empty($_keywords)) {
-            
+
             $this->_table['product']['add']['exists'] = $product->_isExists($_keywords);
             if (! empty($this->_table['product']['add']['exists'])) {
                 /**
@@ -138,7 +138,7 @@ if ($this->_parameters[1] === 'view') {
                 header("Location: /module/product_technology/product/add/2");
             }
         } else {
-            
+
             /**
              * Wpisana wartość nie jest liczbą.
              * Wracamy...
@@ -148,13 +148,13 @@ if ($this->_parameters[1] === 'view') {
             header("Location: /module/product_technology/product/add/1");
         }
     } elseif ($this->_parameters[2] === '2') {
-        
+
         /**
          * No to kontrolujemy stronę 2 dodawania nowego produktu
          */
         $_units_id_units = RequestMethods::post('units_id_units');
         $_category_product = RequestMethods::post('category_product');
-        
+
         /**
          */
         if (empty($_units_id_units) or $_units_id_units === '--') {
@@ -165,7 +165,7 @@ if ($this->_parameters[1] === 'view') {
             $session = Registry::get("session");
             $session->setup("product/add/value/units", $_units_id_units);
         }
-        
+
         /**
          */
         if (empty($_category_product) or $_category_product === '--') {
@@ -176,7 +176,7 @@ if ($this->_parameters[1] === 'view') {
             $session = Registry::get("session");
             $session->setup("product/add/value/category", $_category_product);
         }
-        
+
         /**
          */
         if ($session->getup("product/add/error") === "emptyValue") {
@@ -188,12 +188,12 @@ if ($this->_parameters[1] === 'view') {
             header("Location: /module/product_technology/product/add/3");
         }
     } elseif ($this->_parameters[2] === '3') {
-    
+
     /**
      * No to mamy krok 3 - podsumowanie
      */
     } elseif ($this->_parameters[2] === '4') {
-        
+
         /**
          * Tutaj czyścimy wszystkie infomacje przechowywane
          * w sesji i wracamy do page.
@@ -205,17 +205,17 @@ if ($this->_parameters[1] === 'view') {
         $session->erase("product/add/value/category");
         header("Location: /module/product_technology/product/page");
     } elseif ($this->_parameters[2] === '5') {
-        
+
         $session = Registry::get("session");
-        
+
         $_checkin = ($session->getup("product/add/value/number") ? TRUE : FALSE);
         $_checkin = ($session->getup("product/add/value/units") ? TRUE : FALSE);
         $_checkin = ($session->getup("product/add/value/category") ? TRUE : FALSE);
-        
+
         /**
          */
         $_returnID = $product->_addSingleProduct($session->getup("product/add/value/number"), $session->getup("product/add/value/units"), $session->getup("product/add/value/category"));
-        
+
         $session->erase("product/add/error");
         $session->erase("product/add/value/number");
         $session->erase("product/add/value/units");
@@ -227,7 +227,7 @@ if ($this->_parameters[1] === 'view') {
      */
     $_keywords = RequestMethods::post('number');
     $this->_table['product']['search'] = $_keywords;
-    
+
     $this->_table['product']['listSearch'] = $product->_createListSearch($_keywords);
 } elseif ($this->_parameters[1] === 'page') {
     /**
@@ -238,7 +238,7 @@ if ($this->_parameters[1] === 'view') {
     } else {
         $page = $this->_parameters[2];
     }
-    
+
     /**
      */
     if ($this->_parameters[3] === NULL) {
@@ -246,12 +246,12 @@ if ($this->_parameters[1] === 'view') {
     } else {
         $limit = $this->_parameters[3];
     }
-    
+
     /**
      * Wywołanie tabeli z bazy
      */
     $this->_table['product']['list'] = $product->_createSoftList($page, $limit);
-    
+
     /**
      * Budowa pagera
      *
@@ -259,7 +259,7 @@ if ($this->_parameters[1] === 'view') {
      * Napisać na szybko, później przenieść jako uniwersalny element...
      */
     $count = $product->_createListCount();
-    
+
     /**
      * oblicza ile jest stron pełnych lub napoczętych
      */
@@ -276,45 +276,45 @@ if ($this->_parameters[1] === 'view') {
     }
     $this->_table['product']['pager'] = $pager;
 } elseif ($this->_parameters[1] === 'delete') {
-    
-    print 'sprawdzamy -> ';
+
+    // print 'sprawdzamy -> ';
     /**
      * Sprawdzamy, czy został podany parametr "2"
      */
     if ($this->_parameters[2]) {
-        print 'mamy parametr -> ';
+        // print 'mamy parametr -> ';
         /**
          * Sprawdzamy, czy podany id produktu znajduje się w bazie.
          */
         if ($product->_isExistsByID($this->_parameters[2])) {
-            
-            print 'mamy id -> ';
+
+            // print 'mamy id -> ';
             /**
              * Możemy zacząć kasować produkt
              */
             if ($status = $product->_statusDeleteSingle($this->_parameters[2])) {
-                
-                print 'kasujemy';
-                
+
+                // print 'kasujemy';
+
                 header("Location: /module/product_technology/product/page/");
                 return TRUE;
             } else {
-                
-                print 'nie udało się skasować';
+
+                // print 'nie udało się skasować';
                 /**
                  * Nie udało się skasowanie wpisu w bazie
                  */
                 return FALSE;
             }
         } else {
-            print 'brak detalu o podanym id';
+            // print 'brak detalu o podanym id';
             /**
              * Nie istnieje detal o podanym id w bazie
              */
             return FALSE;
         }
     } else {
-        print 'brak id w zapytaniu';
+        // print 'brak id w zapytaniu';
         /**
          * Nie podano id w zapytaniu
          */
