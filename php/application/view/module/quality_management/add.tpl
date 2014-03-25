@@ -344,10 +344,7 @@
 		<strong>Kontrola geometrii</strong>
 	</div>
 	<div class="panel-body">
-		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
-			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
-			ultricies commodo.</p>
+<!-- hint -->
 	</div>
 	<div class="table-responsive">
 		<table class="table table-bordered">
@@ -466,7 +463,7 @@
 {elseif $parameters['1'] eq 'summary' }
 <div class="panel panel-default">
 	<!-- Default panel contents -->
-	<div class="panel-heading">Panel heading</div>
+	<div class="panel-heading"><strong>Podsumowanie kontroli jakości</strong></div>
 	<div class="panel-body">
 		<div class="row">
 			<div class=" col-md-3">Z.P.U.H. Rolmech</div>

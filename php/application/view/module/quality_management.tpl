@@ -14,9 +14,8 @@
 {if $parameters['0'] eq '' }
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Kontrola jakości</h3>
-		<p>Kontrola jakości pozwala (póki co) na tworzenie, przegląd i
-			edycję arkuszy kontrolnych.</p>
+		<h3 class="panel-title">Kontrola jakości daje możliwość
+			tworzenia, przeglądania i edycji arkuszy kontrolnych.</h3>
 	</div>
 	<div class="panel-body">
 
