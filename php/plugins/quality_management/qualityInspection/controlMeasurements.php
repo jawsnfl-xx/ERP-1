@@ -8,6 +8,7 @@ namespace Plugins\Quality_management\QualityInspection
 {
 
     use Plugins\Quality_management\QualityInspection as QualityInspection;
+    use Plugins\Product_technology\Product as Product;
 
     /**
      *
@@ -16,13 +17,18 @@ namespace Plugins\Quality_management\QualityInspection
      * @name ControlMeasurements
      * @namespace QualityInspection
      *           
-     * @uses Quality_management
      * @uses QualityInspection
+     * @uses Product
      *      
      *      
      */
     class ControlMeasurements extends QualityInspection
     {
+
+        /**
+         * @readwrite
+         */
+        public $_id;
 
         /**
          *
@@ -34,5 +40,11 @@ namespace Plugins\Quality_management\QualityInspection
              */
             parent::__construct($options);
         }
+
+        public function _addControlMeasurement($param)
+        {}
+
+        public function _statusControlMeasurement($param)
+        {}
     }
 }
