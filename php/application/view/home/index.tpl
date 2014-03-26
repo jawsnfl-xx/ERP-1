@@ -1,6 +1,6 @@
 {include file='../layouts/navigation.tpl'}
 <div class="container-fluid">
-	<h1 class="page-header">Dashboard</h1>
+	<h1 class="page-header">Dashboard test</h1>
 	<div class="row">
 		<div class="col-lg-3">
 			<h2>Kontrola jakości</h2>
