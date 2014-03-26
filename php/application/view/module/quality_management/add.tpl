@@ -71,7 +71,7 @@
 			<div class="alert alert-info">
 				W razie wątpliwości, tu jest link do <a
 					href="/content/about_modules" class="alert-link">informacji o
-					modułach</a> ,takich jak kontrola jakości.
+					modułach</a>, takich jak kontrola jakości.
 			</div>
 		</div>
 		<div class=" col-md-6">
@@ -151,12 +151,12 @@
 				</div>
 			</li>
 			<li class="list-group-item">
-				<button type="button" class="close" data-dismiss="alert"
-					aria-hidden="true">&times;</button>
-				<div class="alert alert-warning alert-dismissable">
-					<strong>UWAGA!</strong> Wartości z pól poniżej nie są przekazywane
-					dalej, dlatego możesz to wszystko przymknąć za pomocą tego "x" po
-					prawej stronie ;)
+
+				<div class="alert alert-warning">
+					<p>
+						<strong>UWAGA!</strong> Wartości z pól poniżej nie są przekazywane
+						dalej
+					</p>
 				</div>
 				<div class="form-group">
 					<label class="control-label col-sm-3" for="inputSuccess3">Dodatkowe
