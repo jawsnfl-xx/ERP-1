@@ -21,7 +21,6 @@
 				<th>Nr produktu</th>
 				<th>Nr pomiaru</th>
 				<th>Nr skrzynki</th>
-				<th>sample size(?)</th>
 				<th>zamówienie</th>
 				<th>data</th>
 				<th>inna data</th>
@@ -39,8 +38,7 @@
 					<td>{$row.products_id_products}</td>
 					<td>{$row.type_of_control_measurements_id_type_of_control_measurements}</td>
 					<td>{$row.packages_id_packages}</td>
-					<td>{$row.sample_size}</td>
-					<td>{$row.date_start}</td>
+					<td><a href="#">{$row.date_start}</a></td>
 					<td>{$row.date_end}</td>
 					<td>
 						<div class="pull-right">

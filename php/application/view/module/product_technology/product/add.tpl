@@ -77,40 +77,49 @@
 		<div class="alert alert-info">
 			<p>Wyświetlić ładnie dane przed akceptacją dodania do bazy</p>
 		</div>
-		<ul>
-			<li>{$table['product']['add']['value']['number']}</li>
-			<li>{$table['product']['add']['select']['units']}</li>
-			<li>{$table['product']['add']['select']['category']}</li>
-		</ul>
+		<div class="row">
+			<div class="col-md-5">
+				<table class="table table-condensed">
+					<tr>
+						<th>Numer</th>
+						<th>Jednostka miary</th>
+						<th>Kategoria produktu</th>
+					</tr>
+					<tr>
+						<td>{$table['product']['add']['value']['number']}</td>
+						<td>{$table['product']['add']['select']['units']}</td>
+						<td>{$table['product']['add']['select']['category']}</td>
+					</tr>
+				</table>
+			</div>
+			<div class="modal fade bs-example-modal-sm" tabindex="-1"
+				role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-md">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Czy na pewno chcesz porzucić
+								wprowadzone informacje?</h4>
+						</div>
+						<div class="modal-body">
+							<p>
+								Wybierając przycisk <em>Odrzuć zmiany</em> spowodujesz
+								nieodwracalne skasowanie danych, jakie wprowadziłeś w
+								poprzednich krokach.
+							</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Anuluj</button>
+							<a href="/module/product_technology/product/_add/4" type="button"
+								class="btn btn-danger">Odrzuć zmiany</a>
 
-		<div class="modal fade bs-example-modal-sm" tabindex="-1"
-			role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-md">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Czy na pewno chcesz porzucić
-							wprowadzone informacje?</h4>
-					</div>
-					<div class="modal-body">
-						<p>
-							Wybierająć przycisk <em>Odrzuć zmiany</em> spowodujesz
-							nieodwracalne skasowanie danych, jakie wprowadziłeś w poprzednich
-							krokach.
-						</p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
-						<a href="/module/product_technology/product/_add/4" type="button"
-							class="btn btn-danger">Odrzuć zmiany</a>
-
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2 col-md-offset-8">
+			<div class="col-md-2">
 				<button class="btn btn-danger btn-block" data-toggle="modal"
 					data-target=".bs-example-modal-sm" role="button">
 					Odrzuć <span class="glyphicon glyphicon-remove"></span>
