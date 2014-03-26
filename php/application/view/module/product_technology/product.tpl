@@ -30,17 +30,46 @@
 		<tr>
 			<th>L.p.</th>
 			<th>Nazwa</th>
-			<th>id units</th>
-
-			<th>id units1</th>
+			<th>Jednostka miary</th>
+			<th>Kategoria</th>
+			<th>Akcje</th>
 		</tr>
 		{foreach from=$table['product']['list'] item=row name=row}
 
 		<th>{$smarty.foreach.row.iteration}</th>
 		<td><a
 			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-		<td>{$row.units_id_units}</td>
-		<td>{$row.units_id_units1}</td>
+		<td>{$row.symbol}</td>
+		<td>{$row.category_name}</td>
+		<td>
+			<button class="btn btn-danger" data-toggle="modal"
+				data-target=".bs-example-modal-sm-{$row.id_products}">Usuń</button>
+
+			<a href="" class="btn btn-default">Zmień</a>
+			<div class="modal fade bs-example-modal-sm-{$row.id_products}"
+				tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+				aria-hidden="true">
+				<div class="modal-dialog modal-sm">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">Potwierdź
+								usunięcie informacji o produkcie</h4>
+						</div>
+						<div class="modal-body">...</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-success"
+								data-dismiss="modal">Close</button>
+							<a
+								href="/module/product_technology/product/delete/{$row.id_products}"
+								type="button" class="btn btn-danger">Usuń</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</td>
 		</tr>
 		{/foreach}
 	</table>
