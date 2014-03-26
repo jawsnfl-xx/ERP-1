@@ -146,12 +146,10 @@ namespace Application
         public function authenticate()
         {
             /**
-             *
              */
             $configuration = Registry::get("configuration");
             
             /**
-             *
              */
             $database = Registry::get("database");
             
@@ -174,15 +172,21 @@ namespace Application
         }
 
         /**
+         *
+         * @name notify
+         *       @note można tutaj zbierać informacje o ruchu i czasach przebywania na stronach
+         *      
          */
         public function notify()
         {
             /**
              */
             $configuration = Registry::get("configuration");
+            
             /**
              */
             $database = Registry::get("database");
+            
             /**
              */
             $session = Registry::get("session");

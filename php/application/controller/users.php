@@ -1,7 +1,4 @@
 <?php
-/**
- * 
- */
 namespace Application\Controller
 {
 
@@ -9,16 +6,27 @@ namespace Application\Controller
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
     use Framework\Session\Driver\Server;
-    use Framework\Request;
+    use Framework\Request as Request;
 
     /**
+     * W ten sposób można zapisać podstawę działania kontrolerów.
+     * Za pomocą wpisów w komentarzach przez deklaracją
+     * można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
      *
-     * @author Marcin
-     *         @NOTE
-     *         W ten sposób można zapisać podstawę działania kontrolerów.
-     *         Za pomocą wpisów w komentarzach przez deklaracją
-     *         można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
      *        
+     * @name Users
+     * @namespace Application\Controller
+     *           
+     * @version 1
+     *         
+     * @uses Application\Controller
+     * @uses Framework\Registry
+     * @uses Framework\RequestMethods
+     * @uses Framework\Session\Driver\Server
+     * @uses Framework\Request
+     *      
+     *      
      */
     class Users extends Controller
     {

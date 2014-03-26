@@ -83,9 +83,8 @@
 				</ul>
 				<ul>
 					<div class="alert alert-primary alert-dismissable">
-						W razie kłopotów, kilkaj <a
-							href="/content/about" class="alert-link">w taki fajny link do
-							strony pomocy</a>
+						W razie kłopotów, kilkaj <a href="/content/about"
+							class="alert-link">w taki fajny link do strony pomocy</a>
 					</div>
 				</ul>
 			</div>

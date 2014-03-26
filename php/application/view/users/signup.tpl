@@ -4,8 +4,10 @@
 	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container">
 
-			<p class="navbar-text navbar-right"><a href="/users/index" type="button"
-					class="navbar-link btn btn-default">Odrzuć zmiany i wróć do ekranu logowania</a>
+			<p class="navbar-text navbar-right">
+				<a href="/users/index" type="button"
+					class="navbar-link btn btn-default">Odrzuć zmiany i wróć do
+					ekranu logowania</a>
 			</p>
 		</div>
 	</nav>
