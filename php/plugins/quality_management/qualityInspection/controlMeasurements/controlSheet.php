@@ -7,12 +7,12 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *
-     *
+     *        
+     *        
      * @name ControlSheet
      * @namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
-     *
-     *
+     *           
+     *           
      */
     class ControlSheet extends ControlMeasurements
     {
@@ -34,7 +34,7 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {

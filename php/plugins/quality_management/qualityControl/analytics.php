@@ -8,15 +8,15 @@ namespace Plugins\Quality_management\QualityControl
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *
-     *
+     *        
+     *        
      * @name ControlMeasurements
      * @namespace QualityInspection
-     *
+     *           
      * @uses QualityInspection
      * @uses Product
-     *
-     *
+     *      
+     *      
      */
     class Analystics extends QualityControl
     {
@@ -28,7 +28,7 @@ namespace Plugins\Quality_management\QualityControl
 
         /**
          *
-         * @param unknown $options
+         * @param unknown $options            
          */
         public function __construct($options = array())
         {
