@@ -7,8 +7,8 @@ namespace Plugins\Quality_management
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *        
+     *        
      * @name QualityInspection
      * @namespace Plugins\Quality_management
      *           

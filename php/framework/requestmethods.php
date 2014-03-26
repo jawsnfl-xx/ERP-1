@@ -5,8 +5,8 @@ namespace Framework
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class RequestMethods
     {
@@ -27,8 +27,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key            
-         * @param string $default            
+         * @param unknown $key
+         * @param string $default
          * @return unknown string
          */
         public static function get($key, $default = "")
@@ -43,8 +43,8 @@ namespace Framework
          * @NOTE
          * Kasia <3 na to patrzyła.
          *
-         * @param unknown $key            
-         * @param string $default            
+         * @param unknown $key
+         * @param string $default
          * @return unknown string
          */
         public static function post($key, $default = "")
@@ -57,8 +57,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key            
-         * @param string $default            
+         * @param unknown $key
+         * @param string $default
          * @return unknown string
          */
         public static function server($key, $default = "")

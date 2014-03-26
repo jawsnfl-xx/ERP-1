@@ -5,20 +5,20 @@ namespace Plugins
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      * @name Human_resources
      * @namespace Plugins
-     *           
+     *
      * @version 1
-     *         
+     *
      */
     class Human_resources extends Plugins
     {
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options = array())
         {

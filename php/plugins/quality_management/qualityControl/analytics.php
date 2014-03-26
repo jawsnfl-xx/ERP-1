@@ -8,8 +8,8 @@ namespace Plugins\Quality_management\QualityControl
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *        
+     *        
      * @name ControlMeasurements
      * @namespace QualityInspection
      *           

@@ -7,8 +7,8 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *        
+     *        
      * @name ControlSheet
      * @namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
      *           

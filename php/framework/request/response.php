@@ -8,8 +8,8 @@ namespace Framework\Request
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Response extends Base
     {
@@ -51,7 +51,7 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         function __construct($options = array())
         {
@@ -85,8 +85,8 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $tree            
-         * @param unknown $content            
+         * @param unknown $tree
+         * @param unknown $content
          * @return string
          */
         protected function _partial($tree, $content)
@@ -103,7 +103,7 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $tree            
+         * @param unknown $tree
          * @return NULL string
          */
         protected function _getKey($tree)
@@ -116,8 +116,8 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $key            
-         * @param unknown $value            
+         * @param unknown $key
+         * @param unknown $value
          */
         protected function _setValue($key, $value)
         {
@@ -131,7 +131,7 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $key            
+         * @param unknown $key
          * @return unknown string
          */
         protected function _getValue($key)
@@ -145,8 +145,8 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $key            
-         * @param unknown $value            
+         * @param unknown $key
+         * @param unknown $value
          */
         public function set($key, $value)
         {
@@ -163,8 +163,8 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $key            
-         * @param unknown $value            
+         * @param unknown $key
+         * @param unknown $value
          */
         public function append($key, $value)
         {
@@ -177,8 +177,8 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $key            
-         * @param unknown $value            
+         * @param unknown $key
+         * @param unknown $value
          */
         public function prepend($key, $value)
         {
@@ -191,8 +191,8 @@ namespace Framework\Request
 
         /**
          *
-         * @param unknown $tree            
-         * @param unknown $content            
+         * @param unknown $tree
+         * @param unknown $content
          * @return string
          */
         public function yield($tree, $content)

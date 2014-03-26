@@ -9,8 +9,8 @@ namespace Framework
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Session extends Base
     {
@@ -47,7 +47,7 @@ namespace Framework
         /**
          *
          * @todo Sprawdzić działanie
-         *      
+         *
          * @throws Exception\Argument
          * @return \Framework\Session\Driver\Server
          */
@@ -68,7 +68,7 @@ namespace Framework
                 // ));
                 // }
                 // }
-                
+
                 /**
                  * tymczasowe
                  */

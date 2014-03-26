@@ -10,8 +10,8 @@ namespace Framework
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Request extends Base
     {
@@ -68,7 +68,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options = array())
         {
@@ -78,8 +78,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $url            
-         * @param unknown $parameters            
+         * @param unknown $url
+         * @param unknown $parameters
          */
         public function delete($url, $parameters = array())
         {
@@ -88,8 +88,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $url            
-         * @param unknown $parameters            
+         * @param unknown $url
+         * @param unknown $parameters
          */
         function get($url, $parameters = array())
         {
@@ -102,8 +102,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $url            
-         * @param unknown $parameters            
+         * @param unknown $url
+         * @param unknown $parameters
          */
         function head($url, $parameters = array())
         {
@@ -112,8 +112,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $url            
-         * @param unknown $parameters            
+         * @param unknown $url
+         * @param unknown $parameters
          */
         function post($url, $parameters = array())
         {
@@ -122,8 +122,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $url            
-         * @param unknown $parameters            
+         * @param unknown $url
+         * @param unknown $parameters
          */
         function put($url, $parameters = array())
         {
@@ -132,9 +132,9 @@ namespace Framework
 
         /**
          *
-         * @param unknown $method            
-         * @param unknown $url            
-         * @param unknown $parameters            
+         * @param unknown $method
+         * @param unknown $url
+         * @param unknown $parameters
          * @throws Exception\Response
          * @return Ambigous <\Framework\Request\Response, mixed>
          */
@@ -161,8 +161,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key            
-         * @param unknown $value            
+         * @param unknown $key
+         * @param unknown $value
          * @return \Framework\Request
          */
         protected function _setOption($key, $value)
@@ -173,7 +173,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key            
+         * @param unknown $key
          * @return string
          */
         protected function _normalize($key)
@@ -183,7 +183,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $method            
+         * @param unknown $method
          * @return \Framework\Request
          */
         protected function _setRequestMethod($method)
@@ -207,8 +207,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $url            
-         * @param unknown $parameters            
+         * @param unknown $url
+         * @param unknown $parameters
          * @return \Framework\Request
          */
         protected function _setRequestOptions($url, $parameters)

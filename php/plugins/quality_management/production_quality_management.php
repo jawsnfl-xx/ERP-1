@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * 
+ * WAŻNE!
+ * Plik jest do wyłączenia z systemu.
+ * Funkcje należy uporządkować i przenieść do opp.
+ */
 namespace Plugins\Quality_management
 {
 
@@ -12,8 +19,7 @@ namespace Plugins\Quality_management
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *        
      */
     class Production_quality_management extends Quality_management
     {
@@ -144,7 +150,7 @@ namespace Plugins\Quality_management
       				left join packages ON control_measurements.packages_id_packages = packages.id_packages
 					where id_control_measurements = ' . $_id . '
 					LIMIT 1;');
-            return $data;
+            return $data[0];
         }
     }
 }

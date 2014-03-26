@@ -10,8 +10,8 @@ namespace Framework
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Router extends Base
     {
@@ -64,7 +64,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $route            
+         * @param unknown $route
          * @return \Framework\Router
          */
         public function addRoute($route)
@@ -75,12 +75,12 @@ namespace Framework
 
         /**
          *
-         * @param unknown $route            
+         * @param unknown $route
          * @return \Framework\Router
          */
         public function removeRoute($route)
         {
-            foreach ($this->_routes as $i => $stored) 
+            foreach ($this->_routes as $i => $stored)
 
             {
                 if ($stored == $route) {
@@ -97,7 +97,7 @@ namespace Framework
         public function getRoutes()
         {
             $list = array();
-            foreach ($this->_routes as $route) 
+            foreach ($this->_routes as $route)
 
             {
                 $list[$route->pattern] = get_class($route);
@@ -107,10 +107,10 @@ namespace Framework
 
         /**
          *
-         * @param unknown $controller            
-         * @param unknown $action            
-         * @param unknown $parameters            
-         * @param unknown $table            
+         * @param unknown $controller
+         * @param unknown $action
+         * @param unknown $parameters
+         * @param unknown $table
          * @throws Exception\Controller
          * @throws Exception\Action
          */
@@ -121,7 +121,7 @@ namespace Framework
             $this->_action = $action;
             $this->_parameters = $parameters;
             $this->_table = $table;
-            
+
             /**
              */
             try {
@@ -131,7 +131,7 @@ namespace Framework
                     "table" => $table
                 ));
             } catch (\Exception $e) {
-                
+
                 throw new Exception\Controller("Controller {$name} not
                 found");
             }
@@ -162,14 +162,14 @@ namespace Framework
                 }
             };
             $hooks($methodMeta, "@before");
-            
+
             call_user_func_array(array(
                 $instance,
                 $action
             ), is_array($parameters) ? $parameters : array());
             $hooks($methodMeta, "@after");
             $this->_table = $instance->givmetable();
-            
+
             // var_dump ( $instance );
         }
 
@@ -177,7 +177,7 @@ namespace Framework
          */
         public function dispatch()
         {
-            
+
             // print 'robi dispatch';
             // var_dump( $this);
             $url = $this->url;
@@ -185,35 +185,35 @@ namespace Framework
             $table = array();
             $controller = "home";
             $action = "index";
-            
+
             $parts = explode("/", trim($url, "/"));
             if (sizeof($parts) > 0) {
                 $controller = $parts[0];
-                if (sizeof($parts) >= 2) 
+                if (sizeof($parts) >= 2)
 
                 {
                     $action = $parts[1];
                     $parameters = array_slice($parts, 2);
                 }
             }
-            
+
             /**
              * To nie jest wykonywane
              */
-            
+
             // var_dump($this);
-            
+
             foreach ($this->_routes as $route) {
-                
+
                 // print 'as';
                 // var_dump ( $route );
                 $matches = $route->matches($url);
-                
+
                 // var_dump($route->getController());
                 // var_dump($matches);
-                
+
                 if ($matches) {
-                    
+
                     // var_dump($matches);
                     // var_dump($route);
                     $controller = $route->getController();
@@ -224,7 +224,7 @@ namespace Framework
                     return;
                 }
             }
-            
+
             $this->_pass($controller, $action, $parameters, $table);
         }
     }

@@ -30,7 +30,7 @@ if ($this->_parameters[1] === 'step1') {
      * UWAGA!
      * Dane błędów przekazywane będą przez _GET['form_err']
      */
-    
+
     /**
      * Sprawdzenie _GET['form_err']
      * Jeśli zawiera pola błędów trzeba przekazać tablicę do widoku...
@@ -42,7 +42,7 @@ if ($this->_parameters[1] === 'step1') {
          * Trzeba sprawdzić poprawność tego co tam jest i zbudować tablicę.
          */
         $form_err = explode('|', RequestMethods::get("form_err"));
-        
+
         $this->_table['form_err'] = $form_err;
         $this->_table['form_name'] = RequestMethods::get("form_name");
         $this->_table['form_amount'] = RequestMethods::get("form_amount");
@@ -56,13 +56,13 @@ if ($this->_parameters[1] === 'step1') {
      * Jeśli brakuje wymaganych informacji wróci do poprzedniej
      * strony i zakomunikuje które pola były brzydkie, a które puste.
      */
-    
+
     /**
      * - text
      * - amount
      * - quan
      */
-    
+
     /**
      *
      * @todo Należy tak rozbudować kontrolę pól,
@@ -70,7 +70,20 @@ if ($this->_parameters[1] === 'step1') {
      *       tych pól do strony z inputami, oraz przekazywać wartości pól
      *       błędnie wpisanych lub bez wartości wpisanej przez użytkownika.
      */
-    
+
+    /**
+     *
+     * @todo do wprowadzenia:
+     *       1. sprawdzić wartości zmiennych przekazywanych z pól
+     *       a) puste
+     *       b) liczbowe (bardzo ważne)
+     *       2. sprawdzić istnienie danych, które mogą / muszą znajdować się w bazie
+     *       a) nazwy detali
+     *       b) numery skrzyń
+     *       c) pracownicy
+     *
+     */
+
     $tmp_array = array();
     $tmp_error = FALSE;
     if (! RequestMethods::post('name')) {
@@ -91,7 +104,7 @@ if ($this->_parameters[1] === 'step1') {
     } else {
         $tmp_quan = RequestMethods::post('quan');
     }
-    
+
     if ($tmp_error) {
         $tmp_array = implode('|', $tmp_array);
         header('Location: ?url=module/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan);
@@ -102,7 +115,7 @@ if ($this->_parameters[1] === 'step1') {
          * Wszystko zapowiada się dobrze.
          * Poza otworzyć arkusz (sheet) kontroli jakości... :)
          */
-        
+
         /**
          * Po utworzeniu arkusza należy przejść do kroku 2...
          * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D

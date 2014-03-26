@@ -5,8 +5,8 @@ namespace Framework
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Registry
     {
@@ -33,8 +33,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key            
-         * @param string $default            
+         * @param unknown $key
+         * @param string $default
          * @return \Framework\unknown string
          */
         public static function get($key, $default = null)
@@ -47,8 +47,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key            
-         * @param string $instance            
+         * @param unknown $key
+         * @param string $instance
          */
         public static function set($key, $instance = null)
         {
@@ -57,7 +57,7 @@ namespace Framework
 
         /**
          *
-         * @param unknown $key            
+         * @param unknown $key
          */
         public static function erase($key)
         {
