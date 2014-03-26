@@ -4,8 +4,14 @@ namespace Plugins
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
+     * @name Purchasing_management
+     * @namespace Plugins
+     *           
+     * @version 1
+     *         
      */
     class Purchasing_management extends Plugins
     {

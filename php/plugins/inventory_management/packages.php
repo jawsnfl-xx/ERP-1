@@ -7,8 +7,9 @@ namespace Plugins\Inventory_management
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
      */
     class Packages extends Inventory_management
     {

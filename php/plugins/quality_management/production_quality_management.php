@@ -1,10 +1,4 @@
 <?php
-
-/**
- *
- * @author Marcin
- *
- */
 namespace Plugins\Quality_management
 {
 
@@ -17,8 +11,9 @@ namespace Plugins\Quality_management
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
      */
     class Production_quality_management extends Quality_management
     {

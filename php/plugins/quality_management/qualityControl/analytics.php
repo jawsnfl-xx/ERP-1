@@ -1,8 +1,8 @@
 <?php
-namespace Plugins\Quality_management\QualityInspection
+namespace Plugins\Quality_management\QualityControl
 {
 
-    use Plugins\Quality_management\QualityInspection as QualityInspection;
+    use Plugins\Quality_management\QualityControl as QualityControl;
     use Plugins\Product_technology\Product as Product;
 
     /**
@@ -18,7 +18,7 @@ namespace Plugins\Quality_management\QualityInspection
      *      
      *      
      */
-    class ControlMeasurements extends QualityInspection
+    class Analystics extends QualityControl
     {
 
         /**
@@ -36,19 +36,5 @@ namespace Plugins\Quality_management\QualityInspection
              */
             parent::__construct($options);
         }
-
-        /**
-         *
-         * @param unknown $param            
-         */
-        public function _addControlMeasurement($param)
-        {}
-
-        /**
-         *
-         * @param unknown $param            
-         */
-        public function _statusControlMeasurement($param)
-        {}
     }
 }

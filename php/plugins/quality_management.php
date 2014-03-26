@@ -1,16 +1,17 @@
 <?php
-
-/**
- * @author Marcin Pyrka
- *
- */
 namespace Plugins
 {
 
     /**
      *
-     * @author Marcin Pyrka
-     *        
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+     *           
+     * @name Quality_management
+     * @namespace Plugins
+     *           
+     * @version 1
+     *         
      */
     class Quality_management extends Plugins
     {
@@ -19,9 +20,7 @@ namespace Plugins
          *
          * @param unknown $options            
          */
-        public 
-
-        function __construct($options = array())
+        public function __construct($options = array())
         {
             /**
              */
