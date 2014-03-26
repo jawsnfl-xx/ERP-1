@@ -252,6 +252,8 @@ if ($this->_parameters[1] === 'view') {
      */
     $this->_table['product']['list'] = $product->_createSoftList($page, $limit);
 
+    // var_dump( $this->_table['product']['list'][0] );
+
     /**
      * Budowa pagera
      *
