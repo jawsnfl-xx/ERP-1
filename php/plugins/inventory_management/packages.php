@@ -8,15 +8,15 @@ namespace Plugins\Inventory_management
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Packages extends Inventory_management
     {
 
         /**
          *
-         * @param unknown $options            
+         * @param unknown $options
          */
         public function __construct($options = array())
         {
@@ -32,12 +32,12 @@ namespace Plugins\Inventory_management
         public function _createList()
         {
             $database = Registry::get("database");
-            
+
             /**
              * Wyzerowanie zmienynch
              */
             $data = NULL;
-            
+
             $data = $database->_mysql->fetch_array('SELECT * FROM packages
                     left join type_of_packages on type_of_packages.id_type_of_packages = packages.type_of_packages_id_type_of_packages
                 	left join warehouse on warehouse.id_warehouse = packages.type_of_packages_id_type_of_packages
@@ -48,18 +48,18 @@ namespace Plugins\Inventory_management
 
         /**
          *
-         * @param unknown $_limit            
+         * @param unknown $_limit
          * @return unknown
          */
         public function _createListLimit($_limit)
         {
             $database = Registry::get("database");
-            
+
             /**
              * Wyzerowanie zmienynch
              */
             $data = NULL;
-            
+
             $data = $database->_mysql->fetch_array('SELECT * FROM packages
                     left join type_of_packages on type_of_packages.id_type_of_packages = packages.type_of_packages_id_type_of_packages
                 	left join warehouse on warehouse.id_warehouse = packages.type_of_packages_id_type_of_packages

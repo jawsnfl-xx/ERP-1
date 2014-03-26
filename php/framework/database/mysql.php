@@ -9,8 +9,8 @@ namespace Framework\Database
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class MySQL extends Database
     {
@@ -20,7 +20,7 @@ namespace Framework\Database
          * @var unknown
          */
         protected $_service;
-        
+
         /*
          * protected $_host; protected $_username; protected $_password; protected $_schema; protected $_port;
          */
@@ -35,7 +35,7 @@ namespace Framework\Database
 
         /**
          *
-         * @param unknown $_options            
+         * @param unknown $_options
          * @throws Exception\Service
          * @return \Framework\Database\MySQL
          */
@@ -51,7 +51,7 @@ namespace Framework\Database
 
         /**
          *
-         * @param unknown $sql            
+         * @param unknown $sql
          */
         public function execute($sql)
         {
@@ -60,7 +60,7 @@ namespace Framework\Database
 
         /**
          *
-         * @param unknown $value            
+         * @param unknown $value
          */
         public function escape($value)
         {
@@ -90,19 +90,19 @@ namespace Framework\Database
 
         /**
          *
-         * @param unknown $sql            
+         * @param unknown $sql
          * @return multitype:NULL
          */
         /**
          *
-         * @param unknown $sql            
+         * @param unknown $sql
          */
         public function fetch_array($sql)
         {
             $result = $this->_service->query($sql);
-            
+
             $rows = array();
-            
+
             for ($i = 0; $i < $result->num_rows; $i ++) {
                 $rows[] = $result->fetch_array(MYSQLI_ASSOC);
             }
