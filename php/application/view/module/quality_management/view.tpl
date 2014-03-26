@@ -65,11 +65,9 @@
 				</table>
 			</div>
 		</div>
-
 		<li class="list-group-item list-group-item-header"><span>Karta
 				pomiaru</span></li>
 	</ul>
-
 	<table class="table table-bordered table-condensed">
 		<tbody>
 			<tr>
@@ -117,5 +115,4 @@
 			</tr>
 		</tbody>
 	</table>
-
 </div>
