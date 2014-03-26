@@ -16,8 +16,8 @@
 						placeholder="Text input">
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Submit</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Anuluj</button>
+					<button type="button" class="btn btn-success">Dalej</button>
 				</div>
 			</div>
 		</div>
@@ -83,9 +83,8 @@
 				</ul>
 				<ul>
 					<div class="alert alert-primary alert-dismissable">
-						W razie kłopotów, kilkaj <a
-							href="/content/about" class="alert-link">w taki fajny link do
-							strony pomocy</a>
+						W razie kłopotów, kilkaj <a href="/content/about"
+							class="alert-link">w taki fajny link do strony pomocy</a>
 					</div>
 				</ul>
 			</div>
