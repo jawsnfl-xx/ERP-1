@@ -1,3 +1,4 @@
+{assign var="view" value=$table['quality_management']['view']}
 <div class="panel panel-default">
 	<div class="panel-heading">
 		Metryczka produktu
@@ -7,18 +8,33 @@
 			</a>
 		</div>
 	</div>
+	<div class="panel-body">
+		<p>Interdum et malesuada fames ac ante ipsum primis in faucibus.
+			Maecenas non elit faucibus, malesuada nulla ac, pharetra lacus. Sed
+			sollicitudin tristique velit porta imperdiet. Curabitur sed quam
+			vestibulum, suscipit leo aliquam, viverra arcu. Vestibulum malesuada
+			sapien ac velit malesuada, at interdum dui vulputate. Vestibulum ante
+			ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+			Curae; Vestibulum interdum rhoncus sapien non vulputate. Nullam
+			faucibus sapien in malesuada vehicula. Curabitur eu sem ut tellus
+			tempus viverra. Vivamus ipsum arcu, imperdiet in viverra dictum,
+			porta a est. Vestibulum ante ipsum primis in faucibus orci luctus et
+			ultrices posuere cubilia Curae; Donec ultrices, orci vitae interdum
+			varius, lorem massa fermentum eros, vel mattis ante libero nec erat.
+			Morbi quis imperdiet est. Morbi vel nulla leo.</p>
+	</div>
 	<ul class="list-group">
 		<div class="row">
 			<div class="col-md-6">
 				<table class="table table-responsive">
 					<tr>
 						<th rowspan="3">Z.P.U.H. Rolmech</th>
-						<th>Nr Koła</th>
-						<td>7839.xlsx.xlsm</td>
+						<th>Nr detalu</th>
+						<td>{$view.products_name}</td>
 					</tr>
 					<tr>
 						<th>Nr zlecenia</th>
-						<td>666999</td>
+						<td>{$view.orders_number}</td>
 					</tr>
 					<tr>
 						<th>Data pomiaru</th>
@@ -38,85 +54,68 @@
 						<th>Szt. w zleceniu</th>
 						<td>12</td>
 						<th>Data wysyłki</th>
-						<td>2000-01-01</td>
+						<td>{$view.orders_date|truncate:10:""}</td>
 					</tr>
 					<tr>
 						<th>Szt. w palecie</th>
 						<td>12</td>
 						<th>nr palety</th>
-						<td>678998</td>
+						<td>{$view.packages_id_packages}</td>
 					</tr>
 				</table>
 			</div>
 		</div>
-		</li>
 
-		</li>
-		<li class="list-group-item list-group-item-header"><span>karta
+		<li class="list-group-item list-group-item-header"><span>Karta
 				pomiaru</span></li>
-		<table class="table table-bordered table-responsive ">
-			</div>
-			</div>
-			<!-- jak coś to sprawdzę czy da się udoskonalić tabelkę, coby nie było takiego dużego bordera :/ -->
-			<div class="panel-heading">
-				<span>karta pomiaru</span>
-			</div>
-			<table class="table table-bordered">
-				<tbody>
-					<tr>
-						<th>Badane sztuki</th>
-						<th>5</th>
-						<th colspan="5">Numer próbki</th>
-					</tr>
-					<tr>
-						<th>Badany wym.</th>
-						<th>Toler.</th>
-						<th>1</th>
-						<th>2</th>
-						<th>3</th>
-						<th>4</th>
-						<th>5</th>
-					</tr>
-					<tr>
-						<td rowspan="2">20,5</td>
-						<td>+0,5</td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-					</tr>
-					<tr>
-						<td>0</td>
-					</tr>
-					<tr>
-						<td rowspan="2">20,5</td>
-						<td>+0,5</td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-					</tr>
-					<tr>
-						<td>0</td>
-					</tr>
-					<tr>
-						<td rowspan="2">20,5</td>
-						<td>+0,5</td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-						<td rowspan="2"></td>
-					</tr>
-					<tr>
-						<td>0</td>
-					</tr>
-				</tbody>
-			</table>
+	</ul>
 
-			</div>
-			</ul>
-		</table>
+	<table class="table table-bordered table-condensed">
+		<tbody>
+			<tr>
+				<th>Badane sztuki</th>
+				<th>{$view.sample_size}</th>
+				<th colspan="{$view.sample_size}">Numer próbki</th>
+			</tr>
+			<tr>
+				<th>Badany wym.</th>
+				<th>Toler.</th> {for $foo=1 to $view.sample_size}
+				<th>{$foo}</th> {/for}
+			</tr>
+			<tr>
+				<td rowspan="2">20,5</td>
+				<td>+0,5</td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+			</tr>
+			<tr>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td rowspan="2">20,5</td>
+				<td>+0,5</td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+			</tr>
+			<tr>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td rowspan="2">20,5</td>
+				<td>+0,5</td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+				<td rowspan="2"></td>
+			</tr>
+			<tr>
+				<td>0</td>
+			</tr>
+		</tbody>
+	</table>
+
 </div>
