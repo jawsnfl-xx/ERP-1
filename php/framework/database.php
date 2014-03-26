@@ -10,8 +10,8 @@ namespace Framework
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Database extends Base
     {
@@ -38,13 +38,13 @@ namespace Framework
          */
         public function initialize()
         {
-            
+
             /**
              * Inicjowanie połączenia z bazą MySQL przez MySQLi
              */
             $this->_mysql = new Database\Mysql();
             $this->_mysql->connect($this->_options);
-            
+
             /**
              * Inicjowanie połączenia z bazą MySQL przez DBAL
              */

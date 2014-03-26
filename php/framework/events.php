@@ -5,8 +5,8 @@ namespace Framework
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Events
     {
@@ -37,8 +37,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $type            
-         * @param unknown $callback            
+         * @param unknown $type
+         * @param unknown $callback
          */
         public static function add($type, $callback)
         {
@@ -50,8 +50,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $type            
-         * @param string $parameters            
+         * @param unknown $type
+         * @param string $parameters
          */
         public static function fire($type, $parameters = null)
         {
@@ -64,8 +64,8 @@ namespace Framework
 
         /**
          *
-         * @param unknown $type            
-         * @param unknown $callback            
+         * @param unknown $type
+         * @param unknown $callback
          */
         public static function remove($type, $callback)
         {

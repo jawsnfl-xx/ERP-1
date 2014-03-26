@@ -8,21 +8,21 @@ namespace Framework\Router\Route
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *           
+     *
+     *
      */
     class Simple extends Router\Route
     {
 
         /**
          *
-         * @param unknown $url            
+         * @param unknown $url
          * @return number boolean
          */
         public function matches($url)
         {
             $pattern = $this->pattern;
-            
+
             preg_match_all("#:([a-zA-Z0-9]+)#", $pattern, $keys);
             if (sizeof($keys) && sizeof($keys[0]) && sizeof($keys[1])) {
                 $keys = $keys[1];

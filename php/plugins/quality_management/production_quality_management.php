@@ -12,7 +12,11 @@ namespace Plugins\Quality_management
     /**
      *
      * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+<<<<<<< HEAD
      * @copyright Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+=======
+     *
+>>>>>>> php/plugins
      *
      */
     class Production_quality_management extends Quality_management
