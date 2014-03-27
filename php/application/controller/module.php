@@ -5,6 +5,7 @@ namespace Application\Controller
     use Application\Controller as Controller;
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
+    use Framework\ArrayMethods as ArrayMethods;
     use Framework\View as View;
     use Framework\Request as Request;
     use Plugins as Plugins;
