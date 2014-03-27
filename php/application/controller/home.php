@@ -5,14 +5,27 @@ namespace Application\Controller
     use Application\Controller as Controller;
     use Framework\Registry as Registry;
     use Framework\RequestMethods as RequestMethods;
-    use Framework\View;
-    use Framework\Request;
+    use Framework\View as View;
+    use Framework\Request as Request;
     use Framework\Events as Events;
 
     /**
      *
-     * @author Marcin Pyrka
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
      *        
+     * @name Home
+     * @namespace Application\Controller
+     *           
+     * @version 1
+     *         
+     * @uses Application\Controller
+     * @uses Framework\Registry
+     * @uses Framework\RequestMethods
+     * @uses Framework\View
+     * @uses Framework\Request
+     * @uses Framework\Events
+     *      
+     *      
      */
     class Home extends Controller
     {

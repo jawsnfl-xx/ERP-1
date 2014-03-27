@@ -28,7 +28,9 @@
 		<div class="container-fluid">
 
 			<div class="col-md-6">
-				<h2>Kalendarz  <small>Marzec 2014</small></h2>
+				<h2>
+					Kalendarz <small>Marzec 2014</small>
+				</h2>
 				<div class="table-responsive">
 					<table class="table table-bordered">
 						<thead>

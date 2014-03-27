@@ -10,20 +10,20 @@ namespace Application\Controller
 
     /**
      *
-     *
-     *
-     *
-     *
-     *
-     *
-     * @NOTE
-     * W ten sposób można zapisać podstawę działania kontrolerów.
-     * Za pomocą wpisów w komentarzach przez deklaracją
-     * można inicjować kolejność kroków i wymagać dla podnoszenia sie funkcji
-     *
-     *
-     * @author Marcin Pyrka
+     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
      *        
+     * @name Content
+     * @namespace Application\Controller
+     *           
+     * @version 1
+     *         
+     * @uses Application\Controller
+     * @uses Framework\Registry
+     * @uses Framework\RequestMethods
+     * @uses Framework\Session\Driver\Server
+     * @uses Framework\Request
+     *      
+     *      
      */
     class Content extends Controller
     {
