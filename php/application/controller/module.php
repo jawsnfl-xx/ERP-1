@@ -418,6 +418,7 @@ namespace Application\Controller
                                 // print 'kasujemy';
 
                                 header("Location: /module/product_technology/product/page/");
+                                die();
                                 return TRUE;
                             } else {
 
@@ -440,6 +441,42 @@ namespace Application\Controller
                          * Nie podano id w zapytaniu
                          */
                         return FALSE;
+                    }
+                } elseif ($this->_parameters[1] === 'edit') {
+                    /**
+                     * Wyświetla stronę, na której można dokonać edycji
+                     * danego produktu
+                     */
+                    if ($this->_parameters[2]) {
+                        /**
+                         * Posiada jakąś wartość
+                         * To znaczy, że mamy podaną nazwę detalu
+                         */
+                        if ($product->_isExistsByID($this->_parameters[2])) {
+                            /**
+                             * Sprawdzamy, czy detal o takim idzie istnieje.
+                             * To ważne, bo co możemy edytować, jak nie będzie
+                             * produktu w bazie danych.
+                             */
+                            $this->_table['product']['edit'] = $product->_createView($this->_parameters[2]);
+                            // var_dump($this->_table['product']['edit'] );
+                        } else {
+                            /**
+                             * Nie mamy takiego detalu.
+                             * Można wyświetlić info o błędzie,
+                             * albo wrócić do product/page
+                             */
+                            header("Location: /module/product_technology/product/page/");
+                            die();
+                        }
+                    } else {
+                        /**
+                         * Nie wprowadzono parametru.
+                         * Hmmm. Strona wyświetlona niepotrzebnie.
+                         * Wracamy do product/page
+                         */
+                        header("Location: /module/product_technology/product/page/");
+                        die();
                     }
                 } else {
                     /**
