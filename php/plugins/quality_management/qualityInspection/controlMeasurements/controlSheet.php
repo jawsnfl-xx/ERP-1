@@ -42,5 +42,11 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
              */
             parent::__construct($options);
         }
+
+        public function initialize($_id)
+        {}
+
+        public function open($_id)
+        {}
     }
 }
