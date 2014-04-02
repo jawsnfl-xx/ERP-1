@@ -17,43 +17,46 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Persistence\Event;
+namespace Doctrine\Common\Proxy\Exception;
 
-use Doctrine\Common\EventArgs;
-use Doctrine\Common\Persistence\ObjectManager;
+use UnexpectedValueException as BaseUnexpectedValueException;
 
 /**
- * Provides event arguments for the preFlush event.
+ * Proxy Unexpected Value Exception.
  *
  * @link   www.doctrine-project.org
- * @since  2.2
- * @author Roman Borschel <roman@code-factory.de>
- * @author Benjamin Eberlei <kontakt@beberlei.de>
+ * @since  2.4
+ * @author Marco Pivetta <ocramius@gmail.com>
  */
-class ManagerEventArgs extends EventArgs
+class UnexpectedValueException extends BaseUnexpectedValueException implements ProxyException
 {
     /**
-     * @var ObjectManager
+     * @return self
      */
-    private $objectManager;
-
-    /**
-     * Constructor.
-     *
-     * @param ObjectManager $objectManager
-     */
-    public function __construct(ObjectManager $objectManager)
+    public static function proxyDirectoryNotWritable($proxyDirectory)
     {
-        $this->objectManager = $objectManager;
+        return new self(sprintf('Your proxy directory "%s" must be writable', $proxyDirectory));
     }
 
     /**
-     * Retrieves the associated ObjectManager.
+     * @param string     $className
+     * @param string     $methodName
+     * @param string     $parameterName
+     * @param \Exception $previous
      *
-     * @return ObjectManager
+     * @return self
      */
-    public function getObjectManager()
+    public static function invalidParameterTypeHint($className, $methodName, $parameterName, \Exception $previous)
     {
-        return $this->objectManager;
+        return new self(
+            sprintf(
+                'The type hint of parameter "%s" in method "%s" in class "%s" is invalid.',
+                $parameterName,
+                $methodName,
+                $className
+            ),
+            0,
+            $previous
+        );
     }
 }

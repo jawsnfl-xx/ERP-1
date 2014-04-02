@@ -17,54 +17,54 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Persistence\Mapping\Driver;
-
-use Doctrine\Common\Persistence\Mapping\ClassMetadata;
+namespace Doctrine\Common\Proxy;
 
 /**
- * The PHPDriver includes php files which just populate ClassMetadataInfo
- * instances with plain PHP code.
+ * Definition structure how to create a proxy.
  *
- * @link   www.doctrine-project.org
- * @since  2.0
  * @author Benjamin Eberlei <kontakt@beberlei.de>
- * @author Guilherme Blanco <guilhermeblanco@hotmail.com>
- * @author Jonathan H. Wage <jonwage@gmail.com>
- * @author Roman Borschel <roman@code-factory.org>
  */
-class PHPDriver extends FileDriver
+class ProxyDefinition
 {
     /**
-     * {@inheritDoc}
+     * @var string
      */
-    protected $metadata;
+    public $proxyClassName;
 
     /**
-     * {@inheritDoc}
+     * @var array
      */
-    public function __construct($locator, $fileExtension = null)
-    {
-        $fileExtension = ".php";
-        parent::__construct($locator, $fileExtension);
-    }
+    public $identifierFields;
 
     /**
-     * {@inheritDoc}
+     * @var \ReflectionProperty[]
      */
-    public function loadMetadataForClass($className, ClassMetadata $metadata)
-    {
-        $this->metadata = $metadata;
-        $this->loadMappingFile($this->locator->findMappingFile($className));
-    }
+    public $reflectionFields;
 
     /**
-     * {@inheritDoc}
+     * @var callable
      */
-    protected function loadMappingFile($file)
-    {
-        $metadata = $this->metadata;
-        include $file;
+    public $initializer;
 
-        return array($metadata->getName() => $metadata);
+    /**
+     * @var callable
+     */
+    public $cloner;
+
+    /**
+     * @param string   $proxyClassName
+     * @param array    $identifierFields
+     * @param array    $reflectionFields
+     * @param callable $initializer
+     * @param callable $cloner
+     */
+    public function __construct($proxyClassName, array $identifierFields, array $reflectionFields, $initializer, $cloner)
+    {
+        $this->proxyClassName   = $proxyClassName;
+        $this->identifierFields = $identifierFields;
+        $this->reflectionFields = $reflectionFields;
+        $this->initializer      = $initializer;
+        $this->cloner           = $cloner;
     }
 }
+

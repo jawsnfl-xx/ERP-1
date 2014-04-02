@@ -15,7 +15,7 @@ namespace Framework\Database
      *        
      *        
      */
-    class ORM extends Database
+    class DBAL extends Database
     {
 
         /**
@@ -35,9 +35,9 @@ namespace Framework\Database
 
         public function __construct()
         {
-            $config = new \Doctrine\ORM\Configuration();
+            $this->_config = new \Doctrine\DBAL\Configuration();
             
-            $connectionParams = array(
+            $this->_connectionParams = array(
                 'driver' => 'pdo_mysql',
                 'host' => '127.0.0.1',
                 'dbname' => 'test1',
@@ -53,22 +53,7 @@ namespace Framework\Database
                 './database/ERP.dcm.yml'
             ));
             
-            $config->setMetadataDriverImpl($driver);
-            
-            $evm = new \Doctrine\Common\EventManager();
-            
-            // var_dump($driver);
-            // var_dump($evm);
-            var_dump($conn);
-            var_dump($config);
-            
-            try {
-                $entityManager = \Doctrine\ORM\EntityManager::create($connectionParams, $config, $evm);
-                $entityManager->getConfiguration()->setMetadataDriverImpl($driverImpl);
-                // $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
-            } catch (Exception $e) {
-                var_dump($e);
-            }
+            $this->_conn = \Doctrine\DBAL\DriverManager::getConnection($this->_connectionParams, $this->_config);
             
             return $this->_conn;
         }

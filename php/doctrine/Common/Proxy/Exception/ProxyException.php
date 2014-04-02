@@ -17,15 +17,15 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Util;
-
-use Doctrine\Common\Inflector\Inflector as BaseInflector;
+namespace Doctrine\Common\Proxy\Exception;
 
 /**
- * Doctrine inflector has static methods for inflecting text.
+ * Base exception interface for proxy exceptions.
  *
- * Kept for backwards compatibility reasons, was moved to its own component.
+ * @link   www.doctrine-project.org
+ * @since  2.4
+ * @author Marco Pivetta <ocramius@gmail.com>
  */
-class Inflector extends BaseInflector
+interface ProxyException
 {
 }

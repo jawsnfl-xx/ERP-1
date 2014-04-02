@@ -1,0 +1,902 @@
+---
+detect_relations: true
+options:
+  collate: utf8_polish_ci
+  charset: utf8
+  type: InnoDB
+
+product:
+  tableName: products
+  columns:
+    id_products:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    products_name:
+      type: string(45)
+      unique: true
+      notnull: true
+    units_id_units:
+      type: integer(4)
+      notnull: true
+  relations:
+    unitsIdUnit:
+      class: unit
+      local: units_id_units
+      foreign: id_units
+      foreignAlias: products
+  indexes:
+    fk_products_units1_idx:
+      fields: [units_id_units]
+
+category:
+  columns:
+    id_category:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    category_name:
+      type: string(45)
+    category_param1:
+      type: string(45)
+    category_param2:
+      type: string(45)
+    category_param3:
+      type: string(45)
+    category_param4:
+      type: string(45)
+    category_param5:
+      type: string(45)
+
+categoryProduct:
+  tableName: category_product
+  columns:
+    category_id_category:
+      type: integer(4)
+      primary: true
+      notnull: true
+    product_id_product:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    categoryIdCategory:
+      class: category
+      local: category_id_category
+      foreign: id_category
+      foreignAlias: category_products
+    productIdProduct:
+      class: product
+      local: product_id_product
+      foreign: id_products
+      foreignAlias: category_products
+  indexes:
+    fk_category_product_product1_idx:
+      fields: [product_id_product]
+    fk_category_product_category_idx:
+      fields: [category_id_category]
+
+order:
+  tableName: orders
+  columns:
+    id_orders:
+      type: integer(4)
+      primary: true
+      notnull: true
+    orders_number:
+      type: string(45)
+    contractors_id_contractors:
+      type: integer(4)
+      notnull: true
+    orders_date:
+      type: timestamp
+  relations:
+    contractorsIdContractor:
+      class: contractor
+      local: contractors_id_contractors
+      foreign: id_contractors
+      foreignAlias: orders
+  indexes:
+    fk_orders_contractors1_idx:
+      fields: [contractors_id_contractors]
+
+mensuration:
+  columns:
+    id_mensuration:
+      type: integer(4)
+      primary: true
+      notnull: true
+    measurement_id_measurement:
+      type: integer(4)
+      notnull: true
+    control_measurements_id_control_measurements:
+      type: integer(4)
+      notnull: true
+    dimension_id_dimension:
+      type: integer(4)
+      notnull: true
+    sample_numer:
+      type: integer(4)
+    value:
+      type: integer(4)
+  relations:
+    controlMeasurementsIdControlMeasurement:
+      class: controlMeasurement
+      local: control_measurements_id_control_measurements
+      foreign: id_control_measurements
+      foreignAlias: mensurations
+    dimensionIdDimension:
+      class: dimension
+      local: dimension_id_dimension
+      foreign: id_dimension
+      foreignAlias: mensurations
+  indexes:
+    fk_mensuration_control_measurements1_idx:
+      fields: [control_measurements_id_control_measurements]
+    fk_mensuration_dimension1_idx:
+      fields: [dimension_id_dimension]
+
+controlMeasurement:
+  tableName: control_measurements
+  columns:
+    id_control_measurements:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    orders_id_orders:
+      type: integer(4)
+      notnull: true
+    products_id_products:
+      type: integer(4)
+      notnull: true
+    packages_id_packages:
+      type: integer(4)
+      notnull: true
+    type_of_control_measurements_id_type_of_control_measurements:
+      type: integer(4)
+      notnull: true
+    sample_size:
+      type: integer(4)
+    date_start:
+      type: timestamp
+    date_end:
+      type: timestamp
+  relations:
+    ordersIdOrder:
+      class: order
+      local: orders_id_orders
+      foreign: id_orders
+      foreignAlias: control_measurements
+    productsIdProduct:
+      class: product
+      local: products_id_products
+      foreign: id_products
+      foreignAlias: control_measurements
+    packagesIdPackage:
+      class: package
+      local: packages_id_packages
+      foreign: id_packages
+      foreignAlias: control_measurements
+    typeOfControlMeasurementsIdTypeOfControlMeasurement:
+      class: typeOfControlMeasurement
+      local: type_of_control_measurements_id_type_of_control_measurements
+      foreign: id_type_of_control_measurements
+      foreignAlias: control_measurements
+  indexes:
+    fk_control measurements_orders1_idx:
+      fields: [orders_id_orders]
+    fk_control measurements_product1_idx:
+      fields: [products_id_products]
+    fk_control measurements_box1_idx:
+      fields: [packages_id_packages]
+    fk_control_measurements_type_of_control_measurements1_idx:
+      fields: [type_of_control_measurements_id_type_of_control_measurements]
+
+package:
+  tableName: packages
+  columns:
+    id_packages:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    type_of_packages_id_type_of_packages:
+      type: integer(4)
+      notnull: true
+    warehouse_id_warehouse:
+      type: integer(4)
+      notnull: true
+    packages_number:
+      type: integer(4)
+  relations:
+    typeOfPackagesIdTypeOfPackage:
+      class: typeOfPackage
+      local: type_of_packages_id_type_of_packages
+      foreign: id_type_of_packages
+      foreignAlias: packages
+    warehouseIdWarehouse:
+      class: warehouse
+      local: warehouse_id_warehouse
+      foreign: id_warehouse
+      foreignAlias: packages
+  indexes:
+    fk_package_type_of_package1_idx:
+      fields: [type_of_packages_id_type_of_packages]
+    fk_package_warehouse1_idx:
+      fields: [warehouse_id_warehouse]
+
+dimension:
+  columns:
+    id_dimension:
+      type: integer(4)
+      primary: true
+      notnull: true
+    products_id_products:
+      type: integer(4)
+      notnull: true
+    type_of_dimension_id_type_of_dimension:
+      type: integer(4)
+      notnull: true
+    value:
+      type: decimal
+    tolerance:
+      type: string(45)
+    interval_max:
+      type: decimal
+    interval_min:
+      type: decimal
+  relations:
+    productsIdProduct:
+      class: product
+      local: products_id_products
+      foreign: id_products
+      foreignAlias: dimensions
+    typeOfDimensionIdTypeOfDimension:
+      class: typeOfDimension
+      local: type_of_dimension_id_type_of_dimension
+      foreign: id_type_of_dimension
+      foreignAlias: dimensions
+  indexes:
+    fk_dimension_product1_idx:
+      fields: [products_id_products]
+    fk_dimension_type_of_dimension1_idx:
+      fields: [type_of_dimension_id_type_of_dimension]
+
+employer:
+  tableName: employers
+  columns:
+    id_employers:
+      type: integer(4)
+      primary: true
+      notnull: true
+    users_id_users:
+      type: integer(4)
+      notnull: true
+  relations:
+    usersIdUser:
+      class: user
+      local: users_id_users
+      foreign: id_users
+      foreignAlias: employers
+  indexes:
+    fk_employers_users1_idx:
+      fields: [users_id_users]
+
+typeOfControlMeasurement:
+  tableName: type_of_control_measurements
+  columns:
+    id_type_of_control_measurements:
+      type: integer(4)
+      primary: true
+      notnull: true
+
+typeOfDimension:
+  tableName: type_of_dimension
+  columns:
+    id_type_of_dimension:
+      type: integer(4)
+      primary: true
+      notnull: true
+    symbol:
+      type: string(45)
+    glyph:
+      type: string(45)
+
+typeOfPackage:
+  tableName: type_of_packages
+  columns:
+    id_type_of_packages:
+      type: integer(4)
+      primary: true
+      notnull: true
+    name:
+      type: string(45)
+
+ordersProgress:
+  tableName: orders_progress
+  columns:
+    id_orders_progress:
+      type: integer(4)
+      primary: true
+      notnull: true
+    orders_id_orders:
+      type: integer(4)
+      notnull: true
+  relations:
+    ordersIdOrder:
+      class: order
+      local: orders_id_orders
+      foreign: id_orders
+      foreignAlias: orders_progresses
+  indexes:
+    fk_orders_progress_orders1_idx:
+      fields: [orders_id_orders]
+
+warehouse:
+  columns:
+    id_warehouse:
+      type: integer(4)
+      primary: true
+      notnull: true
+    type_of_warehouse_id_type_of_warehouse:
+      type: integer(4)
+      notnull: true
+  relations:
+    typeOfWarehouseIdTypeOfWarehouse:
+      class: typeOfWarehouse
+      local: type_of_warehouse_id_type_of_warehouse
+      foreign: id_type_of_warehouse
+      foreignAlias: warehouses
+  indexes:
+    fk_warehouse_type_of_warehouse1_idx:
+      fields: [type_of_warehouse_id_type_of_warehouse]
+
+typeOfWarehouse:
+  tableName: type_of_warehouse
+  columns:
+    id_type_of_warehouse:
+      type: integer(4)
+      primary: true
+      notnull: true
+    type_of_warehouse_name:
+      type: string(45)
+    type_of_warehouse_desc:
+      type: string(45)
+
+user:
+  tableName: users
+  columns:
+    id_users:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    first_name:
+      type: string(45)
+    last_name:
+      type: string(45)
+    login:
+      type: string(45)
+      unique: true
+    password:
+      type: string(45)
+    key_public:
+      type: string(45)
+      unique: true
+    key_private:
+      type: string(45)
+      unique: true
+    key_salt:
+      type: string(45)
+    live:
+      type: integer(4)
+    deleted:
+      type: integer(4)
+    created:
+      type: timestamp
+    modified:
+      type: timestamp
+  indexes:
+    password:
+      fields: [password]
+
+permission:
+  tableName: permissions
+  columns:
+    id_permissions:
+      type: integer(4)
+      primary: true
+      notnull: true
+    permissions_name:
+      type: string(45)
+      notnull: true
+    permissions_value:
+      type: string(45)
+      notnull: true
+
+job:
+  tableName: jobs
+  columns:
+    id_jobs:
+      type: integer(4)
+      primary: true
+      notnull: true
+    name:
+      type: string(45)
+
+employersJob:
+  tableName: employers_jobs
+  columns:
+    employers_id_employers:
+      type: integer(4)
+      primary: true
+      notnull: true
+    jobs_id_jobs:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    employersIdEmployer:
+      class: employer
+      local: employers_id_employers
+      foreign: id_employers
+      foreignAlias: employers_jobs
+    jobsIdJob:
+      class: job
+      local: jobs_id_jobs
+      foreign: id_jobs
+      foreignAlias: employers_jobs
+  indexes:
+    fk_employers_jobs_jobs1_idx:
+      fields: [jobs_id_jobs]
+    fk_employers_jobs_employers1_idx:
+      fields: [employers_id_employers]
+
+manager:
+  tableName: managers
+  columns:
+    id_managers:
+      type: integer(4)
+      primary: true
+      notnull: true
+    users_id_users:
+      type: integer(4)
+      notnull: true
+  relations:
+    usersIdUser:
+      class: user
+      local: users_id_users
+      foreign: id_users
+      foreignAlias: managers
+  indexes:
+    fk_manager_users1_idx:
+      fields: [users_id_users]
+
+managersJob:
+  tableName: managers_jobs
+  columns:
+    managers_id_managers:
+      type: integer(4)
+      primary: true
+      notnull: true
+    jobs_id_jobs:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    managersIdManager:
+      class: manager
+      local: managers_id_managers
+      foreign: id_managers
+      foreignAlias: managers_jobs
+    jobsIdJob:
+      class: job
+      local: jobs_id_jobs
+      foreign: id_jobs
+      foreignAlias: managers_jobs
+  indexes:
+    fk_managers_jobs_jobs1_idx:
+      fields: [jobs_id_jobs]
+    fk_managers_jobs_managers1_idx:
+      fields: [managers_id_managers]
+
+squad:
+  tableName: squads
+  columns:
+    id_squads:
+      type: integer(4)
+      primary: true
+      notnull: true
+    name:
+      type: string(45)
+
+socket:
+  tableName: sockets
+  columns:
+    id_sockets:
+      type: integer(4)
+      primary: true
+      notnull: true
+    name:
+      type: string(45)
+
+guidingCard:
+  tableName: guiding_cards
+  columns:
+    id_guiding_cards:
+      type: integer(4)
+      primary: true
+      notnull: true
+    number:
+      type: integer(4)
+    year:
+      type: integer(4)
+    employers_id_employers:
+      type: integer(4)
+      primary: true
+      notnull: true
+    date_open:
+      type: timestamp
+    date_close:
+      type: timestamp
+  relations:
+    employersIdEmployer:
+      class: employer
+      local: employers_id_employers
+      foreign: id_employers
+      foreignAlias: guiding_cards
+  indexes:
+    fk_guiding_cards_employers1_idx:
+      fields: [employers_id_employers]
+
+guidingCardsPackage:
+  tableName: guiding_cards_package
+  columns:
+    guiding_cards_id_guiding_cards:
+      type: integer(4)
+      primary: true
+      notnull: true
+    package_id_package:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    guidingCardsIdGuidingCard:
+      class: guidingCard
+      local: guiding_cards_id_guiding_cards
+      foreign: id_guiding_cards
+      foreignAlias: guiding_cards_packages
+    packageIdPackage:
+      class: package
+      local: package_id_package
+      foreign: id_packages
+      foreignAlias: guiding_cards_packages
+  indexes:
+    fk_guiding_cards_package_package1_idx:
+      fields: [package_id_package]
+    fk_guiding_cards_package_guiding_cards1_idx:
+      fields: [guiding_cards_id_guiding_cards]
+
+contractor:
+  tableName: contractors
+  columns:
+    id_contractors:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(200)
+      notnull: true
+    shortcut:
+      type: string(45)
+
+productsContractorsSupplier:
+  tableName: products_contractors_supplier
+  columns:
+    products_id_products:
+      type: integer(4)
+      primary: true
+      notnull: true
+    contractors_id_contractors:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    productsIdProduct:
+      class: product
+      local: products_id_products
+      foreign: id_products
+      foreignAlias: products_contractors_suppliers
+    contractorsIdContractor:
+      class: contractor
+      local: contractors_id_contractors
+      foreign: id_contractors
+      foreignAlias: products_contractors_suppliers
+  indexes:
+    fk_product_contractors_contractors1_idx:
+      fields: [contractors_id_contractors]
+    fk_product_contractors_product1_idx:
+      fields: [products_id_products]
+
+packageContractorsRecipient:
+  tableName: package_contractors_recipient
+  columns:
+    package_id_package:
+      type: integer(4)
+      primary: true
+      notnull: true
+    contractors_id_contractors:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    packageIdPackage:
+      class: package
+      local: package_id_package
+      foreign: id_packages
+      foreignAlias: package_contractors_recipients
+    contractorsIdContractor:
+      class: contractor
+      local: contractors_id_contractors
+      foreign: id_contractors
+      foreignAlias: package_contractors_recipients
+  indexes:
+    fk_package_contractors_contractors1_idx:
+      fields: [contractors_id_contractors]
+    fk_package_contractors_package1_idx:
+      fields: [package_id_package]
+
+dispatch:
+  columns:
+    id_dispatch:
+      type: integer(4)
+      primary: true
+      notnull: true
+
+dispatchPackage:
+  tableName: dispatch_packages
+  columns:
+    dispatch_id_dispatch:
+      type: integer(4)
+      primary: true
+      notnull: true
+    packages_id_packages:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    dispatchIdDispatch:
+      class: dispatch
+      local: dispatch_id_dispatch
+      foreign: id_dispatch
+      foreignAlias: dispatch_packages
+    packagesIdPackage:
+      class: package
+      local: packages_id_packages
+      foreign: id_packages
+      foreignAlias: dispatch_packages
+  indexes:
+    fk_dispatch_package_package1_idx:
+      fields: [packages_id_packages]
+    fk_dispatch_package_dispatch1_idx:
+      fields: [dispatch_id_dispatch]
+
+unit:
+  tableName: units
+  columns:
+    id_units:
+      type: integer(4)
+      primary: true
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(45)
+    symbol:
+      type: string(45)
+
+typeOfPackageProduct:
+  tableName: type_of_package_products
+  columns:
+    type_of_package_id_type_of_package:
+      type: integer(4)
+      primary: true
+      notnull: true
+    products_id_products:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    typeOfPackageIdTypeOfPackage:
+      class: typeOfPackage
+      local: type_of_package_id_type_of_package
+      foreign: id_type_of_packages
+      foreignAlias: type_of_package_products
+    productsIdProduct:
+      class: product
+      local: products_id_products
+      foreign: id_products
+      foreignAlias: type_of_package_products
+  indexes:
+    fk_type_of_package_product_product1_idx:
+      fields: [products_id_products]
+    fk_type_of_package_product_type_of_package1_idx:
+      fields: [type_of_package_id_type_of_package]
+
+productWarehouseOnStock:
+  tableName: product_warehouse_on_stock
+  columns:
+    products_id_products:
+      type: integer(4)
+      primary: true
+      notnull: true
+    warehouse_id_warehouse:
+      type: integer(4)
+      primary: true
+      notnull: true
+    value:
+      type: integer(4)
+  relations:
+    productsIdProduct:
+      class: product
+      local: products_id_products
+      foreign: id_products
+      foreignAlias: product_warehouse_on_stocks
+    warehouseIdWarehouse:
+      class: warehouse
+      local: warehouse_id_warehouse
+      foreign: id_warehouse
+      foreignAlias: product_warehouse_on_stocks
+  indexes:
+    fk_product_warehouse_warehouse1_idx:
+      fields: [warehouse_id_warehouse]
+    fk_product_warehouse_product1_idx:
+      fields: [products_id_products]
+
+ioOperation:
+  tableName: io_operations
+  columns:
+    id_io_operations:
+      type: integer(4)
+      primary: true
+      notnull: true
+    type_of_io_operations_idtype_of_io_operations:
+      type: integer(4)
+      notnull: true
+    warehouse_id_warehouse_out:
+      type: integer(4)
+      notnull: true
+    warehouse_id_warehouse_in:
+      type: integer(4)
+      notnull: true
+    products_id_products:
+      type: integer(4)
+      notnull: true
+  relations:
+    typeOfIoOperationsIdtypeOfIoOperation:
+      class: typeOfIoOperation
+      local: type_of_io_operations_idtype_of_io_operations
+      foreign: idtype_of_io_operations
+      foreignAlias: io_operations
+    warehouseIdWarehouseOut:
+      class: warehouse
+      local: warehouse_id_warehouse_out
+      foreign: id_warehouse
+      foreignAlias: io_operations
+    warehouseIdWarehouseIn:
+      class: warehouse
+      local: warehouse_id_warehouse_in
+      foreign: id_warehouse
+      foreignAlias: io_operations
+    productsIdProduct:
+      class: product
+      local: products_id_products
+      foreign: id_products
+      foreignAlias: io_operations
+  indexes:
+    fk_io_operations_type_of_io_operations1_idx:
+      fields: [type_of_io_operations_idtype_of_io_operations]
+    fk_io_operations_warehouse1_idx:
+      fields: [warehouse_id_warehouse_out]
+    fk_io_operations_warehouse2_idx:
+      fields: [warehouse_id_warehouse_in]
+    fk_io_operations_products1_idx:
+      fields: [products_id_products]
+
+typeOfIoOperation:
+  tableName: type_of_io_operations
+  columns:
+    idtype_of_io_operations:
+      type: integer(4)
+      primary: true
+      notnull: true
+    name:
+      type: string(45)
+
+ManagerPermission:
+  tableName: managers_has_permissions
+  columns:
+    managers_id_managers:
+      type: integer(4)
+      primary: true
+      notnull: true
+    permissions_id_permissions:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    managersIdManager:
+      class: manager
+      local: managers_id_managers
+      foreign: id_managers
+      foreignAlias: managers_has_permissions
+    permissionsIdPermission:
+      class: permission
+      local: permissions_id_permissions
+      foreign: id_permissions
+      foreignAlias: managers_has_permissions
+  indexes:
+    fk_managers_has_permissions_permissions1_idx:
+      fields: [permissions_id_permissions]
+    fk_managers_has_permissions_managers1_idx:
+      fields: [managers_id_managers]
+
+UserPermission:
+  tableName: users_has_permissions
+  columns:
+    users_id_users:
+      type: integer(4)
+      primary: true
+      notnull: true
+    permissions_id_permissions:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    usersIdUser:
+      class: user
+      local: users_id_users
+      foreign: id_users
+      foreignAlias: users_has_permissions
+    permissionsIdPermission:
+      class: permission
+      local: permissions_id_permissions
+      foreign: id_permissions
+      foreignAlias: users_has_permissions
+  indexes:
+    fk_users_has_permissions_permissions1_idx:
+      fields: [permissions_id_permissions]
+    fk_users_has_permissions_users1_idx:
+      fields: [users_id_users]
+
+OrderProduct:
+  tableName: orders_has_products
+  columns:
+    orders_id_orders:
+      type: integer(4)
+      primary: true
+      notnull: true
+    products_id_products:
+      type: integer(4)
+      primary: true
+      notnull: true
+  relations:
+    ordersIdOrder:
+      class: order
+      local: orders_id_orders
+      foreign: id_orders
+      foreignAlias: orders_has_products
+    productsIdProduct:
+      class: product
+      local: products_id_products
+      foreign: id_products
+      foreignAlias: orders_has_products
+  indexes:
+    fk_orders_has_products_products1_idx:
+      fields: [products_id_products]
+    fk_orders_has_products_orders1_idx:
+      fields: [orders_id_orders]
+

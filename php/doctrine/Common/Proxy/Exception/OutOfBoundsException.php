@@ -17,15 +17,27 @@
  * <http://www.doctrine-project.org>.
  */
 
-namespace Doctrine\Common\Util;
+namespace Doctrine\Common\Proxy\Exception;
 
-use Doctrine\Common\Inflector\Inflector as BaseInflector;
+use Doctrine\Common\Persistence\Proxy;
+use OutOfBoundsException as BaseOutOfBoundsException;
 
 /**
- * Doctrine inflector has static methods for inflecting text.
+ * Proxy Invalid Argument Exception.
  *
- * Kept for backwards compatibility reasons, was moved to its own component.
+ * @link   www.doctrine-project.org
+ * @author Fredrik Wendel <fredrik_w@users.sourceforge.net>
  */
-class Inflector extends BaseInflector
+class OutOfBoundsException extends BaseOutOfBoundsException implements ProxyException
 {
+    /**
+     * @param string $className
+     * @param string $idField
+     *
+     * @return self
+     */
+    public static function missingPrimaryKeyValue($className, $idField)
+    {
+        return new self(sprintf("Missing value for primary key %s on %s", $idField, $className));
+    }
 }
