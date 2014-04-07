@@ -1,0 +1,18 @@
+{
+    "name": "erp/erp-standard-edition",
+    "license": "MIT",
+    "type": "project",
+    "description": "",
+    "autoload": {
+        "psr-0": { "Framework\\": "erp/framework" },
+        "psr-0": { "Application\\": "erp/application" },
+        "psr-0": { "Plugins\\": "erp/plugins" }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "~2.4",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "~1.2",
+        "twig/extensions": "~1.0"
+    }
+}

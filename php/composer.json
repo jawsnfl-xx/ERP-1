@@ -1,7 +1,0 @@
-{
-    "name": "jetalone/erp",
-    "require": {
-        "php": ">=5.3",
-        "doctrine/orm": "*"
-    }
-}
