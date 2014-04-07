@@ -1,18 +1,20 @@
 {
-    "name": "erp/erp-standard-edition",
-    "license": "MIT",
-    "type": "project",
-    "description": "",
-    "autoload": {
-        "psr-0": { "Framework\\": "erp/framework" },
-        "psr-0": { "Application\\": "erp/application" },
-        "psr-0": { "Plugins\\": "erp/plugins" }
+	"name": "jetalone/erp",
+	"description": "Simple ERP system",
+	"version": "0.0.2-dev",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"doctrine/common": ">=2.3.0",
+        "doctrine/orm": ">=2.3.0",
+        "doctrine/data-fixtures": "@dev",
+        "twig/twig": "1.*"
     },
-    "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "~2.4",
-        "doctrine/orm": "~2.2,>=2.2.3",
-        "doctrine/doctrine-bundle": "~1.2",
-        "twig/extensions": "~1.0"
+    "autoload": {
+    	"classmap": [
+	         "core/framework",
+	         "application",
+	         "core/plugins"
+         ]
     }
 }

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * Deklaracja stałych:
@@ -30,61 +30,60 @@ try {
         exit("PHP version smaller than " . MIN_PHP_VERSION . " !");
     }
 
-    // /**
-    // *
-    // * @param unknown $class
-    // * @throws Exception
-    // */
-    // function autoload($class)
-    // {
-    // $paths = explode(PATH_SEPARATOR, get_include_path());
-    // $flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
-    // $file = strtolower(str_replace("\\", DIRECTORY_SEPARATOR, trim($class, "\\"))) . ".php";
-    // foreach ($paths as $path) {
-    // $combined = $path . DIRECTORY_SEPARATOR . $file;
-    // if (file_exists($combined)) {
-    // include ($combined);
-    // return;
-    // }
-    // }
-    // // var_dump($this);
-    // throw new Exception("{$class} not found");
-    // }
+    /**
+     *
+     * @param unknown $class
+     * @throws Exception
+     */
+    function autoload($class)
+    {
+        $paths = explode(PATH_SEPARATOR, get_include_path());
+        $flags = PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE;
+        $file = strtolower(str_replace("\\", DIRECTORY_SEPARATOR, trim($class, "\\"))) . ".php";
+        foreach ($paths as $path) {
+            $combined = $path . DIRECTORY_SEPARATOR . $file;
+            if (file_exists($combined)) {
+                include ($combined);
+                return;
+            }
+        }
+        // var_dump($this);
+        throw new Exception("{$class} not found");
+    }
 
-    // /**
-    // *
-    // * @author Marcin Pyrka
-    // *
-    // */
-    // class Autoloader
-    // {
+    /**
+     *
+     * @author Marcin Pyrka
+     *
+     */
+    class Autoloader
+    {
 
-    // /**
-    // *
-    // * @param unknown $class
-    // */
-    // public static function autoload($class)
-    // {
-    // autoload($class);
-    // }
-    // }
+        /**
+         *
+         * @param unknown $class
+         */
+        public static function autoload($class)
+        {
+            autoload($class);
+        }
+    }
 
-    // spl_autoload_register('autoload');
-    // spl_autoload_register(array(
-    // 'autoloader',
-    // 'autoload'
-    // ));
+    spl_autoload_register('autoload');
+    spl_autoload_register(array(
+        'autoloader',
+        'autoload'
+    ));
 
     /**
      * Wczytanie pliku autoload z composer
      */
-    require_once '../../vendor/autoload.php';
-
+    // require_once '../../vendor/autoload.php';
     // echo 'asdasd ', __NAMESPACE__, ' asas'; // outputs "MyProject"
-/**
- * Wczytanie bootstrapu z katalogu aplikacji
- * a nie z bierzacego dla index.php
- */
+    /**
+     * Wczytanie bootstrapu z katalogu aplikacji
+     * a nie z bierzacego dla index.php
+     */
     require_once (BOOTSTRAP_FILE);
 } catch (Exception $e) {
     $exceptions = array(

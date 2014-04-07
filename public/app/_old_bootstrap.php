@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 use Framework as Framework;
 use Framework\Configuration;
 use Framework\Registry;
