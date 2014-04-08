@@ -23,26 +23,19 @@
 		<h3 class="panel-title">Produkt...</h3>
 	</div>
 	<div class="panel-body">
-		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
-			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
-			ultricies commodo.</p>
+		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus ultricies commodo.</p>
 		<p>Zawsze istnieje możliwość wyszukania nazwy produktu</p>
 		<div class="col-lg-6">
-			<form role="form" method="post"
-				action="/module/product_technology/product/search">
+			<form role="form" method="post" action="/module/product_technology/product/search">
 				<div class="input-group">
-					<input type="text" class="form-control" id="number"
-						placeholder="Wprowadź numer" name="number"> <span
-						class="input-group-btn">
+					<input type="text" class="form-control" id="number" placeholder="Wprowadź numer" name="number"> <span class="input-group-btn">
 						<button class="btn btn-default" type="submit">Szukaj ...</button>
 					</span>
 				</div>
 			</form>
 		</div>
 		<div class="col-lg-6">
-			<a href="/module/product_technology/product/add/1"
-				class="btn btn-default">Dodaj ...</a>
+			<a href="/module/product_technology/product/add/1" class="btn btn-default">Dodaj nowy produkt</a>
 		</div>
 	</div>
 	<table class="table table-bordered">
@@ -53,52 +46,41 @@
 			<th>Kategoria</th>
 			<th>Akcje</th>
 		</tr>
-		{foreach from=$table['product']['list'] item=row name=row}
-
-		<th>{$smarty.foreach.row.iteration}</th>
-		<td><a
-			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-		<td>{$row.symbol}</td>
-		<td>{$row.category_name}</td>
+		
+		{% for row in _table.product.list %}
+    	
+    
+		<th>{{ loop.index }}</th>
+		<td><a href="/module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
+		<td>{{ row.symbol }}</td>
+		<td>{{ row.category_name }}</td>
 		<td>
-			<button class="btn btn-danger" data-toggle="modal"
-				data-target=".bs-example-modal-sm-{$row.id_products}">Usuń</button>
-
-			<a href="" class="btn btn-default">Zmień</a>
-			<div class="modal fade bs-example-modal-sm-{$row.id_products}"
-				tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-				aria-hidden="true">
+			<button class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm-{{ row.id_products }}">Usuń</button> <a href="" class="btn btn-default">Zmień</a>
+			<div class="modal fade bs-example-modal-sm-{{ row.id_products }}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-sm">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="myModalLabel">Potwierdź
-								usunięcie informacji o produkcie</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">Potwierdź usunięcie informacji o produkcie</h4>
 						</div>
 						<div class="modal-body">...</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-success"
-								data-dismiss="modal">Close</button>
-							<a
-								href="/module/product_technology/product/delete/{$row.id_products}"
-								type="button" class="btn btn-danger">Usuń</a>
+							<button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+							<a href="/module/product_technology/product/delete/{{ row.id_products }}" type="button" class="btn btn-danger">Usuń</a>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</td>
 		</tr>
-		{/foreach}
+		{% endfor %}
 	</table>
 	<div class="panel-footer">
 		<ul class="pagination">
-			<li><a href="#">&laquo;</a></li> {foreach
-			from=$table['product']['pager'] item=pager}
-			<li><a
-				href="/module/product_technology/product/page/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
-			{/foreach}
+			<li><a href="#">&laquo;</a></li>
+			{% for pager in _table.product.pager %}
+			<li><a href="/module/product_technology/product/page/{{ pager.page }}/{{ pager.limit }}">{{ pager.page }}</a></li>
+			{% endfor %}
 			<li><a href="#">&raquo;</a></li>
 		</ul>
 	</div>
@@ -108,34 +90,31 @@
 <div class="panel panel-default">
 	<div class="panel-heading">Dodawanie nowego produktu</div>
 	<div class="panel-body">
-		{if $parameters['2'] eq '1' }
+		{% if _parameters.2 == '1' %}
 		<p>Aby dodać do systemu nowy produkt, w pierwszym kroku wprowadź
 			jego unikalny numer identyfikacyjny:</p>
-		{if $table['product']['add']['error'] eq 'idIsExists' }
+			
+		{% if _table.product.add.error == 'idIsExists' %}
 		<div class="alert alert-warning">
-			{foreach from=$table['product']['add']['value']['numer'] item=row
-			name=row}
+			{% for row in _table.product.add.value.numer %}
 			<h4>Uwaga!</h4>
 			<p>
-				Produkt o identyfikatorze <strong>{$row.products_name}</strong>
-				znajduje się już w bazie danych.
+				Produkt o identyfikatorze <strong>{{ row.products_name }}</strong> znajduje się już w bazie danych.
 			</p>
 			<p>
-				Możesz zobaczyć szczegóły dotyczące tego produktu <a
-					class="alert-link"
-					href="/module/product_technology/product/view/{$row.id_products}">tutaj</a>.
+				Możesz zobaczyć szczegóły dotyczące tego produktu <a class="alert-link" href="/module/product_technology/product/view/{{ row.id_products }}">tutaj</a>.
 			</p>
-			{/foreach}
+			{% endfor %}
 		</div>
 
-		{elseif $table['product']['add']['error'] eq 'emptyValueName' }
+		{% elseif _table.product.add.error == 'emptyValueName' %}
 		<div class="alert alert-danger">
 			<h4>Nic nie wpisano</h4>
 			<p>Aby prawidłowo dodać produkt do bazy danych należy wprowadzić
 				jego numer identyfikacyjny.</p>
 		</div>
 
-		{/if}
+		{% endif %} 
 
 		<form role="form" method="post"
 			action="/module/product_technology/product/_add/1">
@@ -147,7 +126,7 @@
 				</span>
 			</div>
 		</form>
-		{elseif $parameters['2'] eq '2' }
+		{% elseif _parameters.2 == '2' %}
 		<p>Aby kontynuować proces dodania produktu do bazy danych, proszę
 			uzupełnić poniższe informacje.</p>
 
@@ -157,18 +136,19 @@
 				<div class="col-md-3">
 					<h4>Jednostka miary:</h4>
 					<select class="form-control" name="units_id_units">
-						<option>--</option>{foreach
-						from=$table['product']['add']['value']['units'] item=row name=row}
-						<option>{$row.name}</option> {/foreach}
+						<option>--</option>
+						{% for row in _table.product.add.value.units %}
+						<option>{{ row.name }}</option>
+						{% endfor %}
 					</select>
 				</div>
 				<div class="col-md-3">
 					<h4>Kategoria produktu:</h4>
 					<select class="form-control" name="category_product">
-						<option>--</option>{foreach
-						from=$table['product']['add']['value']['category'] item=row
-						name=row}
-						<option>{$row.category_name}</option> {/foreach}
+						<option>--</option>
+						{% for row in _table.product.add.value.category %}
+						<option>{{ row.category_name }}</option>
+						{% endfor %}
 					</select>
 				</div>
 			</div>
@@ -179,64 +159,52 @@
 			</div>
 
 		</form>
-		{elseif $parameters['2'] eq '3' }
+		{% elseif _parameters.2 == '3' %}
 		<p>Można już to podsumować...</p>
 		<div class="alert alert-info">
 			<p>Wyświetlić ładnie dane przed akceptacją dodania do bazy</p>
 		</div>
 		<ul>
-			<li>{$table['product']['add']['value']['number']}</li>
-			<li>{$table['product']['add']['select']['units']}</li>
-			<li>{$table['product']['add']['select']['category']}</li>
+			<li>{{ _table.product.add.value.number }}</li>
+			<li>{{ _table.product.add.select.units }}</li>
+			<li>{{ _table.product.add.select.category }}</li>
 		</ul>
-
-		<div class="modal fade bs-example-modal-sm" tabindex="-1"
-			role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-md">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Czy na pewno chcesz porzucić
-							wprowadzone informacje?</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Czy na pewno chcesz porzucić wprowadzone informacje?</h4>
 					</div>
 					<div class="modal-body">
 						<p>
-							Wybierająć przycisk <em>Odrzuć zmiany</em> spowodujesz
-							nieodwracalne skasowanie danych, jakie wprowadziłeś w poprzednich
-							krokach.
+							Wybierająć przycisk <em>Odrzuć zmiany</em> spowodujesz nieodwracalne skasowanie danych, jakie wprowadziłeś w poprzednich krokach.
 						</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
-						<a href="/module/product_technology/product/_add/4" type="button"
-							class="btn btn-danger">Odrzuć zmiany</a>
-
+						<a href="/module/product_technology/product/_add/4" type="button" class="btn btn-danger">Odrzuć zmiany</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-2 col-md-offset-8">
-				<button class="btn btn-danger btn-block" data-toggle="modal"
-					data-target=".bs-example-modal-sm" role="button">
+				<button class="btn btn-danger btn-block" data-toggle="modal" data-target=".bs-example-modal-sm" role="button">
 					Odrzuć <span class="glyphicon glyphicon-remove"></span>
 				</button>
 			</div>
 			<div class="col-md-2">
-				<a class="btn btn-success btn-block"
-					href="/module/product_technology/product/_add/5" role="button">Dodaj
-					<span class="glyphicon glyphicon-ok"></span>
+				<a class="btn btn-success btn-block" href="/module/product_technology/product/_add/5" role="button">Dodaj <span class="glyphicon glyphicon-ok"></span>
 				</a>
 			</div>
 		</div>
-		{/if}
+		{% endif %}
 	</div>
 </div>
 
 
-
-{% elseif _parameters.1 == 'view' and _parameters.2 in not null %}
+{% elseif _parameters.1 == 'view' and _parameters.2 != '' %}
 <div class="panel panel-default">
 	<div class="panel-heading">Informacje o produkcie</div>
 	<div class="panel-body">
@@ -257,34 +225,24 @@
 		</div>
 	</div>
 	<ul class="list-group">
-		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam
-				erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-				vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare nisl nec,
-				tempor elit. Aliquam erat vol</p></li>
-		<li class="list-group-item list-group-item-header"><span>Kontrola
-				jakości</span></li>
+		<li class="list-group-item"><p>nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulum nec ultenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat vol</p></li>
+		<li class="list-group-item list-group-item-header"><span>Kontrola jakości</span></li>
 		<li class="list-group-item">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="alert alert-success">
 						<h4>Arkusz jest poprawny</h4>
-						<p>Wszystko zostało wykonane poprawnie. Arkusz nie zawiera
-							błędów i jest kompletny.</p>
+						<p>Wszystko zostało wykonane poprawnie. Arkusz nie zawiera błędów i jest kompletny.</p>
 					</div>
 					<div class="alert alert-warning">
-						<h4>Istniejący arkusz kontroli jakości jest niekompletny lub
-							nieaktualny</h4>
-						<p>Należy poprawić istniejące błędy lub uzupełnić braki. W
-							przypadku nieaktualnego arkusza, należy poprawić dane na zgodne
-							ze stanem faktycznym.</p>
+						<h4>Istniejący arkusz kontroli jakości jest niekompletny lub nieaktualny</h4>
+						<p>Należy poprawić istniejące błędy lub uzupełnić braki. W przypadku nieaktualnego arkusza, należy poprawić dane na zgodne ze stanem faktycznym.</p>
 						<a href="#" class="btn btn-warning">format</a>
 					</div>
 					<div class="alert alert-danger">
 						<h4>Brak arkusza kontroli jakości</h4>
-						<p>Arkusz nie istnieje. W celu utworzenia arkusza, należy
-							kliknąć w poniższy przycisk.</p>
-						<a href="/module/quality_management/add" class="btn btn-danger">Tworzenie
-							arkusza</a>
+						<p>Arkusz nie istnieje. W celu utworzenia arkusza, należy kliknąć w poniższy przycisk.</p>
+						<a href="/module/quality_management/add" class="btn btn-danger">Tworzenie arkusza</a>
 					</div>
 				</div>
 			</div>
@@ -293,9 +251,7 @@
 					<div class="panel panel-success">
 						<div class="panel-heading">Ostatnio wykonane badania</div>
 						<div class="panel-body">
-							<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-								vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut vestibulum
-								sem a accumsan vehicula. Vestibulu</p>
+							<p>Tutaj znajdą się informacje o wykonanych ostatnio badaniach jakości.</p>
 						</div>
 						<table class="table table-condensed table-hover">
 							<tr>
@@ -306,15 +262,24 @@
 								<th>Nr skrzyni</th>
 							</tr>
 							<tbody>
-								{foreach from=$table['packages']['list'] item=row name=row}
+								{% for row in _table.packages.list %}
 								<tr>
-									<td>{$smarty.foreach.row.iteration}</td>
-									<td><a href="#"></a></td>
-									<td>Lorem Nowak</td>
-									<td>{$row.id_packages}</td>
-									<td>{$row.packages_number}</td>
+									<td>{{ loop.index }}</td>
+									<td><a href="{{ row.id_packages }}">{{ row.packages_number }}</a></td>
+									<td>{{ row.id_packages }}</td>
+									<td>{{ row.id_packages }}</td>
+									<td>{{ row.type_of_packages_id_type_of_packages }}</td>
+									<td>{{ row.warehouse_id_warehouse }}</td>
+									<td>{{ row.packages_number }}</td>
+									<td>{{ row.id_type_of_packages }}</td>
+									<td>{{ row.name }}</td>
+									<td>{{ row.id_warehouse }}</td>
+									<td>{{ row.type_of_warehouse_id_type_of_warehouse }}</td>
+									<td>{{ row.id_type_of_warehouse }}</td>
+									<td>{{ row.type_of_warehouse_name }}</td>
+									<td>{{ row.type_of_warehouse_desc }}</td>
 								</tr>
-								{/foreach}
+								{% endfor %}
 							</tbody>
 						</table>
 					</div>
@@ -323,11 +288,9 @@
 					<div class="row">
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="panel panel-warning">
-								<div class="panel-heading">Partie produktu z niekompletnym
-									badaniem</div>
+								<div class="panel-heading">Partie produktu z niekompletnym badaniem</div>
 								<div class="panel-body">
-									<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-										vestibulum sem t volutpat.</p>
+									<p>Tutaj znajdą się informacje o produktach, które mają rozpoczęte badania, ale nie zostały ukończone lub poprawnie zamnkięte.</p>
 								</div>
 								<table class="table table-condensed table-hover">
 									<tr>
@@ -337,27 +300,33 @@
 										<th>Magazyn</th>
 									</tr>
 									<tbody>
-										{foreach from=$table['packages']['list'] item=row name=row}
+										{% for row in _table.packages.list %}
 										<tr>
-											<td>{$smarty.foreach.row.iteration}</td>
-											<td>{$row.id_packages}</td>
-											<td>{$row.packages_number}</td>
-											<td>{$row.warehouse_id_warehouse}</td>
+											<td>{{ loop.index }}</td>
+											<td><a href="{{ row.id_packages }}">{{ row.packages_number }}</a></td>
+											<td>{{ row.id_packages }}</td>
+											<td>{{ row.id_packages }}</td>
+											<td>{{ row.type_of_packages_id_type_of_packages }}</td>
+											<td>{{ row.warehouse_id_warehouse }}</td>
+											<td>{{ row.packages_number }}</td>
+											<td>{{ row.id_type_of_packages }}</td>
+											<td>{{ row.name }}</td>
+											<td>{{ row.id_warehouse }}</td>
+											<td>{{ row.type_of_warehouse_id_type_of_warehouse }}</td>
+											<td>{{ row.id_type_of_warehouse }}</td>
+											<td>{{ row.type_of_warehouse_name }}</td>
+											<td>{{ row.type_of_warehouse_desc }}</td>
 										</tr>
-										{/foreach}
-
+										{% endfor %}
 									</tbody>
 								</table>
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-6 col-lg-6">
 							<div class="panel panel-danger">
-								<div class="panel-heading">Partie produktu bez
-									przeprowadzonego badania</div>
+								<div class="panel-heading">Partie produktu bez przeprowadzonego badania</div>
 								<div class="panel-body">
-									<p>Aliquam erat volutpat. Vivamus ac ornare nunc. Ut
-										vestibulum sem t volutpat. Vivamus ac ornare nunc. Ut
-										vestibulum sem a accumsan vehicula. Vestibulu</p>
+									<p>A tutaj znajdą się informacje o produktach (lub ich partiach), które nie mają nawet rozpoczętego badania kontroli jakości.</p>
 								</div>
 								<table class="table table-condensed table-hover">
 									<tr>
@@ -367,15 +336,24 @@
 										<th>Magazyn</th>
 									</tr>
 									<tbody>
-										{foreach from=$table['packages']['list'] item=row name=row}
+										{% for row in _table.packages.list %}
 										<tr>
-											<td>{$smarty.foreach.row.iteration}</td>
-											<td>{$row.id_packages}</td>
-											<td>{$row.packages_number}</td>
-											<td>{$row.warehouse_id_warehouse}</td>
+											<td>{{ loop.index }}</td>
+											<td><a href="{{ row.id_packages }}">{{ row.packages_number }}</a></td>
+											<td>{{ row.id_packages }}</td>
+											<td>{{ row.id_packages }}</td>
+											<td>{{ row.type_of_packages_id_type_of_packages }}</td>
+											<td>{{ row.warehouse_id_warehouse }}</td>
+											<td>{{ row.packages_number }}</td>
+											<td>{{ row.id_type_of_packages }}</td>
+											<td>{{ row.name }}</td>
+											<td>{{ row.id_warehouse }}</td>
+											<td>{{ row.type_of_warehouse_id_type_of_warehouse }}</td>
+											<td>{{ row.id_type_of_warehouse }}</td>
+											<td>{{ row.type_of_warehouse_name }}</td>
+											<td>{{ row.type_of_warehouse_desc }}</td>
 										</tr>
-										{/foreach}
-
+										{% endfor %}
 									</tbody>
 								</table>
 							</div>
@@ -386,7 +364,6 @@
 		</li>
 		<li class="list-group-item list-group-item-header"><span>Technologia</span></li>
 		<li class="list-group-item">
-
 			<table class="table table-bordered table-hover">
 				<tr>
 					<th>L.p.</th>
@@ -453,7 +430,6 @@
 </div>
 <div class="col-md-4">
 	<table class="table table-bordered table-hover">
-
 		</tbody>
 	</table>
 </div>
@@ -464,22 +440,23 @@
 
 {% elseif _parameters.1 == 'search' %}
 <h3>Wpisano w pole szukania:</h3>
-<p>{$table.product.search}</p>
-{if $table['product']['listSearch'] }
+<p>{{ _table.product.search }}</p>
+{% if _table.product.listSearch != '' %}
 <table class="table table-bordered">
-	{foreach from=$table['product']['listSearch'] item=row name=row}
+
+	{% for row in _table.product.listSearch %}
 	<tr>
-		<th>{$smarty.foreach.row.iteration}</th>
+		<th>{{ loop.index }}</th>
 		<td><a
-			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-		<td>{$row.units_id_units_primary}</td>
-		<td>{$row.units_id_units_secondary}</td>
+			href="/module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
+		<td>{{ row.units_id_units_primary }}</td>
+		<td>{{ row.units_id_units_secondary }}</td>
 	</tr>
-	{/foreach}
+	{% endfor %}
 </table>
-{else}
+{% else %}
 <p>Nie znaleziono wyników</p>
-{/if} 
+{% endif %} 
 {% endif %}
 
 

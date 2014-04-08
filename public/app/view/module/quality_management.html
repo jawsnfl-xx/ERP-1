@@ -12,8 +12,8 @@
 		<li class="active"><span>Dodaj</span></li>
 	{% elseif _parameters.0 == 'review' %}
 		<li class="active"><span>Przegląd</span></li>
-	{elseif $parameters['0'] eq 'view'}
-		<li class="active"><span>Szczegóły</span></li>
+	{% elseif _parameters.0 == 'view' %}
+		<li class="active"><span>Szczegóły badania <strong>{{  _table.quality_management.view.products_name }}</strong></span></li>
 	{% elseif _parameters.0 == '' %}
 	{% endif %}
 </ol>
@@ -64,11 +64,11 @@
 					<tr>
 						<th rowspan="3">Z.P.U.H. Rolmech</th>
 						<th>Nr detalu</th>
-						<td>{$view.products_name}</td>
+						<td>{{ view.products_name }}</td>
 					</tr>
 					<tr>
 						<th>Nr zlecenia</th>
-						<td>{$view.orders_number}</td>
+						<td>{{ view.orders_number }}</td>
 					</tr>
 					<tr>
 						<th>Data pomiaru</th>
@@ -88,13 +88,13 @@
 						<th>Szt. w zleceniu</th>
 						<td>12</td>
 						<th>Data wysyłki</th>
-						<td>{$view.orders_date|truncate:10:""}</td>
+						<td>{{ view.orders_date|slice(0, 10) }}</td>
 					</tr>
 					<tr>
 						<th>Szt. w palecie</th>
 						<td>12</td>
 						<th>nr palety</th>
-						<td>{$view.packages_id_packages}</td>
+						<td>{{ view.packages_id_packages }}</td>
 					</tr>
 				</table>
 			</div>
@@ -105,21 +105,22 @@
 		<tbody>
 			<tr>
 				<th>Badane sztuki</th>
-				<th>{$view.sample_size}</th>
-				<th colspan="{$view.sample_size}">Numer próbki</th>
+				<th>{{ view.sample_size }}</th>
+				<th colspan="{{ view.sample_size }}">Numer próbki</th>
 			</tr>
 			<tr>
 				<th>Badany wym.</th>
-				<th>Toler.</th> {for $foo=1 to $view.sample_size}
-				<th>{$foo}</th> {/for}
+				<th>Toler.</th>
+				{% for foo in 1..view.sample_size %}
+				<th>{{ loop.index }}</th>
+				{% endfor %}
 			</tr>
 			<tr>
 				<td rowspan="2">20,5</td>
 				<td>+0,5</td>
+				{% for foo in 1..view.sample_size %}
 				<td rowspan="2"></td>
-				<td rowspan="2"></td>
-				<td rowspan="2"></td>
-				<td rowspan="2"></td>
+				{% endfor %}
 			</tr>
 			<tr>
 				<td>0</td>
@@ -127,10 +128,9 @@
 			<tr>
 				<td rowspan="2">20,5</td>
 				<td>+0,5</td>
+				{% for foo in 1..view.sample_size %}
 				<td rowspan="2"></td>
-				<td rowspan="2"></td>
-				<td rowspan="2"></td>
-				<td rowspan="2"></td>
+				{% endfor %}
 			</tr>
 			<tr>
 				<td>0</td>
@@ -138,10 +138,9 @@
 			<tr>
 				<td rowspan="2">20,5</td>
 				<td>+0,5</td>
+				{% for foo in 1..view.sample_size %}
 				<td rowspan="2"></td>
-				<td rowspan="2"></td>
-				<td rowspan="2"></td>
-				<td rowspan="2"></td>
+				{% endfor %}
 			</tr>
 			<tr>
 				<td>0</td>
@@ -177,25 +176,25 @@
 				<th>inna data</th>
 				<th>zaznacz</th>
 			</tr>
-			{foreach from=$table['quality_management']['list'] item=row name=row}
+			{% for row in _table.quality_management.list %}
 			<tbody>
 				<tr>
-					<td>{$smarty.foreach.row.iteration}</td>
-					<td><a href="/module/quality_management/view/{$row.id_control_measurements}"> {$row.id_control_measurements} </a></td>
-					<td><a href="/module/product_technology/product/view/{$row.products_name}">{$row.products_name}</a></td>
-					<td>{$row.products_id_products}</td>
-					<td>{$row.type_of_control_measurements_id_type_of_control_measurements}</td>
-					<td>{$row.packages_id_packages}</td>
-					<td>{$row.sample_size}</td>
-					<td>{$row.date_start}</td>
-					<td>{$row.date_end}</td>
+					<td>{{ loop.index }}</td>
+					<td><a href="/module/quality_management/view/{{ row.id_control_measurements }}"> {{ row.id_control_measurements }} </a></td>
+					<td><a href="/module/product_technology/product/view/{{ row.products_name }}">{{ row.products_name }}</a></td>
+					<td>{{ row.products_id_products }}</td>
+					<td>{{ row.type_of_control_measurements_id_type_of_control_measurements }}</td>
+					<td>{{ row.packages_id_packages }}</td>
+					<td>{{ row.sample_size }}</td>
+					<td>{{ row.date_start }}</td>
+					<td>{{ row.date_end }}</td>
 					<td>
 						<div class="pull-right">
 							<input type="checkbox">
 						</div>
 					</td>
 				</tr>
-				{/foreach}
+				{% endfor %}
 			</tbody>
 		</table>
 	</div>
@@ -203,8 +202,10 @@
 <ul class="list-group">
 	<li class="list-group-item">
 		<ul class="pagination">
-			<li><a href="#">&laquo;</a></li> {foreach from=$table['quality_management']['pager'] item=pager}
-			<li><a href="/module/quality_management/review/{$pager.page}/{$pager.limit}">{$pager.page}</a></li> {/foreach}
+			<li><a href="#">&laquo;</a></li>
+			{% for pager in _table.quality_management.pager %}
+			<li><a href="/module/quality_management/review/{{ pager.page }}/{{ pager.limit }}">{{ pager.page }}</a></li>
+			{% endfor %}
 			<li><a href="#">&raquo;</a></li>
 		</ul>
 	</li>

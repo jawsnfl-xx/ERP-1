@@ -20,6 +20,7 @@ return array(
     'Framework\\Core' => $baseDir . '/core/framework/core.php',
     'Framework\\Database' => $baseDir . '/core/framework/database.php',
     'Framework\\Database\\DBAL' => $baseDir . '/core/framework/database/dbal.php',
+    'Framework\\Database\\MySQL' => $baseDir . '/core/framework/database/mysql.php',
     'Framework\\Events' => $baseDir . '/core/framework/events.php',
     'Framework\\Exception' => $baseDir . '/core/framework/exception.php',
     'Framework\\Inspector' => $baseDir . '/core/framework/inspector.php',
