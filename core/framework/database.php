@@ -6,6 +6,7 @@ namespace Framework {
 	use Framework\Database as Database;
 	use Framework\Database\Exception as Exception;
 	use Framework\Database\ORM;
+	use Framework\Database\MySQL;
 
 	/**
 	 *
@@ -46,8 +47,8 @@ namespace Framework {
 			/**
 			 * Inicjowanie połączenia z bazą MySQL przez MySQLi
 			 */
-			$this->_mysql = new Database\Mysql();
-			$this->_mysql->connect($this->_options);
+			$this->_mysql = new Database\MySQL ();
+			$this->_mysql->connect ( $this->_options );
 
 			/**
 			 * Inicjowanie połączenia z bazą MySQL przez DBAL
