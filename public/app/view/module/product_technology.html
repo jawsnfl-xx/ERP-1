@@ -23,26 +23,19 @@
 		<h3 class="panel-title">Produkt...</h3>
 	</div>
 	<div class="panel-body">
-		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
-			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
-			ultricies commodo.</p>
+		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus ultricies commodo.</p>
 		<p>Zawsze istnieje możliwość wyszukania nazwy produktu</p>
 		<div class="col-lg-6">
-			<form role="form" method="post"
-				action="/module/product_technology/product/search">
+			<form role="form" method="post" action="/module/product_technology/product/search">
 				<div class="input-group">
-					<input type="text" class="form-control" id="number"
-						placeholder="Wprowadź numer" name="number"> <span
-						class="input-group-btn">
+					<input type="text" class="form-control" id="number" placeholder="Wprowadź numer" name="number"> <span class="input-group-btn">
 						<button class="btn btn-default" type="submit">Szukaj ...</button>
 					</span>
 				</div>
 			</form>
 		</div>
 		<div class="col-lg-6">
-			<a href="/module/product_technology/product/add/1"
-				class="btn btn-default">Dodaj ...</a>
+			<a href="/module/product_technology/product/add/1" class="btn btn-default">Dodaj nowy produkt</a>
 		</div>
 	</div>
 	<table class="table table-bordered">
@@ -53,52 +46,41 @@
 			<th>Kategoria</th>
 			<th>Akcje</th>
 		</tr>
-		{foreach from=$table['product']['list'] item=row name=row}
-
-		<th>{$smarty.foreach.row.iteration}</th>
-		<td><a
-			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-		<td>{$row.symbol}</td>
-		<td>{$row.category_name}</td>
+		
+		{% for row in _table.product.list %}
+    	
+    
+		<th>{{ loop.index }}</th>
+		<td><a href="/module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
+		<td>{{ row.symbol }}</td>
+		<td>{{ row.category_name }}</td>
 		<td>
-			<button class="btn btn-danger" data-toggle="modal"
-				data-target=".bs-example-modal-sm-{$row.id_products}">Usuń</button>
-
-			<a href="" class="btn btn-default">Zmień</a>
-			<div class="modal fade bs-example-modal-sm-{$row.id_products}"
-				tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-				aria-hidden="true">
+			<button class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm-{{ row.id_products }}">Usuń</button> <a href="" class="btn btn-default">Zmień</a>
+			<div class="modal fade bs-example-modal-sm-{{ row.id_products }}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-sm">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="myModalLabel">Potwierdź
-								usunięcie informacji o produkcie</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">Potwierdź usunięcie informacji o produkcie</h4>
 						</div>
 						<div class="modal-body">...</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-success"
-								data-dismiss="modal">Close</button>
-							<a
-								href="/module/product_technology/product/delete/{$row.id_products}"
-								type="button" class="btn btn-danger">Usuń</a>
+							<button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+							<a href="/module/product_technology/product/delete/{{ row.id_products }}" type="button" class="btn btn-danger">Usuń</a>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</td>
 		</tr>
-		{/foreach}
+		{% endfor %}
 	</table>
 	<div class="panel-footer">
 		<ul class="pagination">
-			<li><a href="#">&laquo;</a></li> {foreach
-			from=$table['product']['pager'] item=pager}
-			<li><a
-				href="/module/product_technology/product/page/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
-			{/foreach}
+			<li><a href="#">&laquo;</a></li>
+			{% for pager in _table.product.pager %}
+			<li><a href="/module/product_technology/product/page/{{ pager.page }}/{{ pager.limit }}">{{ pager.page }}</a></li>
+			{% endfor %}
 			<li><a href="#">&raquo;</a></li>
 		</ul>
 	</div>
