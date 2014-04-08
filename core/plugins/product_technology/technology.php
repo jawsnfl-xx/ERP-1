@@ -1,28 +1,26 @@
 <?php
-namespace Plugins\Product_technology
-{
 
-    use Plugins\Product_technology as Product_technology;
-    use Framework\Registry as Registry;
+namespace Plugins\Product_technology {
 
-    /**
-     *
-     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *
-     *
-     */
-    class Technology extends Product_technology
-    {
+	use Plugins\Product_technology as Product_technology;
+	use Framework\Registry as Registry;
 
-        /**
-         *
-         * @param unknown $options
-         */
-        public function __construct($options = array())
-        {
-            /**
-             */
-            parent::__construct($options);
-        }
-    }
+	/**
+	 *
+	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+	 *        
+	 *        
+	 */
+	class Technology extends Product_technology {
+		
+		/**
+		 *
+		 * @param unknown $options        	
+		 */
+		public function __construct($options = array()) {
+			/**
+			 */
+			parent::__construct ( $options );
+		}
+	}
 }

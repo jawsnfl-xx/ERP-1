@@ -1,21 +1,20 @@
 <?php
-namespace Framework
-{
 
-    use Framework\Base as Base;
+namespace Framework {
 
-    /**
-     *
-     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *
-     *
-     */
-    class Core extends Base
-    {
+	use Framework\Base as Base;
 
-        /**
-         */
-        public function initialize()
-        {}
-    }
+	/**
+	 *
+	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+	 *        
+	 *        
+	 */
+	class Core extends Base {
+		
+		/**
+		 */
+		public function initialize() {
+		}
+	}
 }
