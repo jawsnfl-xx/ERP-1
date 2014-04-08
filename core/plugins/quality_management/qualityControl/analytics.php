@@ -1,40 +1,38 @@
 <?php
-namespace Plugins\Quality_management\QualityControl
-{
 
-    use Plugins\Quality_management\QualityControl as QualityControl;
-    use Plugins\Product_technology\Product as Product;
+namespace Plugins\Quality_management\QualityControl {
 
-    /**
-     *
-     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *        
-     *        
-     * @name ControlMeasurements
-     * @namespace QualityInspection
-     *           
-     * @uses QualityInspection
-     * @uses Product
-     *      
-     *      
-     */
-    class Analystics extends QualityControl
-    {
+	use Plugins\Quality_management\QualityControl as QualityControl;
+	use Plugins\Product_technology\Product as Product;
 
-        /**
-         * @readwrite
-         */
-        public $_id;
-
-        /**
-         *
-         * @param unknown $options            
-         */
-        public function __construct($options = array())
-        {
-            /**
-             */
-            parent::__construct($options);
-        }
-    }
+	/**
+	 *
+	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+	 *        
+	 *        
+	 * @name ControlMeasurements
+	 * @namespace QualityInspection
+	 *           
+	 * @uses QualityInspection
+	 * @uses Product
+	 *      
+	 *      
+	 */
+	class Analystics extends QualityControl {
+		
+		/**
+		 * @readwrite
+		 */
+		public $_id;
+		
+		/**
+		 *
+		 * @param unknown $options        	
+		 */
+		public function __construct($options = array()) {
+			/**
+			 */
+			parent::__construct ( $options );
+		}
+	}
 }

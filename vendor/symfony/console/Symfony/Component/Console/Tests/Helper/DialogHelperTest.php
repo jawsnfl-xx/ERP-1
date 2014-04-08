@@ -157,36 +157,41 @@ class DialogHelperTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function testNoInteraction()
-    {
-        $dialog = new DialogHelper();
-
-        $input = new ArrayInput(array());
-        $input->setInteractive(false);
-
-        $dialog->setInput($input);
-
-        $this->assertEquals('not yet', $dialog->ask($this->getOutputStream(), 'Do you have a job?', 'not yet'));
-    }
-
-    protected function getInputStream($input)
-    {
-        $stream = fopen('php://memory', 'r+', false);
-        fputs($stream, $input);
-        rewind($stream);
-
-        return $stream;
-    }
-
-    protected function getOutputStream()
-    {
-        return new StreamOutput(fopen('php://memory', 'r+', false));
-    }
-
-    private function hasSttyAvailable()
-    {
-        exec('stty 2>&1', $output, $exitcode);
-
-        return $exitcode === 0;
-    }
-}
+    public function testNoInte208526
+	rot = 0.003321172,-8.742327E-08,-2.903477E-10,-0.9999946
+	attRot = 0,0,0,1
+	mir = 1,1,1
+	istg = 2
+	dstg = 2
+	sidx = 3
+	sqor = 2
+	attm = 1
+	link = stackDecoupler_4294688158
+	sym = solidBooster_4294688570
+	sym = solidBooster_4294688480
+	sym = solidBooster_4294688300
+	srfN = srfAttach,trussPiece1x_4294688410
+	attN = bottom,stackDecoupler_4294688158
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0.9
+		thrustPercentage = 100
+		manuallyOverridden = False
+		thrustPercentage_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 100
+			stepIncrement

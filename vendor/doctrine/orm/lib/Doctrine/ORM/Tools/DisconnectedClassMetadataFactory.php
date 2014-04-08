@@ -1,48 +1,115 @@
-<?php
-/*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license. For more information, see
- * <http://www.doctrine-project.org>.
- */
-
-namespace Doctrine\ORM\Tools;
-
-use Doctrine\Common\Persistence\Mapping\StaticReflectionService;
-use Doctrine\ORM\Mapping\ClassMetadataFactory;
-
-/**
- * The DisconnectedClassMetadataFactory is used to create ClassMetadataInfo objects
- * that do not require the entity class actually exist. This allows us to
- * load some mapping information and use it to do things like generate code
- * from the mapping information.
- *
- *
- * @link    www.doctrine-project.org
- * @since   2.0
- * @author  Benjamin Eberlei <kontakt@beberlei.de>
- * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
- * @author  Jonathan Wage <jonwage@gmail.com>
- * @author  Roman Borschel <roman@code-factory.org>
- */
-class DisconnectedClassMetadataFactory extends ClassMetadataFactory
-{
-    /**
-     * @return \Doctrine\Common\Persistence\Mapping\StaticReflectionService
-     */
-    public function getReflectionService()
-    {
-        return new StaticReflectionService();
-    }
+8,-1.470287E-08,-0.003321156,0.9999946
+	attRot = 0,0,0,1
+	mir = 1,1,1
+	istg = 3
+	dstg = 3
+	sidx = 0
+	sqor = 3
+	attm = 0
+	link = solidBooster_4294688086
+	sym = stackDecoupler_4294688194
+	sym = stackDecoupler_4294688158
+	sym = stackDecoupler_4294688122
+	attN = bottom,solidBooster_4294688086
+	attN = top,solidBooster_4294688480
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		isDecoupled = False
+		EVENTS
+		{
+			Decouple
+			{
+				active = True
+				guiActive = True
+				guiIcon = Decouple
+				guiName = Decouple
+				category = Decouple
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+	}
 }
+PART
+{
+	part = stackDecoupler_4294688194
+	partName = Part
+	pos = -0.1777234,10.49625,-2.218833
+	rot = 0.002348423,-0.707103,-0.002348423,0.707103
+	attRot = 0,0,0,1
+	mir = 1,1,1
+	istg = 3
+	dstg = 3
+	sidx = 1
+	sqor = 3
+	attm = 0
+	link = solidBooster_4294688016
+	sym = stackDecoupler_4294688230
+	sym = stackDecoupler_4294688158
+	sym = stackDecoupler_4294688122
+	attN = bottom,solidBooster_4294688016
+	attN = top,solidBooster_4294688570
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	MODULE
+	{
+		name = ModuleDecouple
+		isEnabled = True
+		isDecoupled = False
+		EVENTS
+		{
+			Decouple
+			{
+				active = True
+				guiActive = True
+				guiIcon = Decouple
+				guiName = Decouple
+				category = Decouple
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			DecoupleAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+}
+PART
+{
+	part = stackDecoupler_4294688158
+	partName = Part
+	pos = -0.1777228,10.49625,2.219348
+	rot = -0.002348424,0.7071029,-0.002348423,0.7071031
+	attRot = 0,0,0,1
+	mir = 1,1,1
+	istg = 3
+	dstg = 3
+	sidx = 2
+	sqor = 3
+	attm = 0
+	link = solidBooste

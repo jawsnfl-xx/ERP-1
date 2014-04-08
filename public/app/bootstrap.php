@@ -12,14 +12,13 @@ use Framework\Session;
  *       - przenieść wszystkie edytowalne zmienne do pliku default_config
  *
  */
-function ini_configuration()
-{
-    $configuration = new Framework\Configuration(array(
-        "type" => "ini"
-    ));
-    $configuration = $configuration->initialize();
-    $parsed = $configuration->parse('configuration/default_config');
-    Framework\Registry::set("configuration", $parsed);
+function ini_configuration() {
+	$configuration = new Framework\Configuration ( array (
+			"type" => "ini"
+	) );
+	$configuration = $configuration->initialize ();
+	$parsed = $configuration->parse ( 'configuration/default_config' );
+	Framework\Registry::set ( "configuration", $parsed );
 }
 
 /**
@@ -33,44 +32,41 @@ function ini_configuration()
  *       Przykład stosowania połączenia z bazą danych MySQL
  *       $data = $database->_mysql->fetch_array('SHOW TABLES');
  */
-function ini_database()
-{
-    $database = new Framework\Database();
-    $configuration = Framework\Registry::get('configuration');
+function ini_database() {
+	$database = new Framework\Database ();
+	$configuration = Framework\Registry::get ( 'configuration' );
 
-    $database->_options = array(
-        "options" => array(
-            "host" => (string) $configuration->database->default->host,
-            "username" => (string) $configuration->database->default->username,
-            "password" => (string) $configuration->database->default->password,
-            "schema" => (string) $configuration->database->default->schema,
-            "port" => (string) $configuration->database->default->port
-        )
-    );
-    $database->initialize();
+	$database->_options = array (
+			"options" => array (
+					"host" => ( string ) $configuration->database->default->host,
+					"username" => ( string ) $configuration->database->default->username,
+					"password" => ( string ) $configuration->database->default->password,
+					"schema" => ( string ) $configuration->database->default->schema,
+					"port" => ( string ) $configuration->database->default->port
+			)
+	);
+	$database->initialize ();
 
-    // var_dump($database);
+	// var_dump($database);
 
-    Framework\Registry::set("database", $database);
+	Framework\Registry::set ( "database", $database );
 }
 
 /**
  *
  * @name ini_session
  */
-function ini_session()
-{
-    $session = new Framework\Session();
-    $session = $session->initialize();
-    Framework\Registry::set("session", $session);
+function ini_session() {
+	$session = new Framework\Session ();
+	$session = $session->initialize ();
+	Framework\Registry::set ( "session", $session );
 }
 
 /**
  */
-function ini_request()
-{
-    $request = new Framework\Request();
-    Framework\Registry::set("request", $request);
+function ini_request() {
+	$request = new Framework\Request ();
+	Framework\Registry::set ( "request", $request );
 }
 
 /**
@@ -83,20 +79,19 @@ function ini_request()
  *       Wczytanie konfiguracji
  *       @TODO przeniesienie wszystkich ustanień do pliku ini
  */
-function ini_bootstrap()
-{
-    ini_configuration();
-    ini_database();
-    ini_session();
-    ini_request();
+function ini_bootstrap() {
+	ini_configuration ();
+	ini_database ();
+	ini_session ();
+	ini_request ();
 
-    /**
-     * Start kontrolera aplikacji
-     */
-    $controller = new Application\Controller();
+	/**
+	 * Start kontrolera aplikacji
+	 */
+	$controller = new Application\Controller ();
 }
 
 /**
  * Wywołanie funkcji bootstrap
  */
-ini_bootstrap();
+ini_bootstrap ();

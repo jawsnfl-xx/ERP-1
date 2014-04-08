@@ -1,16 +1,15 @@
 <?php
-namespace Framework
-{
 
-    use Framework\Base as Base;
+namespace Framework {
 
-    /**
-     *
-     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *
-     *
-     */
-    class Exception
-    {
-    }
+	use Framework\Base as Base;
+
+	/**
+	 *
+	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+	 *        
+	 *        
+	 */
+	class Exception {
+	}
 }
