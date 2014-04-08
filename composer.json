@@ -1,0 +1,20 @@
+{
+	"name": "jetalone/erp",
+	"description": "Simple ERP system",
+	"version": "0.0.2-dev",
+	"type": "project",
+	"license": "MIT",
+	"require": {
+		"doctrine/common": ">=2.3.0",
+        "doctrine/orm": ">=2.3.0",
+        "doctrine/data-fixtures": "@dev",
+        "twig/twig": "1.*"
+    },
+    "autoload": {
+    	"classmap": [
+	         "core/framework",
+	         "application",
+	         "core/plugins"
+         ]
+    }
+}
