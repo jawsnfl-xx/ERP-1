@@ -23,26 +23,19 @@
 		<h3 class="panel-title">Produkt...</h3>
 	</div>
 	<div class="panel-body">
-		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam
-			erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan
-			vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus
-			ultricies commodo.</p>
+		<p>Aenean et nunc pulvinar, ornare nisl nec, tempor elit. Aliquam erat volutpat. Vivamus ac ornare nunc. Ut vestibulum sem a accumsan vehicula. Vestibulum nec ultrices mi, ut rutrum elit. Nunc cursus ultricies commodo.</p>
 		<p>Zawsze istnieje możliwość wyszukania nazwy produktu</p>
 		<div class="col-lg-6">
-			<form role="form" method="post"
-				action="/module/product_technology/product/search">
+			<form role="form" method="post" action="/module/product_technology/product/search">
 				<div class="input-group">
-					<input type="text" class="form-control" id="number"
-						placeholder="Wprowadź numer" name="number"> <span
-						class="input-group-btn">
+					<input type="text" class="form-control" id="number" placeholder="Wprowadź numer" name="number"> <span class="input-group-btn">
 						<button class="btn btn-default" type="submit">Szukaj ...</button>
 					</span>
 				</div>
 			</form>
 		</div>
 		<div class="col-lg-6">
-			<a href="/module/product_technology/product/add/1"
-				class="btn btn-default">Dodaj ...</a>
+			<a href="/module/product_technology/product/add/1" class="btn btn-default">Dodaj nowy produkt</a>
 		</div>
 	</div>
 	<table class="table table-bordered">
@@ -53,52 +46,41 @@
 			<th>Kategoria</th>
 			<th>Akcje</th>
 		</tr>
-		{foreach from=$table['product']['list'] item=row name=row}
-
-		<th>{$smarty.foreach.row.iteration}</th>
-		<td><a
-			href="/module/product_technology/product/view/{$row.id_products}">{$row.products_name}</a></td>
-		<td>{$row.symbol}</td>
-		<td>{$row.category_name}</td>
+		
+		{% for row in _table.product.list %}
+    	
+    
+		<th>{{ loop.index }}</th>
+		<td><a href="/module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
+		<td>{{ row.symbol }}</td>
+		<td>{{ row.category_name }}</td>
 		<td>
-			<button class="btn btn-danger" data-toggle="modal"
-				data-target=".bs-example-modal-sm-{$row.id_products}">Usuń</button>
-
-			<a href="" class="btn btn-default">Zmień</a>
-			<div class="modal fade bs-example-modal-sm-{$row.id_products}"
-				tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-				aria-hidden="true">
+			<button class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm-{{ row.id_products }}">Usuń</button> <a href="" class="btn btn-default">Zmień</a>
+			<div class="modal fade bs-example-modal-sm-{{ row.id_products }}" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-sm">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="myModalLabel">Potwierdź
-								usunięcie informacji o produkcie</h4>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">Potwierdź usunięcie informacji o produkcie</h4>
 						</div>
 						<div class="modal-body">...</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-success"
-								data-dismiss="modal">Close</button>
-							<a
-								href="/module/product_technology/product/delete/{$row.id_products}"
-								type="button" class="btn btn-danger">Usuń</a>
+							<button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+							<a href="/module/product_technology/product/delete/{{ row.id_products }}" type="button" class="btn btn-danger">Usuń</a>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</td>
 		</tr>
-		{/foreach}
+		{% endfor %}
 	</table>
 	<div class="panel-footer">
 		<ul class="pagination">
-			<li><a href="#">&laquo;</a></li> {foreach
-			from=$table['product']['pager'] item=pager}
-			<li><a
-				href="/module/product_technology/product/page/{$pager.page}/{$pager.limit}">{$pager.page}</a></li>
-			{/foreach}
+			<li><a href="#">&laquo;</a></li>
+			{% for pager in _table.product.pager %}
+			<li><a href="/module/product_technology/product/page/{{ pager.page }}/{{ pager.limit }}">{{ pager.page }}</a></li>
+			{% endfor %}
 			<li><a href="#">&raquo;</a></li>
 		</ul>
 	</div>
@@ -108,34 +90,31 @@
 <div class="panel panel-default">
 	<div class="panel-heading">Dodawanie nowego produktu</div>
 	<div class="panel-body">
-		{if $parameters['2'] eq '1' }
+		{% if _parameters.2 == '1' %}
 		<p>Aby dodać do systemu nowy produkt, w pierwszym kroku wprowadź
 			jego unikalny numer identyfikacyjny:</p>
-		{if $table['product']['add']['error'] eq 'idIsExists' }
+			
+		{% if _table.product.add.error == 'idIsExists' %}
 		<div class="alert alert-warning">
-			{foreach from=$table['product']['add']['value']['numer'] item=row
-			name=row}
+			{% for row in _table.product.add.value.numer %}
 			<h4>Uwaga!</h4>
 			<p>
-				Produkt o identyfikatorze <strong>{$row.products_name}</strong>
-				znajduje się już w bazie danych.
+				Produkt o identyfikatorze <strong>{{ row.products_name }}</strong> znajduje się już w bazie danych.
 			</p>
 			<p>
-				Możesz zobaczyć szczegóły dotyczące tego produktu <a
-					class="alert-link"
-					href="/module/product_technology/product/view/{$row.id_products}">tutaj</a>.
+				Możesz zobaczyć szczegóły dotyczące tego produktu <a class="alert-link" href="/module/product_technology/product/view/{{ row.id_products }}">tutaj</a>.
 			</p>
-			{/foreach}
+			{% endfor %}
 		</div>
 
-		{elseif $table['product']['add']['error'] eq 'emptyValueName' }
+		{% elseif _table.product.add.error == 'emptyValueName' %}
 		<div class="alert alert-danger">
 			<h4>Nic nie wpisano</h4>
 			<p>Aby prawidłowo dodać produkt do bazy danych należy wprowadzić
 				jego numer identyfikacyjny.</p>
 		</div>
 
-		{/if}
+		{% endif %} 
 
 		<form role="form" method="post"
 			action="/module/product_technology/product/_add/1">
@@ -147,7 +126,7 @@
 				</span>
 			</div>
 		</form>
-		{elseif $parameters['2'] eq '2' }
+		{% elseif _parameters.2 == '2' %}
 		<p>Aby kontynuować proces dodania produktu do bazy danych, proszę
 			uzupełnić poniższe informacje.</p>
 
@@ -157,18 +136,19 @@
 				<div class="col-md-3">
 					<h4>Jednostka miary:</h4>
 					<select class="form-control" name="units_id_units">
-						<option>--</option>{foreach
-						from=$table['product']['add']['value']['units'] item=row name=row}
-						<option>{$row.name}</option> {/foreach}
+						<option>--</option>
+						{% for row in _table.product.add.value.units %}
+						<option>{{ row.name }}</option>
+						{% endfor %}
 					</select>
 				</div>
 				<div class="col-md-3">
 					<h4>Kategoria produktu:</h4>
 					<select class="form-control" name="category_product">
-						<option>--</option>{foreach
-						from=$table['product']['add']['value']['category'] item=row
-						name=row}
-						<option>{$row.category_name}</option> {/foreach}
+						<option>--</option>
+						{% for row in _table.product.add.value.category %}
+						<option>{{ row.category_name }}</option>
+						{% endfor %}
 					</select>
 				</div>
 			</div>
@@ -179,61 +159,49 @@
 			</div>
 
 		</form>
-		{elseif $parameters['2'] eq '3' }
+		{% elseif _parameters.2 == '3' %}
 		<p>Można już to podsumować...</p>
 		<div class="alert alert-info">
 			<p>Wyświetlić ładnie dane przed akceptacją dodania do bazy</p>
 		</div>
 		<ul>
-			<li>{$table['product']['add']['value']['number']}</li>
-			<li>{$table['product']['add']['select']['units']}</li>
-			<li>{$table['product']['add']['select']['category']}</li>
+			<li>{{ _table.product.add.value.number }}</li>
+			<li>{{ _table.product.add.select.units }}</li>
+			<li>{{ _table.product.add.select.category }}</li>
 		</ul>
-
-		<div class="modal fade bs-example-modal-sm" tabindex="-1"
-			role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-md">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<h4 class="modal-title">Czy na pewno chcesz porzucić
-							wprowadzone informacje?</h4>
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">Czy na pewno chcesz porzucić wprowadzone informacje?</h4>
 					</div>
 					<div class="modal-body">
 						<p>
-							Wybierająć przycisk <em>Odrzuć zmiany</em> spowodujesz
-							nieodwracalne skasowanie danych, jakie wprowadziłeś w poprzednich
-							krokach.
+							Wybierająć przycisk <em>Odrzuć zmiany</em> spowodujesz nieodwracalne skasowanie danych, jakie wprowadziłeś w poprzednich krokach.
 						</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
-						<a href="/module/product_technology/product/_add/4" type="button"
-							class="btn btn-danger">Odrzuć zmiany</a>
-
+						<a href="/module/product_technology/product/_add/4" type="button" class="btn btn-danger">Odrzuć zmiany</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-2 col-md-offset-8">
-				<button class="btn btn-danger btn-block" data-toggle="modal"
-					data-target=".bs-example-modal-sm" role="button">
+				<button class="btn btn-danger btn-block" data-toggle="modal" data-target=".bs-example-modal-sm" role="button">
 					Odrzuć <span class="glyphicon glyphicon-remove"></span>
 				</button>
 			</div>
 			<div class="col-md-2">
-				<a class="btn btn-success btn-block"
-					href="/module/product_technology/product/_add/5" role="button">Dodaj
-					<span class="glyphicon glyphicon-ok"></span>
+				<a class="btn btn-success btn-block" href="/module/product_technology/product/_add/5" role="button">Dodaj <span class="glyphicon glyphicon-ok"></span>
 				</a>
 			</div>
 		</div>
-		{/if}
+		{% endif %}
 	</div>
 </div>
-
 
 
 {% elseif _parameters.1 == 'view' and _parameters.2 in not null %}
