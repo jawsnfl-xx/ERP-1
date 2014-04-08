@@ -13,47 +13,47 @@ namespace Application\Controller {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *        
-	 *        
+	 *
+	 *
 	 * @name Module
 	 * @namespace Application\Controller
-	 *           
+	 *
 	 * @version 1
-	 *         
+	 *
 	 * @uses Application\Controller
 	 * @uses Framework\Registry
 	 * @uses Framework\RequestMethods
 	 * @uses Framework\View
 	 * @uses Framework\Request
 	 * @uses Plugins
-	 *      
-	 *      
+	 *
+	 *
 	 */
 	class Module extends Controller {
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_parameters;
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_table = array ();
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_options;
-		
+
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
 			$this->_parameters = $options ['parameters'];
 		}
-		
+
 		/**
 		 *
 		 * @return multitype:
@@ -61,7 +61,7 @@ namespace Application\Controller {
 		public function givmetable() {
 			return ($this->_table);
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
@@ -73,7 +73,7 @@ namespace Application\Controller {
 		public function init() {
 			parent::init ();
 		}
-		
+
 		/**
 		 * @protected
 		 *
@@ -84,7 +84,7 @@ namespace Application\Controller {
 		public function authenticate() {
 			parent::authenticate ();
 		}
-		
+
 		/**
 		 * @once
 		 * @protected
@@ -96,14 +96,14 @@ namespace Application\Controller {
 		public function notify() {
 			parent::notify ();
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
 		 */
 		public function index() {
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -115,13 +115,13 @@ namespace Application\Controller {
 			$orders = new \Plugins\Sales_management\Orders ();
 			$packages = new \Plugins\Inventory_management\Packages ();
 			$quality_management = new \Plugins\Quality_management\Production_quality_management ();
-			
+
 			if ($this->_parameters [0] === 'product') {
-				
+
 				/**
 				 */
 				if ($this->_parameters [1] === 'view') {
-					
+
 					$this->_table ['product'] ['view'] = $product->_createView ( $this->_parameters [2] );
 					$this->_table ['orders'] ['list'] = $orders->_createListLimit ( 5 );
 					$this->_table ['packages'] ['list'] = $packages->_createListLimit ( 5 );
@@ -135,13 +135,13 @@ namespace Application\Controller {
 						 * Sprawdza istnienie danego produktu w bazie...
 						 */
 						$session = Registry::get ( "session" );
-						
+
 						/**
 						 */
 						if ($session->getup ( "product/add/error" ) === 'idIsExists') {
 							$this->_table ['product'] ['add'] ['error'] = 'idIsExists';
 							$this->_table ['product'] ['add'] ['value'] ['numer'] = $session->getup ( "product/add/value/numer" );
-							
+
 							/**
 							 * Wyczyszczenie informacji w sesji
 							 */
@@ -149,7 +149,7 @@ namespace Application\Controller {
 							$session->erase ( "product/add/value/numer" );
 						} elseif ($session->getup ( "product/add/error" ) === 'emptyValueName') {
 							$this->_table ['product'] ['add'] ['error'] = 'emptyValueName';
-							
+
 							/**
 							 * Wyczyszczenie informacji w sesji
 							 */
@@ -158,9 +158,9 @@ namespace Application\Controller {
 						} else {
 						}
 					} elseif ($this->_parameters [2] === '2') {
-						
+
 						$session = Registry::get ( "session" );
-						
+
 						if ($session->getup ( "product/add/value/number" )) {
 							/**
 							 * Mamy wartość !
@@ -171,14 +171,14 @@ namespace Application\Controller {
 							 */
 							$this->_table ['product'] ['add'] ['value'] ['units'] = $product->_createListUnits ();
 							$this->_table ['product'] ['add'] ['value'] ['category'] = $product->_createListCategory ();
-							
+
 							/**
 							 * Obsłuda błędów
 							 */
 							$session = Registry::get ( "session" );
 							if ($session->getup ( "product/add/error" )) {
 								$this->_table ['product'] ['add'] ['error'] = TRUE;
-								
+
 								if ($session->getup ( "product/add/error/units" )) {
 								} else {
 									$this->_table ['product'] ['add'] ['select'] ['units'] = $session->getup ( "product/add/value/units" );
@@ -187,7 +187,7 @@ namespace Application\Controller {
 								} else {
 									$this->_table ['product'] ['add'] ['select'] ['category'] = $session->getup ( "product/add/value/category" );
 								}
-								
+
 								$session->erase ( "product/add/error" );
 							}
 						} else {
@@ -203,11 +203,11 @@ namespace Application\Controller {
 						 * Krok 3 - podsumowanie dodawania
 						 */
 						$session = Registry::get ( "session" );
-						
+
 						/**
 						 */
 						if ($session->getup ( "product/add/value/number" )) {
-							
+
 							$this->_table ['product'] ['add'] ['value'] ['number'] = $session->getup ( "product/add/value/number" );
 							$this->_table ['product'] ['add'] ['select'] ['units'] = $session->getup ( "product/add/value/units" );
 							$this->_table ['product'] ['add'] ['select'] ['category'] = $session->getup ( "product/add/value/category" );
@@ -222,7 +222,7 @@ namespace Application\Controller {
 						header ( "Location: /module/product_technology/product/add/1" );
 					}
 				} elseif ($this->_parameters [1] === '_add') {
-					
+
 					/**
 					 * Sprawdza i dodaje dane z arkusza dodania nowego produktu
 					 */
@@ -231,9 +231,9 @@ namespace Application\Controller {
 						 * Sprawdza istnienie danego produktu w bazie...
 						 */
 						$_keywords = RequestMethods::post ( 'number' );
-						
+
 						if (! empty ( $_keywords )) {
-							
+
 							$this->_table ['product'] ['add'] ['exists'] = $product->_isExists ( $_keywords );
 							if (! empty ( $this->_table ['product'] ['add'] ['exists'] )) {
 								/**
@@ -254,7 +254,7 @@ namespace Application\Controller {
 								header ( "Location: /module/product_technology/product/add/2" );
 							}
 						} else {
-							
+
 							/**
 							 * Wpisana wartość nie jest liczbą.
 							 * Wracamy...
@@ -264,13 +264,13 @@ namespace Application\Controller {
 							header ( "Location: /module/product_technology/product/add/1" );
 						}
 					} elseif ($this->_parameters [2] === '2') {
-						
+
 						/**
 						 * No to kontrolujemy stronę 2 dodawania nowego produktu
 						 */
 						$_units_id_units = RequestMethods::post ( 'units_id_units' );
 						$_category_product = RequestMethods::post ( 'category_product' );
-						
+
 						/**
 						 */
 						if (empty ( $_units_id_units ) or $_units_id_units === '--') {
@@ -281,7 +281,7 @@ namespace Application\Controller {
 							$session = Registry::get ( "session" );
 							$session->setup ( "product/add/value/units", $_units_id_units );
 						}
-						
+
 						/**
 						 */
 						if (empty ( $_category_product ) or $_category_product === '--') {
@@ -292,7 +292,7 @@ namespace Application\Controller {
 							$session = Registry::get ( "session" );
 							$session->setup ( "product/add/value/category", $_category_product );
 						}
-						
+
 						/**
 						 */
 						if ($session->getup ( "product/add/error" ) === "emptyValue") {
@@ -304,12 +304,12 @@ namespace Application\Controller {
 							header ( "Location: /module/product_technology/product/add/3" );
 						}
 					} elseif ($this->_parameters [2] === '3') {
-					
+
 					/**
 					 * No to mamy krok 3 - podsumowanie
 					 */
 					} elseif ($this->_parameters [2] === '4') {
-						
+
 						/**
 						 * Tutaj czyścimy wszystkie infomacje przechowywane
 						 * w sesji i wracamy do page.
@@ -321,17 +321,17 @@ namespace Application\Controller {
 						$session->erase ( "product/add/value/category" );
 						header ( "Location: /module/product_technology/product/page" );
 					} elseif ($this->_parameters [2] === '5') {
-						
+
 						$session = Registry::get ( "session" );
-						
+
 						$_checkin = ($session->getup ( "product/add/value/number" ) ? TRUE : FALSE);
 						$_checkin = ($session->getup ( "product/add/value/units" ) ? TRUE : FALSE);
 						$_checkin = ($session->getup ( "product/add/value/category" ) ? TRUE : FALSE);
-						
+
 						/**
 						 */
 						$_returnID = $product->_addSingleProduct ( $session->getup ( "product/add/value/number" ), $session->getup ( "product/add/value/units" ), $session->getup ( "product/add/value/category" ) );
-						
+
 						$session->erase ( "product/add/error" );
 						$session->erase ( "product/add/value/number" );
 						$session->erase ( "product/add/value/units" );
@@ -343,7 +343,7 @@ namespace Application\Controller {
 					 */
 					$_keywords = RequestMethods::post ( 'number' );
 					$this->_table ['product'] ['search'] = $_keywords;
-					
+
 					$this->_table ['product'] ['listSearch'] = $product->_createListSearch ( $_keywords );
 				} elseif ($this->_parameters [1] === 'page') {
 					/**
@@ -354,7 +354,7 @@ namespace Application\Controller {
 					} else {
 						$page = $this->_parameters [2];
 					}
-					
+
 					/**
 					 */
 					if ($this->_parameters [3] === NULL) {
@@ -362,14 +362,14 @@ namespace Application\Controller {
 					} else {
 						$limit = $this->_parameters [3];
 					}
-					
+
 					/**
 					 * Wywołanie tabeli z bazy
 					 */
 					$this->_table ['product'] ['list'] = $product->_createSoftList ( $page, $limit );
-					
+
 					// var_dump( $this->_table['product']['list'][0] );
-					
+
 					/**
 					 * Budowa pagera
 					 *
@@ -377,7 +377,7 @@ namespace Application\Controller {
 					 * Napisać na szybko, później przenieść jako uniwersalny element...
 					 */
 					$count = $product->_createListCount ();
-					
+
 					/**
 					 * oblicza ile jest stron pełnych lub napoczętych
 					 */
@@ -394,7 +394,7 @@ namespace Application\Controller {
 					}
 					$this->_table ['product'] ['pager'] = $pager;
 				} elseif ($this->_parameters [1] === 'delete') {
-					
+
 					// print 'sprawdzamy -> ';
 					/**
 					 * Sprawdzamy, czy został podany parametr "2"
@@ -405,20 +405,20 @@ namespace Application\Controller {
 						 * Sprawdzamy, czy podany id produktu znajduje się w bazie.
 						 */
 						if ($product->_isExistsByID ( $this->_parameters [2] )) {
-							
+
 							// print 'mamy id -> ';
 							/**
 							 * Możemy zacząć kasować produkt
 							 */
 							if ($status = $product->_statusDeleteSingle ( $this->_parameters [2] )) {
-								
+
 								// print 'kasujemy';
-								
+
 								header ( "Location: /module/product_technology/product/page/" );
 								die ();
 								return TRUE;
 							} else {
-								
+
 								// print 'nie udało się skasować';
 								/**
 								 * Nie udało się skasowanie wpisu w bazie
@@ -491,7 +491,7 @@ namespace Application\Controller {
 				$data = 0;
 			}
 		}
-		
+
 		/**
 		 * @before init, authenticate,
 		 * @after notify
@@ -501,30 +501,30 @@ namespace Application\Controller {
 		public function quality_management() {
 			$quality_management = new \Plugins\Quality_management\Production_quality_management ();
 			// $controlSheet = new \Plugins();
-			
+
 			// var_dump($controlSheet);
 			if ($this->_parameters [0] === 'review') {
 				/**
 				 * Sprawdzenie poprawności danych
 				 */
-				
+
 				if ($this->_parameters [1] === NULL) {
 					$page = 1;
 				} else {
 					$page = $this->_parameters [1];
 				}
-				
+
 				if ($this->_parameters [2] === NULL) {
 					$limit = 20;
 				} else {
 					$limit = $this->_parameters [2];
 				}
-				
+
 				/**
 				 * Wywołanie tabeli z bazy
 				 */
 				$this->_table ['quality_management'] ['list'] = $quality_management->_createSoftList ( $page, $limit );
-				
+
 				/**
 				 * Budowa pagera
 				 *
@@ -532,7 +532,7 @@ namespace Application\Controller {
 				 * Napisać na szybko, później przenieść jako uniwersalny element...
 				 */
 				$count = $quality_management->_createListCount ();
-				
+
 				/**
 				 * oblicza ile jest stron pełnych lub napoczętych
 				 */
@@ -549,7 +549,7 @@ namespace Application\Controller {
 				}
 				$this->_table ['quality_management'] ['pager'] = $pager;
 			} elseif ($this->_parameters [0] === 'view') {
-				
+
 				/**
 				 * Wyświetla arkusz kontrolny z badania
 				 */
@@ -561,10 +561,10 @@ namespace Application\Controller {
 				 */
 				$controlSheet = new \Plugins\Quality_management\QualityInspection\ControlMeasurements\ControlSheet ();
 				// var_dump($controlSheet);
-			} 
+			}
 
 			elseif ($this->_parameters [0] === 'add') {
-				
+
 				/**
 				 * Wyświetla arkusz kontroli pomiaru.
 				 * Na tym etapie musi być podzielony na 3 etapy.
@@ -577,7 +577,7 @@ namespace Application\Controller {
 				 *
 				 * Lol - jak zabawnie :D
 				 */
-				
+
 				if ($this->_parameters [1] === 'step1') {
 					/**
 					 * Krok 1.
@@ -590,7 +590,7 @@ namespace Application\Controller {
 					 * UWAGA!
 					 * Dane błędów przekazywane będą przez _GET['form_err']
 					 */
-					
+
 					/**
 					 * Sprawdzenie _GET['form_err']
 					 * Jeśli zawiera pola błędów trzeba przekazać tablicę do widoku...
@@ -602,7 +602,7 @@ namespace Application\Controller {
 						 * Trzeba sprawdzić poprawność tego co tam jest i zbudować tablicę.
 						 */
 						$form_err = explode ( '|', RequestMethods::get ( "form_err" ) );
-						
+
 						$this->_table ['form_err'] = $form_err;
 						$this->_table ['form_name'] = RequestMethods::get ( "form_name" );
 						$this->_table ['form_amount'] = RequestMethods::get ( "form_amount" );
@@ -616,13 +616,13 @@ namespace Application\Controller {
 					 * Jeśli brakuje wymaganych informacji wróci do poprzedniej
 					 * strony i zakomunikuje które pola były brzydkie, a które puste.
 					 */
-					
+
 					/**
 					 * - text
 					 * - amount
 					 * - quan
 					 */
-					
+
 					/**
 					 *
 					 * @todo Należy tak rozbudować kontrolę pól,
@@ -630,7 +630,7 @@ namespace Application\Controller {
 					 *       tych pól do strony z inputami, oraz przekazywać wartości pól
 					 *       błędnie wpisanych lub bez wartości wpisanej przez użytkownika.
 					 */
-					
+
 					/**
 					 *
 					 * @todo do wprowadzenia:
@@ -641,9 +641,9 @@ namespace Application\Controller {
 					 *       a) nazwy detali
 					 *       b) numery skrzyń
 					 *       c) pracownicy
-					 *      
+					 *
 					 */
-					
+
 					$tmp_array = array ();
 					$tmp_error = FALSE;
 					if (! RequestMethods::post ( 'name' )) {
@@ -664,7 +664,7 @@ namespace Application\Controller {
 					} else {
 						$tmp_quan = RequestMethods::post ( 'quan' );
 					}
-					
+
 					if ($tmp_error) {
 						$tmp_array = implode ( '|', $tmp_array );
 						header ( 'Location: ?url=module/quality_management/add/step1&form_err=' . $tmp_array . '&form_name=' . $tmp_name . '&form_amount=' . $tmp_amount . '&form_quan=' . $tmp_quan );
@@ -675,7 +675,7 @@ namespace Application\Controller {
 						 * Wszystko zapowiada się dobrze.
 						 * Poza otworzyć arkusz (sheet) kontroli jakości... :)
 						 */
-						
+
 						/**
 						 * Po utworzeniu arkusza należy przejść do kroku 2...
 						 * Trzeba zastanowić się tylko jak przekazać identyfikator nowego arkusza :D
