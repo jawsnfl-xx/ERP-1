@@ -39,7 +39,7 @@ namespace Framework\Database {
 					'host' => '127.0.0.1',
 					'dbname' => 'test1',
 					'user' => 'root',
-					'password' => '',
+					'password' => 'fhw256ops',
 					'charset' => 'utf8',
 					'driverOptions' => array (
 							1002 => 'SET NAMES utf8'
