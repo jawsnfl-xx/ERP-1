@@ -205,8 +205,12 @@
 
 
 {% elseif _parameters.1 == 'view' and _parameters.2 != '' %}
+
+{% set view = _table.product.view.0 %}
 <div class="panel panel-default">
-	<div class="panel-heading">Informacje o produkcie</div>
+	<div class="panel-heading">
+		Informacje o produkcie <strong>{{ view.products_name }}</strong>
+	</div>
 	<div class="panel-body">
 		<div class="table-responsive">
 			<table class="table table-bordered">
@@ -222,6 +226,23 @@
 					<td>@up <!-- czyli jakaś potencjalnie przydatna informacja --></td>
 				</tr>
 			</table>
+			<div>
+				<p>{{ view.id_products }}</p>
+				<p>{{ view.products_name }}</p>
+				<p>{{ view.units_id_units }}</p>
+				<p>{{ view.id_units }}</p>
+				<p>{{ view.name }}</p>
+				<p>{{ view.symbol }}</p>
+				<p>{{ view.category_id_category }}</p>
+				<p>{{ view.product_id_product }}</p>
+				<p>{{ view.id_category }}</p>
+				<p>{{ view.category_name }}</p>
+				<p>{{ view.category_param1 }}</p>
+				<p>{{ view.category_param2 }}</p>
+				<p>{{ view.category_param3 }}</p>
+				<p>{{ view.category_param4 }}</p>
+				<p>{{ view.category_param5 }}</p>
+			</div>
 		</div>
 	</div>
 	<ul class="list-group">
@@ -539,11 +560,9 @@
 	</div>
 </div>
 {% else %}
-<div class="col-md-3 col-xs-6">
-	<div class="list-group">
-		<a href="/module/product_technology/product" class="list-group-item">Produkt <span class="badge pull-right">14</span>
-		</a> <a href="/module/product_technology/technology" class="list-group-item">Technologia <span class="badge pull-right">23</span>
-		</a>
-	</div>
+<div class="list-group">
+	<a href="/module/product_technology/product" class="list-group-item">Produkt <span class="badge pull-right">14</span>
+	</a> <a href="/module/product_technology/technology" class="list-group-item">Technologia <span class="badge pull-right">23</span>
+	</a>
 </div>
 {% endif %}
