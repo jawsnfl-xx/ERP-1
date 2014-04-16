@@ -1,5 +1,4 @@
 <?php
-
 namespace Plugins\Quality_management\QualityInspection\ControlMeasurements {
 
 	use Plugins\Quality_management\QualityInspection\ControlMeasurements as ControlMeasurements;
@@ -7,30 +6,26 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *        
-	 *        
 	 * @name ControlSheet
 	 * @namespace Plugins\Quality_management\QualityInspection\ControlMeasurements
-	 *           
-	 *           
 	 */
 	class ControlSheet extends ControlMeasurements {
-		
+
 		/**
 		 * @readwrite
 		 */
 		public $_id;
-		
+
 		/**
 		 * @readwrite
 		 */
 		public $_id_product;
-		
+
 		/**
 		 * @readwrite
 		 */
 		public $_complited_progress;
-		
+
 		/**
 		 *
 		 * @param unknown $options        	
@@ -38,11 +33,11 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements {
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct ( $options );
+			parent::__construct($options);
 		}
-		public function initialize($_id) {
-		}
-		public function open($_id) {
-		}
+
+		public function initialize($_id) {}
+
+		public function open($_id) {}
 	}
 }

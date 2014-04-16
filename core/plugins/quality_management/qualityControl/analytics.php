@@ -1,5 +1,4 @@
 <?php
-
 namespace Plugins\Quality_management\QualityControl {
 
 	use Plugins\Quality_management\QualityControl as QualityControl;
@@ -8,23 +7,18 @@ namespace Plugins\Quality_management\QualityControl {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *        
-	 *        
 	 * @name ControlMeasurements
 	 * @namespace QualityInspection
-	 *           
 	 * @uses QualityInspection
 	 * @uses Product
-	 *      
-	 *      
 	 */
 	class Analystics extends QualityControl {
-		
+
 		/**
 		 * @readwrite
 		 */
 		public $_id;
-		
+
 		/**
 		 *
 		 * @param unknown $options        	
@@ -32,7 +26,7 @@ namespace Plugins\Quality_management\QualityControl {
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct ( $options );
+			parent::__construct($options);
 		}
 	}
 }

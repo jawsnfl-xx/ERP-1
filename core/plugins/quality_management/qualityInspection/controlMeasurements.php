@@ -1,5 +1,4 @@
 <?php
-
 namespace Plugins\Quality_management\QualityInspection {
 
 	use Plugins\Quality_management\QualityInspection as QualityInspection;
@@ -8,23 +7,18 @@ namespace Plugins\Quality_management\QualityInspection {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *        
-	 *        
 	 * @name ControlMeasurements
 	 * @namespace QualityInspection
-	 *           
 	 * @uses QualityInspection
 	 * @uses Product
-	 *      
-	 *      
 	 */
 	class ControlMeasurements extends QualityInspection {
-		
+
 		/**
 		 * @readwrite
 		 */
 		public $_id;
-		
+
 		/**
 		 *
 		 * @param unknown $options        	
@@ -32,21 +26,19 @@ namespace Plugins\Quality_management\QualityInspection {
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct ( $options );
+			parent::__construct($options);
 		}
-		
+
 		/**
 		 *
 		 * @param unknown $param        	
 		 */
-		public function _addControlMeasurement($param) {
-		}
-		
+		public function _addControlMeasurement($param) {}
+
 		/**
 		 *
 		 * @param unknown $param        	
 		 */
-		public function _statusControlMeasurement($param) {
-		}
+		public function _statusControlMeasurement($param) {}
 	}
 }
