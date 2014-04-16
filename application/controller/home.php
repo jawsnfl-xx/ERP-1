@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Controller {
 
 	use Application\Controller as Controller;
@@ -31,7 +32,7 @@ namespace Application\Controller {
 		/**
 		 * @readwrite
 		 */
-		protected $_table = array();
+		protected $_table = array ();
 
 		/**
 		 * @readwrite
@@ -40,10 +41,10 @@ namespace Application\Controller {
 
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
-			$this->_parameters = $options['parameters'];
+			$this->_parameters = $options ['parameters'];
 		}
 
 		/**
@@ -61,10 +62,10 @@ namespace Application\Controller {
 		 * @see \Application\Controller::init()
 		 */
 		public function init() {
-			parent::init();
-			Events::fire("framework.controller.construct.before", array(
-				$this->name
-			));
+			parent::init ();
+			Events::fire ( "framework.controller.construct.before", array (
+					$this->name
+			) );
 		}
 
 		/**
@@ -74,7 +75,7 @@ namespace Application\Controller {
 		 * @see \Application\Controller::authenticate()
 		 */
 		public function authenticate() {
-			parent::authenticate();
+			parent::authenticate ();
 		}
 
 		/**
@@ -84,30 +85,34 @@ namespace Application\Controller {
 		 * @see \Application\Controller::notify()
 		 */
 		public function notify() {
-			parent::notify();
+			parent::notify ();
 		}
 
 		/**
 		 * @before init, authenticate, @after notify
 		 */
-		public function index() {}
+		public function index() {
+		}
 
 		/**
 		 * @before init, authenticate, @after notify
-		 * @NOTE Podstrony możliwe dla settings: - access permissions - properties - system settings/
+		 * @NOTE Podstrony możliwe dla settings: - access permissions - properties - system settings
+		 */
 		public function settings() {
 			/**
 			 */
-			
-	if ($this->_parameters[0] === 'access_permissions') {} 
+			if ($this->_parameters [0] === 'access_permissions') {
+			}
 
-	/**
-	 */
-	elseif ($this->_parameters[0] === 'properties') {} 
+			/**
+			 */
+			elseif ($this->_parameters [0] === 'properties') {
+			}
 
-	/**
-	 */
-	elseif ($this->_parameters[0] === 'system settings') {}
-}
+			/**
+			 */
+			elseif ($this->_parameters [0] === 'system settings') {
+			}
+		}
 	}
 }

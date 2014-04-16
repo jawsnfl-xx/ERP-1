@@ -7,18 +7,6 @@ namespace Application\Controller {
 	use Framework\Session\Driver\Server;
 	use Framework\Request;
 
-	/**
-	 *
-	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 * @name Content
-	 * @namespace Application\Controller
-	 * @version 1
-	 * @uses Application\Controller
-	 * @uses Framework\Registry
-	 * @uses Framework\RequestMethods
-	 * @uses Framework\Session\Driver\Server
-	 * @uses Framework\Request
-	 */
 	class Content extends Controller {
 
 		/**
@@ -31,22 +19,10 @@ namespace Application\Controller {
 		 */
 		protected $_table = array();
 
-		/**
-		 *
-		 * @param unknown $options        	
-		 */
 		public function __construct($options) {
-			/**
-			 */
 			$this->_parameters = $options['parameters'];
-			// $database = new Framework\Database();
-			// $database->initialize();
 		}
 
-		/**
-		 *
-		 * @return multitype:
-		 */
 		public function givmetable() {
 			// print 'czosnek';
 			return ($this->_table);
