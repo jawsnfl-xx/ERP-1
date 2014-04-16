@@ -12,7 +12,7 @@ namespace Plugins\Product_technology {
 
 		/**
 		 *
-		 * @param unknown $options
+		 * @param unknown $options        	
 		 */
 		public function __construct($options = array()) {
 			/**
