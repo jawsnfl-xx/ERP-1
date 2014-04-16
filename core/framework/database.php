@@ -1,5 +1,4 @@
 <?php
-
 namespace Framework {
 
 	use Framework\Base as Base;
@@ -11,8 +10,6 @@ namespace Framework {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *
-	 *
 	 */
 	class Database extends Base {
 
@@ -43,22 +40,22 @@ namespace Framework {
 		/**
 		 */
 		public function initialize() {
-
+			
 			/**
 			 * Inicjowanie połączenia z bazą MySQL przez MySQLi
 			 */
-			$this->_mysql = new Database\MySQL ();
-			$this->_mysql->connect ( $this->_options );
-
+			$this->_mysql = new Database\MySQL();
+			$this->_mysql->connect($this->_options);
+			
 			/**
 			 * Inicjowanie połączenia z bazą MySQL przez DBAL
 			 */
 			// $this->_orm = new Database\ORM($this->_options);
-
+			
 			/**
 			 * Inicjowanie połączenia z bazą MySQL przez DBAL
 			 */
-			$this->_dbal = new Database\DBAL ( $this->_options );
+			$this->_dbal = new Database\DBAL($this->_options);
 		}
 	}
 }

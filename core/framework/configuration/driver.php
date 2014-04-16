@@ -1,5 +1,4 @@
 <?php
-
 namespace Framework\Configuration {
 
 	use Framework\Base as Base;
@@ -8,17 +7,15 @@ namespace Framework\Configuration {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *        
-	 *        
 	 */
 	class Driver extends Base {
-		
+
 		/**
 		 *
 		 * @var unknown
 		 */
-		protected $_parsed = array ();
-		
+		protected $_parsed = array();
+
 		/**
 		 *
 		 * @return \Framework\Configuration\Driver
@@ -26,14 +23,14 @@ namespace Framework\Configuration {
 		public function initialize() {
 			return $this;
 		}
-		
+
 		/**
 		 * (non-PHPdoc)
 		 *
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
-			return new Exception\Implementation ( "{$method} method not implemented" );
+			return new Exception\Implementation("{$method} method not implemented");
 		}
 	}
 }

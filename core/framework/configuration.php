@@ -1,5 +1,4 @@
 <?php
-
 namespace Framework {
 
 	use Framework\Base as Base;
@@ -9,30 +8,28 @@ namespace Framework {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *        
-	 *        
 	 */
 	class Configuration extends Base {
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_type;
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_options;
-		
+
 		/**
 		 * (non-PHPdoc)
 		 *
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
-			return new Exception\Implementation ( "{$method} method not implemented" );
+			return new Exception\Implementation("{$method} method not implemented");
 		}
-		
+
 		/**
 		 *
 		 * @throws Exception\Argument
@@ -40,17 +37,17 @@ namespace Framework {
 		 */
 		public function initialize() {
 			if (! $this->type) {
-				throw new Exception\Argument ( "Invalid type" );
+				throw new Exception\Argument("Invalid type");
 			}
 			switch ($this->type) {
-				case "ini" :
+				case "ini":
 					{
-						return new Configuration\Driver\Ini ( $this->options );
+						return new Configuration\Driver\Ini($this->options);
 						break;
 					}
-				default :
+				default:
 					{
-						throw new Exception\Argument ( "Invalid type" );
+						throw new Exception\Argument("Invalid type");
 						break;
 					}
 			}

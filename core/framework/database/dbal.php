@@ -1,5 +1,4 @@
 <?php
-
 namespace Framework\Database {
 
 	use Framework\Database as Database;
@@ -8,12 +7,10 @@ namespace Framework\Database {
 	// use Doctrine as Doctrine;
 	// use Doctrine\ORM\Tools\Setup;
 	// use Doctrine\ORM\EntityManager;
-
+	
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *
-	 *
 	 */
 	class DBAL extends Database {
 
@@ -31,27 +28,28 @@ namespace Framework\Database {
 		 * @readwrite
 		 */
 		public $_conn;
+
 		public function __construct($_options) {
-			$this->_config = new \Doctrine\DBAL\Configuration ();
-
-			$this->_connectionParams = array (
-					'driver' => 'pdo_mysql',
-					'host' => $_options ['options'] ['host'],
-					'dbname' => $_options ['options'] ['schema'],
-					'user' => $_options ['options'] ['username'],
-					'password' => $_options ['options'] ['password'],
-					'charset' => 'utf8',
-					'driverOptions' => array (
-							1002 => 'SET NAMES utf8'
-					)
+			$this->_config = new \Doctrine\DBAL\Configuration();
+			
+			$this->_connectionParams = array(
+				'driver' => 'pdo_mysql',
+				'host' => $_options['options']['host'],
+				'dbname' => $_options['options']['schema'],
+				'user' => $_options['options']['username'],
+				'password' => $_options['options']['password'],
+				'charset' => 'utf8',
+				'driverOptions' => array(
+					1002 => 'SET NAMES utf8'
+				)
 			);
-
-			$driver = new \Doctrine\ORM\Mapping\Driver\YamlDriver ( array (
-					'./database/ERP.dcm.yml'
-			) );
-
-			$this->_conn = \Doctrine\DBAL\DriverManager::getConnection ( $this->_connectionParams, $this->_config );
-
+			
+			$driver = new \Doctrine\ORM\Mapping\Driver\YamlDriver(array(
+				'./database/ERP.dcm.yml'
+			));
+			
+			$this->_conn = \Doctrine\DBAL\DriverManager::getConnection($this->_connectionParams, $this->_config);
+			
 			return $this->_conn;
 		}
 	}
