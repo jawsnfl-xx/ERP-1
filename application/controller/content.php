@@ -1,5 +1,4 @@
 <?php
-
 namespace Application\Controller {
 
 	use Application\Controller as Controller;
@@ -11,32 +10,27 @@ namespace Application\Controller {
 	/**
 	 *
 	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-	 *        
 	 * @name Content
 	 * @namespace Application\Controller
-	 *           
 	 * @version 1
-	 *         
 	 * @uses Application\Controller
 	 * @uses Framework\Registry
 	 * @uses Framework\RequestMethods
 	 * @uses Framework\Session\Driver\Server
 	 * @uses Framework\Request
-	 *      
-	 *      
 	 */
 	class Content extends Controller {
-		
+
 		/**
 		 * @readwrite
 		 */
 		protected $_parameters;
-		
+
 		/**
 		 * @readwrite
 		 */
-		protected $_table = array ();
-		
+		protected $_table = array();
+
 		/**
 		 *
 		 * @param unknown $options        	
@@ -44,11 +38,11 @@ namespace Application\Controller {
 		public function __construct($options) {
 			/**
 			 */
-			$this->_parameters = $options ['parameters'];
+			$this->_parameters = $options['parameters'];
 			// $database = new Framework\Database();
 			// $database->initialize();
 		}
-		
+
 		/**
 		 *
 		 * @return multitype:
@@ -57,75 +51,57 @@ namespace Application\Controller {
 			// print 'czosnek';
 			return ($this->_table);
 		}
-		
+
 		/**
-		 * @once
-		 * @protected
-		 *
-		 * (non-PHPdoc)
+		 * @once @protected (non-PHPdoc)
 		 *
 		 * @see \Application\Controller::init()
 		 */
 		public function init() {
-			parent::init ();
+			parent::init();
 		}
-		
+
 		/**
-		 * @protected
-		 *
-		 * (non-PHPdoc)
+		 * @protected (non-PHPdoc)
 		 *
 		 * @see \Application\Controller::authenticate()
 		 */
 		public function authenticate() {
-			parent::authenticate ();
+			parent::authenticate();
 		}
-		
+
 		/**
-		 * @once
-		 * @protected
-		 *
-		 * (non-PHPdoc)
+		 * @once @protected (non-PHPdoc)
 		 *
 		 * @see \Application\Controller::notify()
 		 */
 		public function notify() {
-			parent::notify ();
+			parent::notify();
 		}
-		
+
 		/**
-		 * @before init,
-		 * @after notify
+		 * @before init, @after notify
 		 */
-		public function index() {
-		}
-		
+		public function index() {}
+
 		/**
-		 * @before init,
-		 * @after notify
+		 * @before init, @after notify
 		 */
-		public function help() {
-		}
-		
+		public function help() {}
+
 		/**
-		 * @before init,
-		 * @after notify
+		 * @before init, @after notify
 		 */
-		public function about() {
-		}
-		
+		public function about() {}
+
 		/**
-		 * @before init,
-		 * @after notify
+		 * @before init, @after notify
 		 */
-		public function about_modules() {
-		}
-		
+		public function about_modules() {}
+
 		/**
-		 * @before init,
-		 * @after notify
+		 * @before init, @after notify
 		 */
-		public function about_faq() {
-		}
+		public function about_faq() {}
 	}
 }
