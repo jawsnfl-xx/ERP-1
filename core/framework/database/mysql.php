@@ -1,112 +1,103 @@
 <?php
-namespace Framework\Database
-{
 
-    use Framework\Database as Database;
-    use Framework\Database\Exception as Exception;
-    use Framework\ArrayMethods as ArrayMethods;
+namespace Framework\Database {
 
-    /**
-     *
-     * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
-     *
-     *
-     */
-    class MySQL extends Database
-    {
+	use Framework\Database as Database;
+	use Framework\Database\Exception as Exception;
+	use Framework\ArrayMethods as ArrayMethods;
 
-        /**
-         *
-         * @var unknown
-         */
-        protected $_service;
+	/**
+	 *
+	 * @author Marcin 'jetAlone' Pyrka, pyrka.marcin@gmail.com
+	 *
+	 *
+	 */
+	class MySQL extends Database {
 
-        /*
-         * protected $_host; protected $_username; protected $_password; protected $_schema; protected $_port;
-         */
-        protected $_isConnected = false;
+		/**
+		 *
+		 * @var unknown
+		 */
+		protected $_service;
 
-        public $_query;
+		/*
+		 * protected $_host; protected $_username; protected $_password; protected $_schema; protected $_port;
+		 */
+		protected $_isConnected = false;
+		public $_query;
 
-        /**
-         */
-        public function query($_query)
-        {}
+		/**
+		 */
+		public function query($_query) {
+		}
 
-        /**
-         *
-         * @param unknown $_options
-         * @throws Exception\Service
-         * @return \Framework\Database\MySQL
-         */
-        public function connect($_options)
-        {
-            $this->_service = new \MySQLi($_options['options']['host'], $_options['options']['username'], $_options['options']['password'], $_options['options']['schema'], $_options['options']['port']);
-            if ($this->_service->connect_error) {
-                throw new Exception\Service("Unable to connect to service");
-            }
-            $this->_isConnected = true;
-            return $this;
-        }
+		/**
+		 *
+		 * @param unknown $_options
+		 * @throws Exception\Service
+		 * @return \Framework\Database\MySQL
+		 */
+		public function connect($_options) {
+			$this->_service = new \MySQLi ( $_options ['options'] ['host'], $_options ['options'] ['username'], $_options ['options'] ['password'], $_options ['options'] ['schema'], $_options ['options'] ['port'] );
+			if ($this->_service->connect_error) {
+				throw new Exception\Service ( "Unable to connect to service" );
+			}
+			$this->_isConnected = true;
+			return $this;
+		}
 
-        /**
-         *
-         * @param unknown $sql
-         */
-        public function execute($sql)
-        {
-            return $this->_service->query($sql);
-        }
+		/**
+		 *
+		 * @param unknown $sql
+		 */
+		public function execute($sql) {
+			return $this->_service->query ( $sql );
+		}
 
-        /**
-         *
-         * @param unknown $value
-         */
-        public function escape($value)
-        {
-            return $this->_service->real_escape_string($value);
-        }
+		/**
+		 *
+		 * @param unknown $value
+		 */
+		public function escape($value) {
+			return $this->_service->real_escape_string ( $value );
+		}
 
-        /**
-         */
-        public function getLastInsertId()
-        {
-            return $this->_service->insert_id;
-        }
+		/**
+		 */
+		public function getLastInsertId() {
+			return $this->_service->insert_id;
+		}
 
-        /**
-         */
-        public function getAffectedRows()
-        {
-            return $this->_service->affected_rows;
-        }
+		/**
+		 */
+		public function getAffectedRows() {
+			return $this->_service->affected_rows;
+		}
 
-        /**
-         */
-        public function getLastError()
-        {
-            return $this->_service->error;
-        }
+		/**
+		 */
+		public function getLastError() {
+			return $this->_service->error;
+		}
 
-        /**
-         *
-         * @param unknown $sql
-         * @return multitype:NULL
-         */
-        /**
-         *
-         * @param unknown $sql
-         */
-        public function fetch_array($sql)
-        {
-            $result = $this->_service->query($sql);
+		/**
+		 *
+		 * @param unknown $sql
+		 * @return multitype:NULL
+		 */
+		/**
+		 *
+		 * @param unknown $sql
+		 */
+		public function fetch_array($sql) {
+			$result = $this->_service->query ( $sql );
 
-            $rows = array();
+			$rows = array ();
 
-            for ($i = 0; $i < $result->num_rows; $i ++) {
-                $rows[] = $result->fetch_array(MYSQLI_ASSOC);
-            }
-            return $rows;
-        }
-    }
+			for($i = 0; $i < $result->num_rows; $i ++) {
+				$rows [] = $result->fetch_array ( MYSQLI_ASSOC );
+			}
+			return $rows;
+		}
+	}
 }

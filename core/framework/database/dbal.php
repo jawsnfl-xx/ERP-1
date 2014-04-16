@@ -31,15 +31,15 @@ namespace Framework\Database {
 		 * @readwrite
 		 */
 		public $_conn;
-		public function __construct() {
+		public function __construct($_options) {
 			$this->_config = new \Doctrine\DBAL\Configuration ();
 
 			$this->_connectionParams = array (
 					'driver' => 'pdo_mysql',
-					'host' => '127.0.0.1',
-					'dbname' => 'test1',
-					'user' => 'root',
-					'password' => 'fhw256ops',
+					'host' => $_options ['options'] ['host'],
+					'dbname' => $_options ['options'] ['schema'],
+					'user' => $_options ['options'] ['username'],
+					'password' => $_options ['options'] ['password'],
 					'charset' => 'utf8',
 					'driverOptions' => array (
 							1002 => 'SET NAMES utf8'
