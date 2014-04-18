@@ -28,11 +28,6 @@ namespace Application\Controller {
 			return ($this->_table);
 		}
 
-		/**
-		 * @once @protected (non-PHPdoc)
-		 *
-		 * @see \Application\Controller::init()
-		 */
 		public function init() {
 			parent::init();
 		}

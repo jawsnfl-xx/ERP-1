@@ -53,7 +53,6 @@ namespace Framework {
 		/**
 		 * @readwrite
 		 */
-		// protected $_defaultPath = "application\\view";
 		protected $_defaultPath = "";
 
 		/**
@@ -73,47 +72,43 @@ namespace Framework {
 
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
 			/**
 			 */
 			parent::__construct($options);
-			
+
 			/**
 			 */
 			if ($this->getWillRenderLayoutView()) {
-				
+
 				/**
 				 */
 				$defaultPath = $this->getDefaultPath();
 				$defaultLayout = $this->getDefaultLayout();
 				$defaultExtension = $this->getDefaultExtension();
-				
+
 				/**
 				 */
 				$view = new View(array(
 					"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $defaultLayout . '.' . $defaultExtension
 				));
-				
-				// var_dump($view);
-				
-				/**
-				 */
+
 				$this->_layoutView = $view;
 			}
-			
+
 			/**
 			 */
 			if ($this->getWillRenderActionView()) {
-				
+
 				$router = new Router(array(
 					"url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
 					"extension" => isset($_GET["extension"]) ? $_GET["extension"] : "html"
 				));
-				
+
 				Registry::set("router", $router);
-				
+
 				$routes = array(
 					array(
 						"pattern" => "login",
@@ -156,7 +151,7 @@ namespace Framework {
 						"action" => "product_technology"
 					)
 				);
-				
+
 				/**
 				 */
 				foreach ($routes as $route) {
@@ -164,12 +159,12 @@ namespace Framework {
 				}
 				unset($routes);
 				$router->dispatch();
-				
+
 				$controller = $router->getController();
 				$action = $router->getAction();
 				$parameters = $router->getParameters();
 				$table = $router->getTable();
-				
+
 				/**
 				 * UWAGA! Istnieje możliwość wyłączenia treści strony w index.php w stałych. ==> DEVELOP_MODE
 				 */
@@ -185,7 +180,7 @@ namespace Framework {
 						"table" => $table
 					));
 				}
-				
+
 				/**
 				 */
 				$this->setActionView($view);
@@ -214,54 +209,45 @@ namespace Framework {
 		 * @throws View\Exception\Renderer
 		 */
 		public function render() {
-			
+
 			/**
 			 */
 			$defaultContentType = $this->_defaultContentType;
 			$results = null;
-			
+
 			/**
 			 */
 			$doAction = $this->_willRenderActionView && $this->_actionView;
 			$doLayout = $this->_willRenderLayoutView && $this->_layoutView;
-			
+
 			/**
 			 */
 			try {
-				
-				/**
-				 */
+
 				if ($doLayout) {
 					$view = $this->_layoutView;
-					
-					// print "asd2";
+
 					$view->set("template", $results);
 					$results = $view->render();
-					// var_dump($results);
-					// print "asd";
-					// $results = StringMethods::clearWhiteChar($results);
-					
+
 					header("Content-type: {$defaultContentType}");
 					echo $results;
 				}
-				
-				/**
-				 */
+
 				if ($doAction) {
+
 					$view = $this->_actionView;
 					$results = $view->render();
-					$results = StringMethods::clearWhiteChar($results);
 					header("Content-type: {$defaultContentType}");
 					echo $results;
-					
+
 					$closer = $this->_layoutView;
 					$closer->__set("file", "layouts\\closer.html");
 					$results = $closer->render();
-					// $results = StringMethods::clearWhiteChar($results);
 					echo $results;
 				} else {
 					header("Content-type: {$defaultContentType}");
-					
+
 					echo $results;
 					$this->_willRenderLayoutView = FALSE;
 					$this->_willRenderActionView = FALSE;

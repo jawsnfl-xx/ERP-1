@@ -114,5 +114,12 @@ namespace Application\Controller {
 			elseif ($this->_parameters [0] === 'system settings') {
 			}
 		}
+
+
+		/**
+		 * @before init, authenticate, @after notify
+		 */
+		public function inbox() {
+		}
 	}
 }

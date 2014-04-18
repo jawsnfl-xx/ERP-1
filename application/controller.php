@@ -18,11 +18,6 @@ namespace Application {
 			parent::__construct ( $options );
 		}
 		public function init() {
-			$configuration = Registry::get ( "configuration" );
-
-			$database = Registry::get ( "database" );
-
-			$session = Registry::get ( "session" );
 		}
 		public function authenticate() {
 			$configuration = Registry::get ( "configuration" );
@@ -42,11 +37,6 @@ namespace Application {
 			}
 		}
 		public function notify() {
-			$configuration = Registry::get ( "configuration" );
-
-			$database = Registry::get ( "database" );
-
-			$session = Registry::get ( "session" );
 		}
 	}
 }
