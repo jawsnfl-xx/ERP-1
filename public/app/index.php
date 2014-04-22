@@ -1,41 +1,20 @@
 ﻿<?php
-
-/**
- * Deklaracja stałych:
- */
 define ( 'APP_DIR', dirname ( realpath ( __FILE__ ) ) );
 define ( 'DISPLAY_ERRORS', 1 );
 define ( 'MIN_PHP_VERSION', '5.3.7' );
 define ( 'DEVELOP_MODE', 0 );
 define ( 'BOOTSTRAP_FILE', 'bootstrap.php' );
 
-/**
- */
 try {
 
-	/**
-	 * Włączenie raportowania błędów na ekran.
-	 * @TODO podpięcie tych informacji pod konfigurację @TODO dodanie defaultowych wartości oraz narzędzia kontrolnego
-	 */
 	error_reporting ( E_ERROR | E_PARSE );
 	ini_set ( "display_errors", DISPLAY_ERRORS );
 
-	/**
-	 * Kontrola wersji @TODO podpięcie tych informacji pod konfigurację
-	 */
 	if (version_compare ( PHP_VERSION, MIN_PHP_VERSION, '<' )) {
 		exit ( "PHP version smaller than " . MIN_PHP_VERSION . " !" );
 	}
 
-	/**
-	 * Wczytanie pliku autoload z composer
-	 */
 	require_once '../../vendor/autoload.php';
-
-	// echo 'asdasd ', __NAMESPACE__, ' asas'; // outputs "MyProject"
-	/**
-	 * Wczytanie bootstrapu z katalogu aplikacji a nie z bierzacego dla index.php
-	 */
 	require_once (BOOTSTRAP_FILE);
 } catch ( Exception $e ) {
 	$exceptions = array (
@@ -98,9 +77,6 @@ try {
 
 	$exception = get_class ( $e );
 
-	/**
-	 * Wywołanie stroy błedu bez wyłapania wyjątku.
-	 */
 	header ( "Content-type: text/html" );
 	var_dump ( $e );
 	echo "An error occurred.";
