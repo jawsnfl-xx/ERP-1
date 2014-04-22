@@ -1,4 +1,5 @@
 <?php
+
 namespace Application\Controller {
 
 	use Application\Controller as Controller;
@@ -17,19 +18,16 @@ namespace Application\Controller {
 		/**
 		 * @readwrite
 		 */
-		protected $_table = array();
-
+		protected $_table = array ();
 		public function __construct($options) {
-			$this->_parameters = $options['parameters'];
+			$this->_parameters = $options ['parameters'];
 		}
-
 		public function givmetable() {
 			// print 'czosnek';
 			return ($this->_table);
 		}
-
 		public function init() {
-			parent::init();
+			parent::init ();
 		}
 
 		/**
@@ -38,7 +36,7 @@ namespace Application\Controller {
 		 * @see \Application\Controller::authenticate()
 		 */
 		public function authenticate() {
-			parent::authenticate();
+			parent::authenticate ();
 		}
 
 		/**
@@ -47,32 +45,37 @@ namespace Application\Controller {
 		 * @see \Application\Controller::notify()
 		 */
 		public function notify() {
-			parent::notify();
+			parent::notify ();
 		}
 
 		/**
 		 * @before init, @after notify
 		 */
-		public function index() {}
+		public function index() {
+		}
 
 		/**
 		 * @before init, @after notify
 		 */
-		public function help() {}
+		public function help() {
+		}
 
 		/**
 		 * @before init, @after notify
 		 */
-		public function about() {}
+		public function about() {
+		}
 
 		/**
 		 * @before init, @after notify
 		 */
-		public function about_modules() {}
+		public function about_modules() {
+		}
 
 		/**
 		 * @before init, @after notify
 		 */
-		public function about_faq() {}
+		public function about_faq() {
+		}
 	}
 }

@@ -115,7 +115,6 @@ namespace Application\Controller {
 			}
 		}
 
-
 		/**
 		 * @before init, authenticate, @after notify
 		 */
