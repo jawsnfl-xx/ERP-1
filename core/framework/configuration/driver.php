@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework\Configuration {
 
 	use Framework\Base as Base;
@@ -14,7 +19,7 @@ namespace Framework\Configuration {
 		 *
 		 * @var unknown
 		 */
-		protected $_parsed = array();
+		protected $_parsed = array ();
 
 		/**
 		 *
@@ -30,7 +35,7 @@ namespace Framework\Configuration {
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
-			return new Exception\Implementation("{$method} method not implemented");
+			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
 	}
 }

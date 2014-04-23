@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	/**
@@ -11,7 +16,7 @@ namespace Framework {
 		 *
 		 * @var unknown
 		 */
-		private static $_instances = array();
+		private static $_instances = array ();
 
 		/**
 		 */
@@ -27,32 +32,32 @@ namespace Framework {
 
 		/**
 		 *
-		 * @param unknown $key        	
-		 * @param string $default        	
+		 * @param unknown $key
+		 * @param string $default
 		 * @return \Framework\unknown string
 		 */
 		public static function get($key, $default = null) {
-			if (isset(self::$_instances[$key])) {
-				return self::$_instances[$key];
+			if (isset ( self::$_instances [$key] )) {
+				return self::$_instances [$key];
 			}
 			return $default;
 		}
 
 		/**
 		 *
-		 * @param unknown $key        	
-		 * @param string $instance        	
+		 * @param unknown $key
+		 * @param string $instance
 		 */
 		public static function set($key, $instance = null) {
-			self::$_instances[$key] = $instance;
+			self::$_instances [$key] = $instance;
 		}
 
 		/**
 		 *
-		 * @param unknown $key        	
+		 * @param unknown $key
 		 */
 		public static function erase($key) {
-			unset(self::$_instances[$key]);
+			unset ( self::$_instances [$key] );
 		}
 	}
 }

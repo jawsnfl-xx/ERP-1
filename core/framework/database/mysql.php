@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework\Database {
 
 	use Framework\Database as Database;
@@ -16,28 +21,32 @@ namespace Framework\Database {
 		 * @var unknown
 		 */
 		protected $_service;
-		
+
 		/*
 		 * protected $_host; protected $_username; protected $_password; protected $_schema; protected $_port;
 		 */
 		protected $_isConnected = false;
 
+		/**
+		 * @var unknown
+		 */
 		public $_query;
 
 		/**
 		 */
-		public function query($_query) {}
+		public function query($_query) {
+		}
 
 		/**
 		 *
-		 * @param unknown $_options        	
+		 * @param unknown $_options
 		 * @throws Exception\Service
 		 * @return \Framework\Database\MySQL
 		 */
 		public function connect($_options) {
-			$this->_service = new \MySQLi($_options['options']['host'], $_options['options']['username'], $_options['options']['password'], $_options['options']['schema'], $_options['options']['port']);
+			$this->_service = new \MySQLi ( $_options ['options'] ['host'], $_options ['options'] ['username'], $_options ['options'] ['password'], $_options ['options'] ['schema'], $_options ['options'] ['port'] );
 			if ($this->_service->connect_error) {
-				throw new Exception\Service("Unable to connect to service");
+				throw new Exception\Service ( "Unable to connect to service" );
 			}
 			$this->_isConnected = true;
 			return $this;
@@ -45,18 +54,18 @@ namespace Framework\Database {
 
 		/**
 		 *
-		 * @param unknown $sql        	
+		 * @param unknown $sql
 		 */
 		public function execute($sql) {
-			return $this->_service->query($sql);
+			return $this->_service->query ( $sql );
 		}
 
 		/**
 		 *
-		 * @param unknown $value        	
+		 * @param unknown $value
 		 */
 		public function escape($value) {
-			return $this->_service->real_escape_string($value);
+			return $this->_service->real_escape_string ( $value );
 		}
 
 		/**
@@ -79,20 +88,20 @@ namespace Framework\Database {
 
 		/**
 		 *
-		 * @param unknown $sql        	
+		 * @param unknown $sql
 		 * @return multitype:NULL
 		 */
 		/**
 		 *
-		 * @param unknown $sql        	
+		 * @param unknown $sql
 		 */
 		public function fetch_array($sql) {
-			$result = $this->_service->query($sql);
-			
-			$rows = array();
-			
-			for ($i = 0; $i < $result->num_rows; $i ++) {
-				$rows[] = $result->fetch_array(MYSQLI_ASSOC);
+			$result = $this->_service->query ( $sql );
+
+			$rows = array ();
+
+			for($i = 0; $i < $result->num_rows; $i ++) {
+				$rows [] = $result->fetch_array ( MYSQLI_ASSOC );
 			}
 			return $rows;
 		}

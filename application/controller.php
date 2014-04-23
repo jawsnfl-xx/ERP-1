@@ -18,6 +18,16 @@ namespace Application {
 			parent::__construct ( $options );
 		}
 		public function init() {
+		/**
+		 * @TODO
+		 * Należy wykonać narzędzia sprawdzające rozpoczęcie sesji AJAX
+		 * oraz zarządzające klasą "event".
+		 * Wypadało by wykonać to tak, aby system wiedział czy dane zapytanie
+		 * jest z AJAX czy wywołuje stronę od początku.
+		 * Pomysł drugi jest taki, że można zbudować narzędzia działające
+		 * jak "formatka" - tabela (sortowalna, skalowalna) do której
+		 * ładowane są treści.
+		 */
 		}
 		public function authenticate() {
 			$configuration = Registry::get ( "configuration" );

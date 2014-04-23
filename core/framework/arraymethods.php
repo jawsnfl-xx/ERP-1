@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	/**
@@ -9,46 +14,48 @@ namespace Framework {
 
 		/**
 		 */
-		private function __construct() {}
+		private function __construct() {
+		}
 
 		/**
 		 */
-		private function __clone() {}
+		private function __clone() {
+		}
 
 		/**
 		 *
-		 * @param unknown $array        	
+		 * @param unknown $array
 		 * @return multitype: boolean
 		 */
 		public static function clean($array) {
-			return array_filter($array, function ($item) {
-				return ! empty($item);
-			});
+			return array_filter ( $array, function ($item) {
+				return ! empty ( $item );
+			} );
 		}
 
 		/**
 		 *
-		 * @param unknown $array        	
+		 * @param unknown $array
 		 * @return multitype: string
 		 */
 		public static function trim($array) {
-			return array_map(function ($item) {
-				return trim($item);
-			}, $array);
+			return array_map ( function ($item) {
+				return trim ( $item );
+			}, $array );
 		}
 
 		/**
 		 *
-		 * @param unknown $array        	
-		 * @param unknown $return        	
+		 * @param unknown $array
+		 * @param unknown $return
 		 * @return unknown
 		 */
 		public static function flatten($array, $return = array()) {
-			foreach ($array as $key => $value) {
-				if (is_array($value) || is_object($value)) {
-					$return = self::flatten($value, $return);
+			foreach ( $array as $key => $value ) {
+				if (is_array ( $value ) || is_object ( $value )) {
+					$return = self::flatten ( $value, $return );
 				} else {
-					$return[] = $value;
+					$return [] = $value;
 				}
 			}
 			return $return;
@@ -57,8 +64,8 @@ namespace Framework {
 		/**
 		 * KONIECZNIE NALEŻY DOPISAĆ TĘ METODĘ...
 		 *
-		 * @param unknown $array        	
-		 * @param unknown $return        	
+		 * @param unknown $array
+		 * @param unknown $return
 		 * @return unknown
 		 */
 		public static function last($array, $return = array()) {
@@ -67,14 +74,14 @@ namespace Framework {
 
 		/**
 		 *
-		 * @param unknown $array        	
+		 * @param unknown $array
 		 * @return \stdClass
 		 */
 		public static function toObject($array) {
-			$result = new \stdClass();
-			foreach ($array as $key => $value) {
-				if (is_array($value)) {
-					$result->{$key} = self::toObject($value);
+			$result = new \stdClass ();
+			foreach ( $array as $key => $value ) {
+				if (is_array ( $value )) {
+					$result->{$key} = self::toObject ( $value );
 				} else {
 					$result->{$key} = $value;
 				}

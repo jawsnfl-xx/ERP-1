@@ -35,6 +35,7 @@ return array(
     'Framework\\Session' => $baseDir . '/core/framework/session.php',
     'Framework\\Session\\Driver' => $baseDir . '/core/framework/session/driver.php',
     'Framework\\Session\\Driver\\Server' => $baseDir . '/core/framework/session/driver/server.php',
+    'Framework\\Sheet' => $baseDir . '/core/framework/sheet.php',
     'Framework\\StringMethods' => $baseDir . '/core/framework/stringmethods.php',
     'Framework\\View' => $baseDir . '/core/framework/view.php',
     'Plugins\\Finance' => $baseDir . '/core/plugins/finance.php',
