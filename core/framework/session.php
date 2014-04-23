@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	use Framework\Base as Base;
@@ -27,7 +32,7 @@ namespace Framework {
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
-			return new Exception\Implementation("{$method} method not implemented");
+			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
 
 		/**
@@ -35,7 +40,7 @@ namespace Framework {
 		 * @return \Framework\Session\Exception\Argument
 		 */
 		protected function _getExceptionForArgument() {
-			return new Exception\Argument("Invalid argument");
+			return new Exception\Argument ( "Invalid argument" );
 		}
 
 		/**
@@ -45,8 +50,8 @@ namespace Framework {
 		 * @return \Framework\Session\Driver\Server
 		 */
 		public function initialize() {
-			$type = $this->getType();
-			if (empty($type)) {
+			$type = $this->getType ();
+			if (empty ( $type )) {
 				// $configuration = Registry::get("configuration");
 				// if ($configuration) {
 				// $configuration = $configuration->initialize();
@@ -60,7 +65,7 @@ namespace Framework {
 				// ));
 				// }
 				// }
-				
+
 				/**
 				 * tymczasowe
 				 */
@@ -72,14 +77,14 @@ namespace Framework {
 			// throw new Exception\Argument("Invalid type");
 			// }
 			switch ($type) {
-				case "server":
+				case "server" :
 					{
-						return new Session\Driver\Server($this->getOptions());
+						return new Session\Driver\Server ( $this->getOptions () );
 						break;
 					}
-				default:
+				default :
 					{
-						throw new Exception\Argument("Invalid type");
+						throw new Exception\Argument ( "Invalid type" );
 						break;
 					}
 			}

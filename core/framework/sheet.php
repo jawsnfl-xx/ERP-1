@@ -1,9 +1,18 @@
 <?php
 
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	use Framework\Base as Base;
 
+	/**
+	 *
+	 * @author Marcin Pyrka
+	 *
+	 */
 	class Sheet extends Base {
 
 		/**
@@ -28,8 +37,14 @@ namespace Framework {
 		public function __construct($options = array()) {
 			parent::__construct ( $options );
 		}
+
+		/**
+		 */
 		public function __destruct() {
 		}
+
+		/**
+		 */
 		public function initialize() {
 		}
 	}

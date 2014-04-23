@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	use Framework\Base as Base;
@@ -77,113 +82,114 @@ namespace Framework {
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct($options);
+			parent::__construct ( $options );
 
 			/**
 			 */
-			if ($this->getWillRenderLayoutView()) {
+			if ($this->getWillRenderLayoutView ()) {
 
 				/**
 				 */
-				$defaultPath = $this->getDefaultPath();
-				$defaultLayout = $this->getDefaultLayout();
-				$defaultExtension = $this->getDefaultExtension();
+				$defaultPath = $this->getDefaultPath ();
+				$defaultLayout = $this->getDefaultLayout ();
+				$defaultExtension = $this->getDefaultExtension ();
 
 				/**
 				 */
-				$view = new View(array(
-					"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $defaultLayout . '.' . $defaultExtension
-				));
+				$view = new View ( array (
+						"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $defaultLayout . '.' . $defaultExtension
+				) );
 
 				$this->_layoutView = $view;
 			}
 
 			/**
 			 */
-			if ($this->getWillRenderActionView()) {
+			if ($this->getWillRenderActionView ()) {
 
-				$router = new Router(array(
-					"url" => isset($_GET["url"]) ? $_GET["url"] : "home/index",
-					"extension" => isset($_GET["extension"]) ? $_GET["extension"] : "html"
-				));
+				$router = new Router ( array (
+						"url" => isset ( $_GET ["url"] ) ? $_GET ["url"] : "home/index",
+						"extension" => isset ( $_GET ["extension"] ) ? $_GET ["extension"] : "html"
+				) );
 
-				Registry::set("router", $router);
+				Registry::set ( "router", $router );
 
-				$routes = array(
-					array(
-						"pattern" => "login",
-						"controller" => "users",
-						"action" => "login"
-					),
-					array(
-						"pattern" => "index",
-						"controller" => "users",
-						"action" => "index"
-					),
-					array(
-						"pattern" => "logout",
-						"controller" => "users",
-						"action" => "logout"
-					),
-					array(
-						"pattern" => "signup",
-						"controller" => "users",
-						"action" => "signup"
-					),
-					array(
-						"pattern" => "home/index",
-						"controller" => "home",
-						"action" => "index"
-					),
-					array(
-						"pattern" => "settings",
-						"controller" => "home",
-						"action" => "settings"
-					),
-					array(
-						"pattern" => "quality_management",
-						"controller" => "module",
-						"action" => "quality_management"
-					),
-					array(
-						"pattern" => "product_technology",
-						"controller" => "module",
-						"action" => "product_technology"
-					)
+				$routes = array (
+						array (
+								"pattern" => "login",
+								"controller" => "users",
+								"action" => "login"
+						),
+						array (
+								"pattern" => "index",
+								"controller" => "users",
+								"action" => "index"
+						),
+						array (
+								"pattern" => "logout",
+								"controller" => "users",
+								"action" => "logout"
+						),
+						array (
+								"pattern" => "signup",
+								"controller" => "users",
+								"action" => "signup"
+						),
+						array (
+								"pattern" => "home/index",
+								"controller" => "home",
+								"action" => "index"
+						),
+						array (
+								"pattern" => "settings",
+								"controller" => "home",
+								"action" => "settings"
+						),
+						array (
+								"pattern" => "quality_management",
+								"controller" => "module",
+								"action" => "quality_management"
+						),
+						array (
+								"pattern" => "product_technology",
+								"controller" => "module",
+								"action" => "product_technology"
+						)
 				);
 
 				/**
 				 */
-				foreach ($routes as $route) {
-					$router->addRoute(new Router\Route\Regex($route));
+				foreach ( $routes as $route ) {
+					$router->addRoute ( new Router\Route\Regex ( $route ) );
 				}
-				unset($routes);
-				$router->dispatch();
+				unset ( $routes );
+				$router->dispatch ();
 
-				$controller = $router->getController();
-				$action = $router->getAction();
-				$parameters = $router->getParameters();
-				$table = $router->getTable();
+				$controller = $router->getController ();
+				$action = $router->getAction ();
+				$parameters = $router->getParameters ();
+				$table = $router->getTable ();
 
 				/**
-				 * UWAGA! Istnieje możliwość wyłączenia treści strony w index.php w stałych. ==> DEVELOP_MODE
+				 * UWAGA! Istnieje możliwość wyłączenia treści strony w index.php w stałych.
+				 * ==> DEVELOP_MODE
 				 */
 				if (DEVELOP_MODE === 1) {
-					$view = new View(array(
-						"parameters" => $parameters,
-						"table" => $table
-					));
+					$view = new View ( array (
+							"parameters" => $parameters,
+							"table" => $table
+					) );
 				} else {
-					$view = new View(array(
-						"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
-						"parameters" => $parameters,
-						"table" => $table
-					));
+					$view = new View ( array (
+							"file" => DIRECTORY_SEPARATOR . $defaultPath . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.' . $defaultExtension,
+							"parameters" => $parameters,
+							"table" => $table
+					) );
 				}
 
 				/**
 				 */
-				$this->setActionView($view);
+				$this->setActionView ( $view );
 			}
 		}
 
@@ -193,7 +199,7 @@ namespace Framework {
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		protected function _getExceptionForImplementation($method) {
-			return new Exception\Implementation("{$method} method not implemented");
+			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
 
 		/**
@@ -201,7 +207,7 @@ namespace Framework {
 		 * @return \Framework\Controller\Exception\Argument
 		 */
 		protected function _getExceptionForArgument() {
-			return new Exception\Argument("Invalid argument");
+			return new Exception\Argument ( "Invalid argument" );
 		}
 
 		/**
@@ -227,33 +233,33 @@ namespace Framework {
 				if ($doLayout) {
 					$view = $this->_layoutView;
 
-					$view->set("template", $results);
-					$results = $view->render();
+					$view->set ( "template", $results );
+					$results = $view->render ();
 
-					header("Content-type: {$defaultContentType}");
+					header ( "Content-type: {$defaultContentType}" );
 					echo $results;
 				}
 
 				if ($doAction) {
 
 					$view = $this->_actionView;
-					$results = $view->render();
-					header("Content-type: {$defaultContentType}");
+					$results = $view->render ();
+					header ( "Content-type: {$defaultContentType}" );
 					echo $results;
 
 					$closer = $this->_layoutView;
-					$closer->__set("file", "layouts\\closer.html");
-					$results = $closer->render();
+					$closer->__set ( "file", "layouts\\closer.html" );
+					$results = $closer->render ();
 					echo $results;
 				} else {
-					header("Content-type: {$defaultContentType}");
+					header ( "Content-type: {$defaultContentType}" );
 
 					echo $results;
 					$this->_willRenderLayoutView = FALSE;
 					$this->_willRenderActionView = FALSE;
 				}
-			} catch (\Exception $e) {
-				throw new View\Exception\Render("Invalid layout/template syntax");
+			} catch ( \Exception $e ) {
+				throw new View\Exception\Render ( "Invalid layout/template syntax" );
 			}
 		}
 
@@ -262,8 +268,8 @@ namespace Framework {
 		protected function getName() {
 			/**
 			 */
-			if (empty($this->_name)) {
-				$this->_name = get_class($this);
+			if (empty ( $this->_name )) {
+				$this->_name = get_class ( $this );
 			}
 			/**
 			 */
@@ -276,7 +282,7 @@ namespace Framework {
 			// Events::fire("framework.controller.destruct.before", array(
 			// $this->name
 			// ));
-			$this->render();
+			$this->render ();
 			// Events::fire("framework.controller.destruct.after", array(
 			// $this->name
 			// ));

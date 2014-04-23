@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework\Router\Route {
 
 	use Framework\Router as Router;
@@ -16,16 +21,16 @@ namespace Framework\Router\Route {
 
 		/**
 		 *
-		 * @param unknown $url        	
+		 * @param unknown $url
 		 * @return boolean
 		 */
 		public function matches($url) {
 			$pattern = $this->pattern;
-			
-			preg_match_all("#^{$pattern}$#", $url, $values);
-			if (sizeof($values) && sizeof($values[0]) && sizeof($values[1])) {
-				$derived = array_combine($this->keys, $values[1]);
-				$this->parameters = array_merge($this->parameters, $derived);
+
+			preg_match_all ( "#^{$pattern}$#", $url, $values );
+			if (sizeof ( $values ) && sizeof ( $values [0] ) && sizeof ( $values [1] )) {
+				$derived = array_combine ( $this->keys, $values [1] );
+				$this->parameters = array_merge ( $this->parameters, $derived );
 				return true;
 			}
 			return false;
