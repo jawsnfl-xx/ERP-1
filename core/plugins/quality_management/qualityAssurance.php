@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Plugins\Quality_management {
 
 	use Plugins\Quality_management as Quality_management;
@@ -13,12 +18,12 @@ namespace Plugins\Quality_management {
 
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct($options);
+			parent::__construct ( $options );
 		}
 	}
 }

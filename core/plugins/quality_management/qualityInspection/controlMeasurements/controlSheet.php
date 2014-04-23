@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Plugins\Quality_management\QualityInspection\ControlMeasurements {
 
 	use Plugins\Quality_management\QualityInspection\ControlMeasurements as ControlMeasurements;
@@ -28,16 +33,16 @@ namespace Plugins\Quality_management\QualityInspection\ControlMeasurements {
 
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct($options);
+			parent::__construct ( $options );
 		}
-
-		public function initialize($_id) {}
-
-		public function open($_id) {}
+		public function initialize($_id) {
+		}
+		public function open($_id) {
+		}
 	}
 }
