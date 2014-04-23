@@ -25,5 +25,10 @@ namespace Plugins\Quality_management {
 			 */
 			parent::__construct ( $options );
 		}
+
+		/**
+		 */
+		public function __destruct() {
+		}
 	}
 }
