@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework\Session {
 
 	use Framework\Session as Session;
@@ -11,10 +16,10 @@ namespace Framework\Session {
 
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
-			parent::__construct($options);
+			parent::__construct ( $options );
 		}
 	}
 }

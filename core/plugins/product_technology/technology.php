@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Plugins\Product_technology {
 
 	use Plugins\Product_technology as Product_technology;
@@ -12,12 +17,12 @@ namespace Plugins\Product_technology {
 
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct($options);
+			parent::__construct ( $options );
 		}
 	}
 }

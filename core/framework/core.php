@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	use Framework\Base as Base;
@@ -11,6 +16,7 @@ namespace Framework {
 
 		/**
 		 */
-		public function initialize() {}
+		public function initialize() {
+		}
 	}
 }

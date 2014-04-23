@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Plugins\Quality_management\QualityControl {
 
 	use Plugins\Quality_management\QualityControl as QualityControl;
@@ -21,12 +26,12 @@ namespace Plugins\Quality_management\QualityControl {
 
 		/**
 		 *
-		 * @param unknown $options        	
+		 * @param unknown $options
 		 */
 		public function __construct($options = array()) {
 			/**
 			 */
-			parent::__construct($options);
+			parent::__construct ( $options );
 		}
 	}
 }

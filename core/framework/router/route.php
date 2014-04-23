@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework\Router {
 
 	use Framework\Base as Base;
@@ -28,7 +33,7 @@ namespace Framework\Router {
 		/**
 		 * @readwrite
 		 */
-		protected $_parameters = array();
+		protected $_parameters = array ();
 
 		/**
 		 * (non-PHPdoc)
@@ -36,7 +41,7 @@ namespace Framework\Router {
 		 * @see \Framework\Base::_getExceptionForImplementation()
 		 */
 		public function _getExceptionForImplementation($method) {
-			return new Exception\Implementation("{$method} method not implemented");
+			return new Exception\Implementation ( "{$method} method not implemented" );
 		}
 	}
 }
