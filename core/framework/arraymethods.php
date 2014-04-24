@@ -62,14 +62,14 @@ namespace Framework {
 		}
 
 		/**
-		 * KONIECZNIE NALEŻY DOPISAĆ TĘ METODĘ...
 		 *
 		 * @param unknown $array
 		 * @param unknown $return
 		 * @return unknown
 		 */
 		public static function last($array, $return = array()) {
-			return $return;
+			$result = end ( $array );
+			return $result;
 		}
 
 		/**
