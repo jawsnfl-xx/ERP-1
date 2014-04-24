@@ -77,13 +77,12 @@ var ExistMsg = 0,
         if (settings.input != undefined) {
             HasInput = 1;
             settings.input = settings.input.toLowerCase();
-			settings.inputValue = settings.inputValue ? settings.inputValue.replace(/'/g, "&#x27;") : ''; // new code
-			
+
             switch (settings.input) {
             case "text":
-                InputType = "<input class='form-control' type='" + settings.input + "' id='txt" + 
-                	SmartMSGboxCount + "' placeholder='" + settings.placeholder + "' value='" + settings.inputValue + "'/><br/><br/>";     
-                	               
+                settings.inputValue = $.type(settings.inputValue) === 'string' ? settings.inputValue.replace(/'/g, "&#x27;") : settings.inputValue;
+                InputType = "<input class='form-control' type='" + settings.input + "' id='txt" +
+                    SmartMSGboxCount + "' placeholder='" + settings.placeholder + "' value='" + settings.inputValue + "'/><br/><br/>";
                 break;
             case "password":
                 InputType = "<input class='form-control' type='" + settings.input + "' id='txt" +
