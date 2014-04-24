@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	use Framework\Base as Base;

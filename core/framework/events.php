@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @author Marcin Pyrka
+ *
+ */
 namespace Framework {
 
 	/**
@@ -11,7 +16,7 @@ namespace Framework {
 		 *
 		 * @var unknown
 		 */
-		private static $_callbacks = array();
+		private static $_callbacks = array ();
 
 		/**
 		 *
@@ -31,39 +36,39 @@ namespace Framework {
 
 		/**
 		 *
-		 * @param unknown $type        	
-		 * @param unknown $callback        	
+		 * @param unknown $type
+		 * @param unknown $callback
 		 */
 		public static function add($type, $callback) {
-			if (empty(self::$_callbacks[$type])) {
-				self::$_callbacks[$type] = array();
+			if (empty ( self::$_callbacks [$type] )) {
+				self::$_callbacks [$type] = array ();
 			}
-			self::$_callbacks[$type][] = $callback;
+			self::$_callbacks [$type] [] = $callback;
 		}
 
 		/**
 		 *
-		 * @param unknown $type        	
-		 * @param string $parameters        	
+		 * @param unknown $type
+		 * @param string $parameters
 		 */
 		public static function fire($type, $parameters = null) {
-			if (! empty(self::$_callbacks[$type])) {
-				foreach (self::$_callbacks[$type] as $callback) {
-					call_user_func_array($callback, $parameters);
+			if (! empty ( self::$_callbacks [$type] )) {
+				foreach ( self::$_callbacks [$type] as $callback ) {
+					call_user_func_array ( $callback, $parameters );
 				}
 			}
 		}
 
 		/**
 		 *
-		 * @param unknown $type        	
-		 * @param unknown $callback        	
+		 * @param unknown $type
+		 * @param unknown $callback
 		 */
 		public static function remove($type, $callback) {
-			if (! empty(self::$_callbacks[$type])) {
-				foreach (self::$_callbacks[$type] as $i => $found) {
+			if (! empty ( self::$_callbacks [$type] )) {
+				foreach ( self::$_callbacks [$type] as $i => $found ) {
 					if ($callback == $found) {
-						unset(self::$_callbacks[$type][$i]);
+						unset ( self::$_callbacks [$type] [$i] );
 					}
 				}
 			}
