@@ -81,6 +81,12 @@ namespace Application\Controller {
 
 		/**
 		 * @before init, authenticate, @after notify
+		 */
+		public function test() {
+		}
+
+		/**
+		 * @before init, authenticate, @after notify
 		 * @NOTE/
 		 */
 		public function product_technology() {
