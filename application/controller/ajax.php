@@ -99,5 +99,17 @@ namespace Application\Controller {
 		 */
 		public function inbox() {
 		}
+
+		/**
+		 * @before init, authenticate, @after notify
+		 */
+		public function dashboard() {
+		}
+
+		/**
+		 * @before init, authenticate, @after notify
+		 */
+		public function calendar() {
+		}
 	}
 }
