@@ -16,7 +16,7 @@
 			</form>
 		</div>
 		<div class="col-lg-6">
-			<a href="/module/product_technology/product/add/1" class="btn btn-default">Dodaj nowy produkt</a>
+			<a href="#module/product_technology/product/add/1" class="btn btn-default">Dodaj nowy produkt</a>
 		</div>
 	</div>
 
@@ -36,7 +36,7 @@
 		<tbody>
 			{% for row in _table.product.list %}
 			<th>{{ loop.index }}</th>
-			<td><a href="/module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
+			<td><a href="#module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
 			<td>{{ row.symbol }}</td>
 			<td>{{ row.category_name }}</td>
 			<td>
@@ -51,7 +51,7 @@
 							<div class="modal-body">...</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-								<a href="/module/product_technology/product/delete/{{ row.id_products }}" type="button" class="btn btn-danger">Usuń</a>
+								<a href="#module/product_technology/product/delete/{{ row.id_products }}" type="button" class="btn btn-danger">Usuń</a>
 							</div>
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 		</tr>
 		{% for row in _table.product.list %}
 		<th>{{ loop.index }}</th>
-		<td><a href="/module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
+		<td><a href="#module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
 		<td>{{ row.symbol }}</td>
 		<td>{{ row.category_name }}</td>
 		<td>
@@ -92,7 +92,7 @@
 						<div class="modal-body">...</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-							<a href="/module/product_technology/product/delete/{{ row.id_products }}" type="button" class="btn btn-danger">Usuń</a>
+							<a href="#module/product_technology/product/delete/{{ row.id_products }}" type="button" class="btn btn-danger">Usuń</a>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@
 	<div class="panel-footer">
 		<ul class="pagination">
 			<li><a href="#">&laquo;</a></li> {% for pager in _table.product.pager %}
-			<li><a href="/module/product_technology/product/page/{{ pager.page }}/{{ pager.limit }}">{{ pager.page }}</a></li> {% endfor %}
+			<li><a href="#module/product_technology/product/page/{{ pager.page }}/{{ pager.limit }}">{{ pager.page }}</a></li> {% endfor %}
 			<li><a href="#">&raquo;</a></li>
 		</ul>
 	</div>
@@ -123,7 +123,7 @@
 				Produkt o identyfikatorze <strong>{{ row.products_name }}</strong> znajduje się już w bazie danych.
 			</p>
 			<p>
-				Możesz zobaczyć szczegóły dotyczące tego produktu <a class="alert-link" href="/module/product_technology/product/view/{{ row.id_products }}">tutaj</a>.
+				Możesz zobaczyć szczegóły dotyczące tego produktu <a class="alert-link" href="#module/product_technology/product/view/{{ row.id_products }}">tutaj</a>.
 			</p>
 			{% endfor %}
 		</div>
@@ -189,7 +189,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Anuluj</button>
-						<a href="/module/product_technology/product/_add/4" type="button" class="btn btn-danger">Odrzuć zmiany</a>
+						<a href="#module/product_technology/product/_add/4" type="button" class="btn btn-danger">Odrzuć zmiany</a>
 					</div>
 				</div>
 			</div>
@@ -201,7 +201,7 @@
 				</button>
 			</div>
 			<div class="col-md-2">
-				<a class="btn btn-success btn-block" href="/module/product_technology/product/_add/5" role="button">Dodaj <span class="glyphicon glyphicon-ok"></span>
+				<a class="btn btn-success btn-block" href="#module/product_technology/product/_add/5" role="button">Dodaj <span class="glyphicon glyphicon-ok"></span>
 				</a>
 			</div>
 		</div>
@@ -265,7 +265,7 @@
 					<div class="alert alert-danger">
 						<h4>Brak arkusza kontroli jakości</h4>
 						<p>Arkusz nie istnieje. W celu utworzenia arkusza, należy kliknąć w poniższy przycisk.</p>
-						<a href="/module/quality_management/add" class="btn btn-danger">Tworzenie arkusza</a>
+						<a href="#module/quality_management/add" class="btn btn-danger">Tworzenie arkusza</a>
 					</div>
 				</div>
 			</div>
@@ -400,7 +400,7 @@
 				</tr>
 				<tr>
 					<td>1</td>
-					<td><a href="/module/product_technology/view/1"></a></td>
+					<td><a href="#module/product_technology/view/1"></a></td>
 					<td></td>
 					<td></td>
 					<td><a href="#">2000-01-01 12:00:00</a></td>
@@ -410,7 +410,7 @@
 				</tr>
 				<tr>
 					<td>2</td>
-					<td><a href="/module/product_technology/view/2">651232</a></td>
+					<td><a href="#module/product_technology/view/2">651232</a></td>
 					<td>produkcja</td>
 					<td>23</td>
 					<td></td>
@@ -420,7 +420,7 @@
 				</tr>
 				<tr>
 					<td>3</td>
-					<td><a href="/module/product_technology/view/3">123512</a></td>
+					<td><a href="#module/product_technology/view/3">123512</a></td>
 					<td>produkcja</td>
 					<td>14</td>
 					<td></td>
@@ -430,7 +430,7 @@
 				</tr>
 				<tr>
 					<td>4</td>
-					<td><a href="/module/product_technology/view/4">900212</a></td>
+					<td><a href="#module/product_technology/view/4">900212</a></td>
 					<td>produkcja</td>
 					<td>13</td>
 					<td></td>
@@ -440,7 +440,7 @@
 				</tr>
 				<tr>
 					<td>5</td>
-					<td><a href="/module/product_technology/view/5">587212</a></td>
+					<td><a href="#module/product_technology/view/5">587212</a></td>
 					<td>produkcja</td>
 					<td>11</td>
 					<td></td>
@@ -467,7 +467,7 @@
 	{% for row in _table.product.listSearch %}
 	<tr>
 		<th>{{ loop.index }}</th>
-		<td><a href="/module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
+		<td><a href="#module/product_technology/product/view/{{ row.id_products }}">{{ row.products_name }}</a></td>
 		<td>{{ row.units_id_units_primary }}</td>
 		<td>{{ row.units_id_units_secondary }}</td>
 	</tr>
@@ -555,8 +555,8 @@
 </div>
 {% else %}
 <div class="list-group">
-	<a href="/module/product_technology/product" class="list-group-item">Produkt <span class="badge pull-right">14</span>
-	</a> <a href="/module/product_technology/technology" class="list-group-item">Technologia <span class="badge pull-right">23</span>
+	<a href="#module/product_technology/product" class="list-group-item">Produkt <span class="badge pull-right">14</span>
+	</a> <a href="#module/product_technology/technology" class="list-group-item">Technologia <span class="badge pull-right">23</span>
 	</a>
 </div>
 {% endif %}
