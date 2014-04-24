@@ -217,6 +217,21 @@ namespace Framework {
 		public function render() {
 
 			/**
+			 * @TODO:
+			 * 1.
+			 * Przebudować controler->render() tak, aby nie wyświetlała szablonów rozpoczęcia,
+			 * tylko pozwalała na zarządzanie plikami w samych szablonach.
+			 * Wiem, że w Smarty chciałem tego uniknąć, ale wydaje mi się, że teraz to dobry pomysł.
+			 * SZCZEGÓŁY:
+			 * a) wywalić zmienne z ustawieniami "default"
+			 * b) pozwolić na generowanie tylko kodu z zapytania _get
+			 * c) wpisać w szablony twig'a globalne zależności (potrzeby ładowania
+			 * plików z nagłówkami i stopkami)
+			 *
+			 * To chyba trzeba nazwać "usunięciem layoutów"?
+			 */
+
+			/**
 			 */
 			$defaultContentType = $this->_defaultContentType;
 			$results = null;
@@ -230,15 +245,15 @@ namespace Framework {
 			 */
 			try {
 
-				if ($doLayout) {
-					$view = $this->_layoutView;
+				// if ($doLayout) {
+				// $view = $this->_layoutView;
 
-					$view->set ( "template", $results );
-					$results = $view->render ();
+				// $view->set ( "template", $results );
+				// $results = $view->render ();
 
-					header ( "Content-type: {$defaultContentType}" );
-					echo $results;
-				}
+				// header ( "Content-type: {$defaultContentType}" );
+				// echo $results;
+				// }
 
 				if ($doAction) {
 
@@ -247,16 +262,16 @@ namespace Framework {
 					header ( "Content-type: {$defaultContentType}" );
 					echo $results;
 
-					$closer = $this->_layoutView;
-					$closer->__set ( "file", "layouts\\closer.html" );
-					$results = $closer->render ();
-					echo $results;
-				} else {
-					header ( "Content-type: {$defaultContentType}" );
+					// $closer = $this->_layoutView;
+					// $closer->__set ( "file", "layouts\\closer.html" );
+					// $results = $closer->render ();
+					// echo $results;
+					// } else {
+					// header ( "Content-type: {$defaultContentType}" );
 
-					echo $results;
-					$this->_willRenderLayoutView = FALSE;
-					$this->_willRenderActionView = FALSE;
+					// echo $results;
+					// $this->_willRenderLayoutView = FALSE;
+					// $this->_willRenderActionView = FALSE;
 				}
 			} catch ( \Exception $e ) {
 				throw new View\Exception\Render ( "Invalid layout/template syntax" );
